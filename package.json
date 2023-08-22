@@ -1,0 +1,104 @@
+{
+    "name": "tsx-library-v9",
+    "private": false,
+    "version": "1.0.0",
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite --open",
+        "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "copy": "cp ./src/lib/index.css ./dist",
+        "clean": "rm -rf ./dist/icons ./dist/images ./dist/vite.svg ./dist/favicon.svg",
+        "copy-types": "cp -a ./src/lib/types ./types",
+        "build-types": "yarn copy-types && tsc --p tsconfig-types.json",
+        "move-types": "mv ./types ./dist",
+        "build": "tsc && vite build && yarn copy && yarn clean && yarn build-types && yarn move-types",
+        "cy": "cypress",
+        "cy:open": "cypress open",
+        "cy:ct:run": "cypress run --component --browser electron",
+        "cy:ct:open": "cypress open --component --browser electron",
+        "plop": "plop --plopfile 'plop/plopfile.cjs'",
+        "plop:c": "yarn plop component"
+    },
+    "dependencies": {
+        "@types/cypress": "^1.1.3",
+        "fuse.js": "^6.6.2",
+        "markdown-to-jsx": "^7.3.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-helmet": "^6.1.0",
+        "react-inlinesvg": "^4.0.2",
+        "react-router-dom": "^6.15.0",
+        "react-syntax-highlighter": "^15.5.0",
+        "styled-components": "^6.0.7",
+        "ts-utils-julseb": "^2.3.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.3",
+        "@types/mocha": "^10.0.1",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@types/react-helmet": "^6.1.6",
+        "@types/react-inlinesvg": "^1.0.0",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/styled-components": "^5.1.26",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "@vitejs/plugin-react": "^4.0.3",
+        "axios": "^1.4.0",
+        "cypress": "^12.17.4",
+        "eslint": "^8.47.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "plop": "^3.1.2",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5",
+        "vite-plugin-dts": "^3.5.2",
+        "vite-plugin-eslint": "^1.8.1"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || 17.x || 18.x",
+        "react-dom": "^16.8.0 || 17.x || 18.x",
+        "styled-components": "^5.0.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/tsx-library-julseb.umd.js",
+    "module": "./dist/tsx-library-julseb.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/tsx-library-julseb.es.js",
+            "require": "./dist/tsx-library-julseb.umd.js",
+            "types": "./dist/index.d.ts",
+            "default": "./dist/tsx-library-julseb.cjs.js"
+        },
+        "./index.css": {
+            "import": "./dist/index.css",
+            "require": "./dist/index.css",
+            "default": "./dist/index.css"
+        },
+        "./types": {
+            "import": "./dist/types/index.d.ts",
+            "require": "./dist/types/index.d.ts",
+            "types": "./dist/types/index.d.ts",
+            "default": "./dist/types/index.d.ts"
+        },
+        "./components-types": {
+            "import": "./dist/components-types/index.d.ts",
+            "require": "./dist/components-types/index.d.ts",
+            "types": "./dist/components-types/index.d.ts",
+            "default": "./dist/components-types/index.d.ts"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "types": [
+                "./dist/lib/types/index.d.ts"
+            ]
+        }
+    }
+}

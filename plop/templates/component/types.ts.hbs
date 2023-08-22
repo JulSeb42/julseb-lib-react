@@ -1,0 +1,14 @@
+/*=============================================== {{ pascalCase name }} types ===============================================*/
+
+import type { HTMLAttributes {{#if as}}, ElementType{{/if}} } from "react"
+{{#if common}}
+
+import { {{ common }} } from "../../types"
+{{/if}}
+
+export interface {{ pascalCase name }}Props extends HTMLAttributes<HTML{{ pascalCase attribute }}Element> {
+    "data-testid"?: string
+    {{#if as}}
+    as?: ElementType
+    {{/if}}
+}
