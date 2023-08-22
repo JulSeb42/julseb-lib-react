@@ -1,6 +1,7 @@
 /*=============================================== Page ===============================================*/
 
-import type { ReactNode } from "react"
+import { useEffect, type ReactNode } from "react"
+import { useLocation } from "react-router-dom"
 import { Helmet } from "react-helmet"
 
 import { NavDemo } from "./NavDemo"
@@ -15,6 +16,16 @@ interface PageProps {
 }
 
 export function Page({ title, children }: PageProps) {
+    const { pathname, search } = useLocation()
+
+    useEffect(() => {
+        document.documentElement.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant",
+        })
+    }, [pathname, search])
+
     return (
         <>
             <Helmet>
