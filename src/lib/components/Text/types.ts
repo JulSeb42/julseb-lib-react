@@ -54,12 +54,3 @@ interface TextPropsOther extends TextPropsBase {
 
 export type TextProps = TextPropsDisplay | TextPropsOther
 
-export interface TextStyleProps {
-    $color?: LibAllColors
-    $textAlign?: TextAlign
-    $linkColor?: LibColorsHover
-}
-
-export interface TextStyleHeadingProps extends TextStyleProps {
-    $display?: boolean
-}

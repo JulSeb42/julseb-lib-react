@@ -21,7 +21,16 @@ import type {
     LibFontWeights,
     TextAlign,
 } from "../../types"
-import type { TextStyleProps, TextStyleHeadingProps } from "./types"
+
+interface TextStyleProps {
+    $color?: LibAllColors
+    $textAlign?: TextAlign
+    $linkColor?: LibColorsHover
+}
+
+interface TextStyleHeadingProps extends TextStyleProps {
+    $display?: boolean
+}
 
 export const TextBaseMixin = ({
     $fontSize,
