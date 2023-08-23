@@ -39,6 +39,10 @@ const StyledAside = styled.aside<{
     })}
     ${Mixins.StretchTags}
 
+    & > * {
+        flex-shrink: 0;
+    }
+
     @media ${BREAKPOINTS.TABLET_SMALL} {
         height: inherit;
     }

@@ -42,6 +42,10 @@ const StyledMain = styled.main<{
     })}
     ${Mixins.StretchTags}
 
+    & > * {
+        flex-shrink: 0;
+    }
+
     ${({ $size, $contentSize }) =>
         $size === "full" &&
         css`

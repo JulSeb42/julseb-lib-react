@@ -16,6 +16,7 @@ import { ThemeProviderPage } from "../pages/styles/ThemeProviderPage"
 /*====================== Layouts ======================*/
 
 import { ContainerPage } from "../pages/layouts/ContainerPage.tsx"
+import { SectionPage } from "../pages/layouts/SectionPage.tsx"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -59,6 +60,7 @@ export const routes: Route[] = [
     /*====================== Layouts ======================*/
 
     { path: "/container", element: <ContainerPage /> },
+    { path: "/section", element: <SectionPage /> },
     // prependRoute
 ]
 
