@@ -121,7 +121,7 @@ export const typeValues = {
         small: "small",
     },
 
-    fontWeights: { regular: "regular", bold: "bold", solid: "solid" },
+    fontWeights: { regular: "regular", bold: "bold", black: "black" },
 
     lineHeights: { body: "body", code: "code" },
 

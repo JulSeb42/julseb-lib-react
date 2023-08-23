@@ -369,7 +369,10 @@ time,
 mark,
 audio,
 video,
-hr {
+hr,
+ul,
+ol,
+dl {
     margin: 0;
     padding: 0;
     border: 0;

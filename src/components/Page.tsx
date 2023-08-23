@@ -8,6 +8,7 @@ import { NavDemo } from "./NavDemo"
 import { WrapperDemo } from "./layouts/WrapperDemo"
 import { MainDemo } from "./layouts/MainDemo"
 
+import { Text } from "../lib"
 import { SITE_DATA } from "../data"
 
 interface PageProps {
@@ -38,7 +39,7 @@ export function Page({ title, children }: PageProps) {
 
             <WrapperDemo>
                 <MainDemo>
-                    <h1>{title}</h1>
+                    <Text tag="h1">{title}</Text>
 
                     {children}
                 </MainDemo>

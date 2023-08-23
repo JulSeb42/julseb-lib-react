@@ -11,5 +11,6 @@ export const MainDemo = styled.main`
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
+        $gap: "l",
     })}
 `

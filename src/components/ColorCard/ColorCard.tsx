@@ -1,5 +1,7 @@
 /*=============================================== ColorCard ===============================================*/
 
+import { Text } from "../../lib"
+
 import { StyledColorCard, Square, CardContent } from "./styles"
 import type { ColorCardProps } from "./types"
 
@@ -27,13 +29,13 @@ export function ColorCard({ color, overlay }: ColorCardProps) {
             <Square $background={css!} />
 
             <CardContent>
-                <h4>{name}</h4>
+                <Text tag="h5">{name}</Text>
 
                 {items.map(({ title, content }) => (
-                    <p key={title}>
+                    <Text key={title}>
                         <strong>{title}: </strong>
                         {content}
-                    </p>
+                    </Text>
                 ))}
             </CardContent>
         </StyledColorCard>

@@ -10,4 +10,5 @@ export * from "./hooks"
 
 export * from "./context/ThemeContext"
 
+export * from "./components/Text"
 // prependHere
