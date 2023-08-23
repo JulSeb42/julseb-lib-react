@@ -10,7 +10,8 @@ export const MainDemo = styled.main`
     padding: ${SPACERS.XXL} 0;
     ${Mixins.Flexbox({
         $flexDirection: "column",
-        $alignItems: "stretch",
+        $alignItems: "flex-start",
         $gap: "l",
     })}
+    ${Mixins.StretchTags};
 `

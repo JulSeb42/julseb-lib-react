@@ -498,6 +498,37 @@ export const Mixins = {
         }
     `,
 
+    StretchTags: css`
+        & > div,
+        & > h1,
+        & > h2,
+        & > h3,
+        & > h4,
+        & > h5,
+        & > h6,
+        & > p,
+        & > ul,
+        & > ol,
+        & > dl,
+        & > section,
+        & > input,
+        & > article,
+        & > hr,
+        & > pre,
+        & > table,
+        & > header,
+        & > footer,
+        & > iframe,
+        & > nav,
+        & > noscript,
+        & > picture,
+        & > select,
+        & > textarea,
+        & > form {
+            align-self: stretch;
+        }
+    `,
+
     Padding: ($padding: LibPaddingProps | undefined) => {
         if (!$padding) return null
 

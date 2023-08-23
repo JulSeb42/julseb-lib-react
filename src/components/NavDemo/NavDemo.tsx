@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 
-import { capitalize, useTheme } from "../../lib"
+import { useTheme, toTitleCase } from "../../lib"
 import { routes } from "../../routes"
 
 import { StyledNavDemo } from "./styles"
@@ -32,7 +32,9 @@ export function NavDemo() {
                 <NavLink to={r.path} key={r.path}>
                     {r.path === "/"
                         ? "Homepage"
-                        : capitalize(r.path.replaceAll("/", ""))}
+                        : toTitleCase(
+                              r.path.replaceAll("/", "").replaceAll("-", " ")
+                          )}
                 </NavLink>
             ))}
         </StyledNavDemo>
