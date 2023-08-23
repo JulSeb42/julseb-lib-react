@@ -15,4 +15,5 @@ export * from "./components/Wrapper"
 export * from "./components/Main"
 export * from "./components/Aside"
 export * from "./components/Section"
+export * from "./components/Grid"
 // prependHere

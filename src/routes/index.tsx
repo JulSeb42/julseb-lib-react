@@ -15,19 +15,20 @@ import { ThemeProviderPage } from "../pages/styles/ThemeProviderPage"
 
 /*====================== Layouts ======================*/
 
-import { ContainerPage } from "../pages/layouts/ContainerPage.tsx"
-import { SectionPage } from "../pages/layouts/SectionPage.tsx"
+import { ContainerPage } from "../pages/layouts/ContainerPage"
+import { SectionPage } from "../pages/layouts/SectionPage"
+import { GridPage } from "../pages/layouts/GridPage"
 // prependHere
 
 /*====================== Demos ======================*/
-import { DemoMainDefault } from "../pages/demos/DemoMainDefault.tsx"
-import { DemoMainLarge } from "../pages/demos/DemoMainLarge.tsx"
-import { DemoMainForm } from "../pages/demos/DemoMainForm.tsx"
-import { DemoMainNumber } from "../pages/demos/DemoMainNumber.tsx"
-import { DemoMainFull } from "../pages/demos/DemoMainFull.tsx"
-import { DemoAsideDefault } from "../pages/demos/DemoAsideDefault.tsx"
-import { DemoAsideSmall } from "../pages/demos/DemoAsideSmall.tsx"
-import { DemoAsideBoth } from "../pages/demos/DemoAsideBoth.tsx"
+import { DemoMainDefault } from "../pages/demos/DemoMainDefault"
+import { DemoMainLarge } from "../pages/demos/DemoMainLarge"
+import { DemoMainForm } from "../pages/demos/DemoMainForm"
+import { DemoMainNumber } from "../pages/demos/DemoMainNumber"
+import { DemoMainFull } from "../pages/demos/DemoMainFull"
+import { DemoAsideDefault } from "../pages/demos/DemoAsideDefault"
+import { DemoAsideSmall } from "../pages/demos/DemoAsideSmall"
+import { DemoAsideBoth } from "../pages/demos/DemoAsideBoth"
 
 type Route = {
     path: string
@@ -61,7 +62,8 @@ export const routes: Route[] = [
 
     { path: "/container", element: <ContainerPage /> },
     { path: "/section", element: <SectionPage /> },
-    // prependRoute
+    { path: "/grid", element: <GridPage /> },
+// prependRoute
 ]
 
 export const router = createBrowserRouter([...routes, ...demos])

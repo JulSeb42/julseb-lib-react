@@ -1,6 +1,6 @@
 /*=============================================== Aside tests ===============================================*/
 
-import { Aside } from "./Aside"
+import { Aside } from "../Aside"
 
 describe("<Aside />", () => {
     it("renders <Aside /> component", () => {

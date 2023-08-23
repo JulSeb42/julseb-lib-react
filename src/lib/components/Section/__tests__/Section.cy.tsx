@@ -1,6 +1,6 @@
 /*=============================================== Section tests ===============================================*/
 
-import { Section } from "./Section"
+import { Section } from "../Section"
 
 describe("<Section />", () => {
     it("renders <Section /> component", () => {

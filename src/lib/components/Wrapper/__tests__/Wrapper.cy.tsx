@@ -1,6 +1,6 @@
 /*=============================================== Wrapper tests ===============================================*/
 
-import { Wrapper } from "./Wrapper"
+import { Wrapper } from "../Wrapper"
 
 describe("<Wrapper />", () => {
     it("renders <Wrapper /> component", () => {
