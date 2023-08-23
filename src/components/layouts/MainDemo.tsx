@@ -6,7 +6,7 @@ import { LAYOUTS, Mixins, SPACERS } from "../../lib"
 
 export const MainDemo = styled.main`
     width: 100%;
-    max-width: ${LAYOUTS.MAIN_DEFAULT};
+    max-width: ${LAYOUTS.MAIN_LARGE};
     padding: ${SPACERS.XXL} 0;
     ${Mixins.Flexbox({
         $flexDirection: "column",

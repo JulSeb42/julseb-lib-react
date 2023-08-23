@@ -6,8 +6,8 @@ import { Homepage } from "../pages/Homepage"
 
 import { ColorsPage } from "../pages/styles/ColorsPage"
 import { OverlaysPage } from "../pages/styles/OverlaysPage"
-
 import { TextPage } from "../pages/styles/TextPage.tsx"
+import { ShadowsPage } from "../pages/styles/ShadowsPage.tsx"
 // prependHere
 
 type Route = {
@@ -21,7 +21,8 @@ export const routes: Route[] = [
     { path: "/colors", element: <ColorsPage /> },
     { path: "/overlays", element: <OverlaysPage /> },
     { path: "/text", element: <TextPage /> },
-// prependRoute
+    { path: "/shadows", element: <ShadowsPage /> },
+    // prependRoute
 ]
 
 export const router = createBrowserRouter(routes)

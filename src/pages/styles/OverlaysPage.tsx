@@ -2,7 +2,7 @@
 
 import { Page, ColorCard } from "../../components"
 
-import { allOverlays } from "../../data/styles/all-overlays"
+import { allOverlays } from "../../data"
 
 export function OverlaysPage() {
     return (
