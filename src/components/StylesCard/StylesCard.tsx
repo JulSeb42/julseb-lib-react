@@ -1,6 +1,6 @@
 /*=============================================== StylesCard ===============================================*/
 
-import { Text } from "../../lib"
+import { Text, capitalize } from "../../lib"
 
 import { StyledStylesCard, Square, Content } from "./styles"
 import type { StylesCardProps } from "./types"
@@ -34,7 +34,9 @@ export function StylesCard({
             <Square $css={css} $type={type} />
 
             <Content>
-                <Text tag="h5">{name}</Text>
+                <Text tag="h5">
+                    {capitalize(type)} {name}
+                </Text>
 
                 {items.map(({ name, value }) => (
                     <Text key={name}>

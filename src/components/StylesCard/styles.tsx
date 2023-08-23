@@ -29,7 +29,7 @@ const Square = styled.span<{ $css: string; $type: CardType }>`
     ${({ $type, $css }) =>
         $type === "radius" &&
         css`
-            background-color: ${({ theme }) => theme.BACKGROUND};
+            background-color: ${({ theme }) => theme.DANGER_100};
             border-radius: ${$css};
             width: ${$css === "var(--radius-round)" && "100%"};
         `}
