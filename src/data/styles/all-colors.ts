@@ -1,7 +1,7 @@
 /*=============================================== All colors ===============================================*/
 
-import type { Color } from "./types"
-import { COLORS_LIGHT, COLORS_DARK } from "../lib"
+import type { Color } from "../types"
+import { COLORS_LIGHT, COLORS_DARK } from "../../lib"
 
 export const colorsLight: Color[] = [
     {

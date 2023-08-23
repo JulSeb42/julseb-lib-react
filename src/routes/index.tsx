@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom"
 import { Homepage } from "../pages/Homepage"
 
 import { ColorsPage } from "../pages/styles/ColorsPage"
+import { OverlaysPage } from "../pages/styles/OverlaysPage"
 
 // prependHere
 
@@ -17,6 +18,7 @@ export const routes: Route[] = [
     { path: "/", element: <Homepage /> },
 
     { path: "/colors", element: <ColorsPage /> },
+    { path: "/overlays", element: <OverlaysPage /> },
     // prependRoute
 ]
 

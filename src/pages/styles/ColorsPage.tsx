@@ -2,7 +2,7 @@
 
 import { Page, ColorCard } from "../../components"
 
-import { colorsLight, colorsDark } from "../../data/all-colors"
+import { colorsLight, colorsDark } from "../../data"
 
 export function ColorsPage() {
     return (
