@@ -2,8 +2,8 @@
 
 import type { ElementType } from "react"
 
-import type { TextProps, TextTag } from "../Text/types"
 import type { LibAllColors, LibSpacers } from "../../types"
+import type { TextProps, TextTag } from "../Text/types"
 
 export type TextIconTag = Exclude<TextTag, "strong" | "em" | "ul" | "ol" | "dl">
 

@@ -14,7 +14,7 @@ describe("<Highlight />", () => {
 
     it("highlights selected text", () => {
         cy.mount(
-            <Highlight data-testid="testid" highlightedText="hello">
+            <Highlight data-testid="testid" highlightedText="hello" tag="small">
                 Hello world
             </Highlight>,
         )
