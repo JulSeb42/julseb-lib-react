@@ -88,7 +88,7 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
             // ? export types from component-types
             {
                 type: "modify",
-                path: "../src/lib/types/components-types.ts",
+                path: "../src/lib/types/components-props.ts",
                 template:
                     'export * from "../components/{{ pascalCase name }}/types"\n$1',
                 pattern: /(\/\/ prependHere)/g,
