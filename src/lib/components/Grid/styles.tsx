@@ -2,12 +2,28 @@
 
 import styled from "styled-components"
 
-import { setDefaultTheme } from "../../"
-import type { } from "../../types"
-import type { } from "./types"
+import { setDefaultTheme, Mixins } from "../../"
+import type {
+    AlignContent,
+    AlignItems,
+    JustifyContent,
+    JustifyItems,
+    LibSpacers,
+} from "../../types"
+import type {} from "./types"
 
-const StyledGrid = styled.div<{ }>`
-
+const StyledGrid = styled.div<{
+    $inline?: boolean
+    $col?: number | string
+    $gap?: LibSpacers
+    $columnGap?: LibSpacers
+    $rowGap?: LibSpacers
+    $justifyItems?: JustifyItems
+    $alignItems?: AlignItems
+    $justifyContent?: JustifyContent
+    $alignContent?: AlignContent
+}>`
+    ${Mixins.Grid}
 `
 
 setDefaultTheme([StyledGrid])

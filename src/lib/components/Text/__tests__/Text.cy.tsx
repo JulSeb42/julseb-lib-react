@@ -8,7 +8,6 @@ import { cssVariables } from "../../.."
 describe("<Text />", () => {
     it("renders <Text /> component with a default tag p", () => {
         cy.mount(<Text data-testid="testid">Hello</Text>)
-
         cy.dataTest("testid")
             .should("exist")
             .should("have.prop", "tagName", "P")

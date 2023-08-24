@@ -3,6 +3,7 @@
 import { createBrowserRouter } from "react-router-dom"
 
 import { Homepage } from "../pages/Homepage"
+import { Generate } from "../pages/Generate"
 
 /*====================== Styles ======================*/
 
@@ -48,6 +49,7 @@ const demos: Route[] = [
 
 export const routes: Route[] = [
     { path: "/", element: <Homepage /> },
+    { path: "/generate", element: <Generate /> },
 
     /*====================== Styles ======================*/
 
@@ -63,7 +65,7 @@ export const routes: Route[] = [
     { path: "/container", element: <ContainerPage /> },
     { path: "/section", element: <SectionPage /> },
     { path: "/grid", element: <GridPage /> },
-// prependRoute
+    // prependRoute
 ]
 
 export const router = createBrowserRouter([...routes, ...demos])
