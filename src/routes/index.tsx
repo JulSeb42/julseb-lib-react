@@ -11,6 +11,7 @@ import { ColorsPage } from "../pages/styles/ColorsPage"
 import { OverlaysPage } from "../pages/styles/OverlaysPage"
 import { TextPage } from "../pages/styles/TextPage"
 import { ShadowsPage } from "../pages/styles/ShadowsPage"
+import { SpacersPage } from "../pages/styles/SpacersPage"
 import { RadiusesPage } from "../pages/styles/RadiusesPage"
 import { ThemeProviderPage } from "../pages/styles/ThemeProviderPage"
 
@@ -19,6 +20,7 @@ import { ThemeProviderPage } from "../pages/styles/ThemeProviderPage"
 import { ContainerPage } from "../pages/layouts/ContainerPage"
 import { SectionPage } from "../pages/layouts/SectionPage"
 import { GridPage } from "../pages/layouts/GridPage"
+import { FlexboxPage } from "../pages/layouts/FlexboxPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -57,6 +59,7 @@ export const routes: Route[] = [
     { path: "/overlays", element: <OverlaysPage /> },
     { path: "/text", element: <TextPage /> },
     { path: "/shadows", element: <ShadowsPage /> },
+    { path: "/spacers", element: <SpacersPage /> },
     { path: "/radiuses", element: <RadiusesPage /> },
     { path: "/theme-provider", element: <ThemeProviderPage /> },
 
@@ -65,6 +68,7 @@ export const routes: Route[] = [
     { path: "/container", element: <ContainerPage /> },
     { path: "/section", element: <SectionPage /> },
     { path: "/grid", element: <GridPage /> },
+    { path: "/flexbox", element: <FlexboxPage /> },
     // prependRoute
 ]
 

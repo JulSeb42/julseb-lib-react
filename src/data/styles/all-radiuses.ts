@@ -1,7 +1,6 @@
 /*=============================================== All radiuses ===============================================*/
 
-import { RADIUSES } from "../../lib"
-
+import { RADIUSES, cssVariables } from "../../lib"
 import type { Variable } from "../types"
 
 export const allRadiuses: Variable[] = [
@@ -9,38 +8,48 @@ export const allRadiuses: Variable[] = [
         name: "XXL",
         variable: "RADIUSES.XXL",
         css: RADIUSES.XXL,
-        value: "24px",
+        value: cssVariables.radiuses.xxl,
     },
     {
         name: "XL",
         variable: "RADIUSES.XL",
         css: RADIUSES.XL,
-        value: "16px",
+        value: cssVariables.radiuses.xl,
     },
     {
         name: "L",
         variable: "RADIUSES.L",
         css: RADIUSES.L,
-        value: "12px",
+        value: cssVariables.radiuses.l,
     },
-    { name: "M", variable: "RADIUSES.M", css: RADIUSES.M, value: "8px" },
-    { name: "S", variable: "RADIUSES.S", css: RADIUSES.S, value: "4px" },
+    {
+        name: "M",
+        variable: "RADIUSES.M",
+        css: RADIUSES.M,
+        value: cssVariables.radiuses.m,
+    },
+    {
+        name: "S",
+        variable: "RADIUSES.S",
+        css: RADIUSES.S,
+        value: cssVariables.radiuses.s,
+    },
     {
         name: "XS",
         variable: "RADIUSES.XS",
         css: RADIUSES.XS,
-        value: "2px",
+        value: cssVariables.radiuses.xs,
     },
     {
         name: "Round",
         variable: "RADIUSES.ROUND",
         css: RADIUSES.ROUND,
-        value: "99em",
+        value: cssVariables.radiuses.round,
     },
     {
         name: "Circle",
         variable: "RADIUSES.CIRCLE",
         css: RADIUSES.CIRCLE,
-        value: "50%",
+        value: cssVariables.radiuses.circle,
     },
 ]

@@ -2,8 +2,6 @@
 
 import { forwardRef, type ForwardedRef } from "react"
 
-import {} from "../../"
-
 import { StyledGrid } from "./styles"
 import type { GridProps } from "./types"
 

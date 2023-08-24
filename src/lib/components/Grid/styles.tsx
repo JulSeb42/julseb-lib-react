@@ -10,7 +10,6 @@ import type {
     JustifyItems,
     LibSpacers,
 } from "../../types"
-import type {} from "./types"
 
 const StyledGrid = styled.div<{
     $inline?: boolean

@@ -3,12 +3,12 @@
 import { Link } from "react-router-dom"
 
 import { Page } from "../../components"
-import { Text } from "../../lib"
+import { Text, Flexbox } from "../../lib"
 
 export function TextPage() {
     return (
         <Page title="Text">
-            <>
+            <Flexbox flexDirection="column" alignItems="stretch">
                 <Text tag="h1" display>
                     Title h1 display
                 </Text>
@@ -28,18 +28,18 @@ export function TextPage() {
                 <Text tag="h5" display>
                     Title h5 display
                 </Text>
-            </>
+            </Flexbox>
 
-            <>
+            <Flexbox flexDirection="column" alignItems="stretch">
                 <Text tag="h1">Title h1</Text>
                 <Text tag="h2">Title h2</Text>
                 <Text tag="h3">Title h3</Text>
                 <Text tag="h4">Title h4</Text>
                 <Text tag="h5">Title h5</Text>
                 <Text tag="h6">Title h6</Text>
-            </>
+            </Flexbox>
 
-            <>
+            <Flexbox flexDirection="column" alignItems="stretch">
                 <Text tag="p">Paragraph</Text>
 
                 <Text tag="p">
@@ -57,7 +57,7 @@ export function TextPage() {
                 <Text tag="p">
                     Paragraph <code>code</code>
                 </Text>
-            </>
+            </Flexbox>
 
             <Text tag="small">Small</Text>
 

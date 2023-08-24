@@ -24,7 +24,7 @@ const StyledNavDemo = styled.nav`
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
-        $gap: "xxs",
+        $gap: "xs",
     })}
 
     a {
