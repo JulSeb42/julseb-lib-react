@@ -3,6 +3,7 @@
 export { ThemeProvider } from "styled-components"
 
 export * from "./Variables"
+export { default as cssVariables } from "./utils/css-variables.json"
 export * from "./Mixins"
 
 export * from "./utils"

@@ -211,7 +211,7 @@
 
     /* Line height */
 
-    --line-height: 1.5;
+    --line-height-body: 1.5;
     --line-height-code: 1.8;
 
     /*===== Shadows =====*/
