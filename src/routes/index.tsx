@@ -21,6 +21,7 @@ import { ContainerPage } from "../pages/layouts/ContainerPage"
 import { SectionPage } from "../pages/layouts/SectionPage"
 import { GridPage } from "../pages/layouts/GridPage"
 import { FlexboxPage } from "../pages/layouts/FlexboxPage"
+import { IconPage } from "../pages/components/IconPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -69,7 +70,8 @@ export const routes: Route[] = [
     { path: "/section", element: <SectionPage /> },
     { path: "/grid", element: <GridPage /> },
     { path: "/flexbox", element: <FlexboxPage /> },
-    // prependRoute
+    { path: "/icon", element: <IconPage /> },
+// prependRoute
 ]
 
 export const router = createBrowserRouter([...routes, ...demos])

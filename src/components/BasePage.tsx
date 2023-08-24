@@ -28,6 +28,7 @@ export function BasePage({ title, children }: BasePageProps) {
                 <title>
                     {title} | {SITE_DATA.TITLE}
                 </title>
+                <link rel="icon" href={SITE_DATA.FAVICON} />
             </Helmet>
 
             {children}

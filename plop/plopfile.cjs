@@ -22,7 +22,7 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 name: "category",
                 message: "Which category?",
                 choices: ["styles", "layouts", "components", "helpers"],
-                default: "layouts",
+                default: "components",
             },
             // ? tag
             {
