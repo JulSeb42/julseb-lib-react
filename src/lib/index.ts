@@ -20,4 +20,5 @@ export * from "./components/Grid"
 export * from "./components/Flexbox"
 export * from "./components/Icon"
 export * from "./components/Key"
+export * from "./components/TextIcon"
 // prependHere

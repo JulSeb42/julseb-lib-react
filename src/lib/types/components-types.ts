@@ -9,4 +9,5 @@ export * from "../components/Grid/types"
 export * from "../components/Flexbox/types"
 export * from "../components/Icon/types"
 export * from "../components/Key/types"
+export * from "../components/TextIcon/types"
 // prependHere

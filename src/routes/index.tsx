@@ -23,6 +23,7 @@ import { GridPage } from "../pages/layouts/GridPage"
 import { FlexboxPage } from "../pages/layouts/FlexboxPage"
 import { IconPage } from "../pages/components/IconPage"
 import { KeyPage } from "../pages/components/KeyPage"
+import { TextIconPage } from "../pages/components/TextIconPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -73,6 +74,7 @@ export const routes: Route[] = [
     { path: "/flexbox", element: <FlexboxPage /> },
     { path: "/icon", element: <IconPage /> },
 { path: "/key", element: <KeyPage /> },
+{ path: "/text-icon", element: <TextIconPage /> },
 // prependRoute
 ]
 

@@ -2,8 +2,6 @@
 
 import { forwardRef, type ForwardedRef } from "react"
 
-import {} from "../../"
-
 import { StyledKey } from "./styles"
 import type { KeyProps } from "./types"
 
