@@ -24,6 +24,7 @@ import { FlexboxPage } from "../pages/layouts/FlexboxPage"
 import { IconPage } from "../pages/components/IconPage"
 import { KeyPage } from "../pages/components/KeyPage"
 import { TextIconPage } from "../pages/components/TextIconPage"
+import { HighlightPage } from "../pages/components/HighlightPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -75,6 +76,7 @@ export const routes: Route[] = [
     { path: "/icon", element: <IconPage /> },
 { path: "/key", element: <KeyPage /> },
 { path: "/text-icon", element: <TextIconPage /> },
+{ path: "/highlight", element: <HighlightPage /> },
 // prependRoute
 ]
 

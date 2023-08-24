@@ -10,4 +10,5 @@ export * from "../components/Flexbox/types"
 export * from "../components/Icon/types"
 export * from "../components/Key/types"
 export * from "../components/TextIcon/types"
+export * from "../components/Highlight/types"
 // prependHere

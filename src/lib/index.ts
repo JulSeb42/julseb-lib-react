@@ -21,4 +21,5 @@ export * from "./components/Flexbox"
 export * from "./components/Icon"
 export * from "./components/Key"
 export * from "./components/TextIcon"
+export * from "./components/Highlight"
 // prependHere
