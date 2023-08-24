@@ -34,6 +34,10 @@ declare global {
     }
 }
 
+beforeEach(() => {
+    cy.viewport(1200, 800)
+})
+
 Cypress.Commands.add("mount", mount)
 
 // Example use:

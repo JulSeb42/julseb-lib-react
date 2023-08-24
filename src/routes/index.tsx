@@ -22,6 +22,7 @@ import { SectionPage } from "../pages/layouts/SectionPage"
 import { GridPage } from "../pages/layouts/GridPage"
 import { FlexboxPage } from "../pages/layouts/FlexboxPage"
 import { IconPage } from "../pages/components/IconPage"
+import { KeyPage } from "../pages/components/KeyPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -71,6 +72,7 @@ export const routes: Route[] = [
     { path: "/grid", element: <GridPage /> },
     { path: "/flexbox", element: <FlexboxPage /> },
     { path: "/icon", element: <IconPage /> },
+{ path: "/key", element: <KeyPage /> },
 // prependRoute
 ]
 
