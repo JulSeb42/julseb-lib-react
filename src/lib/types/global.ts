@@ -1,5 +1,6 @@
 /*=============================================== Global types ===============================================*/
 
+import type { HTMLAttributes, ElementType } from "react"
 import type { Property } from "csstype"
 
 import type { typeValues } from "./type-values"
@@ -25,6 +26,13 @@ export type LibValidation = keyof typeof typeValues.validation | undefined
 export type LibThemeNames = keyof typeof typeValues.theme
 
 /*====================== Common component props ======================*/
+
+/* Component base */
+
+export type LibComponentBase<T> = HTMLAttributes<T> & {
+    "data-testid"?: string
+    as?: ElementType
+}
 
 /* Box shadow */
 

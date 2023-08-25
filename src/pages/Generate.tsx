@@ -27,18 +27,33 @@ export function Generate() {
     const colorsLight = Object.entries(cssVariables.shadows)
 
     const propsDoc = [
-        "data-testid: string",
-        "as: ElementType",
-        "height: number",
-        "maxWidth: string | number",
-        "color: LibAllColors",
-        "margin: LibMarginProps",
-        "isRounded: boolean",
+        "$width: string | number",
+        "$maxWidth: string | number",
+        "$height: string | number",
+        "$backgroundColor: LibAllColors",
+        "$aspectRatio: string",
+        "$border: LibBorderProps",
+        "$borderRadius: LibRadiusProps",
+        "$flex: string | number",
+        "$flexGrow: string | number",
+        "$padding: LibPaddingProps",
     ]
 
     return (
         <Page title="Generate">
             <ul>
+                {propsDoc.map(p => {
+                    const prop = p.split(":")[0]
+
+                    return (
+                        <li key={p}>{`${prop.split(":")[0]}={${prop.replace(
+                            "$",
+                            ""
+                        )}}`}</li>
+                    )
+                })}
+            </ul>
+            {/* <ul>
                 {propsDoc.map(p => (
                     <li key={p}>
                         {" "}
@@ -48,7 +63,7 @@ export function Generate() {
                             .replace("LibAllColors", "Any color of the library")}
                     </li>
                 ))}
-            </ul>
+            </ul> */}
             {/* <ul>
                 {colorsLight.map(color => {
                     const name = color[0]

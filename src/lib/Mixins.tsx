@@ -42,6 +42,7 @@ import type {
     LibFontSizes,
     LibFontWeights,
     LibMarginProps,
+    LibBorderProps,
 } from "./types"
 
 type IconMixin = {
@@ -151,7 +152,7 @@ export const ThemeLight = {
     },
 
     Colors50: (
-        $color: Exclude<LibColorsShort, "black" | "white"> = "primary",
+        $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
         const colorsMap = new Map<LibColorsShort, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_50],
@@ -282,7 +283,7 @@ export const ThemeDark = {
     },
 
     Colors50: (
-        $color: Exclude<LibColorsShort, "black" | "white"> = "primary",
+        $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
         const colorsMap = new Map<LibColorsShort, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_50],
@@ -439,7 +440,7 @@ export const Mixins = {
     },
 
     FontSize: (
-        $fontSize: LibFontSizes | "inherit" | number | undefined = "body",
+        $fontSize: LibFontSizes | "inherit" | number | undefined = "body"
     ) => {
         if (!$fontSize) return null
 
@@ -652,4 +653,23 @@ export const Mixins = {
         column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
         row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
     `,
+
+    Border: ($border?: LibBorderProps) => {
+        if (!$border) return null
+
+        const { style, width, color } = $border
+
+        const defaultValues: LibBorderProps = {
+            style: "solid",
+            width: 1,
+            color: "gray-200",
+        }
+
+        return css`
+            border-style: ${style || defaultValues.style};
+            border-width: ${Mixins.Spacer(width || defaultValues.width)};
+            border-color: ${({ theme }) =>
+                theme.AllColors(color || defaultValues.color)};
+        `
+    },
 }

@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { setDefaultTheme, Mixins, stringifyPx, RADIUSES } from "../../"
 import type { LibAllColors, LibMarginProps } from "../../types"
-import type {} from "./types"
 
 const StyledHr = styled.hr<{
     $color?: LibAllColors
