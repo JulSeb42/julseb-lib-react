@@ -7,7 +7,6 @@ import { Text, uuid } from "../../"
 import type { LinkifyProps } from "./types"
 
 const URL_REGEX =
-    // eslint-disable-next-line
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm
 
 export const Linkify = forwardRef(
@@ -20,7 +19,7 @@ export const Linkify = forwardRef(
                 HTMLUListElement &
                 HTMLOListElement &
                 HTMLDListElement
-        >,
+        >
     ) => {
         const words: string[] = children ? children.split(" ") : []
 
@@ -40,9 +39,9 @@ export const Linkify = forwardRef(
                         </Fragment>
                     ) : (
                         word + " "
-                    ),
+                    )
                 )}
             </Text>
         )
-    },
+    }
 )

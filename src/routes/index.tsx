@@ -77,13 +77,13 @@ export const routes: Route[] = [
     { path: "/grid", element: <GridPage /> },
     { path: "/flexbox", element: <FlexboxPage /> },
     { path: "/icon", element: <IconPage /> },
-{ path: "/key", element: <KeyPage /> },
-{ path: "/text-icon", element: <TextIconPage /> },
-{ path: "/highlight", element: <HighlightPage /> },
-{ path: "/linkify", element: <LinkifyPage /> },
-{ path: "/hr", element: <HrPage /> },
-{ path: "/skeleton", element: <SkeletonPage /> },
-// prependRoute
+    { path: "/key", element: <KeyPage /> },
+    { path: "/text-icon", element: <TextIconPage /> },
+    { path: "/highlight", element: <HighlightPage /> },
+    { path: "/linkify", element: <LinkifyPage /> },
+    { path: "/hr", element: <HrPage /> },
+    { path: "/skeleton", element: <SkeletonPage /> },
+    // prependRoute
 ]
 
 export const router = createBrowserRouter([...routes, ...demos])
