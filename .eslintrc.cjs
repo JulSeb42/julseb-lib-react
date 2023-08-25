@@ -1,7 +1,11 @@
 /* eslint-env node */
 module.exports = {
     root: true,
-    extends: ["plugin:react-hooks/recommended", "plugin:react/recommended"],
+    extends: [
+        "plugin:react-hooks/recommended",
+        "plugin:react/recommended",
+        "plugin:storybook/recommended"
+    ],
     parser: "@typescript-eslint/parser",
     plugins: [
         "@typescript-eslint",
