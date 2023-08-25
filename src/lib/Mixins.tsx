@@ -150,7 +150,7 @@ export const ThemeLight = {
     },
 
     Colors50: (
-        $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
+        $color: Exclude<LibColorsShort, "black" | "white"> = "primary",
     ) => {
         const colorsMap = new Map<LibColorsShort, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_50],
@@ -281,7 +281,7 @@ export const ThemeDark = {
     },
 
     Colors50: (
-        $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
+        $color: Exclude<LibColorsShort, "black" | "white"> = "primary",
     ) => {
         const colorsMap = new Map<LibColorsShort, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_50],
@@ -319,9 +319,17 @@ export const Mixins = {
         $size = 16,
         $isLibIcon,
     }: IconMixin) => css`
+        /* content: "";
+        mask: url(${$isLibIcon ? `${$name}` : `/icons/${$name}.svg`}) no-repeat
+            50% 50%;
+        mask: url("/icons/${$name}.svg") no-repeat 50% 50%;
+        mask-size: cover;
+        background-color: ${({ theme }) => theme.AllColors($color)};
+        display: inline-block;
+        width: ${$size}px;
+        height: ${$size}px; */
         content: "";
-        mask: url("${$isLibIcon ? `${$name}` : `/icons/${$name}.svg`}")
-            no-repeat 50% 50%;
+        mask: url("/icons/${$name}.svg") no-repeat 50% 50%;
         mask-size: cover;
         background-color: ${({ theme }) => theme.AllColors($color)};
         display: inline-block;
@@ -430,7 +438,7 @@ export const Mixins = {
     },
 
     FontSize: (
-        $fontSize: LibFontSizes | "inherit" | number | undefined = "body"
+        $fontSize: LibFontSizes | "inherit" | number | undefined = "body",
     ) => {
         if (!$fontSize) return null
 
