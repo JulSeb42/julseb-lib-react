@@ -22,7 +22,7 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 name: "category",
                 message: "Which category?",
                 choices: ["styles", "layouts", "components", "helpers"],
-                default: "styles",
+                default: "components",
             },
             // ? tag
             {
@@ -71,6 +71,12 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 templateFiles: "./templates/component/*.hbs",
                 base: "./templates/component",
             },
+            // ? create test file
+            {
+                type: "add",
+                path: "../src/lib/components/{{ pascalCase name }}/__tests__/{{ pascalCase name }}.cy.tsx",
+                templateFile: "./templates/component/__tests__/test.hbs",
+            },
             // ? export from index
             {
                 type: "modify",
@@ -82,7 +88,7 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
             // ? export types from component-types
             {
                 type: "modify",
-                path: "../src/lib/types/components-types.ts",
+                path: "../src/lib/types/components-props.ts",
                 template:
                     'export * from "../components/{{ pascalCase name }}/types"\n$1',
                 pattern: /(\/\/ prependHere)/g,
@@ -98,7 +104,7 @@ module.exports = (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 type: "modify",
                 path: "../src/routes/index.tsx",
                 template:
-                    'import { {{ pascalCase name }}Page } from "../pages/{{ category }}/{{ pascalCase name }}Page.tsx"\n$1',
+                    'import { {{ pascalCase name }}Page } from "../pages/{{ category }}/{{ pascalCase name }}Page"\n$1',
                 pattern: /(\/\/ prependHere)/g,
             },
             // ? add demo to routes arr

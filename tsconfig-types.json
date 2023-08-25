@@ -26,8 +26,8 @@
         "outDir": "./types"
     },
     "files": [
-        "./types/common-types.ts",
-        "./types/component-props.ts",
+        "./types/global.ts",
+        "./types/components-props.ts",
         "./types/index.ts",
     ],
 }

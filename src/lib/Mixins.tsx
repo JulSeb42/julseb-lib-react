@@ -17,6 +17,8 @@ import {
     SHADOWS,
     SPACERS,
     TRANSITIONS,
+    FONT_SIZES,
+    FONT_WEIGHTS,
 } from "./Variables"
 
 import type {
@@ -37,6 +39,8 @@ import type {
     AlignContent,
     FlexDirection,
     FlexWrap,
+    LibFontSizes,
+    LibFontWeights,
 } from "./types"
 
 type IconMixin = {
@@ -71,7 +75,7 @@ export const ThemeLight = {
     },
 
     ColorsHoverHover: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_300],
             ["secondary", COLORS_LIGHT.SECONDARY_300],
             ["success", COLORS_LIGHT.SUCCESS_300],
@@ -86,7 +90,7 @@ export const ThemeLight = {
     },
 
     ColorsHoverActive: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_600],
             ["secondary", COLORS_LIGHT.SECONDARY_600],
             ["success", COLORS_LIGHT.SUCCESS_600],
@@ -101,7 +105,7 @@ export const ThemeLight = {
     },
 
     ColorsGhostDefault: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_50],
             ["secondary", COLORS_LIGHT.SECONDARY_50],
             ["success", COLORS_LIGHT.SUCCESS_50],
@@ -116,7 +120,7 @@ export const ThemeLight = {
     },
 
     ColorsGhostHover: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_200],
             ["secondary", COLORS_LIGHT.SECONDARY_200],
             ["success", COLORS_LIGHT.SUCCESS_200],
@@ -131,7 +135,7 @@ export const ThemeLight = {
     },
 
     ColorsGhostActive: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_100],
             ["secondary", COLORS_LIGHT.SECONDARY_100],
             ["success", COLORS_LIGHT.SUCCESS_100],
@@ -148,7 +152,7 @@ export const ThemeLight = {
     Colors50: (
         $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
-        const colorsMap = new Map<LibColorsShort, string>([
+        const colorsMap = new Map<LibColorsShort, COLORS_LIGHT>([
             ["primary", COLORS_LIGHT.PRIMARY_50],
             ["secondary", COLORS_LIGHT.SECONDARY_50],
             ["success", COLORS_LIGHT.SUCCESS_50],
@@ -202,7 +206,7 @@ export const ThemeDark = {
     },
 
     ColorsHoverHover: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_300],
             ["secondary", COLORS_DARK.SECONDARY_300],
             ["success", COLORS_DARK.SUCCESS_300],
@@ -217,7 +221,7 @@ export const ThemeDark = {
     },
 
     ColorsHoverActive: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_600],
             ["secondary", COLORS_DARK.SECONDARY_600],
             ["success", COLORS_DARK.SUCCESS_600],
@@ -232,7 +236,7 @@ export const ThemeDark = {
     },
 
     ColorsGhostDefault: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_50],
             ["secondary", COLORS_DARK.SECONDARY_50],
             ["success", COLORS_DARK.SUCCESS_50],
@@ -247,7 +251,7 @@ export const ThemeDark = {
     },
 
     ColorsGhostHover: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_200],
             ["secondary", COLORS_DARK.SECONDARY_200],
             ["success", COLORS_DARK.SUCCESS_200],
@@ -262,7 +266,7 @@ export const ThemeDark = {
     },
 
     ColorsGhostActive: ($color: LibColorsHover = "primary") => {
-        const colorsMap = new Map<LibColorsHover, string>([
+        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_100],
             ["secondary", COLORS_DARK.SECONDARY_100],
             ["success", COLORS_DARK.SUCCESS_100],
@@ -279,7 +283,7 @@ export const ThemeDark = {
     Colors50: (
         $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
-        const colorsMap = new Map<LibColorsShort, string>([
+        const colorsMap = new Map<LibColorsShort, COLORS_DARK>([
             ["primary", COLORS_DARK.PRIMARY_50],
             ["secondary", COLORS_DARK.SECONDARY_50],
             ["success", COLORS_DARK.SUCCESS_50],
@@ -328,7 +332,7 @@ export const Mixins = {
     Overlay: ($overlay: LibOverlays | undefined) => {
         if (!$overlay) return null
 
-        const overlaysMap = new Map<LibOverlays, string>([
+        const overlaysMap = new Map<LibOverlays, OVERLAYS>([
             ["black-50", OVERLAYS.BLACK_50],
             ["black-80", OVERLAYS.BLACK_80],
             ["white-50", OVERLAYS.WHITE_50],
@@ -343,7 +347,7 @@ export const Mixins = {
     BorderRadius: ($borderRadius: LibRadiusProps | undefined) => {
         if (!$borderRadius) return null
 
-        const radiusMap = new Map<LibRadiusProps, string>([
+        const radiusMap = new Map<LibRadiusProps, RADIUSES>([
             ["xxl", RADIUSES.XXL],
             ["xl", RADIUSES.XL],
             ["l", RADIUSES.L],
@@ -382,7 +386,7 @@ export const Mixins = {
     Transition: ($transition: LibTransitions | undefined) => {
         if (!$transition) return null
 
-        const transitionsMap = new Map([
+        const transitionsMap = new Map<LibTransitions, TRANSITIONS>([
             ["short", TRANSITIONS.SHORT],
             ["long", TRANSITIONS.LONG],
             ["bezier", TRANSITIONS.BEZIER],
@@ -394,7 +398,7 @@ export const Mixins = {
     Shadow: ($shadow: LibShadows | undefined) => {
         if (!$shadow) return null
 
-        const shadowMap = new Map<LibShadows, string>([
+        const shadowMap = new Map<LibShadows, SHADOWS>([
             ["xxl", SHADOWS.XXL],
             ["xl", SHADOWS.XL],
             ["l", SHADOWS.L],
@@ -425,12 +429,54 @@ export const Mixins = {
         `
     },
 
-    Spacers: ($spacer: LibSpacers | undefined) => {
+    FontSize: (
+        $fontSize: LibFontSizes | "inherit" | number | undefined = "body"
+    ) => {
+        if (!$fontSize) return null
+
+        if (typeof $fontSize === "number") return stringifyPx($fontSize)
+
+        const fontSizesMap = new Map<
+            LibFontSizes | "inherit",
+            FONT_SIZES | "inherit"
+        >([
+            ["display-h1", FONT_SIZES.DISPLAY_H1],
+            ["display-h2", FONT_SIZES.DISPLAY_H2],
+            ["display-h3", FONT_SIZES.DISPLAY_H3],
+            ["display-h4", FONT_SIZES.DISPLAY_H4],
+            ["display-h5", FONT_SIZES.DISPLAY_H5],
+            ["h1", FONT_SIZES.H1],
+            ["h2", FONT_SIZES.H2],
+            ["h3", FONT_SIZES.H3],
+            ["h4", FONT_SIZES.H4],
+            ["h5", FONT_SIZES.H5],
+            ["h6", FONT_SIZES.H6],
+            ["body", FONT_SIZES.BODY],
+            ["small", FONT_SIZES.SMALL],
+            ["inherit", "inherit"],
+        ])
+
+        return fontSizesMap.get($fontSize)
+    },
+
+    FontWeight: ($fontWeight: LibFontWeights | undefined = "regular") => {
+        if (!$fontWeight) return null
+
+        const fontWeightsMap = new Map<LibFontWeights, FONT_WEIGHTS>([
+            ["regular", FONT_WEIGHTS.REGULAR],
+            ["bold", FONT_WEIGHTS.BOLD],
+            ["black", FONT_WEIGHTS.BLACK],
+        ])
+
+        return fontWeightsMap.get($fontWeight)
+    },
+
+    Spacer: ($spacer: LibSpacers | undefined) => {
         if (!$spacer) return null
 
         if (typeof $spacer === "number") return stringifyPx($spacer)
 
-        const spacersMap = new Map([
+        const spacersMap = new Map<LibSpacers, SPACERS>([
             ["xxl", SPACERS.XXL],
             ["xl", SPACERS.XL],
             ["l", SPACERS.L],
@@ -452,23 +498,54 @@ export const Mixins = {
         }
     `,
 
+    StretchTags: css`
+        & > div,
+        & > h1,
+        & > h2,
+        & > h3,
+        & > h4,
+        & > h5,
+        & > h6,
+        & > p,
+        & > ul,
+        & > ol,
+        & > dl,
+        & > section,
+        & > input,
+        & > article,
+        & > hr,
+        & > pre,
+        & > table,
+        & > header,
+        & > footer,
+        & > iframe,
+        & > nav,
+        & > noscript,
+        & > picture,
+        & > select,
+        & > textarea,
+        & > form {
+            align-self: stretch;
+        }
+    `,
+
     Padding: ($padding: LibPaddingProps | undefined) => {
         if (!$padding) return null
 
         if (typeof $padding === "string" || typeof $padding === "number")
             return css`
-                padding: ${Mixins.Spacers($padding)};
+                padding: ${Mixins.Spacer($padding)};
             `
 
         return css`
             padding-left: ${($padding?.left || $padding?.leftRight) &&
-            Mixins.Spacers($padding?.left || $padding?.leftRight)};
+            Mixins.Spacer($padding?.left || $padding?.leftRight)};
             padding-top: ${($padding?.top || $padding?.topBottom) &&
-            Mixins.Spacers($padding?.top || $padding?.topBottom)};
+            Mixins.Spacer($padding?.top || $padding?.topBottom)};
             padding-right: ${($padding?.right || $padding?.leftRight) &&
-            Mixins.Spacers($padding?.right || $padding?.leftRight)};
+            Mixins.Spacer($padding?.right || $padding?.leftRight)};
             padding-bottom: ${($padding?.bottom || $padding?.topBottom) &&
-            Mixins.Spacers($padding?.bottom || $padding?.topBottom)};
+            Mixins.Spacer($padding?.bottom || $padding?.topBottom)};
         `
     },
 
@@ -497,9 +574,9 @@ export const Mixins = {
         grid-template-columns: ${$col && typeof $col === "number"
             ? `repeat(${$col}, 1fr)`
             : $col};
-        gap: ${$gap && Mixins.Spacers($gap)};
-        column-gap: ${$columnGap && Mixins.Spacers($columnGap)};
-        row-gap: ${$rowGap && Mixins.Spacers($rowGap)};
+        gap: ${$gap && Mixins.Spacer($gap)};
+        column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
+        row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
         justify-content: ${$justifyContent};
         justify-items: ${$justifyItems};
         align-items: ${$alignItems};
@@ -536,8 +613,8 @@ export const Mixins = {
         justify-items: ${$justifyItems};
         align-items: ${$alignItems};
         align-content: ${$alignContent};
-        gap: ${$gap && Mixins.Spacers($gap)};
-        column-gap: ${$columnGap && Mixins.Spacers($columnGap)};
-        row-gap: ${$rowGap && Mixins.Spacers($rowGap)};
+        gap: ${$gap && Mixins.Spacer($gap)};
+        column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
+        row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
     `,
 }

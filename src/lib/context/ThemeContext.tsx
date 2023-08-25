@@ -7,8 +7,10 @@ import {
     type ReactNode,
     useContext,
 } from "react"
-import type { ThemeType, ThemeContextProps, LibThemeNames } from "../types"
+
 import { Themes } from "../types/theme"
+
+import type { ThemeType, ThemeContextProps, LibThemeNames } from "../types"
 
 export const ThemeContext = createContext<ThemeContextProps | null>(null)
 
@@ -22,7 +24,7 @@ export function ThemeProviderWrapper({ children }: ThemeProviderProps) {
     >(undefined)
 
     const [theme, setTheme] = useState<ThemeType>(
-        selectedTheme === "dark" ? Themes.dark : Themes.light
+        selectedTheme === "dark" ? Themes.dark : Themes.light,
     )
 
     const body = document.body

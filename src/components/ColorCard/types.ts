@@ -1,7 +1,11 @@
 /*=============================================== ColorCard types ===============================================*/
 
-import type { Color } from "../../data/types"
+import type { RequireAtLeastOne } from "../../lib/types"
+import type { Color, Variable } from "../../data/types"
 
-export interface ColorCardProps {
-    color: Color
+interface CardProps {
+    color?: Color
+    overlay?: Variable
 }
+
+export type ColorCardProps = RequireAtLeastOne<CardProps, "color" | "overlay">
