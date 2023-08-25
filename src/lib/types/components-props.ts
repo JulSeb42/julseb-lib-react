@@ -12,4 +12,5 @@ export * from "../components/Key/types"
 export * from "../components/TextIcon/types"
 export * from "../components/Highlight/types"
 export * from "../components/Linkify/types"
+export * from "../components/Hr/types"
 // prependHere

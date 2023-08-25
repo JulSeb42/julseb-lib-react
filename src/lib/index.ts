@@ -23,4 +23,5 @@ export * from "./components/Key"
 export * from "./components/TextIcon"
 export * from "./components/Highlight"
 export * from "./components/Linkify"
+export * from "./components/Hr"
 // prependHere

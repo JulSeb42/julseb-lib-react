@@ -26,6 +26,7 @@ import { KeyPage } from "../pages/components/KeyPage"
 import { TextIconPage } from "../pages/components/TextIconPage"
 import { HighlightPage } from "../pages/components/HighlightPage"
 import { LinkifyPage } from "../pages/components/LinkifyPage"
+import { HrPage } from "../pages/components/HrPage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -79,6 +80,7 @@ export const routes: Route[] = [
 { path: "/text-icon", element: <TextIconPage /> },
 { path: "/highlight", element: <HighlightPage /> },
 { path: "/linkify", element: <LinkifyPage /> },
+{ path: "/hr", element: <HrPage /> },
 // prependRoute
 ]
 

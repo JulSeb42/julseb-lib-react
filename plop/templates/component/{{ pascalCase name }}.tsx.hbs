@@ -7,6 +7,12 @@ import { {{ pascalCase other }} } from "../../"
 import { Styled{{ pascalCase name }} } from "./styles"
 import type { {{ pascalCase name }}Props } from "./types"
 
+/**
+ * @prop data-testid: string
+ * @prop ref: ForwardedRef<HTML{{ pascalCase attribute }}Element>
+{{#if as}} * @prop as: HTML Element{{/if}}
+{{#if children}} * @prop children: ReactNode{{/if}}
+ */
 export const {{ pascalCase name }} = forwardRef(
     (
         { "data-testid": testid,{{#if as}} as,{{/if}}{{#if children}} children,{{/if}} ...rest }: {{ pascalCase name }}Props,

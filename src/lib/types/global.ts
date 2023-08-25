@@ -54,12 +54,26 @@ export type LibRadiusProps =
 export type LibPaddingProps =
     | LibSpacers
     | {
-          left?: LibSpacers
-          top?: LibSpacers
-          right?: LibSpacers
-          bottom?: LibSpacers
-          leftRight?: LibSpacers
-          topBottom?: LibSpacers
+          left?: LibSpacers | "auto"
+          top?: LibSpacers | "auto"
+          right?: LibSpacers | "auto"
+          bottom?: LibSpacers | "auto"
+          leftRight?: LibSpacers | "auto"
+          topBottom?: LibSpacers | "auto"
+      }
+
+export type LibMarginProps =
+    | LibSpacers
+    | undefined
+    | "auto"
+    | "0 auto"
+    | {
+          left?: LibSpacers | "auto"
+          top?: LibSpacers | "auto"
+          right?: LibSpacers | "auto"
+          bottom?: LibSpacers | "auto"
+          leftRight?: LibSpacers | "auto"
+          topBottom?: LibSpacers | "auto"
       }
 
 /* Border */

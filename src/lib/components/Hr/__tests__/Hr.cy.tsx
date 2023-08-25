@@ -1,0 +1,63 @@
+/*=============================================== Hr tests ===============================================*/
+
+import { Hr } from "../Hr"
+import { cssVariables, stringifyPx } from "../../.."
+
+describe("<Hr />", () => {
+    it("renders <Hr /> component", () => {
+        cy.mount(<Hr data-testid="testid" />)
+        cy.dataTest("testid")
+            .should("exist")
+            .should("have.prop", "tagName", "HR")
+            .should("have.css", "height", "1px")
+            .should(
+                "have.css",
+                "background-color",
+                cssVariables.colors.light["gray-200"].rgb,
+            )
+            .should("have.css", "max-width", "100%")
+            .invoke("height")
+            .should("equal", 1)
+    })
+    it("renders a set height", () => {
+        const height = 8
+        cy.mount(<Hr data-testid="testid" height={height} />)
+        cy.dataTest("testid").invoke("height").should("equal", height)
+    })
+    it("renders a set max width", () => {
+        const maxWidth = 200
+        cy.mount(<Hr data-testid="testid" maxWidth={maxWidth} />)
+        cy.dataTest("testid").should("have.css", "max-width", `${maxWidth}px`)
+    })
+    it("renders with background color `primary-400`", () => {
+        cy.mount(<Hr data-testid="testid" color="primary-400" />)
+        cy.dataTest("testid").should(
+            "have.css",
+            "background-color",
+            cssVariables.colors.light["primary-400"].rgb,
+        )
+    })
+    it("renders with margin top 24px, margin bottom 16px and margins left & right 8px", () => {
+        cy.mount(
+            <Hr
+                data-testid="testid"
+                margin={{ top: "l", bottom: "m", leftRight: "xs" }}
+            />,
+        )
+        cy.dataTest("testid")
+            .should("have.css", "margin-top", cssVariables.spacers.l)
+            .should("have.css", "margin-bottom", cssVariables.spacers.m)
+            .should("have.css", "margin-left", cssVariables.spacers.xs)
+            .should("have.css", "margin-right", cssVariables.spacers.xs)
+    })
+    it("renders a rounded line", () => {
+        cy.mount(<Hr data-testid="testid" isRounded />)
+        cy.dataTest("testid").should(
+            "have.css",
+            "border-radius",
+            stringifyPx(
+                Number(cssVariables.radiuses.round.replace("em", "")) * 16,
+            ),
+        )
+    })
+})

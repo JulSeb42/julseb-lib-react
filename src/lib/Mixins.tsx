@@ -41,6 +41,7 @@ import type {
     FlexWrap,
     LibFontSizes,
     LibFontWeights,
+    LibMarginProps,
 } from "./types"
 
 type IconMixin = {
@@ -479,12 +480,12 @@ export const Mixins = {
         return fontWeightsMap.get($fontWeight)
     },
 
-    Spacer: ($spacer: LibSpacers | undefined) => {
+    Spacer: ($spacer: LibSpacers | "auto" | undefined) => {
         if (!$spacer) return null
 
         if (typeof $spacer === "number") return stringifyPx($spacer)
 
-        const spacersMap = new Map<LibSpacers, SPACERS>([
+        const spacersMap = new Map<LibSpacers | "auto", SPACERS | "auto">([
             ["xxl", SPACERS.XXL],
             ["xl", SPACERS.XL],
             ["l", SPACERS.L],
@@ -492,6 +493,7 @@ export const Mixins = {
             ["s", SPACERS.S],
             ["xs", SPACERS.XS],
             ["xxs", SPACERS.XXS],
+            ["auto", "auto"],
         ])
 
         return spacersMap.get($spacer)
@@ -554,6 +556,31 @@ export const Mixins = {
             Mixins.Spacer($padding?.right || $padding?.leftRight)};
             padding-bottom: ${($padding?.bottom || $padding?.topBottom) &&
             Mixins.Spacer($padding?.bottom || $padding?.topBottom)};
+        `
+    },
+
+    Margin: ($margin: LibMarginProps) => {
+        if (!$margin) return null
+
+        if ($margin === "0 auto")
+            return css`
+                margin: 0 auto;
+            `
+
+        if (typeof $margin === "string" || typeof $margin === "number")
+            return css`
+                margin: ${Mixins.Spacer($margin)};
+            `
+
+        return css`
+            margin-left: ${($margin?.left || $margin?.leftRight) &&
+            Mixins.Spacer($margin?.left || $margin?.leftRight)};
+            margin-top: ${($margin?.top || $margin?.topBottom) &&
+            Mixins.Spacer($margin?.top || $margin?.topBottom)};
+            margin-right: ${($margin?.right || $margin?.leftRight) &&
+            Mixins.Spacer($margin?.right || $margin?.leftRight)};
+            margin-bottom: ${($margin?.bottom || $margin?.topBottom) &&
+            Mixins.Spacer($margin?.bottom || $margin?.topBottom)};
         `
     },
 
