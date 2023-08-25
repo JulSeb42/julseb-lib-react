@@ -1,12 +1,12 @@
 /*=============================================== Hr types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
+import type {
+    LibAllColors,
+    LibComponentBase,
+    LibMarginProps,
+} from "../../types"
 
-import type { LibAllColors, LibMarginProps } from "../../types"
-
-export interface HrProps extends HTMLAttributes<HTMLHRElement> {
-    "data-testid"?: string
-    as?: ElementType
+export interface HrProps extends LibComponentBase<HTMLHRElement> {
     height?: number
     maxWidth?: string | number
     color?: LibAllColors

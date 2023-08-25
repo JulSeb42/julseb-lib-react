@@ -1,15 +1,11 @@
 /*=============================================== Key types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
-
-import type { LibColorsHover } from "../../types"
+import type { LibColorsHover, LibComponentBase } from "../../types"
 
 const sizes = { large: "large", small: "small" } as const
 export type KeySize = keyof typeof sizes
 
-export interface KeyProps extends HTMLAttributes<HTMLSpanElement> {
-    "data-testid"?: string
-    as?: ElementType
+export interface KeyProps extends LibComponentBase<HTMLSpanElement> {
     keys: string[]
     size?: KeySize
     accentColor?: LibColorsHover

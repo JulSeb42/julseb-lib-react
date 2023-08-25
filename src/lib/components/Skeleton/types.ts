@@ -1,10 +1,9 @@
 /*=============================================== Skeleton types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
-
 import type {
     LibAllColors,
     LibBorderProps,
+    LibComponentBase,
     LibPaddingProps,
     LibRadiusProps,
 } from "../../types"
@@ -30,16 +29,11 @@ export interface SkeletonCardProps extends FlexboxProps, CommonSkeletonProps {
     isShiny?: boolean
 }
 
-export interface SkeletonShineProps extends HTMLAttributes<HTMLSpanElement> {
-    "data-testid"?: string
-    as?: ElementType
-}
+export type SkeletonShineProps = LibComponentBase<HTMLSpanElement>
 
 export interface SkeletonProps
-    extends HTMLAttributes<HTMLDivElement>,
+    extends LibComponentBase<HTMLDivElement>,
         CommonSkeletonProps {
-    "data-testid"?: string
-    as?: ElementType
     animation?: SkeletonAnimation
     children?: never
 }

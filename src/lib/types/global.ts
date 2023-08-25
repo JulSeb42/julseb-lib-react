@@ -29,7 +29,7 @@ export type LibThemeNames = keyof typeof typeValues.theme
 
 /* Component base */
 
-export type LibComponentBase<T> = HTMLAttributes<T> & {
+export interface LibComponentBase<T> extends HTMLAttributes<T> {
     "data-testid"?: string
     as?: ElementType
 }

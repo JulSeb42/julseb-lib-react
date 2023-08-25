@@ -1,10 +1,8 @@
 /*=============================================== {{ pascalCase name }} types ===============================================*/
 
-import type { HTMLAttributes{{#if as}}, ElementType{{/if}} } from "react"
+import type { LibComponentBase{{#if common}}, {{common}}{{/if}} } from "../../types"
 
-import type { {{ common }} } from "../../types"
-
-export interface {{ pascalCase name }}Props extends HTMLAttributes<HTML{{ pascalCase attribute }}Element> {
+export interface {{ pascalCase name }}Props extends {{#if as}}LibComponentBase<HTML{{ pascalCase attribute }}Element>{{#else}}Exclude<LibComponentBase<HTML{{ pascalCase attribute }}Element>, "as">{{/if}} {
     "data-testid"?: string
     {{#if as}}
     as?: ElementType

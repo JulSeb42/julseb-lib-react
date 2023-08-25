@@ -1,8 +1,11 @@
 /*=============================================== Text types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
-
-import type { TextAlign, LibAllColors, LibColorsHover } from "../../types"
+import type {
+    LibAllColors,
+    LibColorsHover,
+    LibComponentBase,
+    TextAlign,
+} from "../../types"
 
 const textTags = {
     h1: "h1",
@@ -23,9 +26,7 @@ const textTags = {
 
 export type TextTag = keyof typeof textTags
 
-interface TextPropsBase extends HTMLAttributes<HTMLElement> {
-    "data-testid"?: string
-    as?: ElementType
+interface TextPropsBase extends LibComponentBase<HTMLElement> {
     color?: LibAllColors
     linkColor?: LibColorsHover
     textAlign?: TextAlign
@@ -53,4 +54,3 @@ interface TextPropsOther extends TextPropsBase {
 }
 
 export type TextProps = TextPropsDisplay | TextPropsOther
-

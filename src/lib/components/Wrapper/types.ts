@@ -1,8 +1,5 @@
 /*=============================================== Wrapper types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
+import type { LibComponentBase } from "../../types"
 
-export interface WrapperProps extends HTMLAttributes<HTMLDivElement> {
-    "data-testid"?: string
-    as?: ElementType
-}
+export type WrapperProps = LibComponentBase<HTMLDivElement>

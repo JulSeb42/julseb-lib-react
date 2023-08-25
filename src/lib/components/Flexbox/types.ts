@@ -1,8 +1,7 @@
 /*=============================================== Flexbox types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
-
 import type {
+    LibComponentBase,
     AlignContent,
     AlignItems,
     FlexDirection,
@@ -12,9 +11,7 @@ import type {
     LibSpacers,
 } from "../../types"
 
-export interface FlexboxProps extends HTMLAttributes<HTMLDivElement> {
-    "data-testid"?: string
-    as?: ElementType
+export interface FlexboxProps extends LibComponentBase<HTMLDivElement> {
     inline?: boolean
     flexDirection?: FlexDirection
     flexWrap?: FlexWrap

@@ -1,13 +1,11 @@
 /*=============================================== Aside types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
+import type { LibComponentBase } from "../../types"
 
 const asideSizes = { default: "default", small: "small" } as const
 export type AsideSize = keyof typeof asideSizes | number
 
-export interface AsideProps extends HTMLAttributes<HTMLDivElement> {
-    "data-testid"?: string
-    as?: ElementType
+export interface AsideProps extends LibComponentBase<HTMLDivElement> {
     size?: AsideSize
     minHeight?: string | number
 }

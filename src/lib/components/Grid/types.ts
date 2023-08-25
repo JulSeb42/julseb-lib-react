@@ -1,18 +1,15 @@
 /*=============================================== Grid types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
-
 import type {
     AlignContent,
     AlignItems,
     JustifyContent,
     JustifyItems,
+    LibComponentBase,
     LibSpacers,
 } from "../../types"
 
-export interface GridProps extends HTMLAttributes<HTMLDivElement> {
-    "data-testid"?: string
-    as?: ElementType
+export interface GridProps extends LibComponentBase<HTMLDivElement> {
     inline?: boolean
     col?: number | string
     gap?: LibSpacers

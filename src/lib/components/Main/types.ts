@@ -1,6 +1,6 @@
 /*=============================================== Main types ===============================================*/
 
-import type { HTMLAttributes, ElementType } from "react"
+import type { LibComponentBase } from "../../types"
 
 const mainSizes = {
     default: "default",
@@ -11,9 +11,7 @@ const mainSizes = {
 
 export type MainSize = keyof typeof mainSizes | number
 
-interface MainPropsBase extends HTMLAttributes<HTMLDivElement> {
-    "data-testid"?: string
-    as?: ElementType
+interface MainPropsBase extends LibComponentBase<HTMLDivElement> {
     minHeight?: string | number
 }
 
