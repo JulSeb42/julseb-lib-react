@@ -20,7 +20,18 @@ export function SkeletonPage() {
                 animation="shine"
             />
 
-            <SkeletonCard flexDirection="column" gap="xs" border={{ width: 2 }}>
+            <SkeletonCard
+                flexDirection="column"
+                gap="xs"
+                border={{ width: 2 }}
+                borderRadius={{
+                    topLeft: "xxl",
+                    topRight: "xs",
+                    bottomLeft: "m",
+                    bottomRight: "l",
+                }}
+                // borderRadius="s"
+            >
                 <Skeleton
                     width="100%"
                     height={24}

@@ -43,7 +43,6 @@ describe("<Image />", () => {
     // TODO
     // ? width & auto size
     // ? height and auto width
-    // ? caption => text + background + color
 
     it("renders with a caption", () => {
         cy.mount(

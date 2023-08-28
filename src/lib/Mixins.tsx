@@ -395,7 +395,7 @@ export const Mixins = {
         const getRadius = ($radius: LibRadiuses) =>
             typeof $radius === "number"
                 ? stringifyPx($radius)
-                : radiusMap.get($borderRadius)
+                : radiusMap.get($radius)
 
         if (
             typeof $borderRadius === "number" ||
@@ -405,15 +405,14 @@ export const Mixins = {
                 border-radius: ${getRadius($borderRadius)};
             `
 
+        const { topLeft, topRight, bottomLeft, bottomRight } = $borderRadius
+
         return css`
-            border-top-left-radius: ${$borderRadius?.topLeft &&
-            getRadius($borderRadius.topLeft)};
-            border-top-right-radius: ${$borderRadius?.topRight &&
-            getRadius($borderRadius.topRight)};
-            border-bottom-left-radius: ${$borderRadius?.bottomLeft &&
-            getRadius($borderRadius.bottomLeft)};
-            border-bottom-right-radius: ${$borderRadius?.bottomRight &&
-            getRadius($borderRadius.bottomRight)};
+            border-top-left-radius: ${topLeft && getRadius(topLeft)};
+            border-top-right-radius: ${topRight && getRadius(topRight)};
+            border-bottom-left-radius: ${bottomLeft && getRadius(bottomLeft)};
+            border-bottom-right-radius: ${bottomRight &&
+            getRadius(bottomRight)};
         `
     },
 

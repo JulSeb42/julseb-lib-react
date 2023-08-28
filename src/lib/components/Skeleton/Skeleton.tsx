@@ -14,26 +14,32 @@ import type {
 } from "./types"
 
 export const SkeletonCard = forwardRef(
-    ({
-        "data-testid": testid,
-        className,
-        width,
-        maxWidth,
-        height,
-        backgroundColor,
-        aspectRatio,
-        border,
-        borderRadius,
-        flex,
-        flexGrow,
-        padding,
-        isShiny,
-        children,
-        ...rest
-    }: SkeletonCardProps) => {
+    (
+        {
+            "data-testid": testid,
+            as,
+            className,
+            width,
+            maxWidth,
+            height,
+            backgroundColor,
+            aspectRatio,
+            border,
+            borderRadius,
+            flex,
+            flexGrow,
+            padding,
+            isShiny,
+            children,
+            ...rest
+        }: SkeletonCardProps,
+        ref?: ForwardedRef<HTMLDivElement>
+    ) => {
         return (
             <StyledSkeletonCard
                 data-testid={testid}
+                ref={ref}
+                as={as}
                 className={className}
                 $width={width}
                 $maxWidth={maxWidth}
