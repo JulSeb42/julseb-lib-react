@@ -1,9 +1,9 @@
 /*=============================================== BasePage ===============================================*/
 
-import { useEffect, type ReactNode } from "react"
-import { useLocation } from "react-router-dom"
+import { type ReactNode } from "react"
 import { Helmet } from "react-helmet"
 
+import { ResetScroll } from "./ResetScroll"
 import { SITE_DATA } from "../data"
 
 export interface BasePageProps {
@@ -12,16 +12,6 @@ export interface BasePageProps {
 }
 
 export function BasePage({ title, children }: BasePageProps) {
-    const { pathname, search } = useLocation()
-
-    useEffect(() => {
-        document.documentElement.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant",
-        })
-    }, [pathname, search])
-
     return (
         <>
             <Helmet>
@@ -30,6 +20,8 @@ export function BasePage({ title, children }: BasePageProps) {
                 </title>
                 <link rel="icon" href={SITE_DATA.FAVICON} />
             </Helmet>
+
+            <ResetScroll />
 
             {children}
         </>

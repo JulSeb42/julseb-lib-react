@@ -8,11 +8,11 @@ import {
     allColorsLightMap,
     colorsDarkShortMap,
     allColorsDarkMap,
+    overlaysMap,
 } from "./utils"
 import {
     COLORS_LIGHT,
     COLORS_DARK,
-    OVERLAYS,
     RADIUSES,
     SHADOWS,
     SPACERS,
@@ -43,6 +43,7 @@ import type {
     LibFontWeights,
     LibMarginProps,
     LibBorderProps,
+    LibAllColorsAndOverlays,
 } from "./types"
 
 type IconMixin = {
@@ -60,6 +61,22 @@ export const ThemeLight = {
 
     AllColors: ($color: LibAllColors = "primary") =>
         allColorsLightMap.get($color),
+
+    ColorsAndOverlays: ($color: LibAllColorsAndOverlays | undefined) => {
+        if (!$color) return null
+
+        if (
+            $color === "black-50" ||
+            $color === "black-80" ||
+            $color === "white-50" ||
+            $color === "white-80" ||
+            $color === "gradient-white" ||
+            $color === "gradient-black"
+        )
+            return Mixins.Overlay($color)
+
+        return ThemeLight.AllColors($color)
+    },
 
     ColorsHoverDefault: ($color: LibColorsHover = "primary") => {
         const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
@@ -191,6 +208,22 @@ export const ThemeDark = {
 
     AllColors: ($color: LibAllColors = "primary") =>
         allColorsDarkMap.get($color),
+
+    ColorsAndOverlays: ($color: LibAllColorsAndOverlays | undefined) => {
+        if (!$color) return null
+
+        if (
+            $color === "black-50" ||
+            $color === "black-80" ||
+            $color === "white-50" ||
+            $color === "white-80" ||
+            $color === "gradient-white" ||
+            $color === "gradient-black"
+        )
+            return Mixins.Overlay($color)
+
+        return ThemeDark.AllColors($color)
+    },
 
     ColorsHoverDefault: ($color: LibColorsHover = "primary") => {
         const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
@@ -341,15 +374,6 @@ export const Mixins = {
 
     Overlay: ($overlay: LibOverlays | undefined) => {
         if (!$overlay) return null
-
-        const overlaysMap = new Map<LibOverlays, OVERLAYS>([
-            ["black-50", OVERLAYS.BLACK_50],
-            ["black-80", OVERLAYS.BLACK_80],
-            ["white-50", OVERLAYS.WHITE_50],
-            ["white-80", OVERLAYS.WHITE_80],
-            ["gradient-black", OVERLAYS.GRADIENT_BLACK],
-            ["gradient-white", OVERLAYS.GRADIENT_WHITE],
-        ])
 
         return overlaysMap.get($overlay)
     },

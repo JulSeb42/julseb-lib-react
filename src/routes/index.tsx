@@ -28,6 +28,7 @@ import { HighlightPage } from "../pages/components/HighlightPage"
 import { LinkifyPage } from "../pages/components/LinkifyPage"
 import { HrPage } from "../pages/components/HrPage"
 import { SkeletonPage } from "../pages/components/SkeletonPage"
+import { ImagePage } from "../pages/components/ImagePage"
 // prependHere
 
 /*====================== Demos ======================*/
@@ -83,7 +84,8 @@ export const routes: Route[] = [
     { path: "/linkify", element: <LinkifyPage /> },
     { path: "/hr", element: <HrPage /> },
     { path: "/skeleton", element: <SkeletonPage /> },
-    // prependRoute
+    { path: "/image", element: <ImagePage /> },
+// prependRoute
 ]
 
 export const router = createBrowserRouter([...routes, ...demos])

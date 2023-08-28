@@ -11,6 +11,8 @@ export * from "./hooks"
 
 export * from "./context/ThemeContext"
 
+export * from "./components/Fallback"
+
 export * from "./components/Text"
 export * from "./components/Wrapper"
 export * from "./components/Main"
@@ -25,4 +27,5 @@ export * from "./components/Highlight"
 export * from "./components/Linkify"
 export * from "./components/Hr"
 export * from "./components/Skeleton"
+export * from "./components/Image"
 // prependHere

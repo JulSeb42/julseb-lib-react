@@ -14,6 +14,10 @@ export type LibColorsShort = keyof typeof typeValues.colorsShort
 export type LibAllColors = LibColors | LibColorsShort
 export type LibColorsHover = keyof typeof typeValues.colorsHover
 export type LibOverlays = keyof typeof typeValues.overlays
+export type LibAllColorsAndOverlays =
+    | keyof typeof typeValues.libColors
+    | keyof typeof typeValues.colorsShort
+    | keyof typeof typeValues.overlays
 export type LibFontFamilies = keyof typeof typeValues.fontFamilies
 export type LibFontSizes = keyof typeof typeValues.fontSizes
 export type LibFontWeights = keyof typeof typeValues.fontWeights | number
@@ -229,6 +233,7 @@ export interface ThemeType {
     ColorsGhostHover: ($color?: LibColorsHover) => void
     ColorsGhostActive: ($color?: LibColorsHover) => void
     Colors50: ($color?: Exclude<LibColorsShort, "black" | "white">) => void
+    ColorsAndOverlays: ($color:LibAllColorsAndOverlays | undefined) => void
 }
 
 export interface ThemeContextProps {

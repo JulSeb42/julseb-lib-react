@@ -13,9 +13,9 @@ export const {{ pascalCase name }} = forwardRef(
         ref?: ForwardedRef<HTML{{ pascalCase attribute }}Element>
     ) => {
         return (
-            <Styled{{ pascalCase name }} data-testid={testid} ref={ref} {{#if as}}as={as} {{/if}}{...rest}>
-                {{#if children}}{children}{{/if}}
-            </Styled{{ pascalCase name }}>
+            <Styled{{ pascalCase name }} data-testid={testid} ref={ref} {{#if as}}as={as} {{/if}}{...rest}{{#if children}}>
+                {children}
+            </Styled{{ pascalCase name }}>{{ else }} />{{/if}}
         )
     }
 )

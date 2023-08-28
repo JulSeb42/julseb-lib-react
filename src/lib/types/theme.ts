@@ -95,6 +95,7 @@ export const Themes: Record<LibThemeNames, ThemeType> = {
         ColorsGhostHover: ThemeLight.ColorsGhostHover,
         ColorsGhostActive: ThemeLight.ColorsGhostActive,
         Colors50: ThemeLight.Colors50,
+        ColorsAndOverlays: ThemeLight.ColorsAndOverlays,
     },
 
     dark: {
@@ -186,5 +187,6 @@ export const Themes: Record<LibThemeNames, ThemeType> = {
         ColorsGhostHover: ThemeDark.ColorsGhostHover,
         ColorsGhostActive: ThemeDark.ColorsGhostActive,
         Colors50: ThemeDark.Colors50,
+        ColorsAndOverlays: ThemeDark.ColorsAndOverlays,
     },
 }

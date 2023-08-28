@@ -1,7 +1,7 @@
 /*=============================================== Colors maps ===============================================*/
 
-import { COLORS_LIGHT, COLORS_DARK } from "../Variables"
-import type { LibAllColors, LibColorsShort } from "../types"
+import { COLORS_LIGHT, COLORS_DARK, OVERLAYS } from "../Variables"
+import type { LibAllColors, LibColorsShort, LibOverlays } from "../types"
 
 export const colorsLightShortMap = new Map<LibColorsShort, COLORS_LIGHT>([
     ["primary", COLORS_LIGHT.PRIMARY_500],
@@ -165,4 +165,13 @@ export const allColorsDarkMap = new Map<
     ["font", COLORS_DARK.FONT],
     ["currentColor", "currentColor"],
     ["transparent", "transparent"],
+])
+
+export const overlaysMap = new Map<LibOverlays, OVERLAYS>([
+    ["black-50", OVERLAYS.BLACK_50],
+    ["black-80", OVERLAYS.BLACK_80],
+    ["white-50", OVERLAYS.WHITE_50],
+    ["white-80", OVERLAYS.WHITE_80],
+    ["gradient-black", OVERLAYS.GRADIENT_BLACK],
+    ["gradient-white", OVERLAYS.GRADIENT_WHITE],
 ])
