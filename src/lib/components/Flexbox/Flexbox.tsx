@@ -5,6 +5,24 @@ import { forwardRef, type ForwardedRef } from "react"
 import { StyledFlexbox } from "./styles"
 import type { FlexboxProps } from "./types"
 
+/**
+ * @description Returns a Flexbox component
+ * @link https://documentation-components-react.vercel.app/layouts/flexbox
+ * @extends HTMLDivElement
+ * @prop data-testid?: string
+ * @prop as?: ElementType
+ * @prop inline?: boolean
+ * @prop flexDirection?: FlexDirection
+ * @prop flexWrap?: FlexWrap
+ * @prop justifyContent?: JustifyContent
+ * @prop alignItems?: AlignItems
+ * @prop justifyItems?: JustifyItems
+ * @prop alignContent?: AlignContent
+ * @prop gap?: LibSpacers
+ * @prop columnGap?: LibSpacers
+ * @prop rowGap?: LibSpacers
+ */
+
 export const Flexbox = forwardRef(
     (
         {
@@ -23,7 +41,7 @@ export const Flexbox = forwardRef(
             rowGap,
             ...rest
         }: FlexboxProps,
-        ref?: ForwardedRef<HTMLDivElement>,
+        ref?: ForwardedRef<HTMLDivElement>
     ) => {
         return (
             <StyledFlexbox
@@ -45,5 +63,5 @@ export const Flexbox = forwardRef(
                 {children}
             </StyledFlexbox>
         )
-    },
+    }
 )

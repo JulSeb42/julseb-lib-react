@@ -8,7 +8,7 @@ describe("<Flexbox />", () => {
         cy.mount(
             <Flexbox data-testid="testid" flexDirection="column" gap="s">
                 Hello
-            </Flexbox>,
+            </Flexbox>
         )
         cy.dataTest("testid")
             .should("exist")

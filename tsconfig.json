@@ -36,7 +36,9 @@
     },
     "include": [
         "src",
-        "cypress"
+        "cypress",
+        "./node_modules/cypress",
+        "cypress/**/*.ts"
     ],
     "references": [
         {
