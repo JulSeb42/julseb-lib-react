@@ -43,7 +43,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     ) => {
         const isTouchScreen = useTouchScreen()
         const defaultTrigger: TooltipTrigger =
-            trigger || isTouchScreen ? "click" : "hover"
+            trigger === "click" || isTouchScreen ? "click" : "hover"
 
         const [isVisible, setIsVisible] = useState(false)
 
