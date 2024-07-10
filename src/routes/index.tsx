@@ -7,6 +7,7 @@ import { slugify, toKebabCase } from "ts-utils-julseb"
 
 import { Homepage } from "../pages/Homepage"
 import { Generate } from "../pages/Generate"
+import { NotFoundPage } from "../pages/404"
 
 /*====================== Components ======================*/
 
@@ -89,6 +90,7 @@ const demos: Array<Route> = [
 ]
 
 export const routes: Array<Route> = [
+    { path: "*", element: <NotFoundPage /> },
     { path: "/", element: <Homepage /> },
     { path: "/generate", element: <Generate /> },
     { path: "/:componentName", element: <ComponentPage /> },

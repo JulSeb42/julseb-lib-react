@@ -4,6 +4,7 @@ import { Fragment } from "react"
 import { useParams } from "react-router-dom"
 import { toKebabCase } from "ts-utils-julseb"
 import { Page } from "../../components"
+import { NotFoundPage } from "../404"
 import { Text, Flexbox } from "../../lib"
 import { previews } from "../../data/components"
 
@@ -14,12 +15,7 @@ export function ComponentPage() {
         demo => toKebabCase(demo.name) === toKebabCase(componentName || "")
     )
 
-    if (!componentPreview)
-        return (
-            <Page title="404">
-                <Text>Component not found</Text>
-            </Page>
-        )
+    if (!componentPreview) return <NotFoundPage />
 
     const { name, component, props, demos } = componentPreview
     const Component = component as any
