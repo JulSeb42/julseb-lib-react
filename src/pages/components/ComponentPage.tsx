@@ -33,7 +33,7 @@ export function ComponentPage() {
                         flexDirection="column"
                         gap="s"
                         alignItems="flex-start"
-                        key={i}
+                        key={previewTitle}
                     >
                         <Text tag="h4">{previewTitle}</Text>
                         <Component {...rest} />
@@ -49,7 +49,7 @@ export function ComponentPage() {
                         flexDirection="column"
                         gap="s"
                         alignItems="flex-start"
-                        key={i}
+                        key={preview.previewTitle || i}
                     >
                         {preview.previewTitle && (
                             <Text tag="h4">{preview.previewTitle}</Text>
