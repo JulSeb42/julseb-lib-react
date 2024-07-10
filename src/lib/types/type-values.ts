@@ -2038,4 +2038,6 @@ export const typeValues = {
         zm: "zm",
         zw: "zw",
     },
+
+    keySizes: { large: "large", small: "small" },
 } as const

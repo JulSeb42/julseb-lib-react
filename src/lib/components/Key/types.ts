@@ -1,9 +1,8 @@
 /*=============================================== Key types ===============================================*/
 
-import type { LibColorsHover, LibComponentBase } from "../../types"
+import type { LibColorsHover, LibComponentBase, typeValues } from "../../types"
 
-const sizes = { large: "large", small: "small" } as const
-export type KeySize = keyof typeof sizes
+export type KeySize = keyof typeof typeValues.keySizes
 
 export interface KeyProps extends LibComponentBase<HTMLSpanElement> {
     keys: Array<string>

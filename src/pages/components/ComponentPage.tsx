@@ -23,39 +23,43 @@ export function ComponentPage() {
     const { name, component, props, demos } = componentPreview
     const Component = component
 
+    console.log(componentPreview)
+
     return (
         <Page title={name}>
-            {props?.map((prop, i) => (
-                <Flexbox flexDirection="column" gap="s" key={i}>
-                    {prop.demoName && <Text tag="h3">{prop.demoName}</Text>}
+            {props?.map((prop, i) =>
+                prop.previewTitle ? (
+                    <Flexbox
+                        flexDirection="column"
+                        gap="s"
+                        alignItems="flex-start"
+                        key={i}
+                    >
+                        <Text tag="h4">{prop.previewTitle}</Text>
+                        <Component {...prop} />
+                    </Flexbox>
+                ) : (
+                    <Component key={i} {...prop} />
+                )
+            )}
 
-                    <Component {...prop} />
-                </Flexbox>
-            ))}
-
-            {demos && demos?.length > 1
-                ? demos.map((preview: any, i: number) => (
-                      <Flexbox flexDirection="column" gap="s" key={i}>
-                          {preview.previewTitle && (
-                              <Text tag="h4">{preview.previewTitle}</Text>
-                          )}
-                          {preview.element}
-                      </Flexbox>
-                  ))
-                : demos
-                ? demos[0].element
-                : null}
-
-            {/* {allDemos?.length > 1
-                ? allDemos?.map((demo, i) => (
-                      <Flexbox flexDirection="column" gap="s" key={i}>
-                          {demo.demoName && (
-                              <Text tag="h4">{demo.demoName}</Text>
-                          )}
-                          {demo.element}
-                      </Flexbox>
-                  ))
-                : allDemos[0]} */}
+            {demos?.map((preview, i) =>
+                preview.previewTitle ? (
+                    <Flexbox
+                        flexDirection="column"
+                        gap="s"
+                        alignItems="flex-start"
+                        key={i}
+                    >
+                        {preview.previewTitle && (
+                            <Text tag="h4">{preview.previewTitle}</Text>
+                        )}
+                        {preview.element}
+                    </Flexbox>
+                ) : (
+                    preview.element
+                )
+            )}
         </Page>
     )
 }
