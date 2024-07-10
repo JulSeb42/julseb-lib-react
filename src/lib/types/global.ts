@@ -1,0 +1,314 @@
+/*=============================================== Global types ===============================================*/
+
+import type {
+    HTMLAttributes,
+    ElementType,
+    ReactNode,
+    Dispatch,
+    SetStateAction,
+    MouseEventHandler,
+} from "react"
+import type { Property } from "csstype"
+import type { DefaultTheme } from "styled-components"
+import type { typeValues } from "./type-values"
+import type { RequireAtLeastOne } from "./require-at-least-one"
+
+/*====================== Common types ======================*/
+
+export type LibColors = keyof typeof typeValues.libColors
+export type LibColorsShort = keyof typeof typeValues.colorsShort
+export type LibAllColors = LibColors | LibColorsShort
+export type LibColorsHover = keyof typeof typeValues.colorsHover
+export type LibColorsHoverAndCurrent = LibColorsHover | "currentColor"
+export type LibOverlays = keyof typeof typeValues.overlays
+export type LibAllColorsAndOverlays =
+    | keyof typeof typeValues.libColors
+    | keyof typeof typeValues.colorsShort
+    | keyof typeof typeValues.overlays
+export type LibFontFamilies = keyof typeof typeValues.fontFamilies
+export type LibFontSizes = keyof typeof typeValues.fontSizes
+export type LibFontWeights = keyof typeof typeValues.fontWeights | number
+export type LibLineHeights = keyof typeof typeValues.lineHeights | number
+export type LibShadows = keyof typeof typeValues.shadows
+export type LibSpacers = keyof typeof typeValues.spacers | number | "0px"
+export type LibRadiuses = keyof typeof typeValues.radiuses | number
+export type LibTransitions = keyof typeof typeValues.transitions
+export type LibValidationStatus = keyof typeof typeValues.validation | undefined
+export type LibThemeNames = keyof typeof typeValues.theme
+export type LibIcon = string | JSX.Element
+export type LibInputVariant = keyof typeof typeValues.inputVariants
+export type LibInputBackground = keyof typeof typeValues.inputBackgrounds
+
+/*====================== Common component props ======================*/
+
+/* Component base */
+
+export interface LibComponentBase<T> extends HTMLAttributes<T> {
+    "data-testid"?: string
+    as?: ElementType
+}
+
+/* Box shadow */
+
+export type LibBoxShadowProps =
+    | LibShadows
+    | {
+          default: LibShadows
+          hover: LibShadows
+          active: LibShadows
+      }
+
+/* Border radius */
+
+export type LibRadiusProps =
+    | LibRadiuses
+    | number
+    | null
+    | {
+          topLeft?: LibRadiuses | number | null
+          topRight?: LibRadiuses | number | null
+          bottomLeft?: LibRadiuses | number | null
+          bottomRight?: LibRadiuses | number | null
+      }
+
+/* Padding */
+
+export type LibPaddingProps =
+    | LibSpacers
+    | {
+          left?: LibSpacers | "auto"
+          top?: LibSpacers | "auto"
+          right?: LibSpacers | "auto"
+          bottom?: LibSpacers | "auto"
+          leftRight?: LibSpacers | "auto"
+          topBottom?: LibSpacers | "auto"
+      }
+
+export type LibMarginProps =
+    | LibSpacers
+    | undefined
+    | "auto"
+    | "0 auto"
+    | {
+          left?: LibSpacers | "auto"
+          top?: LibSpacers | "auto"
+          right?: LibSpacers | "auto"
+          bottom?: LibSpacers | "auto"
+          leftRight?: LibSpacers | "auto"
+          topBottom?: LibSpacers | "auto"
+      }
+
+/* Border */
+
+export type LibBorderProps = {
+    style?: BorderStyle
+    width?: LibSpacers
+    color?: LibAllColors
+}
+
+/* Outline */
+
+export type LibOutlineProps = {
+    style?: OutlineStyle
+    width?: LibSpacers
+    color?: LibAllColors
+}
+
+/* Button variants */
+
+const buttonVariants = {
+    plain: "plain",
+    outline: "outline",
+    ghost: "ghost",
+    transparent: "transparent",
+} as const
+export type LibButtonVariant = keyof typeof buttonVariants
+
+/* Button sizes */
+
+const buttonSizes = { default: "default", small: "small" } as const
+export type LibButtonSize = keyof typeof buttonSizes
+
+/* Links & buttons */
+
+type LinkTo = { to?: string; href?: never }
+type LinkHref = { to?: never; href?: string }
+
+/**
+ * @description Props for links
+ * @prop to?: string => only if `href` is not defined
+ * @prop href?: string => only if `to` is not defined
+ */
+export type LibLink = LinkTo | LinkHref
+
+/**
+ * @description Props for links, `to` or `href` are required
+ * @prop to?: string => only if `href` is not defined
+ * @prop href?: string => only if `to` is not defined
+ */
+export type LibLinkRequired = RequireAtLeastOne<LibLink, "to" | "href">
+
+/**
+ * @description Props for links
+ * @prop to?: string => only if `href` is not defined
+ * @prop href?: string => only if `to` is not defined
+ * @prop blank?: boolean
+ */
+export type LibLinkBlank = LibLink & { blank?: boolean }
+
+/**
+ * @description Props for links, `to` or `href` are required
+ * @prop to?: string => only if `href` is not defined
+ * @prop href?: string => only if `to` is not defined
+ * @prop blank?: boolean
+ */
+export type LibLinkBlankRequired = LibLinkRequired & { blank?: boolean }
+
+type LibButtonLinkClick = {
+    onClick?: MouseEventHandler<HTMLButtonElement>
+    disabled?: boolean
+    to?: never
+    href?: never
+}
+
+type LibButtonLinkTo = {
+    onClick?: never
+    disabled?: never
+    to?: string | "prev"
+    href?: never
+}
+
+type LibButtonLinkHref = {
+    onClick?: never
+    disabled?: never
+    to?: never
+    href?: string
+}
+
+/**
+ * @description Props for buttons and links
+ * @prop onClick?: void => only if `to` or `href` are not defined
+ * @prop disabled?: boolean => only if `onClick` is defined
+ * @prop to?: string => only if `onClick` and `href` are not defined
+ * @prop href?: string => only if `onClick` and `to` are not defined
+ */
+export type LibButtonLink =
+    | LibButtonLinkClick
+    | LibButtonLinkTo
+    | LibButtonLinkHref
+
+/**
+ * @description Props for buttons and links, `onClick`, `to` or `href` are required
+ * @prop onClick?: void => only if `to` or `href` are not defined
+ * @prop disabled?: boolean => only if `onClick` is defined
+ * @prop to?: string => only if `onClick` and `href` are not defined
+ * @prop href?: string => only if `onClick` and `to` are not defined
+ */
+export type ButtonLinkRequired = RequireAtLeastOne<
+    LibButtonLink,
+    "onClick" | "to" | "href"
+>
+
+/**
+ * @description Props for buttons and links
+ * @prop onClick?: void => only if `to` or `href` are not defined
+ * @prop disabled?: boolean => only if `onClick` is defined
+ * @prop to?: string => only if `onClick` and `href` are not defined
+ * @prop href?: string => only if `onClick` and `to` are not defined
+ * @prop blank?: boolean => only if `to` or `href` are defined
+ */
+export type LibButtonLinkBlank =
+    | (LibButtonLinkClick & { blank?: never })
+    | (LibButtonLinkTo & { blank?: boolean })
+    | (LibButtonLinkHref & { blank?: boolean })
+
+/**
+ * @description Props for buttons and links, `onClick`, `to` or `href` are required
+ * @prop onClick?: void => only if `to` or `href` are not defined
+ * @prop disabled?: boolean => only if `onClick` is defined
+ * @prop to?: string => only if `onClick` and `href` are not defined
+ * @prop href?: string => only if `onClick` and `to` are not defined
+ * @prop blank?: boolean => only if `to` or `href` are defined
+ */
+export type LibButtonLinkBlankRequired = RequireAtLeastOne<
+    LibButtonLinkBlank,
+    "to" | "href" | "onClick"
+>
+
+/* useTranslation hook */
+
+export type TranslateLang = {
+    [language: string]: {
+        [key: string]: string
+    }
+}
+
+/* Tooltip */
+
+const tipPosition = { top: "top", bottom: "bottom" } as const
+export type LibTooltipPosition = keyof typeof tipPosition
+
+/* BackgroundImage */
+
+export interface BackgroundImageProps {
+    img: string
+    clip?: Property.BackgroundClip
+    origin?: Property.BackgroundOrigin
+    position?: Property.BackgroundPosition
+    repeat?: Property.BackgroundRepeat
+    size?: Property.BackgroundSize
+}
+
+/* Input phone */
+
+export type CountryCode = keyof typeof typeValues.countryCodes
+
+export type LibCountry = {
+    name: string
+    dial_code: string
+    code: CountryCode
+    flag: string
+}
+
+/* InputList */
+
+const listInputDirection = { up: "up", down: "down" } as const
+
+export type LibListDirection = keyof typeof listInputDirection
+
+/* Toast */
+
+export type LibToastStatus = keyof typeof typeValues.toastStatus
+
+export type LibToasterPosition = keyof typeof typeValues.toasterPositions
+
+/*====================== Theme ======================*/
+
+export interface ThemeContextProps {
+    theme: DefaultTheme
+    selectedTheme: LibThemeNames | undefined
+    toggleTheme: () => void
+}
+
+/*====================== React global ======================*/
+
+export type ReactChildren = ReactNode | Array<ReactNode>
+export type DispatchState<T> = Dispatch<SetStateAction<T>>
+
+/*====================== CSS values ======================*/
+
+export type TextAlign = Property.TextAlign
+export type VerticalAlign = Property.VerticalAlign
+export type TextDecoration = Property.TextDecoration
+export type Position = Property.Position
+export type JustifyItems = Property.JustifyItems
+export type AlignItems = Property.AlignItems
+export type JustifyContent = Property.JustifyContent
+export type AlignContent = Property.AlignContent
+export type FlexDirection = Property.FlexDirection
+export type FlexWrap = Property.FlexWrap
+export type ObjectFit = Property.ObjectFit
+export type Cursor = Property.Cursor
+export type BorderStyle = Property.BorderStyle
+export type OutlineStyle = Property.OutlineStyle
+export type FontStyle = Property.FontStyle

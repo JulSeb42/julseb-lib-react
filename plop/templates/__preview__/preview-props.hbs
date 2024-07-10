@@ -1,0 +1,17 @@
+/*=============================================== {{ pascalCase name }}Preview ===============================================*/
+
+import { {{ pascalCase name }} } from "../"
+import type { {{ pascalCase name }}Props } from "../types"
+import type { ComponentPreview } from "../../../../data/components"
+
+export const {{ camelCase name }}Preview: ComponentPreview<
+    {{ pascalCase name }}Props,
+    typeof {{ pascalCase name }}
+> = {
+    name: "{{ pascalCase name }}",
+    component: {{ pascalCase name }},
+    category: "{{ category }}",
+    props: [
+        { previewTitle: "" },
+    ],
+}

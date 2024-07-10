@@ -1,0 +1,15 @@
+/*=============================================== Transform search keys ===============================================*/
+
+export function transformSearchKeys(keys: Array<string>) {
+    return keys.map(key =>
+        key.includes("Key")
+            ? key.replace("Key", "")
+            : key === "Command"
+            ? "⌘"
+            : key === "Enter"
+            ? "↵"
+            : key === "Control"
+            ? "Ctrl"
+            : key
+    )
+}

@@ -1,0 +1,12 @@
+/*=============================================== {{ pascalCase name }} tests ===============================================*/
+
+import { {{ pascalCase name }}, cssVariables } from "../../.."
+
+describe("<{{ pascalCase name }} />", () => {
+    it("renders <{{ pascalCase name }} /> component", () => {
+        cy.mount(<{{ pascalCase name }} data-testid="testid" className="className"{{#if children}}>Hello</{{ pascalCase name }}>{{else}} />{{/if}})
+        cy.dataTest()
+            .should("exist")
+            .should("have.class", "className")
+    })
+})

@@ -1,0 +1,187 @@
+/*=============================================== Toast component ===============================================*/
+
+import { forwardRef, useEffect, useCallback, useRef, useState } from "react"
+import { uuid } from "ts-utils-julseb"
+import { Text, useToast, useMergeRefs } from "../.."
+import { LibIcon } from "../LibIcon"
+import { Close } from "../../icons"
+import {
+    StyledToast,
+    TitleContainer,
+    IconContainer,
+    CloseButton,
+    Timer,
+} from "./styles"
+import type { ToastProps } from "./types"
+
+const CLOSE_ICON_SIZE = 24
+
+/**
+ * @description Returns a Toast component
+ * @link https://documentation-components-react.vercel.app/components/toast
+ * @extends HTMLDivElement
+ * @prop data-testid?: string
+ * @prop as?: ElementType
+ * @prop title: string
+ * @prop options?: { id?: string; body?: string | ReactChildren; duration?: number; icons?: { left?: LibIcon; close?: LibIcon }; iconSizes?: { left?: number; close?: number }; iconLeftColor?: LibAllColors; labelClose?: string; withTimer?: boolean; timerBackgroundColor?: LibAllColors }
+ */
+
+export const Toast = forwardRef<HTMLDivElement, ToastProps>(
+    (
+        {
+            "data-testid": testid,
+            as,
+            children,
+            className,
+            title,
+            id = uuid(),
+            options,
+            toastStyle,
+            toasterPosition,
+            role = "alert",
+            ...rest
+        },
+        ref
+    ) => {
+        const toast = useToast()
+        const [isOpen, setIsOpen] = useState(true)
+
+        const remove = useCallback(() => {
+            setIsOpen(false)
+            setTimeout(() => toast.remove(id), 200)
+        }, [id, toast])
+
+        const el = useRef<HTMLDivElement>(null)
+
+        useEffect(() => {
+            const duration = options?.duration
+
+            if (duration) {
+                setTimeout(() => {
+                    remove()
+                }, duration)
+            }
+        }, [options?.duration, remove])
+
+        const body = children || options?.body
+
+        return (
+            <StyledToast
+                data-testid={testid}
+                ref={useMergeRefs([ref, el])}
+                as={as}
+                role={role}
+                id={id}
+                className={className}
+                $backgroundColor={toastStyle?.backgroundColor || "background"}
+                $border={toastStyle?.border || { color: "gray-200" }}
+                $shadow={toastStyle?.shadow}
+                $textColor={toastStyle?.textColor || "font"}
+                $isOpen={isOpen}
+                $toasterPosition={toasterPosition}
+                {...rest}
+            >
+                <TitleContainer
+                    data-testid={testid && `${testid}.TitleContainer`}
+                    className={className && "TitleContainer"}
+                >
+                    {options?.icons?.left && (
+                        <IconContainer
+                            data-testid={
+                                testid &&
+                                `${testid}.TitleContainer.IconContainerLeft`
+                            }
+                            className={
+                                className && "TitleContainer__IconContainerLeft"
+                            }
+                        >
+                            <LibIcon
+                                data-testid={
+                                    testid &&
+                                    `${testid}.TitleContainer.IconContainerLeft.Icon`
+                                }
+                                className={
+                                    className &&
+                                    "TitleContainer__IconContainerLeft__Icon"
+                                }
+                                icon={options.icons.left}
+                                size={options.iconSizes?.left || 16}
+                                color={options?.iconLeftColor}
+                            />
+                        </IconContainer>
+                    )}
+
+                    <Text
+                        tag="h6"
+                        as="p"
+                        data-testid={testid && `${testid}.TitleContainer.Title`}
+                        className={className && "TitleContainer__Title"}
+                    >
+                        {title}
+                    </Text>
+
+                    <IconContainer
+                        data-testid={
+                            testid &&
+                            `${testid}.TitleContainer.IconContainerRight`
+                        }
+                        className={
+                            className && "TitleContainer__IconContainerRight"
+                        }
+                    >
+                        <CloseButton
+                            onClick={remove}
+                            aria-label={options?.labelClose || "Close toast"}
+                            data-testid={
+                                testid &&
+                                `${testid}.TitleContainer.IconContainerRight.CloseButton`
+                            }
+                            className={
+                                className &&
+                                "TitleContainer__IconContainerRight__CloseButton"
+                            }
+                        >
+                            <LibIcon
+                                data-testid={
+                                    testid &&
+                                    `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
+                                }
+                                className={
+                                    className &&
+                                    "TitleContainer__IconContainerRight__CloseButton__Icon"
+                                }
+                                icon={
+                                    options?.icons?.close || (
+                                        <Close size={CLOSE_ICON_SIZE} />
+                                    )
+                                }
+                                size={
+                                    options?.iconSizes?.close || CLOSE_ICON_SIZE
+                                }
+                                color="currentColor"
+                            />
+                        </CloseButton>
+                    </IconContainer>
+                </TitleContainer>
+
+                {body && (
+                    <Text
+                        data-testid={testid && `${testid}.Body`}
+                        className={className && "Body"}
+                    >
+                        {body}
+                    </Text>
+                )}
+
+                {options?.withTimer && (
+                    <Timer
+                        data-testid={testid && `${testid}.Timer`}
+                        className={className && "Timer"}
+                        $duration={options?.duration || 3000}
+                        $backgroundColor={options?.timerBackgroundColor}
+                    />
+                )}
+            </StyledToast>
+        )
+    }
+)

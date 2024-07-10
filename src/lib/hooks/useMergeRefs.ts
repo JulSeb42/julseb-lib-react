@@ -1,0 +1,34 @@
+/*=============================================== useMergeRefs ===============================================*/
+
+import {
+    useMemo,
+    type Ref,
+    type RefCallback,
+    type MutableRefObject,
+} from "react"
+
+/**
+ * @description Hook to add possibility to add multiple refs to an element
+ * @link https://documentation-components-react.vercel.app/helpers/hooks#useMergeRefs
+ * @prop refs: Array<Ref<Instance> | undefined>
+ */
+
+export function useMergeRefs<Instance>(
+    refs: Array<Ref<Instance> | undefined>
+): RefCallback<Instance> | null {
+    return useMemo(() => {
+        if (refs.every(ref => ref == null)) {
+            return null
+        }
+
+        return value => {
+            refs.forEach(ref => {
+                if (typeof ref === "function") {
+                    ref(value)
+                } else if (ref != null) {
+                    ;(ref as MutableRefObject<Instance | null>).current = value
+                }
+            })
+        }
+    }, refs)
+}

@@ -1,0 +1,36 @@
+/*=============================================== Fallback ===============================================*/
+
+import styled from "styled-components"
+import { stringifyPx } from "ts-utils-julseb"
+import { setDefaultTheme, Mixins } from "../../"
+import type { LibRadiusProps } from "../../types"
+
+/**
+ * @description Returns a Fallback component. Use it for lazy loading in Image or Video components
+ * @extends HTMLDivElement
+ * @prop as?: ElementType
+ * @prop $width: string | number
+ * @prop $height: string | number
+ * @prop $borderRadius?: LibRadiusProps
+ * @prop $aspectRatio?: string
+ */
+
+const Fallback = styled.div<{
+    $width: string | number
+    $height: string | number
+    $borderRadius?: LibRadiusProps
+    $aspectRatio?: string
+}>`
+    position: relative;
+    z-index: 0;
+    background-color: ${({ theme }) => theme.GRAY_500};
+    display: block;
+    width: ${({ $width }) => stringifyPx($width)};
+    height: ${({ $height }) => stringifyPx($height)};
+    aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
+    ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)}
+`
+
+setDefaultTheme([Fallback])
+
+export { Fallback }

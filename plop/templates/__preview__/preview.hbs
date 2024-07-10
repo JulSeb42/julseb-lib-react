@@ -1,0 +1,20 @@
+/*=============================================== {{ pascalCase name }}Preview ===============================================*/
+
+import { {{ pascalCase name }} } from "../"
+import type { {{ pascalCase name }}Props } from "../types"
+import type { ComponentPreview } from "../../../../data/components"
+
+function {{ pascalCase name }}Preview() {
+    return (
+        <{{ pascalCase name }}>
+            
+        </{{ pascalCase name }}>
+    )
+}
+
+export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props, typeof {{ pascalCase name }}> = {
+    name: "{{ pascalCase name }}",
+    category: "{{ category }}",
+    component: {{ pascalCase name }},
+    demos: [{ element: <{{ pascalCase name }}Preview key={0} /> }],
+}
