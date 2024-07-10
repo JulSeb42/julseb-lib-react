@@ -19,5 +19,6 @@ export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}
     category: "{{ category }}",
     imports: ["{{ pascalCase name }}"],
     typeImports: ["{{ pascalCase name }}Props"],
-    demos: [{ element: <{{ pascalCase name }}Preview key={0} /> }],
+    extends: ["HTML{{ pascalCase attribute }}Element"],
+    demos: [{ element: <{{ pascalCase name }}Preview /> }],
 }

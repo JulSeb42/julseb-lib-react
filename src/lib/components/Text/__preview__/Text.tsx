@@ -18,6 +18,7 @@ export const textPreviews: ComponentPreview<TextProps> = {
     category: "styles",
     imports: "Text",
     typeImports: "TextProps",
+    extends: "HTMLElement",
     demos: [
         { previewTitle: "Display", element: <TextDisplay /> },
         { previewTitle: "Titles", element: <TextTitles /> },

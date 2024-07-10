@@ -15,11 +15,12 @@ function RadiusesPreview() {
     )
 }
 
-export const radiusesPreview: ComponentPreview<any> = {
+export const radiusesPreview: ComponentPreview<null> = {
     name: "Radiuses",
     category: "styles",
     component: null,
     imports: "RADIUSES",
     typeImports: null,
+    extends: null,
     demos: [{ element: <RadiusesPreview /> }],
 }

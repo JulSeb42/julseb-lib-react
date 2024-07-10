@@ -15,11 +15,12 @@ function ShadowsPreview() {
     )
 }
 
-export const shadowsPreview: ComponentPreview<any> = {
+export const shadowsPreview: ComponentPreview<null> = {
     name: "Shadows",
     category: "styles",
     component: null,
     imports: "SHADOWS",
     typeImports: null,
+    extends: null,
     demos: [{ element: <ShadowsPreview /> }],
 }

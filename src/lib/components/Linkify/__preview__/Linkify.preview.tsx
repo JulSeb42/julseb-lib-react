@@ -10,6 +10,7 @@ export const linkifyPreview: ComponentPreview<LinkifyProps> = {
     category: "components",
     imports: "Linkify",
     typeImports: "LinkifyProps",
+    extends: "TextProps",
     props: [
         {
             previewTitle: "Default",

@@ -40,6 +40,11 @@ export interface ComponentPreview<T> {
     category: "styles" | "layouts" | "components" | "utils"
     imports: string | Array<string>
     typeImports: string | Array<string> | null
+    extends:
+        | string
+        | Array<string>
+        | Array<{ name: string; from: string }>
+        | null
     props?: Array<T & { previewTitle?: string }>
     demos?: Array<{ previewTitle?: string; element: JSX.Element }>
 }

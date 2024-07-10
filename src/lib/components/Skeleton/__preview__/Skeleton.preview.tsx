@@ -10,7 +10,8 @@ export const skeletonPreview: ComponentPreview<SkeletonProps> = {
     component: Skeleton,
     category: "components",
     imports: ["Skeleton", "SkeletonCard", "SkeletonShine"],
-    typeImports: "SkeletonProps",
+    typeImports: ["SkeletonProps", "SkeletonCardProps", "SkeletonShineProps"],
+    extends: ["HTMLDivElement"],
     props: [
         { previewTitle: "Default" },
         {

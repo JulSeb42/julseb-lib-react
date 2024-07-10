@@ -14,11 +14,12 @@ function ThemeProviderPreview() {
     )
 }
 
-export const themeProviderPreview: ComponentPreview<any> = {
+export const themeProviderPreview: ComponentPreview<null> = {
     name: "Theme Provider",
     category: "styles",
     component: null,
     imports: ["ThemeProviderWrapper", "useLibTheme"],
     typeImports: "ThemeContextProps",
+    extends: null,
     demos: [{ element: <ThemeProviderPreview /> }],
 }

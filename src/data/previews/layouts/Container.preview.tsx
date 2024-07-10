@@ -34,11 +34,12 @@ function ContainerPreview() {
     )
 }
 
-export const containerPreview: ComponentPreview<any> = {
+export const containerPreview: ComponentPreview<null> = {
     name: "Container",
     category: "layouts",
     component: null,
     imports: ["Wrapper", "Main", "Aside"],
     typeImports: null,
+    extends: "",
     demos: [{ element: <ContainerPreview /> }],
 }

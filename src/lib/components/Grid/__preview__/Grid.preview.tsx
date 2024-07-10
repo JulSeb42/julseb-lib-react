@@ -11,6 +11,7 @@ export const gridPreview: ComponentPreview<GridProps> = {
     category: "layouts",
     imports: "Grid",
     typeImports: "GridProps",
+    extends: "HTMLDivElement",
     props: [
         {
             col: 3,

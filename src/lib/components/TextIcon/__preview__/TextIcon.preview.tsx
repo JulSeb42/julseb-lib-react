@@ -11,6 +11,7 @@ export const textIconPreview: ComponentPreview<TextIconProps> = {
     category: "components",
     imports: "TextIcon",
     typeImports: "TextIconProps",
+    extends: "TextProps",
     props: [
         {
             icon: "arrow-right",

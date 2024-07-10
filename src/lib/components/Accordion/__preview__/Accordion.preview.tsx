@@ -33,6 +33,7 @@ export const accordionPreview: ComponentPreview<AccordionProps> = {
     category: "components",
     imports: ["Accordion", "AccordionItem"],
     typeImports: ["AccordionProps", "LibAccordionItem"],
+    extends: "HTMLDivElement",
     props: [
         {
             items,

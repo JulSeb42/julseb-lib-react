@@ -11,6 +11,7 @@ export const flexboxPreview: ComponentPreview<FlexboxProps> = {
     category: "layouts",
     imports: "Flexbox",
     typeImports: "FlexboxProps",
+    extends: "HTMLDivElement",
     props: [
         {
             flexDirection: "column-reverse",

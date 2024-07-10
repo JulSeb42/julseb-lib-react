@@ -10,5 +10,6 @@ export const hrPreview: ComponentPreview<HrProps> = {
     category: "components",
     imports: "Hr",
     typeImports: "HrProps",
+    extends: "HTMLHRElement",
     props: [{}],
 }

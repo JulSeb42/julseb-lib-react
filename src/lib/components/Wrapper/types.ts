@@ -1,5 +1,7 @@
 /*=============================================== Wrapper types ===============================================*/
 
-import type { LibComponentBase } from "../../types"
+import type { LibComponentBase, LibSpacers } from "../../types"
 
-export type WrapperProps = LibComponentBase<HTMLDivElement>
+export interface WrapperProps extends LibComponentBase<HTMLDivElement> {
+    gap?: LibSpacers
+}

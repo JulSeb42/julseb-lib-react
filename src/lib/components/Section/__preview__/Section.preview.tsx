@@ -14,6 +14,7 @@ export const sectionPreview: ComponentPreview<SectionProps> = {
     category: "layouts",
     imports: "Section",
     typeImports: "SectionProps",
+    extends: "HTMLDivElement",
     props: sizes.map(size => ({
         gap: size,
         children: (

@@ -15,11 +15,12 @@ function ColorsPreview() {
     )
 }
 
-export const colorsPreview: ComponentPreview<any> = {
+export const colorsPreview: ComponentPreview<null> = {
     name: "Colors",
     category: "styles",
     component: null,
     imports: ["COLORS_LIGHT", "COLORS_DARK"],
     typeImports: null,
+    extends: null,
     demos: [{ element: <ColorsPreview /> }],
 }

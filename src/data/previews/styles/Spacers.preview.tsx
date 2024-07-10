@@ -15,11 +15,12 @@ function SpacersPreview() {
     )
 }
 
-export const spacersPreview: ComponentPreview<any> = {
+export const spacersPreview: ComponentPreview<null> = {
     name: "Spacers",
     category: "styles",
     component: null,
     imports: "SPACERS",
     typeImports: null,
+    extends: null,
     demos: [{ element: <SpacersPreview /> }],
 }

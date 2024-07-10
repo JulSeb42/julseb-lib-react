@@ -117,6 +117,7 @@ export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
                     '{ path: "/{{ kebabCase name }}", element: <{{ pascalCase name }}Page /> },\n$1',
                 pattern: /(\/\/ prependRoute)/g,
             },
+            // TODO: replace demo page by preview
         ],
     })
 
@@ -135,13 +136,19 @@ export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 name: "category",
                 message: "Which category?",
                 choices: ["styles", "layouts", "components", "helpers"],
-                default: "layouts",
+                default: "components",
             },
             {
                 type: "confirm",
                 name: "demo",
                 message: "Generate only demo array",
                 default: true,
+            },
+            {
+                type: "input",
+                name: "attribute",
+                message: "Enter HTML attribute",
+                default: "div",
             },
         ],
         actions: data => {

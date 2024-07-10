@@ -10,12 +10,19 @@ import type { WrapperProps } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop gap?: LibSpacers
  */
 
 export const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
-    ({ "data-testid": testid, as, children, ...rest }, ref) => {
+    ({ "data-testid": testid, as, children, gap = "l", ...rest }, ref) => {
         return (
-            <StyledWrapper data-testid={testid} ref={ref} as={as} {...rest}>
+            <StyledWrapper
+                data-testid={testid}
+                ref={ref}
+                as={as}
+                $gap={gap}
+                {...rest}
+            >
                 {children}
             </StyledWrapper>
         )

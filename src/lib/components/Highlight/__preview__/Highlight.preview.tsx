@@ -10,6 +10,7 @@ export const highlightPreview: ComponentPreview<HighlightProps> = {
     category: "components",
     imports: "Highlight",
     typeImports: "HighlightProps",
+    extends: "TextProps",
     props: [
         {
             previewTitle: "Default",

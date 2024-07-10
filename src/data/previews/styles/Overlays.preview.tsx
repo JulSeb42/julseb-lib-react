@@ -15,11 +15,12 @@ function ColorsPreview() {
     )
 }
 
-export const overlaysPreview: ComponentPreview<any> = {
+export const overlaysPreview: ComponentPreview<null> = {
     name: "Overlays",
     category: "styles",
     component: null,
     imports: "OVERLAYS",
     typeImports: null,
+    extends: null,
     demos: [{ element: <ColorsPreview /> }],
 }

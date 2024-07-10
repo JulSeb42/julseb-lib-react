@@ -2,13 +2,15 @@
 
 import styled from "styled-components"
 import { BREAKPOINTS, Mixins, setDefaultTheme } from "../../"
+import type { LibSpacers } from "../../types"
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ $gap: LibSpacers }>`
     position: relative;
-    ${Mixins.Flexbox({
-        $gap: "l",
-        $justifyContent: "center",
-    })}
+    ${({ $gap }) =>
+        Mixins.Flexbox({
+            $gap,
+            $justifyContent: "center",
+        })}
 
     @media ${BREAKPOINTS.TABLET_LARGE} {
         flex-direction: column;
