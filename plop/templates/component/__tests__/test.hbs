@@ -8,5 +8,7 @@ describe("<{{ pascalCase name }} />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
+        
+        // ? check all default props
     })
 })
