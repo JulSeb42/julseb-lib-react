@@ -2,8 +2,9 @@
 
 import { forwardRef, useState, useRef, useCallback } from "react"
 import { useTouchScreen, useClickOutside } from "../../"
+import type { LibTooltipTrigger } from "../../types"
 import { TooltipWrapper, StyledTooltip } from "./styles"
-import type { TooltipProps, TooltipTrigger } from "./types"
+import type { TooltipProps } from "./types"
 
 /**
  * @description Returns a Tooltip component
@@ -42,7 +43,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         ref
     ) => {
         const isTouchScreen = useTouchScreen()
-        const defaultTrigger: TooltipTrigger =
+        const defaultTrigger: LibTooltipTrigger =
             trigger === "click" || isTouchScreen ? "click" : "hover"
 
         const [isVisible, setIsVisible] = useState(false)

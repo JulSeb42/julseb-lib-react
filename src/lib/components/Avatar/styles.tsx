@@ -1,5 +1,6 @@
 /*=============================================== Avatar styles ===============================================*/
 
+import type { FC } from "react"
 import styled, { css } from "styled-components"
 import { setDefaultTheme, Badge, Mixins, FONT_WEIGHTS, SPACERS } from "../../"
 import type {
@@ -7,8 +8,8 @@ import type {
     LibBorderProps,
     LibRadiusProps,
     LibSpacers,
+    LibAvatarBadgePosition,
 } from "../../types"
-import type { AvatarBadgePosition } from "./types"
 
 const Common = ({
     $size,
@@ -63,7 +64,7 @@ const StyledAvatar = styled.span<{
 `
 
 const StyledBadge = styled(Badge)<{
-    $position?: AvatarBadgePosition
+    $position?: LibAvatarBadgePosition
     $width: number
     $paddingLeftRight: LibSpacers | "auto"
     $outline?: LibBorderProps
@@ -74,7 +75,7 @@ const StyledBadge = styled(Badge)<{
     top: ${({ $position }) => $position === "top" && SPACERS.XXS};
     bottom: ${({ $position }) => $position === "bottom" && SPACERS.XXS};
     ${({ $outline }) => Mixins.Outline($outline)}
-`
+` as FC<any>
 
 setDefaultTheme([StyledAvatarContainer, StyledAvatar, StyledBadge])
 

@@ -2,7 +2,8 @@
 
 import { forwardRef, useCallback, useState, type ChangeEvent } from "react"
 import { useSearchParams } from "react-router-dom"
-import { Text, ButtonIcon, roundIconSize, usePagination, Flexbox } from "../../"
+import { Text, ButtonIcon, usePagination, Flexbox } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import { ChevronLeft, ChevronRight } from "../../icons"
 import { TextContainer, StyledInput } from "./styles"
 import type { PaginatorProps } from "./types"
@@ -81,6 +82,7 @@ export const Paginator = forwardRef<HTMLDivElement, PaginatorProps>(
                         className={className && "Text"}
                     >
                         {texts?.page}
+                        
                         <StyledInput
                             data-testid={testid && `${testid}.Text.Input`}
                             className={className && "Text__Input"}

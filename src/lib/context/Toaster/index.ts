@@ -1,3 +1,3 @@
 /*=============================================== Exports ===============================================*/
 
-export * from "./ToasterContext"
+export * from "./Toaster.context"

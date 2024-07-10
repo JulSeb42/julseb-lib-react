@@ -1,6 +1,7 @@
 /*=============================================== Badge tests ===============================================*/
 
-import { Badge, cssVariables, roundIconSize } from "../../.."
+import { Badge, libTokens } from "../../.."
+import { roundIconSize } from "../../../lib-utils"
 import { Plus } from "../../../icons"
 
 describe("<Badge />", () => {
@@ -13,7 +14,7 @@ describe("<Badge />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
     })
 
@@ -56,37 +57,29 @@ describe("<Badge />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["secondary-300"].rgb
+                libTokens.colors.light["secondary-300"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["success-300"].rgb
+                libTokens.colors.light["success-300"].rgb
             )
-            .should(
-                "have.css",
-                "border-top-left-radius",
-                cssVariables.radiuses.xs
-            )
-            .should(
-                "have.css",
-                "border-top-right-radius",
-                cssVariables.radiuses.s
-            )
+            .should("have.css", "border-top-left-radius", libTokens.radiuses.xs)
+            .should("have.css", "border-top-right-radius", libTokens.radiuses.s)
             .should(
                 "have.css",
                 "border-bottom-left-radius",
-                cssVariables.radiuses.m
+                libTokens.radiuses.m
             )
             .should(
                 "have.css",
                 "border-bottom-right-radius",
-                cssVariables.radiuses.l
+                libTokens.radiuses.l
             )
-            .should("have.css", "padding-left", cssVariables.spacers.xl)
-            .should("have.css", "padding-top", cssVariables.spacers.xxl)
-            .should("have.css", "padding-right", cssVariables.spacers.xl)
-            .should("have.css", "padding-bottom", cssVariables.spacers.xxl)
+            .should("have.css", "padding-left", libTokens.spacers.xl)
+            .should("have.css", "padding-top", libTokens.spacers.xxl)
+            .should("have.css", "padding-right", libTokens.spacers.xl)
+            .should("have.css", "padding-bottom", libTokens.spacers.xxl)
 
         cy.dataTest().should("contain.text", "421")
     })

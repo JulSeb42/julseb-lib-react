@@ -1,5 +1,25 @@
 /*=============================================== Type values ===============================================*/
 
+const textDisplayTags = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    h4: "h4",
+    h5: "h5",
+} as const
+
+const textTags = {
+    h6: "h6",
+    p: "p",
+    strong: "strong",
+    em: "em",
+    small: "small",
+    blockquote: "blockquote",
+    ul: "ul",
+    ol: "ol",
+    dl: "dl",
+} as const
+
 export const typeValues = {
     libColors: {
         black: "black",
@@ -2040,4 +2060,60 @@ export const typeValues = {
     },
 
     keySizes: { large: "large", small: "small" },
+
+    asideSizes: { default: "default", small: "small" },
+
+    mainSizes: {
+        default: "default",
+        large: "large",
+        form: "form",
+        full: "full",
+    },
+
+    accordionVariants: { basic: "basic", rounded: "rounded" },
+
+    accordionIcons: { plus: "plus", chevron: "chevron" },
+
+    avatarBadgePosition: { top: "top", bottom: "bottom" },
+
+    breadcrumbSeparators: { slash: "slash", chevron: "chevron" },
+
+    inputTypes: {
+        color: "color",
+        date: "date",
+        "datetime-local": "datetime-local",
+        month: "month",
+        week: "week",
+        file: "file",
+        password: "password",
+        search: "search",
+        email: "email",
+        number: "number",
+        tel: "tel",
+        text: "text",
+        url: "url",
+        time: "time",
+        select: "select",
+        textarea: "textarea",
+    },
+
+    checkInputVariants: {
+        tile: "tile",
+        toggle: "toggle",
+        selector: "selector",
+    },
+
+    loaderVariants: { 1: 1, 2: 2, 3: 3, 4: 4 },
+
+    skeletonAnimations: { pulse: "pulse", shine: "shine" },
+
+    stepperDirections: { column: "column", row: "row" },
+
+    textDisplayTags,
+
+    textTags,
+
+    allTextTags: { ...textDisplayTags, ...textTags },
+
+    tooltipTriggers: { hover: "hover", click: "click" },
 } as const

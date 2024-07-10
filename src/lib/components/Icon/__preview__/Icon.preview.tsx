@@ -15,10 +15,12 @@ const IconMixin = styled(Text)`
     }
 `
 
-export const iconPreview: ComponentPreview<IconProps, typeof Icon> = {
+export const iconPreview: ComponentPreview<IconProps> = {
     name: "Icon",
     component: Icon,
     category: "components",
+    imports: "Icon",
+    typeImports: "IconProps",
     props: [
         {
             previewTitle: "Default",

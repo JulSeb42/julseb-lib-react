@@ -3,12 +3,12 @@
 import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, LAYOUTS, Mixins, SPACERS, BREAKPOINTS } from "../../"
-import type { AsideSize } from "./types"
+import type { LibAsideSize } from "../../types"
 
-const getAsideSize = (size: AsideSize) => {
+const getAsideSize = (size: LibAsideSize) => {
     if (typeof size === "number") return stringifyPx(size)
 
-    const sizesMap = new Map<AsideSize, LAYOUTS>([
+    const sizesMap = new Map<LibAsideSize, LAYOUTS>([
         ["default", LAYOUTS.ASIDE_DEFAULT],
         ["small", LAYOUTS.ASIDE_SMALL],
     ])
@@ -17,7 +17,7 @@ const getAsideSize = (size: AsideSize) => {
 }
 
 const StyledAside = styled.aside<{
-    $size?: AsideSize
+    $size?: LibAsideSize
     $minHeight: string | number
 }>`
     position: relative;

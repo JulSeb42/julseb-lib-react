@@ -1,6 +1,6 @@
 /*=============================================== Text tests ===============================================*/
 
-import { Text, cssVariables } from "../../.."
+import { Text, libTokens } from "../../.."
 import { tags } from "./utils"
 
 describe("<Text />", () => {
@@ -39,7 +39,7 @@ describe("<Text />", () => {
         cy.dataTest().should(
             "have.css",
             "color",
-            cssVariables.colors.light["primary-500"].rgb
+            libTokens.colors.light["primary-500"].rgb
         )
     })
 
@@ -55,7 +55,7 @@ describe("<Text />", () => {
         link.should(
             "have.css",
             "color",
-            cssVariables.colors.light["secondary-500"].rgb
+            libTokens.colors.light["secondary-500"].rgb
         )
     })
 
@@ -77,7 +77,7 @@ describe("<Text />", () => {
         cy.dataTest().should(
             "have.css",
             "font-size",
-            cssVariables["font-sizes"]["display-h1"].px
+            libTokens["font-sizes"]["display-h1"].px
         )
     })
 })

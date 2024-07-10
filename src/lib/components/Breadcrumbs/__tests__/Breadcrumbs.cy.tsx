@@ -1,7 +1,7 @@
 /*=============================================== Breadcrumbs tests ===============================================*/
 
 import { Link } from "react-router-dom"
-import { Breadcrumbs, cssVariables } from "../../.."
+import { Breadcrumbs, libTokens } from "../../.."
 import { breadcrumbsItems } from "./data"
 
 describe("<Breadcrumbs />", () => {
@@ -74,22 +74,22 @@ describe("<Breadcrumbs />", () => {
         cy.dataTest("testid.Link.0").should(
             "have.css",
             "color",
-            cssVariables.colors.light["secondary-500"].rgb
+            libTokens.colors.light["secondary-500"].rgb
         )
 
         cy.dataTest("testid.SeparatorContainer").should(
             "have.css",
             "color",
-            cssVariables.colors.light["warning-500"].rgb
+            libTokens.colors.light["warning-500"].rgb
         )
 
         cy.dataTest().should(
             "have.css",
             "color",
-            cssVariables.colors.light["success-500"].rgb
+            libTokens.colors.light["success-500"].rgb
         )
 
-        cy.dataTest().should("have.css", "gap", cssVariables.spacers.xl)
+        cy.dataTest().should("have.css", "gap", libTokens.spacers.xl)
     })
 
     // TODO

@@ -11,8 +11,8 @@ import type {
     LibIcon,
     LibSpacers,
     LibButtonSize,
+    LibLoaderVariant,
 } from "../../types"
-import type { LoaderVariant } from "../Loader/types"
 
 type ButtonPropsBase = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
@@ -61,7 +61,7 @@ type ButtonPropsVariant =
 
 type ButtonPropsWithLoading = ButtonPropsVariant & {
     isLoading?: boolean
-    loaderVariant?: LoaderVariant
+    loaderVariant?: LibLoaderVariant
 }
 
 type ButtonPropsNoLoading = ButtonPropsVariant & {

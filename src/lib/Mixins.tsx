@@ -8,7 +8,7 @@ import {
     colorsDarkShortMap,
     allColorsDarkMap,
     overlaysMap,
-} from "./utils"
+} from "./lib-utils"
 import {
     COLORS_LIGHT,
     COLORS_DARK,

@@ -18,12 +18,13 @@ export function shouldForwardProp(propName: string, target: WebTarget) {
 
 export function StyleSheetManager({
     shouldForwardProp: shouldForwardPropFn = shouldForwardProp,
+    enableVendorPrefixes = true,
     ...rest
 }: IStyleSheetManager) {
     return (
         <Manager
             shouldForwardProp={shouldForwardPropFn}
-            enableVendorPrefixes
+            enableVendorPrefixes={enableVendorPrefixes}
             {...rest}
         />
     )

@@ -8,8 +8,8 @@ import type {
     LibBorderProps,
     LibPaddingProps,
     LibRadiusProps,
+    LibSkeletonAnimation,
 } from "../../types"
-import type { SkeletonAnimation } from "./types"
 
 type CommonStyleProps = {
     $width?: string | number
@@ -95,7 +95,7 @@ const StyledSkeletonShine = styled.span`
 `
 
 const StyledSkeleton = styled.div<
-    CommonStyleProps & { $animation?: SkeletonAnimation }
+    CommonStyleProps & { $animation?: LibSkeletonAnimation }
 >`
     ${Common}
     ${({ $animation }) =>

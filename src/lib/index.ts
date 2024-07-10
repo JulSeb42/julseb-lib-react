@@ -2,7 +2,7 @@
 
 export { ThemeProvider } from "styled-components"
 import {} from "styled-components/cssprop"
-export * from "./utils/StyleSheetManager"
+export * from "./utils"
 export {
     calculateAverage,
     calculateTotalSum,
@@ -54,13 +54,11 @@ export {
 } from "ts-utils-julseb"
 
 export * from "./Variables"
-export { default as cssVariables } from "./utils/css-variables.json"
 export * from "./Mixins"
 
-export * from "./utils"
 export * from "./hooks"
 
-export * from "./context/ThemeContext"
+export * from "./context/Theme.context"
 export * from "./context/Toaster"
 
 export * from "./components/Fallback"

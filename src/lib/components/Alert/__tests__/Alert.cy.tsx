@@ -1,6 +1,6 @@
 /*=============================================== Alert tests ===============================================*/
 
-import { Alert, cssVariables } from "../../.."
+import { Alert, libTokens } from "../../.."
 import type { LibColorsShort } from "../../../types"
 
 const alertColors: Array<Exclude<LibColorsShort, "black" | "white">> = [
@@ -26,19 +26,19 @@ describe("<Alert />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["primary-50"].rgb
+                libTokens.colors.light["primary-50"].rgb
             )
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
             .should("have.css", "border-width", "1px")
             .should("have.css", "border-style", "solid")
-            .should("have.css", "border-radius", cssVariables.radiuses.m)
-            .should("have.css", "color", cssVariables.colors.light.font.rgb)
-            .should("have.css", "padding", cssVariables.spacers.s)
-            .should("have.css", "gap", cssVariables.spacers.xs)
+            .should("have.css", "border-radius", libTokens.radiuses.m)
+            .should("have.css", "color", libTokens.colors.light.font.rgb)
+            .should("have.css", "padding", libTokens.spacers.s)
+            .should("have.css", "gap", libTokens.spacers.xs)
     })
 
     {
@@ -58,12 +58,12 @@ describe("<Alert />", () => {
                     .should(
                         "have.css",
                         "background-color",
-                        cssVariables.colors.light[`${c}-50`].rgb
+                        libTokens.colors.light[`${c}-50`].rgb
                     )
                     .should(
                         "have.css",
                         "border-color",
-                        cssVariables.colors.light[`${c}-500`].rgb
+                        libTokens.colors.light[`${c}-500`].rgb
                     )
             })
         )
@@ -86,12 +86,12 @@ describe("<Alert />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["secondary-500"].rgb
+                libTokens.colors.light["secondary-500"].rgb
             )
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["success-100"].rgb
+                libTokens.colors.light["success-100"].rgb
             )
     })
 })

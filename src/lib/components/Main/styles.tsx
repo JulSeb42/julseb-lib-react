@@ -3,12 +3,12 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Mixins, BREAKPOINTS, SPACERS, LAYOUTS } from "../../"
-import type { MainSize } from "./types"
+import type { LibMainSize } from "../../types"
 
-const getMainSize = (size: MainSize) => {
+const getMainSize = (size: LibMainSize) => {
     if (typeof size === "number") return stringifyPx(size)
 
-    const sizesMap = new Map<MainSize, LAYOUTS>([
+    const sizesMap = new Map<LibMainSize, LAYOUTS>([
         ["default", LAYOUTS.MAIN_DEFAULT],
         ["large", LAYOUTS.MAIN_LARGE],
         ["form", LAYOUTS.MAIN_FORM],
@@ -19,8 +19,8 @@ const getMainSize = (size: MainSize) => {
 }
 
 const StyledMain = styled.main<{
-    $size?: MainSize
-    $contentSize?: Extract<MainSize, "default" | "large" | "form">
+    $size?: LibMainSize
+    $contentSize?: Extract<LibMainSize, "default" | "large" | "form">
     $minHeight: string | number
 }>`
     position: relative;

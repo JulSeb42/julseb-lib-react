@@ -1,13 +1,7 @@
 /*=============================================== SearchInput component ===============================================*/
 
 import { forwardRef, useRef, type ForwardedRef, useCallback } from "react"
-import {
-    Key,
-    useKeyPress,
-    useMergeRefs,
-    useTouchScreen,
-    transformSearchKeys,
-} from "../../.."
+import { Key, useKeyPress, useMergeRefs, useTouchScreen } from "../../.."
 import {
     InputButton,
     InputIcon,
@@ -15,6 +9,7 @@ import {
     InputWrapper,
 } from "../../InputComponents"
 import { Close } from "../../../icons"
+import { transformSearchKeys } from "../../../lib-utils"
 import { StyledInput } from "../styles"
 import type { SearchInputProps } from "../types"
 

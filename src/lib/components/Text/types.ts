@@ -5,33 +5,9 @@ import type {
     LibColorsHover,
     LibComponentBase,
     TextAlign,
+    LibTextDisplayTag,
+    LibTextTag,
 } from "../../types"
-
-const displayTags = {
-    h1: "h1",
-    h2: "h2",
-    h3: "h3",
-    h4: "h4",
-    h5: "h5",
-} as const
-
-const textTags = {
-    h6: "h6",
-    p: "p",
-    strong: "strong",
-    em: "em",
-    small: "small",
-    blockquote: "blockquote",
-    ul: "ul",
-    ol: "ol",
-    dl: "dl",
-} as const
-
-const allTags = { ...displayTags, ...textTags } as const
-
-export type LibDisplayTextTag = keyof typeof displayTags
-export type LibTextTag = keyof typeof textTags
-export type LibAllTextTags = keyof typeof allTags
 
 interface TextPropsBase extends LibComponentBase<HTMLElement> {
     color?: LibAllColors
@@ -40,7 +16,7 @@ interface TextPropsBase extends LibComponentBase<HTMLElement> {
 }
 
 interface TextPropsDisplay extends TextPropsBase {
-    tag?: LibDisplayTextTag
+    tag?: LibTextDisplayTag
     display?: boolean
 }
 

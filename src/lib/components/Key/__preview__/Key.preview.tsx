@@ -1,17 +1,21 @@
 /*=============================================== KeyPreview ===============================================*/
 
 import { Key, capitalize } from "../../../"
-import { typeValues } from "../../../types"
+import { typeValues, type LibKeySize } from "../../../types"
 import type { ComponentPreview } from "../../../../data/components"
-import type { KeyProps, KeySize } from "../../../types/components-props"
+import type { KeyProps } from "../../../types/components-props"
 
 const keys = ["⌘", "K"]
-const sizes: Array<KeySize> = Object.keys(typeValues.keySizes) as Array<KeySize>
+const sizes: Array<LibKeySize> = Object.keys(
+    typeValues.keySizes
+) as Array<LibKeySize>
 
-export const keyPreview: ComponentPreview<KeyProps, typeof Key> = {
+export const keyPreview: ComponentPreview<KeyProps> = {
     name: "Key",
     component: Key,
     category: "components",
+    imports: "Key",
+    typeImports: ["KeyProps"],
     props: [
         ...sizes.map(size => ({ previewTitle: capitalize(size), keys, size })),
         ...sizes.map(size => ({

@@ -1,6 +1,6 @@
 /*=============================================== Modal tests ===============================================*/
 
-import { cssVariables } from "../../.."
+import { libTokens } from "../../.."
 import { Preview, PreviewWithAlert } from "./Preview"
 
 const trigger = () => cy.dataTest("trigger")
@@ -16,7 +16,7 @@ describe("<Modal />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.overlays["black-80"]
+                libTokens.overlays["black-80"]
             )
         trigger().click()
 

@@ -3,16 +3,19 @@
 import { useCallback } from "react"
 import { LibIcon } from "../LibIcon"
 import { Plus, ChevronDown } from "../../icons"
-import type { DispatchState } from "../../types"
+import type {
+    DispatchState,
+    LibAccordionVariant,
+    LibAccordionIcon,
+} from "../../types"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"
-import type { AccordionVariant, AccordionIcon } from "./types"
 
 interface AccordionButtonProps {
     "data-testid": string | undefined
     className: string | undefined
-    variant: AccordionVariant | undefined
+    variant: LibAccordionVariant | undefined
     title: string
-    icon: AccordionIcon | undefined
+    icon: LibAccordionIcon | undefined
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
 }

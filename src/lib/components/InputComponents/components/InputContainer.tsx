@@ -1,6 +1,7 @@
 /*=============================================== InputContainer component ===============================================*/
 
-import { getIconSizeFromFont, Text } from "../../.."
+import { Text } from "../../.."
+import { getIconSizeFromFont } from "../../../lib-utils"
 import { LibIcon } from "../../LibIcon"
 import { InputValidationHelper } from "./InputValidationHelper"
 import {

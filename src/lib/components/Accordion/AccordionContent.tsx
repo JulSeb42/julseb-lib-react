@@ -1,14 +1,13 @@
 /*=============================================== AccordionContent component ===============================================*/
 
 import { StyledAccordionContent } from "./styles"
-import type { AccordionVariant } from "./types"
-import type { ReactChildren } from "../../types"
+import type { ReactChildren, LibAccordionVariant } from "../../types"
 
 interface AccordionContentProps {
     "data-testid": string | undefined
     className: string | undefined
     isOpen: boolean
-    variant: AccordionVariant | undefined
+    variant: LibAccordionVariant | undefined
     children?: ReactChildren
 }
 

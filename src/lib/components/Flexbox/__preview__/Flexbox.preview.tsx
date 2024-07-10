@@ -5,10 +5,12 @@ import { GridItem } from "../../../../components"
 import type { FlexboxProps } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const flexboxPreview: ComponentPreview<FlexboxProps, typeof Flexbox> = {
+export const flexboxPreview: ComponentPreview<FlexboxProps> = {
     name: "Flexbox",
     component: Flexbox,
     category: "layouts",
+    imports: "Flexbox",
+    typeImports: "FlexboxProps",
     props: [
         {
             flexDirection: "column-reverse",

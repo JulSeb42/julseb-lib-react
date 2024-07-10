@@ -8,11 +8,10 @@ import {
     FONT_WEIGHTS,
     TRANSITIONS,
 } from "../../"
-import type { LibColorsHover } from "../../types"
-import type { StepperDirection } from "./types"
+import type { LibColorsHover, LibStepperDirection } from "../../types"
 
 const StyledStep = styled.span<{
-    $direction: StepperDirection
+    $direction: LibStepperDirection
     $accentColor?: LibColorsHover
     $isActive?: boolean
     $isLink: boolean
@@ -54,7 +53,7 @@ const StyledStep = styled.span<{
 `
 
 const StyledStepper = styled.div<{
-    $direction: StepperDirection
+    $direction: LibStepperDirection
     $accentColor: LibColorsHover
 }>`
     position: relative;

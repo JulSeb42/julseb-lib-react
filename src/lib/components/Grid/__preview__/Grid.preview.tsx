@@ -5,10 +5,12 @@ import { GridItem } from "../../../../components"
 import type { GridProps } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const gridPreview: ComponentPreview<GridProps, typeof Grid> = {
+export const gridPreview: ComponentPreview<GridProps> = {
     name: "Grid",
     component: Grid,
     category: "layouts",
+    imports: "Grid",
+    typeImports: "GridProps",
     props: [
         {
             col: 3,

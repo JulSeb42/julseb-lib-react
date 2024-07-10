@@ -1,28 +1,19 @@
 /*=============================================== Main types ===============================================*/
 
-import type { LibComponentBase } from "../../types"
-
-const mainSizes = {
-    default: "default",
-    large: "large",
-    form: "form",
-    full: "full",
-} as const
-
-export type MainSize = keyof typeof mainSizes | number
+import type { LibComponentBase, LibMainSize } from "../../types"
 
 interface MainPropsBase extends LibComponentBase<HTMLDivElement> {
     minHeight?: string | number
 }
 
 interface MainPropsSize extends MainPropsBase {
-    size?: Extract<MainSize, "default" | "large" | "form" | number>
+    size?: Extract<LibMainSize, "default" | "large" | "form" | number>
     contentSize?: never
 }
 
 interface MainPropsFull extends MainPropsBase {
-    size?: Extract<MainSize, "full">
-    contentSize?: Extract<MainSize, "default" | "large" | "form" | number>
+    size?: Extract<LibMainSize, "full">
+    contentSize?: Extract<LibMainSize, "default" | "large" | "form" | number>
 }
 
 export type MainProps = MainPropsSize | MainPropsFull

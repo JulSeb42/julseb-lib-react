@@ -1,6 +1,6 @@
 /*=============================================== TextIcon tests ===============================================*/
 
-import { TextIcon, cssVariables } from "../../.."
+import { TextIcon, libTokens } from "../../.."
 import { stringifyPx } from "ts-utils-julseb"
 
 describe("<TextIcon />", () => {
@@ -27,9 +27,7 @@ describe("<TextIcon />", () => {
     })
 
     it("should have a default font and icon sizes of 16px", () => {
-        const height = Number(
-            cssVariables["font-sizes"].body.px.replace("px", "")
-        )
+        const height = Number(libTokens["font-sizes"].body.px.replace("px", ""))
 
         cy.mount(
             <TextIcon data-testid="testid" icon="heart-full">
@@ -51,9 +49,7 @@ describe("<TextIcon />", () => {
     })
 
     it("renders a h1 tag with a font and icon sizes of 40px", () => {
-        const height = Number(
-            cssVariables["font-sizes"].h1.px.replace("px", "")
-        )
+        const height = Number(libTokens["font-sizes"].h1.px.replace("px", ""))
 
         cy.mount(
             <TextIcon data-testid="testid" icon="heart-full" tag="h1">
@@ -89,12 +85,12 @@ describe("<TextIcon />", () => {
         testIdText("testid").should(
             "have.css",
             "color",
-            cssVariables.colors.light["secondary-400"].rgb
+            libTokens.colors.light["secondary-400"].rgb
         )
         testIdIcon("testid").should(
             "have.css",
             "fill",
-            cssVariables.colors.light["warning-600"].rgb
+            libTokens.colors.light["warning-600"].rgb
         )
     })
 
@@ -113,12 +109,8 @@ describe("<TextIcon />", () => {
 
         testIdText("testid")
             .should("have.prop", "tagName", "SMALL")
-            .should(
-                "have.css",
-                "font-size",
-                cssVariables["font-sizes"].small.px
-            )
+            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
         testIdIcon("testid").invoke("width").should("equal", 48)
-        cy.dataTest().should("have.css", "gap", cssVariables.spacers.l)
+        cy.dataTest().should("have.css", "gap", libTokens.spacers.l)
     })
 })

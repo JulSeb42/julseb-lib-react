@@ -1,5 +1,6 @@
 /*=============================================== Paginator styles ===============================================*/
 
+import type { FC } from "react"
 import styled from "styled-components"
 import { setDefaultTheme, Input, Mixins } from "../../"
 import type { LibColorsHover } from "../../types"
@@ -26,7 +27,7 @@ const StyledInput = styled(Input)<{ $accentColor?: LibColorsHover }>`
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
     }
-`
+` as FC<any>
 
 setDefaultTheme([TextContainer, StyledInput])
 

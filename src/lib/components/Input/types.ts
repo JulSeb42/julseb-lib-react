@@ -4,36 +4,13 @@ import type {
     InputHTMLAttributes,
     SelectHTMLAttributes,
     TextareaHTMLAttributes,
-    MouseEventHandler
+    MouseEventHandler,
 } from "react"
-import type {
-    LibIcon,
-    ReactChildren,
-} from "../../types"
+import type { LibIcon, ReactChildren } from "../../types"
 import type {
     ExtendedInputBaseProps,
     InputValidationIcon,
 } from "../InputComponents/types"
-
-const inputTypes = {
-    color: "color",
-    date: "date",
-    "datetime-local": "datetime-local",
-    month: "month",
-    week: "week",
-    file: "file",
-    password: "password",
-    search: "search",
-    select: "select",
-    textarea: "textarea",
-    email: "email",
-    number: "number",
-    tel: "tel",
-    text: "text",
-    url: "url",
-    time: "time",
-} as const
-export type LibInputType = keyof typeof inputTypes
 
 export interface InputIconProps {
     icon?: LibIcon

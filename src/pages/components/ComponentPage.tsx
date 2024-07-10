@@ -1,5 +1,6 @@
 /*=============================================== ComponentPage ===============================================*/
 
+import { Fragment } from "react"
 import { useParams } from "react-router-dom"
 import { toKebabCase } from "ts-utils-julseb"
 import { Page } from "../../components"
@@ -21,7 +22,7 @@ export function ComponentPage() {
         )
 
     const { name, component, props, demos } = componentPreview
-    const Component = component
+    const Component = component as any
 
     return (
         <Page title={name}>
@@ -33,7 +34,7 @@ export function ComponentPage() {
                         flexDirection="column"
                         gap="s"
                         alignItems="flex-start"
-                        key={previewTitle}
+                        key={i}
                     >
                         <Text tag="h4">{previewTitle}</Text>
                         <Component {...rest} />
@@ -49,7 +50,7 @@ export function ComponentPage() {
                         flexDirection="column"
                         gap="s"
                         alignItems="flex-start"
-                        key={preview.previewTitle || i}
+                        key={i}
                     >
                         {preview.previewTitle && (
                             <Text tag="h4">{preview.previewTitle}</Text>
@@ -57,7 +58,7 @@ export function ComponentPage() {
                         {preview.element}
                     </Flexbox>
                 ) : (
-                    preview.element
+                    <Fragment key={i}>{preview.element}</Fragment>
                 )
             })}
         </Page>

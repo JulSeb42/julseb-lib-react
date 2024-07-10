@@ -1,6 +1,6 @@
 /*=============================================== Section tests ===============================================*/
 
-import { Section, cssVariables } from "../../.."
+import { Section, libTokens } from "../../.."
 
 describe("<Section />", () => {
     it("renders <Section /> component", () => {
@@ -21,6 +21,6 @@ describe("<Section />", () => {
 
         cy.dataTest()
             .should("exist")
-            .should("have.css", "gap", cssVariables.spacers.l)
+            .should("have.css", "gap", libTokens.spacers.l)
     })
 })

@@ -1,6 +1,6 @@
 /*=============================================== All spacers ===============================================*/
 
-import { cssVariables, SPACERS } from "../../lib"
+import { libTokens, SPACERS } from "../../lib"
 import type { Variable } from "../types"
 
 export const allSpacers: Array<Variable> = [
@@ -8,42 +8,42 @@ export const allSpacers: Array<Variable> = [
         name: "XXL",
         variable: "SPACERS.XXL",
         css: SPACERS.XXL,
-        value: cssVariables.spacers.xxl,
+        value: libTokens.spacers.xxl,
     },
     {
         name: "XL",
         variable: "SPACERS.XL",
         css: SPACERS.XL,
-        value: cssVariables.spacers.xl,
+        value: libTokens.spacers.xl,
     },
     {
         name: "L",
         variable: "SPACERS.L",
         css: SPACERS.L,
-        value: cssVariables.spacers.l,
+        value: libTokens.spacers.l,
     },
     {
         name: "M",
         variable: "SPACERS.M",
         css: SPACERS.M,
-        value: cssVariables.spacers.m,
+        value: libTokens.spacers.m,
     },
     {
         name: "S",
         variable: "SPACERS.S",
         css: SPACERS.S,
-        value: cssVariables.spacers.s,
+        value: libTokens.spacers.s,
     },
     {
         name: "XS",
         variable: "SPACERS.XS",
         css: SPACERS.XS,
-        value: cssVariables.spacers.xs,
+        value: libTokens.spacers.xs,
     },
     {
         name: "XXS",
         variable: "SPACERS.XXS",
         css: SPACERS.XXS,
-        value: cssVariables.spacers.xxs,
+        value: libTokens.spacers.xxs,
     },
 ]

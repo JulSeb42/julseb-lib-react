@@ -5,10 +5,12 @@ import {} from "../../../types"
 import type { TooltipProps } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const tooltipPreview: ComponentPreview<TooltipProps, typeof Tooltip> = {
+export const tooltipPreview: ComponentPreview<TooltipProps> = {
     name: "Tooltip",
     component: Tooltip,
     category: "components",
+    imports: "Tooltip",
+    typeImports: "TooltipProps",
     props: [
         {
             previewTitle: "Click",

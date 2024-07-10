@@ -1,6 +1,6 @@
 /*=============================================== Image tests ===============================================*/
 
-import { Image, cssVariables } from "../../.."
+import { Image, libTokens } from "../../.."
 
 describe("<Image />", () => {
     it("renders <Image /> component", () => {
@@ -38,7 +38,7 @@ describe("<Image />", () => {
         cy.dataTest()
             .should("have.css", "object-fit", fit)
             .should("have.css", "aspect-ratio", aspectRatio)
-            .should("have.css", "border-radius", cssVariables.radiuses.xs)
+            .should("have.css", "border-radius", libTokens.radiuses.xs)
     })
 
     // TODO
@@ -68,9 +68,9 @@ describe("<Image />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.overlays["black-50"]
+                libTokens.overlays["black-50"]
             )
-            .should("have.css", "color", cssVariables.colors.light.white.rgb)
+            .should("have.css", "color", libTokens.colors.light.white.rgb)
             .should("have.text", "Hello")
     })
 
@@ -95,12 +95,12 @@ describe("<Image />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.overlays["white-80"]
+                libTokens.overlays["white-80"]
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
             .should("have.text", "Hello")
     })

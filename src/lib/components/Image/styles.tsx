@@ -1,10 +1,15 @@
 /*=============================================== Image styles ===============================================*/
 
+import type { FC } from "react"
 import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Text, Mixins, SPACERS } from "../../"
-import type { LibAllColors, LibRadiusProps, ObjectFit } from "../../types"
-import type { ImageBackgroundOverlay } from "./types"
+import type {
+    LibAllColors,
+    LibRadiusProps,
+    ObjectFit,
+    LibImageBackgroundOverlay,
+} from "../../types"
 
 const StyledImage = styled.img<{
     $width: string | number
@@ -36,7 +41,7 @@ const ImgContainer = styled.figure<{
 `
 
 const Caption = styled(Text).attrs({ as: "figcaption" })<{
-    $backgroundColor?: ImageBackgroundOverlay
+    $backgroundColor?: LibImageBackgroundOverlay
     $textColor?: LibAllColors
 }>`
     background: ${({ theme, $backgroundColor }) =>
@@ -48,7 +53,7 @@ const Caption = styled(Text).attrs({ as: "figcaption" })<{
     left: 0;
     width: 100%;
     z-index: 1;
-`
+` as FC<any>
 
 setDefaultTheme([StyledImage, ImgContainer, Caption])
 

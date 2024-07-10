@@ -1,6 +1,6 @@
 /*=============================================== Accordion tests ===============================================*/
 
-import { Accordion, cssVariables } from "../../.."
+import { Accordion, libTokens } from "../../.."
 import { items } from "./data"
 
 describe("<Accordion />", () => {
@@ -23,12 +23,12 @@ describe("<Accordion />", () => {
             .should(
                 "have.css",
                 "border-bottom-color",
-                cssVariables.colors.light["gray-200"].rgb
+                libTokens.colors.light["gray-200"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
 
         cy.dataTest(
@@ -49,9 +49,9 @@ describe("<Accordion />", () => {
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["gray-200"].rgb
+                libTokens.colors.light["gray-200"].rgb
             )
-            .should("have.css", "border-radius", cssVariables.radiuses.m)
+            .should("have.css", "border-radius", libTokens.radiuses.m)
     })
 
     it("opens and closes an item on click", () => {

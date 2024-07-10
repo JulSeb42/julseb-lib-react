@@ -1,7 +1,7 @@
 /*=============================================== Badge component ===============================================*/
 
 import { forwardRef } from "react"
-import { roundIconSize } from "../.."
+import { roundIconSize } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
 import { StyledBadge } from "./styles"
 import type { BadgeProps } from "./types"

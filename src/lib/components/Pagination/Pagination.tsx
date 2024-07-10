@@ -2,7 +2,8 @@
 
 import { forwardRef, useCallback, useState } from "react"
 import { useSearchParams } from "react-router-dom"
-import { roundIconSize, usePagination, useMaxWidth, Flexbox } from "../../"
+import { usePagination, useMaxWidth, Flexbox } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import { PaginationButton } from "./PaginationButton"
 import { LibIcon } from "../LibIcon"
 import { ChevronLeft, ChevronRight } from "../../icons"

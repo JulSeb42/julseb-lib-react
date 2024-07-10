@@ -2,7 +2,8 @@
 
 import { forwardRef, useCallback } from "react"
 import { generateNumbers } from "ts-utils-julseb"
-import { Flexbox, roundIconSize } from "../../"
+import { Flexbox } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import { InputContainer } from "../InputComponents"
 import { Star, StarFull } from "../../icons"
 import { LibIcon } from "../LibIcon"

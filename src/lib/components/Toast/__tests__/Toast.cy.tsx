@@ -1,6 +1,6 @@
 /*=============================================== Toast tests ===============================================*/
 
-import { cssVariables, ToasterProviderWrapper } from "../../.."
+import { libTokens, ToasterProviderWrapper } from "../../.."
 import {
     PreviewError,
     PreviewSuccess,
@@ -34,7 +34,7 @@ describe("<Toast />", () => {
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["success-500"].rgb
+                libTokens.colors.light["success-500"].rgb
             )
 
         cy.wait(3000)
@@ -93,7 +93,7 @@ describe("<Toast />", () => {
         triggerButton().click()
 
         cy.dataTest()
-            .should("have.css", "left", cssVariables.spacers.s)
-            .should("have.css", "top", cssVariables.spacers.s)
+            .should("have.css", "left", libTokens.spacers.s)
+            .should("have.css", "top", libTokens.spacers.s)
     })
 })

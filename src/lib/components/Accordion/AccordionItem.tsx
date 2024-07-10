@@ -1,16 +1,19 @@
 /*=============================================== AccordionItem component ===============================================*/
 
 import { forwardRef, useState } from "react"
-import type { LibComponentBase } from "../../types"
+import type {
+    LibComponentBase,
+    LibAccordionIcon,
+    LibAccordionVariant,
+} from "../../types"
 import { AccordionButton } from "./AccordionButton"
 import { AccordionContent } from "./AccordionContent"
 import { StyledAccordionItem } from "./styles"
-import type { AccordionIcon, AccordionVariant } from "./types"
 
 interface AccordionItemProps extends LibComponentBase<HTMLDivElement> {
     title: string
-    icon?: AccordionIcon
-    variant?: AccordionVariant
+    icon?: LibAccordionIcon
+    variant?: LibAccordionVariant
     defaultOpen?: boolean
 }
 

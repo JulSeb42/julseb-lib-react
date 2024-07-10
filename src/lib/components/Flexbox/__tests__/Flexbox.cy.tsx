@@ -1,6 +1,6 @@
 /*=============================================== Flexbox tests ===============================================*/
 
-import { Flexbox, cssVariables } from "../../.."
+import { Flexbox, libTokens } from "../../.."
 
 describe("<Flexbox />", () => {
     it("renders <Flexbox /> component", () => {
@@ -18,6 +18,6 @@ describe("<Flexbox />", () => {
             .should("exist")
             .should("have.class", "className")
             .should("have.css", "flex-direction", "column")
-            .should("have.css", "gap", cssVariables.spacers.s)
+            .should("have.css", "gap", libTokens.spacers.s)
     })
 })

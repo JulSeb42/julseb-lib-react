@@ -1,6 +1,6 @@
 /*=============================================== ListGroup tests ===============================================*/
 
-import { ListGroup, cssVariables } from "../../.."
+import { ListGroup, libTokens } from "../../.."
 import { listGroupData } from "./data"
 
 describe("<ListGroup />", () => {
@@ -21,7 +21,7 @@ describe("<ListGroup />", () => {
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["gray-200"].rgb
+                libTokens.colors.light["gray-200"].rgb
             )
 
         cy.dataTest("testid.ListGroupItem").should(

@@ -1,7 +1,8 @@
 /*=============================================== Highlight component ===============================================*/
 
 import { forwardRef } from "react"
-import { getHighlightedText, Text } from "../../"
+import { Text } from "../../"
+import { getHighlightedText } from "../../lib-utils"
 import type { HighlightProps } from "./types"
 
 /**

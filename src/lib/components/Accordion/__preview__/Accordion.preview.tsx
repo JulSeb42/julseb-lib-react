@@ -27,13 +27,12 @@ const items: Array<LibAccordionItem> = [
     },
 ]
 
-export const accordionPreview: ComponentPreview<
-    AccordionProps,
-    typeof Accordion
-> = {
+export const accordionPreview: ComponentPreview<AccordionProps> = {
     name: "Accordion",
     component: Accordion,
     category: "components",
+    imports: ["Accordion", "AccordionItem"],
+    typeImports: ["AccordionProps", "LibAccordionItem"],
     props: [
         {
             items,

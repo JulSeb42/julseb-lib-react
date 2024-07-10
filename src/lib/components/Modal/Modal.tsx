@@ -2,7 +2,8 @@
 
 import { forwardRef, useCallback, useRef } from "react"
 import { enableScroll } from "ts-utils-julseb"
-import { useKeyPress, roundIconSize, useClickOutside } from "../../"
+import { useKeyPress, useClickOutside } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import { Close } from "../../icons"
 import { StyledModal, ButtonClose, ModalContent } from "./styles"
 import type { ModalProps } from "./types"

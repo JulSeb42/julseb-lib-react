@@ -6,11 +6,9 @@ import type {
     LibComponentBase,
     LibPaddingProps,
     LibRadiusProps,
+    LibSkeletonAnimation,
 } from "../../types"
 import type { FlexboxProps } from "../Flexbox/types"
-
-const skeletonAnimations = { pulse: "pulse", shine: "shine" } as const
-export type SkeletonAnimation = keyof typeof skeletonAnimations
 
 interface CommonSkeletonProps {
     width?: string | number
@@ -34,6 +32,6 @@ export type SkeletonShineProps = LibComponentBase<HTMLSpanElement>
 export interface SkeletonProps
     extends LibComponentBase<HTMLDivElement>,
         CommonSkeletonProps {
-    animation?: SkeletonAnimation
+    animation?: LibSkeletonAnimation
     children?: never
 }

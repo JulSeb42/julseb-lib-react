@@ -6,13 +6,11 @@ import type {
     LibIcon,
     LibStep,
     ReactChildren,
+    LibStepperDirection,
 } from "../../types"
 
-const directions = { column: "column", row: "row" } as const
-export type StepperDirection = keyof typeof directions
-
 interface StepperPropsBase extends LibComponentBase<HTMLDivElement> {
-    direction?: StepperDirection
+    direction?: LibStepperDirection
     activeStep?: number
     iconActive?: LibIcon
     iconActiveSize?: number

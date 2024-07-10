@@ -6,9 +6,9 @@ import type {
     LibInputBackground,
     LibInputVariant,
     DispatchState,
+    LibButtonIconVariant,
 } from "../../types"
 import type { InputBaseProps } from "../InputComponents/types"
-import type { ButtonIconVariant } from "../ButtonIcon/types"
 
 interface InputCounterPropsBase
     extends InputHTMLAttributes<HTMLInputElement>,
@@ -19,7 +19,7 @@ interface InputCounterPropsBase
     max?: number
     step?: number
     type?: never
-    buttonVariant?: ButtonIconVariant
+    buttonVariant?: LibButtonIconVariant
     icons?: {
         plus?: LibIcon
         minus?: LibIcon

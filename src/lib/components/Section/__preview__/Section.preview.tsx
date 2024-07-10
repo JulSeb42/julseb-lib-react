@@ -8,15 +8,13 @@ import type { LibSpacers } from "../../../types"
 
 const sizes: Array<LibSpacers> = ["xxl", "xl", "l", "m", "s", "xs", "xxs", 100]
 
-export const sectionPreview: ComponentPreview<SectionProps, typeof Section> = {
+export const sectionPreview: ComponentPreview<SectionProps> = {
     name: "Section",
     component: Section,
     category: "layouts",
-    // props: [
-    //     { previewTitle: "", children: "" },
-    // ],
+    imports: "Section",
+    typeImports: "SectionProps",
     props: sizes.map(size => ({
-        // previewTitle: ``
         gap: size,
         children: (
             <>

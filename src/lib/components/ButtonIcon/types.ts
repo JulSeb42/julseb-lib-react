@@ -4,20 +4,15 @@ import type { ButtonHTMLAttributes } from "react"
 import type {
     LibComponentBase,
     LibIcon,
-    LibButtonVariant,
     LibBoxShadowProps,
     LibRadiusProps,
     LibButtonLinkBlank,
     LibColorsHover,
     LibTooltipPosition,
     LibSpacers,
+    LibButtonIconVariant,
+    LibLoaderVariant,
 } from "../../types"
-import type { LoaderVariant } from "../Loader/types"
-
-export type ButtonIconVariant = Extract<
-    LibButtonVariant,
-    "plain" | "transparent" | "ghost"
->
 
 type ButtonIconPropsBase = LibComponentBase<
     HTMLButtonElement & HTMLAnchorElement
@@ -40,12 +35,12 @@ type ButtonIconPropsBase = LibComponentBase<
     }
 
 type ButtonIconVariantsBackground = ButtonIconPropsBase & {
-    variant?: Extract<ButtonIconVariant, "plain" | "ghost">
+    variant?: Extract<LibButtonIconVariant, "plain" | "ghost">
     showBackgroundHover?: never
 }
 
 type ButtonIconVariantsWithoutBackground = ButtonIconPropsBase & {
-    variant?: Extract<ButtonIconVariant, "transparent">
+    variant?: Extract<LibButtonIconVariant, "transparent">
     showBackgroundHover?: boolean
 }
 
@@ -55,13 +50,13 @@ type ButtonIconPropsVariants =
 
 type ButtonIconLoading = ButtonIconPropsVariants & {
     isLoading?: boolean
-    loaderVariant?: Extract<LoaderVariant, 1 | 2 | 3>
+    loaderVariant?: Extract<LibLoaderVariant, 1 | 2 | 3>
     loaderBorderWidth?: number
 }
 
 type ButtonIconLoadingVariant = ButtonIconPropsVariants & {
     isLoading?: boolean
-    loaderVariant?: Extract<LoaderVariant, 4>
+    loaderVariant?: Extract<LibLoaderVariant, 4>
     loaderBorderWidth?: never
 }
 

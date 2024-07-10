@@ -1,6 +1,7 @@
 /*=============================================== Tag tests ===============================================*/
 
-import { Tag, cssVariables, getIconSizeFromFont } from "../../.."
+import { Tag, libTokens } from "../../.."
+import { getIconSizeFromFont } from "../../../lib-utils"
 import { Close } from "../../../icons"
 
 describe("<Tag />", () => {
@@ -17,26 +18,20 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
-            .should("have.css", "color", cssVariables.colors.light.white.rgb)
-            .should("have.css", "padding-top", cssVariables.spacers.xxs)
-            .should("have.css", "padding-bottom", cssVariables.spacers.xxs)
-            .should("have.css", "padding-left", cssVariables.spacers.s)
-            .should("have.css", "padding-right", cssVariables.spacers.s)
+            .should("have.css", "color", libTokens.colors.light.white.rgb)
+            .should("have.css", "padding-top", libTokens.spacers.xxs)
+            .should("have.css", "padding-bottom", libTokens.spacers.xxs)
+            .should("have.css", "padding-left", libTokens.spacers.s)
+            .should("have.css", "padding-right", libTokens.spacers.s)
             .should(
                 "have.css",
                 "border-radius",
-                `${
-                    Number(cssVariables.radiuses.round.replace("em", "")) * 14
-                }px`
+                `${Number(libTokens.radiuses.round.replace("em", "")) * 14}px`
             )
-            .should("have.css", "gap", cssVariables.spacers.xs)
-            .should(
-                "have.css",
-                "font-size",
-                cssVariables["font-sizes"].small.px
-            )
+            .should("have.css", "gap", libTokens.spacers.xs)
+            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
     })
 
     it("renders with a set backgroundColor", () => {
@@ -49,12 +44,12 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light.white.rgb
+                libTokens.colors.light.white.rgb
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
     })
 
@@ -72,12 +67,12 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["success-500"].rgb
+                libTokens.colors.light["success-500"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["warning-300"].rgb
+                libTokens.colors.light["warning-300"].rgb
             )
     })
 
@@ -97,23 +92,23 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light.transparent.rgb
+                libTokens.colors.light.transparent.rgb
             )
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["success-500"].rgb
+                libTokens.colors.light["success-500"].rgb
             )
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["success-500"].rgb
+                libTokens.colors.light["success-500"].rgb
             )
             .should("have.css", "border-width", "2px")
-            .should("have.css", "padding-left", cssVariables.spacers.xs)
-            .should("have.css", "padding-right", cssVariables.spacers.s)
-            .should("have.css", "padding-top", cssVariables.spacers.xxl)
-            .should("have.css", "padding-bottom", cssVariables.spacers.xxl)
+            .should("have.css", "padding-left", libTokens.spacers.xs)
+            .should("have.css", "padding-right", libTokens.spacers.s)
+            .should("have.css", "padding-top", libTokens.spacers.xxl)
+            .should("have.css", "padding-bottom", libTokens.spacers.xxl)
     })
 
     it("renders with a different borderRadius", () => {
@@ -123,8 +118,8 @@ describe("<Tag />", () => {
             </Tag>
         )
         cy.dataTest()
-            .should("have.css", "border-radius", cssVariables.radiuses.m)
-            .should("have.css", "font-size", cssVariables["font-sizes"].body.px)
+            .should("have.css", "border-radius", libTokens.radiuses.m)
+            .should("have.css", "font-size", libTokens["font-sizes"].body.px)
     })
 
     it("renders with icons", () => {
@@ -147,12 +142,12 @@ describe("<Tag />", () => {
                 Hello
             </Tag>
         )
-        cy.dataTest().should("have.css", "gap", cssVariables.spacers.m)
+        cy.dataTest().should("have.css", "gap", libTokens.spacers.m)
         cy.dataTest()
             .children()
             .eq(0)
             .should("have.prop", "tagName", "svg")
-            .should("have.css", "width", cssVariables["font-sizes"].h4.px)
+            .should("have.css", "width", libTokens["font-sizes"].h4.px)
         cy.dataTest().children().eq(1).should("have.prop", "tagName", "svg")
     })
 })

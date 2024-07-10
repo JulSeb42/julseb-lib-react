@@ -1,14 +1,11 @@
 /*=============================================== InputCheck types ===============================================*/
 
 import type { InputHTMLAttributes } from "react"
-import type { LibIcon, LibValidationStatus } from "../../types"
-
-const checkVariants = {
-    tile: "tile",
-    toggle: "toggle",
-    selector: "selector",
-} as const
-export type LibInputCheckVariant = keyof typeof checkVariants
+import type {
+    LibIcon,
+    LibValidationStatus,
+    LibInputCheckVariant,
+} from "../../types"
 
 interface InputCheckPropsBase extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid"?: string

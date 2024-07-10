@@ -6,13 +6,8 @@ import type {
     LibRadiusProps,
     ObjectFit,
     LibAllColors,
-    LibAllColorsAndOverlays,
+    LibImageBackgroundOverlay,
 } from "../../types"
-
-export type ImageBackgroundOverlay = Exclude<
-    LibAllColorsAndOverlays,
-    "gradient-black" | "gradient-white"
->
 
 export interface ImageProps
     extends Omit<LibComponentBase<HTMLImageElement>, "as">,
@@ -26,7 +21,7 @@ export interface ImageProps
         | {
               text: string
               textColor?: LibAllColors
-              background?: ImageBackgroundOverlay
+              background?: LibImageBackgroundOverlay
               as?: ElementType
           }
 }

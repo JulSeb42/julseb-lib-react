@@ -1,6 +1,6 @@
 /*=============================================== Burger tests ===============================================*/
 
-import { cssVariables } from "../../.."
+import { libTokens } from "../../.."
 import { BurgerPreview } from "./Preview"
 
 describe("<Burger />", () => {
@@ -16,7 +16,7 @@ describe("<Burger />", () => {
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
             .should("have.css", "width", "32px")
             .should("have.css", "height", "24px")
@@ -51,7 +51,7 @@ describe("<Burger />", () => {
             .should(
                 "have.css",
                 "color",
-                cssVariables.colors.light["secondary-500"].rgb
+                libTokens.colors.light["secondary-500"].rgb
             )
 
         borderTop().invoke("height").should("equal", 4)

@@ -15,7 +15,6 @@ import {
     useKeyPress,
     useTouchScreen,
     useMergeRefs,
-    transformSearchKeys,
     Highlight,
 } from "../../"
 import {
@@ -29,6 +28,7 @@ import {
     InputButton,
 } from "../InputComponents"
 import { Close } from "../../icons"
+import { transformSearchKeys } from "../../lib-utils"
 import { useKeyboardNavigation } from "../ComponentsMixins"
 import { StyledAutocomplete } from "./styles"
 import type { AutocompleteProps } from "./types"
@@ -112,7 +112,9 @@ const AutocompleteFn = forwardRef<HTMLInputElement, AutocompleteProps>(
                 ?.map(res => res.item)
         }, [fuzzyOptions, listResults, value])
 
-        const { isOpen, setIsOpen, cursor, listRef } = useKeyboardNavigation<typeof fuzzyResults>({
+        const { isOpen, setIsOpen, cursor, listRef } = useKeyboardNavigation<
+            typeof fuzzyResults
+        >({
             data: fuzzyResults,
             value,
             setValue,

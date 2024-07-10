@@ -312,3 +312,38 @@ export type Cursor = Property.Cursor
 export type BorderStyle = Property.BorderStyle
 export type OutlineStyle = Property.OutlineStyle
 export type FontStyle = Property.FontStyle
+
+/*====================== Components ======================*/
+
+export type LibMainSize = keyof typeof typeValues.mainSizes | number
+export type LibAsideSize = keyof typeof typeValues.asideSizes | number
+export type LibAccordionVariant = keyof typeof typeValues.accordionVariants
+export type LibAccordionIcon =
+    | keyof typeof typeValues.accordionIcons
+    | JSX.Element
+export type LibAvatarBadgePosition = keyof typeof typeValues.avatarBadgePosition
+export type LibBreadcrumbSeparator =
+    | keyof typeof typeValues.breadcrumbSeparators
+    | JSX.Element
+export type LibButtonIconVariant = Extract<
+    LibButtonVariant,
+    "plain" | "transparent" | "ghost"
+>
+export type LibImageBackgroundOverlay = Exclude<
+    LibAllColorsAndOverlays,
+    "gradient-black" | "gradient-white"
+>
+export type LibInputType = keyof typeof typeValues.inputTypes
+export type LibInputCheckVariant = keyof typeof typeValues.checkInputVariants
+export type LibKeySize = keyof typeof typeValues.keySizes
+export type LibLoaderVariant = keyof typeof typeValues.loaderVariants
+export type LibSkeletonAnimation = keyof typeof typeValues.skeletonAnimations
+export type LibStepperDirection = keyof typeof typeValues.stepperDirections
+export type LibTextDisplayTag = keyof typeof typeValues.textDisplayTags
+export type LibTextTag = keyof typeof typeValues.textTags
+export type LibTextAllTag = LibTextDisplayTag | LibTextTag
+export type LibTextIconTag = Exclude<
+    LibTextAllTag,
+    "strong" | "em" | "ul" | "ol" | "dl"
+>
+export type LibTooltipTrigger = keyof typeof typeValues.tooltipTriggers

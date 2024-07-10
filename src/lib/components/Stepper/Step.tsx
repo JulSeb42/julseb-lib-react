@@ -9,14 +9,14 @@ import type {
     LibButtonLinkBlank,
     LibColorsHover,
     LibIcon as LibIconType,
+    LibStepperDirection
 } from "../../types"
 import { StyledStep, NumberContainer } from "./styles"
-import type { StepperDirection } from "./types"
 import { Link } from "react-router-dom"
 
 type StepProps = LibComponentBase<HTMLSpanElement> &
     LibButtonLinkBlank & {
-        direction?: StepperDirection
+        direction?: LibStepperDirection
         accentColor?: LibColorsHover
         isActive?: boolean
         isDone?: boolean

@@ -1,6 +1,6 @@
 /*=============================================== Tooltip tests ===============================================*/
 
-import { Tooltip, cssVariables } from "../../.."
+import { Tooltip, libTokens } from "../../.."
 
 describe("<Tooltip />", () => {
     it("renders <Tooltip /> component", () => {
@@ -17,7 +17,7 @@ describe("<Tooltip />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.overlays["black-80"]
+                libTokens.overlays["black-80"]
             )
 
         cy.dataTest().trigger("mouseover")

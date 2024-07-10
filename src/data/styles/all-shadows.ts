@@ -1,6 +1,6 @@
 /*=============================================== All shadows ===============================================*/
 
-import { SHADOWS, cssVariables } from "../../lib"
+import { SHADOWS, libTokens } from "../../lib"
 import type { Variable } from "../types"
 
 export const allShadows: Array<Variable> = [
@@ -8,36 +8,36 @@ export const allShadows: Array<Variable> = [
         name: "XXL",
         variable: "SHADOWS.XXL",
         css: SHADOWS.XXL,
-        value: cssVariables.shadows.xxl,
+        value: libTokens.shadows.xxl,
     },
     {
         name: "XL",
         variable: "SHADOWS.XL",
         css: SHADOWS.XL,
-        value: cssVariables.shadows.xl,
+        value: libTokens.shadows.xl,
     },
     {
         name: "L",
         variable: "SHADOWS.L",
         css: SHADOWS.L,
-        value: cssVariables.shadows.l,
+        value: libTokens.shadows.l,
     },
     {
         name: "M",
         variable: "SHADOWS.M",
         css: SHADOWS.M,
-        value: cssVariables.shadows.m,
+        value: libTokens.shadows.m,
     },
     {
         name: "S",
         variable: "SHADOWS.S",
         css: SHADOWS.S,
-        value: cssVariables.shadows.s,
+        value: libTokens.shadows.s,
     },
     {
         name: "XS",
         variable: "SHADOWS.XS",
         css: SHADOWS.XS,
-        value: cssVariables.shadows.xs,
+        value: libTokens.shadows.xs,
     },
 ]

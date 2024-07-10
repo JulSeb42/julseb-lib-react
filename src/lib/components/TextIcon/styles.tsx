@@ -4,8 +4,7 @@ import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { Mixins, setDefaultTheme } from "../../"
 import { getIconHeight } from "./utils"
-import type { LibSpacers } from "../../types"
-import type { TextIconTag } from "./types"
+import type { LibSpacers, LibTextIconTag } from "../../types"
 
 const StyledTextIcon = styled.div<{ $gap?: LibSpacers }>`
     ${({ $gap }) =>
@@ -19,7 +18,7 @@ const StyledTextIcon = styled.div<{ $gap?: LibSpacers }>`
 `
 
 const IconContainer = styled.span<{
-    $tag: TextIconTag
+    $tag: LibTextIconTag
     $iconSize?: number
     $display?: boolean
 }>`

@@ -3,7 +3,7 @@
 import { createContext, useReducer, useContext } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Toaster } from "../../components/Toast/Toaster"
-import { toastReducer } from "./toast-reducer"
+import { toastReducer } from "./toast.reducer"
 import type {
     LibToastStatus,
     LibToast,

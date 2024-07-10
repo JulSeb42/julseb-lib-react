@@ -13,9 +13,11 @@ function {{ pascalCase name }}Preview() {
     )
 }
 
-export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props, typeof {{ pascalCase name }}> = {
+export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props> = {
     name: "{{ pascalCase name }}",
-    category: "{{ category }}",
     component: {{ pascalCase name }},
+    category: "{{ category }}",
+    imports: ["{{ pascalCase name }}"],
+    typeImports: ["{{ pascalCase name }}Props"],
     demos: [{ element: <{{ pascalCase name }}Preview key={0} /> }],
 }

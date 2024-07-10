@@ -1,6 +1,6 @@
 /*=============================================== Card tests ===============================================*/
 
-import { Card, cssVariables } from "../../.."
+import { Card, libTokens } from "../../.."
 
 describe("<Card />", () => {
     it("renders <Card /> component", () => {
@@ -15,9 +15,9 @@ describe("<Card />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light.background.rgb
+                libTokens.colors.light.background.rgb
             )
-            .should("have.css", "color", cssVariables.colors.light.font.rgb)
+            .should("have.css", "color", libTokens.colors.light.font.rgb)
             .should("have.css", "text-align", "left")
     })
 
@@ -41,10 +41,10 @@ describe("<Card />", () => {
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["gray-200"].rgb
+                libTokens.colors.light["gray-200"].rgb
             )
-            .should("have.css", "border-radius", cssVariables.radiuses.xxl)
-            .should("have.css", "padding", cssVariables.spacers.xxl)
+            .should("have.css", "border-radius", libTokens.radiuses.xxl)
+            .should("have.css", "padding", libTokens.spacers.xxl)
     })
 
     // TODO

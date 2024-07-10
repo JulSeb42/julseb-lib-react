@@ -1,9 +1,10 @@
 /*=============================================== InputCounter component ===============================================*/
 
 import { forwardRef, type ChangeEvent, useCallback } from "react"
-import { roundIconSize, ButtonIcon } from "../../"
+import { ButtonIcon } from "../../"
 import { InputContainer } from "../InputComponents"
 import { Plus, Minus } from "../../icons"
+import { roundIconSize } from "../../lib-utils"
 import type { ButtonIconProps } from "../ButtonIcon/types"
 import { InputCounterWrapper, Input, NumberValue } from "./styles"
 import type { InputCounterProps } from "./types"

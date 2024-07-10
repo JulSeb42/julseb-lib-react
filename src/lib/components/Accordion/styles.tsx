@@ -13,9 +13,9 @@ import {
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
-import type { AccordionIcon, AccordionVariant } from "./types"
+import type { LibAccordionIcon, LibAccordionVariant } from "../../types"
 
-const StyledAccordion = styled.div<{ $variant: AccordionVariant }>`
+const StyledAccordion = styled.div<{ $variant: LibAccordionVariant }>`
     position: relative;
     ${Mixins.Flexbox({
         $flexDirection: "column",
@@ -35,7 +35,7 @@ const StyledAccordion = styled.div<{ $variant: AccordionVariant }>`
               `}
 `
 
-const StyledAccordionButton = styled.button<{ $variant: AccordionVariant }>`
+const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
     width: 100%;
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${FONT_SIZES.BODY};
@@ -88,7 +88,7 @@ const StyledAccordionButton = styled.button<{ $variant: AccordionVariant }>`
               `}
 `
 
-const StyledAccordionItem = styled.div<{ $variant: AccordionVariant }>`
+const StyledAccordionItem = styled.div<{ $variant: LibAccordionVariant }>`
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
@@ -105,7 +105,7 @@ const StyledAccordionItem = styled.div<{ $variant: AccordionVariant }>`
 
 const StyledAccordionIcon = styled.span<{
     $isOpen: boolean
-    $icon?: AccordionIcon
+    $icon?: LibAccordionIcon
 }>`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
     transition: ${TRANSITIONS.SHORT};
@@ -127,7 +127,7 @@ const StyledAccordionIcon = styled.span<{
 
 const StyledAccordionContent = styled.div<{
     $isOpen: boolean
-    $variant: AccordionVariant
+    $variant: LibAccordionVariant
 }>`
     overflow: hidden;
     max-height: ${({ $isOpen }) => ($isOpen ? "800px" : 0)};

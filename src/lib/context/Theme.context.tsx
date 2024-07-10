@@ -6,7 +6,7 @@ import { StyleSheetManager } from "../utils/StyleSheetManager"
 import { Themes } from "../types/theme"
 import type { ThemeContextProps, LibThemeNames, ReactChildren } from "../types"
 
-export const ThemeContext = createContext<ThemeContextProps | null>(null)
+const ThemeContext = createContext<ThemeContextProps | null>(null)
 
 interface ThemeProviderProps {
     stylesheetManager?: boolean | IStyleSheetManager

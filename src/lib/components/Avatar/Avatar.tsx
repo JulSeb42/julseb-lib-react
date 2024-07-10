@@ -1,7 +1,7 @@
 /*=============================================== Avatar component ===============================================*/
 
 import { forwardRef } from "react"
-import { roundIconSize } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import { AvatarFunction } from "./AvatarFunction"
 import { StyledAvatarContainer, StyledBadge } from "./styles"
 import type { AvatarProps } from "./types"

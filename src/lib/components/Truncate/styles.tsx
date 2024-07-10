@@ -1,5 +1,6 @@
 /*=============================================== Truncate styles ===============================================*/
 
+import type { FC } from "react"
 import styled from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme, Tag } from "../../"
 import type { LibSpacers } from "../../types"
@@ -29,7 +30,7 @@ const StyledTag = styled(Tag).attrs({
     &[hidden] {
         display: block !important;
     }
-`
+` as FC<any>
 
 setDefaultTheme([StyledTruncate, StyledTag])
 

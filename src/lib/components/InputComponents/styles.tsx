@@ -1,5 +1,6 @@
 /*=============================================== InputComponents styles ===============================================*/
 
+import type { FC } from "react"
 import styled, { css } from "styled-components"
 import {
     FONT_SIZES,
@@ -58,7 +59,7 @@ const HelperBottom = styled(Text).attrs({ tag: "small" })<{
     $fontStyle?: FontStyle
 }>`
     font-style: ${({ $fontStyle }) => $fontStyle};
-`
+` as FC<any>
 
 const StyledInputIconContainer = styled.span<{
     $validationStatus: LibValidationStatus | undefined

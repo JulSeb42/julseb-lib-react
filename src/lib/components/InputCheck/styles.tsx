@@ -11,8 +11,7 @@ import {
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
-import type { LibValidationStatus } from "../../types"
-import type { LibInputCheckVariant } from "./types"
+import type { LibValidationStatus, LibInputCheckVariant } from "../../types"
 
 const CheckContainer = styled.span<{
     $validation: LibValidationStatus

@@ -7,10 +7,8 @@ import type {
     LibRadiusProps,
     LibPaddingProps,
     LibIcon,
+    LibAvatarBadgePosition,
 } from "../../types"
-
-const badgePositions = { top: "top", bottom: "bottom" } as const
-export type AvatarBadgePosition = keyof typeof badgePositions
 
 interface AvatarPropsBase extends LibComponentBase<HTMLSpanElement> {
     size?: number
@@ -23,7 +21,7 @@ interface AvatarPropsBase extends LibComponentBase<HTMLSpanElement> {
               content?: number
               contentColor?: LibAllColors
               backgroundColor?: LibAllColors
-              position?: AvatarBadgePosition
+              position?: LibAvatarBadgePosition
               size?: number
               padding?: LibPaddingProps
               outline?: LibBorderProps

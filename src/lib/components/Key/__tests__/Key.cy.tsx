@@ -1,6 +1,6 @@
 /*=============================================== Key tests ===============================================*/
 
-import { Key, cssVariables } from "../../.."
+import { Key, libTokens } from "../../.."
 import { typeValues, type LibColorsHover } from "../../../types"
 
 const colors = Object.keys(typeValues.colorsHover) as Array<LibColorsHover>
@@ -16,12 +16,12 @@ describe("<Key />", () => {
             .should(
                 "have.css",
                 "border-color",
-                cssVariables.colors.light["primary-500"].rgb
+                libTokens.colors.light["primary-500"].rgb
             )
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["primary-50"].rgb
+                libTokens.colors.light["primary-50"].rgb
             )
     })
 
@@ -36,7 +36,7 @@ describe("<Key />", () => {
                     "have.css",
                     "border-color",
                     // @ts-expect-error
-                    cssVariables.colors.light[
+                    libTokens.colors.light[
                         c === "white"
                             ? "white"
                             : c === "font"
@@ -53,24 +53,20 @@ describe("<Key />", () => {
     it("renders as small", () => {
         cy.mount(<Key keys={keys} data-testid="testid" size="small" />)
         cy.dataTest()
-            .should("have.css", "border-radius", cssVariables.radiuses.xs)
-            .should(
-                "have.css",
-                "font-size",
-                cssVariables["font-sizes"].small.px
-            )
-            .should("have.css", "padding", `0px ${cssVariables.spacers.xxs}`)
+            .should("have.css", "border-radius", libTokens.radiuses.xs)
+            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
+            .should("have.css", "padding", `0px ${libTokens.spacers.xxs}`)
     })
 
     it("renders as large", () => {
         cy.mount(<Key keys={keys} data-testid="testid" size="large" />)
         cy.dataTest()
-            .should("have.css", "border-radius", cssVariables.radiuses.s)
-            .should("have.css", "font-size", cssVariables["font-sizes"].body.px)
+            .should("have.css", "border-radius", libTokens.radiuses.s)
+            .should("have.css", "font-size", libTokens["font-sizes"].body.px)
             .should(
                 "have.css",
                 "padding",
-                `${cssVariables.spacers.xxs} ${cssVariables.spacers.xs}`
+                `${libTokens.spacers.xxs} ${libTokens.spacers.xs}`
             )
     })
 

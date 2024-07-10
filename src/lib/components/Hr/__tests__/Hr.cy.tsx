@@ -1,6 +1,6 @@
 /*=============================================== Hr tests ===============================================*/
 
-import { Hr, cssVariables } from "../../.."
+import { Hr, libTokens } from "../../.."
 import { stringifyPx } from "ts-utils-julseb"
 
 describe("<Hr />", () => {
@@ -14,7 +14,7 @@ describe("<Hr />", () => {
             .should(
                 "have.css",
                 "background-color",
-                cssVariables.colors.light["gray-200"].rgb
+                libTokens.colors.light["gray-200"].rgb
             )
             .should("have.css", "max-width", "100%")
             .invoke("height")
@@ -38,7 +38,7 @@ describe("<Hr />", () => {
         cy.dataTest().should(
             "have.css",
             "background-color",
-            cssVariables.colors.light["primary-400"].rgb
+            libTokens.colors.light["primary-400"].rgb
         )
     })
 
@@ -50,10 +50,10 @@ describe("<Hr />", () => {
             />
         )
         cy.dataTest()
-            .should("have.css", "margin-top", cssVariables.spacers.l)
-            .should("have.css", "margin-bottom", cssVariables.spacers.m)
-            .should("have.css", "margin-left", cssVariables.spacers.xs)
-            .should("have.css", "margin-right", cssVariables.spacers.xs)
+            .should("have.css", "margin-top", libTokens.spacers.l)
+            .should("have.css", "margin-bottom", libTokens.spacers.m)
+            .should("have.css", "margin-left", libTokens.spacers.xs)
+            .should("have.css", "margin-right", libTokens.spacers.xs)
     })
 
     it("renders a rounded line", () => {
@@ -61,9 +61,7 @@ describe("<Hr />", () => {
         cy.dataTest().should(
             "have.css",
             "border-radius",
-            stringifyPx(
-                Number(cssVariables.radiuses.round.replace("em", "")) * 16
-            )
+            stringifyPx(Number(libTokens.radiuses.round.replace("em", "")) * 16)
         )
     })
 })

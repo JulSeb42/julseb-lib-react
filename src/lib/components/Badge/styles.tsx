@@ -1,7 +1,8 @@
 /*=============================================== Badge styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { FONT_WEIGHTS, Mixins, setDefaultTheme, roundIconSize } from "../../"
+import { FONT_WEIGHTS, Mixins, setDefaultTheme } from "../../"
+import { roundIconSize } from "../../lib-utils"
 import type { LibAllColors, LibPaddingProps, LibRadiusProps } from "../../types"
 
 const StyledBadge = styled.span<{

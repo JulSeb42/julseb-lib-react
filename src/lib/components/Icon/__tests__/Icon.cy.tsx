@@ -1,6 +1,6 @@
 /*=============================================== Icon tests ===============================================*/
 
-import { Icon, cssVariables } from "../../.."
+import { Icon, libTokens } from "../../.."
 
 describe("<Icon />", () => {
     it("renders <Icon /> component", () => {
@@ -27,7 +27,7 @@ describe("<Icon />", () => {
             .should(
                 "have.css",
                 "fill",
-                cssVariables.colors.light["danger-500"].rgb
+                libTokens.colors.light["danger-500"].rgb
             )
             .invoke("width")
             .should("equal", size)

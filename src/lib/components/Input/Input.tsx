@@ -10,8 +10,9 @@ import { SelectInput } from "./templates/SelectInput"
 import { TextareaInput } from "./templates/TextareaInput"
 import { TextInput } from "./templates/TextInput"
 import { TimeInput } from "./templates/TimeInput"
-import type { InputProps, LibInputType } from "./types"
+import type { InputProps } from "./types"
 import { InputContainer } from "../InputComponents"
+import type { LibInputType } from "../../types"
 
 /**
  * @description Returns a Input component

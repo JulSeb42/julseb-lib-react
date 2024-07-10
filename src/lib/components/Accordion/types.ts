@@ -4,17 +4,13 @@ import type {
     LibComponentBase,
     LibAccordionItem,
     ReactChildren,
+    LibAccordionVariant,
+    LibAccordionIcon,
 } from "../../types"
 
-const variants = { basic: "basic", rounded: "rounded" } as const
-export type AccordionVariant = keyof typeof variants
-
-const icons = { plus: "plus", chevron: "chevron" } as const
-export type AccordionIcon = keyof typeof icons | JSX.Element
-
 interface AccordionPropsBase extends LibComponentBase<HTMLDivElement> {
-    variant?: AccordionVariant
-    icon?: AccordionIcon
+    variant?: LibAccordionVariant
+    icon?: LibAccordionIcon
 }
 
 interface AccordionWithItems extends AccordionPropsBase {

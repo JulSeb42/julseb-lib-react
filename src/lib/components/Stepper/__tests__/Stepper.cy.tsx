@@ -1,6 +1,6 @@
 /*=============================================== Stepper tests ===============================================*/
 
-import { Stepper, cssVariables } from "../../.."
+import { Stepper, libTokens } from "../../.."
 import { stepperTestsData, ACTIVE_STEP } from "./data"
 
 describe("<Stepper />", () => {
@@ -30,7 +30,7 @@ describe("<Stepper />", () => {
         cy.dataTest("passed.NumberContainer").should(
             "have.css",
             "background-color",
-            cssVariables.colors.light["primary-500"].rgb
+            libTokens.colors.light["primary-500"].rgb
         )
         cy.dataTest("passed.NumberContainer.Icon").should(
             "have.prop",
@@ -53,7 +53,7 @@ describe("<Stepper />", () => {
         cy.dataTest("active.NumberContainer").should(
             "have.css",
             "background-color",
-            cssVariables.colors.light["primary-500"].rgb
+            libTokens.colors.light["primary-500"].rgb
         )
         cy.dataTest("active.NumberContainer.Icon").should("not.exist")
         cy.dataTest("active.NumberContainer").should("have.text", "2")
@@ -75,7 +75,7 @@ describe("<Stepper />", () => {
         cy.dataTest("next.NumberContainer").should(
             "have.css",
             "background-color",
-            cssVariables.colors.light["primary-300"].rgb
+            libTokens.colors.light["primary-300"].rgb
         )
         cy.dataTest("next.NumberContainer").should("have.text", "3")
     })

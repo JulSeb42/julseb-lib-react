@@ -4,7 +4,7 @@ import { forwardRef, type ButtonHTMLAttributes } from "react"
 import { Link } from "react-router-dom"
 import { Loader } from "../../"
 import { LibIcon } from "../LibIcon"
-import type { LoaderProps, LoaderVariant } from "../Loader/types"
+import type { LoaderProps } from "../Loader/types"
 import type {
     LibComponentBase,
     LibButtonLinkBlank,
@@ -12,22 +12,23 @@ import type {
     LibColorsHover,
     LibRadiusProps,
     LibIcon as LibIconType,
+    LibLoaderVariant,
+    LibButtonIconVariant,
 } from "../../types"
 import { StyledButtonIcon } from "./styles"
-import type { ButtonIconVariant } from "./types"
 
 type ButtonFnProps = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
     LibButtonLinkBlank & {
         showTooltip?: boolean
         isLoading?: boolean
-        variant?: ButtonIconVariant
+        variant?: LibButtonIconVariant
         showBackgroundHover?: boolean
         borderRadius?: LibRadiusProps
         color?: LibColorsHover
         shadow?: LibBoxShadowProps
         size?: number
-        loaderVariant?: LoaderVariant
+        loaderVariant?: LibLoaderVariant
         iconSize?: number
         icon: LibIconType
         loaderBorderWidth?: number

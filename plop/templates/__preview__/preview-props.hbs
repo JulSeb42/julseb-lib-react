@@ -5,10 +5,12 @@ import {  } from "../../../types"
 import type { {{ pascalCase name }}Props } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props, typeof {{ pascalCase name }}> = {
+export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props> = {
     name: "{{ pascalCase name }}",
     component: {{ pascalCase name }},
     category: "{{ category }}",
+    imports: ["{{ pascalCase name }}"],
+    typeImports: ["{{ pascalCase name }}Props"],
     props: [
         { previewTitle: "Default" },
     ],

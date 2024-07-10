@@ -1,9 +1,10 @@
 /*=============================================== Loader types ===============================================*/
 
-import type { LibAllColors, LibComponentBase } from "../../types"
-
-const loaderVariants = { 1: 1, 2: 2, 3: 3, 4: 4 } as const
-export type LoaderVariant = keyof typeof loaderVariants
+import type {
+    LibAllColors,
+    LibComponentBase,
+    LibLoaderVariant,
+} from "../../types"
 
 interface LoaderPropsBase extends LibComponentBase<HTMLSpanElement> {
     size?: number
@@ -12,12 +13,12 @@ interface LoaderPropsBase extends LibComponentBase<HTMLSpanElement> {
 }
 
 interface LoaderPropsBorder extends LoaderPropsBase {
-    variant?: Extract<LoaderVariant, 1 | 2 | 3>
+    variant?: Extract<LibLoaderVariant, 1 | 2 | 3>
     borderWidth?: number
 }
 
 interface LoaderPropsDots extends LoaderPropsBase {
-    variant?: Extract<LoaderVariant, 4>
+    variant?: Extract<LibLoaderVariant, 4>
     borderWidth?: never
 }
 

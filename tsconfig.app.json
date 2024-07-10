@@ -21,7 +21,8 @@
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "types": ["cypress"]
     },
-    "include": ["src"]
+    "include": ["src", "cypress", "./node_modules/cypress", "cypress/**/*.ts"]
 }

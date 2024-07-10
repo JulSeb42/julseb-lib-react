@@ -6,12 +6,12 @@ import { Page } from "../components"
 export function Homepage() {
     const components = [
         // { path: "/key", element: "KeyPage" },
-        { path: "/text-icon", element: "TextIconPage" },
-        { path: "/highlight", element: "HighlightPage" },
-        { path: "/linkify", element: "LinkifyPage" },
-        { path: "/tooltip", element: "TooltipPage" },
-        { path: "/hr", element: "HrPage" },
-        { path: "/skeleton", element: "SkeletonPage" },
+        // { path: "/text-icon", element: "TextIconPage" },
+        // { path: "/highlight", element: "HighlightPage" },
+        // { path: "/linkify", element: "LinkifyPage" },
+        // { path: "/tooltip", element: "TooltipPage" },
+        // { path: "/hr", element: "HrPage" },
+        // { path: "/skeleton", element: "SkeletonPage" },
         { path: "/image", element: "ImagePage" },
         { path: "/masonry", element: "MasonryPage" },
         { path: "/full-bleed", element: "FullBleedPage" },
@@ -52,11 +52,16 @@ export function Homepage() {
     return (
         <Page title="Homepage">
             <ul>
-                {components.map(c => (
+                {/* {components.map(c => (
                     <li key={c}>{`yarn plop:p ${c?.replaceAll(
                         " ",
                         ""
                     )} components n`}</li>
+                ))} */}
+                {components.map(c => (
+                    <li key={c}>
+                        {`rm -rf src/lib/components/${c}/__preview__`}
+                    </li>
                 ))}
             </ul>
         </Page>

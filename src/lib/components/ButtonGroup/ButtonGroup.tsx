@@ -49,64 +49,6 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
                 $color={color}
                 {...rest}
             >
-                {/* {buttons.map((button, i) => (
-                    <Fragment key={uuid()}>
-                        {button.iconOnly ? (
-                            <ButtonIcon
-                                data-testid={testid && `${testid}.Button.${i}`}
-                                className={`Button Button__${i}`}
-                                icon={button.iconOnly}
-                                borderRadius={0}
-                                size={size === "small" ? 24 : 34}
-                                color={color}
-                                variant={variant}
-                                aria-label={
-                                    button["aria-label"] ||
-                                    capitalize(
-                                        typeof button.iconOnly === "string"
-                                            ? button.iconOnly
-                                            : "button"
-                                    )
-                                }
-                                iconSize={button?.iconSizes?.only}
-                                {...button}
-                            />
-                        ) : (
-                            // @ts-expect-error
-                            <Button
-                                data-testid={testid && `${testid}.Button.${i}`}
-                                className={`Button Button__${i}`}
-                                borderRadius={0}
-                                size={size}
-                                color={color}
-                                variant={variant}
-                                icons={{
-                                    left: button.iconLeft,
-                                    right: button.iconRight,
-                                }}
-                                iconSizes={{
-                                    left: button?.iconSizes?.left,
-                                    right: button?.iconSizes?.right,
-                                }}
-                                aria-label={button["aria-label"] || button.text}
-                                {...button}
-                            >
-                                {button.text}
-                            </Button>
-                        )}
-
-                        {variant === "transparent" &&
-                            i !== buttons.length - 1 && (
-                                <Separator
-                                    data-testid={
-                                        testid && `${testid}.Separator.${i}`
-                                    }
-                                    className={`Separator__${i}`}
-                                    $color={color}
-                                />
-                            )}
-                    </Fragment>
-                ))} */}
                 {buttons.map((button, i) => {
                     const commonProps: Partial<ButtonProps | ButtonIconProps> =
                         {
