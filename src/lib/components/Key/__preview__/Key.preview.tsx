@@ -1,6 +1,6 @@
 /*=============================================== KeyPreview ===============================================*/
 
-import { Key } from "../../../"
+import { Key, capitalize } from "../../../"
 import { typeValues } from "../../../types"
 import type { ComponentPreview } from "../../../../data/components"
 import type { KeyProps, KeySize } from "../../../types/components-props"
@@ -13,9 +13,9 @@ export const keyPreview: ComponentPreview<KeyProps, typeof Key> = {
     component: Key,
     category: "components",
     props: [
-        ...sizes.map(size => ({ previewTitle: size, keys, size })),
+        ...sizes.map(size => ({ previewTitle: capitalize(size), keys, size })),
         ...sizes.map(size => ({
-            previewTitle: `${size} with separator`,
+            previewTitle: `${capitalize(size)} with separator`,
             keys,
             size,
             withSeparator: true,

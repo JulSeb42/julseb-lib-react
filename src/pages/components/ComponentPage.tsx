@@ -1,7 +1,7 @@
 /*=============================================== ComponentPage ===============================================*/
 
 import { useParams } from "react-router-dom"
-import { toPascalCase } from "ts-utils-julseb"
+import { toKebabCase } from "ts-utils-julseb"
 import { Page } from "../../components"
 import { Text, Flexbox } from "../../lib"
 import { previews } from "../../data/components"
@@ -10,7 +10,7 @@ export function ComponentPage() {
     const { componentName } = useParams<{ componentName: string }>()
 
     const componentPreview = previews.find(
-        demo => toPascalCase(demo.name) === toPascalCase(componentName || "")
+        demo => toKebabCase(demo.name) === toKebabCase(componentName || "")
     )
 
     if (!componentPreview)
@@ -23,28 +23,28 @@ export function ComponentPage() {
     const { name, component, props, demos } = componentPreview
     const Component = component
 
-    console.log(componentPreview)
-
     return (
         <Page title={name}>
-            {props?.map((prop, i) =>
-                prop.previewTitle ? (
+            {props?.map((prop, i) => {
+                const { previewTitle, ...rest } = prop as any
+
+                return previewTitle ? (
                     <Flexbox
                         flexDirection="column"
                         gap="s"
                         alignItems="flex-start"
                         key={i}
                     >
-                        <Text tag="h4">{prop.previewTitle}</Text>
-                        <Component {...prop} />
+                        <Text tag="h4">{previewTitle}</Text>
+                        <Component {...rest} />
                     </Flexbox>
                 ) : (
-                    <Component key={i} {...prop} />
+                    <Component key={i} {...rest} />
                 )
-            )}
+            })}
 
-            {demos?.map((preview, i) =>
-                preview.previewTitle ? (
+            {demos?.map((preview, i) => {
+                return preview.previewTitle ? (
                     <Flexbox
                         flexDirection="column"
                         gap="s"
@@ -59,7 +59,7 @@ export function ComponentPage() {
                 ) : (
                     preview.element
                 )
-            )}
+            })}
         </Page>
     )
 }

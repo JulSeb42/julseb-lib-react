@@ -26,8 +26,6 @@ export function NavDemo() {
     const el = useRef<HTMLInputElement>(null)
     useKeyPress(() => el?.current?.focus(), ["Command", "KeyK"])
 
-    console.log({ filteredRoutes })
-
     return (
         <StyledNavDemo>
             <Input

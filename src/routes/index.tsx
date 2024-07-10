@@ -1,7 +1,7 @@
 /*=============================================== Routes ===============================================*/
 
 import { createBrowserRouter } from "react-router-dom"
-import { slugify } from "ts-utils-julseb"
+import { slugify, toKebabCase } from "ts-utils-julseb"
 
 /*====================== Root ======================*/
 
@@ -147,7 +147,7 @@ export const routesPaths: ComponentPaths = routes
         path:
             route.path === "/"
                 ? "/"
-                : `/${slugify(route.path.replaceAll("/", ""))}`,
+                : `/${toKebabCase(slugify(route.path.replaceAll("/", "")))}`,
     }))
 
 export const router = createBrowserRouter([...routes, ...demos])
