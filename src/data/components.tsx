@@ -31,6 +31,14 @@ import { linkifyPreview } from "../lib/components/Linkify/__preview__/Linkify.pr
 import { tooltipPreview } from "../lib/components/Tooltip/__preview__/Tooltip.preview"
 import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 import { skeletonPreview } from "../lib/components/Skeleton/__preview__/Skeleton.preview"
+import { imagePreview } from "../lib/components/Image/__preview__/Image.preview"
+import { masonryPreview } from "../lib/components/Masonry/__preview__/Masonry.preview"
+import { fullBleedPreview } from "../lib/components/FullBleed/__preview__/FullBleed.preview"
+import { videoPreview } from "../lib/components/Video/__preview__/Video.preview"
+import { youtubePreview } from "../lib/components/Youtube/__preview__/Youtube.preview"
+import { badgePreview } from "../lib/components/Badge/__preview__/Badge.preview"
+import { avatarPreview } from "../lib/components/Avatar/__preview__/Avatar.preview"
+import { loaderPreview } from "../lib/components/Loader/__preview__/Loader.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
@@ -45,6 +53,7 @@ export interface ComponentPreview<T> {
         | Array<string>
         | Array<{ name: string; from: string }>
         | null
+    // TODO?: noAs: boolean
     props?: Array<T & { previewTitle?: string }>
     demos?: Array<{ previewTitle?: string; element: JSX.Element }>
 }
@@ -75,7 +84,15 @@ export const previews = [
     tooltipPreview,
     hrPreview,
     skeletonPreview,
-    // prependArr
+    imagePreview,
+    masonryPreview,
+    fullBleedPreview,
+    videoPreview,
+    youtubePreview,
+    badgePreview,
+avatarPreview,
+loaderPreview,
+// prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>
 

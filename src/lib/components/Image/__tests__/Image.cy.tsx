@@ -2,13 +2,15 @@
 
 import { Image, libTokens } from "../../.."
 
+const IMG_URL = "/images/pic-avatar.jpg"
+
 describe("<Image />", () => {
     it("renders <Image /> component", () => {
         cy.mount(
             <Image
                 data-testid="testid"
                 className="className"
-                src="/images/pic-avatar.jpg"
+                src={IMG_URL}
                 width={100}
             />
         )
@@ -29,7 +31,7 @@ describe("<Image />", () => {
         cy.mount(
             <Image
                 data-testid="testid"
-                src="/images/pic-avatar.jpg"
+                src={IMG_URL}
                 fit={fit}
                 aspectRatio={aspectRatio}
                 borderRadius="xs"
@@ -49,7 +51,7 @@ describe("<Image />", () => {
         cy.mount(
             <Image
                 data-testid="testid"
-                src="/images/pic-avatar.jpg"
+                src={IMG_URL}
                 caption="Hello"
                 width={200}
                 className="Image"
@@ -78,7 +80,7 @@ describe("<Image />", () => {
         cy.mount(
             <Image
                 data-testid="testid"
-                src="/images/pic-avatar.jpg"
+                src={IMG_URL}
                 caption={{
                     text: "Hello",
                     background: "white-80",
