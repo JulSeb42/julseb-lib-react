@@ -8,19 +8,19 @@ import type {
     LibAccordionIcon,
 } from "../../types"
 
-interface AccordionPropsBase extends LibComponentBase<HTMLDivElement> {
+interface ILibAccordionBase extends LibComponentBase<HTMLDivElement> {
     variant?: LibAccordionVariant
     icon?: LibAccordionIcon
 }
 
-interface AccordionWithItems extends AccordionPropsBase {
+interface AccordionWithItems extends ILibAccordionBase {
     items: Array<LibAccordionItem>
     children?: never
 }
 
-interface AccordionWithChildren extends AccordionPropsBase {
+interface AccordionWithChildren extends ILibAccordionBase {
     items?: never
     children: ReactChildren
 }
 
-export type AccordionProps = AccordionWithItems | AccordionWithChildren
+export type ILibAccordion = AccordionWithItems | AccordionWithChildren

@@ -9,7 +9,7 @@ import type {
     DispatchState,
 } from "../../types"
 
-interface DropdownPropsBase extends LibComponentBase<HTMLDivElement> {
+interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
     accentColor?: LibColorsHover
@@ -18,14 +18,14 @@ interface DropdownPropsBase extends LibComponentBase<HTMLDivElement> {
     positionFromButton?: number
 }
 
-interface DropdownWithItems extends DropdownPropsBase {
+interface DropdownWithItems extends ILibDropdownBase {
     items: Array<LibDropdownItem>
     children?: never
 }
 
-interface DropdownWithChildren extends DropdownPropsBase {
+interface DropdownWithChildren extends ILibDropdownBase {
     items?: never
     children: ReactChildren
 }
 
-export type DropdownProps = DropdownWithItems | DropdownWithChildren
+export type ILibDropdown = DropdownWithItems | DropdownWithChildren

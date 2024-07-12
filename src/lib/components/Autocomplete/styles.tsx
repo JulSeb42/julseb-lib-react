@@ -2,9 +2,9 @@
 
 import styled from "styled-components"
 import { setDefaultTheme } from "../../"
-import { InputBaseMixin, type InputBaseMixinProps } from "../ComponentsMixins"
+import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-const StyledAutocomplete = styled.input<InputBaseMixinProps>`
+const StyledAutocomplete = styled.input<ILibInputBaseMixin>`
     ${InputBaseMixin}
 `
 

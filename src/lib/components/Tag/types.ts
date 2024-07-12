@@ -2,25 +2,25 @@
 
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibComponentBase,
     LibFontSizes,
     LibIcon,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibPadding,
+    ILibRadius,
     LibSpacers,
 } from "../../types"
 
-interface TagPropsBase extends LibComponentBase<HTMLSpanElement> {
+interface ILibTagBase extends LibComponentBase<HTMLSpanElement> {
     backgroundColor?: LibAllColors
     textColor?: LibAllColors
-    border?: LibBorderProps
-    padding?: LibPaddingProps
-    borderRadius?: LibRadiusProps
+    border?: ILibBorder
+    padding?: ILibPadding
+    borderRadius?: ILibRadius
     fontSize?: LibFontSizes
 }
 
-interface TagPropsWithIcon extends TagPropsBase {
+interface TagWithIcon extends ILibTagBase {
     icons?: {
         left?: LibIcon
         right?: LibIcon
@@ -32,10 +32,10 @@ interface TagPropsWithIcon extends TagPropsBase {
     gap?: LibSpacers
 }
 
-interface TagPropsNoIcon extends TagPropsBase {
+interface TagWithoutIcon extends ILibTagBase {
     icons?: undefined
     iconSizes?: never
     gap?: never
 }
 
-export type TagProps = TagPropsWithIcon | TagPropsNoIcon
+export type ILibTag = TagWithIcon | TagWithoutIcon

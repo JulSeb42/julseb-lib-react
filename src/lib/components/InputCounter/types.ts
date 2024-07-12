@@ -8,11 +8,11 @@ import type {
     DispatchState,
     LibButtonIconVariant,
 } from "../../types"
-import type { InputBaseProps } from "../InputComponents/types"
+import type { ILibInputBase } from "../InputComponents/types"
 
-interface InputCounterPropsBase
+interface ILibInputCounterBase
     extends InputHTMLAttributes<HTMLInputElement>,
-        InputBaseProps {
+        ILibInputBase {
     value: number
     setValue: DispatchState<number>
     min?: number
@@ -35,18 +35,18 @@ interface InputCounterPropsBase
     showButtonTooltip?: boolean
 }
 
-interface InputCounterInputEditable extends InputCounterPropsBase {
+interface InputCounterInputEditable extends ILibInputCounterBase {
     isInputEditable?: true | undefined
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
 }
 
-interface InputCounterInputNotEditable extends InputCounterPropsBase {
+interface InputCounterInputNotEditable extends ILibInputCounterBase {
     isInputEditable?: false
     inputBackground?: never
     inputVariant?: never
 }
 
-export type InputCounterProps =
+export type ILibInputCounter =
     | InputCounterInputEditable
     | InputCounterInputNotEditable

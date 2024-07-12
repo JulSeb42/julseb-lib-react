@@ -17,9 +17,9 @@ import type {
     LibInputVariant,
     LibValidationStatus,
 } from "../../types"
-import { InputBaseMixin, type InputBaseMixinProps } from "../ComponentsMixins"
+import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-interface StyledInputPhoneProps extends InputBaseMixinProps {
+interface StyledInputPhoneProps extends ILibInputBaseMixin {
     $leftContainerWidth: number
 }
 

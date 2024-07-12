@@ -9,7 +9,7 @@ import type {
     LibTooltipTrigger,
 } from "../../types"
 
-export interface TooltipProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibTooltip extends LibComponentBase<HTMLDivElement> {
     tooltip: string | JSX.Element
     position?: LibTooltipPosition
     withArrow?: boolean

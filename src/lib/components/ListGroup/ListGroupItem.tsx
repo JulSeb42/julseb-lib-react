@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { convertDateShort } from "ts-utils-julseb"
 import { Text, Badge } from "../../"
-import type { BadgeProps } from "../Badge/types"
+import type { ILibBadge } from "../Badge/types"
 import {
     StyledListItem,
     LeftContainer,
@@ -56,7 +56,7 @@ export const ListGroupItem = forwardRef<HTMLDivElement, ListItemProps>(
             blank,
         } = item
 
-        const badgeProps: BadgeProps = {
+        const badgeProps: ILibBadge = {
             "data-testid": testid && `${testid}.Content.RightContainer.Badge`,
             className: className && "Content__RightContainer__Badge",
             backgroundColor:

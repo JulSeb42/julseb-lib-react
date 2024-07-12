@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { getIconSizeFromFont } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
 import { StyledTag } from "./styles"
-import type { TagProps } from "./types"
+import type { ILibTag } from "./types"
 
 /**
  * @description Returns a Tag component
@@ -22,7 +22,7 @@ import type { TagProps } from "./types"
  * @prop gap?: LibSpacers => only if `icons` is defined
  */
 
-export const Tag = forwardRef<HTMLSpanElement, TagProps>(
+export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
     (
         {
             "data-testid": testid,

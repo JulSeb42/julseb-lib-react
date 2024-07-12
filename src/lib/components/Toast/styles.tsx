@@ -13,7 +13,7 @@ import {
 } from "../../"
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibShadows,
     LibToasterPosition,
 } from "../../types"
@@ -45,7 +45,7 @@ const CloseFromRight = keyframes`
 const StyledToast = styled.div<{
     $backgroundColor: LibAllColors
     $textColor: LibAllColors
-    $border: LibBorderProps
+    $border: ILibBorder
     $shadow?: LibShadows
     $isOpen: boolean
     $toasterPosition?: LibToasterPosition

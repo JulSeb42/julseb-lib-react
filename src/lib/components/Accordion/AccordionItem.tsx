@@ -10,7 +10,7 @@ import { AccordionButton } from "./AccordionButton"
 import { AccordionContent } from "./AccordionContent"
 import { StyledAccordionItem } from "./styles"
 
-interface AccordionItemProps extends LibComponentBase<HTMLDivElement> {
+interface ILibAccordionItem extends LibComponentBase<HTMLDivElement> {
     title: string
     icon?: LibAccordionIcon
     variant?: LibAccordionVariant
@@ -29,7 +29,7 @@ interface AccordionItemProps extends LibComponentBase<HTMLDivElement> {
  * @prop icon?: "plus" | "chevron" | JSX.Element
  */
 
-export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
+export const AccordionItem = forwardRef<HTMLDivElement, ILibAccordionItem>(
     (
         {
             "data-testid": testid,

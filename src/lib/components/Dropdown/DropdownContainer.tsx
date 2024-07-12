@@ -1,13 +1,13 @@
 /*=============================================== DropdownContainer component ===============================================*/
 
 import { forwardRef } from "react"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 import { StyledDropdownContainer } from "./styles"
 
 /**
  * @description Returns a DropdownContainer component
  * @link https://documentation-components-react.vercel.app/components/dropdown
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop isOpen: boolean
@@ -15,7 +15,7 @@ import { StyledDropdownContainer } from "./styles"
 
 export const DropdownContainer = forwardRef<
     HTMLDivElement,
-    FlexboxProps & { isOpen: boolean }
+    ILibFlexbox & { isOpen: boolean }
 >(({ isOpen, ...rest }, ref) => {
     return <StyledDropdownContainer ref={ref} $isOpen={isOpen} {...rest} />
 })

@@ -2,7 +2,7 @@
 
 import { forwardRef, Suspense, lazy } from "react"
 import { Fallback } from "../../"
-import type { VideoProps } from "./types"
+import type { ILibVideo } from "./types"
 
 const StyledVideo = lazy(() => import("./styles"))
 
@@ -16,7 +16,7 @@ const StyledVideo = lazy(() => import("./styles"))
  * @prop emptyText?: string
  */
 
-export const Video = forwardRef<HTMLVideoElement, VideoProps>(
+export const Video = forwardRef<HTMLVideoElement, ILibVideo>(
     (
         {
             "data-testid": testid,

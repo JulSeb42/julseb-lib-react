@@ -3,10 +3,10 @@
 import { useState } from "react"
 import { Burger, Flexbox } from "../../../"
 import type { LibColorsHover } from "../../../types"
-import type { BurgerProps } from "../../../types/components-props"
+import type { ILibBurger } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const burgerPreview: ComponentPreview<BurgerProps> = {
+export const burgerPreview: ComponentPreview<ILibBurger> = {
     name: "Burger",
     component: Burger,
     category: "components",

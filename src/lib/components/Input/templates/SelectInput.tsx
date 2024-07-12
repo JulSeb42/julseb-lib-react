@@ -10,9 +10,9 @@ import {
     InputIcon,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { SelectInputProps } from "../types"
+import type { ILibSelectInput } from "../types"
 
-export const SelectInput = forwardRef<HTMLSelectElement, SelectInputProps>(
+export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
     (
         {
             "data-testid": testid,

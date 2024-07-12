@@ -2,13 +2,13 @@
 
 import { Image } from "../../../"
 import {} from "../../../types"
-import type { ImageProps } from "../../../types/components-props"
+import type { ILibImage } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const IMG_URL = "/images/image-card.jpg"
 const IMG_ALT = "Image"
 
-export const imagePreview: ComponentPreview<ImageProps> = {
+export const imagePreview: ComponentPreview<ILibImage> = {
     name: "Image",
     component: Image,
     category: "components",

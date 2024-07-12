@@ -4,14 +4,14 @@ import type { InputHTMLAttributes } from "react"
 import type { IFuseOptions } from "fuse.js"
 import type { LibIcon, LibListDirection, DispatchState } from "../../types"
 import type {
-    InputBaseProps,
-    InputValidationIcon,
+    ILibInputBase,
+    ILibInputValidationIconComponent,
 } from "../InputComponents/types"
 
-interface AutocompletePropsBase
+interface ILibAutocompleteBase
     extends InputHTMLAttributes<HTMLInputElement>,
-        InputBaseProps,
-        InputValidationIcon {
+        ILibInputBase,
+        ILibInputValidationIconComponent {
     value: string
     setValue: DispatchState<string>
     listResults: Array<string>
@@ -30,16 +30,14 @@ interface AutocompletePropsBase
     maxLength?: never
 }
 
-interface AutocompletePropsWithKeys extends AutocompletePropsBase {
+interface AutocompleteWithKeys extends ILibAutocompleteBase {
     focusKeys?: Array<string>
     showKeys?: boolean
 }
 
-interface AutocompletePropsNoKeys extends AutocompletePropsBase {
+interface AutocompleteNoKeys extends ILibAutocompleteBase {
     focusKeys?: undefined
     showKeys?: never
 }
 
-export type AutocompleteProps =
-    | AutocompletePropsWithKeys
-    | AutocompletePropsNoKeys
+export type ILibAutocomplete = AutocompleteWithKeys | AutocompleteNoKeys

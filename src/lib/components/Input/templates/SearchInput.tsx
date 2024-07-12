@@ -11,11 +11,11 @@ import {
 import { Close } from "../../../icons"
 import { transformSearchKeys } from "../../../lib-utils"
 import { StyledInput } from "../styles"
-import type { SearchInputProps } from "../types"
+import type { ILibSearchInput } from "../types"
 
 const Input = forwardRef<
     HTMLInputElement,
-    SearchInputProps & {
+    ILibSearchInput & {
         hasContainer: boolean
         hasWrapper: boolean
         inputRef: ForwardedRef<HTMLInputElement>
@@ -65,7 +65,7 @@ const Input = forwardRef<
     }
 )
 
-export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
+export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
     (
         {
             "data-testid": testid,

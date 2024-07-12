@@ -3,10 +3,10 @@
 import { forwardRef, Fragment } from "react"
 import { uuid, capitalize, filterObject } from "ts-utils-julseb"
 import { Button, ButtonIcon } from "../../"
-import type { ButtonProps } from "../Button/types"
-import type { ButtonIconProps } from "../ButtonIcon/types"
+import type { ILibButton } from "../Button/types"
+import type { ILibButtonIcon } from "../ButtonIcon/types"
 import { StyledButtonGroup, Separator } from "./styles"
-import type { ButtonGroupProps } from "./types"
+import type { ILibButtonGroup } from "./types"
 
 /**
  * @description Returns a ButtonGroup component
@@ -22,7 +22,7 @@ import type { ButtonGroupProps } from "./types"
  * @prop size?: "default" | "small"
  */
 
-export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
+export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
     (
         {
             "data-testid": testid,
@@ -50,17 +50,16 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
                 {...rest}
             >
                 {buttons.map((button, i) => {
-                    const commonProps: Partial<ButtonProps | ButtonIconProps> =
-                        {
-                            "data-testid":
-                                button["data-testid"] ||
-                                (testid && `${testid}.Button.${i}`),
-                            className:
-                                button.className ||
-                                (className && `Button Button__${i}`),
-                            color,
-                            variant: variant as any,
-                        }
+                    const commonProps: Partial<ILibButton | ILibButtonIcon> = {
+                        "data-testid":
+                            button["data-testid"] ||
+                            (testid && `${testid}.Button.${i}`),
+                        className:
+                            button.className ||
+                            (className && `Button Button__${i}`),
+                        color,
+                        variant: variant as any,
+                    }
 
                     const filteredButtonRest = filterObject(
                         button,

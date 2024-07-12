@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledBurger } from "./styles"
-import type { BurgerProps } from "./types"
+import type { ILibBurger } from "./types"
 
 /**
  * @description Returns a Burger component
@@ -18,10 +18,7 @@ import type { BurgerProps } from "./types"
  * @prop borderWidth?: number
  */
 
-export const Burger = forwardRef<
-    HTMLButtonElement,
-    BurgerProps
->(
+export const Burger = forwardRef<HTMLButtonElement, ILibBurger>(
     (
         {
             "data-testid": testid,

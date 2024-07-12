@@ -5,9 +5,9 @@ import { ButtonIcon } from "../../"
 import { InputContainer } from "../InputComponents"
 import { Plus, Minus } from "../../icons"
 import { roundIconSize } from "../../lib-utils"
-import type { ButtonIconProps } from "../ButtonIcon/types"
+import type { ILibButtonIcon } from "../ButtonIcon/types"
 import { InputCounterWrapper, Input, NumberValue } from "./styles"
-import type { InputCounterProps } from "./types"
+import type { ILibInputCounter } from "./types"
 
 /**
  * @description Returns a InputCounter component
@@ -32,7 +32,7 @@ import type { InputCounterProps } from "./types"
 
 const BUTTON_SIZE = 32 as const
 
-export const InputCounter = forwardRef<HTMLInputElement, InputCounterProps>(
+export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
     (
         {
             "data-testid": testid,
@@ -75,7 +75,7 @@ export const InputCounter = forwardRef<HTMLInputElement, InputCounterProps>(
 
         const buttonProps: Partial<
             Pick<
-                ButtonIconProps,
+                ILibButtonIcon,
                 | "size"
                 | "showTooltip"
                 | "disabled"

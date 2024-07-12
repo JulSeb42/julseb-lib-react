@@ -5,20 +5,20 @@ import { stringifyPx } from "ts-utils-julseb"
 import { Mixins, setDefaultTheme } from "../../"
 import type {
     LibAllColors,
-    LibBorderProps,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibBorder,
+    ILibPadding,
+    ILibRadius,
     LibSpacers,
 } from "../../types"
 
 const StyledAlert = styled.div<{
     $maxWidth?: number
     $textColor: LibAllColors
-    $padding?: LibPaddingProps
-    $borderRadius?: LibRadiusProps
+    $padding?: ILibPadding
+    $borderRadius?: ILibRadius
     $gap?: LibSpacers
     $backgroundColor: LibAllColors
-    $border?: LibBorderProps
+    $border?: ILibBorder
 }>`
     width: 100%;
     max-width: ${({ $maxWidth }) => $maxWidth && stringifyPx($maxWidth)};

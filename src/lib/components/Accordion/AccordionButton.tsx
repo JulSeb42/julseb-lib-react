@@ -10,7 +10,7 @@ import type {
 } from "../../types"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"
 
-interface AccordionButtonProps {
+interface ILibAccordionButton {
     "data-testid": string | undefined
     className: string | undefined
     variant: LibAccordionVariant | undefined
@@ -28,7 +28,7 @@ export function AccordionButton({
     title,
     isOpen,
     setIsOpen,
-}: AccordionButtonProps) {
+}: ILibAccordionButton) {
     const iconProps = {
         "data-testid":
             testid &&

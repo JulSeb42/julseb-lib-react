@@ -2,10 +2,10 @@
 
 import { Grid } from "../"
 import { GridItem } from "../../../../components"
-import type { GridProps } from "../types"
+import type { ILibGrid } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const gridPreview: ComponentPreview<GridProps> = {
+export const gridPreview: ComponentPreview<ILibGrid> = {
     name: "Grid",
     component: Grid,
     category: "layouts",

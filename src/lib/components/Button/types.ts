@@ -6,31 +6,31 @@ import type {
     LibButtonVariant,
     LibButtonLinkBlank,
     LibColorsHover,
-    LibBoxShadowProps,
-    LibRadiusProps,
+    ILibBoxShadow,
+    ILibRadius,
     LibIcon,
     LibSpacers,
     LibButtonSize,
     LibLoaderVariant,
 } from "../../types"
 
-type ButtonPropsBase = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
+type ILibButtonBase = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
     LibButtonLinkBlank & {
         color?: LibColorsHover
-        shadow?: LibBoxShadowProps
-        borderRadius?: LibRadiusProps
+        shadow?: ILibBoxShadow
+        borderRadius?: ILibRadius
         size?: LibButtonSize
     }
 
-type ButtonPropsNoIcon = ButtonPropsBase & {
+type ButtonWithoutIcon = ILibButtonBase & {
     icons?: undefined
     iconSizes?: never
     isLoading?: undefined | null
     gap?: never
 }
 
-type ButtonPropsWithIcon = ButtonPropsBase & {
+type ButtonWithIcon = ILibButtonBase & {
     icons?: {
         left?: LibIcon
         right?: LibIcon
@@ -43,30 +43,28 @@ type ButtonPropsWithIcon = ButtonPropsBase & {
     gap?: LibSpacers
 }
 
-type ButtonPropsIcon = ButtonPropsNoIcon | ButtonPropsWithIcon
+type ButtonIcon = ButtonWithoutIcon | ButtonWithIcon
 
-type ButtonPropsVariantBackground = ButtonPropsIcon & {
+type ButtonVariantWithBackground = ButtonIcon & {
     variant?: Extract<LibButtonVariant, "plain" | "outline" | "ghost">
     noPadding?: never
 }
 
-type ButtonPropsVariantTransparent = ButtonPropsIcon & {
+type ButtonVariantTransparent = ButtonIcon & {
     variant?: Extract<LibButtonVariant, "transparent">
     noPadding?: boolean
 }
 
-type ButtonPropsVariant =
-    | ButtonPropsVariantBackground
-    | ButtonPropsVariantTransparent
+type ButtonVariant = ButtonVariantWithBackground | ButtonVariantTransparent
 
-type ButtonPropsWithLoading = ButtonPropsVariant & {
+type ButtonLoading = ButtonVariant & {
     isLoading?: boolean
     loaderVariant?: LibLoaderVariant
 }
 
-type ButtonPropsNoLoading = ButtonPropsVariant & {
+type ButtonNotLoading = ButtonVariant & {
     isLoading?: undefined | null
     loaderVariant?: never
 }
 
-export type ButtonProps = ButtonPropsWithLoading | ButtonPropsNoLoading
+export type ILibButton = ButtonLoading | ButtonNotLoading

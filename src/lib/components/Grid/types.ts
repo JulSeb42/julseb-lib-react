@@ -9,7 +9,7 @@ import type {
     LibSpacers,
 } from "../../types"
 
-export interface GridProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibGrid extends LibComponentBase<HTMLDivElement> {
     inline?: boolean
     col?: number | string
     gap?: LibSpacers

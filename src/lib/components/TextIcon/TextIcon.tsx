@@ -5,7 +5,7 @@ import { Text } from "../../"
 import { LibIcon } from "../LibIcon"
 import { getIconHeight } from "./utils"
 import { StyledTextIcon, IconContainer } from "./styles"
-import type { TextIconProps } from "./types"
+import type { ILibTextIcon } from "./types"
 
 /**
  * @description Returns a Text with Icon component
@@ -28,7 +28,7 @@ export const TextIcon = forwardRef<
         HTMLUListElement &
         HTMLOListElement &
         HTMLDListElement,
-    TextIconProps
+    ILibTextIcon
 >(
     (
         {
@@ -47,7 +47,7 @@ export const TextIcon = forwardRef<
         },
         ref
     ) => {
-        const textProps: Partial<Omit<TextIconProps, "tag" | "display">> = {
+        const textProps: Partial<Omit<ILibTextIcon, "tag" | "display">> = {
             "data-testid": testid && `${testid}.Text`,
             as: textAs,
             className: "Text",

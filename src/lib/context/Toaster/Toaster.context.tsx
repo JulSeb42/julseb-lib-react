@@ -12,7 +12,7 @@ import type {
     ReactChildren,
 } from "../../types"
 
-interface ToasterContextProps {
+interface ILibToasterContext {
     success: (title: string, options?: LibToastOptions) => void
     error: (title: string, options?: LibToastOptions) => void
     warning: (title: string, options?: LibToastOptions) => void
@@ -21,9 +21,9 @@ interface ToasterContextProps {
     remove: (id: string) => void
 }
 
-export const ToastContext = createContext<ToasterContextProps>(null as any)
+export const ToastContext = createContext<ILibToasterContext>(null as any)
 
-interface ToasterProviderProps {
+interface ILibToasterProvider {
     "data-testid"?: string
     className?: string
     children: ReactChildren
@@ -54,7 +54,7 @@ export function ToasterProviderWrapper({
     children,
     toastOptions,
     position,
-}: ToasterProviderProps) {
+}: ILibToasterProvider) {
     const [state, dispatch] = useReducer(toastReducer, initialState)
 
     const addToast = (
@@ -119,5 +119,5 @@ export function ToasterProviderWrapper({
 }
 
 export function useToast() {
-    return useContext(ToastContext) as ToasterContextProps
+    return useContext(ToastContext) as ILibToasterContext
 }

@@ -3,30 +3,30 @@
 import type {
     LibAllColors,
     LibComponentBase,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibPadding,
+    ILibRadius,
     LibIcon,
 } from "../../types"
 
-interface BadgePropsBase extends LibComponentBase<HTMLSpanElement> {
+interface ILibBadgeBase extends LibComponentBase<HTMLSpanElement> {
     size?: number
     backgroundColor?: LibAllColors
     contentColor?: LibAllColors
-    borderRadius?: LibRadiusProps
-    padding?: LibPaddingProps
+    borderRadius?: ILibRadius
+    padding?: ILibPadding
     children?: never
 }
 
-interface BadgePropsIcon extends BadgePropsBase {
+interface BadgeWithIcon extends ILibBadgeBase {
     icon?: LibIcon
     iconSize?: number
     number?: never
 }
 
-interface BadgePropsNumber extends BadgePropsBase {
+interface BadgeWithNumber extends ILibBadgeBase {
     icon?: never
     iconSize?: never
     number?: number
 }
 
-export type BadgeProps = BadgePropsIcon | BadgePropsNumber
+export type ILibBadge = BadgeWithIcon | BadgeWithNumber

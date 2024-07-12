@@ -1,23 +1,23 @@
 /*=============================================== ImageFunction ===============================================*/
 
 import { forwardRef, lazy, Suspense, type ImgHTMLAttributes } from "react"
-import type { LibComponentBase, LibRadiusProps, ObjectFit } from "../../types"
+import type { LibComponentBase, ILibRadius, ObjectFit } from "../../types"
 
 const StyledImage = lazy(() => import("./styles"))
 
-interface ImageFunctionProps
+interface ILibImageFn
     extends Omit<LibComponentBase<HTMLImageElement>, "as">,
         ImgHTMLAttributes<HTMLImageElement> {
     fallback?: JSX.Element
     hasCaption?: boolean
     aspectRatio?: string
-    borderRadius?: LibRadiusProps
+    borderRadius?: ILibRadius
     fit?: ObjectFit
     width: string | number
     height: string | number
 }
 
-export const ImageFunction = forwardRef<HTMLImageElement, ImageFunctionProps>(
+export const ImageFunction = forwardRef<HTMLImageElement, ILibImageFn>(
     (
         {
             "data-testid": testid,

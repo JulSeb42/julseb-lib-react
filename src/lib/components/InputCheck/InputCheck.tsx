@@ -12,7 +12,7 @@ import {
     StyledText,
     StyledInput,
 } from "./styles"
-import type { InputCheckProps } from "./types"
+import type { ILibInputCheck } from "./types"
 
 /**
  * @description Returns a InputCheck component
@@ -27,7 +27,7 @@ import type { InputCheckProps } from "./types"
  * @prop validation?: LibValidationStatus
  */
 
-export const InputCheck = forwardRef<HTMLInputElement, InputCheckProps>(
+export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
     (
         {
             "data-testid": testid,

@@ -6,16 +6,16 @@ import type {
     LibIcon,
     ReactChildren,
 } from "../../types"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
-interface PaginationPropsBase
+interface ILibPaginationBase
     extends LibComponentBase<HTMLDivElement>,
-        FlexboxProps {
+        ILibFlexbox {
     accentColor?: LibColorsHover
     queries?: Array<Array<string>>
 }
 
-interface PaginationPropsWithItems extends PaginationPropsBase {
+interface ILibPaginationWithItems extends ILibPaginationBase {
     totalPages: number
     pageLimit?: number
     icons?: { previous?: LibIcon; next?: LibIcon }
@@ -23,7 +23,7 @@ interface PaginationPropsWithItems extends PaginationPropsBase {
     children?: never
 }
 
-interface PaginationPropsWithChildren extends PaginationPropsBase {
+interface ILibPaginationWithChildren extends ILibPaginationBase {
     totalPages?: never
     pageLimit?: never
     icons?: never
@@ -31,6 +31,6 @@ interface PaginationPropsWithChildren extends PaginationPropsBase {
     children: ReactChildren
 }
 
-export type PaginationProps =
-    | PaginationPropsWithItems
-    | PaginationPropsWithChildren
+export type ILibPagination =
+    | ILibPaginationWithItems
+    | ILibPaginationWithChildren

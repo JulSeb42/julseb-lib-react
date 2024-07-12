@@ -1,7 +1,7 @@
 /*=============================================== InputWrapper component ===============================================*/
 
 import { StyledInputWrapper } from "../styles"
-import type { InputWrapperProps } from "../types"
+import type { ILibInputWrapper } from "../types"
 
 /**
  * @description Returns a icon on the right of an input when there's validation
@@ -16,7 +16,7 @@ export function InputWrapper({
     hasContainer,
     children,
     hasListOpen,
-}: InputWrapperProps) {
+}: ILibInputWrapper) {
     return (
         <StyledInputWrapper
             data-testid={hasContainer && testid ? `${testid}.Wrapper` : testid}

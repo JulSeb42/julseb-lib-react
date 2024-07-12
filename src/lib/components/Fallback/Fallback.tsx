@@ -3,7 +3,7 @@
 import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Mixins } from "../../"
-import type { LibRadiusProps } from "../../types"
+import type { ILibRadius } from "../../types"
 
 /**
  * @description Returns a Fallback component. Use it for lazy loading in Image or Video components
@@ -18,7 +18,7 @@ import type { LibRadiusProps } from "../../types"
 const Fallback = styled.div<{
     $width: string | number
     $height: string | number
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $aspectRatio?: string
 }>`
     position: relative;

@@ -1,10 +1,10 @@
 /*=============================================== LinkifyPreview ===============================================*/
 
 import { Linkify } from "../../../"
-import type { LinkifyProps } from "../../../types/components-props"
+import type { ILibLinkify } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const linkifyPreview: ComponentPreview<LinkifyProps> = {
+export const linkifyPreview: ComponentPreview<ILibLinkify> = {
     name: "Linkify",
     component: Linkify,
     category: "components",

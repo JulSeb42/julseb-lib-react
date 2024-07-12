@@ -3,7 +3,7 @@
 import { forwardRef, useLayoutEffect, useState, useRef } from "react"
 import { useMergeRefs } from "../../"
 import { StyledTruncate, StyledTag } from "./styles"
-import type { TruncateProps } from "./types"
+import type { ILibTruncate } from "./types"
 
 /**
  * @description Returns a Truncate component
@@ -14,7 +14,7 @@ import type { TruncateProps } from "./types"
  * @prop gap?: LibSpacers
  */
 
-export const Truncate = forwardRef<HTMLDivElement, TruncateProps>(
+export const Truncate = forwardRef<HTMLDivElement, ILibTruncate>(
     (
         { "data-testid": testid, as, className, children, gap = "xs", ...rest },
         ref

@@ -7,18 +7,16 @@ import type {
     LibIcon,
     DispatchState,
 } from "../../types"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
-interface ModalPropsBase
-    extends LibComponentBase<HTMLDivElement>,
-        FlexboxProps {
+interface ILibModalBase extends LibComponentBase<HTMLDivElement>, ILibFlexbox {
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
     disableEsc?: boolean
     contentWidth?: string | number
 }
 
-interface ModalWithCloseButton extends ModalPropsBase {
+interface ModalWithCloseButton extends ILibModalBase {
     hideCloseButton?: false | undefined
     buttonClose?: {
         icon?: LibIcon
@@ -29,9 +27,9 @@ interface ModalWithCloseButton extends ModalPropsBase {
     }
 }
 
-interface ModalWithoutCloseButton extends ModalPropsBase {
+interface ModalWithoutCloseButton extends ILibModalBase {
     hideCloseButton?: true
     buttonClose?: never
 }
 
-export type ModalProps = ModalWithCloseButton | ModalWithoutCloseButton
+export type ILibModal = ModalWithCloseButton | ModalWithoutCloseButton

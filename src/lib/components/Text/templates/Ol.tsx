@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledOl } from "../styles"
-import type { TextProps } from "../types"
+import type { ILibText } from "../types"
 
-export const Ol = forwardRef<HTMLOListElement, TextProps>(
+export const Ol = forwardRef<HTMLOListElement, ILibText>(
     (
         {
             as,

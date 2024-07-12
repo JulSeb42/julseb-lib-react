@@ -11,9 +11,9 @@ import {
 } from "../../InputComponents"
 import { Clock } from "../../../icons"
 import { StyledInput } from "../styles"
-import type { TimeInputProps } from "../types"
+import type { ILibTimeInput } from "../types"
 
-export const TimeInput = forwardRef<HTMLInputElement, TimeInputProps>(
+export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
     (
         {
             "data-testid": testid,

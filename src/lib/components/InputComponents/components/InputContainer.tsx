@@ -11,7 +11,7 @@ import {
     HelperBottomIconContainer,
     HelperBottom,
 } from "../styles"
-import type { InputContainerProps } from "../types"
+import type { ILibInputContainer } from "../types"
 
 /**
  * @description Returns a input container, with label, helper, helper bottom, counter and validation
@@ -40,7 +40,7 @@ export function InputContainer({
     value,
     className,
     hasListOpen,
-}: InputContainerProps) {
+}: ILibInputContainer) {
     if (!label && !helper && !helperBottom && !validation && !counter)
         return children
 

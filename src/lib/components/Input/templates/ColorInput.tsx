@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledInput } from "../styles"
-import type { ColorInputProps } from "../types"
+import type { ILibColorInput } from "../types"
 
-export const ColorInput = forwardRef<HTMLInputElement, ColorInputProps>(
+export const ColorInput = forwardRef<HTMLInputElement, ILibColorInput>(
     (
         {
             "data-testid": testid,

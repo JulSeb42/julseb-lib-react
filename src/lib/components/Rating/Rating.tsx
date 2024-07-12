@@ -8,7 +8,7 @@ import { InputContainer } from "../InputComponents"
 import { Star, StarFull } from "../../icons"
 import { LibIcon } from "../LibIcon"
 import { RatingButton, BUTTON_SIZE } from "./styles"
-import type { RatingProps } from "./types"
+import type { ILibRating } from "./types"
 
 /**
  * @description Returns a Rating component
@@ -26,7 +26,7 @@ import type { RatingProps } from "./types"
  * @prop validation?: { status: LibValidationStatus; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
  */
 
-export const Rating = forwardRef<HTMLDivElement, RatingProps>(
+export const Rating = forwardRef<HTMLDivElement, ILibRating>(
     (
         {
             "data-testid": testid,

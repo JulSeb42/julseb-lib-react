@@ -6,10 +6,10 @@ import {
     type LibColorsHover,
     type ReactChildren,
 } from "../../../types"
-import type { ButtonProps } from "../../../types/components-props"
+import type { ILibButton } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const buttonPreview: ComponentPreview<ButtonProps> = {
+export const buttonPreview: ComponentPreview<ILibButton> = {
     name: "Button",
     component: Button,
     category: "components",
@@ -130,7 +130,7 @@ export const buttonPreview: ComponentPreview<ButtonProps> = {
     ],
 }
 
-function ButtonPreview(props: ButtonProps) {
+function ButtonPreview(props: ILibButton) {
     const colors: Array<LibColorsHover> = Object.values(typeValues.colorsHover)
 
     return (

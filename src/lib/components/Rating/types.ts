@@ -1,11 +1,11 @@
 /*=============================================== Rating types ===============================================*/
 
 import type { LibComponentBase, LibIcon, DispatchState } from "../../types"
-import type { InputBaseProps } from "../InputComponents/types"
+import type { ILibInputBase } from "../InputComponents/types"
 
-interface RatingPropsBase
+interface ILibRatingPBase
     extends Exclude<LibComponentBase<HTMLDivElement>, "as">,
-        InputBaseProps {
+        ILibInputBase {
     rating: number
     icons?: { default?: LibIcon; checked?: LibIcon }
     iconSizes?: { default?: number; checked?: number }
@@ -15,14 +15,14 @@ interface RatingPropsBase
     inputBackground?: never
 }
 
-interface RatingPropsBehaviour extends RatingPropsBase {
+interface RatingInput extends ILibRatingPBase {
     setRating: DispatchState<number>
     readOnly?: undefined | false
 }
 
-interface RatingPropsReadOnly extends RatingPropsBase {
+interface RatingReadOnly extends ILibRatingPBase {
     setRating?: never | undefined | null
     readOnly: true
 }
 
-export type RatingProps = RatingPropsBehaviour | RatingPropsReadOnly
+export type ILibRating = RatingInput | RatingReadOnly

@@ -31,7 +31,7 @@ import { Close } from "../../icons"
 import { transformSearchKeys } from "../../lib-utils"
 import { useKeyboardNavigation } from "../ComponentsMixins"
 import { StyledAutocomplete } from "./styles"
-import type { AutocompleteProps } from "./types"
+import type { ILibAutocomplete } from "./types"
 
 /**
  * @description Returns a Autocomplete component
@@ -57,7 +57,7 @@ import type { AutocompleteProps } from "./types"
  * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
  */
 
-const AutocompleteFn = forwardRef<HTMLInputElement, AutocompleteProps>(
+const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
     (
         {
             "data-testid": testid,

@@ -11,7 +11,7 @@ import type {
     LibSpacers,
 } from "../../types"
 
-export interface FlexboxProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibFlexbox extends LibComponentBase<HTMLDivElement> {
     inline?: boolean
     flexDirection?: FlexDirection
     flexWrap?: FlexWrap

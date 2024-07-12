@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledWrapper } from "./styles"
-import type { WrapperProps } from "./types"
+import type { ILibWrapper } from "./types"
 
 /**
  * @description Returns a Wrapper component
@@ -13,7 +13,7 @@ import type { WrapperProps } from "./types"
  * @prop gap?: LibSpacers
  */
 
-export const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
+export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(
     ({ "data-testid": testid, as, children, gap = "l", ...rest }, ref) => {
         return (
             <StyledWrapper

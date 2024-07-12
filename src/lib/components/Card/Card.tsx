@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { Flexbox } from "../../"
 import { StyledCard } from "./styles"
-import type { CardProps } from "./types"
+import type { ILibCard } from "./types"
 
 /**
  * @description Returns a Card component
@@ -24,7 +24,7 @@ import type { CardProps } from "./types"
  * @prop backgroundImg?: BackgroundImageProps
  */
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
+export const Card = forwardRef<HTMLDivElement, ILibCard>(
     (
         {
             "data-testid": testid,

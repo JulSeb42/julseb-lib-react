@@ -7,14 +7,14 @@ import type {
     DispatchState,
 } from "../../types"
 import type {
-    InputBaseProps,
-    InputValidationIcon,
+    ILibInputBase,
+    ILibInputValidationIconComponent,
 } from "../InputComponents/types"
 
-export interface SelectProps
+export interface ILibSelect
     extends LibComponentBase<HTMLDivElement>,
-        InputBaseProps,
-        InputValidationIcon {
+        ILibInputBase,
+        ILibInputValidationIconComponent {
     selected: string
     setSelected: DispatchState<string>
     options?: Array<string>

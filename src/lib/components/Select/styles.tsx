@@ -2,14 +2,14 @@
 
 import styled from "styled-components"
 import { FONT_WEIGHTS, setDefaultTheme } from "../../"
-import { InputBaseMixin, type InputBaseMixinProps } from "../ComponentsMixins"
+import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
 const SelectContainer = styled.div`
     position: relative;
     width: 100%;
 `
 
-interface SelectButtonProps extends InputBaseMixinProps {
+interface SelectButtonProps extends ILibInputBaseMixin {
     $hasOptions: boolean
 }
 

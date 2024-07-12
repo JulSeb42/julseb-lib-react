@@ -4,27 +4,27 @@ import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Flexbox, Mixins } from "../../"
 import type {
-    BackgroundImageProps,
+    ILibBackgroundImage,
     Cursor,
     LibAllColors,
-    LibBorderProps,
-    LibBoxShadowProps,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibBorder,
+    ILibBoxShadow,
+    ILibPadding,
+    ILibRadius,
     TextAlign,
 } from "../../types"
 
 const StyledCard = styled(Flexbox)<{
-    $border?: LibBorderProps
-    $borderRadius?: LibRadiusProps
-    $padding?: LibPaddingProps
+    $border?: ILibBorder
+    $borderRadius?: ILibRadius
+    $padding?: ILibPadding
     $cursor?: Cursor
     $width?: string | number
     $height?: string | number
-    $shadow?: LibBoxShadowProps
+    $shadow?: ILibBoxShadow
     $backgroundColor: LibAllColors
     $textColor: LibAllColors
-    $backgroundImg?: BackgroundImageProps
+    $backgroundImg?: ILibBackgroundImage
     $textAlign?: TextAlign
 }>`
     text-decoration: none;

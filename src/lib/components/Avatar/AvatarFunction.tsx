@@ -5,18 +5,18 @@ import { Image } from "../../"
 import { LibIcon } from "../LibIcon"
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibComponentBase,
     LibIcon as LibIconType,
-    LibRadiusProps,
+    ILibRadius,
 } from "../../types"
 import { StyledAvatar } from "./styles"
 
-interface AvatarFunctionProps extends LibComponentBase<HTMLSpanElement> {
+interface ILibAvatarFunction extends LibComponentBase<HTMLSpanElement> {
     hasBadge?: boolean
     backgroundColor?: LibAllColors
-    border?: LibBorderProps
-    borderRadius?: LibRadiusProps
+    border?: ILibBorder
+    borderRadius?: ILibRadius
     size?: number
     contentColor?: LibAllColors
     img?: string | { src: string; alt: string }
@@ -25,7 +25,7 @@ interface AvatarFunctionProps extends LibComponentBase<HTMLSpanElement> {
     iconSize?: number
 }
 
-const AvatarFn = forwardRef<HTMLSpanElement, AvatarFunctionProps>(
+const AvatarFn = forwardRef<HTMLSpanElement, ILibAvatarFunction>(
     (
         {
             "data-testid": testid,

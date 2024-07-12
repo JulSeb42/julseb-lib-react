@@ -4,9 +4,9 @@ import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { Loader } from "../../"
 import { LibIcon } from "../LibIcon"
-import type { LoaderProps } from "../Loader/types"
+import type { ILibLoader } from "../Loader/types"
 import { StyledButton } from "./styles"
-import type { ButtonProps } from "./types"
+import type { ILibButton } from "./types"
 
 /**
  * @description Returns a Button component
@@ -28,7 +28,7 @@ import type { ButtonProps } from "./types"
 
 export const Button = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
-    ButtonProps
+    ILibButton
 >(
     (
         {
@@ -57,7 +57,7 @@ export const Button = forwardRef<
         },
         ref
     ) => {
-        const loaderProps: Omit<LoaderProps, "variant" | "borderWidth"> = {
+        const loaderProps: Omit<ILibLoader, "variant" | "borderWidth"> = {
             size: size === "small" ? 14 : 16,
             color: "gray",
             "data-testid": testid && `${testid}.Loader`,

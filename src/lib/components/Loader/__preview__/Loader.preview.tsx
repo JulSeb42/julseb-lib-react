@@ -2,10 +2,10 @@
 
 import { Loader } from "../../../"
 import { typeValues } from "../../../types"
-import type { LoaderProps } from "../../../types/components-props"
+import type { ILibLoader } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const loaderPreview: ComponentPreview<LoaderProps> = {
+export const loaderPreview: ComponentPreview<ILibLoader> = {
     name: "Loader",
     component: Loader,
     category: "components",

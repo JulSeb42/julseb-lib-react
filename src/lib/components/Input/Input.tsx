@@ -10,7 +10,7 @@ import { SelectInput } from "./templates/SelectInput"
 import { TextareaInput } from "./templates/TextareaInput"
 import { TextInput } from "./templates/TextInput"
 import { TimeInput } from "./templates/TimeInput"
-import type { InputProps } from "./types"
+import type { ILibInput } from "./types"
 import { InputContainer } from "../InputComponents"
 import type { LibInputType } from "../../types"
 
@@ -94,12 +94,12 @@ function renderComponent(
 
 const InputFunction = forwardRef<
     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-    InputProps
+    ILibInput
 >(({ type, ...rest }, ref) => renderComponent(rest, type, ref))
 
 export const Input = forwardRef<
     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-    InputProps
+    ILibInput
 >(
     (
         {

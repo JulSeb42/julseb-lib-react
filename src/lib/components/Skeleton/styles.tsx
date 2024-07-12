@@ -5,9 +5,9 @@ import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Flexbox, Mixins } from "../../"
 import type {
     LibAllColors,
-    LibBorderProps,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibBorder,
+    ILibPadding,
+    ILibRadius,
     LibSkeletonAnimation,
 } from "../../types"
 
@@ -17,7 +17,7 @@ type CommonStyleProps = {
     $height?: string | number
     $backgroundColor?: LibAllColors
     $aspectRatio?: string
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $flex?: string | number
     $flexGrow?: string | number
 }
@@ -84,7 +84,7 @@ const Shine = css`
 /*====================== Components ======================*/
 
 const StyledSkeletonCard = styled(Flexbox)<
-    CommonStyleProps & { $border?: LibBorderProps; $padding?: LibPaddingProps }
+    CommonStyleProps & { $border?: ILibBorder; $padding?: ILibPadding }
 >`
     ${Common}
     ${({ $border }) => Mixins.Border($border)}

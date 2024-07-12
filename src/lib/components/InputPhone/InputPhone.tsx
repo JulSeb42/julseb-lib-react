@@ -31,8 +31,8 @@ import {
     Flag,
     CountryCode,
 } from "./styles"
-import type { InputPhoneProps } from "./types"
-import type { ListInputItemProps } from "../InputComponents/types"
+import type { ILibInputPhone } from "./types"
+import type { ILibListInputItem } from "../InputComponents/types"
 
 const defaultIconsSizes = {
     search: 16,
@@ -65,7 +65,7 @@ const defaultIconsSizes = {
  * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
  */
 
-export const InputPhone = forwardRef<HTMLInputElement, InputPhoneProps>(
+export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
     (
         {
             "data-testid": testid,
@@ -181,7 +181,7 @@ export const InputPhone = forwardRef<HTMLInputElement, InputPhoneProps>(
         }
 
         const listItemProps: Omit<
-            ListInputItemProps,
+            ILibListInputItem,
             "onClick" | "isActive" | "readOnly"
         > = {
             "data-testid": testid,

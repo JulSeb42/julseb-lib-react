@@ -4,19 +4,19 @@ import styled from "styled-components"
 import { Mixins, setDefaultTheme } from "../../"
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibFontSizes,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibPadding,
+    ILibRadius,
     LibSpacers,
 } from "../../types"
 
 const StyledTag = styled.span<{
     $backgroundColor: LibAllColors
     $textColor: LibAllColors
-    $border?: LibBorderProps
-    $padding?: LibPaddingProps
-    $borderRadius?: LibRadiusProps
+    $border?: ILibBorder
+    $padding?: ILibPadding
+    $borderRadius?: ILibRadius
     $gap?: LibSpacers
     $fontSize?: LibFontSizes
 }>`

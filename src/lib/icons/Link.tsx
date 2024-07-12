@@ -1,7 +1,7 @@
 /*=============================================== Link ===============================================*/
 
 import { StyledIcon } from "./styles"
-import type { IconProps } from "./types"
+import type { ILibIcon } from "./types"
 
 export function Link({
     "data-testid": testid,
@@ -9,7 +9,7 @@ export function Link({
     size = 64,
     color = "currentColor",
     ...rest
-}: IconProps) {
+}: ILibIcon) {
     return (
         <StyledIcon
             data-testid={testid}

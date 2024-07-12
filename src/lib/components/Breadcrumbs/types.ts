@@ -9,7 +9,7 @@ import type {
     LibBreadcrumbSeparator,
 } from "../../types"
 
-export interface BreadcrumbsProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibBreadcrumbs extends LibComponentBase<HTMLDivElement> {
     linksColor?: LibColorsHover
     activeColor?: LibAllColors
     separatorColor?: LibAllColors

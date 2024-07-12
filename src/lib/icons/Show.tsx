@@ -1,7 +1,7 @@
 /*=============================================== Show ===============================================*/
 
 import { StyledIcon } from "./styles"
-import type { IconProps } from "./types"
+import type { ILibIcon } from "./types"
 
 export function Show({
     "data-testid": testid,
@@ -9,7 +9,7 @@ export function Show({
     size = 64,
     color = "currentColor",
     ...rest
-}: IconProps) {
+}: ILibIcon) {
     return (
         <StyledIcon
             data-testid={testid}

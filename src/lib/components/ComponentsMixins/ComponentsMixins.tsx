@@ -18,21 +18,21 @@ import {
 import type {
     LibButtonVariant,
     LibAllColors,
-    LibBoxShadowProps,
+    ILibBoxShadow,
     LibColorsHover,
     LibFontSizes,
     LibFontWeights,
     LibInputBackground,
     LibInputVariant,
-    LibRadiusProps,
+    ILibRadius,
     LibValidationStatus,
     TextAlign,
 } from "../../types"
 
-export interface ButtonMixinProps {
+export interface ILibButtonMixin {
     $color: LibColorsHover
-    $shadow?: LibBoxShadowProps
-    $borderRadius?: LibRadiusProps
+    $shadow?: ILibBoxShadow
+    $borderRadius?: ILibRadius
     $variant?: LibButtonVariant
 }
 
@@ -41,7 +41,7 @@ export const ButtonMixin = ({
     $shadow,
     $borderRadius,
     $variant,
-}: ButtonMixinProps) => css`
+}: ILibButtonMixin) => css`
     border: 1px solid transparent;
     text-decoration: none;
     background-color: transparent;
@@ -163,7 +163,7 @@ export const ButtonMixin = ({
               `}
 `
 
-export interface TextBaseMixinProps {
+export interface ILibTextBaseMixin {
     $fontSize: LibFontSizes | "inherit"
     $fontWeight: LibFontWeights
     $textAlign?: TextAlign
@@ -177,7 +177,7 @@ export const TextBaseMixin = ({
     $textAlign,
     $color = "currentColor",
     $linkColor = "primary",
-}: TextBaseMixinProps) => css`
+}: ILibTextBaseMixin) => css`
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${Mixins.FontSize($fontSize)};
     font-weight: ${Mixins.FontWeight($fontWeight)};
@@ -224,7 +224,7 @@ export const TextBaseMixin = ({
     }
 `
 
-export interface InputBaseMixinProps {
+export interface ILibInputBaseMixin {
     $validation: LibValidationStatus | undefined
     $inputBackground: LibInputBackground | undefined
     $disabled: boolean | undefined
@@ -240,7 +240,7 @@ export const InputBaseMixin = ({
     $inputVariant,
     $validation,
     $hasListOpen,
-}: InputBaseMixinProps) => css`
+}: ILibInputBaseMixin) => css`
     width: 100%;
     height: ${INPUT_HEIGHT}px;
     line-height: ${INPUT_HEIGHT}px;

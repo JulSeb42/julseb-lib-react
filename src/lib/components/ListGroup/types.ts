@@ -6,21 +6,19 @@ import type {
     ReactChildren,
 } from "../../types"
 
-interface ListGroupPropsBase extends LibComponentBase<HTMLDivElement> {
+interface ILibListGroupBase extends LibComponentBase<HTMLDivElement> {
     showNumbers?: boolean
     maxHeight?: number | string
 }
 
-interface ListGroupPropsWithItems extends ListGroupPropsBase {
+interface ListGroupWithItems extends ILibListGroupBase {
     items: Array<LibListGroupItem>
     children?: never
 }
 
-interface ListGroupPropsWithChildren extends ListGroupPropsBase {
+interface ListGroupWithChildren extends ILibListGroupBase {
     items?: never
     children?: ReactChildren
 }
 
-export type ListGroupProps =
-    | ListGroupPropsWithItems
-    | ListGroupPropsWithChildren
+export type ILibListGroup = ListGroupWithItems | ListGroupWithChildren

@@ -3,29 +3,29 @@
 import type {
     LibComponentBase,
     LibButtonLinkBlank,
-    BackgroundImageProps,
-    LibBorderProps,
-    LibRadiusProps,
-    LibPaddingProps,
+    ILibBackgroundImage,
+    ILibBorder,
+    ILibRadius,
+    ILibPadding,
     Cursor,
-    LibBoxShadowProps,
+    ILibBoxShadow,
     LibAllColors,
     TextAlign,
 } from "../../types"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
-export type CardProps = LibComponentBase<HTMLDivElement> &
+export type ILibCard = LibComponentBase<HTMLDivElement> &
     LibButtonLinkBlank &
-    FlexboxProps & {
-        border?: LibBorderProps
-        borderRadius?: LibRadiusProps
-        padding?: LibPaddingProps
+    ILibFlexbox & {
+        border?: ILibBorder
+        borderRadius?: ILibRadius
+        padding?: ILibPadding
         cursor?: Cursor
         width?: string | number
         height?: string | number
-        shadow?: LibBoxShadowProps
+        shadow?: ILibBoxShadow
         backgroundColor?: LibAllColors
         textColor?: LibAllColors
-        backgroundImg?: BackgroundImageProps
+        backgroundImg?: ILibBackgroundImage
         textAlign?: TextAlign
     }

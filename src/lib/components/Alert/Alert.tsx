@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { Text } from "../../"
 import type { LibAllColors } from "../../types"
 import { StyledAlert } from "./styles"
-import type { AlertProps } from "./types"
+import type { ILibAlert } from "./types"
 
 const alertStyles: {
     [key: string]: {
@@ -54,7 +54,7 @@ const alertStyles: {
  * @prop border?: LibBorderProps
  */
 
-export const Alert = forwardRef<HTMLDivElement, AlertProps>(
+export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
     (
         {
             "data-testid": testid,

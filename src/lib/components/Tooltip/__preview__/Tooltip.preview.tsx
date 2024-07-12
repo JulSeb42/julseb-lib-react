@@ -2,10 +2,10 @@
 
 import { Tooltip, Text } from "../../../"
 import {} from "../../../types"
-import type { TooltipProps } from "../../../types/components-props"
+import type { ILibTooltip } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const tooltipPreview: ComponentPreview<TooltipProps> = {
+export const tooltipPreview: ComponentPreview<ILibTooltip> = {
     name: "Tooltip",
     component: Tooltip,
     category: "components",

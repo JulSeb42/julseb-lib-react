@@ -1,7 +1,7 @@
 /*=============================================== Send ===============================================*/
 
 import { StyledIcon } from "./styles"
-import type { IconProps } from "./types"
+import type { ILibIcon } from "./types"
 
 export function Send({
     "data-testid": testid,
@@ -9,7 +9,7 @@ export function Send({
     size = 64,
     color = "currentColor",
     ...rest
-}: IconProps) {
+}: ILibIcon) {
     return (
         <StyledIcon
             data-testid={testid}

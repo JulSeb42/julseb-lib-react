@@ -2,10 +2,10 @@
 
 import { Flexbox } from "../"
 import { GridItem } from "../../../../components"
-import type { FlexboxProps } from "../types"
+import type { ILibFlexbox } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const flexboxPreview: ComponentPreview<FlexboxProps> = {
+export const flexboxPreview: ComponentPreview<ILibFlexbox> = {
     name: "Flexbox",
     component: Flexbox,
     category: "layouts",

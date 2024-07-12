@@ -2,12 +2,12 @@
 
 import { Avatar, Flexbox } from "../../../"
 import { typeValues, type LibColorsShort } from "../../../types"
-import type { AvatarProps } from "../../../types/components-props"
+import type { ILibAvatar } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const IMG_URL = "/images/pic-avatar.jpg"
 
-export const avatarPreview: ComponentPreview<AvatarProps> = {
+export const avatarPreview: ComponentPreview<ILibAvatar> = {
     name: "Avatar",
     component: Avatar,
     category: "components",
@@ -45,7 +45,7 @@ export const avatarPreview: ComponentPreview<AvatarProps> = {
     ],
 }
 
-function AvatarPreview(props: Omit<AvatarProps, "img">) {
+function AvatarPreview(props: Omit<ILibAvatar, "img">) {
     const arr = Object.values(typeValues.colorsShort) as Array<LibColorsShort>
 
     return (

@@ -5,7 +5,7 @@ import { capitalize } from "ts-utils-julseb"
 import { Tooltip } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { ButtonIconFunction } from "./ButtonFunction"
-import type { ButtonIconProps } from "./types"
+import type { ILibButtonIcon } from "./types"
 
 /**
  * @description Returns a ButtonIcon component
@@ -28,7 +28,7 @@ import type { ButtonIconProps } from "./types"
  * @prop loaderBorderWidth?: number => only if `loaderVariant` is defined
  */
 
-export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>(
+export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
     (
         {
             "data-testid": testid,

@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledSmall } from "../styles"
-import type { TextProps } from "../types"
+import type { ILibText } from "../types"
 
-export const Small = forwardRef<HTMLParagraphElement, TextProps>(
+export const Small = forwardRef<HTMLParagraphElement, ILibText>(
     (
         {
             as,

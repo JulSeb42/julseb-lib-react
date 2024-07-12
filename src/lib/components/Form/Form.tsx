@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { Flexbox, Button } from "../../"
-import type { ButtonProps } from "../Button/types"
+import type { ILibButton } from "../Button/types"
 import { StyledForm } from "./styles"
-import type { FormProps } from "./types"
+import type { ILibForm } from "./types"
 
 /**
  * @description Returns a Form component
@@ -19,7 +19,7 @@ import type { FormProps } from "./types"
  * @prop maxWidth?: string | number
  */
 
-export const Form = forwardRef<HTMLFormElement, FormProps>(
+export const Form = forwardRef<HTMLFormElement, ILibForm>(
     (
         {
             "data-testid": testid,
@@ -36,7 +36,7 @@ export const Form = forwardRef<HTMLFormElement, FormProps>(
         ref
     ) => {
         const buttonSecondaryProps: Pick<
-            ButtonProps,
+            ILibButton,
             | "variant"
             | "icons"
             | "iconSizes"

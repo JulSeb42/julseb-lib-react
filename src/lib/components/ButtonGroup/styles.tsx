@@ -6,12 +6,12 @@ import type {
     LibButtonSize,
     LibButtonVariant,
     LibColorsHover,
-    LibRadiusProps,
+    ILibRadius,
 } from "../../types"
 
 const StyledButtonGroup = styled.div<{
     $size?: LibButtonSize
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
     $color: LibColorsHover
 }>`

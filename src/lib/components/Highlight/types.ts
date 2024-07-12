@@ -1,8 +1,8 @@
 /*=============================================== Highlight types ===============================================*/
 
-import type { TextProps } from "../Text/types"
+import type { ILibText } from "../Text/types"
 
-export type HighlightProps = TextProps & {
+export type ILibHighlight = ILibText & {
     children?: string
     highlightedText: string
 }

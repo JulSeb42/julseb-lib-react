@@ -3,7 +3,7 @@
 import { uuid } from "ts-utils-julseb"
 import { Image, Masonry } from "../../../"
 import {} from "../../../types"
-import type { MasonryProps } from "../../../types/components-props"
+import type { ILibMasonry } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 export const images: Array<string> = [
@@ -20,7 +20,7 @@ export const images: Array<string> = [
     "https://images.unsplash.com/photo-1636207543865-acf3ad382295?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
 ]
 
-export const masonryPreview: ComponentPreview<MasonryProps> = {
+export const masonryPreview: ComponentPreview<ILibMasonry> = {
     name: "Masonry",
     component: Masonry,
     category: "components",

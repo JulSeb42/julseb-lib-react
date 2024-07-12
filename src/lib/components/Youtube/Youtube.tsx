@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import { convertYoutube } from "ts-utils-julseb"
 import { StyledYoutube } from "./styles"
-import type { YoutubeProps } from "./types"
+import type { ILibYoutube } from "./types"
 
 /**
  * @description Returns a Youtube component
@@ -16,7 +16,7 @@ import type { YoutubeProps } from "./types"
  * @prop aspectRatio?: string
  */
 
-export const Youtube = forwardRef<HTMLIFrameElement, YoutubeProps>(
+export const Youtube = forwardRef<HTMLIFrameElement, ILibYoutube>(
     (
         {
             "data-testid": testid,

@@ -3,7 +3,7 @@
 import { CheckCircle, CloseCircle } from "../../../icons"
 import { LibIcon } from "../../LibIcon"
 import { StyledInputValidationIcon } from "../styles"
-import type { InputValidationIconProps } from "../types"
+import type { ILibInputValidationIcon } from "../types"
 
 /**
  * @description Returns a icon on the right of an input when there's validation
@@ -20,7 +20,7 @@ export function InputValidationIcon({
     validation: { status },
     validationIcon,
     inputBackground,
-}: InputValidationIconProps) {
+}: ILibInputValidationIcon) {
     return (
         <StyledInputValidationIcon
             data-testid={testid && `${testid}.ValidationIconContainer`}

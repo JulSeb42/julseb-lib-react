@@ -8,7 +8,7 @@ import {
     HelperBottomIconContainer,
     HelperBottom,
 } from "../styles"
-import type { InputValidationHelperProps } from "../types"
+import type { ILibInputValidationHelper } from "../types"
 
 /**
  * @description Returns a component for input validation, showing under the input
@@ -46,7 +46,7 @@ export function InputValidationHelper({
         ),
         iconPassedSize = getIconSizeFromFont("small"),
     },
-}: InputValidationHelperProps) {
+}: ILibInputValidationHelper) {
     return (
         <HelperBottomContainer
             data-testid={testid && `${testid}.ValidationHelper`}

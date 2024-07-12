@@ -4,10 +4,10 @@ import { Badge, Flexbox } from "../../../"
 import { type LibColorsShort, typeValues } from "../../../types"
 import { roundIconSize } from "../../../lib-utils"
 import { StarFull } from "../../../icons"
-import type { BadgeProps } from "../../../types/components-props"
+import type { ILibBadge } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const badgePreview: ComponentPreview<BadgeProps> = {
+export const badgePreview: ComponentPreview<ILibBadge> = {
     name: "Badge",
     component: Badge,
     category: "components",
@@ -49,7 +49,7 @@ export const badgePreview: ComponentPreview<BadgeProps> = {
     ],
 }
 
-function BadgePreview(props: BadgeProps) {
+function BadgePreview(props: ILibBadge) {
     const arr = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
 
     return (

@@ -4,8 +4,8 @@ import type { ButtonHTMLAttributes } from "react"
 import type {
     LibComponentBase,
     LibIcon,
-    LibBoxShadowProps,
-    LibRadiusProps,
+    ILibBoxShadow,
+    ILibRadius,
     LibButtonLinkBlank,
     LibColorsHover,
     LibTooltipPosition,
@@ -14,7 +14,7 @@ import type {
     LibLoaderVariant,
 } from "../../types"
 
-type ButtonIconPropsBase = LibComponentBase<
+type ILibButtonIconBase = LibComponentBase<
     HTMLButtonElement & HTMLAnchorElement
 > &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
@@ -22,8 +22,8 @@ type ButtonIconPropsBase = LibComponentBase<
         icon: LibIcon
         iconSize?: number
         size?: number
-        shadow?: LibBoxShadowProps
-        borderRadius?: LibRadiusProps
+        shadow?: ILibBoxShadow
+        borderRadius?: ILibRadius
         color?: LibColorsHover
         tooltip?: string
         showTooltip?:
@@ -34,39 +34,39 @@ type ButtonIconPropsBase = LibComponentBase<
               }
     }
 
-type ButtonIconVariantsBackground = ButtonIconPropsBase & {
+type ButtonIconVariantsBackground = ILibButtonIconBase & {
     variant?: Extract<LibButtonIconVariant, "plain" | "ghost">
     showBackgroundHover?: never
 }
 
-type ButtonIconVariantsWithoutBackground = ButtonIconPropsBase & {
+type ButtonIconVariantsWithoutBackground = ILibButtonIconBase & {
     variant?: Extract<LibButtonIconVariant, "transparent">
     showBackgroundHover?: boolean
 }
 
-type ButtonIconPropsVariants =
+type ButtonIconVariant =
     | ButtonIconVariantsBackground
     | ButtonIconVariantsWithoutBackground
 
-type ButtonIconLoading = ButtonIconPropsVariants & {
+type ButtonIconLoading = ButtonIconVariant & {
     isLoading?: boolean
     loaderVariant?: Extract<LibLoaderVariant, 1 | 2 | 3>
     loaderBorderWidth?: number
 }
 
-type ButtonIconLoadingVariant = ButtonIconPropsVariants & {
+type ButtonIconLoadingVariant = ButtonIconVariant & {
     isLoading?: boolean
     loaderVariant?: Extract<LibLoaderVariant, 4>
     loaderBorderWidth?: never
 }
 
-type ButtonIconNotLoading = ButtonIconPropsVariants & {
+type ButtonIconNotLoading = ButtonIconVariant & {
     isLoading?: undefined
     loaderVariant?: never
     loaderBorderWidth?: never
 }
 
-export type ButtonIconProps =
+export type ILibButtonIcon =
     | ButtonIconLoading
     | ButtonIconLoadingVariant
     | ButtonIconNotLoading

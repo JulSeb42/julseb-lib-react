@@ -7,7 +7,7 @@ import type {
     LibSpacers,
 } from "../../types"
 
-export interface FormProps
+export interface ILibForm
     extends Exclude<LibComponentBase<HTMLFormElement>, "as"> {
     buttonPrimary?:
         | string

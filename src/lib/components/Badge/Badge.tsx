@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { roundIconSize } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
 import { StyledBadge } from "./styles"
-import type { BadgeProps } from "./types"
+import type { ILibBadge } from "./types"
 
 /**
  * @description Returns a Badge component
@@ -21,7 +21,7 @@ import type { BadgeProps } from "./types"
  * @prop number?: number => only if `icon` is not defined
  */
 
-export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
+export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
     (
         {
             "data-testid": testid,

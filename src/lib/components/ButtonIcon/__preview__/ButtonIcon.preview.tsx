@@ -6,7 +6,7 @@ import {
     type ReactChildren,
     typeValues,
 } from "../../../types"
-import type { ButtonIconProps } from "../../../types/components-props"
+import type { ILibButtonIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const buttonVariants: Array<LibButtonIconVariant> = [
@@ -15,7 +15,7 @@ const buttonVariants: Array<LibButtonIconVariant> = [
     "ghost",
 ]
 
-export const buttonIconPreview: ComponentPreview<ButtonIconProps> = {
+export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
     name: "ButtonIcon",
     component: ButtonIcon,
     category: "components",
@@ -71,7 +71,7 @@ function FlexPreview({ children }: { children?: ReactChildren }) {
     )
 }
 
-function ButtonsMap(props: ButtonIconProps) {
+function ButtonsMap(props: ILibButtonIcon) {
     const colors = Object.values(typeValues.colorsHover)
 
     return (

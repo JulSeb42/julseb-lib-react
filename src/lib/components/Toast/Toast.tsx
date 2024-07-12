@@ -12,7 +12,7 @@ import {
     CloseButton,
     Timer,
 } from "./styles"
-import type { ToastProps } from "./types"
+import type { ILibToast } from "./types"
 
 const CLOSE_ICON_SIZE = 24
 
@@ -26,7 +26,7 @@ const CLOSE_ICON_SIZE = 24
  * @prop options?: { id?: string; body?: string | ReactChildren; duration?: number; icons?: { left?: LibIcon; close?: LibIcon }; iconSizes?: { left?: number; close?: number }; iconLeftColor?: LibAllColors; labelClose?: string; withTimer?: boolean; timerBackgroundColor?: LibAllColors }
  */
 
-export const Toast = forwardRef<HTMLDivElement, ToastProps>(
+export const Toast = forwardRef<HTMLDivElement, ILibToast>(
     (
         {
             "data-testid": testid,

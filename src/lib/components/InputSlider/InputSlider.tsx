@@ -2,11 +2,11 @@
 
 import { forwardRef, type ForwardedRef, useState, useCallback } from "react"
 import { Flexbox, Text } from "../../"
-import type { TextProps } from "../../types/components-props"
+import type { ILibText } from "../../types/components-props"
 import { Slider, type SliderProps } from "./Slider"
 import { InputContainer } from "../InputComponents"
 import { SliderContainer, Tooltip } from "./styles"
-import type { InputSliderProps } from "./types"
+import type { ILibInputSlider } from "./types"
 
 /**
  * @description Returns a InputSlider component
@@ -20,7 +20,7 @@ import type { InputSliderProps } from "./types"
  * @prop showMinMax?: boolean => only if `min` and `max` are defined
  */
 
-export const InputSlider = forwardRef<HTMLInputElement, InputSliderProps>(
+export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
     (
         {
             "data-testid": testid,
@@ -64,7 +64,7 @@ export const InputSlider = forwardRef<HTMLInputElement, InputSliderProps>(
             value,
             ...rest,
         }
-        const textProps: Pick<TextProps, "color" | "tag"> = {
+        const textProps: Pick<ILibText, "color" | "tag"> = {
             tag: "small",
             color: "gray",
         }

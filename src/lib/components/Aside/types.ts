@@ -2,7 +2,7 @@
 
 import type { LibComponentBase, LibAsideSize } from "../../types"
 
-export interface AsideProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibAside extends LibComponentBase<HTMLDivElement> {
     size?: LibAsideSize
     minHeight?: string | number
 }

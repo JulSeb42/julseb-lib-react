@@ -3,13 +3,13 @@
 import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Mixins, RADIUSES } from "../../"
-import type { LibAllColors, LibMarginProps } from "../../types"
+import type { LibAllColors, ILibMargin } from "../../types"
 
 const StyledHr = styled.hr<{
     $color: LibAllColors
     $height: number
     $maxWidth: string | number
-    $margin?: LibMarginProps
+    $margin?: ILibMargin
     $isRounded?: boolean
 }>`
     display: block;

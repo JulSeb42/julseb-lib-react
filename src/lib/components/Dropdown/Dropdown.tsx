@@ -5,7 +5,7 @@ import { uuid } from "ts-utils-julseb"
 import { useMergeRefs, useClickOutside } from "../../"
 import { DropdownItem } from "./DropdownItem"
 import { StyledDropdown } from "./styles"
-import type { DropdownProps } from "./types"
+import type { ILibDropdown } from "./types"
 
 /**
  * @description Returns a Dropdown component
@@ -23,7 +23,7 @@ import type { DropdownProps } from "./types"
  * @prop positionFromButton?: number
  */
 
-export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
+export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
     (
         {
             "data-testid": testid,

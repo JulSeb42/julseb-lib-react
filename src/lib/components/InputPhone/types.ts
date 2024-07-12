@@ -9,14 +9,14 @@ import type {
     DispatchState,
 } from "../../types"
 import type {
-    InputBaseProps,
-    InputValidationIcon,
+    ILibInputBase,
+    ILibInputValidationIconComponent,
 } from "../InputComponents/types"
 
-export interface InputPhoneProps
+export interface ILibInputPhone
     extends InputHTMLAttributes<HTMLInputElement>,
-        InputBaseProps,
-        InputValidationIcon {
+        ILibInputBase,
+        ILibInputValidationIconComponent {
     selectedCountry: LibCountry | undefined
     setSelectedCountry: DispatchState<LibCountry | undefined>
     defaultCountry?: CountryCode

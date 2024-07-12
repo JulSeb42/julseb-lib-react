@@ -5,8 +5,8 @@ import styled, { css } from "styled-components"
 import { setDefaultTheme, Badge, Mixins, FONT_WEIGHTS, SPACERS } from "../../"
 import type {
     LibAllColors,
-    LibBorderProps,
-    LibRadiusProps,
+    ILibBorder,
+    ILibRadius,
     LibSpacers,
     LibAvatarBadgePosition,
 } from "../../types"
@@ -18,7 +18,7 @@ const Common = ({
     $contentColor,
 }: {
     $size?: number
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
 }) => css`
@@ -37,7 +37,7 @@ const Common = ({
 
 const StyledAvatarContainer = styled.span<{
     $size?: number
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
 }>`
@@ -49,8 +49,8 @@ const StyledAvatarContainer = styled.span<{
 
 const StyledAvatar = styled.span<{
     $size?: number
-    $border?: LibBorderProps
-    $borderRadius?: LibRadiusProps
+    $border?: ILibBorder
+    $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
 }>`
@@ -68,7 +68,7 @@ const StyledBadge = styled(Badge)<{
     $position?: LibAvatarBadgePosition
     $width: number
     $paddingLeftRight: LibSpacers | "auto"
-    $outline?: LibBorderProps
+    $outline?: ILibBorder
 }>`
     position: absolute;
     right: ${({ $width, $paddingLeftRight }) =>

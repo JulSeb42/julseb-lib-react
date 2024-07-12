@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import { Text } from "../../"
 import { getHighlightedText } from "../../lib-utils"
-import type { HighlightProps } from "./types"
+import type { ILibHighlight } from "./types"
 
 /**
  * @description Highlight selected text
@@ -19,7 +19,7 @@ export const Highlight = forwardRef<
         HTMLUListElement &
         HTMLOListElement &
         HTMLDListElement,
-    HighlightProps
+    ILibHighlight
 >(({ children = "", highlightedText, className, ...rest }, ref) => {
     return (
         <Text ref={ref} className={className} {...rest}>

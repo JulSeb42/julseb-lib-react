@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledHr } from "./styles"
-import type { HrProps } from "./types"
+import type { ILibHr } from "./types"
 
 /**
  * @description Returns a Hr component
@@ -17,7 +17,7 @@ import type { HrProps } from "./types"
  * @prop isRounded?: boolean
  */
 
-export const Hr = forwardRef<HTMLHRElement, HrProps>(
+export const Hr = forwardRef<HTMLHRElement, ILibHr>(
     (
         {
             "data-testid": testid,

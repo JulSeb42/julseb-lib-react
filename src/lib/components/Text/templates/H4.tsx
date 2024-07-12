@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledH4 } from "../styles"
-import type { TextProps } from "../types"
+import type { ILibText } from "../types"
 
-export const H4 = forwardRef<HTMLHeadingElement, TextProps>(
+export const H4 = forwardRef<HTMLHeadingElement, ILibText>(
     (
         {
             as,

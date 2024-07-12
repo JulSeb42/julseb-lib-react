@@ -3,10 +3,10 @@
 import type { VideoHTMLAttributes, SourceHTMLAttributes } from "react"
 import type { LibComponentBase, ObjectFit } from "../../types"
 
-export interface VideoProps
+export interface ILibVideo
     extends Exclude<LibComponentBase<HTMLVideoElement>, "as">,
         VideoHTMLAttributes<HTMLVideoElement>,
-    SourceHTMLAttributes<HTMLVideoElement> {
+        SourceHTMLAttributes<HTMLVideoElement> {
     fit?: ObjectFit
     aspectRatio?: string
     emptyText?: string

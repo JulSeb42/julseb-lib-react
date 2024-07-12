@@ -2,6 +2,6 @@
 
 import type { LibComponentBase, LibSpacers } from "../../types"
 
-export interface WrapperProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibWrapper extends LibComponentBase<HTMLDivElement> {
     gap?: LibSpacers
 }

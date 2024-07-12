@@ -5,7 +5,7 @@ import { uuid } from "ts-utils-julseb"
 import { LibIcon } from "../LibIcon"
 import { ChevronRight } from "../../icons"
 import { StyledBreadcrumbs, SeparatorContainer } from "./styles"
-import type { BreadcrumbsProps } from "./types"
+import type { ILibBreadcrumbs } from "./types"
 
 /**
  * @description Returns a Breadcrumbs component
@@ -21,7 +21,7 @@ import type { BreadcrumbsProps } from "./types"
  * @prop children?: ReactChildren
  */
 
-export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
+export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
     (
         {
             "data-testid": testid,
@@ -48,7 +48,7 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
                 $activeColor={activeColor}
                 {...rest}
             >
-                {(children)?.map((child, i) => (
+                {children?.map((child, i) => (
                     <Fragment key={uuid()}>
                         {child}
 

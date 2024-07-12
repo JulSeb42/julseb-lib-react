@@ -5,7 +5,7 @@ import { LoaderOne } from "./templates/LoaderOne"
 import { LoaderTwo } from "./templates/LoaderTwo"
 import { LoaderThree } from "./templates/LoaderThree"
 import { LoaderFour } from "./templates/LoaderFour"
-import type { LoaderProps } from "./types"
+import type { ILibLoader } from "./types"
 
 /**
  * @description Returns a Loader component
@@ -19,7 +19,7 @@ import type { LoaderProps } from "./types"
  * @prop borderWidth?: number => only for `variant` 1 to 3
  */
 
-export const Loader = forwardRef<HTMLSpanElement, LoaderProps>(
+export const Loader = forwardRef<HTMLSpanElement, ILibLoader>(
     ({ variant, size = 48, color = "primary", ...rest }, ref) => {
         if (variant === 2)
             return <LoaderTwo ref={ref} size={size} color={color} {...rest} />

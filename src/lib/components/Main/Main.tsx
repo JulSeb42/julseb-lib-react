@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledMain } from "./styles"
-import type { MainProps } from "./types"
+import type { ILibMain } from "./types"
 
 /**
  * @description Returns a Main component
@@ -15,7 +15,7 @@ import type { MainProps } from "./types"
  * @prop contentSize?: "default" | "large" | "form" => only if `size` is set to `full`
  */
 
-export const Main = forwardRef<HTMLDivElement, MainProps>(
+export const Main = forwardRef<HTMLDivElement, ILibMain>(
     (
         {
             "data-testid": testid,

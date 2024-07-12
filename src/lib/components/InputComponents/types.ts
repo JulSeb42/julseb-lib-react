@@ -22,16 +22,18 @@ interface ValidationHelper {
     iconPassedSize?: number
 }
 
-export interface InputValidationIcon {
-    validationIcon?: {
-        iconValidationNotPassed?: LibIcon
-        iconValidationNotPassedSize?: number
-        iconValidationPassed?: LibIcon
-        iconValidationPassedSize?: number
-    }
+export interface ILibInputValidationIconComponent {
+    validationIcon?:
+        | {
+              iconValidationNotPassed?: LibIcon
+              iconValidationNotPassedSize?: number
+              iconValidationPassed?: LibIcon
+              iconValidationPassedSize?: number
+          }
+        | undefined
 }
 
-export interface InputBaseProps {
+export interface ILibInputBase {
     "data-testid"?: string
     id?: string
     label?: string | JSX.Element
@@ -51,12 +53,12 @@ export interface InputBaseProps {
     inputVariant?: LibInputVariant
 }
 
-export interface ExtendedInputBaseProps extends InputBaseProps {
+export interface ILibExtendedInputBase extends ILibInputBase {
     counter?: boolean
     maxLength?: number
 }
 
-export interface InputContainerProps {
+export interface ILibInputContainer {
     "data-testid": string | undefined
     className: string | undefined
     id: string | undefined
@@ -81,7 +83,7 @@ export interface InputContainerProps {
     hasListOpen?: boolean
 }
 
-export interface InputIconContainerProps {
+export interface ILibInputIconContainer {
     "data-testid": string | undefined
     className: string | undefined
     icon: LibIcon | undefined
@@ -92,7 +94,7 @@ export interface InputIconContainerProps {
     inputVariant: LibInputVariant | undefined
 }
 
-export interface InputRightContainerProps {
+export interface ILibInputRightContainer {
     "data-testid": string | undefined
     className: string | undefined
     children?: ReactChildren
@@ -100,28 +102,20 @@ export interface InputRightContainerProps {
     disabled: boolean | undefined
 }
 
-export interface InputValidationHelperProps {
+export interface ILibInputValidationHelper {
     "data-testid": string | undefined
     className: string | undefined
     validation: ValidationHelper
 }
 
-export interface InputValidationIconProps {
+export interface ILibInputValidationIcon extends ILibInputValidationIconComponent {
     "data-testid": string | undefined
     className: string | undefined
     inputBackground: LibInputBackground | undefined
     validation: { status: LibValidationStatus }
-    validationIcon:
-        | {
-              iconValidationNotPassed?: LibIcon
-              iconValidationNotPassedSize?: number
-              iconValidationPassed?: LibIcon
-              iconValidationPassedSize?: number
-          }
-        | undefined
 }
 
-interface InputButtonPropsBase {
+interface ILibInputButtonBase {
     "data-testid": string | undefined
     "aria-label": string | undefined
     onClick?: MouseEventHandler<HTMLButtonElement>
@@ -131,24 +125,24 @@ interface InputButtonPropsBase {
     className: string | undefined
 }
 
-interface InputButtonIcon extends InputButtonPropsBase {
+interface InputButtonWithIcon extends ILibInputButtonBase {
     icon: LibIcon | undefined
     iconSize: number | undefined
     text?: never
 }
 
-interface InputButtonText extends InputButtonPropsBase {
+interface InputButtonWithText extends ILibInputButtonBase {
     icon?: never
     iconSize?: never
     text: string | undefined
 }
 
-export type InputButtonProps = RequireAtLeastOne<
-    InputButtonIcon | InputButtonText,
+export type ILibInputButton = RequireAtLeastOne<
+    InputButtonWithIcon | InputButtonWithText,
     "icon" | "text"
 >
 
-export interface InputWrapperProps {
+export interface ILibInputWrapper {
     "data-testid": string | undefined
     className: string | undefined
     hasContainer: boolean | undefined
@@ -156,7 +150,7 @@ export interface InputWrapperProps {
     hasListOpen?: boolean
 }
 
-export interface ListInputProps {
+export interface ILibListInput {
     "data-testid": string | undefined
     className: string | undefined
     direction: LibListDirection | undefined
@@ -167,7 +161,7 @@ export interface ListInputProps {
     children?: ReactChildren
 }
 
-interface ListInputItemPropsBase {
+interface ILibListInputItemBase {
     "data-testid": string | undefined
     className: string | undefined
     validation: LibValidationStatus
@@ -175,16 +169,16 @@ interface ListInputItemPropsBase {
     children?: ReactChildren
 }
 
-interface ListInputItemActive extends ListInputItemPropsBase {
+interface ListInputItemActive extends ILibListInputItemBase {
     isActive: boolean
     onClick: MouseEventHandler<HTMLSpanElement>
     readOnly?: never
 }
 
-interface ListInputItemReadOnly extends ListInputItemPropsBase {
+interface ListInputItemReadOnly extends ILibListInputItemBase {
     isActive?: never
     onClick?: never
     readOnly: true
 }
 
-export type ListInputItemProps = ListInputItemActive | ListInputItemReadOnly
+export type ILibListInputItem = ListInputItemActive | ListInputItemReadOnly

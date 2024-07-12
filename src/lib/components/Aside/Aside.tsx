@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledAside } from "./styles"
-import type { AsideProps } from "./types"
+import type { ILibAside } from "./types"
 
 /**
  * @description Returns an Aside component
@@ -14,7 +14,7 @@ import type { AsideProps } from "./types"
  * @prop minHeight?: string | number
  */
 
-export const Aside = forwardRef<HTMLDivElement, AsideProps>(
+export const Aside = forwardRef<HTMLDivElement, ILibAside>(
     (
         {
             "data-testid": testid,

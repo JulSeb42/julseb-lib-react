@@ -3,14 +3,14 @@
 import styled, { css } from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme } from "../../"
 import { roundIconSize } from "../../lib-utils"
-import type { LibAllColors, LibPaddingProps, LibRadiusProps } from "../../types"
+import type { LibAllColors, ILibPadding, ILibRadius } from "../../types"
 
 const StyledBadge = styled.span<{
     $size: number
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
-    $borderRadius?: LibRadiusProps
-    $padding?: LibPaddingProps
+    $borderRadius?: ILibRadius
+    $padding?: ILibPadding
     $hasChildren?: boolean
     $childrenLength?: number
 }>`

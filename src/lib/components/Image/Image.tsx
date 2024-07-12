@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { Fallback } from "../../"
 import { ImageFunction } from "./ImageFunction"
 import { ImgContainer, Caption } from "./styles"
-import type { ImageProps } from "./types"
+import type { ILibImage } from "./types"
 
 /**
  * @description Returns an Image component
@@ -19,7 +19,7 @@ import type { ImageProps } from "./types"
  * @prop caption?: string | { text: string; textColor?: LibAllColors; background?: ImageBackgroundOverlay; as?: ElementType }
  */
 
-export const Image = forwardRef<HTMLImageElement, ImageProps>(
+export const Image = forwardRef<HTMLImageElement, ILibImage>(
     (
         {
             "data-testid": testid,

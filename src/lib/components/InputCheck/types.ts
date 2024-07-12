@@ -7,23 +7,23 @@ import type {
     LibInputCheckVariant,
 } from "../../types"
 
-interface InputCheckPropsBase extends InputHTMLAttributes<HTMLInputElement> {
+interface ILibInputCheckBase extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid"?: string
     id: string
     validation?: LibValidationStatus
     variant?: LibInputCheckVariant
 }
 
-interface InputCheckbox extends InputCheckPropsBase {
+interface InputCheckbox extends ILibInputCheckBase {
     type?: "checkbox"
     iconCheck?: LibIcon
     iconCheckSize?: number
 }
 
-interface InputRadio extends InputCheckPropsBase {
+interface InputRadio extends ILibInputCheckBase {
     type?: "radio"
     iconCheck?: never
     iconCheckSize?: never
 }
 
-export type InputCheckProps = InputCheckbox | InputRadio
+export type ILibInputCheck = InputCheckbox | InputRadio

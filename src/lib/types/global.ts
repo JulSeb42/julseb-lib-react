@@ -50,7 +50,7 @@ export interface LibComponentBase<T> extends HTMLAttributes<T> {
 
 /* Box shadow */
 
-export type LibBoxShadowProps =
+export type ILibBoxShadow =
     | LibShadows
     | {
           default: LibShadows
@@ -60,7 +60,7 @@ export type LibBoxShadowProps =
 
 /* Border radius */
 
-export type LibRadiusProps =
+export type ILibRadius =
     | LibRadiuses
     | number
     | null
@@ -73,7 +73,7 @@ export type LibRadiusProps =
 
 /* Padding */
 
-export type LibPaddingProps =
+export type ILibPadding =
     | LibSpacers
     | {
           left?: LibSpacers | "auto"
@@ -84,7 +84,7 @@ export type LibPaddingProps =
           topBottom?: LibSpacers | "auto"
       }
 
-export type LibMarginProps =
+export type ILibMargin =
     | LibSpacers
     | undefined
     | "auto"
@@ -100,7 +100,7 @@ export type LibMarginProps =
 
 /* Border */
 
-export type LibBorderProps = {
+export type ILibBorder = {
     style?: BorderStyle
     width?: LibSpacers
     color?: LibAllColors
@@ -108,7 +108,7 @@ export type LibBorderProps = {
 
 /* Outline */
 
-export type LibOutlineProps = {
+export type ILibOutline = {
     style?: OutlineStyle
     width?: LibSpacers
     color?: LibAllColors
@@ -242,7 +242,7 @@ export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
 
 /* BackgroundImage */
 
-export interface BackgroundImageProps {
+export interface ILibBackgroundImage {
     img: string
     clip?: Property.BackgroundClip
     origin?: Property.BackgroundOrigin
@@ -274,7 +274,7 @@ export type LibToasterPosition = keyof typeof typeValues.toasterPositions
 
 /*====================== Theme ======================*/
 
-export interface ThemeContextProps {
+export interface ILibThemeContext {
     theme: DefaultTheme
     selectedTheme: LibThemeNames | undefined
     toggleTheme: () => void

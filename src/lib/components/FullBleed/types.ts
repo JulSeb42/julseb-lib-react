@@ -1,9 +1,9 @@
 /*=============================================== FullBleed types ===============================================*/
 
-import type { LibComponentBase, LibPaddingProps } from "../../types"
+import type { LibComponentBase, ILibPadding } from "../../types"
 
-export interface FullBleedProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibFullBleed extends LibComponentBase<HTMLDivElement> {
     height?: number | string
     aspectRatio?: string
-    padding?: LibPaddingProps
+    padding?: ILibPadding
 }

@@ -2,10 +2,10 @@
 
 import { Skeleton, SkeletonCard } from "../../../"
 import {} from "../../../types"
-import type { SkeletonProps } from "../../../types/components-props"
+import type { ILibSkeleton } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const skeletonPreview: ComponentPreview<SkeletonProps> = {
+export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
     name: "Skeleton",
     component: Skeleton,
     category: "components",

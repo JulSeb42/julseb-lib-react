@@ -2,18 +2,18 @@
 
 import type {
     LibComponentBase,
-    LibBorderProps,
+    ILibBorder,
     LibAllColors,
-    LibRadiusProps,
-    LibPaddingProps,
+    ILibRadius,
+    ILibPadding,
     LibIcon,
     LibAvatarBadgePosition,
 } from "../../types"
 
-interface AvatarPropsBase extends LibComponentBase<HTMLSpanElement> {
+interface ILibAvatarBase extends LibComponentBase<HTMLSpanElement> {
     size?: number
-    border?: LibBorderProps
-    borderRadius?: LibRadiusProps
+    border?: ILibBorder
+    borderRadius?: ILibRadius
     badge?:
         | boolean
         | number
@@ -23,12 +23,12 @@ interface AvatarPropsBase extends LibComponentBase<HTMLSpanElement> {
               backgroundColor?: LibAllColors
               position?: LibAvatarBadgePosition
               size?: number
-              padding?: LibPaddingProps
-              outline?: LibBorderProps
+              padding?: ILibPadding
+              outline?: ILibBorder
           }
 }
 
-interface AvatarPropsImage extends AvatarPropsBase {
+interface AvatarWithImage extends ILibAvatarBase {
     img: string | { src: string; alt: string }
     letter?: never
     icon?: never
@@ -37,7 +37,7 @@ interface AvatarPropsImage extends AvatarPropsBase {
     contentColor?: never
 }
 
-interface AvatarPropsLetter extends AvatarPropsBase {
+interface AvatarWithLetter extends ILibAvatarBase {
     img?: never
     letter: string
     icon?: never
@@ -46,7 +46,7 @@ interface AvatarPropsLetter extends AvatarPropsBase {
     contentColor?: LibAllColors
 }
 
-interface AvatarPropsIcon extends AvatarPropsBase {
+interface AvatarWithIcon extends ILibAvatarBase {
     img?: never
     letter?: never
     icon: LibIcon
@@ -55,4 +55,4 @@ interface AvatarPropsIcon extends AvatarPropsBase {
     contentColor?: LibAllColors
 }
 
-export type AvatarProps = AvatarPropsImage | AvatarPropsLetter | AvatarPropsIcon
+export type ILibAvatar = AvatarWithImage | AvatarWithLetter | AvatarWithIcon

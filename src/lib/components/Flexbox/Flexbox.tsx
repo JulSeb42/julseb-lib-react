@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledFlexbox } from "./styles"
-import type { FlexboxProps } from "./types"
+import type { ILibFlexbox } from "./types"
 
 /**
  * @description Returns a Flexbox component
@@ -22,7 +22,7 @@ import type { FlexboxProps } from "./types"
  * @prop rowGap?: LibSpacers
  */
 
-export const Flexbox = forwardRef<HTMLDivElement, FlexboxProps>(
+export const Flexbox = forwardRef<HTMLDivElement, ILibFlexbox>(
     (
         {
             "data-testid": testid,

@@ -2,12 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledInput } from "../styles"
-import type { TextareaInputProps } from "../types"
+import type { ILibTextareaInput } from "../types"
 
-export const TextareaInput = forwardRef<
-    HTMLTextAreaElement,
-    TextareaInputProps
->(
+export const TextareaInput = forwardRef<HTMLTextAreaElement, ILibTextareaInput>(
     (
         {
             "data-testid": testid,

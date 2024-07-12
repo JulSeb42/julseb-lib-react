@@ -3,12 +3,12 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { Mixins, setDefaultTheme } from "../../"
-import type { LibPaddingProps } from "../../types"
+import type { ILibPadding } from "../../types"
 
 const StyledFullBleed = styled.div<{
     $height?: number | string
     $aspectRatio?: string
-    $padding?: LibPaddingProps
+    $padding?: ILibPadding
 }>`
     width: 100%;
     grid-column: 1/4;

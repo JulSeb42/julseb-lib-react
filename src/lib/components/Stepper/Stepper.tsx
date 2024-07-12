@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Step } from "./Step"
 import { StyledStepper } from "./styles"
-import type { StepperProps } from "./types"
+import type { ILibStepper } from "./types"
 
 /**
  * @description Returns a Stepper component
@@ -21,7 +21,7 @@ import type { StepperProps } from "./types"
  * @prop accentColor?: LibColorsHover
  */
 
-export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
+export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
     (
         {
             "data-testid": testid,

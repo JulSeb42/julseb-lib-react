@@ -7,9 +7,9 @@ import type {
     LibSpacers,
     LibTextIconTag,
 } from "../../types"
-import type { TextProps } from "../Text/types"
+import type { ILibText } from "../Text/types"
 
-export type TextIconProps = TextProps & {
+export type ILibTextIcon = ILibText & {
     textAs?: ElementType
     tag?: LibTextIconTag
     icon: LibIcon

@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import { Icon, Text, Mixins } from "../../../"
-import type { IconProps } from "../../../types/components-props"
+import type { ILibIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const IconMixin = styled(Text)`
@@ -15,7 +15,7 @@ const IconMixin = styled(Text)`
     }
 `
 
-export const iconPreview: ComponentPreview<IconProps> = {
+export const iconPreview: ComponentPreview<ILibIcon> = {
     name: "Icon",
     component: Icon,
     category: "components",

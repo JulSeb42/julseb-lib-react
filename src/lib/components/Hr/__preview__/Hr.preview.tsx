@@ -1,10 +1,10 @@
 /*=============================================== HrPreview ===============================================*/
 
 import { Hr } from "../../../"
-import type { HrProps } from "../../../types/components-props"
+import type { ILibHr } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const hrPreview: ComponentPreview<HrProps> = {
+export const hrPreview: ComponentPreview<ILibHr> = {
     name: "Hr",
     component: Hr,
     category: "components",

@@ -9,20 +9,20 @@ import type {
     LibTextTag,
 } from "../../types"
 
-interface TextPropsBase extends LibComponentBase<HTMLElement> {
+interface ILibTextBase extends LibComponentBase<HTMLElement> {
     color?: LibAllColors
     linkColor?: LibColorsHover
     textAlign?: TextAlign
 }
 
-interface TextPropsDisplay extends TextPropsBase {
+interface TextDisplay extends ILibTextBase {
     tag?: LibTextDisplayTag
     display?: boolean
 }
 
-interface TextPropsOther extends TextPropsBase {
+interface TextOther extends ILibTextBase {
     tag?: LibTextTag
     display?: never
 }
 
-export type TextProps = TextPropsDisplay | TextPropsOther
+export type ILibText = TextDisplay | TextOther

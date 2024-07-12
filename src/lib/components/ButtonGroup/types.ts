@@ -5,14 +5,14 @@ import type {
     LibButtonGroupItem,
     LibColorsHover,
     LibButtonVariant,
-    LibRadiusProps,
+    ILibRadius,
     LibButtonSize,
 } from "../../types"
 
-export interface ButtonGroupProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibButtonGroup extends LibComponentBase<HTMLDivElement> {
     buttons: Array<LibButtonGroupItem>
     color?: LibColorsHover
     variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
-    borderRadius?: LibRadiusProps
+    borderRadius?: ILibRadius
     size?: LibButtonSize
 }

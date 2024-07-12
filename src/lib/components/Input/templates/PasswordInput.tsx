@@ -9,13 +9,13 @@ import {
     InputValidationIcon,
     InputWrapper,
 } from "../../InputComponents"
-import type { InputButtonProps } from "../../InputComponents/types"
+import type { ILibInputButton } from "../../InputComponents/types"
 import { StyledInput } from "../styles"
-import type { PasswordInputProps } from "../types"
+import type { ILibPasswordInput } from "../types"
 
 const Input = forwardRef<
     HTMLInputElement,
-    PasswordInputProps & {
+    ILibPasswordInput & {
         hasContainer: boolean
         hasWrapper: boolean
         inputType: "password" | "text"
@@ -71,7 +71,7 @@ const Input = forwardRef<
     }
 )
 
-export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
     (
         {
             "data-testid": testid,
@@ -111,7 +111,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         )
 
         const buttonCommonProps: Pick<
-            InputButtonProps,
+            ILibInputButton,
             | "data-testid"
             | "onClick"
             | "inputBackground"

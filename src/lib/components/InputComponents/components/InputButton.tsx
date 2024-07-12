@@ -2,7 +2,7 @@
 
 import { LibIcon } from "../../LibIcon"
 import { StyledInputButton } from "../styles"
-import type { InputButtonProps } from "../types"
+import type { ILibInputButton } from "../types"
 
 /**
  * @description Returns a button used on the right of an input
@@ -29,7 +29,7 @@ export function InputButton({
     inputBackground,
     validationStatus,
     className,
-}: InputButtonProps) {
+}: ILibInputButton) {
     return (
         <StyledInputButton
             aria-label={ariaLabel}

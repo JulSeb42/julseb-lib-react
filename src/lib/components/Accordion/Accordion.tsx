@@ -5,7 +5,7 @@ import { uuid } from "ts-utils-julseb"
 import { Text } from "../../"
 import { AccordionItem } from "./AccordionItem"
 import { StyledAccordion } from "./styles"
-import type { AccordionProps } from "./types"
+import type { ILibAccordion } from "./types"
 
 /**
  * @description Returns a Accordion component
@@ -19,7 +19,7 @@ import type { AccordionProps } from "./types"
  * @prop icon?: "plus" | "chevron" | JSX.Element
  */
 
-export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
+export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(
     (
         {
             "data-testid": testid,
@@ -50,7 +50,10 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
                                   (testid && `${testid}.AccordionItem`)
                               }
                               ref={item.ref}
-                              className={item.className || className && "AccordionItem"}
+                              className={
+                                  item.className ||
+                                  (className && "AccordionItem")
+                              }
                               title={item.title}
                               icon={icon}
                               variant={variant}

@@ -14,15 +14,16 @@ import {
     FONT_WEIGHTS,
 } from "./Variables"
 import {
+    typeValues,
     type LibAllColors,
     type LibColorsShort,
     type LibColorsHover,
     type LibOverlays,
-    type LibRadiusProps,
+    type ILibRadius,
     type LibShadows,
-    type LibBoxShadowProps,
+    type ILibBoxShadow,
     type LibSpacers,
-    type LibPaddingProps,
+    type ILibPadding,
     type LibTransitions,
     type LibRadiuses,
     type JustifyItems,
@@ -33,14 +34,13 @@ import {
     type FlexWrap,
     type LibFontSizes,
     type LibFontWeights,
-    type LibMarginProps,
-    type LibBorderProps,
+    type ILibMargin,
+    type ILibBorder,
     type LibAllColorsAndOverlays,
-    type LibOutlineProps,
+    type ILibOutline,
     type LibColorsHoverAndCurrent,
-    type BackgroundImageProps,
+    type ILibBackgroundImage,
     type LibThemeNames,
-    typeValues,
 } from "./types"
 
 type IconMixin = {
@@ -403,10 +403,10 @@ class mixins {
         return overlaysMap.get($overlay)
     }
 
-    BorderRadius = ($borderRadius: LibRadiusProps | undefined) => {
+    BorderRadius = ($borderRadius: ILibRadius | undefined) => {
         if (!$borderRadius) return null
 
-        const radiusMap = new Map<LibRadiusProps, RADIUSES>([
+        const radiusMap = new Map<ILibRadius, RADIUSES>([
             ["xxl", RADIUSES.XXL],
             ["xl", RADIUSES.XL],
             ["l", RADIUSES.L],
@@ -468,7 +468,7 @@ class mixins {
         return shadowMap.get($shadow)
     }
 
-    BoxShadow = ($shadow?: LibBoxShadowProps) => {
+    BoxShadow = ($shadow?: ILibBoxShadow) => {
         if (!$shadow) return null
 
         if (typeof $shadow === "string")
@@ -592,7 +592,7 @@ class mixins {
         }
     `
 
-    Padding = ($padding: LibPaddingProps | undefined) => {
+    Padding = ($padding: ILibPadding | undefined) => {
         if (!$padding) return null
 
         if (typeof $padding === "string" || typeof $padding === "number")
@@ -612,7 +612,7 @@ class mixins {
         `
     }
 
-    Margin = ($margin: LibMarginProps) => {
+    Margin = ($margin: ILibMargin) => {
         if (!$margin) return null
 
         if ($margin === "0 auto")
@@ -706,12 +706,12 @@ class mixins {
         row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
     `
 
-    Border = ($border?: LibBorderProps) => {
+    Border = ($border?: ILibBorder) => {
         if (!$border) return null
 
         const { style, width, color } = $border
 
-        const defaultValues: LibBorderProps = {
+        const defaultValues: ILibBorder = {
             style: "solid",
             width: 1,
             color: "gray-200",
@@ -725,12 +725,12 @@ class mixins {
         `
     }
 
-    Outline = ($outline?: LibOutlineProps) => {
+    Outline = ($outline?: ILibOutline) => {
         if (!$outline) return null
 
         const { style, width, color } = $outline
 
-        const defaultValues: LibBorderProps = {
+        const defaultValues: ILibBorder = {
             style: "solid",
             width: 1,
             color: "white",
@@ -744,7 +744,7 @@ class mixins {
         `
     }
 
-    BackgroundImage = (props?: BackgroundImageProps) => {
+    BackgroundImage = (props?: ILibBackgroundImage) => {
         if (!props) return null
 
         const {

@@ -7,11 +7,11 @@ import {
     InputWrapper,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { FileInputProps } from "../types"
+import type { ILibFileInput } from "../types"
 
 const InputFn = forwardRef<
     HTMLInputElement,
-    FileInputProps & { hasContainer: boolean }
+    ILibFileInput & { hasContainer: boolean }
 >(
     (
         {
@@ -48,7 +48,7 @@ const InputFn = forwardRef<
     }
 )
 
-export const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
+export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
     (
         {
             "data-testid": testid,

@@ -6,11 +6,7 @@ import {
     StyledSkeletonShine,
     StyledSkeleton,
 } from "./styles"
-import type {
-    SkeletonCardProps,
-    SkeletonShineProps,
-    SkeletonProps,
-} from "./types"
+import type { ILibSkeletonCard, ILibSkeletonShine, ILibSkeleton } from "./types"
 
 /**
  * @description Returns a SkeletonCard component
@@ -31,7 +27,7 @@ import type {
  * @prop isShiny?: boolean
  */
 
-export const SkeletonCard = forwardRef<HTMLDivElement, SkeletonCardProps>(
+export const SkeletonCard = forwardRef<HTMLDivElement, ILibSkeletonCard>(
     (
         {
             "data-testid": testid,
@@ -92,7 +88,7 @@ export const SkeletonCard = forwardRef<HTMLDivElement, SkeletonCardProps>(
  * @prop as?: ElementType
  */
 
-export const SkeletonShine = forwardRef<HTMLSpanElement, SkeletonShineProps>(
+export const SkeletonShine = forwardRef<HTMLSpanElement, ILibSkeletonShine>(
     ({ "data-testid": testid, as, ...rest }, ref) => {
         return (
             <StyledSkeletonShine
@@ -122,7 +118,7 @@ export const SkeletonShine = forwardRef<HTMLSpanElement, SkeletonShineProps>(
  * @prop animation?: "shine" | "pulse"
  */
 
-export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
+export const Skeleton = forwardRef<HTMLDivElement, ILibSkeleton>(
     (
         {
             "data-testid": testid,

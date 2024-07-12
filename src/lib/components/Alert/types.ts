@@ -2,32 +2,32 @@
 
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibColorsShort,
     LibComponentBase,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibPadding,
+    ILibRadius,
     LibSpacers,
 } from "../../types"
 
-interface AlertPropsBase extends LibComponentBase<HTMLDivElement> {
+interface ILibAlertBase extends LibComponentBase<HTMLDivElement> {
     maxWidth?: number
     textColor?: LibAllColors
-    padding?: LibPaddingProps
-    borderRadius?: LibRadiusProps
+    padding?: ILibPadding
+    borderRadius?: ILibRadius
     gap?: LibSpacers
 }
 
-interface AlertColorsShort extends AlertPropsBase {
+interface AlertColorsShort extends ILibAlertBase {
     alertColor?: Exclude<LibColorsShort, "black" | "white">
     backgroundColor?: never
-    border?: Omit<LibBorderProps, "color">
+    border?: Omit<ILibBorder, "color">
 }
 
-interface AlertAllColors extends AlertPropsBase {
+interface AlertAllColors extends ILibAlertBase {
     alertColor?: never
     backgroundColor?: LibAllColors
-    border?: LibBorderProps
+    border?: ILibBorder
 }
 
-export type AlertProps = AlertColorsShort | AlertAllColors
+export type ILibAlert = AlertColorsShort | AlertAllColors

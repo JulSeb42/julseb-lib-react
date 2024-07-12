@@ -2,21 +2,19 @@
 
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibComponentBase,
     LibShadows,
     LibToasterPosition,
     LibToast,
 } from "../../types"
 
-export interface ToastProps
-    extends LibComponentBase<HTMLDivElement>,
-        LibToast {
+export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
     title: string
     toasterPosition?: LibToasterPosition
     toastStyle?: {
         maxWidth?: string | number
-        border?: LibBorderProps
+        border?: ILibBorder
         backgroundColor?: LibAllColors
         textColor?: LibAllColors
         shadow?: LibShadows

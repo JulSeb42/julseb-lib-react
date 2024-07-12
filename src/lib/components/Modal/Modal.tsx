@@ -6,7 +6,7 @@ import { useKeyPress, useClickOutside } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { Close } from "../../icons"
 import { StyledModal, ButtonClose, ModalContent } from "./styles"
-import type { ModalProps } from "./types"
+import type { ILibModal } from "./types"
 
 const BUTTON_SIZE = 48
 const BUTTON_LABEL = "Close modal"
@@ -25,7 +25,7 @@ const BUTTON_LABEL = "Close modal"
  * @prop buttonClose?: { icon?: string | JSX.Element; color?: LibColorsHover; size?: number; variant?: "plain" | "transparent" | "ghost"; label?: string } => only if `hideButtonClose` is not set to `true`
  */
 
-export const Modal = forwardRef<HTMLDivElement, ModalProps>(
+export const Modal = forwardRef<HTMLDivElement, ILibModal>(
     (
         {
             "data-testid": testid,

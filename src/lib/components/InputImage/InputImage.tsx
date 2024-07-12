@@ -11,7 +11,7 @@ import {
     StyledImage,
     StyledInput,
 } from "./styles"
-import type { InputImageProps } from "./types"
+import type { ILibInputImage } from "./types"
 import type { ContainerProps } from "./other-types"
 
 /**
@@ -86,7 +86,7 @@ function HoverContainer({
     )
 }
 
-export const InputImage = forwardRef<HTMLInputElement, InputImageProps>(
+export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     (
         {
             "data-testid": testid,

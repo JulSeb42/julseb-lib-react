@@ -15,7 +15,7 @@ import { CaretDown } from "../../icons"
 import { SelectButton, type SelectButtonProps } from "./Button"
 import { useKeyboardNavigation } from "../ComponentsMixins"
 import { SelectContainer } from "./styles"
-import type { SelectProps } from "./types"
+import type { ILibSelect } from "./types"
 
 /**
  * @description Returns a Select component
@@ -32,7 +32,7 @@ import type { SelectProps } from "./types"
  * @prop iconSizes?: { iconLeft?: number; caret?: number }
  */
 
-export const Select = forwardRef<HTMLDivElement, SelectProps>(
+export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     (
         {
             "data-testid": testid,

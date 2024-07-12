@@ -1,7 +1,7 @@
 /*=============================================== AccordionPreview ===============================================*/
 
 import { Accordion } from "../Accordion"
-import type { AccordionProps } from "../types"
+import type { ILibAccordion } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 import type { LibAccordionItem } from "../../../types"
 
@@ -27,7 +27,7 @@ const items: Array<LibAccordionItem> = [
     },
 ]
 
-export const accordionPreview: ComponentPreview<AccordionProps> = {
+export const accordionPreview: ComponentPreview<ILibAccordion> = {
     name: "Accordion",
     component: Accordion,
     category: "components",

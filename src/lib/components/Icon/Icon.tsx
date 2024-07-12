@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledIcon } from "./styles"
-import type { IconProps } from "./types"
+import type { ILibIcon } from "./types"
 
 /**
  * @description Returns an Icon component
@@ -16,7 +16,7 @@ import type { IconProps } from "./types"
  * @prop baseUrl?: string => sets default folder where SVG icon is located. This can be changed by adding LIB_ICON_BASE_URL in .env file
  */
 
-export const Icon = forwardRef<SVGElement, IconProps>(
+export const Icon = forwardRef<SVGElement, ILibIcon>(
     (
         {
             "data-testid": testid,

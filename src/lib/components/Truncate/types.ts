@@ -2,6 +2,6 @@
 
 import type { LibComponentBase, LibSpacers } from "../../types"
 
-export interface TruncateProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibTruncate extends LibComponentBase<HTMLDivElement> {
     gap?: LibSpacers
 }

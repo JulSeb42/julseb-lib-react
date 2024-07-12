@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledSection } from "./styles"
-import type { SectionProps } from "./types"
+import type { ILibSection } from "./types"
 
 /**
  * @description Returns a Section component
@@ -13,7 +13,7 @@ import type { SectionProps } from "./types"
  * @prop gap?: LibSpacers
  */
 
-export const Section = forwardRef<HTMLDivElement, SectionProps>(
+export const Section = forwardRef<HTMLDivElement, ILibSection>(
     ({ "data-testid": testid, as, children, gap = "m", ...rest }, ref) => {
         return (
             <StyledSection

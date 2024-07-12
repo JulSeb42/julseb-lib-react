@@ -2,6 +2,6 @@
 
 import type { LibComponentBase, LibSpacers } from "../../types"
 
-export interface SectionProps extends LibComponentBase<HTMLDivElement> {
+export interface ILibSection extends LibComponentBase<HTMLDivElement> {
     gap?: LibSpacers
 }

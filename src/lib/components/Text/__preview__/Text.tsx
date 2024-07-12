@@ -2,7 +2,7 @@
 
 import type { ComponentPreview } from "../../../../data/components"
 import { Text } from "../../../"
-import type { TextProps } from "../types"
+import type { ILibText } from "../types"
 import { TextDisplay } from "./previews/TextDisplay"
 import { TextTitles } from "./previews/TextTitles"
 import { Paragraphs } from "./previews/Paragraphs"
@@ -12,7 +12,7 @@ import { Unordered } from "./previews/Unordered"
 import { Ordered } from "./previews/Ordered"
 import { Description } from "./previews/Description"
 
-export const textPreviews: ComponentPreview<TextProps> = {
+export const textPreviews: ComponentPreview<ILibText> = {
     name: "Text",
     component: Text,
     category: "styles",

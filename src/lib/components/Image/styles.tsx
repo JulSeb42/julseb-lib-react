@@ -6,7 +6,7 @@ import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Text, Mixins, SPACERS } from "../../"
 import type {
     LibAllColors,
-    LibRadiusProps,
+    ILibRadius,
     ObjectFit,
     LibImageBackgroundOverlay,
 } from "../../types"
@@ -14,7 +14,7 @@ import type {
 const StyledImage = styled.img<{
     $width: string | number
     $height: string | number
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
     $fit?: ObjectFit
     $aspectRatio?: string
 }>`
@@ -31,7 +31,7 @@ const StyledImage = styled.img<{
 const ImgContainer = styled.figure<{
     $width: string | number
     $height: string | number
-    $borderRadius?: LibRadiusProps
+    $borderRadius?: ILibRadius
 }>`
     position: relative;
     overflow: hidden;

@@ -4,29 +4,29 @@ import { forwardRef, type ButtonHTMLAttributes } from "react"
 import { Link } from "react-router-dom"
 import { Loader } from "../../"
 import { LibIcon } from "../LibIcon"
-import type { LoaderProps } from "../Loader/types"
+import type { ILibLoader } from "../Loader/types"
 import type {
     LibComponentBase,
     LibButtonLinkBlank,
-    LibBoxShadowProps,
+    ILibBoxShadow,
     LibColorsHover,
-    LibRadiusProps,
+    ILibRadius,
     LibIcon as LibIconType,
     LibLoaderVariant,
     LibButtonIconVariant,
 } from "../../types"
 import { StyledButtonIcon } from "./styles"
 
-type ButtonFnProps = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
+type ILibButtonFn = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
     LibButtonLinkBlank & {
         showTooltip?: boolean
         isLoading?: boolean
         variant?: LibButtonIconVariant
         showBackgroundHover?: boolean
-        borderRadius?: LibRadiusProps
+        borderRadius?: ILibRadius
         color?: LibColorsHover
-        shadow?: LibBoxShadowProps
+        shadow?: ILibBoxShadow
         size?: number
         loaderVariant?: LibLoaderVariant
         iconSize?: number
@@ -36,7 +36,7 @@ type ButtonFnProps = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
 
 export const ButtonIconFunction = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
-    ButtonFnProps
+    ILibButtonFn
 >(
     (
         {
@@ -65,7 +65,7 @@ export const ButtonIconFunction = forwardRef<
         },
         ref
     ) => {
-        const loaderProps: Omit<LoaderProps, "variant" | "borderWidth"> = {
+        const loaderProps: Omit<ILibLoader, "variant" | "borderWidth"> = {
             size: iconSize,
             color: "gray",
             "data-testid": testid && `${testid}.Loader`,

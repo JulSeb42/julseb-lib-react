@@ -8,11 +8,11 @@ import {
     InputWrapper,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { TextInputProps } from "../types"
+import type { ILibTextInput } from "../types"
 
 const Input = forwardRef<
     HTMLInputElement,
-    TextInputProps & { hasContainer: boolean; hasWrapper: boolean }
+    ILibTextInput & { hasContainer: boolean; hasWrapper: boolean }
 >(
     (
         {
@@ -62,7 +62,7 @@ const Input = forwardRef<
     }
 )
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
     (
         {
             "data-testid": testid,

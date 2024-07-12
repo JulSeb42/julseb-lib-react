@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledFullBleed } from "./styles"
-import type { FullBleedProps } from "./types"
+import type { ILibFullBleed } from "./types"
 
 /**
  * @description Returns a FullBleed component
@@ -15,7 +15,7 @@ import type { FullBleedProps } from "./types"
  * @prop padding?: LibPaddingProps
  */
 
-export const FullBleed = forwardRef<HTMLDivElement, FullBleedProps>(
+export const FullBleed = forwardRef<HTMLDivElement, ILibFullBleed>(
     (
         {
             "data-testid": testid,

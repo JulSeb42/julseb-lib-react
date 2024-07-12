@@ -10,12 +10,12 @@ import {
     OVERLAYS,
     TRANSITIONS,
 } from "../../"
-import type { LibRadiusProps, LibValidationStatus } from "../../types"
+import type { ILibRadius, LibValidationStatus } from "../../types"
 
 const StyledInputImage = styled.label<{
     $width: string | number
     $height: string | number
-    $borderRadius: LibRadiusProps
+    $borderRadius: ILibRadius
     $disabled: boolean | undefined
     $validation: LibValidationStatus
 }>`

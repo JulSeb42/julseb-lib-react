@@ -4,11 +4,11 @@ import { useState, useEffect, createContext, useContext } from "react"
 import type { IStyleSheetManager, DefaultTheme } from "styled-components"
 import { StyleSheetManager } from "../utils/StyleSheetManager"
 import { Themes } from "../types/theme"
-import type { ThemeContextProps, LibThemeNames, ReactChildren } from "../types"
+import type { ILibThemeContext, LibThemeNames, ReactChildren } from "../types"
 
-const ThemeContext = createContext<ThemeContextProps | null>(null)
+const ThemeContext = createContext<ILibThemeContext | null>(null)
 
-interface ThemeProviderProps {
+interface ILibThemeProvider {
     stylesheetManager?: boolean | IStyleSheetManager
     children?: ReactChildren
 }
@@ -16,7 +16,7 @@ interface ThemeProviderProps {
 export function ThemeProviderWrapper({
     children,
     stylesheetManager,
-}: ThemeProviderProps) {
+}: ILibThemeProvider) {
     const [selectedTheme, setSelectedTheme] = useState<
         LibThemeNames | undefined
     >(undefined)
@@ -79,5 +79,5 @@ export function ThemeProviderWrapper({
 }
 
 export function useLibTheme() {
-    return useContext(ThemeContext) as ThemeContextProps
+    return useContext(ThemeContext) as ILibThemeContext
 }

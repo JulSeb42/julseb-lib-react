@@ -8,9 +8,9 @@ import {
     SPACERS,
     setDefaultTheme,
 } from "../../"
-import { InputBaseMixin, type InputBaseMixinProps } from "../ComponentsMixins"
+import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-interface InputProps extends InputBaseMixinProps {
+interface InputProps extends ILibInputBaseMixin {
     $length: number
 }
 

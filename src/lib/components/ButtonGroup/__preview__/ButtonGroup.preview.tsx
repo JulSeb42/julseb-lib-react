@@ -2,7 +2,7 @@
 
 import { ButtonGroup } from "../../../"
 import type { LibButtonGroupItem } from "../../../types"
-import type { ButtonGroupProps } from "../../../types/components-props"
+import type { ILibButtonGroup } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const buttons: Array<LibButtonGroupItem> = [
@@ -33,7 +33,7 @@ const buttons: Array<LibButtonGroupItem> = [
     },
 ]
 
-export const buttonGroupPreview: ComponentPreview<ButtonGroupProps> = {
+export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
     name: "ButtonGroup",
     component: ButtonGroup,
     category: "components",

@@ -9,7 +9,7 @@ import type {
     LibStepperDirection,
 } from "../../types"
 
-interface StepperPropsBase extends LibComponentBase<HTMLDivElement> {
+interface ILibStepperBase extends LibComponentBase<HTMLDivElement> {
     direction?: LibStepperDirection
     activeStep?: number
     iconActive?: LibIcon
@@ -17,14 +17,14 @@ interface StepperPropsBase extends LibComponentBase<HTMLDivElement> {
     accentColor?: LibColorsHover
 }
 
-interface StepperWithSteps extends StepperPropsBase {
+interface StepperWithSteps extends ILibStepperBase {
     steps: Array<LibStep>
     children?: never
 }
 
-interface StepperWithChildren extends StepperPropsBase {
+interface StepperWithChildren extends ILibStepperBase {
     steps?: never
     children: ReactChildren
 }
 
-export type StepperProps = StepperWithSteps | StepperWithChildren
+export type ILibStepper = StepperWithSteps | StepperWithChildren

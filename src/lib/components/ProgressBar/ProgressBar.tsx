@@ -3,7 +3,7 @@
 import { forwardRef, type CSSProperties } from "react"
 import { getPercentage } from "ts-utils-julseb"
 import { StyledProgressBar } from "./styles"
-import type { ProgressBarProps } from "./types"
+import type { ILibProgressBar } from "./types"
 
 /**
  * @description Returns a ProgressBar component
@@ -13,7 +13,7 @@ import type { ProgressBarProps } from "./types"
  * @prop as?: ElementType
  */
 
-export const ProgressBar = forwardRef<HTMLMeterElement, ProgressBarProps>(
+export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
     (
         {
             "data-testid": testid,

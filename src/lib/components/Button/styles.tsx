@@ -9,16 +9,16 @@ import {
     SPACERS,
     setDefaultTheme,
 } from "../../"
-import { ButtonMixin, type ButtonMixinProps } from "../ComponentsMixins"
+import { ButtonMixin, type ILibButtonMixin } from "../ComponentsMixins"
 import type { LibSpacers, LibButtonSize } from "../../types"
 
-interface ButtonStyleProps extends ButtonMixinProps {
+interface ILibButtonStyle extends ILibButtonMixin {
     $size?: LibButtonSize
     $gap?: LibSpacers
     $noPadding?: boolean
 }
 
-const StyledButton = styled.button<ButtonStyleProps>`
+const StyledButton = styled.button<ILibButtonStyle>`
     min-width: 48px;
     font-family: ${FONT_FAMILIES.BODY};
     font-weight: ${FONT_WEIGHTS.BLACK};

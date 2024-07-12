@@ -11,7 +11,7 @@ import {
 import { uuid } from "ts-utils-julseb"
 import { useMergeRefs } from "../../"
 import { StyledMasonry, Col } from "./styles"
-import type { MasonryProps } from "./types"
+import type { ILibMasonry } from "./types"
 
 /**
  * @description Returns a Masonry component
@@ -50,7 +50,7 @@ function fillCols(children: Array<ReactNode>, cols: Array<any>) {
     children.forEach((child, i) => cols[i % cols.length].push(child))
 }
 
-export const Masonry = forwardRef<HTMLDivElement, MasonryProps>(
+export const Masonry = forwardRef<HTMLDivElement, ILibMasonry>(
     (
         {
             "data-testid": testid,

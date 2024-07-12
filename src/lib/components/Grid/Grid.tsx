@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledGrid } from "./styles"
-import type { GridProps } from "./types"
+import type { ILibGrid } from "./types"
 
 /**
  * @description Returns a Grid component
@@ -21,7 +21,7 @@ import type { GridProps } from "./types"
  * @prop alignContent?: AlignContent
  */
 
-export const Grid = forwardRef<HTMLDivElement, GridProps>(
+export const Grid = forwardRef<HTMLDivElement, ILibGrid>(
     (
         {
             "data-testid": testid,

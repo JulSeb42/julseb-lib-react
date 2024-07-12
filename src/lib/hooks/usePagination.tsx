@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom"
 import { scrollToTop } from "ts-utils-julseb"
 import type { DispatchState } from "../types"
 
-interface usePaginationNavigationProps {
+interface ILibUsePaginationNavigation {
     currentPage: number
     setCurrentPage: DispatchState<number>
     queries?: Array<Array<string>>
@@ -25,7 +25,7 @@ export function usePagination({
     setCurrentPage,
     queries,
     totalPages,
-}: usePaginationNavigationProps) {
+}: ILibUsePaginationNavigation) {
     const [_, setSearchParams] = useSearchParams()
 
     const handlePrev = useCallback(() => {

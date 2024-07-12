@@ -1,8 +1,8 @@
 /*=============================================== Linkify types ===============================================*/
 
-import type { TextProps } from "../Text/types"
+import type { ILibText } from "../Text/types"
 
-export type LinkifyProps = TextProps & {
+export type ILibLinkify = ILibText & {
     blank?: boolean
     children?: string
 }

@@ -3,10 +3,10 @@
 import { Link } from "react-router-dom"
 import { FullBleed, Text } from "../../../"
 import {} from "../../../types"
-import type { FullBleedProps } from "../../../types/components-props"
+import type { ILibFullBleed } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const fullBleedPreview: ComponentPreview<FullBleedProps> = {
+export const fullBleedPreview: ComponentPreview<ILibFullBleed> = {
     name: "FullBleed",
     component: FullBleed,
     category: "components",

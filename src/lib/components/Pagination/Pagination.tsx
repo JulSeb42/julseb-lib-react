@@ -7,7 +7,7 @@ import { roundIconSize } from "../../lib-utils"
 import { PaginationButton } from "./PaginationButton"
 import { LibIcon } from "../LibIcon"
 import { ChevronLeft, ChevronRight } from "../../icons"
-import type { PaginationProps } from "./types"
+import type { ILibPagination } from "./types"
 
 /**
  * @description Returns a Pagination component
@@ -24,7 +24,7 @@ import type { PaginationProps } from "./types"
  * @prop queries?: Array<Array<string>>
  */
 
-export const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
+export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
     (
         {
             "data-testid": testid,

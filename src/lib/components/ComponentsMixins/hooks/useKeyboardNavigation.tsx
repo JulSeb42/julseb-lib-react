@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from "react"
 import type { DispatchState } from "../../../types"
 
-interface KeyboardNavProps<T> {
+interface ILibKeyboardNav<T> {
     data: T
     value: string
     setValue: DispatchState<string>
@@ -13,7 +13,7 @@ export function useKeyboardNavigation<T>({
     data,
     value,
     setValue,
-}: KeyboardNavProps<T>) {
+}: ILibKeyboardNav<T>) {
     const [isOpen, setIsOpen] = useState(false)
     const [cursor, setCursor] = useState(0)
     const listRef = useRef<HTMLDivElement>(null)

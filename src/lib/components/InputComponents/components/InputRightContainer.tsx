@@ -1,7 +1,7 @@
 /*=============================================== InputRightContainer component ===============================================*/
 
 import { StyledInputRightContainer } from "../styles"
-import type { InputRightContainerProps } from "../types"
+import type { ILibInputRightContainer } from "../types"
 
 /**
  * @description Returns a container on the right of an input
@@ -17,7 +17,7 @@ export function InputRightContainer({
     children,
     inputVariant,
     disabled,
-}: InputRightContainerProps) {
+}: ILibInputRightContainer) {
     return (
         <StyledInputRightContainer
             data-testid={testid && `${testid}.RightContainer`}

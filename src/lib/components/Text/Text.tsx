@@ -15,7 +15,7 @@ import { Blockquote } from "./templates/Blockquote"
 import { Ul } from "./templates/Ul"
 import { Ol } from "./templates/Ol"
 import { Dl } from "./templates/Dl"
-import type { TextProps } from "./types"
+import type { ILibText } from "./types"
 
 /**
  * @description Returns a Text component
@@ -37,7 +37,7 @@ export const Text = forwardRef<
         HTMLUListElement &
         HTMLOListElement &
         HTMLDListElement,
-    TextProps
+    ILibText
 >(({ tag = "p", ...rest }, ref) => {
     if (tag === "h1") return <H1 ref={ref} {...rest} />
 

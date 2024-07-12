@@ -8,51 +8,51 @@ import type {
 } from "react"
 import type { LibIcon, ReactChildren } from "../../types"
 import type {
-    ExtendedInputBaseProps,
-    InputValidationIcon,
+    ILibExtendedInputBase,
+    ILibInputValidationIconComponent,
 } from "../InputComponents/types"
 
-export interface InputIconProps {
+export interface ILibInputIcon {
     icon?: LibIcon
     iconSize?: number
 }
 
-export interface ColorInputProps
+export interface ILibColorInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps {
+        ILibExtendedInputBase {
     type?: "color"
     children?: never
 }
 
-export interface DateInputProps
+export interface ILibDateInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputIconProps,
-        InputValidationIcon {
+        ILibExtendedInputBase,
+        ILibInputIcon,
+        ILibInputValidationIconComponent {
     type?: "date" | "datetime-local" | "month" | "week"
     iconCalendar?: LibIcon
     iconCalendarSize?: number
     children?: never
 }
 
-export interface FileInputProps
+export interface ILibFileInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputValidationIcon {
+        ILibExtendedInputBase,
+        ILibInputValidationIconComponent {
     type?: "file"
     children?: never
 }
 
-interface PasswordInputPropsBase
+interface ILibPasswordInputBase
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputIconProps,
-        InputValidationIcon {
+        ILibExtendedInputBase,
+        ILibInputIcon,
+        ILibInputValidationIconComponent {
     type?: "password"
     children?: never
 }
 
-interface PasswordInputWithButtonIcon extends PasswordInputPropsBase {
+interface PasswordInputWithButtonIcon extends ILibPasswordInputBase {
     hideButton?: false
     button?: {
         iconShow: LibIcon
@@ -64,7 +64,7 @@ interface PasswordInputWithButtonIcon extends PasswordInputPropsBase {
     }
 }
 
-interface PasswordWithButtonText extends PasswordInputPropsBase {
+interface PasswordWithButtonText extends ILibPasswordInputBase {
     hideButton?: false
     button?: {
         iconShow?: never
@@ -76,20 +76,20 @@ interface PasswordWithButtonText extends PasswordInputPropsBase {
     }
 }
 
-interface PasswordWithoutButton extends PasswordInputPropsBase {
+interface PasswordWithoutButton extends ILibPasswordInputBase {
     hideButton?: true
     button?: never
 }
 
-export type PasswordInputProps =
+export type ILibPasswordInput =
     | PasswordInputWithButtonIcon
     | PasswordWithButtonText
     | PasswordWithoutButton
 
-interface SearchInputPropsBase
+interface ILibSearchInputBase
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputIconProps {
+        ILibExtendedInputBase,
+        ILibInputIcon {
     type?: "search"
     clearSearch?: MouseEventHandler<HTMLButtonElement>
     iconClear?: LibIcon
@@ -97,63 +97,63 @@ interface SearchInputPropsBase
     children?: never
 }
 
-interface SearchInputShowKeys extends SearchInputPropsBase {
+interface SearchInputShowKeys extends ILibSearchInputBase {
     focusKeys?: Array<string>
     showKeys?: boolean
 }
 
-interface SearchInputHideKeys extends SearchInputPropsBase {
+interface SearchInputHideKeys extends ILibSearchInputBase {
     focusKeys?: undefined
     showKeys?: never
 }
 
-export type SearchInputProps = SearchInputShowKeys | SearchInputHideKeys
+export type ILibSearchInput = SearchInputShowKeys | SearchInputHideKeys
 
-export interface SelectInputProps
+export interface ILibSelectInput
     extends SelectHTMLAttributes<HTMLSelectElement>,
-        ExtendedInputBaseProps,
-        InputIconProps {
+        ILibExtendedInputBase,
+        ILibInputIcon {
     type?: "select"
     iconSelect?: LibIcon
     iconSelectSize?: number
     children?: ReactChildren
 }
 
-export interface TextareaInputProps
+export interface ILibTextareaInput
     extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-        ExtendedInputBaseProps {
+        ILibExtendedInputBase {
     type?: "textarea"
     inputVariant?: never
     children?: never
 }
 
-export interface TextInputProps
+export interface ILibTextInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputIconProps,
-        InputValidationIcon {
+        ILibExtendedInputBase,
+        ILibInputIcon,
+        ILibInputValidationIconComponent {
     type?: "email" | "number" | "tel" | "text" | "url"
     children?: never
 }
 
-export interface TimeInputProps
+export interface ILibTimeInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ExtendedInputBaseProps,
-        InputIconProps,
-        InputValidationIcon {
+        ILibExtendedInputBase,
+        ILibInputIcon,
+        ILibInputValidationIconComponent {
     type?: "time"
     iconClock?: LibIcon
     iconClockSize?: number
     children?: never
 }
 
-export type InputProps =
-    | ColorInputProps
-    | DateInputProps
-    | FileInputProps
-    | PasswordInputProps
-    | SearchInputProps
-    | SelectInputProps
-    | TextareaInputProps
-    | TextInputProps
-    | TimeInputProps
+export type ILibInput =
+    | ILibColorInput
+    | ILibDateInput
+    | ILibFileInput
+    | ILibPasswordInput
+    | ILibSearchInput
+    | ILibSelectInput
+    | ILibTextareaInput
+    | ILibTextInput
+    | ILibTimeInput

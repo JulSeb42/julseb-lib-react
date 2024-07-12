@@ -2,36 +2,36 @@
 
 import type {
     LibAllColors,
-    LibBorderProps,
+    ILibBorder,
     LibComponentBase,
-    LibPaddingProps,
-    LibRadiusProps,
+    ILibPadding,
+    ILibRadius,
     LibSkeletonAnimation,
 } from "../../types"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
-interface CommonSkeletonProps {
+interface ILibSkeletonCommon {
     width?: string | number
     maxWidth?: string | number
     height?: string | number
     backgroundColor?: LibAllColors
     aspectRatio?: string
-    borderRadius?: LibRadiusProps
+    borderRadius?: ILibRadius
     flex?: string | number
     flexGrow?: string | number
 }
 
-export interface SkeletonCardProps extends FlexboxProps, CommonSkeletonProps {
-    border?: LibBorderProps
-    padding?: LibPaddingProps
+export interface ILibSkeletonCard extends ILibFlexbox, ILibSkeletonCommon {
+    border?: ILibBorder
+    padding?: ILibPadding
     isShiny?: boolean
 }
 
-export type SkeletonShineProps = LibComponentBase<HTMLSpanElement>
+export type ILibSkeletonShine = LibComponentBase<HTMLSpanElement>
 
-export interface SkeletonProps
+export interface ILibSkeleton
     extends LibComponentBase<HTMLDivElement>,
-        CommonSkeletonProps {
+        ILibSkeletonCommon {
     animation?: LibSkeletonAnimation
     children?: never
 }

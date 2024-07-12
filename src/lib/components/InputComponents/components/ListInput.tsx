@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledListInput, StyledListInputItem } from "../styles"
-import type { ListInputProps, ListInputItemProps } from "../types"
+import type { ILibListInput, ILibListInputItem } from "../types"
 
 export function ListInputItem({
     "data-testid": testid,
@@ -14,7 +14,7 @@ export function ListInputItem({
     onClick,
     readOnly,
     ...rest
-}: ListInputItemProps) {
+}: ILibListInputItem) {
     return (
         <StyledListInputItem
             data-testid={testid && `${testid}.ListItem`}
@@ -31,7 +31,7 @@ export function ListInputItem({
     )
 }
 
-export const ListInput = forwardRef<HTMLDivElement, ListInputProps>(
+export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
     (
         {
             "data-testid": testid,

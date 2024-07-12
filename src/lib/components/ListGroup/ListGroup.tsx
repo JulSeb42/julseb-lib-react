@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
 import { ListGroupItem } from "./ListGroupItem"
 import { StyledListGroup } from "./styles"
-import type { ListGroupProps } from "./types"
+import type { ILibListGroup } from "./types"
 
 /**
  * @description Returns a ListGroup component
@@ -18,7 +18,7 @@ import type { ListGroupProps } from "./types"
  * @prop maxHeight?: number | string
  */
 
-export const ListGroup = forwardRef<HTMLDivElement, ListGroupProps>(
+export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
     (
         {
             "data-testid": testid,

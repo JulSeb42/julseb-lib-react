@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledLoaderFour } from "../styles"
-import type { LoaderProps } from "../types"
+import type { ILibLoader } from "../types"
 
-export const LoaderFour = forwardRef<HTMLSpanElement, LoaderProps>(
+export const LoaderFour = forwardRef<HTMLSpanElement, ILibLoader>(
     ({ "data-testid": testid, as, size, color, ...rest }, ref) => {
         return (
             <StyledLoaderFour

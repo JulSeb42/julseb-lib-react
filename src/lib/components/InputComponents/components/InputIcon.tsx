@@ -2,7 +2,7 @@
 
 import { LibIcon } from "../../LibIcon"
 import { StyledInputIconContainer } from "../styles"
-import type { InputIconContainerProps } from "../types"
+import type { ILibInputIconContainer } from "../types"
 
 /**
  * @description Returns a icon located on the left of an input
@@ -25,7 +25,7 @@ export function InputIcon({
     inputBackground,
     disabled,
     inputVariant,
-}: InputIconContainerProps) {
+}: ILibInputIconContainer) {
     if (!icon) return null
 
     return (

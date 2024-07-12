@@ -3,7 +3,7 @@
 import { StyledAccordionContent } from "./styles"
 import type { ReactChildren, LibAccordionVariant } from "../../types"
 
-interface AccordionContentProps {
+interface ILibAccordionContent {
     "data-testid": string | undefined
     className: string | undefined
     isOpen: boolean
@@ -17,7 +17,7 @@ export function AccordionContent({
     children,
     isOpen,
     variant = "basic",
-}: AccordionContentProps) {
+}: ILibAccordionContent) {
     return (
         <StyledAccordionContent
             data-testid={testid && `${testid}.AccordionContent`}

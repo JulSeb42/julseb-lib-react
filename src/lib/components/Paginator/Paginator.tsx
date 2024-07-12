@@ -6,7 +6,7 @@ import { Text, ButtonIcon, usePagination, Flexbox } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { ChevronLeft, ChevronRight } from "../../icons"
 import { TextContainer, StyledInput } from "./styles"
-import type { PaginatorProps } from "./types"
+import type { ILibPaginator } from "./types"
 
 const DEFAULT_ICON_SIZE = 32
 
@@ -25,7 +25,7 @@ const DEFAULT_ICON_SIZE = 32
  * @prop queries?: Array<Array<string>>
  */
 
-export const Paginator = forwardRef<HTMLDivElement, PaginatorProps>(
+export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
     (
         {
             "data-testid": testid,
@@ -82,7 +82,6 @@ export const Paginator = forwardRef<HTMLDivElement, PaginatorProps>(
                         className={className && "Text"}
                     >
                         {texts?.page}
-                        
                         <StyledInput
                             data-testid={testid && `${testid}.Text.Input`}
                             className={className && "Text__Input"}

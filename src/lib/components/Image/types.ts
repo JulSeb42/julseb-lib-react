@@ -3,16 +3,16 @@
 import type { ElementType, ImgHTMLAttributes } from "react"
 import type {
     LibComponentBase,
-    LibRadiusProps,
+    ILibRadius,
     ObjectFit,
     LibAllColors,
     LibImageBackgroundOverlay,
 } from "../../types"
 
-export interface ImageProps
+export interface ILibImage
     extends Omit<LibComponentBase<HTMLImageElement>, "as">,
         ImgHTMLAttributes<HTMLImageElement> {
-    borderRadius?: LibRadiusProps
+    borderRadius?: ILibRadius
     fit?: ObjectFit
     aspectRatio?: string
     fallback?: JSX.Element

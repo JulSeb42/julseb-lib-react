@@ -11,9 +11,9 @@ import {
     InputWrapper,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { DateInputProps } from "../types"
+import type { ILibDateInput } from "../types"
 
-export const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
+export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
     (
         {
             "data-testid": testid,

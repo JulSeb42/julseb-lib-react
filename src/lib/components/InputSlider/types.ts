@@ -1,21 +1,21 @@
 /*=============================================== InputSlider types ===============================================*/
 
 import type { InputHTMLAttributes } from "react"
-import type { InputBaseProps } from "../InputComponents/types"
+import type { ILibInputBase } from "../InputComponents/types"
 
-interface InputSliderPropsBase
+interface ILibInputSliderBase
     extends InputHTMLAttributes<HTMLInputElement>,
-        Omit<InputBaseProps, "inputVariant"> {
+        Omit<ILibInputBase, "inputVariant"> {
     type?: never
 }
 
-interface InputSliderWithMinMax extends InputSliderPropsBase {
+interface InputSliderWithMinMax extends ILibInputSliderBase {
     min: number
     max: number
     showMinMax?: boolean
 }
 
-interface InputSliderNoMinMax extends InputSliderPropsBase {
+interface InputSliderNoMinMax extends ILibInputSliderBase {
     min?: undefined
     max?: undefined
     showMinMax?: never
@@ -33,4 +33,4 @@ type InputSliderNoValue = InputSliderMinMax & {
     showValue?: never
 }
 
-export type InputSliderProps = InputSliderWithValue | InputSliderNoValue
+export type ILibInputSlider = InputSliderWithValue | InputSliderNoValue

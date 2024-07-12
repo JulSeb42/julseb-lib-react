@@ -2,9 +2,9 @@
 
 import { forwardRef } from "react"
 import { StyledBlockquote } from "../styles"
-import type { TextProps } from "../types"
+import type { ILibText } from "../types"
 
-export const Blockquote = forwardRef<HTMLQuoteElement, TextProps>(
+export const Blockquote = forwardRef<HTMLQuoteElement, ILibText>(
     (
         {
             as,

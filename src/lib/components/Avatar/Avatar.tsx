@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import { roundIconSize } from "../../lib-utils"
 import { AvatarFunction } from "./AvatarFunction"
 import { StyledAvatarContainer, StyledBadge } from "./styles"
-import type { AvatarProps } from "./types"
+import type { ILibAvatar } from "./types"
 
 /**
  * @description Returns a Avatar component
@@ -23,7 +23,7 @@ import type { AvatarProps } from "./types"
  * @prop contentColor?: LibAllColors => only if `img` is not defined
  */
 
-export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
+export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
     (
         {
             "data-testid": testid,

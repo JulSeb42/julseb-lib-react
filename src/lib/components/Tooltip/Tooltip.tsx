@@ -4,7 +4,7 @@ import { forwardRef, useState, useRef, useCallback } from "react"
 import { useTouchScreen, useClickOutside } from "../../"
 import type { LibTooltipTrigger } from "../../types"
 import { TooltipWrapper, StyledTooltip } from "./styles"
-import type { TooltipProps } from "./types"
+import type { ILibTooltip } from "./types"
 
 /**
  * @description Returns a Tooltip component
@@ -21,7 +21,7 @@ import type { TooltipProps } from "./types"
  * @props offset?: LibSpacers
  */
 
-export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
+export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
     (
         {
             "data-testid": testid,

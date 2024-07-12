@@ -2,10 +2,10 @@
 
 import { TextIcon } from "../../../"
 import {} from "../../../types"
-import type { TextIconProps } from "../../../types/components-props"
+import type { ILibTextIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const textIconPreview: ComponentPreview<TextIconProps> = {
+export const textIconPreview: ComponentPreview<ILibTextIcon> = {
     name: "TextIcon",
     component: TextIcon,
     category: "components",

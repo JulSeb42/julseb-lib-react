@@ -12,7 +12,7 @@ import type {
 } from "../../types"
 import { StyledDropdownItem, IconContainer, TextContent } from "./styles"
 
-type DropdownItemProps = LibComponentBase<
+type ILibDropdownItem = LibComponentBase<
     HTMLButtonElement & HTMLAnchorElement
 > &
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
@@ -42,7 +42,7 @@ type DropdownItemProps = LibComponentBase<
 
 export const DropdownItem = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
-    DropdownItemProps
+    ILibDropdownItem
 >(
     (
         {

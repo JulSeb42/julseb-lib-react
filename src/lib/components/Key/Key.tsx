@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledKey } from "./styles"
-import type { KeyProps } from "./types"
+import type { ILibKey } from "./types"
 
 /**
  * @description Returns a Key component
@@ -16,7 +16,7 @@ import type { KeyProps } from "./types"
  * @prop withSeparator?: boolean
  */
 
-export const Key = forwardRef<HTMLSpanElement, KeyProps>(
+export const Key = forwardRef<HTMLSpanElement, ILibKey>(
     (
         {
             "data-testid": testid,

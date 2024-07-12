@@ -1,9 +1,9 @@
 /*=============================================== Paginator types ===============================================*/
 
 import type { LibColorsHover, LibIcon } from "../../types"
-import type { FlexboxProps } from "../Flexbox/types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
-export interface PaginatorProps extends FlexboxProps {
+export interface ILibPaginator extends ILibFlexbox {
     totalPages: number
     accentColor?: LibColorsHover
     isInputEditable?: boolean
