@@ -42,6 +42,7 @@ import { loaderPreview } from "../lib/components/Loader/__preview__/Loader.previ
 import { burgerPreview } from "../lib/components/Burger/__preview__/Burger.preview"
 import { buttonPreview } from "../lib/components/Button/__preview__/Button.preview"
 import { buttonIconPreview } from "../lib/components/ButtonIcon/__preview__/ButtonIcon.preview"
+import { buttonGroupPreview } from "../lib/components/ButtonGroup/__preview__/ButtonGroup.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
@@ -109,7 +110,8 @@ export const previews = [
     burgerPreview,
     buttonPreview,
     buttonIconPreview,
-    // prependArr
+    buttonGroupPreview,
+// prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>
 
