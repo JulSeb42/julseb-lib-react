@@ -129,18 +129,16 @@ export const Form = forwardRef<HTMLFormElement, FormProps>(
 
                         {buttonSecondary &&
                             (buttonSecondary.onClick ? (
-                                // @ts-expect-error
                                 <Button
                                     type="button"
                                     onClick={buttonSecondary.onClick}
-                                    {...buttonSecondaryProps}
+                                    {...(buttonSecondaryProps as any)}
                                     {...buttonSecondary}
                                 />
                             ) : (
-                                // @ts-expect-error
                                 <Button
                                     to={buttonSecondary.to}
-                                    {...buttonSecondaryProps}
+                                    {...(buttonSecondaryProps as any)}
                                     {...buttonSecondary}
                                 />
                             ))}

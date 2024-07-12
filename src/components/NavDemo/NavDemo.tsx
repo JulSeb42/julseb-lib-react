@@ -4,12 +4,7 @@ import { useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { toTitleCase } from "ts-utils-julseb"
 import { useLibTheme, useKeyPress, Button, Input } from "../../lib"
-import {
-    // routes,
-    // type Route,
-    // type ComponentDemoPath,
-    routesPaths,
-} from "../../routes"
+import { routesPaths } from "../../routes"
 import { componentPaths } from "../../data/components"
 import { StyledNavDemo } from "./styles"
 

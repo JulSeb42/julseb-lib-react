@@ -102,12 +102,10 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ButtonIconProps>(
                             : undefined
                     }
                 >
-                    {/* @ts-expect-error */}
-                    <ButtonIconFunction {...props} />
+                    <ButtonIconFunction {...(props as any)} />
                 </Tooltip>
             )
 
-        // @ts-expect-error
-        return <ButtonIconFunction {...props} />
+        return <ButtonIconFunction {...(props as any)} />
     }
 )

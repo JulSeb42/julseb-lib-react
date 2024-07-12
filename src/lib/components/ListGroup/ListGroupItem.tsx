@@ -71,7 +71,11 @@ export const ListGroupItem = forwardRef<HTMLDivElement, ListItemProps>(
                     isInArray && testid ? `${testid}.ListGroupItem` : testid
                 }
                 ref={ref}
-                className={isInArray && className ? `${className}__ListGroupItem` : className}
+                className={
+                    isInArray && className
+                        ? `${className}__ListGroupItem`
+                        : className
+                }
                 as={
                     as
                         ? as
@@ -125,12 +129,11 @@ export const ListGroupItem = forwardRef<HTMLDivElement, ListItemProps>(
                         >
                             {badge &&
                                 (typeof badge === "object" ? (
-                                    // @ts-expect-error
                                     <Badge
                                         icon={badge.icon}
                                         iconSize={badge.iconSize}
                                         number={badge.number}
-                                        {...badgeProps}
+                                        {...(badgeProps as any)}
                                     />
                                 ) : (
                                     <Badge {...badgeProps} />

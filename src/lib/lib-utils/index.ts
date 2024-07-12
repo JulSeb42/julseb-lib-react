@@ -1,6 +1,6 @@
 /*=============================================== LibUtils ===============================================*/
 
-// Those utils will not be exported in the library, they're here only for building components
+// ! Those utils will not be exported in the library, they're here only for building components
 export * from "./get-highlighted-text"
 export * from "./colors-maps"
 export * from "./get-highlighted-text"

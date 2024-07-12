@@ -35,15 +35,13 @@ function useEventListener(
         if (!element.addEventListener) return
 
         const listener = (e: EventListenerOrEventListenerObject) =>
-            // @ts-expect-error
-            savedHandler.current(e)
+            (savedHandler as any).current(e!)
 
-        // @ts-expect-error
-        for (const e of eventNames) element.addEventListener(e, listener)
+        for (const e of eventNames as any) element.addEventListener(e, listener)
 
         return () => {
-            // @ts-expect-error
-            for (const e of eventNames) element.removeEventListener(e, listener)
+            for (const e of eventNames as any)
+                element.removeEventListener(e, listener)
         }
     }, [element, eventNames])
 }

@@ -21,7 +21,7 @@ export function InputPropsPreview() {
                 iconSize: 24,
             }}
             counter
-            maxLength={8} // Should return hello wo
+            maxLength={8}
             validation={{
                 status: "not-passed",
                 message: "Validation message",

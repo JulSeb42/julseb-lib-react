@@ -65,8 +65,6 @@ export interface ComponentPreview<T> {
         | Array<{ name: string; from: string }>
         | null
     // TODO?: noAs: boolean
-    // props?: Array<T & { previewTitle?: string }>
-    // demos?: Array<{ previewTitle?: string; element: JSX.Element }>
     previews?: Array<
         (PreviewProp<T> | PreviewDemo) & {
             previewTitle?: string

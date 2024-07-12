@@ -29,14 +29,17 @@ describe("<Key />", () => {
         colors.map(c =>
             it(`renders ${c} color`, () => {
                 cy.mount(
-                    <Key data-testid="testid" keys={keys} accentColor={c} />
+                    <Key
+                        data-testid="testid"
+                        keys={keys}
+                        accentColor={c as any}
+                    />
                 )
 
                 cy.dataTest().should(
                     "have.css",
                     "border-color",
-                    // @ts-expect-error
-                    libTokens.colors.light[
+                    (libTokens as any).colors.light[
                         c === "white"
                             ? "white"
                             : c === "font"

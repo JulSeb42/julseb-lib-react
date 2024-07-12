@@ -20,8 +20,6 @@ export function Generate() {
         "testid.Button.Plus.Icon",
     ]
 
-    // const fontSizes = Object.keys(cssVariables["font-sizes"])
-
     const inputSliderShowValues = {
         never: "never",
         hover: "hover",
