@@ -10,8 +10,8 @@ import {
     Mixins,
     Text,
     setDefaultTheme,
-    THEME_LIGHT,
-    THEME_DARK,
+    COLORS_LIGHT,
+    COLORS_DARK,
     TRANSITIONS,
     BREAKPOINTS,
     SPACERS,
@@ -102,18 +102,18 @@ const StyledInputIconContainer = styled.span<{
         $inputBackground === "light"
             ? css`
                   color: ${$validationStatus === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
+                      ? COLORS_LIGHT.DANGER_500
                       : $disabled
-                      ? THEME_LIGHT.GRAY_500
-                      : THEME_LIGHT.PRIMARY_500};
+                      ? COLORS_LIGHT.GRAY_500
+                      : COLORS_LIGHT.PRIMARY_500};
               `
             : $inputBackground === "dark" &&
               css`
                   color: ${$validationStatus === "not-passed"
-                      ? THEME_DARK.DANGER_500
+                      ? COLORS_DARK.DANGER_500
                       : $disabled
-                      ? THEME_DARK.GRAY_500
-                      : THEME_DARK.PRIMARY_500};
+                      ? COLORS_DARK.GRAY_500
+                      : COLORS_DARK.PRIMARY_500};
               `}
 `
 
@@ -157,14 +157,14 @@ const StyledInputValidationIcon = styled.span<{
         $inputBackground === "light"
             ? css`
                   color: ${$validationStatus === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
-                      : THEME_LIGHT.SUCCESS_500};
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.SUCCESS_500};
               `
             : $inputBackground === "dark" &&
               css`
                   color: ${$validationStatus === "not-passed"
-                      ? THEME_DARK.DANGER_500
-                      : THEME_DARK.SUCCESS_500};
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.SUCCESS_500};
               `}
 `
 
@@ -227,62 +227,74 @@ const StyledInputButton = styled.button<{
     ${({ $inputBackground, $validationStatus, $isSpan }) =>
         $inputBackground === "light"
             ? css`
-                  color: ${THEME_LIGHT.ColorsHoverDefault(
-                      $validationStatus === "not-passed" ? "danger" : "primary"
+                  color: ${Mixins.ColorsHoverDefault(
+                      $validationStatus === "not-passed" ? "danger" : "primary",
+                      null,
+                      "light"
                   )};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
                           color: ${!$isSpan &&
-                          THEME_LIGHT.ColorsHoverHover(
+                          Mixins.ColorsHoverHover(
                               $validationStatus === "not-passed"
                                   ? "danger"
-                                  : "primary"
+                                  : "primary",
+                              null,
+                              "light"
                           )};
                       }
 
                       &:not(:disabled):active {
                           color: ${!$isSpan &&
-                          THEME_LIGHT.ColorsHoverActive(
+                          Mixins.ColorsHoverActive(
                               $validationStatus === "not-passed"
                                   ? "danger"
-                                  : "primary"
+                                  : "primary",
+                              null,
+                              "light"
                           )};
                       }
                   }
 
                   &:disabled {
-                      color: ${THEME_LIGHT.GRAY_500};
+                      color: ${COLORS_LIGHT.GRAY_500};
                   }
               `
             : $inputBackground === "dark" &&
               css`
-                  color: ${THEME_DARK.ColorsHoverDefault(
-                      $validationStatus === "not-passed" ? "danger" : "primary"
+                  color: ${Mixins.ColorsHoverDefault(
+                      $validationStatus === "not-passed" ? "danger" : "primary",
+                      null,
+                      "dark"
                   )};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
                           color: ${!$isSpan &&
-                          THEME_DARK.ColorsHoverHover(
+                          Mixins.ColorsHoverHover(
                               $validationStatus === "not-passed"
                                   ? "danger"
-                                  : "primary"
+                                  : "primary",
+                              null,
+                              "dark"
                           )};
                       }
 
                       &:not(:disabled):active {
                           color: ${!$isSpan &&
-                          THEME_DARK.ColorsHoverActive(
+                          Mixins.ColorsHoverActive(
                               $validationStatus === "not-passed"
                                   ? "danger"
-                                  : "primary"
+                                  : "primary",
+                              null,
+                              "dark"
                           )};
                       }
                   }
 
                   &:disabled {
-                      color: ${THEME_DARK.GRAY_500};
+                      color: ${COLORS_DARK.GRAY_500};
                   }
               `}
 `
@@ -343,23 +355,23 @@ const StyledListInput = styled.div<{
             ? css`
                   border-color: ${$isOpen
                       ? $validation === "not-passed"
-                          ? THEME_LIGHT.DANGER_500
-                          : THEME_LIGHT.PRIMARY_500
+                          ? COLORS_LIGHT.DANGER_500
+                          : COLORS_LIGHT.PRIMARY_500
                       : "transparent"};
                   background-color: ${$validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_50
-                      : THEME_LIGHT.BACKGROUND};
+                      ? COLORS_LIGHT.DANGER_50
+                      : COLORS_LIGHT.BACKGROUND};
               `
             : $inputBackground === "dark" &&
               css`
                   border-color: ${$isOpen
                       ? $validation === "not-passed"
-                          ? THEME_DARK.DANGER_500
-                          : THEME_DARK.PRIMARY_500
+                          ? COLORS_DARK.DANGER_500
+                          : COLORS_DARK.PRIMARY_500
                       : "transparent"};
                   background-color: ${$validation === "not-passed"
-                      ? THEME_DARK.DANGER_50
-                      : THEME_DARK.BACKGROUND};
+                      ? COLORS_DARK.DANGER_50
+                      : COLORS_DARK.BACKGROUND};
               `}
 `
 
@@ -410,29 +422,33 @@ const StyledListInputItem = styled.span<{
             ? css`
                   background-color: ${$isActive &&
                   ($validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
-                      : THEME_LIGHT.PRIMARY_500)};
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.PRIMARY_500)};
                   color: ${$isActive
-                      ? THEME_LIGHT.BACKGROUND
-                      : THEME_LIGHT.FONT};
+                      ? COLORS_LIGHT.BACKGROUND
+                      : COLORS_LIGHT.FONT};
 
                   ${!$readOnly &&
                   css`
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
-                              background-color: ${THEME_LIGHT.ColorsHoverHover(
+                              background-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  null,
+                                  "light"
                               )};
-                              color: ${THEME_LIGHT.BACKGROUND};
+                              color: ${COLORS_LIGHT.BACKGROUND};
                           }
 
                           &:active {
-                              background-color: ${THEME_LIGHT.ColorsHoverActive(
+                              background-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  null,
+                                  "light"
                               )};
                           }
                       }
@@ -442,27 +458,33 @@ const StyledListInputItem = styled.span<{
               css`
                   background-color: ${$isActive &&
                   ($validation === "not-passed"
-                      ? THEME_DARK.DANGER_500
-                      : THEME_DARK.PRIMARY_500)};
-                  color: ${$isActive ? THEME_DARK.BACKGROUND : THEME_DARK.FONT};
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.PRIMARY_500)};
+                  color: ${$isActive
+                      ? COLORS_DARK.BACKGROUND
+                      : COLORS_DARK.FONT};
 
                   ${!$readOnly &&
                   css`
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
-                              background-color: ${THEME_DARK.ColorsHoverHover(
+                              background-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  null,
+                                  "dark"
                               )};
-                              color: ${THEME_DARK.BACKGROUND};
+                              color: ${COLORS_DARK.BACKGROUND};
                           }
 
                           &:active {
-                              background-color: ${THEME_DARK.ColorsHoverActive(
+                              background-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  null,
+                                  "dark"
                               )};
                           }
                       }

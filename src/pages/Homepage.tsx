@@ -49,29 +49,8 @@ export function Homepage() {
         { path: "/progress-bar", element: "ProgressBarPage" },
     ].map(a => toPascalCase(a.path.replaceAll("/", "")))
 
-    const mixins = [
-        "ColorsShort",
-        "AllColors",
-        "ColorsAndOverlays",
-        "ColorsHoverDefault",
-        "ColorsHoverHover",
-        "ColorsHoverActive",
-        "ColorsGhostDefault",
-        "ColorsGhostHover",
-        "ColorsGhostActive",
-        "Colors50",
-    ]
-
     return (
         <Page title="Homepage">
-            <ul>
-                {mixins.map(m => (
-                    <li key={m}>
-                        {`${m}: ($color, theme: DefaultTheme = THEME_LIGHT) => theme.${m}($color),`}
-                    </li>
-                ))}
-            </ul>
-
             <ul>
                 {/* {components.map(c => (
                     <li key={c}>{`yarn plop:p ${c?.replaceAll(

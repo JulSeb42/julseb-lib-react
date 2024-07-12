@@ -1,7 +1,7 @@
 /*=============================================== Set default theme ===============================================*/
 
 import type { FC } from "react"
-import { THEME_LIGHT } from "../Mixins"
+import { COLORS_LIGHT } from "../Variables"
 
 /**
  * @description Sets ThemeLight as default for projects not using ThemeProvider
@@ -9,6 +9,6 @@ import { THEME_LIGHT } from "../Mixins"
  */
 export function setDefaultTheme(arr: Array<FC>) {
     return arr.forEach(
-        component => (component.defaultProps = { theme: THEME_LIGHT })
+        component => (component.defaultProps = { theme: COLORS_LIGHT })
     )
 }

@@ -11,8 +11,8 @@ import {
     RADIUSES,
     SPACERS,
     TRANSITIONS,
-    THEME_LIGHT,
-    THEME_DARK,
+    COLORS_LIGHT,
+    COLORS_DARK,
     FONT_SIZES,
 } from "../../"
 import type {
@@ -353,46 +353,46 @@ export const InputBaseMixin = ({
         ${$inputBackground === "light"
             ? css`
                   &::file-selector-button {
-                      background-color: ${THEME_LIGHT.GRAY_100};
-                      color: ${THEME_LIGHT.FONT};
+                      background-color: ${COLORS_LIGHT.GRAY_100};
+                      color: ${COLORS_LIGHT.FONT};
                   }
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover::file-selector-button {
-                          background-color: ${THEME_LIGHT.GRAY_300};
+                          background-color: ${COLORS_LIGHT.GRAY_300};
                       }
 
                       &:not(:disabled):active::file-selector-button {
-                          background-color: ${THEME_LIGHT.GRAY_200};
+                          background-color: ${COLORS_LIGHT.GRAY_200};
                       }
                   }
 
                   &:disabled {
                       &::file-selector-button {
-                          color: ${THEME_LIGHT.GRAY_500};
+                          color: ${COLORS_LIGHT.GRAY_500};
                       }
                   }
               `
             : $inputBackground === "dark" &&
               css`
                   &::file-selector-button {
-                      background-color: ${THEME_DARK.GRAY_100};
-                      color: ${THEME_DARK.FONT};
+                      background-color: ${COLORS_DARK.GRAY_100};
+                      color: ${COLORS_DARK.FONT};
                   }
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover::file-selector-button {
-                          background-color: ${THEME_DARK.GRAY_300};
+                          background-color: ${COLORS_DARK.GRAY_300};
                       }
 
                       &:not(:disabled):active::file-selector-button {
-                          background-color: ${THEME_DARK.GRAY_200};
+                          background-color: ${COLORS_DARK.GRAY_200};
                       }
                   }
 
                   &:disabled {
                       &::file-selector-button {
-                          color: ${THEME_DARK.GRAY_500};
+                          color: ${COLORS_DARK.GRAY_500};
                       }
                   }
               `}
@@ -424,32 +424,32 @@ export const InputBaseMixin = ({
         ? css`
               border-color: ${$hasListOpen
                   ? $validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
-                      : THEME_LIGHT.PRIMARY_500
-                  : THEME_LIGHT.GRAY_200};
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.PRIMARY_500
+                  : COLORS_LIGHT.GRAY_200};
               background-color: ${$validation === "not-passed"
-                  ? THEME_LIGHT.DANGER_50
+                  ? COLORS_LIGHT.DANGER_50
                   : $disabled
-                  ? THEME_LIGHT.GRAY_100
-                  : THEME_LIGHT.BACKGROUND};
-              color: ${$disabled ? THEME_LIGHT.GRAY_500 : THEME_LIGHT.FONT};
+                  ? COLORS_LIGHT.GRAY_100
+                  : COLORS_LIGHT.BACKGROUND};
+              color: ${$disabled ? COLORS_LIGHT.GRAY_500 : COLORS_LIGHT.FONT};
 
               &:focus {
                   border-color: ${$validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
-                      : THEME_LIGHT.PRIMARY_500};
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.PRIMARY_500};
               }
 
               &::placeholder {
-                  color: ${THEME_LIGHT.GRAY_400};
+                  color: ${COLORS_LIGHT.GRAY_400};
               }
 
               &:disabled {
-                  background-color: ${THEME_LIGHT.GRAY_100};
-                  color: ${THEME_LIGHT.GRAY_500};
+                  background-color: ${COLORS_LIGHT.GRAY_100};
+                  color: ${COLORS_LIGHT.GRAY_500};
 
                   &::placeholder {
-                      color: ${THEME_LIGHT.GRAY_500};
+                      color: ${COLORS_LIGHT.GRAY_500};
                   }
               }
           `
@@ -457,32 +457,32 @@ export const InputBaseMixin = ({
           css`
               border-color: ${$hasListOpen
                   ? $validation === "not-passed"
-                      ? THEME_DARK.DANGER_500
-                      : THEME_DARK.PRIMARY_500
-                  : THEME_DARK.GRAY_200};
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.PRIMARY_500
+                  : COLORS_DARK.GRAY_200};
               background-color: ${$validation === "not-passed"
-                  ? THEME_DARK.DANGER_50
+                  ? COLORS_DARK.DANGER_50
                   : $disabled
-                  ? THEME_DARK.GRAY_100
-                  : THEME_DARK.BACKGROUND};
-              color: ${$disabled ? THEME_DARK.GRAY_500 : THEME_DARK.FONT};
+                  ? COLORS_DARK.GRAY_100
+                  : COLORS_DARK.BACKGROUND};
+              color: ${$disabled ? COLORS_DARK.GRAY_500 : COLORS_DARK.FONT};
 
               &:focus {
                   border-color: ${$validation === "not-passed"
-                      ? THEME_DARK.DANGER_500
-                      : THEME_DARK.PRIMARY_500};
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.PRIMARY_500};
               }
 
               &::placeholder {
-                  color: ${THEME_DARK.GRAY_400};
+                  color: ${COLORS_DARK.GRAY_400};
               }
 
               &:disabled {
-                  background-color: ${THEME_DARK.GRAY_100};
-                  color: ${THEME_DARK.GRAY_500};
+                  background-color: ${COLORS_DARK.GRAY_100};
+                  color: ${COLORS_DARK.GRAY_500};
 
                   &::placeholder {
-                      color: ${THEME_DARK.GRAY_500};
+                      color: ${COLORS_DARK.GRAY_500};
                   }
               }
           `}

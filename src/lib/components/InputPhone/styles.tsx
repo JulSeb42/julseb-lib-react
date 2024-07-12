@@ -9,8 +9,8 @@ import {
     SPACERS,
     TRANSITIONS,
     setDefaultTheme,
-    THEME_LIGHT,
-    THEME_DARK,
+    COLORS_LIGHT,
+    COLORS_DARK,
 } from "../../"
 import type {
     LibInputBackground,
@@ -68,18 +68,18 @@ const CountryButton = styled.button<{
     ${({ $inputBackground }) =>
         $inputBackground === "light"
             ? css`
-                  color: ${THEME_LIGHT.FONT};
+                  color: ${COLORS_LIGHT.FONT};
 
                   &:disabled {
-                      color: ${THEME_LIGHT.GRAY_500};
+                      color: ${COLORS_LIGHT.GRAY_500};
                   }
               `
             : $inputBackground === "dark" &&
               css`
-                  color: ${THEME_DARK.FONT};
+                  color: ${COLORS_DARK.FONT};
 
                   &:disabled {
-                      color: ${THEME_DARK.GRAY_500};
+                      color: ${COLORS_DARK.GRAY_500};
                   }
               `}
 `
@@ -109,11 +109,13 @@ const CountryCode = styled.span<{
     ${({ $inputBackground, $disabled }) =>
         $inputBackground === "light"
             ? css`
-                  color: ${$disabled ? THEME_LIGHT.GRAY_500 : THEME_LIGHT.FONT};
+                  color: ${$disabled
+                      ? COLORS_LIGHT.GRAY_500
+                      : COLORS_LIGHT.FONT};
               `
             : $inputBackground === "dark" &&
               css`
-                  color: ${$disabled ? THEME_DARK.GRAY_500 : THEME_DARK.FONT};
+                  color: ${$disabled ? COLORS_DARK.GRAY_500 : COLORS_DARK.FONT};
               `}
 `
 
@@ -143,27 +145,27 @@ const SearchContainer = styled.div<{
         $inputBackground === "light"
             ? css`
                   color: ${$validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_500
-                      : THEME_LIGHT.PRIMARY_500};
-                  border-color: ${THEME_LIGHT.GRAY_200};
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.PRIMARY_500};
+                  border-color: ${COLORS_LIGHT.GRAY_200};
 
                   &:has(input:focus) {
                       border-bottom-color: ${$validation === "not-passed"
-                          ? THEME_LIGHT.DANGER_500
-                          : THEME_LIGHT.PRIMARY_500};
+                          ? COLORS_LIGHT.DANGER_500
+                          : COLORS_LIGHT.PRIMARY_500};
                   }
               `
             : $inputBackground === "dark" &&
               css`
                   color: ${$validation === "not-passed"
-                      ? THEME_DARK.DANGER_500
-                      : THEME_DARK.PRIMARY_500};
-                  border-color: ${THEME_DARK.GRAY_200};
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.PRIMARY_500};
+                  border-color: ${COLORS_DARK.GRAY_200};
 
                   &:has(input:focus) {
                       border-bottom-color: ${$validation === "not-passed"
-                          ? THEME_DARK.DANGER_500
-                          : THEME_DARK.PRIMARY_500};
+                          ? COLORS_DARK.DANGER_500
+                          : COLORS_DARK.PRIMARY_500};
                   }
               `}
 `
@@ -188,18 +190,18 @@ const SearchInput = styled.input<{
     ${({ $inputBackground }) =>
         $inputBackground === "light"
             ? css`
-                  color: ${THEME_LIGHT.FONT};
+                  color: ${COLORS_LIGHT.FONT};
 
                   &::placeholder {
-                      color: ${THEME_LIGHT.GRAY_400};
+                      color: ${COLORS_LIGHT.GRAY_400};
                   }
               `
             : $inputBackground === "dark" &&
               css`
-                  color: ${THEME_DARK.FONT};
+                  color: ${COLORS_DARK.FONT};
 
                   &::placeholder {
-                      color: ${THEME_DARK.GRAY_400};
+                      color: ${COLORS_DARK.GRAY_400};
                   }
               `}
 `

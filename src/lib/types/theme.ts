@@ -1,7 +1,6 @@
 /*=============================================== Theme type ===============================================*/
 
 import { COLORS_LIGHT, COLORS_DARK } from "../Variables"
-import { THEME_LIGHT, THEME_DARK } from "../Mixins"
 import type { LibThemeNames } from "./global"
 
 export const Themes: Record<LibThemeNames, any> = {
@@ -84,17 +83,6 @@ export const Themes: Record<LibThemeNames, any> = {
         BACKGROUND_GHOST_DEFAULT: COLORS_LIGHT.BACKGROUND_GHOST_DEFAULT,
         BACKGROUND_GHOST_HOVER: COLORS_LIGHT.BACKGROUND_GHOST_HOVER,
         BACKGROUND_GHOST_ACTIVE: COLORS_LIGHT.BACKGROUND_GHOST_ACTIVE,
-
-        ColorsShort: THEME_LIGHT.ColorsShort,
-        AllColors: THEME_LIGHT.AllColors,
-        ColorsHoverDefault: THEME_LIGHT.ColorsHoverDefault,
-        ColorsHoverHover: THEME_LIGHT.ColorsHoverHover,
-        ColorsHoverActive: THEME_LIGHT.ColorsHoverActive,
-        ColorsGhostDefault: THEME_LIGHT.ColorsGhostDefault,
-        ColorsGhostHover: THEME_LIGHT.ColorsGhostHover,
-        ColorsGhostActive: THEME_LIGHT.ColorsGhostActive,
-        Colors50: THEME_LIGHT.Colors50,
-        ColorsAndOverlays: THEME_LIGHT.ColorsAndOverlays,
     },
 
     dark: {
@@ -176,16 +164,5 @@ export const Themes: Record<LibThemeNames, any> = {
         BACKGROUND_GHOST_DEFAULT: COLORS_DARK.BACKGROUND_GHOST_DEFAULT,
         BACKGROUND_GHOST_HOVER: COLORS_DARK.BACKGROUND_GHOST_HOVER,
         BACKGROUND_GHOST_ACTIVE: COLORS_DARK.BACKGROUND_GHOST_ACTIVE,
-
-        ColorsShort: THEME_DARK.ColorsShort,
-        AllColors: THEME_DARK.AllColors,
-        ColorsHoverDefault: THEME_DARK.ColorsHoverDefault,
-        ColorsHoverHover: THEME_DARK.ColorsHoverHover,
-        ColorsHoverActive: THEME_DARK.ColorsHoverActive,
-        ColorsGhostDefault: THEME_DARK.ColorsGhostDefault,
-        ColorsGhostHover: THEME_DARK.ColorsGhostHover,
-        ColorsGhostActive: THEME_DARK.ColorsGhostActive,
-        Colors50: THEME_DARK.Colors50,
-        ColorsAndOverlays: THEME_DARK.ColorsAndOverlays,
     },
 }

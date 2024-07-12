@@ -2,13 +2,7 @@
 
 import { css, type DefaultTheme } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
-import {
-    colorsLightShortMap,
-    allColorsLightMap,
-    colorsDarkShortMap,
-    allColorsDarkMap,
-    overlaysMap,
-} from "./lib-utils"
+import { overlaysMap } from "./lib-utils"
 import {
     COLORS_LIGHT,
     COLORS_DARK,
@@ -45,6 +39,7 @@ import {
     type LibOutlineProps,
     type LibColorsHoverAndCurrent,
     type BackgroundImageProps,
+    type LibThemeNames,
     typeValues,
 } from "./types"
 
@@ -55,164 +50,109 @@ type IconMixin = {
     $isLibIcon?: boolean
 }
 
-export const THEME_LIGHT = {
-    ...COLORS_LIGHT,
+function getColorMixinFromTheme(
+    theme: DefaultTheme | null = COLORS_LIGHT,
+    themeName?: LibThemeNames
+) {
+    const THEME: DefaultTheme = (
+        theme === null && themeName
+            ? themeName === "dark"
+                ? COLORS_DARK
+                : COLORS_LIGHT
+            : theme === null
+            ? COLORS_LIGHT
+            : theme
+    ) as DefaultTheme
 
-    ColorsShort: ($color: LibColorsShort = "primary") =>
-        colorsLightShortMap.get($color),
+    const colorsShortMap = new Map<LibColorsShort, keyof typeof THEME>([
+        ["primary", theme!.PRIMARY_500],
+        ["secondary", theme!.SECONDARY_500],
+        ["success", theme!.SUCCESS_500],
+        ["danger", theme!.DANGER_500],
+        ["warning", theme!.WARNING_500],
+        ["gray", theme!.GRAY_500],
+        ["black", theme!.BLACK],
+        ["white", theme!.WHITE],
+    ])
 
-    AllColors: ($color: LibAllColors = "primary") =>
-        allColorsLightMap.get($color),
+    const allColorsMap = new Map<LibAllColors, keyof typeof THEME>([
+        ...colorsShortMap,
+        ["gray-50", theme!.GRAY_50],
+        ["gray-100", theme!.GRAY_100],
+        ["gray-200", theme!.GRAY_200],
+        ["gray-300", theme!.GRAY_300],
+        ["gray-400", theme!.GRAY_400],
+        ["gray-500", theme!.GRAY_500],
+        ["gray-600", theme!.GRAY_600],
+        ["gray-700", theme!.GRAY_700],
+        ["gray-800", theme!.GRAY_800],
+        ["gray-900", theme!.GRAY_900],
+        ["primary-50", theme!.PRIMARY_50],
+        ["primary-100", theme!.PRIMARY_100],
+        ["primary-200", theme!.PRIMARY_200],
+        ["primary-300", theme!.PRIMARY_300],
+        ["primary-400", theme!.PRIMARY_400],
+        ["primary-500", theme!.PRIMARY_500],
+        ["primary-600", theme!.PRIMARY_600],
+        ["primary-700", theme!.PRIMARY_700],
+        ["primary-800", theme!.PRIMARY_800],
+        ["primary-900", theme!.PRIMARY_900],
+        ["secondary-50", theme!.SECONDARY_50],
+        ["secondary-100", theme!.SECONDARY_100],
+        ["secondary-200", theme!.SECONDARY_200],
+        ["secondary-300", theme!.SECONDARY_300],
+        ["secondary-400", theme!.SECONDARY_400],
+        ["secondary-500", theme!.SECONDARY_500],
+        ["secondary-600", theme!.SECONDARY_600],
+        ["secondary-700", theme!.SECONDARY_700],
+        ["secondary-800", theme!.SECONDARY_800],
+        ["secondary-900", theme!.SECONDARY_900],
+        ["success-50", theme!.SUCCESS_50],
+        ["success-100", theme!.SUCCESS_100],
+        ["success-200", theme!.SUCCESS_200],
+        ["success-300", theme!.SUCCESS_300],
+        ["success-400", theme!.SUCCESS_400],
+        ["success-500", theme!.SUCCESS_500],
+        ["success-600", theme!.SUCCESS_600],
+        ["success-700", theme!.SUCCESS_700],
+        ["success-800", theme!.SUCCESS_800],
+        ["success-900", theme!.SUCCESS_900],
+        ["danger-50", theme!.DANGER_50],
+        ["danger-100", theme!.DANGER_100],
+        ["danger-200", theme!.DANGER_200],
+        ["danger-300", theme!.DANGER_300],
+        ["danger-400", theme!.DANGER_400],
+        ["danger-500", theme!.DANGER_500],
+        ["danger-600", theme!.DANGER_600],
+        ["danger-700", theme!.DANGER_700],
+        ["danger-800", theme!.DANGER_800],
+        ["danger-900", theme!.DANGER_900],
+        ["warning-50", theme!.WARNING_50],
+        ["warning-100", theme!.WARNING_100],
+        ["warning-200", theme!.WARNING_200],
+        ["warning-300", theme!.WARNING_300],
+        ["warning-400", theme!.WARNING_400],
+        ["warning-500", theme!.WARNING_500],
+        ["warning-600", theme!.WARNING_600],
+        ["warning-700", theme!.WARNING_700],
+        ["warning-800", theme!.WARNING_800],
+        ["warning-900", theme!.WARNING_900],
+        ["background", theme!.BACKGROUND],
+        ["font", theme!.FONT],
+        ["currentColor", theme!.CURRENT_COLOR],
+        ["transparent", theme!.TRANSPARENT],
+    ])
 
-    ColorsAndOverlays($color: LibAllColorsAndOverlays | undefined) {
-        if (!$color) return null
+    const ColorsShort = ($color: LibColorsShort = "primary") =>
+        colorsShortMap.get($color)
 
-        const overlayColors = Object.keys(
-            typeValues.overlays
-        ) as Array<LibOverlays>
+    const AllColors = ($color: LibAllColors) => {
+        console.log({ theme })
+        return allColorsMap.get($color)
+    }
 
-        if (overlayColors.find(c => c === $color)) {
-            return Mixins.Overlay($color as LibOverlays)
-        }
-
-        return THEME_LIGHT.AllColors($color as LibAllColors)
-    },
-
-    ColorsHoverDefault($color: LibColorsHoverAndCurrent = "primary") {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_500],
-            ["secondary", COLORS_LIGHT.SECONDARY_500],
-            ["success", COLORS_LIGHT.SUCCESS_500],
-            ["danger", COLORS_LIGHT.DANGER_500],
-            ["warning", COLORS_LIGHT.WARNING_500],
-            ["white", COLORS_LIGHT.WHITE],
-            ["gray", COLORS_LIGHT.GRAY_500],
-            ["font", COLORS_LIGHT.LINK_FONT_DEFAULT],
-            ["background", COLORS_LIGHT.LINK_BACKGROUND_DEFAULT],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    ColorsHoverHover($color: LibColorsHoverAndCurrent = "primary") {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_300],
-            ["secondary", COLORS_LIGHT.SECONDARY_300],
-            ["success", COLORS_LIGHT.SUCCESS_300],
-            ["danger", COLORS_LIGHT.DANGER_300],
-            ["warning", COLORS_LIGHT.WARNING_300],
-            ["white", COLORS_LIGHT.GRAY_300],
-            ["gray", COLORS_LIGHT.GRAY_300],
-            ["font", COLORS_LIGHT.LINK_FONT_HOVER],
-            ["background", COLORS_LIGHT.LINK_BACKGROUND_HOVER],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    ColorsHoverActive($color: LibColorsHoverAndCurrent = "primary") {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_600],
-            ["secondary", COLORS_LIGHT.SECONDARY_600],
-            ["success", COLORS_LIGHT.SUCCESS_600],
-            ["danger", COLORS_LIGHT.DANGER_600],
-            ["warning", COLORS_LIGHT.WARNING_600],
-            ["white", COLORS_LIGHT.GRAY_100],
-            ["gray", COLORS_LIGHT.GRAY_600],
-            ["font", COLORS_LIGHT.LINK_FONT_ACTIVE],
-            ["background", COLORS_LIGHT.LINK_BACKGROUND_ACTIVE],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    ColorsGhostDefault($color: LibColorsHoverAndCurrent = "primary") {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_50],
-            ["secondary", COLORS_LIGHT.SECONDARY_50],
-            ["success", COLORS_LIGHT.SUCCESS_50],
-            ["danger", COLORS_LIGHT.DANGER_50],
-            ["warning", COLORS_LIGHT.WARNING_50],
-            ["white", COLORS_LIGHT.GRAY_50],
-            ["gray", COLORS_LIGHT.GRAY_50],
-            ["font", COLORS_LIGHT.FONT_GHOST_DEFAULT],
-            ["background", COLORS_LIGHT.BACKGROUND_GHOST_DEFAULT],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    ColorsGhostHover($color: LibColorsHoverAndCurrent = "primary") {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_200],
-            ["secondary", COLORS_LIGHT.SECONDARY_200],
-            ["success", COLORS_LIGHT.SUCCESS_200],
-            ["danger", COLORS_LIGHT.DANGER_200],
-            ["warning", COLORS_LIGHT.WARNING_200],
-            ["white", COLORS_LIGHT.GRAY_200],
-            ["gray", COLORS_LIGHT.GRAY_200],
-            ["font", COLORS_LIGHT.FONT_GHOST_HOVER],
-            ["background", COLORS_LIGHT.BACKGROUND_GHOST_HOVER],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    ColorsGhostActive: ($color: LibColorsHoverAndCurrent = "primary") => {
-        if ($color === "currentColor") return "currentColor"
-
-        const colorsMap = new Map<LibColorsHover, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_100],
-            ["secondary", COLORS_LIGHT.SECONDARY_100],
-            ["success", COLORS_LIGHT.SUCCESS_100],
-            ["danger", COLORS_LIGHT.DANGER_100],
-            ["warning", COLORS_LIGHT.WARNING_100],
-            ["white", COLORS_LIGHT.GRAY_100],
-            ["gray", COLORS_LIGHT.GRAY_100],
-            ["font", COLORS_LIGHT.FONT_GHOST_ACTIVE],
-            ["background", COLORS_LIGHT.BACKGROUND_GHOST_ACTIVE],
-        ])
-
-        return colorsMap.get($color)
-    },
-
-    Colors50: (
-        $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
-    ) => {
-        const colorsMap = new Map<LibColorsShort, COLORS_LIGHT>([
-            ["primary", COLORS_LIGHT.PRIMARY_50],
-            ["secondary", COLORS_LIGHT.SECONDARY_50],
-            ["success", COLORS_LIGHT.SUCCESS_50],
-            ["danger", COLORS_LIGHT.DANGER_50],
-            ["warning", COLORS_LIGHT.WARNING_50],
-            ["gray", COLORS_LIGHT.GRAY_50],
-        ])
-
-        return colorsMap.get($color)
-    },
-}
-
-export const THEME_DARK = {
-    ...COLORS_DARK,
-
-    ColorsShort: ($color: LibColorsShort = "primary") =>
-        colorsDarkShortMap.get($color),
-
-    AllColors: ($color: LibAllColors = "primary") =>
-        allColorsDarkMap.get($color),
-
-    ColorsAndOverlays: ($color: LibAllColorsAndOverlays | undefined) => {
-        if (!$color) return null
+    const ColorsAndOverlays = ($color: LibAllColorsAndOverlays | undefined) => {
+        if (!$color) return null as any
 
         const overlayColors = Object.keys(
             typeValues.overlays
@@ -222,222 +162,219 @@ export const THEME_DARK = {
             return Mixins.Overlay($color as LibOverlays)
         }
 
-        return THEME_DARK.AllColors($color as LibAllColors)
-    },
+        return Mixins.AllColors($color as LibAllColors, theme, themeName)
+    }
 
-    ColorsHoverDefault: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsHoverDefault = (
+        $color: LibColorsHoverAndCurrent = "primary"
+    ) => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_500],
-            ["secondary", COLORS_DARK.SECONDARY_500],
-            ["success", COLORS_DARK.SUCCESS_500],
-            ["danger", COLORS_DARK.DANGER_500],
-            ["warning", COLORS_DARK.WARNING_500],
-            ["white", COLORS_DARK.WHITE],
-            ["gray", COLORS_DARK.GRAY_500],
-            ["font", COLORS_DARK.LINK_FONT_DEFAULT],
-            ["background", COLORS_DARK.LINK_BACKGROUND_DEFAULT],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_500],
+            ["secondary", theme!.SECONDARY_500],
+            ["success", theme!.SUCCESS_500],
+            ["danger", theme!.DANGER_500],
+            ["warning", theme!.WARNING_500],
+            ["white", theme!.WHITE],
+            ["gray", theme!.GRAY_500],
+            ["font", theme!.LINK_FONT_DEFAULT],
+            ["background", theme!.LINK_BACKGROUND_DEFAULT],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    ColorsHoverHover: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsHoverHover = ($color: LibColorsHoverAndCurrent = "primary") => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_300],
-            ["secondary", COLORS_DARK.SECONDARY_300],
-            ["success", COLORS_DARK.SUCCESS_300],
-            ["danger", COLORS_DARK.DANGER_300],
-            ["warning", COLORS_DARK.WARNING_300],
-            ["white", COLORS_DARK.GRAY_300],
-            ["gray", COLORS_DARK.GRAY_300],
-            ["font", COLORS_DARK.LINK_FONT_HOVER],
-            ["background", COLORS_DARK.LINK_BACKGROUND_HOVER],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_300],
+            ["secondary", theme!.SECONDARY_300],
+            ["success", theme!.SUCCESS_300],
+            ["danger", theme!.DANGER_300],
+            ["warning", theme!.WARNING_300],
+            ["white", theme!.GRAY_300],
+            ["gray", theme!.GRAY_300],
+            ["font", theme!.LINK_FONT_HOVER],
+            ["background", theme!.LINK_BACKGROUND_HOVER],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    ColorsHoverActive: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsHoverActive = (
+        $color: LibColorsHoverAndCurrent = "primary"
+    ) => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_600],
-            ["secondary", COLORS_DARK.SECONDARY_600],
-            ["success", COLORS_DARK.SUCCESS_600],
-            ["danger", COLORS_DARK.DANGER_600],
-            ["warning", COLORS_DARK.WARNING_600],
-            ["white", COLORS_DARK.GRAY_100],
-            ["gray", COLORS_DARK.GRAY_600],
-            ["font", COLORS_DARK.LINK_FONT_ACTIVE],
-            ["background", COLORS_DARK.LINK_BACKGROUND_ACTIVE],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_600],
+            ["secondary", theme!.SECONDARY_600],
+            ["success", theme!.SUCCESS_600],
+            ["danger", theme!.DANGER_600],
+            ["warning", theme!.WARNING_600],
+            ["white", theme!.GRAY_100],
+            ["gray", theme!.GRAY_600],
+            ["font", theme!.LINK_FONT_ACTIVE],
+            ["background", theme!.LINK_BACKGROUND_ACTIVE],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    ColorsGhostDefault: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsGhostDefault = (
+        $color: LibColorsHoverAndCurrent = "primary"
+    ) => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_50],
-            ["secondary", COLORS_DARK.SECONDARY_50],
-            ["success", COLORS_DARK.SUCCESS_50],
-            ["danger", COLORS_DARK.DANGER_50],
-            ["warning", COLORS_DARK.WARNING_50],
-            ["white", COLORS_DARK.GRAY_50],
-            ["gray", COLORS_DARK.GRAY_50],
-            ["font", COLORS_DARK.FONT_GHOST_DEFAULT],
-            ["background", COLORS_DARK.BACKGROUND_GHOST_DEFAULT],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_50],
+            ["secondary", theme!.SECONDARY_50],
+            ["success", theme!.SUCCESS_50],
+            ["danger", theme!.DANGER_50],
+            ["warning", theme!.WARNING_50],
+            ["white", theme!.GRAY_50],
+            ["gray", theme!.GRAY_50],
+            ["font", theme!.FONT_GHOST_DEFAULT],
+            ["background", theme!.BACKGROUND_GHOST_DEFAULT],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    ColorsGhostHover: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsGhostHover = ($color: LibColorsHoverAndCurrent = "primary") => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_200],
-            ["secondary", COLORS_DARK.SECONDARY_200],
-            ["success", COLORS_DARK.SUCCESS_200],
-            ["danger", COLORS_DARK.DANGER_200],
-            ["warning", COLORS_DARK.WARNING_200],
-            ["white", COLORS_DARK.GRAY_200],
-            ["gray", COLORS_DARK.GRAY_200],
-            ["font", COLORS_DARK.FONT_GHOST_HOVER],
-            ["background", COLORS_DARK.BACKGROUND_GHOST_HOVER],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_200],
+            ["secondary", theme!.SECONDARY_200],
+            ["success", theme!.SUCCESS_200],
+            ["danger", theme!.DANGER_200],
+            ["warning", theme!.WARNING_200],
+            ["white", theme!.GRAY_200],
+            ["gray", theme!.GRAY_200],
+            ["font", theme!.FONT_GHOST_HOVER],
+            ["background", theme!.BACKGROUND_GHOST_HOVER],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    ColorsGhostActive: ($color: LibColorsHoverAndCurrent = "primary") => {
+    const ColorsGhostActive = (
+        $color: LibColorsHoverAndCurrent = "primary"
+    ) => {
         if ($color === "currentColor") return "currentColor"
 
-        const colorsMap = new Map<LibColorsHover, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_100],
-            ["secondary", COLORS_DARK.SECONDARY_100],
-            ["success", COLORS_DARK.SUCCESS_100],
-            ["danger", COLORS_DARK.DANGER_100],
-            ["warning", COLORS_DARK.WARNING_100],
-            ["white", COLORS_DARK.GRAY_100],
-            ["gray", COLORS_DARK.GRAY_100],
-            ["font", COLORS_DARK.FONT_GHOST_ACTIVE],
-            ["background", COLORS_DARK.BACKGROUND_GHOST_ACTIVE],
+        const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_100],
+            ["secondary", theme!.SECONDARY_100],
+            ["success", theme!.SUCCESS_100],
+            ["danger", theme!.DANGER_100],
+            ["warning", theme!.WARNING_100],
+            ["white", theme!.GRAY_100],
+            ["gray", theme!.GRAY_100],
+            ["font", theme!.FONT_GHOST_ACTIVE],
+            ["background", theme!.BACKGROUND_GHOST_ACTIVE],
         ])
 
         return colorsMap.get($color)
-    },
+    }
 
-    Colors50: (
+    const Colors50 = (
         $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
-        const colorsMap = new Map<LibColorsShort, COLORS_DARK>([
-            ["primary", COLORS_DARK.PRIMARY_50],
-            ["secondary", COLORS_DARK.SECONDARY_50],
-            ["success", COLORS_DARK.SUCCESS_50],
-            ["danger", COLORS_DARK.DANGER_50],
-            ["warning", COLORS_DARK.WARNING_50],
-            ["gray", COLORS_DARK.GRAY_50],
+        const colorsMap = new Map<LibColorsShort, keyof typeof THEME>([
+            ["primary", theme!.PRIMARY_50],
+            ["secondary", theme!.SECONDARY_50],
+            ["success", theme!.SUCCESS_50],
+            ["danger", theme!.DANGER_50],
+            ["warning", theme!.WARNING_50],
+            ["gray", theme!.GRAY_50],
         ])
 
         return colorsMap.get($color)
-    },
+    }
+
+    return {
+        ColorsShort,
+        AllColors,
+        ColorsAndOverlays,
+        ColorsHoverDefault,
+        ColorsHoverHover,
+        ColorsHoverActive,
+        ColorsGhostDefault,
+        ColorsGhostHover,
+        ColorsGhostActive,
+        Colors50,
+    }
 }
 
 class mixins {
-    // TODO: put back default theme to THEME_LIGHT in params
     /**
      * Use only in apps without theme switch
      * @param $color
      * @param theme
      */
-    AllColors = ($color: LibAllColors, theme: DefaultTheme) =>
-        theme.AllColors($color)
+    AllColors = (
+        $color: LibAllColors,
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).AllColors($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
+    ColorsShort = (
+        $color: LibColorsShort,
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsShort($color)
+
     ColorsAndOverlays = (
-        $color: LibAllColorsAndOverlays,
-        theme: DefaultTheme
-    ) => theme.ColorsAndOverlays($color)
+        $color: LibAllColorsAndOverlays | undefined,
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsAndOverlays($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsHoverDefault = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsHoverDefault($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsHoverDefault($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsHoverHover = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsHoverHover($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsHoverHover($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsHoverActive = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsHoverActive($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsHoverActive($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsGhostDefault = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsGhostDefault($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsGhostDefault($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsGhostHover = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsGhostHover($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsGhostHover($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     ColorsGhostActive = (
         $color: LibColorsHoverAndCurrent,
-        theme: DefaultTheme
-    ) => theme.ColorsGhostActive($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).ColorsGhostActive($color)
 
-    /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
-     */
     Colors50 = (
         $color: Exclude<LibColorsShort, "black" | "white">,
-        theme: DefaultTheme
-    ) => theme.Colors50($color)
+        theme: DefaultTheme | null = COLORS_LIGHT,
+        themeName?: LibThemeNames
+    ) => getColorMixinFromTheme(theme, themeName).Colors50($color)
 
     Icon = ({
         $name,

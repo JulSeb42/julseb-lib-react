@@ -3,7 +3,9 @@
 import { COLORS_LIGHT, COLORS_DARK, OVERLAYS } from "../Variables"
 import type { LibAllColors, LibColorsShort, LibOverlays } from "../types"
 
-export const colorsLightShortMap = new Map<LibColorsShort, COLORS_LIGHT>([
+type Color = COLORS_LIGHT | COLORS_DARK
+
+export const colorsLightShortMap = new Map<LibColorsShort, Color>([
     ["primary", COLORS_LIGHT.PRIMARY_500],
     ["secondary", COLORS_LIGHT.SECONDARY_500],
     ["success", COLORS_LIGHT.SUCCESS_500],
@@ -14,10 +16,7 @@ export const colorsLightShortMap = new Map<LibColorsShort, COLORS_LIGHT>([
     ["white", COLORS_LIGHT.WHITE],
 ])
 
-export const allColorsLightMap = new Map<
-    LibAllColors,
-    COLORS_LIGHT | "currentColor" | "transparent"
->([
+export const allColorsLightMap = new Map<LibAllColors, Color>([
     ...colorsLightShortMap,
     ["gray-50", COLORS_LIGHT.GRAY_50],
     ["gray-100", COLORS_LIGHT.GRAY_100],
@@ -81,8 +80,8 @@ export const allColorsLightMap = new Map<
     ["warning-900", COLORS_LIGHT.WARNING_900],
     ["background", COLORS_LIGHT.BACKGROUND],
     ["font", COLORS_LIGHT.FONT],
-    ["currentColor", "currentColor"],
-    ["transparent", "transparent"],
+    ["currentColor", COLORS_LIGHT.CURRENT_COLOR],
+    ["transparent", COLORS_LIGHT.TRANSPARENT],
 ])
 
 export const colorsDarkShortMap = new Map<LibColorsShort, COLORS_DARK>([

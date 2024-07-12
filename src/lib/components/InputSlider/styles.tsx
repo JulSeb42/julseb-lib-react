@@ -10,8 +10,8 @@ import {
     SPACERS,
     TRANSITIONS,
     setDefaultTheme,
-    THEME_LIGHT,
-    THEME_DARK,
+    COLORS_LIGHT,
+    COLORS_DARK,
     Mixins,
 } from "../../"
 import type { LibInputBackground, LibValidationStatus } from "../../types"
@@ -127,17 +127,17 @@ const StyledInputSlider = styled.input<{
         $inputBackground === "light"
             ? css`
                   background-color: ${$validation === "not-passed"
-                      ? THEME_LIGHT.DANGER_50
-                      : THEME_LIGHT.GRAY_200};
+                      ? COLORS_LIGHT.DANGER_50
+                      : COLORS_LIGHT.GRAY_200};
 
                   &::-webkit-slider-thumb {
-                      background-color: ${THEME_LIGHT.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
 
                       @media ${BREAKPOINTS.HOVER} {
                           &:not(:disabled):hover {
-                              background-color: ${THEME_LIGHT.ColorsHoverHover(
+                              background-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
                                       : "primary"
@@ -145,7 +145,7 @@ const StyledInputSlider = styled.input<{
                           }
 
                           &:not(:disabled):active {
-                              background-color: ${THEME_LIGHT.ColorsHoverActive(
+                              background-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
                                       : "primary"
@@ -155,49 +155,49 @@ const StyledInputSlider = styled.input<{
                   }
 
                   &::-moz-range-thumb {
-                      background-color: ${THEME_LIGHT.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
                   }
 
                   &:before,
                   &::before {
-                      background-color: ${THEME_LIGHT.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
                   }
 
                   &:disabled {
-                      background-color: ${THEME_LIGHT.GRAY_100};
+                      background-color: ${COLORS_LIGHT.GRAY_100};
 
                       &::-webkit-slider-thumb {
-                          background-color: ${THEME_LIGHT.GRAY_500};
+                          background-color: ${COLORS_LIGHT.GRAY_500};
                       }
 
                       &::-moz-range-thumb {
-                          background-color: ${THEME_LIGHT.GRAY_500};
+                          background-color: ${COLORS_LIGHT.GRAY_500};
                       }
 
                       &:before,
                       &::before {
-                          background-color: ${THEME_LIGHT.GRAY_500};
+                          background-color: ${COLORS_LIGHT.GRAY_500};
                       }
                   }
               `
             : $inputBackground === "dark" &&
               css`
                   background-color: ${$validation === "not-passed"
-                      ? THEME_DARK.DANGER_50
-                      : THEME_DARK.GRAY_200};
+                      ? COLORS_DARK.DANGER_50
+                      : COLORS_DARK.GRAY_200};
 
                   &::-webkit-slider-thumb {
-                      background-color: ${THEME_DARK.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
 
                       @media ${BREAKPOINTS.HOVER} {
                           &:not(:disabled):hover {
-                              background-color: ${THEME_DARK.ColorsHoverHover(
+                              background-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
                                       : "primary"
@@ -205,7 +205,7 @@ const StyledInputSlider = styled.input<{
                           }
 
                           &:not(:disabled):active {
-                              background-color: ${THEME_DARK.ColorsHoverActive(
+                              background-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
                                       : "primary"
@@ -215,32 +215,32 @@ const StyledInputSlider = styled.input<{
                   }
 
                   &::-moz-range-thumb {
-                      background-color: ${THEME_DARK.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
                   }
 
                   &:before,
                   &::before {
-                      background-color: ${THEME_DARK.ColorsHoverDefault(
+                      background-color: ${Mixins.ColorsHoverDefault(
                           $validation === "not-passed" ? "danger" : "primary"
                       )};
                   }
 
                   &:disabled {
-                      background-color: ${THEME_DARK.GRAY_100};
+                      background-color: ${COLORS_DARK.GRAY_100};
 
                       &::-webkit-slider-thumb {
-                          background-color: ${THEME_DARK.GRAY_500};
+                          background-color: ${COLORS_DARK.GRAY_500};
                       }
 
                       &::-moz-range-thumb {
-                          background-color: ${THEME_DARK.GRAY_500};
+                          background-color: ${COLORS_DARK.GRAY_500};
                       }
 
                       &:before,
                       &::before {
-                          background-color: ${THEME_DARK.GRAY_500};
+                          background-color: ${COLORS_DARK.GRAY_500};
                       }
                   }
               `}

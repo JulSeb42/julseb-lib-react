@@ -27,17 +27,19 @@ const StyledNavDemo = styled.nav`
     })}
 
     a {
-        color: ${({ theme }) => theme.ColorsHoverDefault("background")};
+        color: ${({ theme }) => Mixins.ColorsHoverDefault("background", theme)};
         text-decoration: none;
         transition: ${TRANSITIONS.SHORT};
 
         @media ${BREAKPOINTS.HOVER} {
             &:hover {
-                color: ${({ theme }) => theme.ColorsHoverHover("background")};
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverHover("background", theme)};
             }
 
             &:active {
-                color: ${({ theme }) => theme.ColorsHoverActive("background")};
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverActive("background", theme)};
             }
         }
 
