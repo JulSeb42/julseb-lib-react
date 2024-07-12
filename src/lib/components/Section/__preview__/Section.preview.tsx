@@ -15,13 +15,15 @@ export const sectionPreview: ComponentPreview<SectionProps> = {
     imports: "Section",
     typeImports: "SectionProps",
     extends: "HTMLDivElement",
-    props: sizes.map(size => ({
-        gap: size,
-        children: (
-            <>
-                <Text tag="h4">Gap {size}</Text>
-                <Text>Content</Text>
-            </>
-        ),
+    previews: sizes.map(size => ({
+        props: {
+            gap: size,
+            children: (
+                <>
+                    <Text tag="h4">Gap {size}</Text>
+                    <Text>Content</Text>
+                </>
+            ),
+        },
     })),
 }

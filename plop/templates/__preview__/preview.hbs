@@ -1,17 +1,9 @@
 /*=============================================== {{ pascalCase name }}Preview ===============================================*/
 
 import { {{ pascalCase name }} } from "../../../"
-import {  } from "../../../types"
+import type {  } from "../../../types"
 import type { {{ pascalCase name }}Props } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
-
-function {{ pascalCase name }}Preview() {
-    return (
-        <{{ pascalCase name }}>
-            
-        </{{ pascalCase name }}>
-    )
-}
 
 export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}Props> = {
     name: "{{ pascalCase name }}",
@@ -20,5 +12,16 @@ export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}
     imports: ["{{ pascalCase name }}"],
     typeImports: ["{{ pascalCase name }}Props"],
     extends: ["HTML{{ pascalCase attribute }}Element"],
-    demos: [{ element: <{{ pascalCase name }}Preview /> }],
+    previews: [
+        { previewTitle: "Default", props: {  } },
+        { previewTitle: "Default", demo: <{{ pascalCase name }}Preview /> },
+    ],
+}
+
+function {{ pascalCase name }}Preview() {
+    return (
+        <{{ pascalCase name }}>
+            
+        </{{ pascalCase name }}>
+    )
 }

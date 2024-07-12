@@ -144,7 +144,7 @@ export const routes: Array<Route> = [
 ]
 
 export const routesPaths: ComponentPaths = routes
-    .filter(route => route.path !== "/:componentName")
+    .filter(route => route.path !== "/:componentName" && route.path !== "*")
     .map(route => ({
         path:
             route.path === "/"

@@ -22,5 +22,5 @@ export const radiusesPreview: ComponentPreview<null> = {
     imports: "RADIUSES",
     typeImports: null,
     extends: null,
-    demos: [{ element: <RadiusesPreview /> }],
+    previews: [{ demo: <RadiusesPreview /> }],
 }

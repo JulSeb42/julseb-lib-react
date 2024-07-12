@@ -14,5 +14,5 @@ export const youtubePreview: ComponentPreview<YoutubeProps> = {
     imports: ["Youtube"],
     typeImports: ["YoutubeProps"],
     extends: ["HTMLIFrameElement", "IframeHTMLAttributes<HTMLIFrameElement>"],
-    props: [{ src: YOUTUBE_SRC }],
+    previews: [{ props: { src: YOUTUBE_SRC } }],
 }

@@ -1,11 +1,9 @@
 /*=============================================== ComponentPage ===============================================*/
 
-import { Fragment } from "react"
 import { useParams } from "react-router-dom"
-import { toKebabCase } from "ts-utils-julseb"
-import { Page } from "../../components"
+import { toKebabCase, toTitleCase } from "ts-utils-julseb"
+import { Page, ComponentPreview } from "../../components"
 import { NotFoundPage } from "../404"
-import { Text, Flexbox } from "../../lib"
 import { previews } from "../../data/components"
 
 export function ComponentPage() {
@@ -17,46 +15,27 @@ export function ComponentPage() {
 
     if (!componentPreview) return <NotFoundPage />
 
-    const { name, component, props, demos } = componentPreview
-    const Component = component as any
+    const { name, component, previews: componentPreviews } = componentPreview
+
+  
 
     return (
-        <Page title={name}>
-            {props?.map((prop, i) => {
-                const { previewTitle, ...rest } = prop as any
+        <Page title={pascalToTitle(name)}>
+            
 
-                return previewTitle ? (
-                    <Flexbox
-                        flexDirection="column"
-                        gap="s"
-                        alignItems="flex-start"
-                        key={i}
-                    >
-                        <Text tag="h4">{previewTitle}</Text>
-                        <Component {...rest} />
-                    </Flexbox>
-                ) : (
-                    <Component key={i} {...rest} />
-                )
-            })}
-
-            {demos?.map((preview, i) => {
-                return preview.previewTitle ? (
-                    <Flexbox
-                        flexDirection="column"
-                        gap="s"
-                        alignItems="flex-start"
-                        key={i}
-                    >
-                        {preview.previewTitle && (
-                            <Text tag="h4">{preview.previewTitle}</Text>
-                        )}
-                        {preview.element}
-                    </Flexbox>
-                ) : (
-                    <Fragment key={i}>{preview.element}</Fragment>
-                )
-            })}
+            {componentPreviews?.map((preview, i) => (
+                <ComponentPreview key={i} component={component} {...preview} />
+            ))}
         </Page>
     )
 }
+
+function pascalToTitle(str: string) {
+    const splitted = str
+        .split(/\.?(?=[A-Z])/)
+        .join(" ")
+        .toLowerCase()
+
+    return toTitleCase(splitted)
+}
+

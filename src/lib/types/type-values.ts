@@ -2116,4 +2116,17 @@ export const typeValues = {
     allTextTags: { ...textDisplayTags, ...textTags },
 
     tooltipTriggers: { hover: "hover", click: "click" },
+
+    tooltipPositions: { top: "top", bottom: "bottom" },
+
+    buttonVariants: {
+        plain: "plain",
+        outline: "outline",
+        ghost: "ghost",
+        transparent: "transparent",
+    },
+
+    buttonSizes: { default: "default", small: "small" },
+
+    listInputDirections: { up: "up", down: "down" },
 } as const

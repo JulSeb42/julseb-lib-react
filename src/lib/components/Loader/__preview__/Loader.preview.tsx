@@ -12,17 +12,19 @@ export const loaderPreview: ComponentPreview<LoaderProps> = {
     imports: ["Loader"],
     typeImports: ["LoaderProps"],
     extends: ["HTMLSpanElement"],
-    props: [
+    previews: [
         ...Object.values(typeValues.loaderVariants).map(v => ({
             previewTitle: `Variant ${v}`,
-            variant: v,
+            props: { variant: v },
         })),
         {
             previewTitle: "With different size & color",
-            variant: 2,
-            size: 120,
-            color: "secondary",
-            borderWidth: 4,
+            props: {
+                variant: 2,
+                size: 120,
+                color: "secondary",
+                borderWidth: 4,
+            },
         },
     ],
 }

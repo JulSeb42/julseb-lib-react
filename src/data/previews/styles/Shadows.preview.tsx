@@ -22,5 +22,5 @@ export const shadowsPreview: ComponentPreview<null> = {
     imports: "SHADOWS",
     typeImports: null,
     extends: null,
-    demos: [{ element: <ShadowsPreview /> }],
+    previews: [{ demo: <ShadowsPreview /> }],
 }

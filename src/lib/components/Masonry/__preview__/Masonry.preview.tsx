@@ -27,9 +27,9 @@ export const masonryPreview: ComponentPreview<MasonryProps> = {
     imports: ["Masonry"],
     typeImports: ["MasonryProps"],
     extends: ["HTMLDivElement"],
-    demos: [
+    previews: [
         {
-            element: (
+            demo: (
                 <Masonry col={3} gap="xl">
                     {images.map((image, i) => (
                         <Image src={image} alt={`Img ${i}`} key={uuid()} />

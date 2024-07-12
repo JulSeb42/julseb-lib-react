@@ -12,12 +12,14 @@ export const textIconPreview: ComponentPreview<TextIconProps> = {
     imports: "TextIcon",
     typeImports: "TextIconProps",
     extends: "TextProps",
-    props: [
+    previews: [
         {
-            icon: "arrow-right",
-            tag: "h3",
-            gap: "l",
-            children: "Hello",
+            props: {
+                icon: "arrow-right",
+                tag: "h3",
+                gap: "l",
+                children: "Hello",
+            },
         },
     ],
 }

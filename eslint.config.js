@@ -59,6 +59,7 @@ export default [
                 { restrictDefaultExports: { direct: true } },
             ],
             "react/prop-types": "off",
+            "no-empty-pattern": "warn",
         },
     },
     {

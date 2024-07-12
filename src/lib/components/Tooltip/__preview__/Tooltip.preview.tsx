@@ -12,20 +12,24 @@ export const tooltipPreview: ComponentPreview<TooltipProps> = {
     imports: "Tooltip",
     typeImports: "TooltipProps",
     extends: "HTMLDivElement",
-    props: [
+    previews: [
         {
             previewTitle: "Click",
-            tooltip: "Hello World!",
-            trigger: "click",
-            children: <Text>Hello, trigger on click</Text>,
+            props: {
+                tooltip: "Hello World!",
+                trigger: "click",
+                children: <Text>Hello, trigger on click</Text>,
+            },
         },
         {
             previewTitle: "Hover",
-            tooltip: "Hello World!",
-            trigger: "hover",
-            withArrow: false,
-            position: "bottom",
-            children: "Hello, trigger on hover",
+            props: {
+                tooltip: "Hello World!",
+                trigger: "hover",
+                withArrow: false,
+                position: "bottom",
+                children: "Hello, trigger on hover",
+            },
         },
     ],
 }

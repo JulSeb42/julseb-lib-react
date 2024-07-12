@@ -116,18 +116,11 @@ export type LibOutlineProps = {
 
 /* Button variants */
 
-const buttonVariants = {
-    plain: "plain",
-    outline: "outline",
-    ghost: "ghost",
-    transparent: "transparent",
-} as const
-export type LibButtonVariant = keyof typeof buttonVariants
+export type LibButtonVariant = keyof typeof typeValues.buttonVariants
 
 /* Button sizes */
 
-const buttonSizes = { default: "default", small: "small" } as const
-export type LibButtonSize = keyof typeof buttonSizes
+export type LibButtonSize = keyof typeof typeValues.buttonSizes
 
 /* Links & buttons */
 
@@ -245,8 +238,7 @@ export type TranslateLang = {
 
 /* Tooltip */
 
-const tipPosition = { top: "top", bottom: "bottom" } as const
-export type LibTooltipPosition = keyof typeof tipPosition
+export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
 
 /* BackgroundImage */
 
@@ -272,9 +264,7 @@ export type LibCountry = {
 
 /* InputList */
 
-const listInputDirection = { up: "up", down: "down" } as const
-
-export type LibListDirection = keyof typeof listInputDirection
+export type LibListDirection = keyof typeof typeValues.listInputDirections
 
 /* Toast */
 

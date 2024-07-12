@@ -15,38 +15,37 @@ export const imagePreview: ComponentPreview<ImageProps> = {
     imports: ["Image"],
     typeImports: ["ImageProps"],
     extends: ["HTMLImageElement", "ImgHTMLAttributes<HTMLImageElement>"],
-    props: [
-        { previewTitle: "Default", src: IMG_URL, alt: IMG_ALT },
+    previews: [
+        { previewTitle: "Default", props: { src: IMG_URL, alt: IMG_ALT } },
         {
             previewTitle: "With border radius",
-            src: IMG_URL,
-            alt: IMG_ALT,
-            borderRadius: "xxl",
+            props: { src: IMG_URL, alt: IMG_ALT, borderRadius: "xxl" },
         },
         {
             previewTitle: "With caption",
-            src: IMG_URL,
-            alt: IMG_ALT,
-            borderRadius: "xxl",
-            caption: "Caption",
+            props: {
+                src: IMG_URL,
+                alt: IMG_ALT,
+                borderRadius: "xxl",
+                caption: "Caption",
+            },
         },
         {
             previewTitle: "With fit cover",
-            src: IMG_URL,
-            alt: IMG_ALT,
-            height: 300,
-            fit: "cover",
+            props: { src: IMG_URL, alt: IMG_ALT, height: 300, fit: "cover" },
         },
         {
             previewTitle: "With fit contain",
-            src: IMG_URL,
-            alt: IMG_ALT,
-            height: 300,
-            fit: "contain",
-            caption: {
-                text: "Caption",
-                textColor: "secondary",
-                background: "white-80",
+            props: {
+                src: IMG_URL,
+                alt: IMG_ALT,
+                height: 300,
+                fit: "contain",
+                caption: {
+                    text: "Caption",
+                    textColor: "secondary",
+                    background: "white-80",
+                },
             },
         },
     ],

@@ -41,5 +41,5 @@ export const containerPreview: ComponentPreview<null> = {
     imports: ["Wrapper", "Main", "Aside"],
     typeImports: null,
     extends: "",
-    demos: [{ element: <ContainerPreview /> }],
+    previews: [{ demo: <ContainerPreview /> }],
 }

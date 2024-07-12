@@ -19,14 +19,14 @@ export const textPreviews: ComponentPreview<TextProps> = {
     imports: "Text",
     typeImports: "TextProps",
     extends: "HTMLElement",
-    demos: [
-        { previewTitle: "Display", element: <TextDisplay /> },
-        { previewTitle: "Titles", element: <TextTitles /> },
-        { previewTitle: "Paragraphs", element: <Paragraphs /> },
-        { previewTitle: "Small", element: <Small /> },
-        { previewTitle: "Blockquote", element: <BlockQuote /> },
-        { previewTitle: "Unordered list", element: <Unordered /> },
-        { previewTitle: "Ordered list", element: <Ordered /> },
-        { previewTitle: "Description list", element: <Description /> },
+    previews: [
+        { previewTitle: "Display", demo: <TextDisplay /> },
+        { previewTitle: "Titles", demo: <TextTitles /> },
+        { previewTitle: "Paragraphs", demo: <Paragraphs /> },
+        { previewTitle: "Small", demo: <Small /> },
+        { previewTitle: "Blockquote", demo: <BlockQuote /> },
+        { previewTitle: "Unordered list", demo: <Unordered /> },
+        { previewTitle: "Ordered list", demo: <Ordered /> },
+        { previewTitle: "Description list", demo: <Description /> },
     ],
 }

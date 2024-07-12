@@ -14,30 +14,34 @@ export const badgePreview: ComponentPreview<BadgeProps> = {
     imports: ["Badge"],
     typeImports: ["BadgeProps"],
     extends: ["HTMLSpanElement"],
-    demos: [
-        { previewTitle: "Default", element: BadgePreview({ size: 24 }) },
+    previews: [
+        { previewTitle: "Default", demo: <BadgePreview size={24} /> },
         {
             previewTitle: "With icon",
-            element: BadgePreview({ size: 48, icon: "star" }),
+            demo: <BadgePreview size={48} icon="star" />,
         },
         {
             previewTitle: "With SVG icon",
-            element: BadgePreview({
-                size: 32,
-                icon: <StarFull size={roundIconSize(32)} />,
-            }),
+            demo: (
+                <BadgePreview
+                    size={32}
+                    icon={<StarFull size={roundIconSize(32)} />}
+                />
+            ),
         },
         {
             previewTitle: "With number",
-            element: BadgePreview({ size: 64, number: 1 }),
+            demo: <BadgePreview size={64} number={1} />,
         },
         {
             previewTitle: "With long number",
-            element: BadgePreview({
-                number: 300,
-                size: 32,
-                padding: { topBottom: "0px", leftRight: "s" },
-            }),
+            demo: (
+                <BadgePreview
+                    size={32}
+                    number={300}
+                    padding={{ topBottom: "0px", leftRight: "s" }}
+                />
+            ),
         },
     ],
 }

@@ -11,11 +11,13 @@ export const linkifyPreview: ComponentPreview<LinkifyProps> = {
     imports: "Linkify",
     typeImports: "LinkifyProps",
     extends: "TextProps",
-    props: [
+    previews: [
         {
             previewTitle: "Default",
-            children: "Hello world https://julien-sebag.com/ foo baz",
-            blank: true,
+            props: {
+                children: "Hello world https://julien-sebag.com/ foo baz",
+                blank: true,
+            },
         },
     ],
 }

@@ -14,30 +14,30 @@ export const avatarPreview: ComponentPreview<AvatarProps> = {
     imports: ["Avatar"],
     typeImports: ["AvatarProps"],
     extends: ["HTMLSpanElement"],
-    props: [
-        { previewTitle: "With img", img: IMG_URL },
+    previews: [
+        { previewTitle: "With img", props: { img: IMG_URL } },
         {
             previewTitle: "With img and badge",
-            img: IMG_URL,
-            size: 64,
-            border: { color: "success", width: 2 },
-            badge: {
-                backgroundColor: "danger",
-                content: 12345,
-                padding: { leftRight: "xxs" },
-                size: 16,
-                position: "bottom",
+            props: {
+                img: IMG_URL,
+                size: 64,
+                border: { color: "success", width: 2 },
+                badge: {
+                    backgroundColor: "danger",
+                    content: 12345,
+                    padding: { leftRight: "xxs" },
+                    size: 16,
+                    position: "bottom",
+                },
             },
         },
-    ],
-    demos: [
         {
             previewTitle: "With letter",
-            element: AvatarPreview({ letter: "A" }),
+            demo: AvatarPreview({ letter: "A" }),
         },
         {
             previewTitle: "With icon",
-            element: AvatarPreview({ icon: "user", size: 64 }),
+            demo: AvatarPreview({ icon: "user", size: 64 }),
         },
     ],
 }

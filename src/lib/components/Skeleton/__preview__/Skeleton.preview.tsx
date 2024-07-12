@@ -12,31 +12,33 @@ export const skeletonPreview: ComponentPreview<SkeletonProps> = {
     imports: ["Skeleton", "SkeletonCard", "SkeletonShine"],
     typeImports: ["SkeletonProps", "SkeletonCardProps", "SkeletonShineProps"],
     extends: ["HTMLDivElement"],
-    props: [
-        { previewTitle: "Default" },
+    previews: [
+        { previewTitle: "Default", props: {} },
         {
             previewTitle: "With pulse animation",
-            width: 200,
-            height: 150,
-            borderRadius: "l",
-            animation: "pulse",
+            props: {
+                width: 200,
+                height: 150,
+                borderRadius: "l",
+                animation: "pulse",
+            },
         },
         {
             previewTitle: "With shine animation",
-            width: 200,
-            height: 150,
-            borderRadius: "l",
-            animation: "shine",
+            props: {
+                width: 200,
+                height: 150,
+                borderRadius: "l",
+                animation: "shine",
+            },
         },
-    ],
-    demos: [
         {
             previewTitle: "Inside card & animation pulse",
-            element: <SkeletonCardDemo1 />,
+            demo: <SkeletonCardDemo1 />,
         },
         {
             previewTitle: "Inside card & animation shine",
-            element: <SkeletonCardDemo2 />,
+            demo: <SkeletonCardDemo2 />,
         },
     ],
 }

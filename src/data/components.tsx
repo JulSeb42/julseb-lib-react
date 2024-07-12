@@ -39,8 +39,19 @@ import { youtubePreview } from "../lib/components/Youtube/__preview__/Youtube.pr
 import { badgePreview } from "../lib/components/Badge/__preview__/Badge.preview"
 import { avatarPreview } from "../lib/components/Avatar/__preview__/Avatar.preview"
 import { loaderPreview } from "../lib/components/Loader/__preview__/Loader.preview"
+import { burgerPreview } from "../lib/components/Burger/__preview__/Burger.preview"
+import { buttonPreview } from "../lib/components/Button/__preview__/Button.preview"
+import { buttonIconPreview } from "../lib/components/ButtonIcon/__preview__/ButtonIcon.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
+
+export type PreviewProp<T> = {
+    props: T
+}
+
+export type PreviewDemo = {
+    demo: JSX.Element
+}
 
 export interface ComponentPreview<T> {
     name: string
@@ -54,8 +65,13 @@ export interface ComponentPreview<T> {
         | Array<{ name: string; from: string }>
         | null
     // TODO?: noAs: boolean
-    props?: Array<T & { previewTitle?: string }>
-    demos?: Array<{ previewTitle?: string; element: JSX.Element }>
+    // props?: Array<T & { previewTitle?: string }>
+    // demos?: Array<{ previewTitle?: string; element: JSX.Element }>
+    previews?: Array<
+        (PreviewProp<T> | PreviewDemo) & {
+            previewTitle?: string
+        }
+    >
 }
 
 export const previews = [
@@ -90,9 +106,12 @@ export const previews = [
     videoPreview,
     youtubePreview,
     badgePreview,
-avatarPreview,
-loaderPreview,
-// prependArr
+    avatarPreview,
+    loaderPreview,
+    burgerPreview,
+    buttonPreview,
+    buttonIconPreview,
+    // prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>
 

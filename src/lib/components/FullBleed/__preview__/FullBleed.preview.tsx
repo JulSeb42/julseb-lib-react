@@ -13,9 +13,9 @@ export const fullBleedPreview: ComponentPreview<FullBleedProps> = {
     imports: ["FullBleed"],
     typeImports: ["FullBleedProps"],
     extends: ["HTMLDivElement"],
-    demos: [
+    previews: [
         {
-            element: (
+            demo: (
                 <Text>
                     <Link
                         to="/demos/main-full"

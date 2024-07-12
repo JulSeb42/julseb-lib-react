@@ -12,20 +12,22 @@ export const flexboxPreview: ComponentPreview<FlexboxProps> = {
     imports: "Flexbox",
     typeImports: "FlexboxProps",
     extends: "HTMLDivElement",
-    props: [
+    previews: [
         {
-            flexDirection: "column-reverse",
-            rowGap: "xs",
-            alignItems: "flex-end",
-            justifyContent: "flex-end",
-            children: (
-                <>
-                    <GridItem />
-                    <GridItem>Longer item</GridItem>
-                    <GridItem />
-                    <GridItem>Even longer item</GridItem>
-                </>
-            ),
+            props: {
+                flexDirection: "column-reverse",
+                rowGap: "xs",
+                alignItems: "flex-end",
+                justifyContent: "flex-end",
+                children: (
+                    <>
+                        <GridItem />
+                        <GridItem>Longer item</GridItem>
+                        <GridItem />
+                        <GridItem>Even longer item</GridItem>
+                    </>
+                ),
+            },
         },
     ],
 }

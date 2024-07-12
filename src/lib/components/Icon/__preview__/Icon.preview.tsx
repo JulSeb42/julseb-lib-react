@@ -22,25 +22,27 @@ export const iconPreview: ComponentPreview<IconProps> = {
     imports: "Icon",
     typeImports: "IconProps",
     extends: [{ name: "SVGProps", from: "react-inlinesvg" }],
-    props: [
+    previews: [
         {
             previewTitle: "Default",
-            src: "arrow-left",
-            color: "success",
-            size: 120,
+            props: {
+                src: "arrow-left",
+                color: "success",
+                size: 120,
+            },
         },
         {
             previewTitle: "With baseUrl",
-            src: "warning",
-            baseURL: "icons-alt",
-            color: "danger",
-            size: 48,
+            props: {
+                src: "warning",
+                baseURL: "icons-alt",
+                color: "danger",
+                size: 48,
+            },
         },
-    ],
-    demos: [
         {
             previewTitle: "With styled-components mixins",
-            element: <IconMixin>Hello World</IconMixin>,
+            demo: <IconMixin>Hello World</IconMixin>,
         },
     ],
 }

@@ -11,11 +11,13 @@ export const highlightPreview: ComponentPreview<HighlightProps> = {
     imports: "Highlight",
     typeImports: "HighlightProps",
     extends: "TextProps",
-    props: [
+    previews: [
         {
             previewTitle: "Default",
-            highlightedText: "hello",
-            children: "Hello world",
+            props: {
+                highlightedText: "hello",
+                children: "Hello world",
+            },
         },
     ],
 }

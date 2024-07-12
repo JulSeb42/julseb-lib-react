@@ -17,13 +17,18 @@ export const keyPreview: ComponentPreview<KeyProps> = {
     imports: "Key",
     typeImports: ["KeyProps"],
     extends: "HTMLSpanElement",
-    props: [
-        ...sizes.map(size => ({ previewTitle: capitalize(size), keys, size })),
+    previews: [
+        ...sizes.map(size => ({
+            previewTitle: capitalize(size),
+            props: { keys, size },
+        })),
         ...sizes.map(size => ({
             previewTitle: `${capitalize(size)} with separator`,
-            keys,
-            size,
-            withSeparator: true,
+            props: {
+                keys,
+                size,
+                withSeparator: true,
+            },
         })),
     ],
 }

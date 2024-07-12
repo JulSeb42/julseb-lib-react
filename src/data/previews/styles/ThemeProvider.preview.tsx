@@ -21,5 +21,5 @@ export const themeProviderPreview: ComponentPreview<null> = {
     imports: ["ThemeProviderWrapper", "useLibTheme"],
     typeImports: "ThemeContextProps",
     extends: null,
-    demos: [{ element: <ThemeProviderPreview /> }],
+    previews: [{ demo: <ThemeProviderPreview /> }],
 }

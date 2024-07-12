@@ -19,14 +19,16 @@ export const videoPreview: ComponentPreview<VideoProps> = {
         "VideoHTMLAttributes<HTMLVideoElement>",
         "SourceHTMLAttributes<HTMLVideoElement>",
     ],
-    props: [
-        { previewTitle: "Default", src: VIDEO_SRC },
+    previews: [
+        { previewTitle: "Default", props: { src: VIDEO_SRC } },
         {
             previewTitle: "Autoplay",
-            src: VIDEO_SRC,
-            height: "40vw",
-            autoPlay: true,
-            fit: "cover",
+            props: {
+                src: VIDEO_SRC,
+                height: "40vw",
+                autoPlay: true,
+                fit: "cover",
+            },
         },
     ],
 }

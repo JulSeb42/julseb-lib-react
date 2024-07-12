@@ -12,19 +12,21 @@ export const gridPreview: ComponentPreview<GridProps> = {
     imports: "Grid",
     typeImports: "GridProps",
     extends: "HTMLDivElement",
-    props: [
+    previews: [
         {
-            col: 3,
-            columnGap: "s",
-            rowGap: "xxl",
-            children: (
-                <>
-                    <GridItem />
-                    <GridItem />
-                    <GridItem />
-                    <GridItem />
-                </>
-            ),
+            props: {
+                col: 3,
+                columnGap: "s",
+                rowGap: "xxl",
+                children: (
+                    <>
+                        <GridItem />
+                        <GridItem />
+                        <GridItem />
+                        <GridItem />
+                    </>
+                ),
+            },
         },
     ],
 }
