@@ -1,0 +1,26 @@
+/*=============================================== WrapperPreview ===============================================*/
+
+import { Wrapper } from "../../../"
+import type {} from "../../../types"
+import { ContainerPreview } from "../../../../data/previews/layouts/Container.preview"
+import type { WrapperProps } from "../../../types/components-props"
+import type { ComponentPreview } from "../../../../data/components"
+
+export const wrapperPreview: ComponentPreview<WrapperProps> = {
+    name: "Wrapper",
+    component: Wrapper,
+    category: "components",
+    import: "Wrapper",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "WrapperProps",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement"],
+    previews: [
+        {
+            demo: (
+                <ContainerPreview demos={["main-default", "aside-default"]} />
+            ),
+        },
+    ],
+}

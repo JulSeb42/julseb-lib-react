@@ -20,7 +20,10 @@ export const spacersPreview: ComponentPreview<null> = {
     category: "styles",
     component: null,
     import: "SPACERS",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: null,
+    additionalTypeImports: null,
     extends: null,
     previews: [{ demo: <SpacersPreview /> }],
 }

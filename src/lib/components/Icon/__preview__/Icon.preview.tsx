@@ -20,7 +20,10 @@ export const iconPreview: ComponentPreview<IconProps> = {
     component: Icon,
     category: "components",
     import: "Icon",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "IconProps",
+    additionalTypeImports: null,
     extends: [{ name: "SVGProps", from: "react-inlinesvg" }],
     previews: [
         {

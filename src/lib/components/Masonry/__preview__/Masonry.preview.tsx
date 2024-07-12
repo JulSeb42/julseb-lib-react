@@ -25,10 +25,10 @@ export const masonryPreview: ComponentPreview<MasonryProps> = {
     component: Masonry,
     category: "components",
     import: "Masonry",
-    propsImport: "MasonryProps",
     additionalImports: null,
-    additionalTypeImports: null,
     optionalImports: null,
+    propsImport: "MasonryProps",
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {

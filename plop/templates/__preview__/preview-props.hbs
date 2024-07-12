@@ -9,8 +9,11 @@ export const {{ camelCase name }}Preview: ComponentPreview<{{ pascalCase name }}
     name: "{{ pascalCase name }}",
     component: {{ pascalCase name }},
     category: "{{ category }}",
-    imports: ["{{ pascalCase name }}"],
-    typeImports: ["{{ pascalCase name }}Props"],
+    import: "{{ pascalCase name }}", // import Component (ex: Skeleton)
+    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
+    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+    propsImport: "{{ pascalCase name }}Props", // import ILibComponent (ex: ILibAccordion)
+    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
     extends: ["HTML{{ pascalCase attribute }}Element"],
     previews: [
         { previewTitle: "Default", props: {  } },

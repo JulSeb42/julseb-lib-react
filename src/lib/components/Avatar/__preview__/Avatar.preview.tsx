@@ -11,8 +11,11 @@ export const avatarPreview: ComponentPreview<AvatarProps> = {
     name: "Avatar",
     component: Avatar,
     category: "components",
-    import: ["Avatar"],
-    propsImport: ["AvatarProps"],
+    import: "Avatar",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "AvatarProps",
+    additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [
         { previewTitle: "With img", props: { img: IMG_URL } },

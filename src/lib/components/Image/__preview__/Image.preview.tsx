@@ -12,8 +12,11 @@ export const imagePreview: ComponentPreview<ImageProps> = {
     name: "Image",
     component: Image,
     category: "components",
-    import: ["Image"],
-    propsImport: ["ImageProps"],
+    import: "Image",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ImageProps",
+    additionalTypeImports: null,
     extends: ["HTMLImageElement", "ImgHTMLAttributes<HTMLImageElement>"],
     previews: [
         { previewTitle: "Default", props: { src: IMG_URL, alt: IMG_ALT } },

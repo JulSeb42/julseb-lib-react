@@ -37,8 +37,11 @@ export const buttonGroupPreview: ComponentPreview<ButtonGroupProps> = {
     name: "ButtonGroup",
     component: ButtonGroup,
     category: "components",
-    import: ["ButtonGroup"],
-    propsImport: ["ButtonGroupProps", "LibButtonGroupItem"],
+    import: "ButtonGroup",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ButtonGroupProps",
+    additionalTypeImports: ["LibButtonGroupItem"],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: { buttons } },

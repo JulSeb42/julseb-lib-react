@@ -10,8 +10,11 @@ export const flexboxPreview: ComponentPreview<FlexboxProps> = {
     component: Flexbox,
     category: "layouts",
     import: "Flexbox",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "FlexboxProps",
-    extends: "HTMLDivElement",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement"],
     previews: [
         {
             props: {

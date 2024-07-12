@@ -20,7 +20,10 @@ export const radiusesPreview: ComponentPreview<null> = {
     category: "styles",
     component: null,
     import: "RADIUSES",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: null,
+    additionalTypeImports: null,
     extends: null,
     previews: [{ demo: <RadiusesPreview /> }],
 }

@@ -9,8 +9,11 @@ export const skeletonPreview: ComponentPreview<SkeletonProps> = {
     name: "Skeleton",
     component: Skeleton,
     category: "components",
-    import: ["Skeleton", "SkeletonCard", "SkeletonShine"],
-    propsImport: ["SkeletonProps", "SkeletonCardProps", "SkeletonShineProps"],
+    import: "Skeleton",
+    additionalImports: ["SkeletonCard", "SkeletonShine"],
+    optionalImports: null,
+    propsImport: "SkeletonProps",
+    additionalTypeImports: ["SkeletonCardProps", "SkeletonShineProps"],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: {} },

@@ -9,7 +9,10 @@ export const hrPreview: ComponentPreview<HrProps> = {
     component: Hr,
     category: "components",
     import: "Hr",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "HrProps",
-    extends: "HTMLHRElement",
+    additionalTypeImports: null,
+    extends: ["HTMLHRElement"],
     previews: [{ props: {} }],
 }

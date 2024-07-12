@@ -32,11 +32,11 @@ export const accordionPreview: ComponentPreview<AccordionProps> = {
     component: Accordion,
     category: "components",
     import: "Accordion",
-    additionalImports: [],
+    additionalImports: null,
     optionalImports: ["AccordionItem"],
     propsImport: "AccordionProps",
     additionalTypeImports: ["LibAccordionItem"],
-    extends: "HTMLDivElement",
+    extends: ["HTMLDivElement"],
     previews: [
         {
             previewTitle: "Basic",

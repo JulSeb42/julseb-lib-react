@@ -2,21 +2,9 @@
 
 import { Link } from "react-router-dom"
 import { unslugify } from "ts-utils-julseb"
-import type { ComponentPreview } from "../../components"
 import { Flexbox, Text } from "../../../lib"
 
-function ContainerPreview() {
-    const demos: Array<string> = [
-        "main-default",
-        "main-large",
-        "main-form",
-        "main-number",
-        "main-full",
-        "aside-default",
-        "aside-small",
-        "aside-both-sides",
-    ]
-
+export function ContainerPreview({ demos }: { demos: Array<string> }) {
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
             {demos.map(d => (
@@ -32,14 +20,4 @@ function ContainerPreview() {
             ))}
         </Flexbox>
     )
-}
-
-export const containerPreview: ComponentPreview<null> = {
-    name: "Container",
-    category: "layouts",
-    component: null,
-    import: ["Wrapper", "Main", "Aside"],
-    propsImport: null,
-    extends: "",
-    previews: [{ demo: <ContainerPreview /> }],
 }

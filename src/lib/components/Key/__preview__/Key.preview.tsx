@@ -15,8 +15,11 @@ export const keyPreview: ComponentPreview<KeyProps> = {
     component: Key,
     category: "components",
     import: "Key",
-    propsImport: ["KeyProps"],
-    extends: "HTMLSpanElement",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "KeyProps",
+    additionalTypeImports: null,
+    extends: ["HTMLSpanElement"],
     previews: [
         ...sizes.map(size => ({
             previewTitle: capitalize(size),

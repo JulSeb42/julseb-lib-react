@@ -12,8 +12,11 @@ export const videoPreview: ComponentPreview<VideoProps> = {
     name: "Video",
     component: Video,
     category: "components",
-    import: ["Video"],
-    propsImport: ["VideoProps"],
+    import: "Video",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "VideoProps",
+    additionalTypeImports: null,
     extends: [
         "HTMLVideoElement",
         "VideoHTMLAttributes<HTMLVideoElement>",

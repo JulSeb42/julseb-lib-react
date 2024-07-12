@@ -19,7 +19,7 @@ export const colorsPreview: ComponentPreview<null> = {
     name: "Colors",
     category: "styles",
     component: null,
-    import: "Theme",
+    import: null,
     additionalImports: ["COLORS_LIGHT", "COLORS_DARK"],
     optionalImports: null,
     propsImport: null,

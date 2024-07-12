@@ -13,8 +13,11 @@ export const sectionPreview: ComponentPreview<SectionProps> = {
     component: Section,
     category: "layouts",
     import: "Section",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "SectionProps",
-    extends: "HTMLDivElement",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement"],
     previews: sizes.map(size => ({
         props: {
             gap: size,

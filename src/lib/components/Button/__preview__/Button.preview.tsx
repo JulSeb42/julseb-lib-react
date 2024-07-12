@@ -13,8 +13,11 @@ export const buttonPreview: ComponentPreview<ButtonProps> = {
     name: "Button",
     component: Button,
     category: "components",
-    import: ["Button"],
-    propsImport: ["ButtonProps"],
+    import: "Button",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ButtonProps",
+    additionalTypeImports: null,
     extends: [
         "HTMLButtonElement & HTMLAnchorElement",
         "ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement>",

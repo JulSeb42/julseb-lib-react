@@ -17,8 +17,11 @@ export const textPreviews: ComponentPreview<TextProps> = {
     component: Text,
     category: "styles",
     import: "Text",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "TextProps",
-    extends: "HTMLElement",
+    additionalTypeImports: null,
+    extends: ["HTMLElement"],
     previews: [
         { previewTitle: "Display", demo: <TextDisplay /> },
         { previewTitle: "Titles", demo: <TextTitles /> },

@@ -10,8 +10,11 @@ export const tooltipPreview: ComponentPreview<TooltipProps> = {
     component: Tooltip,
     category: "components",
     import: "Tooltip",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "TooltipProps",
-    extends: "HTMLDivElement",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement"],
     previews: [
         {
             previewTitle: "Click",

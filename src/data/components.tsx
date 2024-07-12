@@ -16,7 +16,9 @@ import { themeProviderPreview } from "./previews/styles/ThemeProvider.preview"
 
 /*====================== Layouts ======================*/
 
-import { containerPreview } from "./previews/layouts/Container.preview"
+import { wrapperPreview } from "../lib/components/Wrapper/__preview__/Wrapper.preview"
+import { mainPreview } from "../lib/components/Main/__preview__/Main.preview"
+import { asidePreview } from "../lib/components/Aside/__preview__/Aside.preview"
 import { sectionPreview } from "../lib/components/Section/__preview__/Section.preview"
 import { gridPreview } from "../lib/components/Grid/__preview__/Grid.preview"
 import { flexboxPreview } from "../lib/components/Flexbox/__preview__/Flexbox.preview"
@@ -58,17 +60,14 @@ export interface ComponentPreview<T> {
     name: string
     component: FC | ForwardRefExoticComponent<T & RefAttributes<any>> | null
     category: "styles" | "layouts" | "components" | "utils"
-    import: string // import Component (ex: Skeleton)
+    import: string | null // import Component (ex: Skeleton)
     additionalImports: Array<string> | null // import OtherComponent (ex: SkeletonCard)
     optionalImports: Array<string> | null // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
     propsImport: string | null // import ILibComponent (ex: ILibAccordion)
     additionalTypeImports: Array<string> | null // import ILibComponentItem (ex: ILibAccordionItem)
-    extends:
-        | string
-        | Array<string>
-        | Array<{ name: string; from: string }>
-        | null
+    extends: Array<string> | Array<{ name: string; from: string }> | null
     // TODO?: noAs: boolean
+    // TODO?: noRef?: boolean
     previews: Array<
         (PreviewProp<T> | PreviewDemo) & {
             previewTitle?: string
@@ -88,7 +87,9 @@ export const previews = [
 
     /*====================== Layouts ======================*/
 
-    containerPreview,
+    wrapperPreview,
+    mainPreview,
+    asidePreview,
     sectionPreview,
     gridPreview,
     flexboxPreview,

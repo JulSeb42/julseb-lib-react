@@ -18,8 +18,11 @@ export const themeProviderPreview: ComponentPreview<null> = {
     name: "Theme Provider",
     category: "styles",
     component: null,
-    import: ["ThemeProviderWrapper", "useLibTheme"],
+    import: "useLibTheme",
+    additionalImports: ["ThemeProviderWrapper"],
+    optionalImports: null,
     propsImport: "ThemeContextProps",
+    additionalTypeImports: null,
     extends: null,
     previews: [{ demo: <ThemeProviderPreview /> }],
 }

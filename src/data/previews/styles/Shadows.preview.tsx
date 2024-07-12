@@ -20,7 +20,10 @@ export const shadowsPreview: ComponentPreview<null> = {
     category: "styles",
     component: null,
     import: "SHADOWS",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: null,
+    additionalTypeImports: null,
     extends: null,
     previews: [{ demo: <ShadowsPreview /> }],
 }

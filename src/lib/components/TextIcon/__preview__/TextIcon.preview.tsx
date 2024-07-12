@@ -10,8 +10,11 @@ export const textIconPreview: ComponentPreview<TextIconProps> = {
     component: TextIcon,
     category: "components",
     import: "TextIcon",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "TextIconProps",
-    extends: "TextProps",
+    additionalTypeImports: null,
+    extends: ["TextProps"],
     previews: [
         {
             props: {

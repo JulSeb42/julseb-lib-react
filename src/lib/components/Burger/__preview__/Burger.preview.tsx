@@ -10,8 +10,11 @@ export const burgerPreview: ComponentPreview<BurgerProps> = {
     name: "Burger",
     component: Burger,
     category: "components",
-    import: ["Burger"],
-    propsImport: ["BurgerProps"],
+    import: "Burger",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "BurgerProps",
+    additionalTypeImports: null,
     extends: ["HTMLButtonElement"],
     previews: [{ demo: <BurgerPreview /> }],
 }

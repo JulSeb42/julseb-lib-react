@@ -20,7 +20,10 @@ export const overlaysPreview: ComponentPreview<null> = {
     category: "styles",
     component: null,
     import: "OVERLAYS",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: null,
+    additionalTypeImports: null,
     extends: null,
     previews: [{ demo: <ColorsPreview /> }],
 }

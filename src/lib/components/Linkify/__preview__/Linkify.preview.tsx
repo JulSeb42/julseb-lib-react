@@ -9,8 +9,11 @@ export const linkifyPreview: ComponentPreview<LinkifyProps> = {
     component: Linkify,
     category: "components",
     import: "Linkify",
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "LinkifyProps",
-    extends: "TextProps",
+    additionalTypeImports: null,
+    extends: ["TextProps"],
     previews: [
         {
             previewTitle: "Default",
