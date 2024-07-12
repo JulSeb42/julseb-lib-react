@@ -12,7 +12,7 @@ import type { LibColorsHover, LibStepperDirection } from "../../types"
 
 const StyledStep = styled.span<{
     $direction: LibStepperDirection
-    $accentColor?: LibColorsHover
+    $accentColor: LibColorsHover
     $isActive?: boolean
     $isLink: boolean
 }>`
@@ -30,7 +30,9 @@ const StyledStep = styled.span<{
 
     small {
         color: ${({ theme, $isLink, $accentColor }) =>
-            $isLink ? theme.ColorsHoverDefault($accentColor) : theme.FONT};
+            $isLink
+                ? Mixins.ColorsHoverDefault($accentColor, theme)
+                : theme.FONT};
         font-weight: ${({ $isLink }) => $isLink && FONT_WEIGHTS.BLACK};
     }
 
@@ -43,11 +45,11 @@ const StyledStep = styled.span<{
             }
 
             &:hover small {
-                color: ${theme.ColorsHoverHover($accentColor)};
+                color: ${Mixins.ColorsHoverHover($accentColor, theme)};
             }
 
             &:active small {
-                color: ${theme.ColorsHoverActive($accentColor)};
+                color: ${Mixins.ColorsHoverActive($accentColor, theme)};
             }
         `}
 `
@@ -72,7 +74,7 @@ const StyledStepper = styled.div<{
         left: 12px;
         top: 12px;
         background-color: ${({ theme, $accentColor }) =>
-            theme.AllColors($accentColor)};
+            Mixins.AllColors($accentColor, theme)};
         z-index: 0;
         width: ${({ $direction }) =>
             $direction === "column" ? "2px" : "calc(100% - 24px)"};
@@ -106,8 +108,8 @@ const NumberContainer = styled.span<{
     font-weight: ${FONT_WEIGHTS.BLACK};
     background-color: ${({ theme, $accentColor, $isActive }) =>
         $isActive
-            ? theme.ColorsHoverDefault($accentColor)
-            : theme.ColorsHoverHover($accentColor)};
+            ? Mixins.ColorsHoverDefault($accentColor, theme)
+            : Mixins.ColorsHoverHover($accentColor, theme)};
     color: ${({ theme }) => theme.BACKGROUND};
 `
 

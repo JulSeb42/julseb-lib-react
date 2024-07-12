@@ -19,8 +19,8 @@ export const overlaysPreview: ComponentPreview<null> = {
     name: "Overlays",
     category: "styles",
     component: null,
-    imports: "OVERLAYS",
-    typeImports: null,
+    import: "OVERLAYS",
+    propsImport: null,
     extends: null,
     previews: [{ demo: <ColorsPreview /> }],
 }

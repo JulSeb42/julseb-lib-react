@@ -58,19 +58,22 @@ export interface ComponentPreview<T> {
     name: string
     component: FC | ForwardRefExoticComponent<T & RefAttributes<any>> | null
     category: "styles" | "layouts" | "components" | "utils"
-    imports: string | Array<string>
-    typeImports: string | Array<string> | null
+    import: string // import Component (ex: Skeleton)
+    additionalImports: Array<string> | null // import OtherComponent (ex: SkeletonCard)
+    optionalImports: Array<string> | null // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+    propsImport: string | null // import ILibComponent (ex: ILibAccordion)
+    additionalTypeImports: Array<string> | null // import ILibComponentItem (ex: ILibAccordionItem)
     extends:
         | string
         | Array<string>
         | Array<{ name: string; from: string }>
         | null
     // TODO?: noAs: boolean
-    previews?: Array<
+    previews: Array<
         (PreviewProp<T> | PreviewDemo) & {
             previewTitle?: string
         }
-    >
+    > | null
 }
 
 export const previews = [
@@ -111,7 +114,7 @@ export const previews = [
     buttonPreview,
     buttonIconPreview,
     buttonGroupPreview,
-// prependArr
+    // prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>
 

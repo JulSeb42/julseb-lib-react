@@ -19,8 +19,11 @@ export const colorsPreview: ComponentPreview<null> = {
     name: "Colors",
     category: "styles",
     component: null,
-    imports: ["COLORS_LIGHT", "COLORS_DARK"],
-    typeImports: null,
+    import: "Theme",
+    additionalImports: ["COLORS_LIGHT", "COLORS_DARK"],
+    optionalImports: null,
+    propsImport: null,
+    additionalTypeImports: null,
     extends: null,
     previews: [{ previewTitle: "", demo: <ColorsPreview /> }],
 }

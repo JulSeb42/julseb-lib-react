@@ -61,7 +61,8 @@ const Common = ({
     width: ${stringifyPx($width)};
     max-width: ${$maxWidth && stringifyPx($maxWidth)};
     height: ${$height && stringifyPx($height)};
-    background-color: ${({ theme }) => theme.AllColors($backgroundColor)};
+    background-color: ${({ theme }) =>
+        Mixins.AllColors($backgroundColor, theme)};
     aspect-ratio: ${$aspectRatio};
     flex: ${$flex};
     flex-grow: ${$flexGrow};

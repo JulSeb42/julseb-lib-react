@@ -29,8 +29,9 @@ const StyledInputImage = styled.label<{
     color: ${({ $validation, $disabled, theme }) =>
         $disabled
             ? theme.GRAY_500
-            : theme.ColorsHoverDefault(
-                  $validation === "not-passed" ? "danger" : "primary"
+            : Mixins.ColorsHoverDefault(
+                  $validation === "not-passed" ? "danger" : "primary",
+                  theme
               )};
     ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)}
     ${Mixins.Flexbox({

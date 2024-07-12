@@ -12,8 +12,8 @@ export const sectionPreview: ComponentPreview<SectionProps> = {
     name: "Section",
     component: Section,
     category: "layouts",
-    imports: "Section",
-    typeImports: "SectionProps",
+    import: "Section",
+    propsImport: "SectionProps",
     extends: "HTMLDivElement",
     previews: sizes.map(size => ({
         props: {

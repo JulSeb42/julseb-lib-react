@@ -1,7 +1,7 @@
 /*=============================================== ProgressBar styles ===============================================*/
 
 import styled, { keyframes, css } from "styled-components"
-import { setDefaultTheme, RADIUSES, TRANSITIONS } from "../../"
+import { setDefaultTheme, RADIUSES, TRANSITIONS, Mixins } from "../../"
 import type { LibColorsHover } from "../../types"
 
 const Progress = keyframes`
@@ -39,7 +39,8 @@ const StyledProgressBar = styled.meter<{
         height: 100%;
         top: 0;
         width: var(--progress-value);
-        background-color: ${({ theme, $color }) => theme.AllColors($color)};
+        background-color: ${({ theme, $color }) =>
+            Mixins.AllColors($color, theme)};
         border-radius: ${({ $value }) =>
             $value < 3 ? RADIUSES.CIRCLE : RADIUSES.ROUND};
 

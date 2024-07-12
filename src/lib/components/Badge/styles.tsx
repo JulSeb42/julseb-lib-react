@@ -7,8 +7,8 @@ import type { LibAllColors, LibPaddingProps, LibRadiusProps } from "../../types"
 
 const StyledBadge = styled.span<{
     $size: number
-    $backgroundColor?: LibAllColors
-    $contentColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $contentColor: LibAllColors
     $borderRadius?: LibRadiusProps
     $padding?: LibPaddingProps
     $hasChildren?: boolean
@@ -17,8 +17,9 @@ const StyledBadge = styled.span<{
     min-width: ${({ $size }) => $size}px;
     height: ${({ $size }) => $size}px;
     background-color: ${({ $backgroundColor, theme }) =>
-        theme.AllColors($backgroundColor)};
-    color: ${({ $contentColor, theme }) => theme.AllColors($contentColor)};
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ $contentColor, theme }) =>
+        Mixins.AllColors($contentColor, theme)};
     font-size: ${({ $size }) => roundIconSize($size)}px;
     font-weight: ${FONT_WEIGHTS.BLACK};
     ${Mixins.Flexbox({

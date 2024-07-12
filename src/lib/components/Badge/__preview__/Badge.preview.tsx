@@ -11,8 +11,8 @@ export const badgePreview: ComponentPreview<BadgeProps> = {
     name: "Badge",
     component: Badge,
     category: "components",
-    imports: ["Badge"],
-    typeImports: ["BadgeProps"],
+    import: ["Badge"],
+    propsImport: ["BadgeProps"],
     extends: ["HTMLSpanElement"],
     previews: [
         { previewTitle: "Default", demo: <BadgePreview size={24} /> },

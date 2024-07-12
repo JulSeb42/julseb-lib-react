@@ -17,7 +17,8 @@ const StyledBreadcrumbs = styled.nav<{
     $activeColor: LibAllColors
     $gap: LibSpacers
 }>`
-    color: ${({ theme, $activeColor }) => theme.AllColors($activeColor)};
+    color: ${({ theme, $activeColor }) =>
+        Mixins.AllColors($activeColor, theme)};
     font-size: ${FONT_SIZES.BODY};
     font-weight: ${FONT_WEIGHTS.REGULAR};
     line-height: ${LINE_HEIGHTS.BODY};
@@ -30,19 +31,19 @@ const StyledBreadcrumbs = styled.nav<{
     & > a {
         text-decoration: none;
         color: ${({ theme, $linkColor }) =>
-            theme.ColorsHoverDefault($linkColor)};
+            Mixins.ColorsHoverDefault($linkColor, theme)};
         transition: ${TRANSITIONS.SHORT};
         font-weight: ${FONT_WEIGHTS.BLACK};
 
         @media ${BREAKPOINTS.HOVER} {
             &:hover {
                 color: ${({ theme, $linkColor }) =>
-                    theme.ColorsHoverHover($linkColor)};
+                    Mixins.ColorsHoverHover($linkColor, theme)};
             }
 
             &:active {
                 color: ${({ theme, $linkColor }) =>
-                    theme.ColorsHoverActive($linkColor)};
+                    Mixins.ColorsHoverActive($linkColor, theme)};
             }
         }
     }
@@ -51,7 +52,7 @@ const StyledBreadcrumbs = styled.nav<{
 const SeparatorContainer = styled.span<{ $color: LibAllColors }>`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
     line-height: ${LINE_HEIGHTS.BODY};
-    color: ${({ $color, theme }) => theme.AllColors($color)};
+    color: ${({ $color, theme }) => Mixins.AllColors($color, theme)};
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",

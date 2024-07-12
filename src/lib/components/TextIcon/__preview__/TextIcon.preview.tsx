@@ -9,8 +9,8 @@ export const textIconPreview: ComponentPreview<TextIconProps> = {
     name: "TextIcon",
     component: TextIcon,
     category: "components",
-    imports: "TextIcon",
-    typeImports: "TextIconProps",
+    import: "TextIcon",
+    propsImport: "TextIconProps",
     extends: "TextProps",
     previews: [
         {

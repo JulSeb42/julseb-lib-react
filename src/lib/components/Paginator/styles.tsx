@@ -13,14 +13,14 @@ const TextContainer = styled.span`
     })}
 `
 
-const StyledInput = styled(Input)<{ $accentColor?: LibColorsHover }>`
+const StyledInput = styled(Input)<{ $accentColor: LibColorsHover }>`
     width: 48px;
     -moz-appearance: textfield;
     appearance: textfield;
 
     &:focus {
         border-color: ${({ theme, $accentColor }) =>
-            theme.ColorsHoverDefault($accentColor)};
+            Mixins.ColorsHoverDefault($accentColor, theme)};
     }
 
     &::-webkit-outer-spin-button,

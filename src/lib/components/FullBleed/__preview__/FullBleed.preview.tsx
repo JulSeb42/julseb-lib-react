@@ -10,8 +10,8 @@ export const fullBleedPreview: ComponentPreview<FullBleedProps> = {
     name: "FullBleed",
     component: FullBleed,
     category: "components",
-    imports: ["FullBleed"],
-    typeImports: ["FullBleedProps"],
+    import: ["FullBleed"],
+    propsImport: ["FullBleedProps"],
     extends: ["HTMLDivElement"],
     previews: [
         {

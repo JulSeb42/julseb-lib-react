@@ -27,8 +27,8 @@ const StyledTooltip = styled.div<{
     $isVisible: boolean
     $position?: LibTooltipPosition
     $withArrow?: boolean
-    $backgroundColor?: LibAllColorsAndOverlays
-    $textColor?: LibAllColors
+    $backgroundColor: LibAllColorsAndOverlays
+    $textColor: LibAllColors
     $offset: LibSpacers | number
 }>`
     max-width: unset;
@@ -47,8 +47,8 @@ const StyledTooltip = styled.div<{
     opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     background-color: ${({ theme, $backgroundColor }) =>
-        theme.ColorsAndOverlays($backgroundColor)};
-    color: ${({ theme, $textColor }) => theme.AllColors($textColor)};
+        Mixins.ColorsAndOverlays($backgroundColor, theme)};
+    color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
 
     ${({ $withArrow, $position, $backgroundColor, theme }) =>
         $withArrow &&
@@ -59,11 +59,13 @@ const StyledTooltip = styled.div<{
                 border-style: solid;
                 border-width: 4px;
                 border-color: ${$position === "bottom"
-                    ? `transparent transparent ${theme.ColorsAndOverlays(
-                          $backgroundColor
+                    ? `transparent transparent ${Mixins.ColorsAndOverlays(
+                          $backgroundColor,
+                          theme
                       )} transparent`
-                    : `${theme.ColorsAndOverlays(
-                          $backgroundColor
+                    : `${Mixins.ColorsAndOverlays(
+                          $backgroundColor,
+                          theme
                       )} transparent transparent transparent`};
                 left: 50%;
                 transform: translateX(-50%);

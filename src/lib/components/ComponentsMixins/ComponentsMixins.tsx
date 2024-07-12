@@ -30,7 +30,7 @@ import type {
 } from "../../types"
 
 export interface ButtonMixinProps {
-    $color?: LibColorsHover
+    $color: LibColorsHover
     $shadow?: LibBoxShadowProps
     $borderRadius?: LibRadiusProps
     $variant?: LibButtonVariant
@@ -57,7 +57,7 @@ export const ButtonMixin = ({
     ${({ theme }) =>
         $variant === "plain"
             ? css`
-                  background-color: ${theme.ColorsHoverDefault($color)};
+                  background-color: ${Mixins.ColorsHoverDefault($color, theme)};
                   color: ${$color === "white"
                       ? theme.PRIMARY_500
                       : $color === "background"
@@ -66,11 +66,17 @@ export const ButtonMixin = ({
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
-                          background-color: ${theme.ColorsHoverHover($color)};
+                          background-color: ${Mixins.ColorsHoverHover(
+                              $color,
+                              theme
+                          )};
                       }
 
                       &:not(:disabled):active {
-                          background-color: ${theme.ColorsHoverActive($color)};
+                          background-color: ${Mixins.ColorsHoverActive(
+                              $color,
+                              theme
+                          )};
                       }
 
                       &:disabled {
@@ -81,18 +87,24 @@ export const ButtonMixin = ({
               `
             : $variant === "outline"
             ? css`
-                  border-color: ${theme.ColorsHoverDefault($color)};
-                  color: ${theme.ColorsHoverDefault($color)};
+                  border-color: ${Mixins.ColorsHoverDefault($color, theme)};
+                  color: ${Mixins.ColorsHoverDefault($color, theme)};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
-                          border-color: ${theme.ColorsHoverHover($color)};
-                          color: ${theme.ColorsHoverHover($color)};
+                          border-color: ${Mixins.ColorsHoverHover(
+                              $color,
+                              theme
+                          )};
+                          color: ${Mixins.ColorsHoverHover($color, theme)};
                       }
 
                       &:not(:disabled):active {
-                          border-color: ${theme.ColorsHoverActive($color)};
-                          color: ${theme.ColorsHoverActive($color)};
+                          border-color: ${Mixins.ColorsHoverActive(
+                              $color,
+                              theme
+                          )};
+                          color: ${Mixins.ColorsHoverActive($color, theme)};
                       }
 
                       &:disabled {
@@ -103,20 +115,26 @@ export const ButtonMixin = ({
               `
             : $variant === "ghost"
             ? css`
-                  background-color: ${theme.ColorsGhostDefault($color)};
+                  background-color: ${Mixins.ColorsGhostDefault($color, theme)};
                   color: ${$color === "white" || $color === "background"
                       ? theme.PRIMARY_500
                       : $color === "font"
                       ? theme.BACKGROUND
-                      : theme.ColorsHoverDefault($color)};
+                      : Mixins.ColorsHoverDefault($color, theme)};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
-                          background-color: ${theme.ColorsGhostHover($color)};
+                          background-color: ${Mixins.ColorsGhostHover(
+                              $color,
+                              theme
+                          )};
                       }
 
                       &:not(:disabled):active {
-                          background-color: ${theme.ColorsGhostActive($color)};
+                          background-color: ${Mixins.ColorsGhostActive(
+                              $color,
+                              theme
+                          )};
                       }
 
                       &:disabled {
@@ -127,15 +145,15 @@ export const ButtonMixin = ({
               `
             : $variant === "transparent" &&
               css`
-                  color: ${theme.ColorsHoverDefault($color)};
+                  color: ${Mixins.ColorsHoverDefault($color, theme)};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
-                          color: ${theme.ColorsHoverHover($color)};
+                          color: ${Mixins.ColorsHoverHover($color, theme)};
                       }
 
                       &:not(:disabled):active {
-                          color: ${theme.ColorsHoverActive($color)};
+                          color: ${Mixins.ColorsHoverActive($color, theme)};
                       }
 
                       &:disabled {
@@ -164,7 +182,7 @@ export const TextBaseMixin = ({
     font-size: ${Mixins.FontSize($fontSize)};
     font-weight: ${Mixins.FontWeight($fontWeight)};
     text-align: ${$textAlign};
-    color: ${({ theme }) => theme.AllColors($color)};
+    color: ${({ theme }) => Mixins.AllColors($color, theme)};
     line-height: ${LINE_HEIGHTS.BODY};
 
     & > * {
@@ -180,15 +198,17 @@ export const TextBaseMixin = ({
         font-size: inherit;
         font-weight: ${FONT_WEIGHTS.BLACK};
         transition: ${TRANSITIONS.SHORT};
-        color: ${({ theme }) => theme.ColorsHoverDefault($linkColor)};
+        color: ${({ theme }) => Mixins.ColorsHoverDefault($linkColor, theme)};
 
         @media ${BREAKPOINTS.HOVER} {
             &:hover {
-                color: ${({ theme }) => theme.ColorsHoverHover($linkColor)};
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverHover($linkColor, theme)};
             }
 
             &:active {
-                color: ${({ theme }) => theme.ColorsHoverActive($linkColor)};
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverActive($linkColor, theme)};
             }
         }
     }

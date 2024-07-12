@@ -8,8 +8,8 @@ export const highlightPreview: ComponentPreview<HighlightProps> = {
     name: "Highlight",
     component: Highlight,
     category: "components",
-    imports: "Highlight",
-    typeImports: "HighlightProps",
+    import: "Highlight",
+    propsImport: "HighlightProps",
     extends: "TextProps",
     previews: [
         {

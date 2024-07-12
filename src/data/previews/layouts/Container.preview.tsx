@@ -38,8 +38,8 @@ export const containerPreview: ComponentPreview<null> = {
     name: "Container",
     category: "layouts",
     component: null,
-    imports: ["Wrapper", "Main", "Aside"],
-    typeImports: null,
+    import: ["Wrapper", "Main", "Aside"],
+    propsImport: null,
     extends: "",
     previews: [{ demo: <ContainerPreview /> }],
 }

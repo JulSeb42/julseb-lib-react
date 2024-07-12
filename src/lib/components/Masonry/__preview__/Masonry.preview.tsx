@@ -1,7 +1,7 @@
 /*=============================================== MasonryPreview ===============================================*/
 
 import { uuid } from "ts-utils-julseb"
-import { Masonry, Image } from "../../../"
+import { Image, Masonry } from "../../../"
 import {} from "../../../types"
 import type { MasonryProps } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
@@ -24,8 +24,11 @@ export const masonryPreview: ComponentPreview<MasonryProps> = {
     name: "Masonry",
     component: Masonry,
     category: "components",
-    imports: ["Masonry"],
-    typeImports: ["MasonryProps"],
+    import: "Masonry",
+    propsImport: "MasonryProps",
+    additionalImports: null,
+    additionalTypeImports: null,
+    optionalImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {

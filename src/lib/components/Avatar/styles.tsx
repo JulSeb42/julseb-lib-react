@@ -19,13 +19,14 @@ const Common = ({
 }: {
     $size?: number
     $borderRadius?: LibRadiusProps
-    $backgroundColor?: LibAllColors
-    $contentColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $contentColor: LibAllColors
 }) => css`
     width: ${$size}px;
     height: ${$size}px;
-    background-color: ${({ theme }) => theme.AllColors($backgroundColor)};
-    color: ${({ theme }) => theme.AllColors($contentColor)};
+    background-color: ${({ theme }) =>
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ theme }) => Mixins.AllColors($contentColor, theme)};
     ${Mixins.BorderRadius($borderRadius)};
     ${Mixins.Flexbox({
         $inline: true,
@@ -37,8 +38,8 @@ const Common = ({
 const StyledAvatarContainer = styled.span<{
     $size?: number
     $borderRadius?: LibRadiusProps
-    $backgroundColor?: LibAllColors
-    $contentColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $contentColor: LibAllColors
 }>`
     ${Common}
     position: relative;
@@ -50,8 +51,8 @@ const StyledAvatar = styled.span<{
     $size?: number
     $border?: LibBorderProps
     $borderRadius?: LibRadiusProps
-    $backgroundColor?: LibAllColors
-    $contentColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $contentColor: LibAllColors
 }>`
     ${Common}
     ${({ $border }) => Mixins.Border($border)};

@@ -9,8 +9,8 @@ export const tooltipPreview: ComponentPreview<TooltipProps> = {
     name: "Tooltip",
     component: Tooltip,
     category: "components",
-    imports: "Tooltip",
-    typeImports: "TooltipProps",
+    import: "Tooltip",
+    propsImport: "TooltipProps",
     extends: "HTMLDivElement",
     previews: [
         {

@@ -8,8 +8,8 @@ export const hrPreview: ComponentPreview<HrProps> = {
     name: "Hr",
     component: Hr,
     category: "components",
-    imports: "Hr",
-    typeImports: "HrProps",
+    import: "Hr",
+    propsImport: "HrProps",
     extends: "HTMLHRElement",
     previews: [{ props: {} }],
 }

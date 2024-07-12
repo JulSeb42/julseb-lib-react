@@ -82,7 +82,7 @@ const StyledDropdownItem = styled.button<{
     background-color: transparent;
     border: none;
     color: ${({ theme, $accentColor }) =>
-        theme.ColorsHoverDefault($accentColor)};
+        Mixins.ColorsHoverDefault($accentColor, theme)};
     ${({ $gap }) =>
         Mixins.Flexbox({
             $gap,
@@ -91,13 +91,13 @@ const StyledDropdownItem = styled.button<{
     @media ${BREAKPOINTS.HOVER} {
         &:hover {
             background-color: ${({ theme, $accentColor }) =>
-                theme.ColorsHoverHover($accentColor)};
+                Mixins.ColorsHoverHover($accentColor, theme)};
             color: ${({ theme }) => theme.BACKGROUND};
         }
 
         &:active {
             background-color: ${({ theme, $accentColor }) =>
-                theme.ColorsHoverActive($accentColor)};
+                Mixins.ColorsHoverActive($accentColor, theme)};
         }
     }
 `

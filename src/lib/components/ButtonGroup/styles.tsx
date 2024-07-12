@@ -13,7 +13,7 @@ const StyledButtonGroup = styled.div<{
     $size?: LibButtonSize
     $borderRadius?: LibRadiusProps
     $variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
-    $color?: LibColorsHover
+    $color: LibColorsHover
 }>`
     height: ${({ $size }) => ($size === "small" ? 24 : 34)}px;
     overflow: hidden;
@@ -28,7 +28,7 @@ const StyledButtonGroup = styled.div<{
     ${({ $variant, theme, $color }) =>
         $variant === "transparent" &&
         css`
-            border: 1px solid ${theme.ColorsHoverDefault($color)};
+            border: 1px solid ${Mixins.ColorsHoverDefault($color, theme)};
         `}
 
     & > * {
@@ -42,7 +42,7 @@ const Separator = styled.hr<{ $color: LibColorsHover }>`
     top: 0;
     border: none;
     background-color: ${({ theme, $color }) =>
-        theme.ColorsHoverDefault($color)};
+        Mixins.ColorsHoverDefault($color, theme)};
 `
 
 setDefaultTheme([StyledButtonGroup, Separator])

@@ -7,7 +7,7 @@ import type { LibAllColors } from "../../types"
 
 type LoaderStyle = {
     $size?: number
-    $color?: LibAllColors
+    $color: LibAllColors
     $borderWidth?: number
 }
 
@@ -38,7 +38,8 @@ const StyledLoaderOne = styled.span<LoaderStyle>`
     display: inline-block;
     border-radius: ${RADIUSES.CIRCLE};
     border: ${({ $borderWidth }) => $borderWidth}px solid transparent;
-    border-bottom-color: ${({ $color, theme }) => theme.AllColors($color)};
+    border-bottom-color: ${({ $color, theme }) =>
+        Mixins.AllColors($color, theme)};
     ${LOADER_SPIN_ANIMATION()}
 `
 
@@ -47,8 +48,9 @@ const StyledLoaderTwo = styled.span<LoaderStyle>`
     display: inline-block;
     border-radius: ${RADIUSES.CIRCLE};
     border: ${({ $borderWidth }) => $borderWidth}px solid transparent;
-    border-top-color: ${({ $color, theme }) => theme.AllColors($color)};
-    border-bottom-color: ${({ $color, theme }) => theme.AllColors($color)};
+    border-top-color: ${({ $color, theme }) => Mixins.AllColors($color, theme)};
+    border-bottom-color: ${({ $color, theme }) =>
+        Mixins.AllColors($color, theme)};
     ${LOADER_SPIN_ANIMATION()}
 `
 
@@ -62,7 +64,8 @@ const StyledLoaderThree = styled.span<LoaderStyle>`
         width: 100%;
         height: 100%;
         border: ${({ $borderWidth }) => $borderWidth}px solid transparent;
-        border-top-color: ${({ $color, theme }) => theme.AllColors($color)};
+        border-top-color: ${({ $color, theme }) =>
+            Mixins.AllColors($color, theme)};
         border-radius: ${RADIUSES.CIRCLE};
         ${LOADER_SPIN_ANIMATION("cubic-bezier(0.5, 0, 0.5, 1)")}
 
@@ -106,7 +109,8 @@ const StyledLoaderFour = styled.span<Omit<LoaderStyle, "$borderWidth">>`
         flex-grow: 1;
         display: inline-block;
         border-radius: ${RADIUSES.CIRCLE};
-        background-color: ${({ $color, theme }) => theme.AllColors($color)};
+        background-color: ${({ $color, theme }) =>
+            Mixins.AllColors($color, theme)};
 
         &:first-child {
             animation: ${Flash} ${DURATION_LOADER_FOUR} infinite alternate;

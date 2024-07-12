@@ -9,8 +9,8 @@ export const gridPreview: ComponentPreview<GridProps> = {
     name: "Grid",
     component: Grid,
     category: "layouts",
-    imports: "Grid",
-    typeImports: "GridProps",
+    import: "Grid",
+    propsImport: "GridProps",
     extends: "HTMLDivElement",
     previews: [
         {

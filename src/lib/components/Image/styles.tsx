@@ -41,12 +41,12 @@ const ImgContainer = styled.figure<{
 `
 
 const Caption = styled(Text).attrs({ as: "figcaption" })<{
-    $backgroundColor?: LibImageBackgroundOverlay
-    $textColor?: LibAllColors
+    $backgroundColor: LibImageBackgroundOverlay
+    $textColor: LibAllColors
 }>`
     background: ${({ theme, $backgroundColor }) =>
-        theme.ColorsAndOverlays($backgroundColor)};
-    color: ${({ theme, $textColor }) => theme.AllColors($textColor)};
+        Mixins.ColorsAndOverlays($backgroundColor, theme)};
+    color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
     padding: ${SPACERS.S};
     position: absolute;
     bottom: 0;

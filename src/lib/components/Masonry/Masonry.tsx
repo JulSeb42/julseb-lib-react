@@ -50,7 +50,7 @@ function fillCols(children: Array<ReactNode>, cols: Array<any>) {
     children.forEach((child, i) => cols[i % cols.length].push(child))
 }
 
-export const Ab = forwardRef<HTMLDivElement, MasonryProps>(
+export const Masonry = forwardRef<HTMLDivElement, MasonryProps>(
     (
         {
             "data-testid": testid,
@@ -97,40 +97,3 @@ export const Ab = forwardRef<HTMLDivElement, MasonryProps>(
         )
     }
 )
-
-export function Masonry({
-    "data-testid": testid,
-    as,
-    children = [],
-    col = 4,
-    gap = "l",
-    ...rest
-}: MasonryProps) {
-    const ref = useRef<HTMLDivElement>(null)
-
-    const [numCols, setNumCols] = useState(col)
-    const cols = [...Array(col)].map(() => [])
-    fillCols(children, cols)
-
-    const resizeHandler = () =>
-        setNumCols(Math.ceil(window.innerWidth / (window.innerWidth / numCols)))
-
-    useEffect(resizeHandler, [numCols])
-    useEventListener("resize", resizeHandler)
-
-    return (
-        <StyledMasonry
-            data-testid={testid}
-            as={as}
-            ref={ref}
-            $gap={gap}
-            {...rest}
-        >
-            {[...Array(numCols)].map((_, i) => (
-                <Col $gap={gap} key={uuid()}>
-                    {cols[i]}
-                </Col>
-            ))}
-        </StyledMasonry>
-    )
-}

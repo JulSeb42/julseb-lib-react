@@ -19,8 +19,8 @@ export const shadowsPreview: ComponentPreview<null> = {
     name: "Shadows",
     category: "styles",
     component: null,
-    imports: "SHADOWS",
-    typeImports: null,
+    import: "SHADOWS",
+    propsImport: null,
     extends: null,
     previews: [{ demo: <ShadowsPreview /> }],
 }

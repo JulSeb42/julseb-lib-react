@@ -19,8 +19,8 @@ export const buttonIconPreview: ComponentPreview<ButtonIconProps> = {
     name: "ButtonIcon",
     component: ButtonIcon,
     category: "components",
-    imports: ["ButtonIcon"],
-    typeImports: ["ButtonIconProps"],
+    import: ["ButtonIcon"],
+    propsImport: ["ButtonIconProps"],
     extends: ["HTMLButtonElement"],
     previews: [
         { previewTitle: "Default", props: { icon: "mail" } },

@@ -178,7 +178,11 @@ export const Toast = forwardRef<HTMLDivElement, ToastProps>(
                         data-testid={testid && `${testid}.Timer`}
                         className={className && "Timer"}
                         $duration={options?.duration || 3000}
-                        $backgroundColor={options?.timerBackgroundColor}
+                        $backgroundColor={
+                            options?.timerBackgroundColor ||
+                            toastStyle?.border?.color ||
+                            "gray-200"
+                        }
                     />
                 )}
             </StyledToast>

@@ -1,6 +1,6 @@
 /*=============================================== Mixins ===============================================*/
 
-import { css } from "styled-components"
+import { css, type DefaultTheme } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import {
     colorsLightShortMap,
@@ -19,32 +19,33 @@ import {
     FONT_SIZES,
     FONT_WEIGHTS,
 } from "./Variables"
-import type {
-    LibAllColors,
-    LibColorsShort,
-    LibColorsHover,
-    LibOverlays,
-    LibRadiusProps,
-    LibShadows,
-    LibBoxShadowProps,
-    LibSpacers,
-    LibPaddingProps,
-    LibTransitions,
-    LibRadiuses,
-    JustifyItems,
-    AlignItems,
-    JustifyContent,
-    AlignContent,
-    FlexDirection,
-    FlexWrap,
-    LibFontSizes,
-    LibFontWeights,
-    LibMarginProps,
-    LibBorderProps,
-    LibAllColorsAndOverlays,
-    LibOutlineProps,
-    LibColorsHoverAndCurrent,
-    BackgroundImageProps,
+import {
+    type LibAllColors,
+    type LibColorsShort,
+    type LibColorsHover,
+    type LibOverlays,
+    type LibRadiusProps,
+    type LibShadows,
+    type LibBoxShadowProps,
+    type LibSpacers,
+    type LibPaddingProps,
+    type LibTransitions,
+    type LibRadiuses,
+    type JustifyItems,
+    type AlignItems,
+    type JustifyContent,
+    type AlignContent,
+    type FlexDirection,
+    type FlexWrap,
+    type LibFontSizes,
+    type LibFontWeights,
+    type LibMarginProps,
+    type LibBorderProps,
+    type LibAllColorsAndOverlays,
+    type LibOutlineProps,
+    type LibColorsHoverAndCurrent,
+    type BackgroundImageProps,
+    typeValues,
 } from "./types"
 
 type IconMixin = {
@@ -66,17 +67,15 @@ export const THEME_LIGHT = {
     ColorsAndOverlays($color: LibAllColorsAndOverlays | undefined) {
         if (!$color) return null
 
-        if (
-            $color === "black-50" ||
-            $color === "black-80" ||
-            $color === "white-50" ||
-            $color === "white-80" ||
-            $color === "gradient-white" ||
-            $color === "gradient-black"
-        )
-            return Mixins.Overlay($color)
+        const overlayColors = Object.keys(
+            typeValues.overlays
+        ) as Array<LibOverlays>
 
-        return THEME_LIGHT.AllColors($color)
+        if (overlayColors.find(c => c === $color)) {
+            return Mixins.Overlay($color as LibOverlays)
+        }
+
+        return THEME_LIGHT.AllColors($color as LibAllColors)
     },
 
     ColorsHoverDefault($color: LibColorsHoverAndCurrent = "primary") {
@@ -215,17 +214,15 @@ export const THEME_DARK = {
     ColorsAndOverlays: ($color: LibAllColorsAndOverlays | undefined) => {
         if (!$color) return null
 
-        if (
-            $color === "black-50" ||
-            $color === "black-80" ||
-            $color === "white-50" ||
-            $color === "white-80" ||
-            $color === "gradient-white" ||
-            $color === "gradient-black"
-        )
-            return Mixins.Overlay($color)
+        const overlayColors = Object.keys(
+            typeValues.overlays
+        ) as Array<LibOverlays>
 
-        return THEME_DARK.AllColors($color)
+        if (overlayColors.find(c => c === $color)) {
+            return Mixins.Overlay($color as LibOverlays)
+        }
+
+        return THEME_DARK.AllColors($color as LibAllColors)
     },
 
     ColorsHoverDefault: ($color: LibColorsHoverAndCurrent = "primary") => {
@@ -352,31 +349,124 @@ export const THEME_DARK = {
     },
 }
 
-export const Mixins = {
-    Icon: ({
+class mixins {
+    // TODO: put back default theme to THEME_LIGHT in params
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    AllColors = ($color: LibAllColors, theme: DefaultTheme) =>
+        theme.AllColors($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsAndOverlays = (
+        $color: LibAllColorsAndOverlays,
+        theme: DefaultTheme
+    ) => theme.ColorsAndOverlays($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsHoverDefault = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsHoverDefault($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsHoverHover = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsHoverHover($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsHoverActive = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsHoverActive($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsGhostDefault = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsGhostDefault($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsGhostHover = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsGhostHover($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    ColorsGhostActive = (
+        $color: LibColorsHoverAndCurrent,
+        theme: DefaultTheme
+    ) => theme.ColorsGhostActive($color)
+
+    /**
+     * Use only in apps without theme switch
+     * @param $color
+     * @param theme
+     */
+    Colors50 = (
+        $color: Exclude<LibColorsShort, "black" | "white">,
+        theme: DefaultTheme
+    ) => theme.Colors50($color)
+
+    Icon = ({
         $name,
         $color = "currentColor",
         $size = 16,
         $isLibIcon,
-    }: IconMixin) => css`
-        content: "";
-        background-color: ${({ theme }) => theme.AllColors($color)};
-        -webkit-mask-image: url(${$isLibIcon ? $name : `/icons/${$name}.svg`});
-        -webkit-mask-size: cover;
-        mask-image: url(${$isLibIcon ? $name : `/icons/${$name}.svg`});
-        mask-size: cover;
-        width: ${$size}px;
-        height: ${$size}px;
-        display: inline-block;
-    `,
+    }: IconMixin) => {
+        const iconURL = $isLibIcon ? $name : `/icons/${$name}.svg`
 
-    Overlay: ($overlay: LibOverlays | undefined) => {
+        return css`
+            content: "";
+            background-color: ${({ theme }) => theme.AllColors($color)};
+            -webkit-mask-image: url(${iconURL});
+            -webkit-mask-size: cover;
+            mask-image: url(${$isLibIcon ? $name : `/icons/${$name}.svg`});
+            mask-size: cover;
+            width: ${$size}px;
+            height: ${$size}px;
+            display: inline-block;
+        `
+    }
+
+    Overlay = ($overlay: LibOverlays | undefined) => {
         if (!$overlay) return null
 
         return overlaysMap.get($overlay)
-    },
+    }
 
-    BorderRadius: ($borderRadius: LibRadiusProps | undefined) => {
+    BorderRadius = ($borderRadius: LibRadiusProps | undefined) => {
         if (!$borderRadius) return null
 
         const radiusMap = new Map<LibRadiusProps, RADIUSES>([
@@ -412,9 +502,9 @@ export const Mixins = {
             border-bottom-right-radius: ${bottomRight &&
             getRadius(bottomRight)};
         `
-    },
+    }
 
-    Transition: ($transition: LibTransitions | undefined) => {
+    Transition = ($transition: LibTransitions | undefined) => {
         if (!$transition) return null
 
         const transitionsMap = new Map<LibTransitions, TRANSITIONS>([
@@ -424,9 +514,9 @@ export const Mixins = {
         ])
 
         return transitionsMap.get($transition)
-    },
+    }
 
-    Shadow: ($shadow: LibShadows | undefined) => {
+    Shadow = ($shadow: LibShadows | undefined) => {
         if (!$shadow) return null
 
         const shadowMap = new Map<LibShadows, SHADOWS>([
@@ -439,9 +529,9 @@ export const Mixins = {
         ])
 
         return shadowMap.get($shadow)
-    },
+    }
 
-    BoxShadow: ($shadow?: LibBoxShadowProps) => {
+    BoxShadow = ($shadow?: LibBoxShadowProps) => {
         if (!$shadow) return null
 
         if (typeof $shadow === "string")
@@ -460,9 +550,9 @@ export const Mixins = {
                 box-shadow: ${Mixins.Shadow($shadow.active)};
             }
         `
-    },
+    }
 
-    FontSize: (
+    FontSize = (
         $fontSize: LibFontSizes | "inherit" | number | undefined = "body"
     ) => {
         if (!$fontSize) return null
@@ -490,9 +580,9 @@ export const Mixins = {
         ])
 
         return fontSizesMap.get($fontSize)
-    },
+    }
 
-    FontWeight: ($fontWeight: LibFontWeights | undefined = "regular") => {
+    FontWeight = ($fontWeight: LibFontWeights | undefined = "regular") => {
         if (!$fontWeight) return null
 
         const fontWeightsMap = new Map<LibFontWeights, FONT_WEIGHTS>([
@@ -502,9 +592,9 @@ export const Mixins = {
         ])
 
         return fontWeightsMap.get($fontWeight)
-    },
+    }
 
-    Spacer: ($spacer: LibSpacers | "auto" | undefined) => {
+    Spacer = ($spacer: LibSpacers | "auto" | undefined) => {
         if (!$spacer) return null
 
         if (typeof $spacer === "number") return stringifyPx($spacer)
@@ -523,18 +613,18 @@ export const Mixins = {
         ])
 
         return spacersMap.get($spacer)
-    },
+    }
 
-    HideScrollbar: css`
+    HideScrollbar = css`
         -ms-overflow-style: none;
         scrollbar-width: none;
 
         &::-webkit-scrollbar {
             display: none;
         }
-    `,
+    `
 
-    StretchTags: css`
+    StretchTags = css`
         & > div,
         & > h1,
         & > h2,
@@ -563,9 +653,9 @@ export const Mixins = {
         & > form {
             align-self: stretch;
         }
-    `,
+    `
 
-    Padding: ($padding: LibPaddingProps | undefined) => {
+    Padding = ($padding: LibPaddingProps | undefined) => {
         if (!$padding) return null
 
         if (typeof $padding === "string" || typeof $padding === "number")
@@ -583,9 +673,9 @@ export const Mixins = {
             padding-bottom: ${($padding?.bottom || $padding?.topBottom) &&
             Mixins.Spacer($padding?.bottom || $padding?.topBottom)};
         `
-    },
+    }
 
-    Margin: ($margin: LibMarginProps) => {
+    Margin = ($margin: LibMarginProps) => {
         if (!$margin) return null
 
         if ($margin === "0 auto")
@@ -608,9 +698,9 @@ export const Mixins = {
             margin-bottom: ${($margin?.bottom || $margin?.topBottom) &&
             Mixins.Spacer($margin?.bottom || $margin?.topBottom)};
         `
-    },
+    }
 
-    Grid: ({
+    Grid = ({
         $inline,
         $col,
         $gap,
@@ -633,7 +723,7 @@ export const Mixins = {
     }) => css`
         display: ${$inline ? "inline-grid" : "grid"};
         grid-template-columns: ${$col && typeof $col === "number"
-            ? `repeat(${$col}, 1fr)`
+            ? `repeat(${$col} 1fr)`
             : $col};
         gap: ${$gap && Mixins.Spacer($gap)};
         column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
@@ -642,14 +732,9 @@ export const Mixins = {
         justify-items: ${$justifyItems};
         align-items: ${$alignItems};
         align-content: ${$alignContent};
-    `,
+    `
 
-    /**
-     *
-     * @param param0
-     * @returns
-     */
-    Flexbox: ({
+    Flexbox = ({
         $inline,
         $flexDirection,
         $flexWrap,
@@ -682,9 +767,9 @@ export const Mixins = {
         gap: ${$gap && Mixins.Spacer($gap)};
         column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
         row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
-    `,
+    `
 
-    Border: ($border?: LibBorderProps) => {
+    Border = ($border?: LibBorderProps) => {
         if (!$border) return null
 
         const { style, width, color } = $border
@@ -701,9 +786,9 @@ export const Mixins = {
             border-color: ${({ theme }) =>
                 theme.AllColors(color || defaultValues.color)};
         `
-    },
+    }
 
-    Outline: ($outline?: LibOutlineProps) => {
+    Outline = ($outline?: LibOutlineProps) => {
         if (!$outline) return null
 
         const { style, width, color } = $outline
@@ -720,9 +805,9 @@ export const Mixins = {
             outline-color: ${({ theme }) =>
                 theme.AllColors(color || defaultValues.color)};
         `
-    },
+    }
 
-    BackgroundImage: (props?: BackgroundImageProps) => {
+    BackgroundImage = (props?: BackgroundImageProps) => {
         if (!props) return null
 
         const {
@@ -752,5 +837,7 @@ export const Mixins = {
                       background-clip: ${clip};
                   `)}
         `
-    },
+    }
 }
+
+export const Mixins = new mixins()

@@ -19,8 +19,8 @@ export const spacersPreview: ComponentPreview<null> = {
     name: "Spacers",
     category: "styles",
     component: null,
-    imports: "SPACERS",
-    typeImports: null,
+    import: "SPACERS",
+    propsImport: null,
     extends: null,
     previews: [{ demo: <SpacersPreview /> }],
 }

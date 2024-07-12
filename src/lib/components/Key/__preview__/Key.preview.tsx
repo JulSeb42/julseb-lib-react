@@ -14,8 +14,8 @@ export const keyPreview: ComponentPreview<KeyProps> = {
     name: "Key",
     component: Key,
     category: "components",
-    imports: "Key",
-    typeImports: ["KeyProps"],
+    import: "Key",
+    propsImport: ["KeyProps"],
     extends: "HTMLSpanElement",
     previews: [
         ...sizes.map(size => ({

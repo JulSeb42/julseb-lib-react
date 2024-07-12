@@ -16,8 +16,6 @@ import type { IconProps } from "./types"
  * @prop baseUrl?: string => sets default folder where SVG icon is located. This can be changed by adding LIB_ICON_BASE_URL in .env file
  */
 
-const BASE = import.meta.env.LIB_ICON_BASE_URL || "icons"
-
 export const Icon = forwardRef<SVGElement, IconProps>(
     (
         {
@@ -25,7 +23,7 @@ export const Icon = forwardRef<SVGElement, IconProps>(
             src,
             size = 32,
             color = "currentColor",
-            baseURL = BASE,
+            baseURL = "icons",
             ...rest
         },
         ref

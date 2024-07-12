@@ -12,6 +12,7 @@ import {
     setDefaultTheme,
     THEME_LIGHT,
     THEME_DARK,
+    Mixins,
 } from "../../"
 import type { LibInputBackground, LibValidationStatus } from "../../types"
 
@@ -44,8 +45,9 @@ const StyledInputSlider = styled.input<{
         -moz-appearance: initial;
         appearance: none;
         background-color: ${({ theme, $validation }) =>
-            theme.ColorsHoverDefault(
-                $validation === "not-passed" ? "danger" : "primary"
+            Mixins.ColorsHoverDefault(
+                $validation === "not-passed" ? "danger" : "primary",
+                theme
             )};
         width: ${DOT_SIZE}px;
         height: ${DOT_SIZE}px;
@@ -59,15 +61,17 @@ const StyledInputSlider = styled.input<{
         @media ${BREAKPOINTS.HOVER} {
             &:not(:disabled):hover {
                 background-color: ${({ theme, $validation }) =>
-                    theme.ColorsHoverHover(
-                        $validation === "not-passed" ? "danger" : "primary"
+                    Mixins.ColorsHoverHover(
+                        $validation === "not-passed" ? "danger" : "primary",
+                        theme
                     )};
             }
 
             &:not(:disabled):active {
                 background-color: ${({ theme, $validation }) =>
-                    theme.ColorsHoverActive(
-                        $validation === "not-passed" ? "danger" : "primary"
+                    Mixins.ColorsHoverActive(
+                        $validation === "not-passed" ? "danger" : "primary",
+                        theme
                     )};
             }
         }
@@ -76,8 +80,9 @@ const StyledInputSlider = styled.input<{
     &::-moz-range-thumb {
         border: none;
         background-color: ${({ theme, $validation }) =>
-            theme.ColorsHoverDefault(
-                $validation === "not-passed" ? "danger" : "primary"
+            Mixins.ColorsHoverDefault(
+                $validation === "not-passed" ? "danger" : "primary",
+                theme
             )};
     }
 
@@ -89,8 +94,9 @@ const StyledInputSlider = styled.input<{
         top: 0;
         left: 0;
         background-color: ${({ theme, $validation }) =>
-            theme.ColorsHoverDefault(
-                $validation === "not-passed" ? "danger" : "primary"
+            Mixins.ColorsHoverDefault(
+                $validation === "not-passed" ? "danger" : "primary",
+                theme
             )};
         height: 100%;
         width: ${({ $value, $max }) => getPercentage($value, $max)}%;

@@ -22,8 +22,8 @@ const StyledCard = styled(Flexbox)<{
     $width?: string | number
     $height?: string | number
     $shadow?: LibBoxShadowProps
-    $backgroundColor?: LibAllColors
-    $textColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $textColor: LibAllColors
     $backgroundImg?: BackgroundImageProps
     $textAlign?: TextAlign
 }>`
@@ -34,8 +34,8 @@ const StyledCard = styled(Flexbox)<{
     width: ${({ $width }) => $width && stringifyPx($width)};
     height: ${({ $height }) => $height && stringifyPx($height)};
     background-color: ${({ theme, $backgroundColor }) =>
-        theme.AllColors($backgroundColor)};
-    color: ${({ theme, $textColor }) => theme.AllColors($textColor)};
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
     text-align: ${({ $textAlign }) => $textAlign};
     ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)};
     ${({ $border }) => Mixins.Border($border)};

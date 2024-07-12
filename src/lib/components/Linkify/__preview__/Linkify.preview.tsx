@@ -8,8 +8,8 @@ export const linkifyPreview: ComponentPreview<LinkifyProps> = {
     name: "Linkify",
     component: Linkify,
     category: "components",
-    imports: "Linkify",
-    typeImports: "LinkifyProps",
+    import: "Linkify",
+    propsImport: "LinkifyProps",
     extends: "TextProps",
     previews: [
         {

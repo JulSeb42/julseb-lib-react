@@ -31,20 +31,25 @@ export const accordionPreview: ComponentPreview<AccordionProps> = {
     name: "Accordion",
     component: Accordion,
     category: "components",
-    imports: ["Accordion", "AccordionItem"],
-    typeImports: ["AccordionProps", "LibAccordionItem"],
+    import: "Accordion",
+    additionalImports: [],
+    optionalImports: ["AccordionItem"],
+    propsImport: "AccordionProps",
+    additionalTypeImports: ["LibAccordionItem"],
     extends: "HTMLDivElement",
-    props: [
+    previews: [
         {
-            items,
-            variant: "basic",
-            "data-testid": "testid",
-            className: "className",
+            previewTitle: "Basic",
+            props: {
+                items,
+                variant: "basic",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
-            items,
-            variant: "rounded",
-            icon: "chevron",
+            previewTitle: "Rounded",
+            props: { items, variant: "rounded", icon: "chevron" },
         },
     ],
 }

@@ -79,6 +79,9 @@ export enum COLORS_LIGHT {
     BACKGROUND_GHOST_DEFAULT = "var(--color-light-background-ghost-default)",
     BACKGROUND_GHOST_HOVER = "var(--color-light-background-ghost-hover)",
     BACKGROUND_GHOST_ACTIVE = "var(--color-light-background-ghost-active)",
+
+    TRANSPARENT = "transparent",
+    CURRENT_COLOR = "currentColor",
 }
 
 export enum COLORS_DARK {
@@ -158,6 +161,9 @@ export enum COLORS_DARK {
     BACKGROUND_GHOST_DEFAULT = "var(--color-dark-background-ghost-default)",
     BACKGROUND_GHOST_HOVER = "var(--color-dark-background-ghost-hover)",
     BACKGROUND_GHOST_ACTIVE = "var(--color-dark-background-ghost-active)",
+
+    TRANSPARENT = "transparent",
+    CURRENT_COLOR = "currentColor",
 }
 
 /*====================== Overlays ======================*/

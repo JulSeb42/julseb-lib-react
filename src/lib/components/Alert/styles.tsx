@@ -13,18 +13,18 @@ import type {
 
 const StyledAlert = styled.div<{
     $maxWidth?: number
-    $textColor?: LibAllColors
+    $textColor: LibAllColors
     $padding?: LibPaddingProps
     $borderRadius?: LibRadiusProps
     $gap?: LibSpacers
-    $backgroundColor?: LibAllColors
+    $backgroundColor: LibAllColors
     $border?: LibBorderProps
 }>`
     width: 100%;
     max-width: ${({ $maxWidth }) => $maxWidth && stringifyPx($maxWidth)};
-    color: ${({ $textColor, theme }) => theme.AllColors($textColor)};
+    color: ${({ $textColor, theme }) => Mixins.AllColors($textColor, theme)};
     background-color: ${({ $backgroundColor, theme }) =>
-        theme.AllColors($backgroundColor)};
+        Mixins.AllColors($backgroundColor, theme)};
     ${({ $padding }) => Mixins.Padding($padding)};
     ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)};
     ${({ $border }) => Mixins.Border($border)};

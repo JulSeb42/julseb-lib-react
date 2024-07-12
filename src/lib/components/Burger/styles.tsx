@@ -2,12 +2,18 @@
 
 import styled, { css } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
-import { BREAKPOINTS, RADIUSES, TRANSITIONS, setDefaultTheme } from "../../"
+import {
+    BREAKPOINTS,
+    RADIUSES,
+    TRANSITIONS,
+    setDefaultTheme,
+    Mixins,
+} from "../../"
 import type { LibColorsHoverAndCurrent } from "../../types"
 
 const StyledBurger = styled.button<{
     $isOpen: boolean
-    $color?: LibColorsHoverAndCurrent
+    $color: LibColorsHoverAndCurrent
     $width: number
     $height: number
     $noHover?: boolean
@@ -18,20 +24,18 @@ const StyledBurger = styled.button<{
     position: relative;
     width: ${({ $width }) => stringifyPx($width)};
     height: ${({ $height }) => stringifyPx($height)};
-    color: ${({ theme, $color }) => theme.ColorsHoverDefault($color)};
+    color: ${({ theme, $color }) => Mixins.ColorsHoverDefault($color, theme)};
 
-    ${({ $noHover, $color }) =>
+    ${({ $noHover, $color, theme }) =>
         !$noHover
             ? css`
                   @media ${BREAKPOINTS.HOVER} {
                       &:hover {
-                          color: ${({ theme }) =>
-                              theme.ColorsHoverHover($color)};
+                          color: ${Mixins.ColorsHoverHover($color, theme)};
                       }
 
                       &:active {
-                          color: ${({ theme }) =>
-                              theme.ColorsHoverActive($color)};
+                          color: ${Mixins.ColorsHoverActive($color, theme)};
                       }
                   }
               `

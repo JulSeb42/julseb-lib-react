@@ -19,8 +19,8 @@ export const radiusesPreview: ComponentPreview<null> = {
     name: "Radiuses",
     category: "styles",
     component: null,
-    imports: "RADIUSES",
-    typeImports: null,
+    import: "RADIUSES",
+    propsImport: null,
     extends: null,
     previews: [{ demo: <RadiusesPreview /> }],
 }

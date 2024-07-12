@@ -15,7 +15,7 @@ const BUTTON_SIZE = 32
 const StyledPaginationButton = styled.button<{
     $isActive?: boolean
     $readOnly?: boolean
-    $accentColor?: LibColorsHover
+    $accentColor: LibColorsHover
 }>`
     width: ${BUTTON_SIZE}px;
     height: ${BUTTON_SIZE}px;
@@ -23,9 +23,13 @@ const StyledPaginationButton = styled.button<{
     border-radius: ${RADIUSES.CIRCLE};
     border: none;
     background-color: ${({ $isActive, theme, $accentColor }) =>
-        $isActive ? theme.ColorsHoverDefault($accentColor) : "transparent"};
+        $isActive
+            ? Mixins.ColorsHoverDefault($accentColor, theme)
+            : "transparent"};
     color: ${({ $isActive, theme, $accentColor }) =>
-        $isActive ? theme.BACKGROUND : theme.ColorsHoverDefault($accentColor)};
+        $isActive
+            ? theme.BACKGROUND
+            : Mixins.ColorsHoverDefault($accentColor, theme)};
     transition: ${TRANSITIONS.SHORT};
     ${Mixins.Flexbox({
         $alignItems: "center",
@@ -42,15 +46,17 @@ const StyledPaginationButton = styled.button<{
             ? css`
                   @media ${BREAKPOINTS.HOVER} {
                       &:not(:disabled):hover {
-                          background-color: ${theme.ColorsHoverHover(
-                              $accentColor
+                          background-color: ${Mixins.ColorsHoverHover(
+                              $accentColor,
+                              theme
                           )};
                           color: ${({ theme }) => theme.BACKGROUND};
                       }
 
                       &:not(:disabled):active {
-                          background-color: ${theme.ColorsHoverActive(
-                              $accentColor
+                          background-color: ${Mixins.ColorsHoverActive(
+                              $accentColor,
+                              theme
                           )};
                       }
                   }

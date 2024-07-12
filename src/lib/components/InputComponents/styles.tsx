@@ -180,8 +180,9 @@ const StyledInputButton = styled.button<{
     background-color: transparent;
     padding: 0;
     color: ${({ theme, $validationStatus }) =>
-        theme.ColorsHoverDefault(
-            $validationStatus === "not-passed" ? "danger" : "primary"
+        Mixins.ColorsHoverDefault(
+            $validationStatus === "not-passed" ? "danger" : "primary",
+            theme
         )};
     transition: ${TRANSITIONS.SHORT};
     cursor: pointer;
@@ -195,16 +196,18 @@ const StyledInputButton = styled.button<{
         &:not(:disabled):hover {
             color: ${({ theme, $validationStatus, $isSpan }) =>
                 !$isSpan &&
-                theme.ColorsHoverHover(
-                    $validationStatus === "not-passed" ? "danger" : "primary"
+                Mixins.ColorsHoverHover(
+                    $validationStatus === "not-passed" ? "danger" : "primary",
+                    theme
                 )};
         }
 
         &:not(:disabled):active {
             color: ${({ theme, $validationStatus, $isSpan }) =>
                 !$isSpan &&
-                theme.ColorsHoverActive(
-                    $validationStatus === "not-passed" ? "danger" : "primary"
+                Mixins.ColorsHoverActive(
+                    $validationStatus === "not-passed" ? "danger" : "primary",
+                    theme
                 )};
         }
     }
@@ -386,15 +389,17 @@ const StyledListInputItem = styled.span<{
 
             @media ${BREAKPOINTS.HOVER} {
                 &:hover {
-                    background-color: ${theme.ColorsHoverHover(
-                        $validation === "not-passed" ? "danger" : "primary"
+                    background-color: ${Mixins.ColorsHoverHover(
+                        $validation === "not-passed" ? "danger" : "primary",
+                        theme
                     )};
                     color: ${theme.BACKGROUND};
                 }
 
                 &:active {
-                    background-color: ${theme.ColorsHoverActive(
-                        $validation === "not-passed" ? "danger" : "primary"
+                    background-color: ${Mixins.ColorsHoverActive(
+                        $validation === "not-passed" ? "danger" : "primary",
+                        theme
                     )};
                 }
             }

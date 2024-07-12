@@ -44,7 +44,7 @@ const CloseFromRight = keyframes`
 
 const StyledToast = styled.div<{
     $backgroundColor: LibAllColors
-    $textColor?: LibAllColors
+    $textColor: LibAllColors
     $border: LibBorderProps
     $shadow?: LibShadows
     $isOpen: boolean
@@ -55,8 +55,8 @@ const StyledToast = styled.div<{
     padding: ${SPACERS.S};
     border-radius: ${RADIUSES.M};
     background-color: ${({ theme, $backgroundColor }) =>
-        theme.AllColors($backgroundColor)};
-    color: ${({ theme, $textColor }) => theme.AllColors($textColor)};
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
     transition: ${TRANSITIONS.SHORT};
     overflow: hidden;
     ${({ $border }) => Mixins.Border($border)};
@@ -115,7 +115,7 @@ const CloseButton = styled.button`
     padding: 0;
     border: none;
     background-color: transparent;
-    color: ${({ theme }) => theme.ColorsHoverDefault("gray")};
+    color: ${({ theme }) => Mixins.ColorsHoverDefault("gray", theme)};
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
@@ -124,11 +124,11 @@ const CloseButton = styled.button`
 
     @media ${BREAKPOINTS.HOVER} {
         &:hover {
-            color: ${({ theme }) => theme.ColorsHoverHover("gray")};
+            color: ${({ theme }) => Mixins.ColorsHoverHover("gray", theme)};
         }
 
         &:active {
-            color: ${({ theme }) => theme.ColorsHoverActive("gray")};
+            color: ${({ theme }) => Mixins.ColorsHoverActive("gray", theme)};
         }
     }
 `
@@ -140,7 +140,7 @@ const Progress = keyframes`
 `
 
 const Timer = styled.span<{
-    $backgroundColor?: LibAllColors
+    $backgroundColor: LibAllColors
     $duration: number
 }>`
     position: absolute;
@@ -149,7 +149,7 @@ const Timer = styled.span<{
     width: 100%;
     height: 4px;
     background-color: ${({ theme, $backgroundColor }) =>
-        theme.AllColors($backgroundColor)};
+        Mixins.AllColors($backgroundColor, theme)};
     animation: ${Progress} ${({ $duration }) => $duration}ms linear forwards;
 `
 

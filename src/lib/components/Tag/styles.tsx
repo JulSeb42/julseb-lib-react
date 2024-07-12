@@ -12,8 +12,8 @@ import type {
 } from "../../types"
 
 const StyledTag = styled.span<{
-    $backgroundColor?: LibAllColors
-    $textColor?: LibAllColors
+    $backgroundColor: LibAllColors
+    $textColor: LibAllColors
     $border?: LibBorderProps
     $padding?: LibPaddingProps
     $borderRadius?: LibRadiusProps
@@ -21,8 +21,8 @@ const StyledTag = styled.span<{
     $fontSize?: LibFontSizes
 }>`
     background-color: ${({ theme, $backgroundColor }) =>
-        theme.AllColors($backgroundColor)};
-    color: ${({ theme, $textColor }) => theme.AllColors($textColor)};
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
     font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
     ${({ $gap }) =>
         Mixins.Flexbox({

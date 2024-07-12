@@ -51,20 +51,25 @@ const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
     ${({ $variant, theme }) =>
         $variant === "rounded"
             ? css`
-                  background-color: ${theme.ColorsHoverDefault("primary")};
+                  background-color: ${Mixins.ColorsHoverDefault(
+                      "primary",
+                      theme
+                  )};
                   color: ${theme.BACKGROUND};
                   padding: ${SPACERS.S};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:hover {
-                          background-color: ${theme.ColorsHoverHover(
-                              "primary"
+                          background-color: ${Mixins.ColorsHoverHover(
+                              "primary",
+                              theme
                           )};
                       }
 
                       &:active {
-                          background-color: ${theme.ColorsHoverActive(
-                              "primary"
+                          background-color: ${Mixins.ColorsHoverActive(
+                              "primary",
+                              theme
                           )};
                       }
                   }
@@ -74,15 +79,15 @@ const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
                   background-color: transparent;
                   padding: 0;
                   border-bottom: 1px solid ${theme.GRAY_200};
-                  color: ${theme.ColorsHoverDefault("primary")};
+                  color: ${Mixins.ColorsHoverDefault("primary", theme)};
 
                   @media ${BREAKPOINTS.HOVER} {
                       &:hover {
-                          color: ${theme.ColorsHoverHover("primary")};
+                          color: ${Mixins.ColorsHoverHover("primary", theme)};
                       }
 
                       &:active {
-                          color: ${theme.ColorsHoverActive("primary")};
+                          color: ${Mixins.ColorsHoverActive("primary", theme)};
                       }
                   }
               `}

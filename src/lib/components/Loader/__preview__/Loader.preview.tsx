@@ -9,8 +9,8 @@ export const loaderPreview: ComponentPreview<LoaderProps> = {
     name: "Loader",
     component: Loader,
     category: "components",
-    imports: ["Loader"],
-    typeImports: ["LoaderProps"],
+    import: ["Loader"],
+    propsImport: ["LoaderProps"],
     extends: ["HTMLSpanElement"],
     previews: [
         ...Object.values(typeValues.loaderVariants).map(v => ({

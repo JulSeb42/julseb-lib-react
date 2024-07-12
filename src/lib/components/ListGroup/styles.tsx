@@ -46,16 +46,22 @@ const StyledListItem = styled.div<{ $isHoverable?: boolean }>`
         $isHoverable &&
         css`
             transition: ${TRANSITIONS.SHORT};
-            color: ${theme.ColorsHoverDefault("primary")};
+            color: ${Mixins.ColorsHoverDefault("primary", theme)};
 
             @media ${BREAKPOINTS.HOVER} {
                 &:not(:disabled):hover {
-                    background-color: ${theme.ColorsHoverHover("primary")};
+                    background-color: ${Mixins.ColorsHoverHover(
+                        "primary",
+                        theme
+                    )};
                     color: ${theme.BACKGROUND};
                 }
 
                 &:not(:disabled):active {
-                    background-color: ${theme.ColorsHoverActive("primary")};
+                    background-color: ${Mixins.ColorsHoverActive(
+                        "primary",
+                        theme
+                    )};
                 }
             }
 

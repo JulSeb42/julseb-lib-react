@@ -126,18 +126,20 @@ const StyledInputCheck = styled.label<{
                   css`
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
-                              border-color: ${theme.ColorsHoverHover(
+                              border-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  theme
                               )};
                           }
 
                           &:active {
-                              border-color: ${theme.ColorsHoverActive(
+                              border-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  theme
                               )};
                           }
                       }
@@ -159,18 +161,20 @@ const StyledInputCheck = styled.label<{
                   css`
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
-                              background-color: ${theme.ColorsHoverHover(
+                              background-color: ${Mixins.ColorsHoverHover(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  theme
                               )};
                           }
 
                           &:active {
-                              background-color: ${theme.ColorsHoverActive(
+                              background-color: ${Mixins.ColorsHoverActive(
                                   $validation === "not-passed"
                                       ? "danger"
-                                      : "primary"
+                                      : "primary",
+                                  theme
                               )};
                           }
                       }
@@ -238,18 +242,20 @@ const StyledInputCheck = styled.label<{
                       css`
                           @media ${BREAKPOINTS.HOVER} {
                               &:hover {
-                                  background-color: ${theme.ColorsHoverHover(
+                                  background-color: ${Mixins.ColorsHoverHover(
                                       $validation === "not-passed"
                                           ? "danger"
-                                          : "primary"
+                                          : "primary",
+                                      theme
                                   )};
                               }
 
                               &:active {
-                                  background-color: ${theme.ColorsHoverActive(
+                                  background-color: ${Mixins.ColorsHoverActive(
                                       $validation === "not-passed"
                                           ? "danger"
-                                          : "primary"
+                                          : "primary",
+                                      theme
                                   )};
                               }
                           }
