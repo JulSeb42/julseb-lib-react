@@ -44,14 +44,6 @@ const alertStyles: {
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop maxWidth?: number
- * @prop textColor?: LibAllColors
- * @prop padding?: LibPaddingProps
- * @prop borderRadius?: LibRadiusProps
- * @prop gap?: LibSpacers
- * @prop alertColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "gray"
- * @prop backgroundColor?: LibAllColors => only if `alertColor` is not defined
- * @prop border?: LibBorderProps
  */
 
 export const Alert = forwardRef<HTMLDivElement, ILibAlert>(

@@ -5,8 +5,8 @@ import { useState, useEffect } from "react"
 /**
  * @description Hook to delay a function
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useDebounce
- * @prop value: <T> => to define
- * @prop delay: number
+ * @argument value: <T> => type to define
+ * @argument delay?: number
  */
 
 export function useDebounce<T>(value: T, delay: number = 1000) {

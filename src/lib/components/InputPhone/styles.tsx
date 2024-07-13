@@ -19,11 +19,11 @@ import type {
 } from "../../types"
 import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-interface StyledInputPhoneProps extends ILibInputBaseMixin {
+interface ILibStyledInputPhone extends ILibInputBaseMixin {
     $leftContainerWidth: number
 }
 
-const StyledInputPhone = styled.input<StyledInputPhoneProps>`
+const StyledInputPhone = styled.input<ILibStyledInputPhone>`
     ${InputBaseMixin}
     padding-left: ${({ $leftContainerWidth }) => $leftContainerWidth}px;
 `

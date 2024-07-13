@@ -22,8 +22,6 @@ const CLOSE_ICON_SIZE = 24
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop title: string
- * @prop options?: { id?: string; body?: string | ReactChildren; duration?: number; icons?: { left?: LibIcon; close?: LibIcon }; iconSizes?: { left?: number; close?: number }; iconLeftColor?: LibAllColors; labelClose?: string; withTimer?: boolean; timerBackgroundColor?: LibAllColors }
  */
 
 export const Toast = forwardRef<HTMLDivElement, ILibToast>(

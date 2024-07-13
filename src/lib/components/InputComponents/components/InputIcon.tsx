@@ -6,6 +6,7 @@ import type { ILibInputIconContainer } from "../types"
 
 /**
  * @description Returns a icon located on the left of an input
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop icon: string | JSX.Element | undefined

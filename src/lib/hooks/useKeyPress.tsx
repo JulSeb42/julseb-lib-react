@@ -5,13 +5,13 @@ import { useEffect } from "react"
 /**
  * @description Hook to trigger functions on key press
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useKeyPress
- * @prop callback: () => void
- * @prop keyCodes: string | Array<string>
+ * @argument keyCodes: string | Array<string>
+ * @argument callback: () => void
  */
 
 export function useKeyPress(
-    callback: () => void,
-    keyCodes: string | Array<string>
+    keyCodes: string | Array<string>,
+    callback: () => void
 ): void {
     useEffect(() => {
         const singleHandler = ({ code }: KeyboardEvent) => {

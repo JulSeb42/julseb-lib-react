@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import {  } from "ts-utils-julseb"
 import { {{ pascalCase other }} } from "../../"
 import { Styled{{ pascalCase name }} } from "./styles"
-import type { {{ pascalCase name }}Props } from "./types"
+import type { ILib{{ pascalCase name }} } from "./types"
 
 /** 
  * @description Returns a {{ pascalCase name }} component
@@ -14,7 +14,7 @@ import type { {{ pascalCase name }}Props } from "./types"
 {{#if as}} * @prop as?: ElementType{{/if}}
  */
 
-export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, {{ pascalCase name }}Props>(
+export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, ILib{{ pascalCase name }}>(
     (
         { "data-testid": testid,{{#if as}} as,{{/if}}{{#if children}} children,{{/if}} ...rest },
         ref

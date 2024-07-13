@@ -38,23 +38,6 @@ import type { ILibAutocomplete } from "./types"
  * @link https://documentation-components-react.vercel.app/components/autocomplete
  * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop value: string
- * @prop setValue: Dispatch<SetStateAction<string>>
- * @prop listResults: Array<string>
- * @prop emptyText?: string
- * @prop listDirection?: ListInputDirection
- * @prop fuzzyOptions?: Fuse.IFuseOptions<string> | undefined
- * @prop icons?: { iconLeft?: string | JSX.Element; clear?: string | JSX.Element }
- * @prop iconSizes?: { iconLeft?: number; clear?: number }
- * @prop focusKeys?: Array<string>
- * @prop showKeys?: boolean => only if `focusKeys` is defined
- * @prop label?: string | JSX.Element
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
- * @prop inputBackground?: LibInputBackground
- * @prop inputVariant?: LibInputVariant
- * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
  */
 
 const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
@@ -99,8 +82,8 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
         const inputRef = useRef<HTMLDivElement>(null)
         const keys = focusKeys || [""]
         useKeyPress(
-            useCallback(() => inputRef?.current?.focus(), []),
-            keys
+            keys,
+            useCallback(() => inputRef?.current?.focus(), [])
         )
 
         const fuzzyResults = useMemo(() => {

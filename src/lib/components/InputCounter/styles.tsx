@@ -10,7 +10,7 @@ import {
 } from "../../"
 import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-interface InputProps extends ILibInputBaseMixin {
+interface ILibInputStyles extends ILibInputBaseMixin {
     $length: number
 }
 
@@ -24,7 +24,7 @@ const InputCounterWrapper = styled.div<{
         })}
 `
 
-const Input = styled.input<InputProps>`
+const Input = styled.input<ILibInputStyles>`
     ${InputBaseMixin}
     width: ${({ $length }) =>
         $length > 3 ? `calc(48px + ${$length} * ${SPACERS.XS})` : "48px"};

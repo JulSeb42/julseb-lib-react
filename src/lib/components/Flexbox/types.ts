@@ -2,23 +2,23 @@
 
 import type {
     LibComponentBase,
-    AlignContent,
-    AlignItems,
-    FlexDirection,
-    FlexWrap,
-    JustifyContent,
-    JustifyItems,
+    CssAlignContent,
+    CssAlignItems,
+    CssFlexDirection,
+    CssFlexWrap,
+    CssJustifyContent,
+    CssJustifyItems,
     LibSpacers,
 } from "../../types"
 
 export interface ILibFlexbox extends LibComponentBase<HTMLDivElement> {
     inline?: boolean
-    flexDirection?: FlexDirection
-    flexWrap?: FlexWrap
-    justifyContent?: JustifyContent
-    alignItems?: AlignItems
-    justifyItems?: JustifyItems
-    alignContent?: AlignContent
+    flexDirection?: CssFlexDirection
+    flexWrap?: CssFlexWrap
+    justifyContent?: CssJustifyContent
+    alignItems?: CssAlignItems
+    justifyItems?: CssJustifyItems
+    alignContent?: CssAlignContent
     gap?: LibSpacers
     columnGap?: LibSpacers
     rowGap?: LibSpacers

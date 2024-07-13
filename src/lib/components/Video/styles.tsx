@@ -3,12 +3,12 @@
 import styled from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme } from "../../"
-import type { ObjectFit } from "../../types"
+import type { CssObjectFit } from "../../types"
 
 const StyledVideo = styled.video<{
     $width: string | number
     $height: string | number
-    $fit?: ObjectFit
+    $fit?: CssObjectFit
     $aspectRatio?: string
 }>`
     display: block;

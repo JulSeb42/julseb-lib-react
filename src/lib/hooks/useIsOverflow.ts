@@ -10,8 +10,8 @@ import {
 /**
  * @description Hook to detect if an element is overflowing
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useIsOverflow
- * @prop ref: RefObject<HTMLElement>,
- * @prop options?: { callback: RefCallback<boolean>; check?: "width" | "height" }
+ * @argument ref: RefObject<HTMLElement>,
+ * @argument options?: { callback: RefCallback<boolean>; check?: "width" | "height" }
  */
 
 export const useIsOverflow = (

@@ -15,15 +15,6 @@ import type { ILibRating } from "./types"
  * @link https://documentation-components-react.vercel.app/components/rating
  * @extends HTMLDivElement
  * @prop data-testid?: string
- * @prop rating: number
- * @prop setRating: Dispatch<SetStateAction<number>>
- * @prop readOnly?: boolean => only if `setRating` is not defined
- * @prop icons?: { default?: string | JSX.Element; checked?: string | JSX.Element }
- * @prop iconSizes?: { default?: number; checked?: number }
- * @prop label?: string | JSX.Element
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
  */
 
 export const Rating = forwardRef<HTMLDivElement, ILibRating>(

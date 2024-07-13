@@ -12,11 +12,6 @@ import type { ILibImage } from "./types"
  * @extends HTMLImageElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop borderRadius?: LibRadiusProps
- * @prop fit?: ObjectFit
- * @prop aspectRatio?: string
- * @prop fallback?: JSX.Element
- * @prop caption?: string | { text: string; textColor?: LibAllColors; background?: ImageBackgroundOverlay; as?: ElementType }
  */
 
 export const Image = forwardRef<HTMLImageElement, ILibImage>(

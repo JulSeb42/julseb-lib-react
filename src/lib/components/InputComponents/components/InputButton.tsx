@@ -6,6 +6,7 @@ import type { ILibInputButton } from "../types"
 
 /**
  * @description Returns a button used on the right of an input
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop aria-label: string | undefined
  * @prop onClick?: () => void

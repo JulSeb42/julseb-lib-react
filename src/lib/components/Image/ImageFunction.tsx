@@ -1,7 +1,7 @@
 /*=============================================== ImageFunction ===============================================*/
 
 import { forwardRef, lazy, Suspense, type ImgHTMLAttributes } from "react"
-import type { LibComponentBase, ILibRadius, ObjectFit } from "../../types"
+import type { LibComponentBase, ILibRadius, CssObjectFit } from "../../types"
 
 const StyledImage = lazy(() => import("./styles"))
 
@@ -12,7 +12,7 @@ interface ILibImageFn
     hasCaption?: boolean
     aspectRatio?: string
     borderRadius?: ILibRadius
-    fit?: ObjectFit
+    fit?: CssObjectFit
     width: string | number
     height: string | number
 }

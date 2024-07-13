@@ -5,8 +5,8 @@ import { useState, type ChangeEvent } from "react"
 /**
  * @description Hook to use in forms
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useForm
- * @prop initialState = {} as T => to define
- * @prop onSubmit?: (formData: T) => void
+ * @argument initialState = {} as T => type to define
+ * @argument onSubmit?: (formData: T) => void
  */
 
 export function useForm<T>(

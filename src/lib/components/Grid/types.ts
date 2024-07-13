@@ -1,10 +1,10 @@
 /*=============================================== Grid types ===============================================*/
 
 import type {
-    AlignContent,
-    AlignItems,
-    JustifyContent,
-    JustifyItems,
+    CssAlignContent,
+    CssAlignItems,
+    CssJustifyContent,
+    CssJustifyItems,
     LibComponentBase,
     LibSpacers,
 } from "../../types"
@@ -15,8 +15,8 @@ export interface ILibGrid extends LibComponentBase<HTMLDivElement> {
     gap?: LibSpacers
     columnGap?: LibSpacers
     rowGap?: LibSpacers
-    justifyItems?: JustifyItems
-    alignItems?: AlignItems
-    justifyContent?: JustifyContent
-    alignContent?: AlignContent
+    justifyItems?: CssJustifyItems
+    alignItems?: CssAlignItems
+    justifyContent?: CssJustifyContent
+    alignContent?: CssAlignContent
 }

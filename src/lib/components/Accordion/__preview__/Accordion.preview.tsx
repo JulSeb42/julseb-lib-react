@@ -34,7 +34,7 @@ export const accordionPreview: ComponentPreview<ILibAccordion> = {
     import: "Accordion",
     additionalImports: null,
     optionalImports: ["AccordionItem"],
-    propsImport: "AccordionProps",
+    propsImport: "ILibAccordion",
     additionalTypeImports: ["LibAccordionItem"],
     extends: ["HTMLDivElement"],
     previews: [

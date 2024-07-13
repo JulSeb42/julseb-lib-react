@@ -8,8 +8,7 @@ import type { ILibHighlight } from "./types"
 /**
  * @description Highlight selected text
  * @link https://documentation-components-react.vercel.app/components/highlight
- * @extends TextProps
- * @prop highlightedText: string
+ * @extends ILibText
  */
 
 export const Highlight = forwardRef<

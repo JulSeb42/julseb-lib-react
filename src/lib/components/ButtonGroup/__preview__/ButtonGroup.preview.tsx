@@ -40,7 +40,7 @@ export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
     import: "ButtonGroup",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "ButtonGroupProps",
+    propsImport: "ILibButtonGroup",
     additionalTypeImports: ["LibButtonGroupItem"],
     extends: ["HTMLDivElement"],
     previews: [

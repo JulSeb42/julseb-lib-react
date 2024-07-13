@@ -7,10 +7,10 @@ import type {
     ILibBorder,
     ILibRadius,
     ILibPadding,
-    Cursor,
+    CssCursor,
     ILibBoxShadow,
     LibAllColors,
-    TextAlign,
+    CssTextAlign,
 } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 
@@ -20,12 +20,12 @@ export type ILibCard = LibComponentBase<HTMLDivElement> &
         border?: ILibBorder
         borderRadius?: ILibRadius
         padding?: ILibPadding
-        cursor?: Cursor
+        cursor?: CssCursor
         width?: string | number
         height?: string | number
         shadow?: ILibBoxShadow
         backgroundColor?: LibAllColors
         textColor?: LibAllColors
         backgroundImg?: ILibBackgroundImage
-        textAlign?: TextAlign
+        textAlign?: CssTextAlign
     }

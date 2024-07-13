@@ -13,7 +13,7 @@ export const mainPreview: ComponentPreview<ILibMain> = {
     import: "Main",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "MainProps",
+    propsImport: "ILibMain",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

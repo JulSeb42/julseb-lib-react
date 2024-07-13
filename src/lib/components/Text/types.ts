@@ -4,7 +4,7 @@ import type {
     LibAllColors,
     LibColorsHover,
     LibComponentBase,
-    TextAlign,
+    CssTextAlign,
     LibTextDisplayTag,
     LibTextTag,
 } from "../../types"
@@ -12,7 +12,7 @@ import type {
 interface ILibTextBase extends LibComponentBase<HTMLElement> {
     color?: LibAllColors
     linkColor?: LibColorsHover
-    textAlign?: TextAlign
+    textAlign?: CssTextAlign
 }
 
 interface TextDisplay extends ILibTextBase {

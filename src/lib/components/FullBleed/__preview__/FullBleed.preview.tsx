@@ -13,7 +13,7 @@ export const fullBleedPreview: ComponentPreview<ILibFullBleed> = {
     import: "FullBleed",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "FullBleedProps",
+    propsImport: "ILibFullBleed",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

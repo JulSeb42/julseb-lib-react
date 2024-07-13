@@ -14,7 +14,7 @@ import type {
 import { StyledStep, NumberContainer } from "./styles"
 import { Link } from "react-router-dom"
 
-type StepProps = LibComponentBase<HTMLSpanElement> &
+type ILibStep = LibComponentBase<HTMLSpanElement> &
     LibButtonLinkBlank & {
         direction?: LibStepperDirection
         accentColor?: LibColorsHover
@@ -31,20 +31,9 @@ type StepProps = LibComponentBase<HTMLSpanElement> &
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop direction?: "column" | "row"
- * @prop accentColor?: LibColorsHover
- * @prop isActive?: boolean
- * @prop isDone?: boolean
- * @prop iconActive?: string | JSX.Element
- * @prop iconActiveSize?: number
- * @prop number?: number
- * @prop to?: string
- * @prop href?: string
- * @prop blank?: boolean
- * @prop onClick?: () => void
  */
 
-export const Step = forwardRef<HTMLSpanElement, StepProps>(
+export const Step = forwardRef<HTMLSpanElement, ILibStep>(
     (
         {
             "data-testid": testid,

@@ -17,7 +17,7 @@ export const keyPreview: ComponentPreview<ILibKey> = {
     import: "Key",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "KeyProps",
+    propsImport: "ILibKey",
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [

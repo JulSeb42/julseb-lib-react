@@ -12,15 +12,6 @@ import type { ILibAvatar } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop img: string | { src: string; alt: string } => only if `icon` & `letter` are not defined
- * @prop letter: string => only if `img` & `icon` are not defined
- * @prop icon: string | JSX.Element => only if `img` & `letter` are not defined
- * @prop size ?: number
- * @prop border?: LibBorderProps
- * @prop borderRadius?: LibRadiusProps
- * @prop badge ?: boolean | number | { content?: number; contentColor?: LibAllColors; backgroundColor?: LibAllColors;  position?: AvatarBadgePosition; size?: number; padding?: LibPaddingProps; outline?: LibBorderProps }
- * @prop backgroundColor?: LibAllColors => only if `img` is not defined
- * @prop contentColor?: LibAllColors => only if `img` is not defined
  */
 
 export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(

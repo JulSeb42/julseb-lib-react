@@ -9,11 +9,9 @@ const SelectContainer = styled.div`
     width: 100%;
 `
 
-interface SelectButtonProps extends ILibInputBaseMixin {
-    $hasOptions: boolean
-}
-
-const StyledSelectButton = styled.button<SelectButtonProps>`
+const StyledSelectButton = styled.button<
+    ILibInputBaseMixin & { $hasOptions: boolean }
+>`
     ${InputBaseMixin}
     text-align: left;
     font-weight: ${FONT_WEIGHTS.REGULAR};

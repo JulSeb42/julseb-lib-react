@@ -5,8 +5,8 @@ import { useSearchParams } from "react-router-dom"
 /**
  * @description Hook to use with Pagination or Paginator components
  * @link https://documentation-components-react.vercel.app/helpers/hooks#usePaginatedData
- * @prop data: Array<T> => to define
- * @prop defaultLimit?: number
+ * @argument data: Array<T> => to define
+ * @argument defaultLimit?: number
  */
 
 export function usePaginatedData<T>(

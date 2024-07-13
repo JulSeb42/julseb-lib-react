@@ -16,7 +16,7 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
     import: "Button",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "ButtonProps",
+    propsImport: "ILibButton",
     additionalTypeImports: null,
     extends: [
         "HTMLButtonElement & HTMLAnchorElement",

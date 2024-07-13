@@ -7,8 +7,8 @@ type Event = MouseEvent | TouchEvent
 /**
  * @description Hook to trigger a function on click outside an element
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useClickOutside
- * @prop ref: RefObject<T>,
- * @prop handler: (event: Event) => void
+ * @argument ref: RefObject<T>,
+ * @argument handler: (event: Event) => void
  */
 
 export function useClickOutside<T extends HTMLElement = HTMLElement>(

@@ -10,7 +10,7 @@ import {
 /**
  * @description Hook to add possibility to add multiple refs to an element
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMergeRefs
- * @prop refs: Array<Ref<Instance> | undefined>
+ * @argument refs: Array<Ref<Instance> | undefined>
  */
 
 export function useMergeRefs<Instance>(

@@ -12,14 +12,6 @@ import type { ILibTag } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop backgroundColor?: LibAllColors
- * @prop textColor?: LibAllColors
- * @prop border?: LibBorderProps
- * @prop padding?: LibPaddingProps
- * @prop borderRadius?: LibRadiusProps
- * @prop icons?: { left?: string | JSX.Element; right?: string | JSX.Element }
- * @prop iconSizes?: { left?: number; right?: number }
- * @prop gap?: LibSpacers => only if `icons` is defined
  */
 
 export const Tag = forwardRef<HTMLSpanElement, ILibTag>(

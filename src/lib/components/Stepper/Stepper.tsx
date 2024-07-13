@@ -12,13 +12,6 @@ import type { ILibStepper } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop steps: Array<LibStep> => if children is undefined
- * @prop children: ReactChildren => if steps is undefined
- * @prop direction?: "column" | "row"
- * @prop activeStep?: number
- * @prop iconActive?: string | JSX.Element
- * @prop iconActiveSize?: number
- * @prop accentColor?: LibColorsHover
  */
 
 export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(

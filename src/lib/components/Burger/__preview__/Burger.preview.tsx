@@ -13,7 +13,7 @@ export const burgerPreview: ComponentPreview<ILibBurger> = {
     import: "Burger",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "BurgerProps",
+    propsImport: "ILibBurger",
     additionalTypeImports: null,
     extends: ["HTMLButtonElement"],
     previews: [{ demo: <BurgerPreview /> }],

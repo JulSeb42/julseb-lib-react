@@ -22,7 +22,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
     import: "ButtonIcon",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "ButtonIconProps",
+    propsImport: "ILibButtonIcon",
     additionalTypeImports: null,
     extends: ["HTMLButtonElement"],
     previews: [

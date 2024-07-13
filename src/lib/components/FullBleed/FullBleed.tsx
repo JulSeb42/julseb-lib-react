@@ -10,9 +10,6 @@ import type { ILibFullBleed } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop height?: number | string
- * @prop aspectRatio?: string
- * @prop padding?: LibPaddingProps
  */
 
 export const FullBleed = forwardRef<HTMLDivElement, ILibFullBleed>(

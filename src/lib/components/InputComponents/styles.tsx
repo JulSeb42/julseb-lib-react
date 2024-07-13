@@ -18,7 +18,7 @@ import {
     RADIUSES,
 } from "../.."
 import type {
-    FontStyle,
+    CssFontStyle,
     LibInputBackground,
     LibInputVariant,
     LibValidationStatus,
@@ -56,7 +56,7 @@ const HelperBottomIconContainer = styled.span`
 `
 
 const HelperBottom = styled(Text).attrs({ tag: "small" })<{
-    $fontStyle?: FontStyle
+    $fontStyle?: CssFontStyle
 }>`
     font-style: ${({ $fontStyle }) => $fontStyle};
 ` as FC<any>

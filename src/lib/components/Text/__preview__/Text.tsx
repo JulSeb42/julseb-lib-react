@@ -19,7 +19,7 @@ export const textPreviews: ComponentPreview<ILibText> = {
     import: "Text",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "TextProps",
+    propsImport: "ILibText",
     additionalTypeImports: null,
     extends: ["HTMLElement"],
     previews: [

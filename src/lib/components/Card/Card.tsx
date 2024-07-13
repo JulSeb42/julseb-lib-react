@@ -9,19 +9,9 @@ import type { ILibCard } from "./types"
 /**
  * @description Returns a Card component
  * @link https://documentation-components-react.vercel.app/components/card
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop border?: LibBorderProps
- * @prop borderRadius?: LibRadiusProps
- * @prop padding?: LibPaddingProps
- * @prop cursor?: CSS Cursor
- * @prop width?: string | number
- * @prop height?: string | number
- * @prop shadow?: LibBoxShadowProps
- * @prop backgroundColor?: LibAllColors
- * @prop textColor?: LibAllColors
- * @prop backgroundImg?: BackgroundImageProps
  */
 
 export const Card = forwardRef<HTMLDivElement, ILibCard>(

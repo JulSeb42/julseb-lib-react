@@ -9,7 +9,7 @@ import type {
 } from "../../types"
 import { StyledSelectButton } from "./styles"
 
-export interface SelectButtonProps {
+export interface ILibSelectButton {
     "data-testid": string | undefined
     className: string | undefined
     selected: string
@@ -44,7 +44,7 @@ export function SelectButton({
     selected,
     hasWrapper,
     hasContainer,
-}: SelectButtonProps) {
+}: ILibSelectButton) {
     const handleClickButton = useCallback(() => {
         if (hasOptions) setIsOpen(!isOpen)
     }, [hasOptions, isOpen, setIsOpen])

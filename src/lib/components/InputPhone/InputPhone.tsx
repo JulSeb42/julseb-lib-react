@@ -44,25 +44,6 @@ const defaultIconsSizes = {
  * @link https://documentation-components-react.vercel.app/components/input-phone
  * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop selectedCountry: LibCountry | undefined
- * @prop setSelectedCountry: Dispatch<SetStateAction<LibCountry | undefined>>
- * @prop defaultCountry?: CountryCode
- * @prop searchIcon?: string | JSX.Element
- * @prop searchIconSize?: number
- * @prop caretIcon?: string | JSX.Element
- * @prop caretIconSize?: number
- * @prop searchPlaceholder?: string
- * @prop listDirection?: ListInputDirection
- * @prop countryButtonAriaLabel?: string
- * @prop textNoResult?: string
- * @prop id?: string
- * @prop label?: string | JSX.Element
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: ValidationHelper
- * @prop inputBackground?: LibInputBackground
- * @prop inputVariant?: LibInputVariant
- * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
  */
 
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(

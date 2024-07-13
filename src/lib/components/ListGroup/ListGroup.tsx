@@ -12,10 +12,6 @@ import type { ILibListGroup } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop items: Array<ListGroupItemProps> => only if `children` is not defined
- * @prop children: ReactChildren => only if `items` is not defined
- * @prop showNumbers?: boolean
- * @prop maxHeight?: number | string
  */
 
 export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(

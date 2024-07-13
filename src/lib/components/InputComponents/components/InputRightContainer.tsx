@@ -5,6 +5,7 @@ import type { ILibInputRightContainer } from "../types"
 
 /**
  * @description Returns a container on the right of an input
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop inputVariant: LibInputVariant | undefined

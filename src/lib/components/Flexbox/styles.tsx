@@ -3,23 +3,23 @@
 import styled from "styled-components"
 import { Mixins, setDefaultTheme } from "../../"
 import type {
-    AlignContent,
-    AlignItems,
-    FlexDirection,
-    FlexWrap,
-    JustifyContent,
-    JustifyItems,
+    CssAlignContent,
+    CssAlignItems,
+    CssFlexDirection,
+    CssFlexWrap,
+    CssJustifyContent,
+    CssJustifyItems,
     LibSpacers,
 } from "../../types"
 
 const StyledFlexbox = styled.div<{
     $inline?: boolean
-    $flexDirection?: FlexDirection
-    $flexWrap?: FlexWrap
-    $justifyContent?: JustifyContent
-    $alignItems?: AlignItems
-    $justifyItems?: JustifyItems
-    $alignContent?: AlignContent
+    $flexDirection?: CssFlexDirection
+    $flexWrap?: CssFlexWrap
+    $justifyContent?: CssJustifyContent
+    $alignItems?: CssAlignItems
+    $justifyItems?: CssJustifyItems
+    $alignContent?: CssAlignContent
     $gap?: LibSpacers
     $columnGap?: LibSpacers
     $rowGap?: LibSpacers

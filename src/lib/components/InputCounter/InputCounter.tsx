@@ -14,20 +14,6 @@ import type { ILibInputCounter } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-counter
  * @extends HTMLElement
  * @prop data-testid?: string
- * @prop value: number
- * @prop setValue: Dispatch<SetStateAction<number>>
- * @prop min?: number
- * @prop max?: number
- * @prop step?: number
- * @prop type?: never
- * @prop buttonVariant?: ButtonIconVariant
- * @prop icons?: { plus?: string | JSX.Element; minus?: string | JSX.Element }
- * @prop iconSizes?: { plus?: number; minus?: number }
- * @prop labelButtons?: { plus?: string; minus?: string }
- * @prop showButtonTooltip?: boolean
- * @prop isInputEditable?: boolean => default true
- * @prop inputBackground?: LibInputBackground => only if `isInputEditable` is set to true
- * @prop inputVariant?: LibInputVariant => only if `isInputEditable` is set to true
  */
 
 const BUTTON_SIZE = 32 as const

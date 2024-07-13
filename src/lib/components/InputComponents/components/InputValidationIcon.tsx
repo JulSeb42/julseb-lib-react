@@ -7,6 +7,7 @@ import type { ILibInputValidationIcon } from "../types"
 
 /**
  * @description Returns a icon on the right of an input when there's validation
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop inputBackground: LibInputBackground | undefined

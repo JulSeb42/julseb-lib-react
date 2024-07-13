@@ -14,7 +14,7 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
     import: "Avatar",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "AvatarProps",
+    propsImport: "ILibAvatar",
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [

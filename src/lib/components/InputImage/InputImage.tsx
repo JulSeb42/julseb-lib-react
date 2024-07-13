@@ -12,23 +12,13 @@ import {
     StyledInput,
 } from "./styles"
 import type { ILibInputImage } from "./types"
-import type { ContainerProps } from "./other-types"
+import type { ILibInputImageContainer } from "./other-types"
 
 /**
  * @description Returns a InputImage component
  * @link https://documentation-components-react.vercel.app/components/input-image
  * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop label?: string | JSX.Element
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
- * @prop id: string
- * @prop value: string
- * @prop width?: string | number
- * @prop height?: string | number
- * @prop borderRadius?: LibRadiusProps
- * @prop icons?: { empty?: string | JSX.Element; hover?: string | JSX.Element; sizeEmpty?: number; sizeHover?: number }
  */
 
 function EmptyContainer({
@@ -43,7 +33,7 @@ function EmptyContainer({
             size={iconSize}
         />
     ),
-}: ContainerProps) {
+}: ILibInputImageContainer) {
     return (
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}
@@ -69,7 +59,7 @@ function HoverContainer({
     ),
     isVisible,
     disabled = false,
-}: ContainerProps & {
+}: ILibInputImageContainer & {
     isVisible: boolean
     disabled: boolean | undefined
 }) {

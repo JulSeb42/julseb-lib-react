@@ -10,10 +10,6 @@ import type { ILibKey } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop keys: string[]
- * @prop size?: KeySize
- * @prop accentColor?: LibColorsHover
- * @prop withSeparator?: boolean
  */
 
 export const Key = forwardRef<HTMLSpanElement, ILibKey>(

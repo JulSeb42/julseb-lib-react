@@ -13,7 +13,7 @@ import {
 } from "./styles"
 import type { LibComponentBase, LibListGroupItem } from "../../types"
 
-interface ListItemProps extends LibComponentBase<HTMLDivElement> {
+interface ILibListGroupItemComponent extends LibComponentBase<HTMLDivElement> {
     item: Omit<LibListGroupItem, "ref">
     number?: number
     children?: never
@@ -26,12 +26,9 @@ interface ListItemProps extends LibComponentBase<HTMLDivElement> {
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop item: ListGroupItemProps
- * @prop number?: number
- * @prop isInArray?: boolean
  */
 
-export const ListGroupItem = forwardRef<HTMLDivElement, ListItemProps>(
+export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItemComponent>(
     (
         {
             "data-testid": testid,

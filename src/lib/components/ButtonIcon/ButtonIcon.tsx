@@ -13,19 +13,6 @@ import type { ILibButtonIcon } from "./types"
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop icon: string | JSX.Element
- * @prop iconSize?: number
- * @prop size?: number
- * @prop shadow?: LibBoxShadowProps
- * @prop borderRadius?: LibRadiusProps
- * @prop color?: LibColorsHover
- * @prop tooltip?: string
- * @prop showTooltip?: boolean | { position?: "top" | "bottom"; offset?: LibSpacers }
- * @prop variant?: "plain" | "transparent" | "ghost"
- * @prop showBackgroundHover?: boolean => only if variant is set to transparent
- * @prop isLoading?: boolean
- * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if `isLoading` is defined
- * @prop loaderBorderWidth?: number => only if `loaderVariant` is defined
  */
 
 export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(

@@ -12,13 +12,6 @@ import type { ILibTooltip } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop tooltip: string | JSX.Element
- * @prop position?: "top" | "bottom"
- * @prop withArrow?: boolean
- * @prop trigger?: "hover" | "click"
- * @prop backgroundColor?: LibAllColorsAndOverlays
- * @prop textColor?: LibAllColors
- * @props offset?: LibSpacers
  */
 
 export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(

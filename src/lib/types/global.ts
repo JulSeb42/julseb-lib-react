@@ -101,7 +101,7 @@ export type ILibMargin =
 /* Border */
 
 export type ILibBorder = {
-    style?: BorderStyle
+    style?: CssBorderStyle
     width?: LibSpacers
     color?: LibAllColors
 }
@@ -109,7 +109,7 @@ export type ILibBorder = {
 /* Outline */
 
 export type ILibOutline = {
-    style?: OutlineStyle
+    style?: CssOutlineStyle
     width?: LibSpacers
     color?: LibAllColors
 }
@@ -287,21 +287,21 @@ export type DispatchState<T> = Dispatch<SetStateAction<T>>
 
 /*====================== CSS values ======================*/
 
-export type TextAlign = Property.TextAlign
-export type VerticalAlign = Property.VerticalAlign
-export type TextDecoration = Property.TextDecoration
-export type Position = Property.Position
-export type JustifyItems = Property.JustifyItems
-export type AlignItems = Property.AlignItems
-export type JustifyContent = Property.JustifyContent
-export type AlignContent = Property.AlignContent
-export type FlexDirection = Property.FlexDirection
-export type FlexWrap = Property.FlexWrap
-export type ObjectFit = Property.ObjectFit
-export type Cursor = Property.Cursor
-export type BorderStyle = Property.BorderStyle
-export type OutlineStyle = Property.OutlineStyle
-export type FontStyle = Property.FontStyle
+export type CssTextAlign = Property.TextAlign
+export type CssVerticalAlign = Property.VerticalAlign
+export type CssTextDecoration = Property.TextDecoration
+export type CssPosition = Property.Position
+export type CssJustifyItems = Property.JustifyItems
+export type CssAlignItems = Property.AlignItems
+export type CssJustifyContent = Property.JustifyContent
+export type CssAlignContent = Property.AlignContent
+export type CssFlexDirection = Property.FlexDirection
+export type CssFlexWrap = Property.FlexWrap
+export type CssObjectFit = Property.ObjectFit
+export type CssCursor = Property.Cursor
+export type CssBorderStyle = Property.BorderStyle
+export type CssOutlineStyle = Property.OutlineStyle
+export type CssFontStyle = Property.FontStyle
 
 /*====================== Components ======================*/
 

@@ -3,7 +3,7 @@
 import { Icon } from "../../"
 import type { LibAllColors, LibIcon as LibIconType } from "../../types"
 
-export interface LibIconProps {
+export interface ILibLibIcon {
     "data-testid"?: string
     icon: LibIconType
     size?: number
@@ -21,7 +21,7 @@ export function LibIcon({
     size,
     color,
     className,
-}: LibIconProps) {
+}: ILibLibIcon) {
     if (typeof icon !== "string") return icon
 
     return (

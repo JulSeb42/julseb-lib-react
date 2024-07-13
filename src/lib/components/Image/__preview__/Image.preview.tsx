@@ -15,7 +15,7 @@ export const imagePreview: ComponentPreview<ILibImage> = {
     import: "Image",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "ImageProps",
+    propsImport: "ILibImage",
     additionalTypeImports: null,
     extends: ["HTMLImageElement", "ImgHTMLAttributes<HTMLImageElement>"],
     previews: [

@@ -2,7 +2,7 @@
 
 import type { LibIcon, LibValidationStatus } from "../../types"
 
-export interface ContainerProps {
+export interface ILibInputImageContainer {
     "data-testid": string | undefined
     className: string | undefined
     validation: LibValidationStatus

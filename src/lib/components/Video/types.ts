@@ -1,13 +1,13 @@
 /*=============================================== Video types ===============================================*/
 
 import type { VideoHTMLAttributes, SourceHTMLAttributes } from "react"
-import type { LibComponentBase, ObjectFit } from "../../types"
+import type { LibComponentBase, CssObjectFit } from "../../types"
 
 export interface ILibVideo
     extends Exclude<LibComponentBase<HTMLVideoElement>, "as">,
         VideoHTMLAttributes<HTMLVideoElement>,
         SourceHTMLAttributes<HTMLVideoElement> {
-    fit?: ObjectFit
+    fit?: CssObjectFit
     aspectRatio?: string
     emptyText?: string
     type?:

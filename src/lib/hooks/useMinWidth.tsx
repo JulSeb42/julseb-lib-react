@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 /**
  * @description Hook to detect if an element is larger than a set width
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMinWidth
- * @prop width: number
+ * @argument width: number
  */
 
 export function useMinWidth(width: number): Partial<boolean | undefined> {

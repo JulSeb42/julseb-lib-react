@@ -19,7 +19,7 @@ export function NavDemo() {
     ].filter(route => route.path.toLowerCase().includes(search.toLowerCase()))
 
     const el = useRef<HTMLInputElement>(null)
-    useKeyPress(() => el?.current?.focus(), ["Command", "KeyK"])
+    useKeyPress(["Command", "KeyK"], () => el?.current?.focus())
 
     return (
         <StyledNavDemo>

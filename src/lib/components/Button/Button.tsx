@@ -14,16 +14,6 @@ import type { ILibButton } from "./types"
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop color?: LibColorsHover
- * @prop shadow?: LibShadows | LibBoxShadowProps
- * @prop borderRadius?: LibRadiusProps
- * @prop size?: ButtonSize
- * @prop icons?: { left?: string | JSX.Element | right?: string | JSX.Element | size?: number }
- * @prop gap?: LibSpacers => only if `icons` is defined
- * @prop variant?: "plain" | "outline" | "ghost" | "transparent"
- * @prop noPadding?: boolean => only if `variant` is set to `transparent`
- * @prop isLoading?: boolean
- * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if `isLoading` is defined
  */
 
 export const Button = forwardRef<

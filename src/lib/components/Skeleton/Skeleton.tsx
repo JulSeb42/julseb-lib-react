@@ -11,20 +11,9 @@ import type { ILibSkeletonCard, ILibSkeletonShine, ILibSkeleton } from "./types"
 /**
  * @description Returns a SkeletonCard component
  * @link https://documentation-components-react.vercel.app/components/skeleton
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop width?: string | number
- * @prop maxWidth?: string | number
- * @prop height?: string | number
- * @prop backgroundColor?: LibAllColors
- * @prop aspectRatio?: string
- * @prop borderRadius?: LibRadiusProps
- * @prop flex?: string | number
- * @prop flexGrow?: string | number
- * @prop border?: LibBorderProps
- * @prop padding?: LibPaddingProps
- * @prop isShiny?: boolean
  */
 
 export const SkeletonCard = forwardRef<HTMLDivElement, ILibSkeletonCard>(
@@ -107,15 +96,6 @@ export const SkeletonShine = forwardRef<HTMLSpanElement, ILibSkeletonShine>(
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop width?: string | number
- * @prop maxWidth?: string | number
- * @prop height?: string | number
- * @prop backgroundColor?: LibAllColors
- * @prop aspectRatio?: string
- * @prop borderRadius?: LibRadiusProps
- * @prop flex?: string | number
- * @prop flexGrow?: string | number
- * @prop animation?: "shine" | "pulse"
  */
 
 export const Skeleton = forwardRef<HTMLDivElement, ILibSkeleton>(

@@ -15,7 +15,7 @@ export const sectionPreview: ComponentPreview<ILibSection> = {
     import: "Section",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "SectionProps",
+    propsImport: "ILibSection",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: sizes.map(size => ({

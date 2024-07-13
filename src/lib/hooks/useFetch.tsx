@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 /**
  * @description Hook to fetch data
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useFetch
- * @prop fetchFunction: Promise<T> => to define
- * @prop dependencies?: any
+ * @argument fetchFunction: Promise<T> => to define
+ * @argument dependencies?: any
  */
 
 export function useFetch<T>(fetchFunction: Promise<T>, dependencies?: any) {

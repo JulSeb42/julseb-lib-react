@@ -13,12 +13,6 @@ import type { ILibBreadcrumbs } from "./types"
  * @extends HTMLNavElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop linksColor?: LibColorsHover
- * @prop activeColor?: LibAllColors
- * @prop separatorColor?: LibAllColors
- * @prop gap?: LibSpacers
- * @prop separator?: BreadcrumbsSeparator
- * @prop children?: ReactChildren
  */
 
 export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(

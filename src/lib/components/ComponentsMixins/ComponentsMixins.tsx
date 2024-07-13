@@ -26,7 +26,7 @@ import type {
     LibInputVariant,
     ILibRadius,
     LibValidationStatus,
-    TextAlign,
+    CssTextAlign,
 } from "../../types"
 
 export interface ILibButtonMixin {
@@ -166,7 +166,7 @@ export const ButtonMixin = ({
 export interface ILibTextBaseMixin {
     $fontSize: LibFontSizes | "inherit"
     $fontWeight: LibFontWeights
-    $textAlign?: TextAlign
+    $textAlign?: CssTextAlign
     $color?: LibAllColors
     $linkColor?: LibColorsHover
 }

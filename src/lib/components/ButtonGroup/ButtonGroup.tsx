@@ -14,12 +14,6 @@ import type { ILibButtonGroup } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop buttons: Array<ButtonGroupItem>
- * @interface import { ButtonGroupItem } from "tsx-library-julseb/types"
- * @prop color?: LibColorsHover
- * @prop variant?: "plain" | "transparent" | "ghost"
- * @prop borderRadius?: LibRadiusProps
- * @prop size?: "default" | "small"
  */
 
 export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(

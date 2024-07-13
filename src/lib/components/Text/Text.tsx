@@ -23,11 +23,6 @@ import type { ILibText } from "./types"
  * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop color?: LibAllColors
- * @prop linkColor?: LibColorsHover
- * @prop textAlign?: TextAlign
- * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"
- * @prop display?: boolean => Only for h1 to h5
  */
 
 export const Text = forwardRef<

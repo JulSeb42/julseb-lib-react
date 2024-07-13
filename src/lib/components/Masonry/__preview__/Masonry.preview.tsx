@@ -27,7 +27,7 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
     import: "Masonry",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "MasonryProps",
+    propsImport: "ILibMasonry",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

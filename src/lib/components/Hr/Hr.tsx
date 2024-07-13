@@ -10,11 +10,6 @@ import type { ILibHr } from "./types"
  * @extends HTMLHRElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop height?: number
- * @prop maxWidth?: string | number
- * @prop color?: LibAllColors
- * @prop margin?: LibMarginProps
- * @prop isRounded?: boolean
  */
 
 export const Hr = forwardRef<HTMLHRElement, ILibHr>(

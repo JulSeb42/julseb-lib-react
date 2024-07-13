@@ -14,7 +14,7 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
     import: "Badge",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "BadgeProps",
+    propsImport: "ILibBadge",
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [

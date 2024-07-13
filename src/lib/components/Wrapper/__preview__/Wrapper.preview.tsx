@@ -13,7 +13,7 @@ export const wrapperPreview: ComponentPreview<ILibWrapper> = {
     import: "Wrapper",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "WrapperProps",
+    propsImport: "ILibWrapper",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

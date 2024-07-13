@@ -19,8 +19,6 @@ import type { ILibMasonry } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop col?: number
- * @prop gap?: LibSpacers
  */
 
 function useEventListener(

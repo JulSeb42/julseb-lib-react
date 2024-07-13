@@ -11,10 +11,9 @@ const URL_REGEX =
 /**
  * @description Transform `http://<url>` to `<a href="http://<url>">http://<url></a>`
  * @link https://documentation-components-react.vercel.app/components/linkify
- * @extends TextProps
+ * @extends ILibText
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop blank?: boolean
  */
 
 export const Linkify = forwardRef<

@@ -3,10 +3,10 @@
 import styled from "styled-components"
 import { setDefaultTheme, Mixins } from "../../"
 import type {
-    AlignContent,
-    AlignItems,
-    JustifyContent,
-    JustifyItems,
+    CssAlignContent,
+    CssAlignItems,
+    CssJustifyContent,
+    CssJustifyItems,
     LibSpacers,
 } from "../../types"
 
@@ -16,10 +16,10 @@ const StyledGrid = styled.div<{
     $gap?: LibSpacers
     $columnGap?: LibSpacers
     $rowGap?: LibSpacers
-    $justifyItems?: JustifyItems
-    $alignItems?: AlignItems
-    $justifyContent?: JustifyContent
-    $alignContent?: AlignContent
+    $justifyItems?: CssJustifyItems
+    $alignItems?: CssAlignItems
+    $justifyContent?: CssJustifyContent
+    $alignContent?: CssAlignContent
 }>`
     ${Mixins.Grid}
 `

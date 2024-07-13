@@ -13,14 +13,6 @@ import type { ILibDropdown } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop isOpen: boolean
- * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
- * @prop items: Array<DropdownItemProps> => only if `children` is not defined
- * @prop children: ReactChildren => only if `items` is not defined
- * @prop accentColor?: LibColorsHover
- * @prop direction?: LibListDirection
- * @prop maxHeightOpen?: number
- * @prop positionFromButton?: number
  */
 
 export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(

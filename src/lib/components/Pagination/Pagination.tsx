@@ -12,16 +12,9 @@ import type { ILibPagination } from "./types"
 /**
  * @description Returns a Pagination component
  * @link https://documentation-components-react.vercel.app/components/pagination
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop totalPages: number => only if `children` is not defined
- * @prop pageLimit?: number => only if `children` is not defined
- * @prop icons?: { previous?: string | JSX.Element; next?: string | JSX.Element } => only if `children` is not defined
- * @prop iconSizes?: { previous?: number; next?: number } => only if `children` is not defined
- * @prop children: ReactChildren => only if `totalPages` is not defined
- * @prop accentColor?: LibColorsHover
- * @prop queries?: Array<Array<string>>
  */
 
 export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(

@@ -13,7 +13,7 @@ export const asidePreview: ComponentPreview<ILibAside> = {
     import: "Aside",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "AsideProps",
+    propsImport: "ILibAside",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

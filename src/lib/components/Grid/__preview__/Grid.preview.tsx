@@ -12,7 +12,7 @@ export const gridPreview: ComponentPreview<ILibGrid> = {
     import: "Grid",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "GridProps",
+    propsImport: "ILibGrid",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

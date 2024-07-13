@@ -15,7 +15,7 @@ export const videoPreview: ComponentPreview<ILibVideo> = {
     import: "Video",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "VideoProps",
+    propsImport: "ILibVideo",
     additionalTypeImports: null,
     extends: [
         "HTMLVideoElement",

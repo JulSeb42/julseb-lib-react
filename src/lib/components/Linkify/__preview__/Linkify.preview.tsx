@@ -11,9 +11,9 @@ export const linkifyPreview: ComponentPreview<ILibLinkify> = {
     import: "Linkify",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "LinkifyProps",
+    propsImport: "ILibLinkify",
     additionalTypeImports: null,
-    extends: ["TextProps"],
+    extends: ["ILibText"],
     previews: [
         {
             previewTitle: "Default",

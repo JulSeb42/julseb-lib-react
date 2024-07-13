@@ -9,19 +9,19 @@ import {
     setDefaultTheme,
 } from "../../"
 import { TextBaseMixin } from "../ComponentsMixins"
-import type { LibAllColors, LibColorsHover, TextAlign } from "../../types"
+import type { LibAllColors, LibColorsHover, CssTextAlign } from "../../types"
 
-interface TextStyleProps {
+interface ILibTextStyle {
     $color?: LibAllColors
-    $textAlign?: TextAlign
+    $textAlign?: CssTextAlign
     $linkColor?: LibColorsHover
 }
 
-interface TextStyleHeadingProps extends TextStyleProps {
+interface ILibTextStyleHeading extends ILibTextStyle {
     $display?: boolean
 }
 
-const StyledH1 = styled.h1<TextStyleHeadingProps>`
+const StyledH1 = styled.h1<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $linkColor, $display }) =>
         TextBaseMixin({
             $fontSize: $display ? "display-h1" : "h1",
@@ -32,7 +32,7 @@ const StyledH1 = styled.h1<TextStyleHeadingProps>`
         })}
 `
 
-const StyledH2 = styled.h2<TextStyleHeadingProps>`
+const StyledH2 = styled.h2<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $linkColor, $display }) =>
         TextBaseMixin({
             $fontSize: $display ? "display-h2" : "h2",
@@ -43,7 +43,7 @@ const StyledH2 = styled.h2<TextStyleHeadingProps>`
         })}
 `
 
-const StyledH3 = styled.h3<TextStyleHeadingProps>`
+const StyledH3 = styled.h3<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $linkColor, $display }) =>
         TextBaseMixin({
             $fontSize: $display ? "display-h3" : "h3",
@@ -54,7 +54,7 @@ const StyledH3 = styled.h3<TextStyleHeadingProps>`
         })}
 `
 
-const StyledH4 = styled.h4<TextStyleHeadingProps>`
+const StyledH4 = styled.h4<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $linkColor, $display }) =>
         TextBaseMixin({
             $fontSize: $display ? "display-h4" : "h4",
@@ -65,7 +65,7 @@ const StyledH4 = styled.h4<TextStyleHeadingProps>`
         })}
 `
 
-const StyledH5 = styled.h5<TextStyleHeadingProps>`
+const StyledH5 = styled.h5<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $linkColor, $display }) =>
         TextBaseMixin({
             $fontSize: $display ? "display-h5" : "h5",
@@ -76,7 +76,7 @@ const StyledH5 = styled.h5<TextStyleHeadingProps>`
         })}
 `
 
-const StyledH6 = styled.h6<TextStyleProps>`
+const StyledH6 = styled.h6<ILibTextStyle>`
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
             $fontSize: "h6",
@@ -87,7 +87,7 @@ const StyledH6 = styled.h6<TextStyleProps>`
         })}
 `
 
-const StyledP = styled.p<TextStyleProps>`
+const StyledP = styled.p<ILibTextStyle>`
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
             $fontSize: "body",
@@ -98,7 +98,7 @@ const StyledP = styled.p<TextStyleProps>`
         })}
 `
 
-const StyledStrong = styled.strong<TextStyleProps>`
+const StyledStrong = styled.strong<ILibTextStyle>`
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
             $fontSize: "inherit",
@@ -109,7 +109,7 @@ const StyledStrong = styled.strong<TextStyleProps>`
         })}
 `
 
-const StyledEm = styled.em<TextStyleProps>`
+const StyledEm = styled.em<ILibTextStyle>`
     font-style: italic;
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
@@ -121,7 +121,7 @@ const StyledEm = styled.em<TextStyleProps>`
         })}
 `
 
-const StyledSmall = styled.small<TextStyleProps>`
+const StyledSmall = styled.small<ILibTextStyle>`
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
             $fontSize: "small",
@@ -132,7 +132,7 @@ const StyledSmall = styled.small<TextStyleProps>`
         })}
 `
 
-const StyledBlockquote = styled.blockquote<TextStyleProps>`
+const StyledBlockquote = styled.blockquote<ILibTextStyle>`
     font-style: italic;
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
@@ -157,7 +157,7 @@ const ListStyles = css`
     }
 `
 
-const StyledUl = styled.ul<TextStyleProps>`
+const StyledUl = styled.ul<ILibTextStyle>`
     ${ListStyles};
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
@@ -169,7 +169,7 @@ const StyledUl = styled.ul<TextStyleProps>`
         })}
 `
 
-const StyledOl = styled.ol<TextStyleProps>`
+const StyledOl = styled.ol<ILibTextStyle>`
     ${ListStyles};
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
@@ -181,7 +181,7 @@ const StyledOl = styled.ol<TextStyleProps>`
         })}
 `
 
-const StyledDl = styled.dl<TextStyleProps>`
+const StyledDl = styled.dl<ILibTextStyle>`
     ${({ $textAlign, $color, $linkColor }) =>
         TextBaseMixin({
             $fontSize: "body",

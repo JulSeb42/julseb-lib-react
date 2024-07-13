@@ -7,7 +7,7 @@ import { setDefaultTheme, Text, Mixins, SPACERS } from "../../"
 import type {
     LibAllColors,
     ILibRadius,
-    ObjectFit,
+    CssObjectFit,
     LibImageBackgroundOverlay,
 } from "../../types"
 
@@ -15,7 +15,7 @@ const StyledImage = styled.img<{
     $width: string | number
     $height: string | number
     $borderRadius?: ILibRadius
-    $fit?: ObjectFit
+    $fit?: CssObjectFit
     $aspectRatio?: string
 }>`
     display: block;

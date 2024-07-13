@@ -26,12 +26,12 @@ import {
     type ILibPadding,
     type LibTransitions,
     type LibRadiuses,
-    type JustifyItems,
-    type AlignItems,
-    type JustifyContent,
-    type AlignContent,
-    type FlexDirection,
-    type FlexWrap,
+    type CssJustifyItems,
+    type CssAlignItems,
+    type CssJustifyContent,
+    type CssAlignContent,
+    type CssFlexDirection,
+    type CssFlexWrap,
     type LibFontSizes,
     type LibFontWeights,
     type ILibMargin,
@@ -653,10 +653,10 @@ class mixins {
         $gap?: LibSpacers
         $columnGap?: LibSpacers
         $rowGap?: LibSpacers
-        $justifyItems?: JustifyItems
-        $alignItems?: AlignItems
-        $justifyContent?: JustifyContent
-        $alignContent?: AlignContent
+        $justifyItems?: CssJustifyItems
+        $alignItems?: CssAlignItems
+        $justifyContent?: CssJustifyContent
+        $alignContent?: CssAlignContent
     }) => css`
         display: ${$inline ? "inline-grid" : "grid"};
         grid-template-columns: ${$col && typeof $col === "number"
@@ -684,12 +684,12 @@ class mixins {
         $rowGap,
     }: {
         $inline?: boolean
-        $flexDirection?: FlexDirection
-        $flexWrap?: FlexWrap
-        $justifyContent?: JustifyContent
-        $alignItems?: AlignItems
-        $justifyItems?: JustifyItems
-        $alignContent?: AlignContent
+        $flexDirection?: CssFlexDirection
+        $flexWrap?: CssFlexWrap
+        $justifyContent?: CssJustifyContent
+        $alignItems?: CssAlignItems
+        $justifyItems?: CssJustifyItems
+        $alignContent?: CssAlignContent
         $gap?: LibSpacers
         $columnGap?: LibSpacers
         $rowGap?: LibSpacers

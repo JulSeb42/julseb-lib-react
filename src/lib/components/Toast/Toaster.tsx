@@ -13,7 +13,7 @@ import type {
 } from "../../types"
 import { StyledToaster } from "./styles"
 
-interface ToasterProps {
+interface ILibToaster {
     "data-testid"?: string
     as?: ElementType
     className?: string
@@ -77,15 +77,9 @@ const toastStatusStyles: {
  * @link https://documentation-components-react.vercel.app/components/toast
  * @prop "data-testid"?: string
  * @prop as?: ElementType
- * @prop toasts: Array<ToastItemProps>
- * @prop isOpen: boolean
- * @prop toastsOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
- * @prop iconClose?: string | JSX.Element
- * @prop iconCloseSize?: number
- * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
 
-export const Toaster = forwardRef<HTMLDivElement, ToasterProps>(
+export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
     (
         {
             "data-testid": testid,

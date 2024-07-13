@@ -2,33 +2,39 @@
 
 // import { deleteDuplicates } from "ts-utils-julseb"
 import { Page } from "../components"
+import {} from "../lib"
+import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = [
-        "to?: string",
-        "href?: string",
-        "blank?: boolean",
-        "onClick?: () => void",
-        "setState?: DispatchState<boolean>",
-    ]
+    const propsDoc = replaceTypes([
+        "size?: LibAsideSize",
+        "minHeight?: string | number",
+    ])
+    // const typeValuesArr = Object.keys(typeValues.spacers)
 
-    const tests = [
-        "testid.Button.Minus",
-        "testid.Button.Minus.Icon",
-        "testid.Input",
-        "testid.Button.Plus",
-        "testid.Button.Plus.Icon",
-    ]
+    // const tests = [
+    //     "testid.Button.Minus",
+    //     "testid.Button.Minus.Icon",
+    //     "testid.Input",
+    //     "testid.Button.Plus",
+    //     "testid.Button.Plus.Icon",
+    // ]
 
-    const inputSliderShowValues = {
-        never: "never",
-        hover: "hover",
-        always: "always",
-    }
+    // const inputSliderShowValues = {
+    //     never: "never",
+    //     hover: "hover",
+    //     always: "always",
+    // }
 
     return (
         <Page title="Generate">
             <ul>
+                {propsDoc.map(p => (
+                    <li key={p}>{` * @prop ${p}`}</li>
+                ))}
+            </ul>
+
+            {/* <ul>
                 {tests.map(t => (
                     <li key={t}>
                         cy.dataTest("{t}").should("exist").should("have.class",
@@ -37,7 +43,9 @@ export function Generate() {
                 ))}
             </ul>
 
-            <p>{Object.keys(inputSliderShowValues).map(i => `"${i}" | `)}</p>
+            
+
+            <p>{Object.keys(inputSliderShowValues).map(i => `"${i}" | `)}</p> */}
 
             {/* <p>
                 {Object.keys(inputTypes).map(i => (
@@ -110,35 +118,81 @@ export function Generate() {
                     </li>
                 ))}
             </ul> */}
-            <ul>
-                {propsDoc.map(p => (
-                    <li key={p}>
-                        {" "}
-                        * @prop{" "}
-                        {getTypeDispatch(p)
-                            .replaceAll("LibIcon", "string | JSX.Element")
-                            .replaceAll(
-                                "DispatchState",
-                                "Dispatch<SetStateAction<"
-                            )}
-                    </li>
-                ))}
-            </ul>
+
+            {/* <p>{typeValuesArr.map(t => `"${t}" | `)}</p> */}
         </Page>
     )
 }
 
-function getTypeDispatch(str: string): string {
-    if (str.includes("DispatchState")) {
-        const prop = str.split(":")[0]
+function replaceTypes(arr: Array<string>) {
+    const mappedRadiuses = Object.keys(typeValues.radiuses)
+        .map(r => `"${r}"`)
+        .join(" | ")
+    const mappedSpacers = Object.keys(typeValues.spacers)
+        .map(s => `"${s}"`)
+        .join(" | ")
+    const mappedColorsShort = Object.keys(typeValues.colorsShort)
+        .map(c => `"${c}"`)
+        .join(" | ")
+    const mappedAccordionIcons = Object.keys(typeValues.accordionIcons)
+        .map(i => `"${i}"`)
+        .join(" | ")
+    const mappedAccordionVariants = Object.keys(typeValues.accordionVariants)
+        .map(v => `"${v}"`)
+        .join(" | ")
+    const mappedAsideSizes = Object.keys(typeValues.asideSizes)
+        .map(s => `"${s}"`)
+        .join(" | ")
+    const allColorsDesc = "Any color from the library"
 
-        const type = str
-            .split(":")[1]
-            .replace("DispatchState<", "")
-            .replace(">", "")
+    return arr.map(str => {
+        if (str.includes("DispatchState")) {
+            const prop = str.split(":")[0]
 
-        return `${prop}: Dispatch<SetStateAction<${type}>>`
-    }
+            const type = str
+                .split(":")[1]
+                .replace("DispatchState<", "")
+                .replace(">", "")
 
-    return str
+            return `${prop}: Dispatch<SetStateAction<${type}>>`
+        }
+
+        return str
+            .replaceAll("LibSpacers", mappedSpacers)
+            .replaceAll("LibColorsShort", mappedColorsShort)
+            .replaceAll("LibAllColors", allColorsDesc)
+            .replaceAll(
+                "ILibPadding",
+                `${mappedSpacers} | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
+            )
+            .replaceAll(
+                "ILibRadius",
+                `${mappedRadiuses} | number | null | { topLeft?: LibRadiuses | number | null; topRight?: LibRadiuses | number | null; bottomLeft?: LibRadiuses | number | null; bottomRight?: LibRadiuses | number | null }`
+            )
+            .replaceAll(
+                "ILibBorder",
+                `{ style?: CssBorderStyle; width?: ${mappedSpacers}; color?: ${allColorsDesc} }`
+            )
+            .replaceAll(
+                "LibAccordionIcon",
+                `${mappedAccordionIcons} | JSX.Element`
+            )
+            .replaceAll("LibAccordionVariant", mappedAccordionVariants)
+            .replaceAll("LibAsideSize", `${mappedAsideSizes} | number`)
+    })
 }
+
+// function getTypeDispatch(str: string): string {
+//     if (str.includes("DispatchState")) {
+//         const prop = str.split(":")[0]
+
+//         const type = str
+//             .split(":")[1]
+//             .replace("DispatchState<", "")
+//             .replace(">", "")
+
+//         return `${prop}: Dispatch<SetStateAction<${type}>>`
+//     }
+
+//     return str
+// }

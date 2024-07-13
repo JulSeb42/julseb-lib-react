@@ -12,7 +12,7 @@ export const flexboxPreview: ComponentPreview<ILibFlexbox> = {
     import: "Flexbox",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "FlexboxProps",
+    propsImport: "ILibFlexbox",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

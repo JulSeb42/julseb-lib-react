@@ -12,8 +12,8 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
     import: "Skeleton",
     additionalImports: ["SkeletonCard", "SkeletonShine"],
     optionalImports: null,
-    propsImport: "SkeletonProps",
-    additionalTypeImports: ["SkeletonCardProps", "SkeletonShineProps"],
+    propsImport: "ILibSkeleton",
+    additionalTypeImports: ["ILibSkeletonCard", "ILibSkeletonShine"],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: {} },

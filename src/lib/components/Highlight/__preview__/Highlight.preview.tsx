@@ -11,9 +11,9 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
     import: "Highlight",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "HighlightProps",
+    propsImport: "ILibHighlight",
     additionalTypeImports: null,
-    extends: ["TextProps"],
+    extends: ["ILibText"],
     previews: [
         {
             previewTitle: "Default",

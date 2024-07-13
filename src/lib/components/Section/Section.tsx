@@ -10,7 +10,6 @@ import type { ILibSection } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop gap?: LibSpacers
  */
 
 export const Section = forwardRef<HTMLDivElement, ILibSection>(

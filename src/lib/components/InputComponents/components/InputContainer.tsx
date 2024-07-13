@@ -15,6 +15,7 @@ import type { ILibInputContainer } from "../types"
 
 /**
  * @description Returns a input container, with label, helper, helper bottom, counter and validation
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop id: string | undefined

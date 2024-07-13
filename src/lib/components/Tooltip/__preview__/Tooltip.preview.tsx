@@ -12,7 +12,7 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
     import: "Tooltip",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "TooltipProps",
+    propsImport: "ILibTooltip",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [

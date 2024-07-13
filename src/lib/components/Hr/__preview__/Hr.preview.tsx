@@ -11,7 +11,7 @@ export const hrPreview: ComponentPreview<ILibHr> = {
     import: "Hr",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "HrProps",
+    propsImport: "ILibHr",
     additionalTypeImports: null,
     extends: ["HTMLHRElement"],
     previews: [{ props: {} }],

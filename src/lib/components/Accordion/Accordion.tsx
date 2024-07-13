@@ -13,10 +13,6 @@ import type { ILibAccordion } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop items: Array<AccordionItemProps> => only if `children` is not defined
- * @prop children: ReactChildren => only if `items` is not defined
- * @prop variant?: "basic" | "rounded"
- * @prop icon?: "plus" | "chevron" | JSX.Element
  */
 
 export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(

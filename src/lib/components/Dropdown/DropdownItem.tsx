@@ -29,15 +29,6 @@ type ILibDropdownItem = LibComponentBase<
  * @extends HTMLButtonElement & HTMLAnchorElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop onClick: MouseEventHandler<HTMLButtonElement> => only if `to` or `href` are not defined
- * @prop to: string => only if `onClick` and `href` are not defined
- * @prop href: string => only if `onClick` and `to` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop blank?: boolean => only if `to` or `href` are defined
- * @prop accentColor?: LibColorsHover
- * @prop icon?: string | JSX.Element
- * @prop iconSize?: number
- * @prop gap?: LibSpacers
  */
 
 export const DropdownItem = forwardRef<

@@ -3,7 +3,7 @@
 import type { MouseEventHandler } from "react"
 import type {
     ReactChildren,
-    FontStyle,
+    CssFontStyle,
     LibListDirection,
     LibAllColors,
     LibIcon,
@@ -43,7 +43,7 @@ export interface ILibInputBase {
         | {
               text: string
               textColor?: LibAllColors
-              fontStyle?: FontStyle
+              fontStyle?: CssFontStyle
               icon?: LibIcon
               iconColor?: LibAllColors
               iconSize?: number
@@ -69,7 +69,7 @@ export interface ILibInputContainer {
         | {
               text: string
               textColor?: LibAllColors
-              fontStyle?: FontStyle
+              fontStyle?: CssFontStyle
               icon?: LibIcon
               iconColor?: LibAllColors
               iconSize?: number
@@ -108,7 +108,8 @@ export interface ILibInputValidationHelper {
     validation: ValidationHelper
 }
 
-export interface ILibInputValidationIcon extends ILibInputValidationIconComponent {
+export interface ILibInputValidationIcon
+    extends ILibInputValidationIconComponent {
     "data-testid": string | undefined
     className: string | undefined
     inputBackground: LibInputBackground | undefined

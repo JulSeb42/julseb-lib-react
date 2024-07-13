@@ -109,7 +109,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
         const handleFocus = useCallback(() => inputRef?.current?.focus(), [])
 
         const keys = focusKeys || [""]
-        useKeyPress(() => handleFocus(), keys)
+        useKeyPress(keys, () => handleFocus())
 
         const inputProps = {
             "data-testid": testid,

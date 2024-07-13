@@ -12,7 +12,7 @@ import {
     InputIcon,
 } from "../InputComponents"
 import { CaretDown } from "../../icons"
-import { SelectButton, type SelectButtonProps } from "./Button"
+import { SelectButton, type ILibSelectButton } from "./SelectButton"
 import { useKeyboardNavigation } from "../ComponentsMixins"
 import { SelectContainer } from "./styles"
 import type { ILibSelect } from "./types"
@@ -22,14 +22,6 @@ import type { ILibSelect } from "./types"
  * @link https://documentation-components-react.vercel.app/components/select
  * @extends HTMLDivElement
  * @prop data-testid?: string
- * @prop selected: string
- * @prop setSelected: Dispatch<SetStateAction<string>>
- * @prop options?: Array<string>
- * @prop disabled?: boolean
- * @prop listDirection?: ListInputDirection
- * @prop tabIndex?: number
- * @prop icons?: { iconLeft?: string | JSX.Element; caret?: string | JSX.Element }
- * @prop iconSizes?: { iconLeft?: number; caret?: number }
  */
 
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(
@@ -80,7 +72,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
 
         useClickOutside(listRef, () => setIsOpen(false))
 
-        const buttonProps: SelectButtonProps = {
+        const buttonProps: ILibSelectButton = {
             "data-testid": testid,
             className,
             selected,

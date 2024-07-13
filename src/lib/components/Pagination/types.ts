@@ -1,16 +1,9 @@
 /*=============================================== Pagination types ===============================================*/
 
-import type {
-    LibColorsHover,
-    LibComponentBase,
-    LibIcon,
-    ReactChildren,
-} from "../../types"
+import type { LibColorsHover, LibIcon, ReactChildren } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 
-interface ILibPaginationBase
-    extends LibComponentBase<HTMLDivElement>,
-        ILibFlexbox {
+interface ILibPaginationBase extends ILibFlexbox {
     accentColor?: LibColorsHover
     queries?: Array<Array<string>>
 }

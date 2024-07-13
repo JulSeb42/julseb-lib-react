@@ -43,9 +43,6 @@ const initialState = {
  * @link https://documentation-components-react.vercel.app/components/toast
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop className?: string
- * @prop toastOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
- * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
 
 export function ToasterProviderWrapper({

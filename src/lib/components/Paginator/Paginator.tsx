@@ -13,16 +13,9 @@ const DEFAULT_ICON_SIZE = 32
 /**
  * @description Returns a Paginator component
  * @link https://documentation-components-react.vercel.app/components/paginator
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop totalPages: number
- * @prop isInputEditable?: boolean
- * @prop texts?: { page?: string; of?: string }
- * @prop icons?: { prev?: string | JSX.Element; next?: string | JSX.Element }
- * @prop iconSizes?: { prev?: number; next?: number }
- * @prop labels?: { prev?: string; next?: string; show?: boolean }
- * @prop queries?: Array<Array<string>>
  */
 
 export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(

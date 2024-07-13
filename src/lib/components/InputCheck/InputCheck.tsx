@@ -19,12 +19,6 @@ import type { ILibInputCheck } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-check
  * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop id: string
- * @prop variant?: "tile" | "toggle" | "selector"
- * @prop type?: "checkbox" | "radio"
- * @prop iconCheck?: string | JSX.Element
- * @prop iconCheckSize?: number
- * @prop validation?: LibValidationStatus
  */
 
 export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(

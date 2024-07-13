@@ -22,7 +22,7 @@ export const iconPreview: ComponentPreview<ILibIcon> = {
     import: "Icon",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "IconProps",
+    propsImport: "ILibIcon",
     additionalTypeImports: null,
     extends: [{ name: "SVGProps", from: "react-inlinesvg" }],
     previews: [

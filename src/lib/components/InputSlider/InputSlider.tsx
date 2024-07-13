@@ -3,7 +3,7 @@
 import { forwardRef, type ForwardedRef, useState, useCallback } from "react"
 import { Flexbox, Text } from "../../"
 import type { ILibText } from "../../types/components-props"
-import { Slider, type SliderProps } from "./Slider"
+import { Slider, type ILibInputSlider as IInpuSlider } from "./Slider"
 import { InputContainer } from "../InputComponents"
 import { SliderContainer, Tooltip } from "./styles"
 import type { ILibInputSlider } from "./types"
@@ -13,11 +13,6 @@ import type { ILibInputSlider } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-slider
  * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop value?: number
- * @prop showValue?: "hover" | "always" | "never" => only if `value` is defined
- * @prop min?: number
- * @prop max?: number
- * @prop showMinMax?: boolean => only if `min` and `max` are defined
  */
 
 export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
@@ -48,7 +43,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
         )
         const hasWrapper: boolean = !!(showValue !== "never" || showMinMax)
 
-        const sliderProps: SliderProps & {
+        const sliderProps: IInpuSlider & {
             ref: ForwardedRef<HTMLInputElement>
         } = {
             "data-testid": testid,

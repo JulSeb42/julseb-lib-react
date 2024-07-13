@@ -12,6 +12,7 @@ import type { ILibInputValidationHelper } from "../types"
 
 /**
  * @description Returns a component for input validation, showing under the input
+ * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop validation: ValidationHelper

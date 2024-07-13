@@ -12,7 +12,7 @@ export const loaderPreview: ComponentPreview<ILibLoader> = {
     import: "Loader",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "LoaderProps",
+    propsImport: "ILibLoader",
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [

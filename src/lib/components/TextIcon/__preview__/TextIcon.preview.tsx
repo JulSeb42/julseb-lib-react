@@ -12,9 +12,9 @@ export const textIconPreview: ComponentPreview<ILibTextIcon> = {
     import: "TextIcon",
     additionalImports: null,
     optionalImports: null,
-    propsImport: "TextIconProps",
+    propsImport: "ILibTextIcon",
     additionalTypeImports: null,
-    extends: ["TextProps"],
+    extends: ["ILibText"],
     previews: [
         {
             props: {

@@ -4,25 +4,23 @@ import { forwardRef, type ButtonHTMLAttributes } from "react"
 import type { LibColorsHover, LibComponentBase } from "../../types"
 import { StyledPaginationButton } from "./styles"
 
-interface PaginationButtonPropsBase
+interface ILibPaginationButtonBase
     extends LibComponentBase<HTMLButtonElement>,
         ButtonHTMLAttributes<HTMLButtonElement> {
     accentColor?: LibColorsHover
 }
 
-interface PaginationButtonPropsActive extends PaginationButtonPropsBase {
+interface PaginationButtonActive extends ILibPaginationButtonBase {
     isActive: boolean
     readOnly?: never
 }
 
-interface PaginationButtonPropsReadOnly extends PaginationButtonPropsBase {
+interface PaginationButtonReadOnly extends ILibPaginationButtonBase {
     isActive?: never
     readOnly: boolean
 }
 
-type PaginationButtonProps =
-    | PaginationButtonPropsActive
-    | PaginationButtonPropsReadOnly
+type ILibPaginationButton = PaginationButtonActive | PaginationButtonReadOnly
 
 /**
  * @description Returns a PaginationButton component
@@ -30,14 +28,11 @@ type PaginationButtonProps =
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop isActive: boolean => only if `readOnly` is not defined
- * @prop readOnly: boolean => only if `readOnly` is not defined
- * @prop accentColor?: LibColorsHover
  */
 
 export const PaginationButton = forwardRef<
     HTMLButtonElement,
-    PaginationButtonProps
+    ILibPaginationButton
 >(
     (
         {

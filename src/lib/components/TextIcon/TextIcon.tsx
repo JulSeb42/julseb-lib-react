@@ -10,15 +10,9 @@ import type { ILibTextIcon } from "./types"
 /**
  * @description Returns a Text with Icon component
  * @link https://documentation-components-react.vercel.app/components/text-icon
- * @extends TextProps
+ * @extends ILibText
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop icon: string
- * @prop textAs?: ElementType
- * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "small" | "blockquote" | "p"
- * @prop iconColor?: LibAllColors
- * @prop iconSize?: number
- * @prop gap?: LibSpacers
  */
 
 export const TextIcon = forwardRef<

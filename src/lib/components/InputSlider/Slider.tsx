@@ -4,7 +4,7 @@ import { forwardRef, type InputHTMLAttributes } from "react"
 import type { LibInputBackground, LibValidationStatus } from "../../types"
 import { StyledInputSlider } from "./styles"
 
-export interface SliderProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface ILibInputSlider extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid": string | undefined
     className: string | undefined
     id: string | undefined
@@ -17,7 +17,7 @@ export interface SliderProps extends InputHTMLAttributes<HTMLInputElement> {
     value: number | undefined
 }
 
-export const Slider = forwardRef<HTMLInputElement, SliderProps>(
+export const Slider = forwardRef<HTMLInputElement, ILibInputSlider>(
     (
         {
             "data-testid": testid,
@@ -31,7 +31,7 @@ export const Slider = forwardRef<HTMLInputElement, SliderProps>(
             inputBackground,
             value,
             ...rest
-        }: SliderProps,
+        }: ILibInputSlider,
         ref
     ) => {
         return (

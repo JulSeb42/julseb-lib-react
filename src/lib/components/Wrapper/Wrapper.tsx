@@ -10,7 +10,6 @@ import type { ILibWrapper } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop gap?: LibSpacers
  */
 
 export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(

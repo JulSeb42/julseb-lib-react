@@ -11,7 +11,7 @@ import type {
     LibSkeletonAnimation,
 } from "../../types"
 
-type CommonStyleProps = {
+type ILibSkeletonCommonStyles = {
     $width?: string | number
     $maxWidth?: string | number
     $height?: string | number
@@ -55,7 +55,7 @@ const Common = ({
     $borderRadius,
     $flex,
     $flexGrow,
-}: CommonStyleProps) => css`
+}: ILibSkeletonCommonStyles) => css`
     position: relative;
     overflow: hidden;
     width: ${stringifyPx($width)};
@@ -84,7 +84,7 @@ const Shine = css`
 /*====================== Components ======================*/
 
 const StyledSkeletonCard = styled(Flexbox)<
-    CommonStyleProps & { $border?: ILibBorder; $padding?: ILibPadding }
+    ILibSkeletonCommonStyles & { $border?: ILibBorder; $padding?: ILibPadding }
 >`
     ${Common}
     ${({ $border }) => Mixins.Border($border)}
@@ -96,7 +96,7 @@ const StyledSkeletonShine = styled.span`
 `
 
 const StyledSkeleton = styled.div<
-    CommonStyleProps & { $animation?: LibSkeletonAnimation }
+    ILibSkeletonCommonStyles & { $animation?: LibSkeletonAnimation }
 >`
     ${Common}
     ${({ $animation }) =>

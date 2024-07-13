@@ -14,15 +14,9 @@ const BUTTON_LABEL = "Close modal"
 /**
  * @description Returns a Modal component
  * @link https://documentation-components-react.vercel.app/components/modal
- * @extends FlexboxProps
+ * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop isOpen: boolean
- * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
- * @prop disableEsc?: boolean
- * @prop contentWidth?: string | number
- * @prop hideCloseButton?: boolean
- * @prop buttonClose?: { icon?: string | JSX.Element; color?: LibColorsHover; size?: number; variant?: "plain" | "transparent" | "ghost"; label?: string } => only if `hideButtonClose` is not set to `true`
  */
 
 export const Modal = forwardRef<HTMLDivElement, ILibModal>(
@@ -48,10 +42,10 @@ export const Modal = forwardRef<HTMLDivElement, ILibModal>(
         }, [setIsOpen])
 
         useKeyPress(
+            ["Escape"],
             useCallback(() => {
                 if (isOpen && !disableEsc) handleClose()
-            }, [disableEsc, handleClose, isOpen]),
-            ["Escape"]
+            }, [disableEsc, handleClose, isOpen])
         )
 
         const el = useRef<HTMLDivElement>(null)

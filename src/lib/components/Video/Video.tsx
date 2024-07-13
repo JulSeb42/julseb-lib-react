@@ -11,9 +11,6 @@ const StyledVideo = lazy(() => import("./styles"))
  * @link https://documentation-components-react.vercel.app/components/video
  * @extends HTMLVideoElement
  * @prop data-testid?: string
- * @prop fit?: ObjectFit
- * @prop aspectRatio?: string
- * @prop emptyText?: string
  */
 
 export const Video = forwardRef<HTMLVideoElement, ILibVideo>(

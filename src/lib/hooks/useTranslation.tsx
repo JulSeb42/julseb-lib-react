@@ -9,7 +9,7 @@ let currentLanguage = detectLanguage() || "en"
 /**
  * @description Hook to detect the language, and return translated content
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useTranslation
- * @prop translations: [language: string]: { [key: string]: string }
+ * @argument translations: [language: string]: { [key: string]: string }
  */
 
 export function useTranslation(translations: TranslateLang) {
