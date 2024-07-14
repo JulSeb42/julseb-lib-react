@@ -47,6 +47,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
             id,
             className,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -136,6 +137,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                 className={className}
                 id={id}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 validation={validation}

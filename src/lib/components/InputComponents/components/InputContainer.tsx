@@ -7,6 +7,7 @@ import { InputValidationHelper } from "./InputValidationHelper"
 import {
     StyledInputContainer,
     Label,
+    LabelComment,
     HelperBottomContainer,
     HelperBottomIconContainer,
     HelperBottom,
@@ -32,6 +33,7 @@ export function InputContainer({
     "data-testid": testid,
     id,
     label,
+    labelComment,
     helper,
     helperBottom,
     validation,
@@ -42,7 +44,14 @@ export function InputContainer({
     className,
     hasListOpen,
 }: ILibInputContainer) {
-    if (!label && !helper && !helperBottom && !validation && !counter)
+    if (
+        !label &&
+        !labelComment &&
+        !helper &&
+        !helperBottom &&
+        !validation &&
+        !counter
+    )
         return children
 
     return (
@@ -51,13 +60,22 @@ export function InputContainer({
             className={className}
             $hasListOpen={hasListOpen}
         >
-            {label && (
+            {(label || labelComment) && (
                 <Label
                     data-testid={testid && `${testid}.Label`}
                     className={className && "Label"}
                     htmlFor={id}
                 >
-                    {label}
+                    {label && label}
+
+                    {labelComment && (
+                        <LabelComment
+                            data-testid={testid && `${testid}.Label.Comment`}
+                            className={className && "Label__Comment"}
+                        >
+                            {labelComment}
+                        </LabelComment>
+                    )}
                 </Label>
             )}
 

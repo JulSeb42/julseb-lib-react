@@ -83,6 +83,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
             className,
             id,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -119,6 +120,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                 className={className}
                 id={id}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 validation={validation}

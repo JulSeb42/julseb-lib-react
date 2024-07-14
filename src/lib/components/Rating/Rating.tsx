@@ -28,6 +28,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
             iconSizes,
             icons,
             label,
+            labelComment,
             helper,
             helperBottom,
             id,
@@ -83,6 +84,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                 className={className}
                 id={id}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 validation={validation}

@@ -32,6 +32,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             as,
             id,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -121,6 +122,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                 className={className}
                 id={id}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 validation={validation}

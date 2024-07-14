@@ -21,6 +21,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
             "data-testid": testid,
             className,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -80,6 +81,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                 data-testid={testid}
                 className={className}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 id={id}

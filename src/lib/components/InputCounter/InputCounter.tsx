@@ -24,6 +24,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
             "data-testid": testid,
             className,
             label,
+            labelComment,
             helper,
             helperBottom,
             id,
@@ -127,6 +128,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 data-testid={testid}
                 className={className}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 id={id}

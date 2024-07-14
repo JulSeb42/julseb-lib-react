@@ -67,6 +67,7 @@ export const Input = forwardRef<
             "data-testid": testid,
             id,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -99,6 +100,7 @@ export const Input = forwardRef<
                     data-testid={testid}
                     id={id}
                     label={label}
+                    labelComment={labelComment}
                     helper={helper}
                     helperBottom={helperBottom}
                     validation={validation}

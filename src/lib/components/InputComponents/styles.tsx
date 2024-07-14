@@ -40,6 +40,13 @@ const Label = styled.label`
     font-weight: ${FONT_WEIGHTS.BLACK};
 `
 
+const LabelComment = styled.span`
+    font-size: ${FONT_SIZES.SMALL};
+    color: ${({ theme }) => theme.GRAY_500};
+    font-weight: ${FONT_WEIGHTS.REGULAR};
+    font-style: italic;
+`
+
 const HelperBottomContainer = styled.div`
     ${Mixins.Flexbox({
         $gap: "xxs",
@@ -495,6 +502,7 @@ const StyledListInputItem = styled.span<{
 setDefaultTheme([
     StyledInputContainer,
     Label,
+    LabelComment,
     HelperBottomContainer,
     HelperBottomIconContainer,
     HelperBottom,
@@ -510,6 +518,7 @@ setDefaultTheme([
 export {
     StyledInputContainer,
     Label,
+    LabelComment,
     HelperBottomContainer,
     HelperBottomIconContainer,
     HelperBottom,

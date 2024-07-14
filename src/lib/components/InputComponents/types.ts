@@ -33,22 +33,19 @@ export interface ILibInputValidationIconComponent {
         | undefined
 }
 
-export interface ILibInputBase {
-    "data-testid"?: string
-    id?: string
-    label?: string | JSX.Element
-    helper?: string
-    helperBottom?:
-        | string
-        | {
-              text: string
-              textColor?: LibAllColors
-              fontStyle?: CssFontStyle
-              icon?: LibIcon
-              iconColor?: LibAllColors
-              iconSize?: number
-          }
-    validation?: ValidationHelper
+export interface ILibInputBase
+    extends Partial<
+        Pick<
+            ILibInputContainer,
+            | "data-testid"
+            | "id"
+            | "label"
+            | "labelComment"
+            | "helper"
+            | "helperBottom"
+            | "validation"
+        >
+    > {
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
 }
@@ -62,7 +59,8 @@ export interface ILibInputContainer {
     "data-testid": string | undefined
     className: string | undefined
     id: string | undefined
-    label: string | JSX.Element | undefined
+    label: string | undefined
+    labelComment: string | undefined
     helper: string | undefined
     helperBottom:
         | string

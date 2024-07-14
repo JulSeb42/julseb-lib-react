@@ -53,6 +53,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             className,
             id,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -177,6 +178,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                 id={id}
                 className={className}
                 label={label}
+                labelComment={labelComment}
                 helper={helper}
                 helperBottom={helperBottom}
                 validation={validation}
