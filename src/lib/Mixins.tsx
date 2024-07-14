@@ -146,10 +146,7 @@ function getColorMixinFromTheme(
     const ColorsShort = ($color: LibColorsShort = "primary") =>
         colorsShortMap.get($color)
 
-    const AllColors = ($color: LibAllColors) => {
-        console.log({ theme })
-        return allColorsMap.get($color)
-    }
+    const AllColors = ($color: LibAllColors) => allColorsMap.get($color)
 
     const ColorsAndOverlays = ($color: LibAllColorsAndOverlays | undefined) => {
         if (!$color) return null as any
@@ -711,17 +708,17 @@ class mixins {
 
         const { style, width, color } = $border
 
-        const defaultValues: ILibBorder = {
-            style: "solid",
-            width: 1,
-            color: "gray-200",
+        const borderValues: ILibBorder = {
+            style: style || "solid",
+            width: width || 1,
+            color: color || "gray-200",
         }
 
         return css`
-            border-style: ${style || defaultValues.style};
-            border-width: ${Mixins.Spacer(width || defaultValues.width)};
+            border-style: ${borderValues.style};
+            border-width: ${Mixins.Spacer(borderValues.width)};
             border-color: ${({ theme }) =>
-                theme.AllColors(color || defaultValues.color)};
+                Mixins.AllColors(borderValues.color as LibAllColors, theme)};
         `
     }
 
@@ -730,17 +727,17 @@ class mixins {
 
         const { style, width, color } = $outline
 
-        const defaultValues: ILibBorder = {
-            style: "solid",
-            width: 1,
-            color: "white",
+        const outlineValues: ILibBorder = {
+            style: style || "solid",
+            width: width || 1,
+            color: color || "white",
         }
 
         return css`
-            outline-style: ${style || defaultValues.style};
-            outline-width: ${Mixins.Spacer(width || defaultValues.width)};
+            outline-style: ${outlineValues.style};
+            outline-width: ${Mixins.Spacer(outlineValues.width)};
             outline-color: ${({ theme }) =>
-                theme.AllColors(color || defaultValues.color)};
+                Mixins.AllColors(outlineValues.color as LibAllColors, theme)};
         `
     }
 
