@@ -48,6 +48,8 @@ import { buttonGroupPreview } from "../lib/components/ButtonGroup/__preview__/Bu
 import { tagPreview } from "../lib/components/Tag/__preview__/Tag.preview"
 import { truncatePreview } from "../lib/components/Truncate/__preview__/Truncate.preview"
 import { cardPreview } from "../lib/components/Card/__preview__/Card.preview"
+import { inputPreview } from "../lib/components/Input/__preview__/Input.preview"
+import { inputImagePreview } from "../lib/components/InputImage/__preview__/InputImage.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
@@ -121,6 +123,8 @@ export const previews = [
     tagPreview,
 truncatePreview,
 cardPreview,
+inputPreview,
+inputImagePreview,
 // prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>

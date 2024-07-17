@@ -33,6 +33,29 @@ export interface ILibInputValidationIconComponent {
         | undefined
 }
 
+export interface ILibInputNoFocusKeys {
+    type:
+        | undefined
+        | null
+        | "email"
+        | "number"
+        | "tel"
+        | "text"
+        | "url"
+        | "color"
+        | "date"
+        | "datetime-local"
+        | "month"
+        | "week"
+        | "file"
+        | "password"
+        | "select"
+        | "textarea"
+        | "time"
+    focusKeys?: never
+    showKeys?: never
+}
+
 export interface ILibInputBase
     extends Partial<
         Pick<

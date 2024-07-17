@@ -27,6 +27,7 @@ import type {
 
 const StyledInputContainer = styled.div<{ $hasListOpen?: boolean }>`
     position: relative;
+    width: 100%;
     z-index: ${({ $hasListOpen }) => ($hasListOpen ? 20 : 1)};
     ${Mixins.Flexbox({
         $flexDirection: "column",
@@ -45,6 +46,7 @@ const LabelComment = styled.span`
     color: ${({ theme }) => theme.GRAY_500};
     font-weight: ${FONT_WEIGHTS.REGULAR};
     font-style: italic;
+    line-height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
 `
 
 const HelperBottomContainer = styled.div`

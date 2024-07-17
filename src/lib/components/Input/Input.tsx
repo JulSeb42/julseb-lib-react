@@ -75,6 +75,7 @@ export const Input = forwardRef<
             maxLength,
             value,
             className,
+            type = "text",
             ...rest
         },
         ref
@@ -91,8 +92,9 @@ export const Input = forwardRef<
             value,
             className,
             ref,
+            type,
             ...rest,
-        }
+        } as any
 
         if (label || helper || helperBottom || validation || counter)
             return (

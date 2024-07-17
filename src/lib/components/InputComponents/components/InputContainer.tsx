@@ -69,12 +69,17 @@ export function InputContainer({
                     {label && label}
 
                     {labelComment && (
-                        <LabelComment
-                            data-testid={testid && `${testid}.Label.Comment`}
-                            className={className && "Label__Comment"}
-                        >
-                            {labelComment}
-                        </LabelComment>
+                        <>
+                            {" "}
+                            <LabelComment
+                                data-testid={
+                                    testid && `${testid}.Label.Comment`
+                                }
+                                className={className && "Label__Comment"}
+                            >
+                                {labelComment}
+                            </LabelComment>
+                        </>
                     )}
                 </Label>
             )}

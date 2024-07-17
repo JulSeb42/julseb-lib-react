@@ -10,6 +10,7 @@ import type { LibIcon, ReactChildren } from "../../types"
 import type {
     ILibExtendedInputBase,
     ILibInputValidationIconComponent,
+    ILibInputNoFocusKeys,
 } from "../InputComponents/types"
 
 export interface ILibInputIcon {
@@ -17,38 +18,50 @@ export interface ILibInputIcon {
     iconSize?: number
 }
 
+/*====================== ColorInput ======================*/
+
 export interface ILibColorInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase {
-    type?: "color"
+        ILibExtendedInputBase,
+        ILibInputNoFocusKeys {
+    type: "color"
     children?: never
 }
+
+/*====================== DateInput ======================*/
 
 export interface ILibDateInput
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
         ILibInputIcon,
-        ILibInputValidationIconComponent {
-    type?: "date" | "datetime-local" | "month" | "week"
+        ILibInputValidationIconComponent,
+        ILibInputNoFocusKeys {
+    type: "date" | "datetime-local" | "month" | "week"
     iconCalendar?: LibIcon
     iconCalendarSize?: number
     children?: never
 }
 
+/*====================== FileInput ======================*/
+
 export interface ILibFileInput
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
-        ILibInputValidationIconComponent {
-    type?: "file"
+        ILibInputValidationIconComponent,
+        ILibInputNoFocusKeys {
+    type: "file"
     children?: never
 }
+
+/*====================== PasswordInput ======================*/
 
 interface ILibPasswordInputBase
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
         ILibInputIcon,
-        ILibInputValidationIconComponent {
-    type?: "password"
+        ILibInputValidationIconComponent,
+        ILibInputNoFocusKeys {
+    type: "password"
     children?: never
 }
 
@@ -86,11 +99,13 @@ export type ILibPasswordInput =
     | PasswordWithButtonText
     | PasswordWithoutButton
 
+/*====================== SearchInput ======================*/
+
 interface ILibSearchInputBase
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
         ILibInputIcon {
-    type?: "search"
+    type: "search"
     clearSearch?: MouseEventHandler<HTMLButtonElement>
     iconClear?: LibIcon
     iconClearSize?: number
@@ -109,39 +124,51 @@ interface SearchInputHideKeys extends ILibSearchInputBase {
 
 export type ILibSearchInput = SearchInputShowKeys | SearchInputHideKeys
 
+/*====================== SelectInput ======================*/
+
 export interface ILibSelectInput
     extends SelectHTMLAttributes<HTMLSelectElement>,
         ILibExtendedInputBase,
-        ILibInputIcon {
-    type?: "select"
+        ILibInputIcon,
+        ILibInputNoFocusKeys {
+    type: "select"
     iconSelect?: LibIcon
     iconSelectSize?: number
     children?: ReactChildren
 }
 
+/*====================== TextareaInput ======================*/
+
 export interface ILibTextareaInput
     extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-        ILibExtendedInputBase {
-    type?: "textarea"
+        ILibExtendedInputBase,
+        ILibInputNoFocusKeys {
+    type: "textarea"
     inputVariant?: never
     children?: never
 }
+
+/*====================== TextInput ======================*/
 
 export interface ILibTextInput
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
         ILibInputIcon,
-        ILibInputValidationIconComponent {
-    type?: "email" | "number" | "tel" | "text" | "url"
+        ILibInputValidationIconComponent,
+        Partial<ILibInputNoFocusKeys> {
+    type?: "email" | "number" | "tel" | "text" | "url" | undefined
     children?: never
 }
+
+/*====================== TimeInput ======================*/
 
 export interface ILibTimeInput
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
         ILibInputIcon,
-        ILibInputValidationIconComponent {
-    type?: "time"
+        ILibInputValidationIconComponent,
+        ILibInputNoFocusKeys {
+    type: "time"
     iconClock?: LibIcon
     iconClockSize?: number
     children?: never

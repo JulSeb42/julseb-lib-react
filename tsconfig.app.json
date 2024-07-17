@@ -22,7 +22,9 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "types": ["cypress"]
+        "types": ["cypress"],
+
+        "strictNullChecks": true
     },
     "include": ["src", "cypress", "./node_modules/cypress", "cypress/**/*.ts"]
 }
