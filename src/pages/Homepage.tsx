@@ -29,7 +29,7 @@ export function Homepage() {
         // { path: "/card", element: "CardPage" },
         // { path: "/input", element: "InputPage" },
         // { path: "/input-image", element: "InputImagePage" },
-        { path: "/input-check", element: "InputCheckPage" },
+        // { path: "/input-check", element: "InputCheckPage" },
         { path: "/input-phone", element: "InputPhonePage" },
         { path: "/input-counter", element: "InputCounterPage" },
         { path: "/input-slider", element: "InputSliderPage" },

@@ -50,6 +50,7 @@ import { truncatePreview } from "../lib/components/Truncate/__preview__/Truncate
 import { cardPreview } from "../lib/components/Card/__preview__/Card.preview"
 import { inputPreview } from "../lib/components/Input/__preview__/Input.preview"
 import { inputImagePreview } from "../lib/components/InputImage/__preview__/InputImage.preview"
+import { inputCheckPreview } from "../lib/components/InputCheck/__preview__/InputCheck.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
@@ -125,6 +126,7 @@ truncatePreview,
 cardPreview,
 inputPreview,
 inputImagePreview,
+inputCheckPreview,
 // prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>
