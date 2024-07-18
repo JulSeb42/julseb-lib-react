@@ -67,13 +67,13 @@ export function InputValidationHelper({
                     className={
                         className && "ValidationHelper__IconContainer__Icon"
                     }
-                    icon={status === "not-passed" ? iconNotPassed : iconPassed}
+                    icon={status === false ? iconNotPassed : iconPassed}
                     size={
-                        status === "not-passed"
+                        status === false
                             ? iconNotPassedSize
                             : iconPassedSize
                     }
-                    color={status === "not-passed" ? "danger" : "success"}
+                    color={status === false ? "danger" : "success"}
                 />
             </HelperBottomIconContainer>
 

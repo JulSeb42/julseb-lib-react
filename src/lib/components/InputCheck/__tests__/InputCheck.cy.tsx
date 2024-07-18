@@ -73,7 +73,7 @@ describe("<InputCheck />", () => {
                 id="input"
                 data-testid="testid"
                 variant="selector"
-                validation="not-passed"
+                validation={false}
             >
                 Hello
             </InputCheck>

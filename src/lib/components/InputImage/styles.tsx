@@ -24,13 +24,13 @@ const StyledInputImage = styled.label<{
     position: relative;
     overflow: hidden;
     background-color: ${({ theme, $validation }) =>
-        $validation === "not-passed" ? theme.DANGER_50 : theme.GRAY_100};
+        $validation === false ? theme.DANGER_50 : theme.GRAY_100};
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
     color: ${({ $validation, $disabled, theme }) =>
         $disabled
             ? theme.GRAY_500
             : Mixins.ColorsHoverDefault(
-                  $validation === "not-passed" ? "danger" : "primary",
+                  $validation === false ? "danger" : "primary",
                   theme
               )};
     ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)}

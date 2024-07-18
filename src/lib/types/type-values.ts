@@ -171,11 +171,6 @@ export const typeValues = {
 
     transitions: { short: "short", long: "long", bezier: "bezier" },
 
-    validation: {
-        passed: "passed",
-        "not-passed": "not-passed",
-    },
-
     inputVariants: { rounded: "rounded", pill: "pill" },
 
     inputBackgrounds: { light: "light", dark: "dark" },

@@ -124,7 +124,7 @@ const SearchContainer = styled.div<{
     $inputBackground: LibInputBackground | undefined
 }>`
     color: ${({ theme, $validation }) =>
-        $validation === "not-passed" ? theme.DANGER_500 : theme.PRIMARY_500};
+        $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
     width: 100%;
     padding-bottom: ${SPACERS.XS};
@@ -136,7 +136,7 @@ const SearchContainer = styled.div<{
 
     &:has(input:focus) {
         border-bottom-color: ${({ theme, $validation }) =>
-            $validation === "not-passed"
+            $validation === false
                 ? theme.DANGER_500
                 : theme.PRIMARY_500};
     }
@@ -144,26 +144,26 @@ const SearchContainer = styled.div<{
     ${({ $inputBackground, $validation }) =>
         $inputBackground === "light"
             ? css`
-                  color: ${$validation === "not-passed"
+                  color: ${$validation === false
                       ? COLORS_LIGHT.DANGER_500
                       : COLORS_LIGHT.PRIMARY_500};
                   border-color: ${COLORS_LIGHT.GRAY_200};
 
                   &:has(input:focus) {
-                      border-bottom-color: ${$validation === "not-passed"
+                      border-bottom-color: ${$validation === false
                           ? COLORS_LIGHT.DANGER_500
                           : COLORS_LIGHT.PRIMARY_500};
                   }
               `
             : $inputBackground === "dark" &&
               css`
-                  color: ${$validation === "not-passed"
+                  color: ${$validation === false
                       ? COLORS_DARK.DANGER_500
                       : COLORS_DARK.PRIMARY_500};
                   border-color: ${COLORS_DARK.GRAY_200};
 
                   &:has(input:focus) {
-                      border-bottom-color: ${$validation === "not-passed"
+                      border-bottom-color: ${$validation === false
                           ? COLORS_DARK.DANGER_500
                           : COLORS_DARK.PRIMARY_500};
                   }

@@ -67,7 +67,7 @@ export function InputImageDemoWithValidation() {
             label="Input image validation"
             onChange={e => handleImage(e)}
             validation={{
-                status: "not-passed",
+                status: false,
                 message: "Validation not passed",
             }}
         />

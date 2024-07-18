@@ -23,7 +23,7 @@ export function InputPropsPreview() {
             counter
             maxLength={8}
             validation={{
-                status: "not-passed",
+                status: false,
                 message: "Validation message",
             }}
             icon="mail"

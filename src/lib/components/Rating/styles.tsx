@@ -17,7 +17,7 @@ const RatingButton = styled.button<{
     background-color: transparent;
     color: ${({ theme, $validationStatus }) =>
         Mixins.ColorsHoverDefault(
-            $validationStatus === "not-passed" ? "danger" : "primary",
+            $validationStatus === false ? "danger" : "primary",
             theme
         )};
     ${Mixins.Flexbox({
@@ -32,7 +32,7 @@ const RatingButton = styled.button<{
             @media ${BREAKPOINTS.HOVER} {
                 &:hover {
                     color: ${Mixins.ColorsHoverHover(
-                        $validationStatus === "not-passed"
+                        $validationStatus === false
                             ? "danger"
                             : "primary",
                         theme
@@ -41,7 +41,7 @@ const RatingButton = styled.button<{
 
                 &:active {
                     color: ${Mixins.ColorsHoverActive(
-                        $validationStatus === "not-passed"
+                        $validationStatus === false
                             ? "danger"
                             : "primary",
                         theme

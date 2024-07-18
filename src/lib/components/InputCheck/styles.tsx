@@ -21,7 +21,7 @@ const CheckContainer = styled.span<{
     color: ${({ theme, $disabled, $validation }) =>
         $disabled
             ? theme.GRAY_500
-            : $validation === "not-passed"
+            : $validation === false
             ? theme.DANGER_500
             : theme.PRIMARY_500};
     ${Mixins.Flexbox({
@@ -127,7 +127,7 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               border-color: ${Mixins.ColorsHoverHover(
-                                  $validation === "not-passed"
+                                  $validation === false
                                       ? "danger"
                                       : "primary",
                                   theme
@@ -136,7 +136,7 @@ const StyledInputCheck = styled.label<{
 
                           &:active {
                               border-color: ${Mixins.ColorsHoverActive(
-                                  $validation === "not-passed"
+                                  $validation === false
                                       ? "danger"
                                       : "primary",
                                   theme
@@ -149,7 +149,7 @@ const StyledInputCheck = styled.label<{
               css`
                   background-color: ${$disabled
                       ? theme.GRAY_50
-                      : $validation === "not-passed"
+                      : $validation === false
                       ? theme.DANGER_50
                       : theme.GRAY_100};
                   padding: ${SPACERS.XXS} ${SPACERS.M};
@@ -162,7 +162,7 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === "not-passed"
+                                  $validation === false
                                       ? "danger"
                                       : "primary",
                                   theme
@@ -171,7 +171,7 @@ const StyledInputCheck = styled.label<{
 
                           &:active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === "not-passed"
+                                  $validation === false
                                       ? "danger"
                                       : "primary",
                                   theme
@@ -190,7 +190,7 @@ const StyledInputCheck = styled.label<{
             background-color: ${({ theme, $validation, $disabled }) =>
                 $disabled
                     ? theme.GRAY_500
-                    : $validation === "not-passed"
+                    : $validation === false
                     ? theme.DANGER_500
                     : theme.PRIMARY_500};
 
@@ -203,13 +203,13 @@ const StyledInputCheck = styled.label<{
             border-color: ${({ $validation, $disabled, theme }) =>
                 $disabled
                     ? theme.GRAY_100
-                    : $validation === "not-passed"
+                    : $validation === false
                     ? theme.DANGER_500
                     : theme.SUCCESS_500};
             background-color: ${({ $validation, $disabled, theme }) =>
                 $disabled
                     ? theme.GRAY_100
-                    : $validation === "not-passed"
+                    : $validation === false
                     ? theme.DANGER_500
                     : theme.SUCCESS_500};
 
@@ -225,7 +225,7 @@ const StyledInputCheck = styled.label<{
                 ? css`
                       border-color: ${$disabled
                           ? theme.GRAY_500
-                          : $validation === "not-passed"
+                          : $validation === false
                           ? theme.DANGER_500
                           : theme.PRIMARY_500};
                   `
@@ -233,7 +233,7 @@ const StyledInputCheck = styled.label<{
                   css`
                       background-color: ${$disabled
                           ? theme.GRAY_100
-                          : $validation === "not-passed"
+                          : $validation === false
                           ? theme.DANGER_500
                           : theme.PRIMARY_500};
                       color: ${!$disabled && theme.BACKGROUND};
@@ -243,7 +243,7 @@ const StyledInputCheck = styled.label<{
                           @media ${BREAKPOINTS.HOVER} {
                               &:hover {
                                   background-color: ${Mixins.ColorsHoverHover(
-                                      $validation === "not-passed"
+                                      $validation === false
                                           ? "danger"
                                           : "primary",
                                       theme
@@ -252,7 +252,7 @@ const StyledInputCheck = styled.label<{
 
                               &:active {
                                   background-color: ${Mixins.ColorsHoverActive(
-                                      $validation === "not-passed"
+                                      $validation === false
                                           ? "danger"
                                           : "primary",
                                       theme

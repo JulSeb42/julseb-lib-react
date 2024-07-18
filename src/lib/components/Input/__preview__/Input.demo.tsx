@@ -7,15 +7,15 @@ import type { LibValidationStatus } from "../../../types"
 export function InputDemoValidation() {
     const [input, setInput] = useState("")
     const [validation, setValidation] =
-        useState<LibValidationStatus>("not-passed")
+        useState<LibValidationStatus>(false)
 
     const handleValidate = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value)
 
         if (e.target.value.length > 3) {
-            setValidation("passed")
+            setValidation(true)
         } else {
-            setValidation("not-passed")
+            setValidation(false)
         }
     }
 

@@ -253,7 +253,7 @@ export const InputBaseMixin = ({
     box-sizing: border-box;
     transition: ${TRANSITIONS.SHORT};
     background-color: ${({ theme }) =>
-        $validation === "not-passed"
+        $validation === false
             ? theme.DANGER_50
             : $disabled
             ? theme.GRAY_100
@@ -268,7 +268,7 @@ export const InputBaseMixin = ({
 
     &:focus {
         border-color: ${({ theme }) =>
-            $validation === "not-passed"
+            $validation === false
                 ? theme.DANGER_500
                 : theme.PRIMARY_500};
     }
@@ -415,7 +415,7 @@ export const InputBaseMixin = ({
     ${$hasListOpen &&
     css`
         border-color: ${({ theme }) =>
-            $validation === "not-passed"
+            $validation === false
                 ? theme.DANGER_500
                 : theme.PRIMARY_500};
     `}
@@ -423,11 +423,11 @@ export const InputBaseMixin = ({
     ${$inputBackground === "light"
         ? css`
               border-color: ${$hasListOpen
-                  ? $validation === "not-passed"
+                  ? $validation === false
                       ? COLORS_LIGHT.DANGER_500
                       : COLORS_LIGHT.PRIMARY_500
                   : COLORS_LIGHT.GRAY_200};
-              background-color: ${$validation === "not-passed"
+              background-color: ${$validation === false
                   ? COLORS_LIGHT.DANGER_50
                   : $disabled
                   ? COLORS_LIGHT.GRAY_100
@@ -435,7 +435,7 @@ export const InputBaseMixin = ({
               color: ${$disabled ? COLORS_LIGHT.GRAY_500 : COLORS_LIGHT.FONT};
 
               &:focus {
-                  border-color: ${$validation === "not-passed"
+                  border-color: ${$validation === false
                       ? COLORS_LIGHT.DANGER_500
                       : COLORS_LIGHT.PRIMARY_500};
               }
@@ -456,11 +456,11 @@ export const InputBaseMixin = ({
         : $inputBackground === "dark" &&
           css`
               border-color: ${$hasListOpen
-                  ? $validation === "not-passed"
+                  ? $validation === false
                       ? COLORS_DARK.DANGER_500
                       : COLORS_DARK.PRIMARY_500
                   : COLORS_DARK.GRAY_200};
-              background-color: ${$validation === "not-passed"
+              background-color: ${$validation === false
                   ? COLORS_DARK.DANGER_50
                   : $disabled
                   ? COLORS_DARK.GRAY_100
@@ -468,7 +468,7 @@ export const InputBaseMixin = ({
               color: ${$disabled ? COLORS_DARK.GRAY_500 : COLORS_DARK.FONT};
 
               &:focus {
-                  border-color: ${$validation === "not-passed"
+                  border-color: ${$validation === false
                       ? COLORS_DARK.DANGER_500
                       : COLORS_DARK.PRIMARY_500};
               }

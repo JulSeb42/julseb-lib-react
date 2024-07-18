@@ -43,7 +43,7 @@ export function InputCheckDemoCheckbox() {
                 id="checkbox-3"
                 name="checkbox-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
             >
                 Checkbox
             </InputCheck>
@@ -51,7 +51,7 @@ export function InputCheckDemoCheckbox() {
                 id="checkbox-4"
                 name="checkbox-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
             >
                 Checkbox
@@ -95,7 +95,7 @@ export function InputCheckDemoRadio() {
                 id="radio-3"
                 name="radio-demo-2"
                 type="radio"
-                validation="not-passed"
+                validation={false}
             >
                 Radio
             </InputCheck>
@@ -103,7 +103,7 @@ export function InputCheckDemoRadio() {
                 id="radio-4"
                 name="radio-demo-2"
                 type="radio"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
             >
                 Radio
@@ -149,7 +149,7 @@ export function InputCheckDemoCheckboxTile() {
                 id="checkbox-tile-3"
                 name="checkbox-tile-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 variant="tile"
             >
                 Checkbox
@@ -158,7 +158,7 @@ export function InputCheckDemoCheckboxTile() {
                 id="checkbox-tile-4"
                 name="checkbox-tile-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
                 variant="tile"
             >
@@ -211,7 +211,7 @@ export function InputCheckDemoRadioTile() {
                 id="radio-tile-3"
                 name="radio-tile-demo-2"
                 type="radio"
-                validation="not-passed"
+                validation={false}
                 variant="tile"
             >
                 Radio
@@ -220,7 +220,7 @@ export function InputCheckDemoRadioTile() {
                 id="radio-tile-4"
                 name="radio-tile-demo-2"
                 type="radio"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
                 variant="tile"
             >
@@ -273,7 +273,7 @@ export function InputCheckDemoCheckboxToggle() {
                 id="checkbox-toggle-3"
                 name="checkbox-toggle-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 variant="toggle"
             >
                 Checkbox
@@ -282,7 +282,7 @@ export function InputCheckDemoCheckboxToggle() {
                 id="checkbox-toggle-4"
                 name="checkbox-toggle-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
                 variant="toggle"
             >
@@ -335,7 +335,7 @@ export function InputCheckDemoCheckboxSelector() {
                 id="checkbox-selector-3"
                 name="checkbox-selector-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 variant="selector"
             >
                 Checkbox
@@ -344,7 +344,7 @@ export function InputCheckDemoCheckboxSelector() {
                 id="checkbox-selector-4"
                 name="checkbox-selector-demo-2"
                 type="checkbox"
-                validation="not-passed"
+                validation={false}
                 defaultChecked
                 variant="selector"
             >

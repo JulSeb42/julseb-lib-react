@@ -77,7 +77,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 offset: 2,
             },
             variant: buttonVariant,
-            color: validation?.status === "not-passed" ? "danger" : "primary",
+            color: validation?.status === false ? "danger" : "primary",
         }
 
         const isMinDisabled = disabled || !!(min && value <= min)

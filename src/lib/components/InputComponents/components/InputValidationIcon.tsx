@@ -33,7 +33,7 @@ export function InputValidationIcon({
                 data-testid={testid && `${testid}.ValidationIconContainer.Icon`}
                 className={className && "ValidationIconContainer__Icon"}
                 icon={
-                    status === "not-passed"
+                    status === false
                         ? validationIcon?.iconValidationNotPassed || (
                               <CloseCircle
                                   data-testid={
@@ -60,7 +60,7 @@ export function InputValidationIcon({
                           )
                 }
                 size={
-                    status === "not-passed"
+                    status === false
                         ? validationIcon?.iconValidationNotPassedSize || 16
                         : validationIcon?.iconValidationPassedSize || 16
                 }

@@ -36,40 +36,5 @@ export const inputCheckPreview: ComponentPreview<ILibInputCheck> = {
             previewTitle: "Checkbox selector",
             demo: <InputCheckDemoCheckboxSelector />,
         },
-        // {
-        //     previewTitle: "Default",
-        //     props: { id: "default", children: "Default" },
-        // },
-        // {
-        //     previewTitle: "Radio",
-        //     props: { id: "radio", type: "radio", children: "Radio" },
-        // },
-        // {
-        //     previewTitle: "Checkbox tile",
-        //     props: {
-        //         id: "checkbox-tile",
-        //         children: "Checkbox tile",
-        //         type: "checkbox",
-        //         variant: "tile",
-        //     },
-        // },
-        // {
-        //     previewTitle: "Radio tile",
-        //     props: {
-        //         id: "radio-tile",
-        //         children: "Radio tile",
-        //         type: "radio",
-        //         variant: "tile",
-        //     },
-        // },
-        // {
-        //     previewTitle: "With validation",
-        //     props: {
-        //         id: "radioValidation",
-        //         type: "radio",
-        //         children: "Radio not passed",
-        //         validation: "not-passed",
-        //     },
-        // },
     ],
 }
