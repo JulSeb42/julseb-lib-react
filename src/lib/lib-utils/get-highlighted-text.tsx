@@ -1,13 +1,14 @@
 /*=============================================== GetHighlightedText ===============================================*/
 
-import { Fragment } from "react"
+import { Fragment, type CSSProperties } from "react"
 import { uuid, slugify } from "ts-utils-julseb"
 import { Text } from ".."
 
 export const getHighlightedText = (
     text: string,
     value: string,
-    className?: string
+    className?: string,
+    styles?: CSSProperties
 ) => {
     const parts = text.split(new RegExp(`(${value})`, "gi"))
 
@@ -17,6 +18,7 @@ export const getHighlightedText = (
                 <Text
                     tag="strong"
                     className={className && `${className}__Highlight`}
+                    style={styles}
                 >
                     {part}
                 </Text>

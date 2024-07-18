@@ -19,10 +19,20 @@ export const Highlight = forwardRef<
         HTMLOListElement &
         HTMLDListElement,
     ILibHighlight
->(({ children = "", highlightedText, className, ...rest }, ref) => {
-    return (
-        <Text ref={ref} className={className} {...rest}>
-            {getHighlightedText(children, highlightedText, className)}
-        </Text>
-    )
-})
+>(
+    (
+        { children = "", highlightedText, className, highlightStyle, ...rest },
+        ref
+    ) => {
+        return (
+            <Text ref={ref} className={className} {...rest}>
+                {getHighlightedText(
+                    children,
+                    highlightedText,
+                    className,
+                    highlightStyle
+                )}
+            </Text>
+        )
+    }
+)

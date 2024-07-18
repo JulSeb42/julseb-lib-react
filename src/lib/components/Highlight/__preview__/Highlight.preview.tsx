@@ -22,5 +22,15 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
                 children: "Hello world",
             },
         },
+        {
+            previewTitle: "With different styles",
+            props: {
+                highlightedText: "hello",
+                children: "Hello world",
+                highlightStyle: {
+                    color: "red",
+                },
+            },
+        },
     ],
 }
