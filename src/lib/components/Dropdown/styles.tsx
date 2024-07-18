@@ -16,11 +16,15 @@ import {
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
-import type { LibColorsHover, LibListDirection, LibSpacers } from "../../types"
+import type {
+    LibColorsHover,
+    LibInputListDirection,
+    LibSpacers,
+} from "../../types"
 
 const StyledDropdown = styled.div<{
     $isOpen: boolean
-    $direction: LibListDirection
+    $direction: LibInputListDirection
     $maxHeight: number
     $buttonOpenHeight: number
 }>`

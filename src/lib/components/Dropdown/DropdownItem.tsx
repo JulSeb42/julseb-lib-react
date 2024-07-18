@@ -26,9 +26,13 @@ type ILibDropdownItem = LibComponentBase<
 /**
  * @description Returns a DropdownItem component
  * @link https://documentation-components-react.vercel.app/components/dropdown
- * @extends HTMLButtonElement & HTMLAnchorElement
+ * @extends HTMLButtonElement & HTMLAnchorElement & LibButtonLinkBlankRequired
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop icon?: string | JSX.Element
+ * @prop iconSize?: number
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 
 export const DropdownItem = forwardRef<

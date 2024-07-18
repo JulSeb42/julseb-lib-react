@@ -28,6 +28,9 @@ type ILibPaginationButton = PaginationButtonActive | PaginationButtonReadOnly
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop isActive: boolean => only if readOnly is not defined
+ * @prop readOnly: boolean => only if isActive is not defined
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  */
 
 export const PaginationButton = forwardRef<

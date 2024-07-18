@@ -10,6 +10,12 @@ import type { ILibBurger } from "./types"
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop isOpen: boolean
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+ * @prop width?: number
+ * @prop height?: number
+ * @prop noHover?: boolean
+ * @prop borderWidth?: number
  */
 
 export const Burger = forwardRef<HTMLButtonElement, ILibBurger>(

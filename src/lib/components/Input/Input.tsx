@@ -18,7 +18,47 @@ import type { LibInputType } from "../../types"
  * @description Returns a Input component
  * @link https://documentation-components-react.vercel.app/components/input
  * @extends HTMLInputElement
+ * @constant => for all inputs
  * @prop data-testid?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
+ * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
+ * @prop inputBackground?: LibInputBackground
+ * @prop inputVariant?: LibInputVariant
+ * @prop counter?: boolean
+ * @prop maxLength?: number
+ * @prop type?: "color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "select" | "textarea" | "email" | "number" | "tel" | "text" | "url" | "time"
+ * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
+ *
+ * @type for type `date` | `datetime-local` | `month` | `week` | `password` | `search` | `email` | `number` | `tel` | `text` | `url` | `time`
+ * @prop icon?: string | JSX.Element
+ * @prop iconSize?: number
+ *
+ * @type for type `date` | `datetime-local` | `month` | `week`
+ * @prop iconCalendar?: string | JSX.Element
+ * @prop iconCalendarSize?: number
+ *
+ * @type for type `password`
+ * @prop hideButton?: boolean
+ * @prop button?: { iconShow: string | JSX.Element; iconShowSize?: number; iconHide: string | JSX.Element; iconHideSize?: number; textShow?: string; textHide?: string }
+ *
+ * @type for type `search`
+ * @prop clearSearch?: MouseEventHandler<HTMLButtonElement>
+ * @prop iconClear?: string | JSX.Element
+ * @prop iconClearSize?: number
+ * @prop focusKeys?: Array<string>
+ * @prop showKeys?: boolean => only if `focusKeys` is defined
+ *
+ * @type for type `select`
+ * @prop iconSelect?: string | JSX.Element
+ * @prop iconSelectSize?: number
+ * @prop children?: ReactChildren
+ *
+ * @type for type `time`
+ * @prop iconClock?: string | JSX.Element
+ * @prop iconClockSize?: number
  */
 
 function renderComponent(
@@ -96,7 +136,14 @@ export const Input = forwardRef<
             ...rest,
         } as any
 
-        if (label || helper || helperBottom || validation || counter)
+        if (
+            label ||
+            labelComment ||
+            helper ||
+            helperBottom ||
+            validation ||
+            counter
+        )
             return (
                 <InputContainer
                     data-testid={testid}

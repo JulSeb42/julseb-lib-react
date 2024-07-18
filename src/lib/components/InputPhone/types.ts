@@ -3,7 +3,7 @@
 import type { InputHTMLAttributes } from "react"
 import type {
     CountryCode,
-    LibListDirection,
+    LibInputListDirection,
     LibCountry,
     LibIcon,
     DispatchState,
@@ -30,7 +30,7 @@ export interface ILibInputPhone
         caret?: number
     }
     searchPlaceholder?: string
-    listDirection?: LibListDirection
+    listDirection?: LibInputListDirection
     countryButtonAriaLabel?: string
     textNoResult?: string
 }

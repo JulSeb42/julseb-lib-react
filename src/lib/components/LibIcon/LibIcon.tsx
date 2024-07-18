@@ -13,6 +13,11 @@ export interface ILibLibIcon {
 
 /**
  * @description Icon used to build components from library, use Icon component to build your app.
+ * @access Only for building library, do not export
+ * @prop icon: string | JSX.Element
+ * @prop size?: number
+ * @prop color?: Any color from the library
+ * @prop className?: string
  */
 
 export function LibIcon({

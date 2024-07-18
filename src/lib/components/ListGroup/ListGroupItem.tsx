@@ -26,9 +26,18 @@ interface ILibListGroupItemComponent extends LibComponentBase<HTMLDivElement> {
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop text: string
+ * @prop subtext?: string
+ * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
+ * @prop date?: string | Date => only if `badge` is not defined
+ * @prop number?: number
+ * @prop isInArray?: boolean
  */
 
-export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItemComponent>(
+export const ListGroupItem = forwardRef<
+    HTMLDivElement,
+    ILibListGroupItemComponent
+>(
     (
         {
             "data-testid": testid,

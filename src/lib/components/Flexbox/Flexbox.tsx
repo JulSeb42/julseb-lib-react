@@ -10,6 +10,16 @@ import type { ILibFlexbox } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop inline?: boolean
+ * @prop flexDirection?: CssFlexDirection
+ * @prop flexWrap?: CssFlexWrap
+ * @prop justifyContent?: CssJustifyContent
+ * @prop alignItems?: CssAlignItems
+ * @prop justifyItems?: CssJustifyItems
+ * @prop alignContent?: CssAlignContent
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 
 export const Flexbox = forwardRef<HTMLDivElement, ILibFlexbox>(

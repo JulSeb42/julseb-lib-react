@@ -4,6 +4,7 @@ import { forwardRef, useCallback, useState } from "react"
 import { LibIcon } from "../LibIcon"
 import { Image, Edit } from "../../icons"
 import { InputContainer } from "../InputComponents"
+import type { LibValidationStatus, LibIcon as LibIconType } from "../../types"
 import {
     StyledInputImage,
     StyledEmptyContainer,
@@ -12,14 +13,14 @@ import {
     StyledInput,
 } from "./styles"
 import type { ILibInputImage } from "./types"
-import type { ILibInputImageContainer } from "./other-types"
 
-/**
- * @description Returns a InputImage component
- * @link https://documentation-components-react.vercel.app/components/input-image
- * @extends HTMLInputElement
- * @prop data-testid?: string
- */
+interface ILibInputImageContainer {
+    "data-testid": string | undefined
+    className: string | undefined
+    validation: LibValidationStatus
+    icon?: LibIconType
+    iconSize?: number
+}
 
 function EmptyContainer({
     "data-testid": testid,
@@ -75,6 +76,25 @@ function HoverContainer({
         </StyledHoverContainer>
     )
 }
+
+/**
+ * @description Returns a InputImage component
+ * @link https://documentation-components-react.vercel.app/components/input-image
+ * @extends HTMLInputElement
+ * @prop data-testid?: string
+ * @prop id: string
+ * @prop value: string
+ * @prop width?: string | number
+ * @prop height?: string | number
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop icons?: { empty?: string | JSX.Element; hover?: string | JSX.Element }
+ * @prop iconSizes?: { empty?: number; hover?: number }
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ */
 
 export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     (

@@ -23,6 +23,10 @@ interface ILibAccordionItem extends LibComponentBase<HTMLDivElement> {
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop title: string
+ * @prop icon?: "plus" | "chevron" | JSX.Element
+ * @prop variant?: "basic" | "rounded"
+ * @prop defaultOpen?: boolean
  */
 
 export const AccordionItem = forwardRef<HTMLDivElement, ILibAccordionItem>(

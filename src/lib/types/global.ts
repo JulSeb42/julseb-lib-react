@@ -264,7 +264,7 @@ export type LibCountry = {
 
 /* InputList */
 
-export type LibListDirection = keyof typeof typeValues.listInputDirections
+export type LibInputListDirection = keyof typeof typeValues.listInputDirections
 
 /* Toast */
 

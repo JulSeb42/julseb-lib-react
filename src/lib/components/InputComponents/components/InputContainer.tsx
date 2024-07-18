@@ -23,7 +23,7 @@ import type { ILibInputContainer } from "../types"
  * @prop label: string | JSX.Element | undefined
  * @prop helper: string | undefined
  * @prop helperBottom: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number } | undefined
- * @prop validation: ValidationHelper | undefined
+ * @prop validation: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number } | undefined
  * @prop value: any | undefined
  * @prop counter: boolean | undefined
  * @prop maxLength: number | undefined

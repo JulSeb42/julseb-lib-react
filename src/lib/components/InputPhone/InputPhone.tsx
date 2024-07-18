@@ -34,9 +34,9 @@ import {
 import type { ILibInputPhone } from "./types"
 import type { ILibListInputItem } from "../InputComponents/types"
 
-const defaultIconsSizes = {
-    search: 16,
-    caret: 12,
+const DEFAULT_ICONS_SIZES = {
+    SEARCH: 16,
+    CARET: 12,
 }
 
 /**
@@ -44,6 +44,23 @@ const defaultIconsSizes = {
  * @link https://documentation-components-react.vercel.app/components/input-phone
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop selectedCountry: name: string; dial_code: string; code: CountryCode; flag: string | undefined
+ * @prop setSelectedCountry: Dispatch<SetStateAction<LibCountry | undefined>>
+ * @prop defaultCountry?: Any Alpha-2 Code from https://www.iban.com/country-codes
+ * @prop icons?: { search?: string | JSX.Element; caret?: string | JSX.Element }
+ * @prop iconSizes?: { search?: number; caret?: number }
+ * @prop searchPlaceholder?: string
+ * @prop listDirection?: "up" | "down"
+ * @prop countryButtonAriaLabel?: string
+ * @prop textNoResult?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }
  */
 
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
@@ -141,7 +158,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
         const defaultIcons = {
             search: (
                 <Search
-                    size={iconSizes?.search || defaultIconsSizes.search}
+                    size={iconSizes?.search || DEFAULT_ICONS_SIZES.SEARCH}
                     data-testid={
                         testid && `${testid}.ListInput.SearchContainer.Icon`
                     }
@@ -150,7 +167,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             ),
             caret: (
                 <CaretDown
-                    size={iconSizes?.search || defaultIconsSizes.caret}
+                    size={iconSizes?.search || DEFAULT_ICONS_SIZES.CARET}
                     data-testid={
                         testid &&
                         `${testid}.LeftContainer.CountryButton.CaretIcon`
@@ -232,7 +249,8 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             <LibIcon
                                 icon={icons?.caret || defaultIcons.caret}
                                 size={
-                                    iconSizes?.caret || defaultIconsSizes.caret
+                                    iconSizes?.caret ||
+                                    DEFAULT_ICONS_SIZES.CARET
                                 }
                                 data-testid={
                                     testid &&
@@ -319,7 +337,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     icon={icons?.search || defaultIcons.search}
                                     size={
                                         iconSizes?.search ||
-                                        defaultIconsSizes.search
+                                        DEFAULT_ICONS_SIZES.SEARCH
                                     }
                                     data-testid={
                                         testid &&

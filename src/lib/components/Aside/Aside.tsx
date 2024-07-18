@@ -10,6 +10,8 @@ import type { ILibAside } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop size?: "default" | "small" | number
+ * @prop minHeight?: string | number
  */
 
 export const Aside = forwardRef<HTMLDivElement, ILibAside>(

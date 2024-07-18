@@ -12,6 +12,11 @@ import type { ILibImage } from "./types"
  * @extends HTMLImageElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop fit?: CssObjectFit
+ * @prop aspectRatio?: string
+ * @prop fallback?: JSX.Element
+ * @prop caption?: string | { text: string; textColor?: Any color from the library; background?: Any color or overlay from the library, except "gradient-black" | "gradient-white"; as?: ElementType }
  */
 
 export const Image = forwardRef<HTMLImageElement, ILibImage>(

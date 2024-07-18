@@ -45,16 +45,12 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 
 /**
  * @description Props for ButtonGroup component items: https://documentation-components-react.vercel.app/components/button-group
+ * @extends LibButtonLinkBlank
  * @prop text: string => only if `iconOnly` is not defined
  * @prop iconLeft?: string | JSX.Element
  * @prop iconRight?: string | JSX.Element
  * @prop iconOnly: string | JSX.Element => only if `text` is not defined
  * @prop iconSizes?: { left?: number; right?: number; only?: number }
- * @prop onClick?: void => only if `to` & `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` & `href` are not defined
- * @prop href?: string => only if `to` & `onClick` are not defined
- * @prop blank?: boolean => only if `to` & `href` are defined
  * @prop "aria-label"?: string
  */
 export type LibButtonGroupItem = ButtonGroupItemText | ButtonGroupItemIcon
@@ -102,21 +98,12 @@ type ListGroupItemWithDate = ListGroupItemBase & {
 
 /**
  * @description Props for ListGroup component items: https://documentation-components-react.vercel.app/components/list-group
+ * @extends LibButtonLinkBlank
  * @prop text: string
  * @prop subtext?: string
  * @prop ref?: ForwardedRef<HTMLLIElement>
- * @prop onClick?: void => only if `to` & `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` & `href` are not defined
- * @prop href?: string => only if `to` & `onClick` are not defined
- * @prop blank?: boolean => only if `to` & `href` are defined
  * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
  * @prop date?: string | Date => only if `badge` is not defined
- * @prop onClick?: void => only if `to` & `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` & `href` are not defined
- * @prop href?: string => only if `to` & `onClick` are not defined
- * @prop blank?: boolean => only if `to` & `href` are defined
  */
 export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
 
@@ -142,6 +129,7 @@ export interface LibAccordionItem {
 
 /**
  * @description Props for Dropdown component items: https://documentation-components-react.vercel.app/components/dropdown
+ * @extends LibButtonLinkBlankRequired
  * @prop text: string
  * @prop icon?: string | JSX.Element
  * @prop iconSize?: number
@@ -160,6 +148,21 @@ export type LibDropdownItem = LibButtonLinkBlankRequired & {
 
 /*====================== Toast ======================*/
 
+/**
+ * @description Props for Toaster component items: https://documentation-components-react.vercel.app/components/toast
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop body?: string | ReactChildren
+ * @prop duration?: number
+ * @prop icons?: { left?: string | JSX.Element; close?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number close?: number }
+ * @prop iconLeftColor?: Any color from the library
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop labelClose?: string
+ * @prop withTimer?: boolean
+ * @prop timerBackgroundColor?: Any color from the library
+ */
 export interface LibToastOptions {
     "data-testid"?: string
     className?: string
@@ -190,8 +193,28 @@ export interface LibToast {
 
 /*====================== Step ======================*/
 
+/**
+ * @description Props for Step component items: https://documentation-components-react.vercel.app/components/stepper
+ * @extends LibButtonLinkBlank
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop text: string
+ */
 export type LibStep = LibButtonLinkBlank & {
     "data-testid"?: string
     className?: string
     text: string
+}
+
+/*====================== BreadcrumbItem ======================*/
+
+/**
+ * @description Props for Breadcrumbs component items: https://documentation-components-react.vercel.app/components/breadcrumbs
+ * @extends LibButtonLinkBlank
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop text: string
+ */
+export type LibBreadcrumbItem = LibButtonLinkBlank & {
+    text: string | JSX.Element
 }

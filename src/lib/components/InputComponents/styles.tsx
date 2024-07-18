@@ -22,7 +22,7 @@ import type {
     LibInputBackground,
     LibInputVariant,
     LibValidationStatus,
-    LibListDirection,
+    LibInputListDirection,
 } from "../../types"
 
 const StyledInputContainer = styled.div<{ $hasListOpen?: boolean }>`
@@ -158,9 +158,7 @@ const StyledInputValidationIcon = styled.span<{
         $justifyContent: "center",
     })};
     color: ${({ theme, $validationStatus }) =>
-        $validationStatus === false
-            ? theme.DANGER_500
-            : theme.SUCCESS_500};
+        $validationStatus === false ? theme.DANGER_500 : theme.SUCCESS_500};
 
     ${({ $inputBackground, $validationStatus }) =>
         $inputBackground === "light"
@@ -319,7 +317,7 @@ const StyledInputWrapper = styled.div<{ $hasListOpen?: boolean }>`
 
 const StyledListInput = styled.div<{
     $isOpen: boolean
-    $direction?: LibListDirection
+    $direction?: LibInputListDirection
     $inputBackground: LibInputBackground | undefined
     $validation: LibValidationStatus
     $inputVariant: LibInputVariant | undefined
@@ -442,9 +440,7 @@ const StyledListInputItem = styled.span<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   null,
                                   "light"
                               )};
@@ -453,9 +449,7 @@ const StyledListInputItem = styled.span<{
 
                           &:active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   null,
                                   "light"
                               )};
@@ -478,9 +472,7 @@ const StyledListInputItem = styled.span<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   null,
                                   "dark"
                               )};
@@ -489,9 +481,7 @@ const StyledListInputItem = styled.span<{
 
                           &:active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   null,
                                   "dark"
                               )};

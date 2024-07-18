@@ -10,6 +10,15 @@ import type { ILibGrid } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop inline?: boolean
+ * @prop col?: number | string
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop justifyItems?: CssJustifyItems
+ * @prop alignItems?: CssAlignItems
+ * @prop justifyContent?: CssJustifyContent
+ * @prop alignContent?: CssAlignContent
  */
 
 export const Grid = forwardRef<HTMLDivElement, ILibGrid>(

@@ -14,6 +14,7 @@ const URL_REGEX =
  * @extends ILibText
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop blank?: boolean
  */
 
 export const Linkify = forwardRef<

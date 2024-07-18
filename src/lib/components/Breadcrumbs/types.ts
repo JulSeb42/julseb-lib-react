@@ -7,13 +7,25 @@ import type {
     LibComponentBase,
     LibSpacers,
     LibBreadcrumbSeparator,
+    LibBreadcrumbItem,
 } from "../../types"
 
-export interface ILibBreadcrumbs extends LibComponentBase<HTMLDivElement> {
+interface ILibBreadcrumbsBase extends LibComponentBase<HTMLDivElement> {
     linksColor?: LibColorsHover
     activeColor?: LibAllColors
     separatorColor?: LibAllColors
     gap?: LibSpacers
     separator?: LibBreadcrumbSeparator
-    children?: Array<ReactNode>
 }
+
+interface BreadcrumbsWithItems extends ILibBreadcrumbsBase {
+    breadcrumbsItems: Array<LibBreadcrumbItem>
+    children?: never
+}
+
+interface BreadcrumbsWithChildren extends ILibBreadcrumbsBase {
+    breadcrumbsItems?: never
+    children: Array<ReactNode>
+}
+
+export type ILibBreadcrumbs = BreadcrumbsWithItems | BreadcrumbsWithChildren

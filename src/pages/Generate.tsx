@@ -7,24 +7,25 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "size?: LibAsideSize",
-        "minHeight?: string | number",
+        "isActive: boolean => only if readOnly is not defined",
+        "readOnly: boolean => only if isActive is not defined",
+        "accentColor?: LibColorsHover",
     ])
-    // const typeValuesArr = Object.keys(typeValues.spacers)
 
-    // const tests = [
-    //     "testid.Button.Minus",
-    //     "testid.Button.Minus.Icon",
-    //     "testid.Input",
-    //     "testid.Button.Plus",
-    //     "testid.Button.Plus.Icon",
-    // ]
+    // TODO: stopped at Pagination
 
-    // const inputSliderShowValues = {
-    //     never: "never",
-    //     hover: "hover",
-    //     always: "always",
-    // }
+    // const propsInputs = replaceTypes([
+    //     "label?: string",
+    //     "labelComment?: string",
+    //     "helper?: string",
+    //     "helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }",
+    //     "validation?: ValidationHelper",
+    //     'inputBackground?: "light" | "dark"',
+    //     'inputVariant?: "rounded" | "pill"',
+    // ])
+
+    // const propValidationIcon =
+    //     "validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }"
 
     return (
         <Page title="Generate">
@@ -35,115 +36,48 @@ export function Generate() {
             </ul>
 
             {/* <ul>
-                {tests.map(t => (
-                    <li key={t}>
-                        cy.dataTest("{t}").should("exist").should("have.class",
-                        "{t.replaceAll("testid.", "").replaceAll(".", "__")}")
-                    </li>
+                {propsInputs.map(p => (
+                    <li key={p}>{` * @prop ${p}`}</li>
                 ))}
             </ul>
 
-            
-
-            <p>{Object.keys(inputSliderShowValues).map(i => `"${i}" | `)}</p> */}
-
-            {/* <p>
-                {Object.keys(inputTypes).map(i => (
-                    <>"{i}" | </>
-                ))}
-            </p>
-
-            <ul>
-                {itemProps.map(p => (
-                    <li key={p}>{p.split("=")[0]},</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {fontSizes.map(size => (
-                    <li key={size}>{`["${size}", getSize("${size}")],`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {inputTypes.map(i => (
-                    <li key={i}>{`${i}: "${i}",`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {inputs.map(i => {
-                    const type = i.replaceAll("Input", "").toLowerCase()
-
-                    return (
-                        <li
-                            key={i}
-                        >{`if (type === "${type}") return <${i} ref={ref} {...rest} />`}</li>
-                    )
-                })}
-            </ul>
-
-            <ul>
-                {propsDoc.map(prop => {
-                    return <li key={prop}>${prop}</li>
-                })}
-            </ul>
-
-            <ul>
-                {propsDoc.map(p => {
-                    const prop = p.split(":")[0].replace("?", "")
-
-                    return (
-                        <li key={p}>{`$${prop.split(":")[0]}={${prop.replace(
-                            "$",
-                            ""
-                        )}}`}</li>
-                    )
-                })}
-            </ul>
-            <ul>
-                {propsDoc.map(a => (
-                    <li key={a}>
-                        {a.split(":")[0].replace("$", "").replace("?", "")},
-                    </li>
-                ))}
-            </ul>
-
-            <ul>
-                {propsDoc.map(p => (
-                    <li key={p}>
-                        {" "}
-                        * @prop{" "}
-                        {p.replaceAll("LibIcon", "string | JSX.Element")}
-                    </li>
-                ))}
-            </ul> */}
-
-            {/* <p>{typeValuesArr.map(t => `"${t}" | `)}</p> */}
+            <p>{` * @prop ${propValidationIcon}`}</p> */}
         </Page>
     )
 }
 
 function replaceTypes(arr: Array<string>) {
-    const mappedRadiuses = Object.keys(typeValues.radiuses)
-        .map(r => `"${r}"`)
-        .join(" | ")
-    const mappedSpacers = Object.keys(typeValues.spacers)
-        .map(s => `"${s}"`)
-        .join(" | ")
-    const mappedColorsShort = Object.keys(typeValues.colorsShort)
-        .map(c => `"${c}"`)
-        .join(" | ")
-    const mappedAccordionIcons = Object.keys(typeValues.accordionIcons)
-        .map(i => `"${i}"`)
-        .join(" | ")
-    const mappedAccordionVariants = Object.keys(typeValues.accordionVariants)
-        .map(v => `"${v}"`)
-        .join(" | ")
-    const mappedAsideSizes = Object.keys(typeValues.asideSizes)
-        .map(s => `"${s}"`)
-        .join(" | ")
+    const mapValues = (obj: Object) =>
+        Object.keys(obj)
+            .map(v => `"${v}"`)
+            .join(" | ")
+
+    const mappedRadiuses = `${mapValues(typeValues.radiuses)} | number`
+    const mappedSpacers = `${mapValues(typeValues.spacers)} | number | "0px"`
+    const mappedColorsShort = mapValues(typeValues.colorsShort)
+    const mappedAccordionIcons = mapValues(typeValues.accordionIcons)
+    const mappedAccordionVariants = mapValues(typeValues.accordionVariants)
+    const mappedAsideSizes = `${mapValues(typeValues.asideSizes)} | number`
+    const mappedListDirection = mapValues(typeValues.listInputDirections)
+    const mappedBreadcrumbsSeparators = `${mapValues(
+        typeValues.breadcrumbSeparators
+    )} | JSX.Element`
     const allColorsDesc = "Any color from the library"
+    const mappedColorsHover = mapValues(typeValues.colorsHover)
+    const mappedColorsHoverAndCurrent = mapValues(typeValues.colorsHover)
+    const mappedShadows = mapValues(typeValues.shadows)
+    const mappedButtonSizes = mapValues(typeValues.buttonSizes)
+    const mappedButtonVariants = mapValues(typeValues.buttonVariants)
+    const mappedLoaderVariants = mapValues(typeValues.loaderVariants)
+    const mappedButtonIconVariants = '"plain" | "transparent" | "ghost"'
+    const mappedInterfaceMargin = `${mappedSpacers} | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
+    const mappedInputCheckVariants = mapValues(typeValues.checkInputVariants)
+    const mappedInputBackgrounds = mapValues(typeValues.inputBackgrounds)
+    const mappedInputVariants = mapValues(typeValues.inputVariants)
+    const mappedKeySizes = mapValues(typeValues.keySizes)
+    const mappedMainSizes = `${mapValues(typeValues.mainSizes)} | number`
+
+    // LibShadows | { default: LibShadows; hover: LibShadows; active: LibShadows }
 
     return arr.map(str => {
         if (str.includes("DispatchState")) {
@@ -161,13 +95,14 @@ function replaceTypes(arr: Array<string>) {
             .replaceAll("LibSpacers", mappedSpacers)
             .replaceAll("LibColorsShort", mappedColorsShort)
             .replaceAll("LibAllColors", allColorsDesc)
+            .replaceAll("LibIcon", "string | JSX.Element")
             .replaceAll(
                 "ILibPadding",
                 `${mappedSpacers} | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
             )
             .replaceAll(
                 "ILibRadius",
-                `${mappedRadiuses} | number | null | { topLeft?: LibRadiuses | number | null; topRight?: LibRadiuses | number | null; bottomLeft?: LibRadiuses | number | null; bottomRight?: LibRadiuses | number | null }`
+                `${mappedRadiuses} | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }`
             )
             .replaceAll(
                 "ILibBorder",
@@ -178,21 +113,60 @@ function replaceTypes(arr: Array<string>) {
                 `${mappedAccordionIcons} | JSX.Element`
             )
             .replaceAll("LibAccordionVariant", mappedAccordionVariants)
-            .replaceAll("LibAsideSize", `${mappedAsideSizes} | number`)
+            .replaceAll("LibAsideSize", `${mappedAsideSizes}`)
+            .replaceAll(
+                "LibAccordionItem",
+                '{ "data-testid"?: string; className?: string; title: string; content?: string | ReactChildren; defaultOpen?: boolean; ref?: ForwardedRef<HTMLDivElement> }'
+            )
+            .replaceAll("LibInputListDirection", mappedListDirection)
+            .replaceAll("LibBreadcrumbSeparator", mappedBreadcrumbsSeparators)
+            .replaceAll(
+                "LibColorsHoverAndCurrent",
+                ` ${mappedColorsHoverAndCurrent} | "currentColor"`
+            )
+            .replaceAll("LibColorsHover", mappedColorsHover)
+            .replaceAll(
+                "ILibBoxShadow",
+                `${mappedShadows} | { default: LibShadows; hover: LibShadows; active: LibShadows }`
+            )
+            .replaceAll("LibButtonSize", mappedButtonSizes)
+            .replaceAll("LibButtonVariant", mappedButtonVariants)
+            .replaceAll(
+                "LibLoaderVariant",
+                mappedLoaderVariants.replaceAll('"', "")
+            )
+            .replaceAll(
+                "LibBreadcrumbItem",
+                "LibButtonLinkBlank & { text: string | JSX.Element }"
+            )
+            .replaceAll("LibButtonIconVariant", mappedButtonIconVariants)
+            .replaceAll(
+                "ILibBackgroundImage",
+                "{ img: string; clip?: CssBackgroundClip; origin?: CssBackgroundOrigin; position?: CssBackgroundPosition; repeat?: CssBackgroundRepeat; size?: CssBackgroundSize }"
+            )
+            .replaceAll("Property.", "Css")
+            .replaceAll("ILibMargin", mappedInterfaceMargin)
+            .replaceAll(
+                "LibImageBackgroundOverlay",
+                'Any color or overlay from the library, except "gradient-black" | "gradient-white"'
+            )
+            .replaceAll("LibValidationStatus", "boolean | undefined")
+            .replaceAll("LibInputCheckVariant", mappedInputCheckVariants)
+            .replaceAll("LibInputBackground", mappedInputBackgrounds)
+            .replaceAll("LibInputVariant", mappedInputVariants)
+            .replaceAll(
+                "ValidationHelper",
+                "{ status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }"
+            )
+            .replaceAll(
+                "CountryCode",
+                "Any Alpha-2 Code from https://www.iban.com/country-codes"
+            )
+            .replaceAll(
+                "LibCountry",
+                "name: string; dial_code: string; code: CountryCode; flag: string"
+            )
+            .replaceAll("LibKeySize", mappedKeySizes)
+            .replaceAll("LibMainSize", mappedMainSizes)
     })
 }
-
-// function getTypeDispatch(str: string): string {
-//     if (str.includes("DispatchState")) {
-//         const prop = str.split(":")[0]
-
-//         const type = str
-//             .split(":")[1]
-//             .replace("DispatchState<", "")
-//             .replace(">", "")
-
-//         return `${prop}: Dispatch<SetStateAction<${type}>>`
-//     }
-
-//     return str
-// }

@@ -13,14 +13,6 @@ import { useMergeRefs } from "../../"
 import { StyledMasonry, Col } from "./styles"
 import type { ILibMasonry } from "./types"
 
-/**
- * @description Returns a Masonry component
- * @link https://documentation-components-react.vercel.app/components/masonry
- * @extends HTMLDivElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- */
-
 function useEventListener(
     eventNames: keyof GlobalEventHandlersEventMap,
     handler: () => void,
@@ -47,6 +39,17 @@ function useEventListener(
 function fillCols(children: Array<ReactNode>, cols: Array<any>) {
     children.forEach((child, i) => cols[i % cols.length].push(child))
 }
+
+/**
+ * @description Returns a Masonry component
+ * @link https://documentation-components-react.vercel.app/components/masonry
+ * @extends HTMLDivElement
+ * @prop data-testid?: string
+ * @prop as?: ElementType
+ * @prop children?: Array<ReactNode>
+ * @prop col?: number
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ */
 
 export const Masonry = forwardRef<HTMLDivElement, ILibMasonry>(
     (

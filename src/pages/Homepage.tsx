@@ -1,7 +1,10 @@
 /*=============================================== Homepage ===============================================*/
 
+import { useState } from "react"
 import { toPascalCase } from "ts-utils-julseb"
 import { Page } from "../components"
+import { InputPhone } from "../lib"
+import type { LibCountry } from "../lib/types"
 
 export function Homepage() {
     const components = [
@@ -49,8 +52,17 @@ export function Homepage() {
         { path: "/progress-bar", element: "ProgressBarPage" },
     ].map(a => toPascalCase(a.path.replaceAll("/", "")))
 
+    const [selectedCountry, setSelectedCountry] = useState<
+        LibCountry | undefined
+    >(undefined)
+
     return (
         <Page title="Homepage">
+            <InputPhone
+                selectedCountry={selectedCountry}
+                setSelectedCountry={setSelectedCountry}
+            />
+
             <ul>
                 {/* {components.map(c => (
                     <li key={c}>{`yarn plop:p ${c?.replaceAll(

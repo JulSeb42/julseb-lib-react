@@ -17,6 +17,12 @@ const BUTTON_LABEL = "Close modal"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop isOpen: boolean
+ * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
+ * @prop disableEsc?: boolean
+ * @prop contentWidth?: string | number
+ * @prop hideCloseButton?: boolean
+ * @prop buttonClose?: { icon?: string | JSX.Element; color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"; size?: number; variant?: "plain" | "ghost" | "transparent"; label?: string } => only if hideCloseButton is set to true
  */
 
 export const Modal = forwardRef<HTMLDivElement, ILibModal>(

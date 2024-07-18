@@ -4,7 +4,7 @@ import type {
     LibDropdownItem,
     LibColorsHover,
     LibComponentBase,
-    LibListDirection,
+    LibInputListDirection,
     ReactChildren,
     DispatchState,
 } from "../../types"
@@ -13,7 +13,7 @@ interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
     accentColor?: LibColorsHover
-    direction?: LibListDirection
+    direction?: LibInputListDirection
     maxHeightOpen?: number
     positionFromButton?: number
 }

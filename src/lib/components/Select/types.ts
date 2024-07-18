@@ -3,7 +3,7 @@
 import type {
     LibComponentBase,
     LibIcon,
-    LibListDirection,
+    LibInputListDirection,
     DispatchState,
 } from "../../types"
 import type {
@@ -19,7 +19,7 @@ export interface ILibSelect
     setSelected: DispatchState<string>
     options?: Array<string>
     disabled?: boolean
-    listDirection?: LibListDirection
+    listDirection?: LibInputListDirection
     tabIndex?: number
     icons?: {
         iconLeft?: LibIcon

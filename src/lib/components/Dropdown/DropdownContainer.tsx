@@ -10,6 +10,7 @@ import { StyledDropdownContainer } from "./styles"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop isOpen: boolean
  */
 
 export const DropdownContainer = forwardRef<

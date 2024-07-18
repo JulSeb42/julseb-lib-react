@@ -13,6 +13,10 @@ import type { ILibLoader } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop size?: number
+ * @prop color?: Any color from the library
+ * @prop variant?: 1 | 2 | 3 | 4
+ * @prop borderWidth?: number => only if variant is set to 1 | 2 | 3
  */
 
 export const Loader = forwardRef<HTMLSpanElement, ILibLoader>(

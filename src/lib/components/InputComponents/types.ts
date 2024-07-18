@@ -4,7 +4,7 @@ import type { MouseEventHandler } from "react"
 import type {
     ReactChildren,
     CssFontStyle,
-    LibListDirection,
+    LibInputListDirection,
     LibAllColors,
     LibIcon,
     LibInputBackground,
@@ -12,6 +12,8 @@ import type {
     LibValidationStatus,
     RequireAtLeastOne,
 } from "../../types"
+
+/*====================== Validation ======================*/
 
 interface ValidationHelper {
     status: LibValidationStatus
@@ -32,6 +34,22 @@ export interface ILibInputValidationIconComponent {
           }
         | undefined
 }
+
+export interface ILibInputValidationHelper {
+    "data-testid": string | undefined
+    className: string | undefined
+    validation: ValidationHelper
+}
+
+export interface ILibInputValidationIcon
+    extends ILibInputValidationIconComponent {
+    "data-testid": string | undefined
+    className: string | undefined
+    inputBackground: LibInputBackground | undefined
+    validation: { status: LibValidationStatus }
+}
+
+/*====================== No focus ======================*/
 
 export interface ILibInputNoFocusKeys {
     type:
@@ -56,6 +74,8 @@ export interface ILibInputNoFocusKeys {
     showKeys?: never
 }
 
+/*====================== InputBase ======================*/
+
 export interface ILibInputBase
     extends Partial<
         Pick<
@@ -77,6 +97,8 @@ export interface ILibExtendedInputBase extends ILibInputBase {
     counter?: boolean
     maxLength?: number
 }
+
+/*====================== InputContainer ======================*/
 
 export interface ILibInputContainer {
     "data-testid": string | undefined
@@ -104,6 +126,8 @@ export interface ILibInputContainer {
     hasListOpen?: boolean
 }
 
+/*====================== InputIconContainer ======================*/
+
 export interface ILibInputIconContainer {
     "data-testid": string | undefined
     className: string | undefined
@@ -115,6 +139,8 @@ export interface ILibInputIconContainer {
     inputVariant: LibInputVariant | undefined
 }
 
+/*====================== InputRightContainer ======================*/
+
 export interface ILibInputRightContainer {
     "data-testid": string | undefined
     className: string | undefined
@@ -123,19 +149,7 @@ export interface ILibInputRightContainer {
     disabled: boolean | undefined
 }
 
-export interface ILibInputValidationHelper {
-    "data-testid": string | undefined
-    className: string | undefined
-    validation: ValidationHelper
-}
-
-export interface ILibInputValidationIcon
-    extends ILibInputValidationIconComponent {
-    "data-testid": string | undefined
-    className: string | undefined
-    inputBackground: LibInputBackground | undefined
-    validation: { status: LibValidationStatus }
-}
+/*====================== InputButton ======================*/
 
 interface ILibInputButtonBase {
     "data-testid": string | undefined
@@ -164,6 +178,8 @@ export type ILibInputButton = RequireAtLeastOne<
     "icon" | "text"
 >
 
+/*====================== InputWrapper ======================*/
+
 export interface ILibInputWrapper {
     "data-testid": string | undefined
     className: string | undefined
@@ -172,16 +188,20 @@ export interface ILibInputWrapper {
     hasListOpen?: boolean
 }
 
+/*====================== List input ======================*/
+
 export interface ILibListInput {
     "data-testid": string | undefined
     className: string | undefined
-    direction: LibListDirection | undefined
+    direction: LibInputListDirection | undefined
     inputBackground: LibInputBackground | undefined
     inputVariant: LibInputVariant | undefined
     validation: LibValidationStatus
     isOpen: boolean
     children?: ReactChildren
 }
+
+/*====================== List input item ======================*/
 
 interface ILibListInputItemBase {
     "data-testid": string | undefined
@@ -204,3 +224,10 @@ interface ListInputItemReadOnly extends ILibListInputItemBase {
 }
 
 export type ILibListInputItem = ListInputItemActive | ListInputItemReadOnly
+
+/*====================== Input with icon ======================*/
+
+export interface ILibInputIcon {
+    icon?: LibIcon
+    iconSize?: number
+}

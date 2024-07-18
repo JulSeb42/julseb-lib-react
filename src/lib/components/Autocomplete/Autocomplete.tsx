@@ -38,6 +38,16 @@ import type { ILibAutocomplete } from "./types"
  * @link https://documentation-components-react.vercel.app/components/autocomplete
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop value: string
+ * @prop setValue: Dispatch<SetStateAction<string>>
+ * @prop listResults: Array<string>
+ * @prop emptyText?: string
+ * @prop listDirection?: "up" | "down"
+ * @prop fuzzyOptions?: IFuseOptions<string> | undefined => IFuseOptions imported from "fuse.js"
+ * @prop icons?: { iconLeft?: string | JSX.Element; clear?: string | JSX.Element }
+ * @prop iconSizes?: { iconLeft?: number; clear?: number }
+ * @prop focusKeys?: Array<string>
+ * @prop showKeys?: boolean => only if focusKeys is defined
  */
 
 const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(

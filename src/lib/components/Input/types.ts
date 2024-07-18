@@ -11,12 +11,8 @@ import type {
     ILibExtendedInputBase,
     ILibInputValidationIconComponent,
     ILibInputNoFocusKeys,
+    ILibInputIcon,
 } from "../InputComponents/types"
-
-export interface ILibInputIcon {
-    icon?: LibIcon
-    iconSize?: number
-}
 
 /*====================== ColorInput ======================*/
 
