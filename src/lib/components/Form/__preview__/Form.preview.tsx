@@ -11,10 +11,10 @@ export const formPreview: ComponentPreview<ILibForm> = {
     component: Form,
     category: "components",
     import: "Form",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibForm",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLFormElement"],
     previews: [{ previewTitle: "Default", demo: <FormDemo /> }],
 }

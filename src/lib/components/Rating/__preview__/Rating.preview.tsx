@@ -11,10 +11,10 @@ export const ratingPreview: ComponentPreview<ILibRating> = {
     component: Rating,
     category: "components",
     import: "Rating",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibRating",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "HTMLDivElement",
         'Omit<ILibInputBase, "inputVariant" | "inputBackground">',

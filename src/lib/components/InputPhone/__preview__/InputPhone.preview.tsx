@@ -11,10 +11,10 @@ export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
     component: InputPhone,
     category: "components",
     import: "InputPhone",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInputPhone",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "HTMLInputElement",
         "ILibInputBase",

@@ -11,10 +11,10 @@ export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
     component: InputSlider,
     category: "components",
     import: "InputSlider",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInputSlider",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "nputHTMLAttributes<HTMLInputElement>",
         'Omit<ILibInputBase, "inputVariant">',

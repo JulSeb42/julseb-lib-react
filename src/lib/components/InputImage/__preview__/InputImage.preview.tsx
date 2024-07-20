@@ -15,10 +15,10 @@ export const inputImagePreview: ComponentPreview<ILibInputImage> = {
     component: InputImage,
     category: "components",
     import: "InputImage",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInputImage",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "InputHTMLAttributes<HTMLInputElement>",
         'Omit<ILibInputBase, "inputBackground" | "inputVariant">',

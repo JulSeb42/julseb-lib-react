@@ -10,10 +10,10 @@ export const cardPreview: ComponentPreview<ILibCard> = {
     component: Card,
     category: "components",
     import: "Card",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibCard",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement", "LibButtonLinkBlank", "ILibFlexbox"],
     previews: [
         {

@@ -11,10 +11,10 @@ export const selectPreview: ComponentPreview<ILibSelect> = {
     component: Select,
     category: "components",
     import: "Select",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibSelect",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "HTMLDivElement",
         "ILibInputBase",

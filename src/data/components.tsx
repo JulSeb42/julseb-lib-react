@@ -60,8 +60,12 @@ import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.previ
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
 import { breadcrumbsPreview } from "../lib/components/Breadcrumbs/__preview__/Breadcrumbs.preview"
+import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
+import { dropdownPreview } from "../lib/components/Dropdown/__preview__/Dropdown.preview"
+import { toastPreview } from "../lib/components/Toast/__preview__/Toast.preview"
+import { alertPreview } from "../lib/components/Alert/__preview__/Alert.preview"
+import { modalPreview } from "../lib/components/Modal/__preview__/Modal.preview"
 // prependImport
-// import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
 export type PreviewProp<T> = {
     props: T
@@ -146,8 +150,12 @@ export const previews = [
     formPreview,
     listGroupPreview,
     breadcrumbsPreview,
+    accordionPreview,
+    dropdownPreview,
+    toastPreview,
+    alertPreview,
+    modalPreview,
 // prependArr
-    // accordionPreview
 ] as Array<ComponentPreview<any>>
 
 export const componentPaths: ComponentPaths = previews.map(preview => ({

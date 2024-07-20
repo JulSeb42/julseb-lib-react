@@ -11,13 +11,12 @@ export const inputPreview: ComponentPreview<ILibInput> = {
     component: Input,
     category: "components",
     import: "Input",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInput",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["InputHTMLAttributes<HTMLInputElement>", "ILibInputBase"],
     previews: [
-        { previewTitle: "Default", props: {} },
         {
             previewTitle: "With InputContainer",
             props: {

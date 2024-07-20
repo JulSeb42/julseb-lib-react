@@ -18,10 +18,10 @@ export const inputCheckPreview: ComponentPreview<ILibInputCheck> = {
     component: InputCheck,
     category: "components",
     import: "InputCheck",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInputCheck",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["InputHTMLAttributes<HTMLInputElement>"],
     previews: [
         { previewTitle: "Checkbox", demo: <InputCheckDemoCheckbox /> },

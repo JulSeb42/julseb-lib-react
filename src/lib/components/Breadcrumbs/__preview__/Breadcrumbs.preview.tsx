@@ -28,10 +28,10 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
     component: Breadcrumbs,
     category: "components",
     import: "Breadcrumbs", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+    additionalImports: null, // import OtherComponent (ex: SkeletonCard)
+    optionalImports: null, // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
     propsImport: "ILibBreadcrumbs", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    additionalTypeImports: null, // import ILibComponentItem (ex: ILibAccordionItem)
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: { breadcrumbsItems } },

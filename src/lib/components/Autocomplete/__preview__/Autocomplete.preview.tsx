@@ -12,10 +12,10 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
     component: Autocomplete as any,
     category: "components",
     import: "Autocomplete",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibAutocomplete",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: [
         "InputHTMLAttributes<HTMLInputElement>",
         "ILibInputBase",

@@ -11,10 +11,10 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
     component: InputCounter,
     category: "components",
     import: "InputCounter",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibInputCounter",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["InputHTMLAttributes<HTMLInputElement>", "ILibInputBase"],
     previews: [{ previewTitle: "Default", demo: <InputCounterDemo /> }],
 }

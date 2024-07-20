@@ -16,7 +16,6 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
     additionalTypeImports: ["ILibSkeletonCard", "ILibSkeletonShine"],
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: {} },
         {
             previewTitle: "With pulse animation",
             props: {
