@@ -47,7 +47,7 @@ describe("<ProgressBar />", () => {
     })
 
     // ? animation
-    it.only("renders without animation", () => {
+    it("renders without animation", () => {
         cy.mount(
             <ProgressBar
                 data-testid="testid"

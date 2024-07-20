@@ -79,6 +79,25 @@ export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
                 path: "../src/lib/components/{{ pascalCase name }}/__tests__/{{ pascalCase name }}.cy.tsx",
                 templateFile: "./templates/component/__tests__/test.hbs",
             },
+            // ? create preview file
+            {
+                type: "add",
+                path: "../src/lib/components/{{ pascalCase name }}/__preview__/{{ pascalCase name }}.preview.tsx",
+                templateFile: "./templates/component/__preview__/preview.hbs",
+            },
+            {
+                type: "modify",
+                path: "../src/data/components.tsx",
+                template:
+                    'import { {{ camelCase name }}Preview } from "../lib/components/{{ pascalCase name }}/__preview__/{{ pascalCase name }}.preview"\n$1',
+                pattern: /(\/\/ prependImport)/g,
+            },
+            {
+                type: "modify",
+                path: "../src/data/components.tsx",
+                template: "{{ camelCase name }}Preview,\n$1",
+                pattern: /(\/\/ prependArr)/g,
+            },
             // ? export from index
             {
                 type: "modify",
@@ -95,29 +114,6 @@ export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
                     'export * from "../components/{{ pascalCase name }}/types"\n$1',
                 pattern: /(\/\/ prependHere)/g,
             },
-            // ? create demo page
-            {
-                type: "add",
-                path: "../src/pages/{{ category }}/{{ pascalCase name }}Page.tsx",
-                templateFile: "./templates/page.hbs",
-            },
-            // ? import demo in routes
-            {
-                type: "modify",
-                path: "../src/routes/index.tsx",
-                template:
-                    'import { {{ pascalCase name }}Page } from "../pages/{{ category }}/{{ pascalCase name }}Page"\n$1',
-                pattern: /(\/\/ prependHere)/g,
-            },
-            // ? add demo to routes arr
-            {
-                type: "modify",
-                path: "../src/routes/index.tsx",
-                template:
-                    '{ path: "/{{ kebabCase name }}", element: <{{ pascalCase name }}Page /> },\n$1',
-                pattern: /(\/\/ prependRoute)/g,
-            },
-            // TODO: replace demo page by preview
         ],
     })
 
