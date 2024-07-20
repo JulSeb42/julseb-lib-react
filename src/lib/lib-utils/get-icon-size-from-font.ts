@@ -1,11 +1,11 @@
 /*=============================================== Get icon size from font-size ===============================================*/
 
-import { libTokens } from ".."
+import { LIB_TOKENS } from ".."
 import type { LibFontSizes } from "../types"
 
 export function getIconSizeFromFont(fontSize: LibFontSizes = "body") {
     const getSize = (size: LibFontSizes) =>
-        Number(libTokens["font-sizes"][size].px.replace("px", ""))
+        Number(LIB_TOKENS["font-sizes"][size].px.replace("px", ""))
 
     const sizesMap = new Map<LibFontSizes, number>([
         ["display-h1", getSize("display-h1")],

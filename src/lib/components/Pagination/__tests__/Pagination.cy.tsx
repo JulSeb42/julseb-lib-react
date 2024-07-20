@@ -1,6 +1,6 @@
 /*=============================================== Pagination tests ===============================================*/
 
-import { libTokens } from "../../.."
+import { LIB_TOKENS } from "../../.."
 import { PaginationPreview, PaginationColor } from "./Preview"
 
 describe("<Pagination />", () => {
@@ -43,7 +43,7 @@ describe("<Pagination />", () => {
         cy.dataTest("testid.PaginationButton.Number.Active").should(
             "have.css",
             "background-color",
-            libTokens.colors.light["secondary-500"].rgb
+            LIB_TOKENS.colors.light["secondary-500"].rgb
         )
         cy.dataTest("testid.PaginationButton.Number").should("have.length", 2)
         cy.dataTest("testid.PaginationButton.More")

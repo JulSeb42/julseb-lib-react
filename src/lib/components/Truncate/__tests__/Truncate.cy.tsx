@@ -1,6 +1,6 @@
 /*=============================================== Truncate tests ===============================================*/
 
-import { Truncate, libTokens, Tag } from "../../.."
+import { Truncate, LIB_TOKENS, Tag } from "../../.."
 import { names } from "./utils"
 
 describe("<Truncate />", () => {
@@ -22,7 +22,7 @@ describe("<Truncate />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
-            .should("have.css", "gap", libTokens.spacers.xs)
+            .should("have.css", "gap", LIB_TOKENS.spacers.xs)
     })
 
     it("renders a tag with +n when the viewport is smaller", () => {
@@ -66,6 +66,6 @@ describe("<Truncate />", () => {
 
         cy.dataTest()
             .should("exist")
-            .should("have.css", "gap", libTokens.spacers.l)
+            .should("have.css", "gap", LIB_TOKENS.spacers.l)
     })
 })

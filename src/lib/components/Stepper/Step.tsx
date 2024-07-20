@@ -9,7 +9,7 @@ import type {
     LibButtonLinkBlank,
     LibColorsHover,
     LibIcon as LibIconType,
-    LibStepperDirection
+    LibStepperDirection,
 } from "../../types"
 import { StyledStep, NumberContainer } from "./styles"
 import { Link } from "react-router-dom"
@@ -28,9 +28,16 @@ type ILibStep = LibComponentBase<HTMLSpanElement> &
 /**
  * @description Returns a Step component
  * @link https://documentation-components-react.vercel.app/components/stepper
- * @extends HTMLSpanElement
+ * @extends HTMLSpanElement & LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop direction?: "column" | "row"
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop isActive?: boolean
+ * @prop isDone?: boolean
+ * @prop iconActive?: string | JSX.ElementType
+ * @prop iconActiveSize?: number
+ * @prop number?: number
  */
 
 export const Step = forwardRef<HTMLSpanElement, ILibStep>(

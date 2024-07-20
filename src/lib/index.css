@@ -155,6 +155,7 @@
     --color-dark-warning-900: rgb(255, 253, 248);
     --color-dark-background: rgb(18, 18, 18);
     --color-dark-font: var(--color-white);
+
     --color-dark-link-font-default: var(--color-dark-font);
     --color-dark-link-font-hover: var(--color-dark-gray-300);
     --color-dark-link-font-active: var(--color-dark-gray-100);
@@ -177,8 +178,16 @@
     --overlay-black-80: rgba(0, 0, 0, 0.8);
     --overlay-white-50: rgba(255, 255, 255, 0.5);
     --overlay-white-80: rgba(255, 255, 255, 0.8);
-    --overlay-gradient-black: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%);
-    --overlay-gradient-white: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%);
+    --overlay-gradient-black: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.56) 100%
+    );
+    --overlay-gradient-white: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 0.35) 100%
+    );
 
     /*===== Fonts =====*/
 

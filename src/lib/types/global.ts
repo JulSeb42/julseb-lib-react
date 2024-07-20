@@ -50,6 +50,11 @@ export interface LibComponentBase<T> extends HTMLAttributes<T> {
 
 /* Box shadow */
 
+/**
+ * @description Props for components with box shadow
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs"
+ * @type { default: "xxl" | "xl" | "l" | "m" | "s" | "xs"; hover: "xxl" | "xl" | "l" | "m" | "s" | "xs"; active: "xxl" | "xl" | "l" | "m" | "s" | "xs" }
+ */
 export type ILibBoxShadow =
     | LibShadows
     | {
@@ -60,6 +65,11 @@ export type ILibBoxShadow =
 
 /* Border radius */
 
+/**
+ * @description Props for components with border radius
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number
+ * @type { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ */
 export type ILibRadius =
     | LibRadiuses
     | number
@@ -73,6 +83,11 @@ export type ILibRadius =
 
 /* Padding */
 
+/**
+ * @description Props for components with paddings
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+ */
 export type ILibPadding =
     | LibSpacers
     | {
@@ -84,6 +99,13 @@ export type ILibPadding =
           topBottom?: LibSpacers | "auto"
       }
 
+/* Margins */
+
+/**
+ * @description Props for components with margins
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto"
+ * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+ */
 export type ILibMargin =
     | LibSpacers
     | undefined
@@ -100,6 +122,12 @@ export type ILibMargin =
 
 /* Border */
 
+/**
+ * @description Props for components with borders
+ * @prop style?: CssBorderStyle
+ * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop color?: Any color from the library
+ */
 export type ILibBorder = {
     style?: CssBorderStyle
     width?: LibSpacers
@@ -108,6 +136,12 @@ export type ILibBorder = {
 
 /* Outline */
 
+/**
+ * @description Props for components with outlines
+ * @prop style?: CssOutlineStyle
+ * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop color?: Any color from the library
+ */
 export type ILibOutline = {
     style?: CssOutlineStyle
     width?: LibSpacers
@@ -230,6 +264,10 @@ export type LibButtonLinkBlankRequired = RequireAtLeastOne<
 
 /* useTranslation hook */
 
+/**
+ * @description Props for useTranslation hook
+ * @prop [language: string]: { [key: string]: string }
+ */
 export type TranslateLang = {
     [language: string]: {
         [key: string]: string
@@ -241,6 +279,16 @@ export type TranslateLang = {
 export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
 
 /* BackgroundImage */
+
+/**
+ * @description Props for background images
+ * @prop img: string
+ * @prop clip?: CssBackgroundClip
+ * @prop origin?: CssBackgroundOrigin
+ * @prop position?: CssBackgroundPosition
+ * @prop repeat?: CssBackgroundRepeat
+ * @prop size?: CssBackgroundSize
+ */
 
 export interface ILibBackgroundImage {
     img: string
@@ -254,6 +302,14 @@ export interface ILibBackgroundImage {
 /* Input phone */
 
 export type CountryCode = keyof typeof typeValues.countryCodes
+
+/**
+ * @description Props for countries used in InputPhone component
+ * @prop name: string
+ * @prop dial_code: string
+ * @prop code: Any Alpha-2 Code from https://www.iban.com/country-codes
+ * @prop flag: string
+ */
 
 export type LibCountry = {
     name: string
@@ -273,6 +329,13 @@ export type LibToastStatus = keyof typeof typeValues.toastStatus
 export type LibToasterPosition = keyof typeof typeValues.toasterPositions
 
 /*====================== Theme ======================*/
+
+/**
+ * @description Props for ThemeContext
+ * @prop theme: DefaultTheme => import from "styled-components"
+ * @prop selectedTheme: "light" | "dark" | undefined
+ * @prop toggleTheme: () => void
+ */
 
 export interface ILibThemeContext {
     theme: DefaultTheme

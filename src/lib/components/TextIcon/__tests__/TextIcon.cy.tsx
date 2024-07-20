@@ -1,6 +1,6 @@
 /*=============================================== TextIcon tests ===============================================*/
 
-import { TextIcon, libTokens } from "../../.."
+import { TextIcon, LIB_TOKENS } from "../../.."
 import { stringifyPx } from "ts-utils-julseb"
 
 describe("<TextIcon />", () => {
@@ -27,7 +27,9 @@ describe("<TextIcon />", () => {
     })
 
     it("should have a default font and icon sizes of 16px", () => {
-        const height = Number(libTokens["font-sizes"].body.px.replace("px", ""))
+        const height = Number(
+            LIB_TOKENS["font-sizes"].body.px.replace("px", "")
+        )
 
         cy.mount(
             <TextIcon data-testid="testid" icon="heart-full">
@@ -49,7 +51,7 @@ describe("<TextIcon />", () => {
     })
 
     it("renders a h1 tag with a font and icon sizes of 40px", () => {
-        const height = Number(libTokens["font-sizes"].h1.px.replace("px", ""))
+        const height = Number(LIB_TOKENS["font-sizes"].h1.px.replace("px", ""))
 
         cy.mount(
             <TextIcon data-testid="testid" icon="heart-full" tag="h1">
@@ -85,12 +87,12 @@ describe("<TextIcon />", () => {
         testIdText("testid").should(
             "have.css",
             "color",
-            libTokens.colors.light["secondary-400"].rgb
+            LIB_TOKENS.colors.light["secondary-400"].rgb
         )
         testIdIcon("testid").should(
             "have.css",
             "fill",
-            libTokens.colors.light["warning-600"].rgb
+            LIB_TOKENS.colors.light["warning-600"].rgb
         )
     })
 
@@ -109,8 +111,8 @@ describe("<TextIcon />", () => {
 
         testIdText("testid")
             .should("have.prop", "tagName", "SMALL")
-            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
+            .should("have.css", "font-size", LIB_TOKENS["font-sizes"].small.px)
         testIdIcon("testid").invoke("width").should("equal", 48)
-        cy.dataTest().should("have.css", "gap", libTokens.spacers.l)
+        cy.dataTest().should("have.css", "gap", LIB_TOKENS.spacers.l)
     })
 })

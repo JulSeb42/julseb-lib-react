@@ -1,6 +1,6 @@
 /*=============================================== Badge tests ===============================================*/
 
-import { Badge, libTokens } from "../../.."
+import { Badge, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { Plus } from "../../../icons"
 
@@ -14,7 +14,7 @@ describe("<Badge />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
     })
 
@@ -57,29 +57,37 @@ describe("<Badge />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["secondary-300"].rgb
+                LIB_TOKENS.colors.light["secondary-300"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["success-300"].rgb
+                LIB_TOKENS.colors.light["success-300"].rgb
             )
-            .should("have.css", "border-top-left-radius", libTokens.radiuses.xs)
-            .should("have.css", "border-top-right-radius", libTokens.radiuses.s)
+            .should(
+                "have.css",
+                "border-top-left-radius",
+                LIB_TOKENS.radiuses.xs
+            )
+            .should(
+                "have.css",
+                "border-top-right-radius",
+                LIB_TOKENS.radiuses.s
+            )
             .should(
                 "have.css",
                 "border-bottom-left-radius",
-                libTokens.radiuses.m
+                LIB_TOKENS.radiuses.m
             )
             .should(
                 "have.css",
                 "border-bottom-right-radius",
-                libTokens.radiuses.l
+                LIB_TOKENS.radiuses.l
             )
-            .should("have.css", "padding-left", libTokens.spacers.xl)
-            .should("have.css", "padding-top", libTokens.spacers.xxl)
-            .should("have.css", "padding-right", libTokens.spacers.xl)
-            .should("have.css", "padding-bottom", libTokens.spacers.xxl)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.xl)
+            .should("have.css", "padding-top", LIB_TOKENS.spacers.xxl)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.xl)
+            .should("have.css", "padding-bottom", LIB_TOKENS.spacers.xxl)
 
         cy.dataTest().should("contain.text", "421")
     })

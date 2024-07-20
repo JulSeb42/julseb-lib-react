@@ -12,6 +12,15 @@ import type { ILibTag } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop backgroundColor?: Any color from the library
+ * @prop textColor?: Any color from the library
+ * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop fontSize?: "display-h1" | "display-h2" | "display-h3" | "display-h4" | "display-h5" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small"
+ * @prop icons?: { left?: string | JSX.Element; right?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number; right?: number }
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 
 export const Tag = forwardRef<HTMLSpanElement, ILibTag>(

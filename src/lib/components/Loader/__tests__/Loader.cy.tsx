@@ -1,6 +1,6 @@
 /*=============================================== Loader tests ===============================================*/
 
-import { Loader, libTokens } from "../../.."
+import { Loader, LIB_TOKENS } from "../../.."
 
 describe("<Loader />", () => {
     it("renders <Loader /> component", () => {
@@ -14,7 +14,7 @@ describe("<Loader />", () => {
             .should(
                 "have.css",
                 "border-bottom",
-                `8px solid ${libTokens.colors.light["primary-500"].rgb}`
+                `8px solid ${LIB_TOKENS.colors.light["primary-500"].rgb}`
             )
     })
 
@@ -44,12 +44,12 @@ describe("<Loader />", () => {
             .should(
                 "have.css",
                 "border-top",
-                `${borderWidth}px solid ${libTokens.colors.light["secondary-500"].rgb}`
+                `${borderWidth}px solid ${LIB_TOKENS.colors.light["secondary-500"].rgb}`
             )
             .should(
                 "have.css",
                 "border-bottom",
-                `${borderWidth}px solid ${libTokens.colors.light["secondary-500"].rgb}`
+                `${borderWidth}px solid ${LIB_TOKENS.colors.light["secondary-500"].rgb}`
             )
     })
 

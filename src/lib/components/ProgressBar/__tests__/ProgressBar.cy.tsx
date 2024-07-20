@@ -1,6 +1,6 @@
 /*=============================================== ProgressBar tests ===============================================*/
 
-import { ProgressBar, libTokens } from "../../.."
+import { ProgressBar, LIB_TOKENS } from "../../.."
 
 const PROGRESS_VALUE = 42
 

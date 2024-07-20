@@ -1,6 +1,6 @@
 /*=============================================== Dropdown tests ===============================================*/
 
-import { libTokens } from "../../.."
+import { LIB_TOKENS } from "../../.."
 import { Preview, PreviewDirection, PreviewColor } from "./Preview"
 
 describe("<Dropdown />", () => {
@@ -52,7 +52,7 @@ describe("<Dropdown />", () => {
         cy.dataTest("testid.Dropdown.DropdownItem").should(
             "have.css",
             "color",
-            libTokens.colors.light["danger-500"].rgb
+            LIB_TOKENS.colors.light["danger-500"].rgb
         )
 
         cy.dataTest("testid.Dropdown.DropdownItem")

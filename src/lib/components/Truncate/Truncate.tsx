@@ -11,6 +11,7 @@ import type { ILibTruncate } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 
 export const Truncate = forwardRef<HTMLDivElement, ILibTruncate>(

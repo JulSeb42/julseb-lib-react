@@ -22,6 +22,22 @@ import type { ILibSelect } from "./types"
  * @link https://documentation-components-react.vercel.app/components/select
  * @extends HTMLDivElement
  * @prop data-testid?: string
+ * @prop selected: string
+ * @prop setSelected: Dispatch<SetStateAction< string>>
+ * @prop options?: Array<string>
+ * @prop disabled?: boolean
+ * @prop listDirection?: "up" | "down"
+ * @prop tabIndex?: number
+ * @prop icons?: { iconLeft?: string | JSX.Element caret?: string | JSX.Element }
+ * @prop iconSizes?: { iconLeft?: number caret?: number }
+ * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
  */
 
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(

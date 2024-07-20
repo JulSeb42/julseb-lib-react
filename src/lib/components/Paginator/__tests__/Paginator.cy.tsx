@@ -1,6 +1,6 @@
 /*=============================================== Paginator tests ===============================================*/
 
-import { libTokens } from "../../.."
+import { LIB_TOKENS } from "../../.."
 import { Preview, PreviewNotEditable, PreviewColor } from "./Preview"
 
 describe("<Paginator />", () => {
@@ -61,14 +61,14 @@ describe("<Paginator />", () => {
         buttonNext().should(
             "have.css",
             "color",
-            libTokens.colors.light["secondary-500"].rgb
+            LIB_TOKENS.colors.light["secondary-500"].rgb
         )
         input()
             .focus()
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["secondary-500"].rgb
+                LIB_TOKENS.colors.light["secondary-500"].rgb
             )
     })
 

@@ -1,6 +1,6 @@
 /*=============================================== Avatar tests ===============================================*/
 
-import { Avatar, libTokens } from "../../.."
+import { Avatar, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { StarFull } from "../../../icons"
 
@@ -16,7 +16,7 @@ describe("<Avatar />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
-            .should("have.css", "border-radius", libTokens.radiuses.circle)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.circle)
             .children()
             .should("have.prop", "tagName", "IMG")
             .should("have.prop", "alt", "Avatar")
@@ -44,12 +44,12 @@ describe("<Avatar />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["secondary-300"].rgb
+                LIB_TOKENS.colors.light["secondary-300"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["danger-800"].rgb
+                LIB_TOKENS.colors.light["danger-800"].rgb
             )
             .children()
             .should("have.prop", "tagName", "svg")
@@ -90,9 +90,9 @@ describe("<Avatar />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["warning-400"].rgb
+                LIB_TOKENS.colors.light["warning-400"].rgb
             )
-            .should("have.css", "border-radius", libTokens.radiuses.s)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.s)
     })
 
     it("renders a badge", () => {
@@ -110,7 +110,7 @@ describe("<Avatar />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.class", "Badge")
             .should("have.attr", "data-testid", "testid.Badge")
@@ -142,23 +142,23 @@ describe("<Avatar />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["danger-500"].rgb
+                LIB_TOKENS.colors.light["danger-500"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["warning-700"].rgb
+                LIB_TOKENS.colors.light["warning-700"].rgb
             )
-            .should("have.css", "bottom", libTokens.spacers.xxs)
-            .should("have.css", "padding-left", libTokens.spacers.xl)
-            .should("have.css", "padding-right", libTokens.spacers.xl)
+            .should("have.css", "bottom", LIB_TOKENS.spacers.xxs)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.xl)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.xl)
             .should("have.css", "padding-top", "0px")
             .should("have.css", "padding-bottom", "0px")
             .should("have.css", "outline-width", "1px")
             .should(
                 "have.css",
                 "outline-color",
-                libTokens.colors.light.white.rgb
+                LIB_TOKENS.colors.light.white.rgb
             )
             .should("have.css", "outline-style", "solid")
     })

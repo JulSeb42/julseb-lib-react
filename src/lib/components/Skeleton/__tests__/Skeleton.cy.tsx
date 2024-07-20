@@ -1,6 +1,6 @@
 /*=============================================== Skeleton tests ===============================================*/
 
-import { SkeletonCard, Skeleton, libTokens } from "../../.."
+import { SkeletonCard, Skeleton, LIB_TOKENS } from "../../.."
 
 describe("<Skeleton />", () => {
     it("renders <Skeleton /> component", () => {
@@ -22,7 +22,7 @@ describe("<Skeleton />", () => {
         cy.dataTest().should(
             "have.css",
             "background-color",
-            libTokens.colors.light["gray-100"].rgb
+            LIB_TOKENS.colors.light["gray-100"].rgb
         )
     })
 
@@ -50,10 +50,10 @@ describe("<Skeleton />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["gray-200"].rgb
+                LIB_TOKENS.colors.light["gray-200"].rgb
             )
             .should("have.css", "border-style", "solid")
-            .should("have.css", "border-radius", libTokens.radiuses.xs)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.xs)
     })
 
     it("renders a default border when the color is set to gray-300, and set border radius", () => {
@@ -80,33 +80,33 @@ describe("<Skeleton />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["gray-300"].rgb
+                LIB_TOKENS.colors.light["gray-300"].rgb
             )
             .should("have.css", "border-style", "solid")
             .should(
                 "have.css",
                 "border-top-left-radius",
-                libTokens.radiuses.xxl
+                LIB_TOKENS.radiuses.xxl
             )
             .should(
                 "have.css",
                 "border-top-right-radius",
-                libTokens.radiuses.xs
+                LIB_TOKENS.radiuses.xs
             )
             .should(
                 "have.css",
                 "border-bottom-left-radius",
-                libTokens.radiuses.m
+                LIB_TOKENS.radiuses.m
             )
             .should(
                 "have.css",
                 "border-bottom-right-radius",
-                libTokens.radiuses.l
+                LIB_TOKENS.radiuses.l
             )
-            .should("have.css", "padding-top", libTokens.spacers.xxl)
-            .should("have.css", "padding-bottom", libTokens.spacers.xxl)
-            .should("have.css", "padding-left", libTokens.spacers.s)
-            .should("have.css", "padding-right", libTokens.spacers.m)
+            .should("have.css", "padding-top", LIB_TOKENS.spacers.xxl)
+            .should("have.css", "padding-bottom", LIB_TOKENS.spacers.xxl)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.s)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.m)
     })
 
     it("renders set width and height", () => {

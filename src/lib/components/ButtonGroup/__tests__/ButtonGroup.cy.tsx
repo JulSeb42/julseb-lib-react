@@ -1,6 +1,6 @@
 /*=============================================== ButtonGroup tests ===============================================*/
 
-import { ButtonGroup, libTokens } from "../../.."
+import { ButtonGroup, LIB_TOKENS } from "../../.."
 import { buttons } from "./data"
 
 describe("<ButtonGroup />", () => {
@@ -27,28 +27,28 @@ describe("<ButtonGroup />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.css", "height", "34px")
         secondButton()
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.css", "height", "34px")
         thirdButton()
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.css", "height", "34px")
         fourthButton()
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.css", "height", "34px")
     })
@@ -88,7 +88,7 @@ describe("<ButtonGroup />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["secondary-500"].rgb
+                LIB_TOKENS.colors.light["secondary-500"].rgb
             )
             .should("have.text", "Button")
 
@@ -110,7 +110,7 @@ describe("<ButtonGroup />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.css", "border-width", "1px")
             .children()
@@ -135,7 +135,11 @@ describe("<ButtonGroup />", () => {
             />
         )
 
-        cy.dataTest().should("have.css", "border-radius", libTokens.radiuses.xl)
+        cy.dataTest().should(
+            "have.css",
+            "border-radius",
+            LIB_TOKENS.radiuses.xl
+        )
         fourthButton()
             .should("have.attr", "data-testid", "testid.Button.3")
             .should("have.class", "Button__3")

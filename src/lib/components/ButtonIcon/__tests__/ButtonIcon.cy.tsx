@@ -1,6 +1,6 @@
 /*=============================================== ButtonIcon tests ===============================================*/
 
-import { ButtonIcon, libTokens } from "../../.."
+import { ButtonIcon, LIB_TOKENS } from "../../.."
 
 describe("<ButtonIcon />", () => {
     it("renders <ButtonIcon /> component", () => {
@@ -19,12 +19,12 @@ describe("<ButtonIcon />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
-            .should("have.css", "color", libTokens.colors.light.white.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.white.rgb)
             .should("have.css", "width", "32px")
             .should("have.css", "height", "32px")
-            .should("have.css", "border-radius", libTokens.radiuses.circle)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.circle)
             .should("have.attr", "aria-label", "Mail")
             .children()
             .should("not.have.prop", "tagName", "SPAN")
@@ -94,9 +94,9 @@ describe("<ButtonIcon />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["secondary-500"].rgb
+                LIB_TOKENS.colors.light["secondary-500"].rgb
             )
-            .should("have.css", "color", libTokens.colors.light.white.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.white.rgb)
     })
 
     it("renders `transparent` variant", () => {
@@ -112,12 +112,12 @@ describe("<ButtonIcon />", () => {
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.transparent.rgb
+                LIB_TOKENS.colors.light.transparent.rgb
             )
     })
 
@@ -134,12 +134,12 @@ describe("<ButtonIcon />", () => {
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["warning-500"].rgb
+                LIB_TOKENS.colors.light["warning-500"].rgb
             )
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["warning-50"].rgb
+                LIB_TOKENS.colors.light["warning-50"].rgb
             )
     })
 

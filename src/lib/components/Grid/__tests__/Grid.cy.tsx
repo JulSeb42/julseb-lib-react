@@ -1,6 +1,6 @@
 /*=============================================== Grid tests ===============================================*/
 
-import { Grid, libTokens } from "../../.."
+import { Grid, LIB_TOKENS } from "../../.."
 
 describe("<Grid />", () => {
     it("renders <Grid /> component", () => {
@@ -16,7 +16,7 @@ describe("<Grid />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
-            .should("have.css", "gap", libTokens.spacers.s)
+            .should("have.css", "gap", LIB_TOKENS.spacers.s)
     })
 
     it("renders the grid as a `p`", () => {

@@ -1,6 +1,6 @@
 /*=============================================== Tag tests ===============================================*/
 
-import { Tag, libTokens } from "../../.."
+import { Tag, LIB_TOKENS } from "../../.."
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { Close } from "../../../icons"
 
@@ -18,20 +18,20 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
-            .should("have.css", "color", libTokens.colors.light.white.rgb)
-            .should("have.css", "padding-top", libTokens.spacers.xxs)
-            .should("have.css", "padding-bottom", libTokens.spacers.xxs)
-            .should("have.css", "padding-left", libTokens.spacers.s)
-            .should("have.css", "padding-right", libTokens.spacers.s)
+            .should("have.css", "color", LIB_TOKENS.colors.light.white.rgb)
+            .should("have.css", "padding-top", LIB_TOKENS.spacers.xxs)
+            .should("have.css", "padding-bottom", LIB_TOKENS.spacers.xxs)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.s)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.s)
             .should(
                 "have.css",
                 "border-radius",
-                `${Number(libTokens.radiuses.round.replace("em", "")) * 14}px`
+                `${Number(LIB_TOKENS.radiuses.round.replace("em", "")) * 14}px`
             )
-            .should("have.css", "gap", libTokens.spacers.xs)
-            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
+            .should("have.css", "gap", LIB_TOKENS.spacers.xs)
+            .should("have.css", "font-size", LIB_TOKENS["font-sizes"].small.px)
     })
 
     it("renders with a set backgroundColor", () => {
@@ -44,12 +44,12 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.white.rgb
+                LIB_TOKENS.colors.light.white.rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
     })
 
@@ -67,12 +67,12 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["warning-300"].rgb
+                LIB_TOKENS.colors.light["warning-300"].rgb
             )
     })
 
@@ -92,23 +92,23 @@ describe("<Tag />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.transparent.rgb
+                LIB_TOKENS.colors.light.transparent.rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
             .should("have.css", "border-width", "2px")
-            .should("have.css", "padding-left", libTokens.spacers.xs)
-            .should("have.css", "padding-right", libTokens.spacers.s)
-            .should("have.css", "padding-top", libTokens.spacers.xxl)
-            .should("have.css", "padding-bottom", libTokens.spacers.xxl)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.xs)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.s)
+            .should("have.css", "padding-top", LIB_TOKENS.spacers.xxl)
+            .should("have.css", "padding-bottom", LIB_TOKENS.spacers.xxl)
     })
 
     it("renders with a different borderRadius", () => {
@@ -118,8 +118,8 @@ describe("<Tag />", () => {
             </Tag>
         )
         cy.dataTest()
-            .should("have.css", "border-radius", libTokens.radiuses.m)
-            .should("have.css", "font-size", libTokens["font-sizes"].body.px)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.m)
+            .should("have.css", "font-size", LIB_TOKENS["font-sizes"].body.px)
     })
 
     it("renders with icons", () => {
@@ -142,12 +142,12 @@ describe("<Tag />", () => {
                 Hello
             </Tag>
         )
-        cy.dataTest().should("have.css", "gap", libTokens.spacers.m)
+        cy.dataTest().should("have.css", "gap", LIB_TOKENS.spacers.m)
         cy.dataTest()
             .children()
             .eq(0)
             .should("have.prop", "tagName", "svg")
-            .should("have.css", "width", libTokens["font-sizes"].h4.px)
+            .should("have.css", "width", LIB_TOKENS["font-sizes"].h4.px)
         cy.dataTest().children().eq(1).should("have.prop", "tagName", "svg")
     })
 })

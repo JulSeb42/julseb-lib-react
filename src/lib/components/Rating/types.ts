@@ -3,24 +3,20 @@
 import type { LibComponentBase, LibIcon, DispatchState } from "../../types"
 import type { ILibInputBase } from "../InputComponents/types"
 
-interface ILibRatingPBase
+interface ILibRatingBase
     extends Exclude<LibComponentBase<HTMLDivElement>, "as">,
-        ILibInputBase {
+        Omit<ILibInputBase, "inputVariant" | "inputBackground"> {
     rating: number
     icons?: { default?: LibIcon; checked?: LibIcon }
     iconSizes?: { default?: number; checked?: number }
-    maxLength?: never
-    counter?: never
-    inputVariant?: never
-    inputBackground?: never
 }
 
-interface RatingInput extends ILibRatingPBase {
+interface RatingInput extends ILibRatingBase {
     setRating: DispatchState<number>
     readOnly?: undefined | false
 }
 
-interface RatingReadOnly extends ILibRatingPBase {
+interface RatingReadOnly extends ILibRatingBase {
     setRating?: never | undefined | null
     readOnly: true
 }

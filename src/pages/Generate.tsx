@@ -1,18 +1,17 @@
 /*=============================================== Generate ===============================================*/
 
-// import { deleteDuplicates } from "ts-utils-julseb"
 import { Page } from "../components"
-import {} from "../lib"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "isActive: boolean => only if readOnly is not defined",
-        "readOnly: boolean => only if isActive is not defined",
-        "accentColor?: LibColorsHover",
+        "img: string",
+        "clip?: Property.BackgroundClip",
+        "origin?: Property.BackgroundOrigin",
+        "position?: Property.BackgroundPosition",
+        "repeat?: Property.BackgroundRepeat",
+        "size?: Property.BackgroundSize",
     ])
-
-    // TODO: stopped at Pagination
 
     // const propsInputs = replaceTypes([
     //     "label?: string",
@@ -39,9 +38,9 @@ export function Generate() {
                 {propsInputs.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
                 ))}
-            </ul>
+            </ul> */}
 
-            <p>{` * @prop ${propValidationIcon}`}</p> */}
+            {/* <p>{` * @prop ${propValidationIcon}`}</p> */}
         </Page>
     )
 }
@@ -63,6 +62,7 @@ function replaceTypes(arr: Array<string>) {
         typeValues.breadcrumbSeparators
     )} | JSX.Element`
     const allColorsDesc = "Any color from the library"
+    const allColorsAndOverlaysDesc = "Any color or overlay from the library"
     const mappedColorsHover = mapValues(typeValues.colorsHover)
     const mappedColorsHoverAndCurrent = mapValues(typeValues.colorsHover)
     const mappedShadows = mapValues(typeValues.shadows)
@@ -76,6 +76,12 @@ function replaceTypes(arr: Array<string>) {
     const mappedInputVariants = mapValues(typeValues.inputVariants)
     const mappedKeySizes = mapValues(typeValues.keySizes)
     const mappedMainSizes = `${mapValues(typeValues.mainSizes)} | number`
+    const mappedSkeletonAnimations = mapValues(typeValues.skeletonAnimations)
+    const mappedStepperDirections = mapValues(typeValues.stepperDirections)
+    const mappedLibFontSizes = mapValues(typeValues.fontSizes)
+    const mappedTextTag = mapValues(typeValues.textTags)
+    const mappedTextDisplayTags = mapValues(typeValues.textDisplayTags)
+    const mappedToastStatus = mapValues(typeValues.toastStatus)
 
     // LibShadows | { default: LibShadows; hover: LibShadows; active: LibShadows }
 
@@ -94,6 +100,7 @@ function replaceTypes(arr: Array<string>) {
         return str
             .replaceAll("LibSpacers", mappedSpacers)
             .replaceAll("LibColorsShort", mappedColorsShort)
+            .replaceAll("LibAllColorsAndOverlays", allColorsAndOverlaysDesc)
             .replaceAll("LibAllColors", allColorsDesc)
             .replaceAll("LibIcon", "string | JSX.Element")
             .replaceAll(
@@ -168,5 +175,35 @@ function replaceTypes(arr: Array<string>) {
             )
             .replaceAll("LibKeySize", mappedKeySizes)
             .replaceAll("LibMainSize", mappedMainSizes)
+            .replaceAll("LibSkeletonAnimation", mappedSkeletonAnimations)
+            .replaceAll("LibStepperDirection", mappedStepperDirections)
+            .replaceAll("LibFontSizes", mappedLibFontSizes)
+            .replaceAll(
+                "LibTextTag",
+                `${mappedTextDisplayTags} | ${mappedTextTag}`
+            )
+            .replaceAll(
+                "LibTextIconTag",
+                ["h1", "h2", "h3", "h4", "h5", "h6", "p", "small", "blockquote"]
+                    .map(v => `"${v}"`)
+                    .join(" | ")
+            )
+            .replaceAll("LibToastStatus", mappedToastStatus)
+            .replaceAll(
+                "LibToasterPosition",
+                mapValues(typeValues.toasterPositions)
+            )
+            .replaceAll(
+                "LibTooltipTrigger",
+                mapValues(typeValues.tooltipTriggers)
+            )
+            .replaceAll(
+                "LibTooltipPosition",
+                mapValues(typeValues.tooltipPositions)
+            )
+            .replaceAll("LibShadows", mapValues(typeValues.shadows))
+            .replaceAll("LibOverlays", mapValues(typeValues.overlays))
+            .replaceAll("LibTransitions", mapValues(typeValues.transitions))
+            .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
     })
 }

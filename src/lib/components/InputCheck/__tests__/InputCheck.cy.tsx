@@ -1,6 +1,6 @@
 /*=============================================== InputCheck tests ===============================================*/
 
-import { InputCheck, libTokens } from "../../.."
+import { InputCheck, LIB_TOKENS } from "../../.."
 
 describe("<InputCheck />", () => {
     it("renders <InputCheck /> component", () => {
@@ -61,10 +61,10 @@ describe("<InputCheck />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["gray-200"].rgb
+                LIB_TOKENS.colors.light["gray-200"].rgb
             )
-            .should("have.css", "border-radius", libTokens.radiuses.m)
-            .should("have.css", "padding", libTokens.spacers.s)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.m)
+            .should("have.css", "padding", LIB_TOKENS.spacers.s)
     })
 
     it("renders a selector with validation", () => {
@@ -82,12 +82,12 @@ describe("<InputCheck />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["danger-50"].rgb
+                LIB_TOKENS.colors.light["danger-50"].rgb
             )
             .should("have.css", "border-radius", "1584px")
-            .should("have.css", "padding-left", libTokens.spacers.m)
-            .should("have.css", "padding-right", libTokens.spacers.m)
-            .should("have.css", "padding-top", libTokens.spacers.xxs)
-            .should("have.css", "padding-bottom", libTokens.spacers.xxs)
+            .should("have.css", "padding-left", LIB_TOKENS.spacers.m)
+            .should("have.css", "padding-right", LIB_TOKENS.spacers.m)
+            .should("have.css", "padding-top", LIB_TOKENS.spacers.xxs)
+            .should("have.css", "padding-bottom", LIB_TOKENS.spacers.xxs)
     })
 })

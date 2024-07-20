@@ -1,6 +1,6 @@
 /*=============================================== Utils ===============================================*/
 
-import { libTokens } from "../.."
+import { LIB_TOKENS } from "../.."
 import type { LibTextIconTag } from "../../types"
 
 export const getIconHeight = (tag: LibTextIconTag, display?: boolean) => {
@@ -11,45 +11,45 @@ export const getIconHeight = (tag: LibTextIconTag, display?: boolean) => {
             "h1",
             pxToNumber(
                 display
-                    ? libTokens["font-sizes"]["display-h1"].px
-                    : libTokens["font-sizes"].h1.px
+                    ? LIB_TOKENS["font-sizes"]["display-h1"].px
+                    : LIB_TOKENS["font-sizes"].h1.px
             ),
         ],
         [
             "h2",
             pxToNumber(
                 display
-                    ? libTokens["font-sizes"]["display-h2"].px
-                    : libTokens["font-sizes"].h2.px
+                    ? LIB_TOKENS["font-sizes"]["display-h2"].px
+                    : LIB_TOKENS["font-sizes"].h2.px
             ),
         ],
         [
             "h3",
             pxToNumber(
                 display
-                    ? libTokens["font-sizes"]["display-h3"].px
-                    : libTokens["font-sizes"].h3.px
+                    ? LIB_TOKENS["font-sizes"]["display-h3"].px
+                    : LIB_TOKENS["font-sizes"].h3.px
             ),
         ],
         [
             "h4",
             pxToNumber(
                 display
-                    ? libTokens["font-sizes"]["display-h4"].px
-                    : libTokens["font-sizes"].h4.px
+                    ? LIB_TOKENS["font-sizes"]["display-h4"].px
+                    : LIB_TOKENS["font-sizes"].h4.px
             ),
         ],
         [
             "h5",
             pxToNumber(
                 display
-                    ? libTokens["font-sizes"]["display-h5"].px
-                    : libTokens["font-sizes"].h5.px
+                    ? LIB_TOKENS["font-sizes"]["display-h5"].px
+                    : LIB_TOKENS["font-sizes"].h5.px
             ),
         ],
-        ["h6" || "blockquote", pxToNumber(libTokens["font-sizes"].h6.px)],
-        ["p", pxToNumber(libTokens["font-sizes"].body.px)],
-        ["small", pxToNumber(libTokens["font-sizes"].small.px)],
+        ["h6" || "blockquote", pxToNumber(LIB_TOKENS["font-sizes"].h6.px)],
+        ["p", pxToNumber(LIB_TOKENS["font-sizes"].body.px)],
+        ["small", pxToNumber(LIB_TOKENS["font-sizes"].small.px)],
     ])
 
     return sizesMap.get(tag)

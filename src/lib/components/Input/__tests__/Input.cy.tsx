@@ -1,6 +1,6 @@
 /*=============================================== Image tests ===============================================*/
 
-import { Input, libTokens } from "../../.."
+import { Input, LIB_TOKENS } from "../../.."
 import { InputPropsPreview, InputSearchPreview } from "./Preview"
 
 describe("<Input />", () => {
@@ -13,7 +13,7 @@ describe("<Input />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["gray-200"].rgb
+                LIB_TOKENS.colors.light["gray-200"].rgb
             )
 
         cy.dataTest()
@@ -21,7 +21,7 @@ describe("<Input />", () => {
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .type("Hello")
 
@@ -82,7 +82,7 @@ describe("<Input />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.dark.background.rgb
+                LIB_TOKENS.colors.dark.background.rgb
             )
             .should("have.css", "border-radius", "1584px")
     })

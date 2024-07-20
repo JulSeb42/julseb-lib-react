@@ -13,6 +13,12 @@ import type { ILibTextIcon } from "./types"
  * @extends ILibText
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop textAs?: ElementType
+ * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "blockquote"
+ * @prop icon: string | JSX.Element
+ * @prop iconColor?: Any color from the library
+ * @prop iconSize?: number
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 
 export const TextIcon = forwardRef<

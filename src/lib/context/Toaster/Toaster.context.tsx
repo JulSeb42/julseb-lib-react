@@ -42,7 +42,10 @@ const initialState = {
  * @description Returns a Context component for Toast
  * @link https://documentation-components-react.vercel.app/components/toast
  * @prop data-testid?: string
- * @prop as?: ElementType
+ * @prop className?: string
+ * @prop children: ReactChildren
+ * @prop toastOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
+ * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
 
 export function ToasterProviderWrapper({
@@ -114,6 +117,17 @@ export function ToasterProviderWrapper({
         </ToastContext.Provider>
     )
 }
+
+/**
+ * @description Hook for Toaster context
+ * @link https://documentation-components-react.vercel.app/components/toast
+ * @function success
+ * @function error
+ * @function warning
+ * @function info
+ * @function loading
+ * @function remove
+ */
 
 export function useToast() {
     return useContext(ToastContext) as ILibToasterContext

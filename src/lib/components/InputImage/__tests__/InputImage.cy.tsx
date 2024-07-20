@@ -1,6 +1,6 @@
 /*=============================================== InputImage tests ===============================================*/
 
-import { InputImage, libTokens } from "../../.."
+import { InputImage, LIB_TOKENS } from "../../.."
 
 describe("<InputImage />", () => {
     it("renders <InputImage /> component", () => {
@@ -18,7 +18,7 @@ describe("<InputImage />", () => {
             .should("have.attr", "for", "img")
             .should("have.css", "width", "64px")
             .should("have.css", "height", "64px")
-            .should("have.css", "border-radius", libTokens.radiuses.m)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.m)
 
         cy.dataTest("testid.Input")
             .should("exist")
@@ -80,6 +80,6 @@ describe("<InputImage />", () => {
         cy.dataTest("testid.InputLabel")
             .should("exist")
             .should("have.css", "height", "120px")
-            .should("have.css", "border-radius", libTokens.radiuses.l)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.l)
     })
 })

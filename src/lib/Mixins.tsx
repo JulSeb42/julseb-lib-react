@@ -43,7 +43,7 @@ import {
     type LibThemeNames,
 } from "./types"
 
-type IconMixin = {
+type ILibIconMixin = {
     $name: string
     $color?: LibAllColors
     $size?: number
@@ -309,9 +309,11 @@ function getColorMixinFromTheme(
 
 class mixins {
     /**
-     * Use only in apps without theme switch
-     * @param $color
-     * @param theme
+     * @description Returns any color from the library
+     * @param $color: Any color from the library
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.AllColors("primary", theme)}
      */
     AllColors = (
         $color: LibAllColors,
@@ -319,66 +321,136 @@ class mixins {
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).AllColors($color)
 
+    /**
+     * @description Returns a color by short name
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "gray" | "black" | "white"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsShort("secondary", theme)}
+     */
     ColorsShort = (
         $color: LibColorsShort,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsShort($color)
 
+    /**
+     * @description Returns any color or overlay from the library
+     * @param $color: Any color or overlay from the library
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsAndOverlays("gray-200", theme)}
+     */
     ColorsAndOverlays = (
         $color: LibAllColorsAndOverlays | undefined,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsAndOverlays($color)
 
+    /**
+     * @description Returns a color for components changing on hover, default state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsHoverDefault("success", theme)}
+     */
     ColorsHoverDefault = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsHoverDefault($color)
 
+    /**
+     * @description Returns a color for components changing on hover, hover state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsHoverHover("success", theme)}
+     */
     ColorsHoverHover = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsHoverHover($color)
 
+    /**
+     * @description Returns a color for components changing on hover, active state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsHoverActive("success", theme)}
+     */
     ColorsHoverActive = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsHoverActive($color)
 
+    /**
+     * @description Returns a color for components changing on hover with ghost colors, default state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsGhostDefault("danger", theme)}
+     */
     ColorsGhostDefault = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsGhostDefault($color)
 
+    /**
+     * @description Returns a color for components changing on hover with ghost colors, hover state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsGhostHover("danger", theme)}
+     */
     ColorsGhostHover = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsGhostHover($color)
 
+    /**
+     * @description Returns a color for components changing on hover with ghost colors, active state
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | "currentColor"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.ColorsGhostActive("danger", theme)}
+     */
     ColorsGhostActive = (
         $color: LibColorsHoverAndCurrent,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).ColorsGhostActive($color)
 
+    /**
+     * @description Returns one of the colors 50
+     * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "gray"
+     * @param theme?: Default theme
+     * @param themeName?: "light" | "dark"
+     * @example background-color:  ${({ theme }) => Mixins.Colors50("secondary", theme)}
+     */
     Colors50 = (
         $color: Exclude<LibColorsShort, "black" | "white">,
         theme: DefaultTheme | null = COLORS_LIGHT,
         themeName?: LibThemeNames
     ) => getColorMixinFromTheme(theme, themeName).Colors50($color)
 
+    /**
+     * @description Returns an icon mixin component
+     * @prop $name: string
+     * @prop $color?: Any color from the library
+     * @prop $size?: number
+     * @prop $isLibIcon?: boolean
+     */
     Icon = ({
         $name,
         $color = "currentColor",
         $size = 16,
         $isLibIcon,
-    }: IconMixin) => {
+    }: ILibIconMixin) => {
         const iconURL = $isLibIcon ? $name : `/icons/${$name}.svg`
 
         return css`
@@ -394,12 +466,20 @@ class mixins {
         `
     }
 
+    /**
+     * @description Returns an overlay
+     * @param $overlay?: "black-50" | "black-80" | "white-50" | "white-80" | "gradient-black" | "gradient-white"
+     */
     Overlay = ($overlay: LibOverlays | undefined) => {
         if (!$overlay) return null
 
         return overlaysMap.get($overlay)
     }
 
+    /**
+     * @description Returns a border radius
+     * @param $borderRadius: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+     */
     BorderRadius = ($borderRadius: ILibRadius | undefined) => {
         if (!$borderRadius) return null
 
@@ -438,6 +518,10 @@ class mixins {
         `
     }
 
+    /**
+     * @description Returns a transition
+     * @param $transition: "short" | "long" | "bezier"
+     */
     Transition = ($transition: LibTransitions | undefined) => {
         if (!$transition) return null
 
@@ -450,6 +534,10 @@ class mixins {
         return transitionsMap.get($transition)
     }
 
+    /**
+     * @description Returns a shadow
+     * @param $shadow "xxl" | "xl" | "l" | "m" | "s" | "xs"
+     */
     Shadow = ($shadow: LibShadows | undefined) => {
         if (!$shadow) return null
 
@@ -465,6 +553,10 @@ class mixins {
         return shadowMap.get($shadow)
     }
 
+    /**
+     * @description Returns a box shadow
+     * @param $shadow "xxl" | "xl" | "l" | "m" | "s" | "xs" | { default: LibShadows; hover: LibShadows; active: LibShadows }
+     */
     BoxShadow = ($shadow?: ILibBoxShadow) => {
         if (!$shadow) return null
 
@@ -486,6 +578,10 @@ class mixins {
         `
     }
 
+    /**
+     * @description Returns a font size
+     * @param $fontSize "display-h1" | "display-h2" | "display-h3" | "display-h4" | "display-h5" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small" | "inherit" | number
+     */
     FontSize = (
         $fontSize: LibFontSizes | "inherit" | number | undefined = "body"
     ) => {
@@ -516,7 +612,11 @@ class mixins {
         return fontSizesMap.get($fontSize)
     }
 
-    FontWeight = ($fontWeight: LibFontWeights | undefined = "regular") => {
+    /**
+     * @description Returns a font size
+     * @param $fontWeight: "regular" | "bold" | "black"
+     */
+    FontWeight = ($fontWeight: LibFontWeights = "regular") => {
         if (!$fontWeight) return null
 
         const fontWeightsMap = new Map<LibFontWeights, FONT_WEIGHTS>([
@@ -528,6 +628,10 @@ class mixins {
         return fontWeightsMap.get($fontWeight)
     }
 
+    /**
+     * @description Returns a font size
+     * @param $spacer: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto"
+     */
     Spacer = ($spacer: LibSpacers | "auto" | undefined) => {
         if (!$spacer) return null
 
@@ -549,6 +653,9 @@ class mixins {
         return spacersMap.get($spacer)
     }
 
+    /**
+     * @description Shorthand to hide a scroolbar in CSS
+     */
     HideScrollbar = css`
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -558,6 +665,9 @@ class mixins {
         }
     `
 
+    /**
+     * @description Shorthand to stretch all the tags inside the Wrapper / Wain / Aside compoents
+     */
     StretchTags = css`
         & > div,
         & > h1,
@@ -589,6 +699,10 @@ class mixins {
         }
     `
 
+    /**
+     * @description Shorthand for paddings
+     * @argument $padding: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+     */
     Padding = ($padding: ILibPadding | undefined) => {
         if (!$padding) return null
 
@@ -609,6 +723,10 @@ class mixins {
         `
     }
 
+    /**
+     * @description Shorthand for margins
+     * @argument $margin: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+     */
     Margin = ($margin: ILibMargin) => {
         if (!$margin) return null
 
@@ -634,6 +752,18 @@ class mixins {
         `
     }
 
+    /**
+     * @description Mixin for components using CSS Grid
+     * @prop $inline?: boolean
+     * @prop $col?: number | string
+     * @prop $gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $justifyItems?: CssJustifyItems
+     * @prop $alignItems?: CssAlignItems
+     * @prop $justifyContent?: CssJustifyContent
+     * @prop $alignContent?: CssAlignContent
+     */
     Grid = ({
         $inline,
         $col,
@@ -668,6 +798,19 @@ class mixins {
         align-content: ${$alignContent};
     `
 
+    /**
+     * @description Mixin for components using CSS Flexbox
+     * @prop $inline?: boolean
+     * @prop $flexDirection?: CssFlexDirection
+     * @prop $flexWrap?: CssFlexWrap
+     * @prop $justifyContent?: CssJustifyContent
+     * @prop $alignItems?: CssAlignItems
+     * @prop $justifyItems?: CssJustifyItems
+     * @prop $alignContent?: CssAlignContent
+     * @prop $gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     */
     Flexbox = ({
         $inline,
         $flexDirection,
@@ -703,6 +846,12 @@ class mixins {
         row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
     `
 
+    /**
+     * @description Shorthand for borders
+     * @prop style?: CssBorderStyle
+     * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop color?: Any color from the library
+     */
     Border = ($border?: ILibBorder) => {
         if (!$border) return null
 
@@ -722,6 +871,12 @@ class mixins {
         `
     }
 
+    /**
+     * @description Shorthand for outlines
+     * @prop style?: CssOutlineStyle
+     * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop color?: Any color from the library
+     */
     Outline = ($outline?: ILibOutline) => {
         if (!$outline) return null
 
@@ -741,6 +896,15 @@ class mixins {
         `
     }
 
+    /**
+     * @description Shorthand for backgroundImage
+     * @prop img: string
+     * @prop clip?: CssBackgroundClip
+     * @prop origin?: CssBackgroundOrigin
+     * @prop position?: CssBackgroundPosition
+     * @prop repeat?: CssBackgroundRepeat
+     * @prop size?: CssBackgroundSize
+     */
     BackgroundImage = (props?: ILibBackgroundImage) => {
         if (!props) return null
 

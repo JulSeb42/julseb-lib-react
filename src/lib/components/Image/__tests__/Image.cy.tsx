@@ -1,6 +1,6 @@
 /*=============================================== Image tests ===============================================*/
 
-import { Image, libTokens } from "../../.."
+import { Image, LIB_TOKENS } from "../../.."
 
 const IMG_URL = "/images/pic-avatar.jpg"
 
@@ -40,7 +40,7 @@ describe("<Image />", () => {
         cy.dataTest()
             .should("have.css", "object-fit", fit)
             .should("have.css", "aspect-ratio", aspectRatio)
-            .should("have.css", "border-radius", libTokens.radiuses.xs)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.xs)
     })
 
     // TODO
@@ -70,9 +70,9 @@ describe("<Image />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.overlays["black-50"]
+                LIB_TOKENS.overlays["black-50"]
             )
-            .should("have.css", "color", libTokens.colors.light.white.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.white.rgb)
             .should("have.text", "Hello")
     })
 
@@ -97,12 +97,12 @@ describe("<Image />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.overlays["white-80"]
+                LIB_TOKENS.overlays["white-80"]
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
             .should("have.text", "Hello")
     })

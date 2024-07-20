@@ -2,7 +2,7 @@
 
 import { useState, useEffect, createContext, useContext } from "react"
 import type { IStyleSheetManager, DefaultTheme } from "styled-components"
-import { StyleSheetManager } from "../utils/StyleSheetManager"
+import { StyleSheetManager } from "../utils"
 import { Themes } from "../types/theme"
 import type { ILibThemeContext, LibThemeNames, ReactChildren } from "../types"
 
@@ -12,6 +12,13 @@ interface ILibThemeProvider {
     stylesheetManager?: boolean | IStyleSheetManager
     children?: ReactChildren
 }
+
+/**
+ * @description Returns a Wrapper for the theme
+ * @link https://documentation-components-react.vercel.app/styles/theme-provider
+ * @prop stylesheetManager?: boolean | IStyleSheetManager => import IStyleSheetManager from "styled-components"
+ * @prop children?: ReactChildren
+ */
 
 export function ThemeProviderWrapper({
     children,
@@ -77,6 +84,14 @@ export function ThemeProviderWrapper({
         </ThemeContext.Provider>
     )
 }
+
+/**
+ * @description Hook for Theme context
+ * @link https://documentation-components-react.vercel.app/styles/theme-provider
+ * @prop theme: DefaultTheme => import from "styled-components"
+ * @prop selectedTheme: "light" | "dark" | undefined
+ * @prop toggleTheme: () => void
+ */
 
 export function useLibTheme() {
     return useContext(ThemeContext) as ILibThemeContext

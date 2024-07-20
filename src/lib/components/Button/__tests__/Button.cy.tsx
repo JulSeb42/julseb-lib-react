@@ -1,6 +1,6 @@
 /*=============================================== Button tests ===============================================*/
 
-import { Button, libTokens } from "../../.."
+import { Button, LIB_TOKENS } from "../../.."
 
 describe("<Button />", () => {
     it("renders <Button /> component", () => {
@@ -15,18 +15,18 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
-            .should("have.css", "color", libTokens.colors.light.background.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.background.rgb)
             .should("have.text", "Hello")
             .should("have.prop", "tagName", "BUTTON")
-            .should("have.css", "font-size", libTokens["font-sizes"].body.px)
+            .should("have.css", "font-size", LIB_TOKENS["font-sizes"].body.px)
             .should(
                 "have.css",
                 "padding",
-                `${libTokens.spacers.xs} ${libTokens.spacers.s}`
+                `${LIB_TOKENS.spacers.xs} ${LIB_TOKENS.spacers.s}`
             )
-            .should("have.css", "border-radius", libTokens.radiuses.m)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.m)
     })
 
     it("renders as button with an onClick", () => {
@@ -44,9 +44,9 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
-            .should("have.css", "color", libTokens.colors.light.white.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.white.rgb)
             .click()
         cy.on("window:alert", t => {
             expect(t).to.equal("Hello World")
@@ -62,13 +62,13 @@ describe("<Button />", () => {
         cy.dataTest()
             .should("have.prop", "tagName", "A")
             .should("have.attr", "href", "/")
-            .should("have.css", "font-size", libTokens["font-sizes"].small.px)
+            .should("have.css", "font-size", LIB_TOKENS["font-sizes"].small.px)
             .should(
                 "have.css",
                 "padding",
-                `${libTokens.spacers.xxs} ${libTokens.spacers.xs}`
+                `${LIB_TOKENS.spacers.xxs} ${LIB_TOKENS.spacers.xs}`
             )
-            .should("have.css", "border-radius", libTokens.radiuses.s)
+            .should("have.css", "border-radius", LIB_TOKENS.radiuses.s)
     })
 
     it("renders a link when adding `href`", () => {
@@ -94,7 +94,7 @@ describe("<Button />", () => {
                 Hello
             </Button>
         )
-        cy.dataTest().should("have.css", "gap", libTokens.spacers.s)
+        cy.dataTest().should("have.css", "gap", LIB_TOKENS.spacers.s)
 
         cy.dataTest()
             .children()
@@ -141,9 +141,9 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.background.rgb
+                LIB_TOKENS.colors.light.background.rgb
             )
-            .should("have.css", "color", libTokens.colors.light.font.rgb)
+            .should("have.css", "color", LIB_TOKENS.colors.light.font.rgb)
     })
 
     it("renders variant `outline`", () => {
@@ -157,17 +157,17 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.transparent.rgb
+                LIB_TOKENS.colors.light.transparent.rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["secondary-500"].rgb
+                LIB_TOKENS.colors.light["secondary-500"].rgb
             )
             .should(
                 "have.css",
                 "border-color",
-                libTokens.colors.light["secondary-500"].rgb
+                LIB_TOKENS.colors.light["secondary-500"].rgb
             )
     })
 
@@ -182,12 +182,12 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light["gray-50"].rgb
+                LIB_TOKENS.colors.light["gray-50"].rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["primary-500"].rgb
+                LIB_TOKENS.colors.light["primary-500"].rgb
             )
     })
 
@@ -207,12 +207,12 @@ describe("<Button />", () => {
             .should(
                 "have.css",
                 "background-color",
-                libTokens.colors.light.transparent.rgb
+                LIB_TOKENS.colors.light.transparent.rgb
             )
             .should(
                 "have.css",
                 "color",
-                libTokens.colors.light["success-500"].rgb
+                LIB_TOKENS.colors.light["success-500"].rgb
             )
             .should("have.css", "padding", "0px")
     })
