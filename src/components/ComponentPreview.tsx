@@ -24,11 +24,20 @@ function ComponentPreviewContent({
 
 interface IComponentPreview extends IComponentPreviewContent {
     previewTitle?: string
+    noStretch?: boolean
 }
 
-export function ComponentPreview({ previewTitle, ...rest }: IComponentPreview) {
+export function ComponentPreview({
+    previewTitle,
+    noStretch,
+    ...rest
+}: IComponentPreview) {
     return previewTitle ? (
-        <Flexbox flexDirection="column" gap="s" alignItems="flex-start">
+        <Flexbox
+            flexDirection="column"
+            gap="s"
+            alignItems={noStretch ? "flex-start" : "stretch"}
+        >
             <Text tag="h4">{previewTitle}</Text>
             <ComponentPreviewContent {...rest} />
         </Flexbox>

@@ -10,6 +10,7 @@ export const tagPreview: ComponentPreview<ILibTag> = {
     component: Tag,
     category: "components",
     import: "Tag",
+    noStretch: true,
     additionalImports: null,
     optionalImports: null,
     propsImport: "ILibTag",

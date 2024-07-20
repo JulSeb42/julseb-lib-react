@@ -9,11 +9,11 @@ export const cardPreview: ComponentPreview<ILibCard> = {
     name: "Card",
     component: Card,
     category: "components",
-    import: "Card", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibCard", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Card",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibCard",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement", "LibButtonLinkBlank", "ILibFlexbox"],
     previews: [
         {

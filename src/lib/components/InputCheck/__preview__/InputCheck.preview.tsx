@@ -17,12 +17,12 @@ export const inputCheckPreview: ComponentPreview<ILibInputCheck> = {
     name: "InputCheck",
     component: InputCheck,
     category: "components",
-    import: "InputCheck", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibInputCheck", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
-    extends: ["HTMLInputElement"],
+    import: "InputCheck",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibInputCheck",
+    additionalTypeImports: [],
+    extends: ["InputHTMLAttributes<HTMLInputElement>"],
     previews: [
         { previewTitle: "Checkbox", demo: <InputCheckDemoCheckbox /> },
         { previewTitle: "Radio", demo: <InputCheckDemoRadio /> },

@@ -10,6 +10,7 @@ const StyledForm = styled.form<{
     $maxWidth: string | number
 }>`
     max-width: ${({ $maxWidth }) => stringifyPx($maxWidth)};
+    width: 100%;
     ${({ $gap }) =>
         Mixins.Flexbox({
             $flexDirection: "column",

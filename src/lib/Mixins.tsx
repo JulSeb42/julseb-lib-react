@@ -455,7 +455,7 @@ class mixins {
 
         return css`
             content: "";
-            background-color: ${({ theme }) => theme.AllColors($color)};
+            background-color: ${({ theme }) => Mixins.AllColors($color, theme)};
             -webkit-mask-image: url(${iconURL});
             -webkit-mask-size: cover;
             mask-image: url(${$isLibIcon ? $name : `/icons/${$name}.svg`});
@@ -787,7 +787,7 @@ class mixins {
     }) => css`
         display: ${$inline ? "inline-grid" : "grid"};
         grid-template-columns: ${$col && typeof $col === "number"
-            ? `repeat(${$col} 1fr)`
+            ? `repeat(${$col}, 1fr)`
             : $col};
         gap: ${$gap && Mixins.Spacer($gap)};
         column-gap: ${$columnGap && Mixins.Spacer($columnGap)};

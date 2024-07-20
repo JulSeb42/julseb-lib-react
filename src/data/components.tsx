@@ -51,6 +51,15 @@ import { cardPreview } from "../lib/components/Card/__preview__/Card.preview"
 import { inputPreview } from "../lib/components/Input/__preview__/Input.preview"
 import { inputImagePreview } from "../lib/components/InputImage/__preview__/InputImage.preview"
 import { inputCheckPreview } from "../lib/components/InputCheck/__preview__/InputCheck.preview"
+import { inputPhonePreview } from "../lib/components/InputPhone/__preview__/InputPhone.preview"
+import { inputCounterPreview } from "../lib/components/InputCounter/__preview__/InputCounter.preview"
+import { inputSliderPreview } from "../lib/components/InputSlider/__preview__/InputSlider.preview"
+import { selectPreview } from "../lib/components/Select/__preview__/Select.preview"
+import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/Autocomplete.preview"
+import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
+import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
+import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
+import { breadcrumbsPreview } from "../lib/components/Breadcrumbs/__preview__/Breadcrumbs.preview"
 // prependImport
 // import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 
@@ -72,6 +81,7 @@ export interface ComponentPreview<T> {
     propsImport: string | null // import ILibComponent (ex: ILibAccordion)
     additionalTypeImports: Array<string> | null // import ILibComponentItem (ex: ILibAccordionItem)
     extends: Array<string> | Array<{ name: string; from: string }> | null
+    noStretch?: boolean
     // TODO?: noAs: boolean
     // TODO?: noRef?: boolean
     previews: Array<
@@ -122,11 +132,20 @@ export const previews = [
     buttonIconPreview,
     buttonGroupPreview,
     tagPreview,
-truncatePreview,
-cardPreview,
-inputPreview,
-inputImagePreview,
-inputCheckPreview,
+    truncatePreview,
+    cardPreview,
+    inputPreview,
+    inputImagePreview,
+    inputCheckPreview,
+    inputPhonePreview,
+    inputCounterPreview,
+    inputSliderPreview,
+    selectPreview,
+    autocompletePreview,
+    ratingPreview,
+    formPreview,
+    listGroupPreview,
+    breadcrumbsPreview,
 // prependArr
     // accordionPreview
 ] as Array<ComponentPreview<any>>

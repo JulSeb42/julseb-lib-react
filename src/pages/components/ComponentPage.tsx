@@ -15,16 +15,22 @@ export function ComponentPage() {
 
     if (!componentPreview) return <NotFoundPage />
 
-    const { name, component, previews: componentPreviews } = componentPreview
-
-  
+    const {
+        name,
+        component,
+        previews: componentPreviews,
+        noStretch,
+    } = componentPreview
 
     return (
         <Page title={pascalToTitle(name)}>
-            
-
             {componentPreviews?.map((preview, i) => (
-                <ComponentPreview key={i} component={component} {...preview} />
+                <ComponentPreview
+                    key={i}
+                    component={component}
+                    noStretch={noStretch}
+                    {...preview}
+                />
             ))}
         </Page>
     )
@@ -38,4 +44,3 @@ function pascalToTitle(str: string) {
 
     return toTitleCase(splitted)
 }
-

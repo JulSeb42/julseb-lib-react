@@ -16,7 +16,6 @@ export const inputPreview: ComponentPreview<ILibInput> = {
     propsImport: "ILibInput",
     additionalTypeImports: [],
     extends: ["InputHTMLAttributes<HTMLInputElement>", "ILibInputBase"],
-
     previews: [
         { previewTitle: "Default", props: {} },
         {

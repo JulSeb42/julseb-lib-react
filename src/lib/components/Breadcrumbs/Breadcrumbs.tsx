@@ -11,7 +11,7 @@ import type { ILibBreadcrumbs } from "./types"
 /**
  * @description Returns a Breadcrumbs component
  * @link https://documentation-components-react.vercel.app/components/breadcrumbs
- * @extends HTMLNavElement
+ * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop breadcrumbsItems: Array<LibButtonLinkBlank & { text: string | JSX.Element }> => only if children is not defined

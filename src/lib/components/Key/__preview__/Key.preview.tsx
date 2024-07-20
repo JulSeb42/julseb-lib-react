@@ -14,6 +14,7 @@ export const keyPreview: ComponentPreview<ILibKey> = {
     name: "Key",
     component: Key,
     category: "components",
+    noStretch: true,
     import: "Key",
     additionalImports: null,
     optionalImports: null,

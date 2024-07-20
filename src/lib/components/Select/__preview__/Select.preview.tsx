@@ -1,0 +1,39 @@
+/*=============================================== SelectPreview ===============================================*/
+
+import { useState } from "react"
+import { Select } from "../../../"
+import type {} from "../../../types"
+import type { ILibSelect } from "../../../types/components-props"
+import type { ComponentPreview } from "../../../../data/components"
+
+export const selectPreview: ComponentPreview<ILibSelect> = {
+    name: "Select",
+    component: Select,
+    category: "components",
+    import: "Select",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibSelect",
+    additionalTypeImports: [],
+    extends: [
+        "HTMLDivElement",
+        "ILibInputBase",
+        "ILibInputValidationIconComponent",
+    ],
+    previews: [{ previewTitle: "Default", demo: <SelectDemo /> }],
+}
+
+function SelectDemo({ ...rest }: Partial<ILibSelect>) {
+    const options = ["react", "javascript", "scss", "css", "html"]
+
+    const [selected, setSelected] = useState<string>(options[0])
+
+    return (
+        <Select
+            selected={selected}
+            setSelected={setSelected}
+            options={options}
+            {...rest}
+        />
+    )
+}

@@ -37,7 +37,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
             helperBottom,
             validation,
             id,
-            value,
+            value = 50,
             min = 0,
             max = 100,
             showMinMax,

@@ -48,7 +48,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
             validation,
             inputBackground,
             inputVariant = "rounded",
-            value,
+            value = 0,
             setValue,
             min,
             max,
