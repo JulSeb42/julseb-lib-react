@@ -1,23 +1,16 @@
 /*=============================================== Breadcrumbs tests ===============================================*/
 
-import { Link } from "react-router-dom"
 import { Breadcrumbs, LIB_TOKENS } from "../../.."
 import { breadcrumbsItems } from "./data"
 
 describe("<Breadcrumbs />", () => {
     it("renders <Breadcrumbs /> component", () => {
         cy.mount(
-            <Breadcrumbs data-testid="testid" className="className">
-                {breadcrumbsItems.map(({ text, to }, i) =>
-                    to ? (
-                        <Link to={to} key={i}>
-                            {text}
-                        </Link>
-                    ) : (
-                        <span key={i}>{text}</span>
-                    )
-                )}
-            </Breadcrumbs>
+            <Breadcrumbs
+                data-testid="testid"
+                className="className"
+                breadcrumbsItems={breadcrumbsItems}
+            />
         )
         cy.dataTest().should("exist").should("have.class", "className")
 
@@ -30,17 +23,11 @@ describe("<Breadcrumbs />", () => {
 
     it("renders an icon as separator", () => {
         cy.mount(
-            <Breadcrumbs data-testid="testid" separator="chevron">
-                {breadcrumbsItems.map(({ text, to }, i) =>
-                    to ? (
-                        <Link to={to} key={i}>
-                            {text}
-                        </Link>
-                    ) : (
-                        <span key={i}>{text}</span>
-                    )
-                )}
-            </Breadcrumbs>
+            <Breadcrumbs
+                data-testid="testid"
+                separator="chevron"
+                breadcrumbsItems={breadcrumbsItems}
+            />
         )
 
         cy.dataTest("testid.SeparatorContainer")
@@ -57,19 +44,8 @@ describe("<Breadcrumbs />", () => {
                 activeColor="success"
                 separatorColor="warning"
                 gap="xl"
-            >
-                {breadcrumbsItems.map(({ text, to }, i) =>
-                    to ? (
-                        <Link to={to} data-testid={`testid.Link.${i}`} key={i}>
-                            {text}
-                        </Link>
-                    ) : (
-                        <span data-testid={`testid.Active.${i}`} key={i}>
-                            {text}
-                        </span>
-                    )
-                )}
-            </Breadcrumbs>
+                breadcrumbsItems={breadcrumbsItems}
+            />
         )
         cy.dataTest("testid.Link.0").should(
             "have.css",

@@ -35,16 +35,19 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
         ref
     ) => {
         return (
-            <BreadcrumbsFn ref={ref} {...rest}>
+            <BreadcrumbsFn
+                ref={ref}
+                data-testid={testid}
+                className={className}
+                {...rest}
+            >
                 {breadcrumbsItems
                     ? breadcrumbsItems.map(({ text, to }, i) =>
                           to ? (
                               <Link
                                   to={to}
-                                  data-testid={
-                                      testid && `${testid}.LinkItem${i}`
-                                  }
-                                  className={className && "LinkItem"}
+                                  data-testid={testid && `${testid}.Link.${i}`}
+                                  className={className && "Link"}
                                   key={uuid()}
                               >
                                   {text}
@@ -52,10 +55,8 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
                           ) : (
                               <span
                                   key={uuid()}
-                                  data-testid={
-                                      testid && `${testid}.TextItem${i}`
-                                  }
-                                  className={className && "TextItem"}
+                                  data-testid={testid && `${testid}.Text.${i}`}
+                                  className={className && "Text"}
                               >
                                   {text}
                               </span>

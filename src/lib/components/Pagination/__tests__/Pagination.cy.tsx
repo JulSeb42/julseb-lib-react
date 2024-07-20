@@ -23,12 +23,9 @@ describe("<Pagination />", () => {
         cy.dataTest("testid.PaginationButton.Number.Active")
             .should("exist")
             .should("have.length", 1)
-            .should(
-                "have.class",
-                "PaginationButton PaginationButton__Number Active"
-            )
             .should("not.be.disabled")
             .should("have.text", 1)
+            .should("have.class", "Active")
 
         cy.dataTest("testid.PaginationButton.Number").eq(0).click()
 

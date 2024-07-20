@@ -22,7 +22,9 @@ export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
     previews: [
         {
             previewTitle: "Default",
-            demo: <InputSliderDemo />,
+            demo: (
+                <InputSliderDemo data-testid="testid" className="className" />
+            ),
         },
         {
             previewTitle: "With min & max",

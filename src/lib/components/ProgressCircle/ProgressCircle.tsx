@@ -42,7 +42,13 @@ function Circle({ value, color = "primary", animated }: ILibProgressCircle) {
 
 const ProgressFn = forwardRef(
     (
-        { animated, value, color = "primary", ...rest }: ILibProgressCircle,
+        {
+            "data-testid": testid,
+            animated,
+            value,
+            color = "primary",
+            ...rest
+        }: ILibProgressCircle,
         ref
     ) => {
         const pct = cleanPercentage(value)
@@ -55,6 +61,7 @@ const ProgressFn = forwardRef(
 
         return (
             <StyledProgressCircle
+                data-testid={testid}
                 width={PROGRESS_CIRCLE_SIZE}
                 height={PROGRESS_CIRCLE_SIZE}
                 viewBox="0 0 200 200"
@@ -96,6 +103,9 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
         ref
     ) => {
         const progressFnProps = {
+            "data-testid":
+                testid &&
+                (showValue || icon ? `${testid}.ProgressCircle` : testid),
             ref,
             animated,
             value,
@@ -105,12 +115,16 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
         }
 
         return showValue || icon ? (
-            <ProgressCircleContainer className={className}>
+            <ProgressCircleContainer data-testid={testid} className={className}>
                 <ProgressFn {...progressFnProps} />
 
-                <Content className={className && "Content"}>
+                <Content
+                    data-testid={testid && `${testid}.Content`}
+                    className={className && "Content"}
+                >
                     {icon && (
                         <LibIcon
+                            data-testid={testid && `${testid}.Icon`}
                             icon={icon}
                             size={PROGRESS_CIRCLE_SIZE * 0.4}
                             color="gray"
@@ -119,9 +133,17 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
                     )}
 
                     {showValue ? (
-                        <Value className={className && "Value"}>{value}%</Value>
+                        <Value
+                            data-testid={testid && `${testid}.Value`}
+                            className={className && "Value"}
+                        >
+                            {value}%
+                        </Value>
                     ) : (
-                        <SrOnly className={className && "SrOnly"}>
+                        <SrOnly
+                            data-testid={testid && `${testid}.SrOnly`}
+                            className={className && "SrOnly"}
+                        >
                             {value}%
                         </SrOnly>
                     )}

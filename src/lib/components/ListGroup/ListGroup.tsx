@@ -51,10 +51,7 @@ export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
                 {items
                     ? items.map((item, i) => (
                           <ListGroupItem
-                              data-testid={
-                                  item["data-testid"] ||
-                                  (testid && `${testid}.ListGroupItem`)
-                              }
+                              data-testid={item["data-testid"] || testid}
                               className={
                                   item.className ||
                                   (className && "ListGroupItem")

@@ -2,6 +2,7 @@
 
 import { forwardRef, useCallback, useState } from "react"
 import { useSearchParams } from "react-router-dom"
+import classNames from "classnames"
 import { usePagination, useMaxWidth, Flexbox } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { PaginationButton } from "./PaginationButton"
@@ -133,7 +134,10 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                     }
                                     className={
                                         className &&
-                                        "PaginationButton PaginationButton__Number"
+                                        classNames(
+                                            `PaginationButton PaginationButton__Number`,
+                                            { Active: page === 1 }
+                                        )
                                     }
                                     isActive={page === 1}
                                     onClick={() => handlePage(1)}
@@ -169,7 +173,10 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                 }
                                 className={
                                     className &&
-                                    "PaginationButton PaginationButton__Number"
+                                    classNames(
+                                        "PaginationButton PaginationButton__Number",
+                                        { Active: page === n }
+                                    )
                                 }
                                 isActive={n === page}
                                 onClick={() => handlePage(n)}

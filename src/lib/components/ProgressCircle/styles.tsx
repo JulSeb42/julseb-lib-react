@@ -1,7 +1,7 @@
 /*=============================================== ProgressCircle styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { setDefaultTheme, Mixins, Text } from "../../"
+import { setDefaultTheme, Mixins, Text, TRANSITIONS } from "../../"
 import type { LibAllColors } from "../../types"
 import type {} from "./types"
 
@@ -22,7 +22,7 @@ const StyledCircle = styled.circle<{
     ${({ $isAnimated }) =>
         $isAnimated &&
         css`
-            transition: all 1000ms ease-in-out;
+            transition: ${TRANSITIONS.PROGRESS_CIRCLE};
         `}
 `
 

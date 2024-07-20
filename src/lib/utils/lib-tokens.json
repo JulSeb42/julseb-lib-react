@@ -852,7 +852,8 @@
     "transitions": {
         "short": "all 0.2s ease",
         "long": "all 0.5s ease",
-        "bezier": "all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66)"
+        "bezier": "all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66)",
+        "progressCircle": "all 1s ease-in-out 0s"
     },
 
     "icon-multiplier": "0.6"

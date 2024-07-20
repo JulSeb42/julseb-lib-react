@@ -269,9 +269,10 @@ export enum LAYOUTS {
 /*====================== Transitions ======================*/
 
 export enum TRANSITIONS {
-    /** all 0.2s ease */ SHORT = "var(--transition-short)",
-    /** all 0.5s ease */ LONG = "var(--transition-long)",
+    /** all 200ms ease */ SHORT = "var(--transition-short)",
+    /** all 500ms ease */ LONG = "var(--transition-long)",
     /** all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66) */ BEZIER = "var(--transition-bezier)",
+    /** all 1000ms ease */ PROGRESS_CIRCLE = "var(--transition-progress-circle)",
 }
 
 /*====================== Breakpoints ======================*/

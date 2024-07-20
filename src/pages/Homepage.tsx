@@ -31,12 +31,21 @@ export function Homepage() {
         "Hooks",
     ]
 
+    const tests = ["ProgressCircle"]
+
     return (
         <Page title="Homepage">
             <Text tag="h3">Components left</Text>
 
             <Text tag="ul">
                 {pages.map(p => (
+                    <li key={p}>{p}</li>
+                ))}
+            </Text>
+
+            <Text tag="h3">Tests to fix</Text>
+            <Text tag="ul">
+                {tests.map(p => (
                     <li key={p}>{p}</li>
                 ))}
             </Text>

@@ -275,9 +275,10 @@
 
     /*===== Transitions =====*/
 
-    --transition-short: all 0.2s ease;
-    --transition-long: all 0.5s ease;
+    --transition-short: all 200ms ease;
+    --transition-long: all 500ms ease;
     --transition-bezier: all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66);
+    --transition-progress-circle: all 1000ms ease-in-out;
 }
 
 @media screen and (max-width: 1024px) {

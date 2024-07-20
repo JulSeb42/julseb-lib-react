@@ -9,6 +9,10 @@ describe("<InputSlider />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
+            .should("have.prop", "tagName", "DIV")
+
+        cy.dataTest("testid.Input")
+            .should("exist")
             .should("have.prop", "tagName", "INPUT")
             .should("have.attr", "type", "range")
     })
