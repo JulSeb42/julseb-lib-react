@@ -69,7 +69,12 @@ import { paginationPreview } from "../lib/components/Pagination/__preview__/Pagi
 import { paginatorPreview } from "../lib/components/Paginator/__preview__/Paginator.preview"
 import { stepperPreview } from "../lib/components/Stepper/__preview__/Stepper.preview"
 import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
+import { progressCirclePreview } from "../lib/components/ProgressCircle/__preview__/ProgressCircle.preview"
 // prependImport
+
+/*====================== Helpers ======================*/
+
+import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
 
 export type PreviewProp<T> = {
     props: T
@@ -159,11 +164,15 @@ export const previews = [
     toastPreview,
     alertPreview,
     modalPreview,
-paginationPreview,
-paginatorPreview,
-stepperPreview,
-progressBarPreview,
-// prependArr
+    paginationPreview,
+    paginatorPreview,
+    stepperPreview,
+    progressBarPreview,
+    progressCirclePreview,
+    // prependArr
+
+    /*====================== Helpers ======================*/
+    srOnlyPreview,
 ] as Array<ComponentPreview<any>>
 
 export const componentPaths: ComponentPaths = previews.map(preview => ({

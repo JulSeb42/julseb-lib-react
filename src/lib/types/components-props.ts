@@ -52,4 +52,6 @@ export * from "../components/Pagination/types"
 export * from "../components/Paginator/types"
 export * from "../components/Stepper/types"
 export * from "../components/ProgressBar/types"
+export * from "../components/ProgressCircle/types"
+export * from "../components/SrOnly/types"
 // prependHere
