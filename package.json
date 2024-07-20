@@ -2,7 +2,6 @@
     "name": "tsx-lib-v9",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
     "scripts": {
         "dev": "vite --open",
         "build": "tsc -b && vite build",

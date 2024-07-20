@@ -36,6 +36,12 @@ declare global {
                 component: ReactNode,
                 options?: MountOptions & { routerProps?: MemoryRouterProps }
             ): Cypress.Chainable<MountReturn>
+            // before(el: ReactNode, property: string): Cypress.Chainable
+            before(
+                testid: Cypress.Chainable<any>,
+                propertyValue: string,
+                expectedValue: string | null
+            ): Cypress.Chainable
         }
     }
 }
@@ -58,3 +64,16 @@ Cypress.Commands.add("mount", (components, options = {}) => {
 
 // Example use:
 // cy.mount(<MyComponent />)
+
+Cypress.Commands.add("before", (testid, propertyValue, expectedValue) => {
+    testid.within($el => {
+        cy.window().then(win => {
+            const before = win.getComputedStyle($el[0], "::before")
+            const property = before.getPropertyValue(propertyValue)
+            expect(property).to.equal(expectedValue)
+        })
+    })
+})
+
+// Example
+// cy.before(cy.dataTest(), "background-color", LIB_TOKENS.colors.light["secondary-500"].rgb)

@@ -17,6 +17,50 @@ describe("<ProgressBar />", () => {
     })
 
     // ? value
+    it("renders a value", () => {
+        cy.mount(
+            <ProgressBar
+                data-testid="testid"
+                className="className"
+                value={PROGRESS_VALUE}
+            />
+        )
+        cy.dataTest().should("have.attr", "value", PROGRESS_VALUE.toString())
+    })
+
     // ? color
+    it("renders a different color", () => {
+        cy.mount(
+            <ProgressBar
+                data-testid="testid"
+                className="className"
+                value={PROGRESS_VALUE}
+                color="secondary"
+            />
+        )
+
+        cy.before(
+            cy.dataTest(),
+            "background-color",
+            LIB_TOKENS.colors.light["secondary-500"].rgb
+        )
+    })
+
     // ? animation
+    it.only("renders without animation", () => {
+        cy.mount(
+            <ProgressBar
+                data-testid="testid"
+                className="className"
+                value={PROGRESS_VALUE}
+                animated={false}
+            />
+        )
+
+        cy.before(
+            cy.dataTest(),
+            "animation",
+            "none 0s ease 0s 1 normal none running"
+        )
+    })
 })

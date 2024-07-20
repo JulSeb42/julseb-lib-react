@@ -65,6 +65,10 @@ import { dropdownPreview } from "../lib/components/Dropdown/__preview__/Dropdown
 import { toastPreview } from "../lib/components/Toast/__preview__/Toast.preview"
 import { alertPreview } from "../lib/components/Alert/__preview__/Alert.preview"
 import { modalPreview } from "../lib/components/Modal/__preview__/Modal.preview"
+import { paginationPreview } from "../lib/components/Pagination/__preview__/Pagination.preview"
+import { paginatorPreview } from "../lib/components/Paginator/__preview__/Paginator.preview"
+import { stepperPreview } from "../lib/components/Stepper/__preview__/Stepper.preview"
+import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
 // prependImport
 
 export type PreviewProp<T> = {
@@ -155,6 +159,10 @@ export const previews = [
     toastPreview,
     alertPreview,
     modalPreview,
+paginationPreview,
+paginatorPreview,
+stepperPreview,
+progressBarPreview,
 // prependArr
 ] as Array<ComponentPreview<any>>
 
