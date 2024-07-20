@@ -5,12 +5,11 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "img: string",
-        "clip?: Property.BackgroundClip",
-        "origin?: Property.BackgroundOrigin",
-        "position?: Property.BackgroundPosition",
-        "repeat?: Property.BackgroundRepeat",
-        "size?: Property.BackgroundSize",
+        "value: number",
+        "animated?: boolean",
+        "color?: LibAllColors",
+        "showValue?: boolean => only if icon is not defined",
+        "icon?: LibIcon => only if showValue is not defined",
     ])
 
     // const propsInputs = replaceTypes([
@@ -205,5 +204,7 @@ function replaceTypes(arr: Array<string>) {
             .replaceAll("LibOverlays", mapValues(typeValues.overlays))
             .replaceAll("LibTransitions", mapValues(typeValues.transitions))
             .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
+            .replaceAll("LibTabJustify", mapValues(typeValues.tabsJustify))
+            .replaceAll("LibTabVariant", mapValues(typeValues.tabsVariants))
     })
 }

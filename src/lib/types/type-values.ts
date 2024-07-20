@@ -190,6 +190,10 @@ export const typeValues = {
         "bottom-right": "bottom-right",
     },
 
+    tabsVariants: { basic: "basic", rounded: "rounded" },
+
+    tabsJustify: { start: "start", stretch: "stretch" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

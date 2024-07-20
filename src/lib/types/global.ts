@@ -400,3 +400,5 @@ export type LibTextIconTag = Exclude<
     "strong" | "em" | "ul" | "ol" | "dl"
 >
 export type LibTooltipTrigger = keyof typeof typeValues.tooltipTriggers
+export type LibTabVariant = keyof typeof typeValues.tabsVariants
+export type LibTabJustify = keyof typeof typeValues.tabsJustify

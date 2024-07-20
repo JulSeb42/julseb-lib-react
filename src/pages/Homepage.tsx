@@ -5,8 +5,8 @@ import { Page } from "../components"
 
 export function Homepage() {
     const pages: Array<string> = [
-        "Progress Circle",
-        "Tabs",
+        // "Progress Circle",
+        // "Tabs",
         "Slideshow",
         "Cover",
         "Table",

@@ -70,6 +70,7 @@ import { paginatorPreview } from "../lib/components/Paginator/__preview__/Pagina
 import { stepperPreview } from "../lib/components/Stepper/__preview__/Stepper.preview"
 import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
 import { progressCirclePreview } from "../lib/components/ProgressCircle/__preview__/ProgressCircle.preview"
+import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -169,7 +170,8 @@ export const previews = [
     stepperPreview,
     progressBarPreview,
     progressCirclePreview,
-    // prependArr
+    tabsPreview,
+// prependArr
 
     /*====================== Helpers ======================*/
     srOnlyPreview,

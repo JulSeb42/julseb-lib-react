@@ -116,4 +116,5 @@ export * from "./components/Stepper"
 export * from "./components/ProgressBar"
 export * from "./components/ProgressCircle"
 export * from "./components/SrOnly"
+export * from "./components/Tabs"
 // prependHere

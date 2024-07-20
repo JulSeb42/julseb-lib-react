@@ -86,6 +86,11 @@ const ProgressFn = forwardRef(
  * @link https://documentation-components-react.vercel.app/components/progress-circle
  * @extends SVGElement
  * @prop data-testid?: string
+ * @prop value: number
+ * @prop animated?: boolean
+ * @prop color?: Any color from the library
+ * @prop showValue?: boolean => only if icon is not defined
+ * @prop icon?: string | JSX.Element => only if showValue is not defined
  */
 
 export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(

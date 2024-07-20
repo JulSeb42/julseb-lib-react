@@ -1,6 +1,6 @@
 /*=============================================== Components items types ===============================================*/
 
-import type { ForwardedRef } from "react"
+import type { ForwardedRef, ReactNode } from "react"
 import type {
     LibButtonLinkBlank,
     LibAllColors,
@@ -217,4 +217,22 @@ export type LibStep = LibButtonLinkBlank & {
  */
 export type LibBreadcrumbItem = LibButtonLinkBlank & {
     text: string | JSX.Element
+}
+
+/*====================== TabsItem ======================*/
+
+/**
+ * @description Props for Tabs component items: https://documentation-components-react.vercel.app/components/tabs
+ * @extends LibButtonLinkBlank
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop title: string
+ * @prop content: ReactNode
+ */
+
+export interface LibTabItem {
+    "data-testid"?: string
+    className?: string
+    title: string
+    content: ReactNode
 }
