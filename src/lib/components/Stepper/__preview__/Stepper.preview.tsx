@@ -33,11 +33,11 @@ export const stepperPreview: ComponentPreview<ILibStepper> = {
     name: "Stepper",
     component: Stepper,
     category: "components",
-    import: "Stepper", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: ["Step"], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibStepper", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: ["LibStep"], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Stepper",
+    additionalImports: [],
+    optionalImports: ["Step"],
+    propsImport: "ILibStepper",
+    additionalTypeImports: ["LibStep"],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: { steps, activeStep: 2 } },

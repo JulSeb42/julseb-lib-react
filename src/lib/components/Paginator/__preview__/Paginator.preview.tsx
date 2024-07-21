@@ -15,11 +15,11 @@ export const paginatorPreview: ComponentPreview<ILibPaginator> = {
     name: "Paginator",
     component: Paginator,
     category: "components",
-    import: "Paginator", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibPaginator", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Paginator",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibPaginator",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement", "ILibFlexbox"],
     previews: [{ demo: <PaginatorDemo /> }],
 }

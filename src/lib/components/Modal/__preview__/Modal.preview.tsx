@@ -20,11 +20,11 @@ export const modalPreview: ComponentPreview<ILibModal> = {
     component: Modal,
     category: "components",
     noStretch: true,
-    import: "Modal", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibModal", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Modal",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibModal",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         {

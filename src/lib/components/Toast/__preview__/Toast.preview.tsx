@@ -10,11 +10,11 @@ export const toastPreview: ComponentPreview<ILibToast> = {
     component: Toast,
     category: "components",
     noStretch: true,
-    import: "Toast", // import Component (ex: Skeleton)
-    additionalImports: null, // import OtherComponent (ex: SkeletonCard)
-    optionalImports: null, // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibToast", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: null, // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Toast",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibToast",
+    additionalTypeImports: null,
     extends: ["HTMLDivElement", "LibToast"],
     previews: [
         { previewTitle: "Default", props: { title: "Toast" } },

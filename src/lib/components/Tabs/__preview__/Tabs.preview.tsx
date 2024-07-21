@@ -29,16 +29,16 @@ export const tabsPreview: ComponentPreview<ILibTabs> = {
     name: "Tabs",
     component: Tabs,
     category: "components",
-    import: "Tabs", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
+    import: "Tabs",
+    additionalImports: [],
     optionalImports: [
         "TabsContainer",
         "TabsButtonsContainer",
         "TabButton",
         "TabItem",
-    ], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibTabs", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: ["LibTabItem"], // import ILibComponentItem (ex: ILibAccordionItem)
+    ],
+    propsImport: "ILibTabs",
+    additionalTypeImports: ["LibTabItem"],
     extends: ["HTMLDivElement"],
     previews: [
         {

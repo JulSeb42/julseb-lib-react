@@ -65,11 +65,11 @@ export const tablePreview: ComponentPreview<ILibTable> = {
     name: "Table",
     component: Table,
     category: "components",
-    import: "Table", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibTable", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Table",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibTable",
+    additionalTypeImports: [],
     extends: ["HTMLTableElement"],
     previews: [
         { previewTitle: "Default", props: { headers, data, linkify: true } },

@@ -13,11 +13,11 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
     name: "Alert",
     component: Alert,
     category: "components",
-    import: "Alert", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibAlert", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Alert",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibAlert",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         ...colors.map(c => ({

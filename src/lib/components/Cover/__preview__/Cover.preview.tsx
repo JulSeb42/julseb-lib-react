@@ -18,12 +18,12 @@ export const coverPreview: ComponentPreview<ILibCover> = {
     name: "Cover",
     component: Cover,
     category: "components",
-    import: "Cover", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibCover", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
-    extends: ["HTMLDivElement"],
+    import: "Cover",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibCover",
+    additionalTypeImports: [],
+    extends: ["HTMLDivElement", "ILibFlexbox"],
     previews: [
         // { previewTitle: "Default", props: {  } },
         // { previewTitle: "Default", demo: <Cover /> },

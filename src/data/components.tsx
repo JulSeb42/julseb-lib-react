@@ -74,6 +74,7 @@ import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
 import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
+import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -177,6 +178,7 @@ export const previews = [
 slideshowPreview,
 coverPreview,
 tablePreview,
+pageLoadingPreview,
 // prependArr
 
     /*====================== Helpers ======================*/

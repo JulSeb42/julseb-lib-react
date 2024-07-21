@@ -27,6 +27,7 @@ import { DemoCoverCenter } from "../pages/demos/DemoCoverCenter"
 import { DemoCoverCenterOverlay } from "../pages/demos/DemoCoverCenterOverlay"
 import { DemoCoverBottom } from "../pages/demos/DemoCoverBottom"
 import { DemoCoverBottomOverlay } from "../pages/demos/DemoCoverBottomOverlay"
+import { DemoPageLoading } from "../pages/demos/DemoPageLoading"
 
 export type Route = {
     path: string
@@ -55,6 +56,8 @@ const demos: Array<Route> = [
         path: "/cover/cover-bottom-overlay",
         element: <DemoCoverBottomOverlay />,
     },
+
+    { path: "/page-loading/demo", element: <DemoPageLoading /> },
 ]
 
 export const routes: Array<Route> = [

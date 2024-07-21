@@ -26,11 +26,11 @@ export const dropdownPreview: ComponentPreview<ILibDropdown> = {
     name: "Dropdown",
     component: Dropdown,
     category: "components",
-    import: "Dropdown", // import Component (ex: Skeleton)
-    additionalImports: null, // import OtherComponent (ex: SkeletonCard)
-    optionalImports: ["DropdownContainer"], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibDropdown", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: ["LibDropdownItem"], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Dropdown",
+    additionalImports: null,
+    optionalImports: ["DropdownContainer"],
+    propsImport: "ILibDropdown",
+    additionalTypeImports: ["LibDropdownItem"],
     extends: ["HTMLDivElement"],
     previews: [{ demo: <DropdownDemo /> }],
 }

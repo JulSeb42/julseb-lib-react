@@ -9,11 +9,11 @@ export const progressBarPreview: ComponentPreview<ILibProgressBar> = {
     name: "ProgressBar",
     component: ProgressBar,
     category: "components",
-    import: "ProgressBar", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibProgressBar", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "ProgressBar",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibProgressBar",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: Object.values(typeValues.colorsHover).map(c => ({
         previewTitle: `Color ${c}`,

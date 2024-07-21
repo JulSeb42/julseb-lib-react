@@ -27,11 +27,11 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
     name: "Breadcrumbs",
     component: Breadcrumbs,
     category: "components",
-    import: "Breadcrumbs", // import Component (ex: Skeleton)
-    additionalImports: null, // import OtherComponent (ex: SkeletonCard)
-    optionalImports: null, // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibBreadcrumbs", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: null, // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Breadcrumbs",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibBreadcrumbs",
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: { breadcrumbsItems } },

@@ -12,11 +12,11 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
     name: "Slideshow",
     component: Slideshow,
     category: "components",
-    import: "Slideshow", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibSlideshow", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Slideshow",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibSlideshow",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         {
