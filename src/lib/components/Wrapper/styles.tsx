@@ -2,10 +2,15 @@
 
 import styled from "styled-components"
 import { BREAKPOINTS, Mixins, setDefaultTheme } from "../../"
-import type { LibSpacers } from "../../types"
+import type { LibAllColors, LibSpacers } from "../../types"
 
-const StyledWrapper = styled.div<{ $gap: LibSpacers }>`
+const StyledWrapper = styled.div<{
+    $gap: LibSpacers
+    $backgroundColor: LibAllColors
+}>`
     position: relative;
+    background-color: ${({ $backgroundColor, theme }) =>
+        Mixins.AllColors($backgroundColor, theme)};
     ${({ $gap }) =>
         Mixins.Flexbox({
             $gap,

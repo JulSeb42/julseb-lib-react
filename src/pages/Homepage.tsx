@@ -8,7 +8,7 @@ export function Homepage() {
         // "Progress Circle",
         // "Tabs",
         // "Slideshow",
-        "Cover",
+        // "Cover",
         "Table",
         "Page Loading",
         "Sticky",

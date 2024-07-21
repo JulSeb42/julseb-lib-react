@@ -118,4 +118,5 @@ export * from "./components/ProgressCircle"
 export * from "./components/SrOnly"
 export * from "./components/Tabs"
 export * from "./components/Slideshow"
+export * from "./components/Cover"
 // prependHere

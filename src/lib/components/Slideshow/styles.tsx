@@ -49,7 +49,6 @@ const SlideshowContentWrapper = styled(Flexbox)`
 
 const SlideshowContent = styled(Flexbox)<{
     $speed: number
-    // $show: number
     $active: number
     $imgFit: CssObjectFit
 }>`

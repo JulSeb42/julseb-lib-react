@@ -23,6 +23,10 @@ import { DemoMainFull } from "../pages/demos/DemoMainFull"
 import { DemoAsideDefault } from "../pages/demos/DemoAsideDefault"
 import { DemoAsideSmall } from "../pages/demos/DemoAsideSmall"
 import { DemoAsideBoth } from "../pages/demos/DemoAsideBoth"
+import { DemoCoverCenter } from "../pages/demos/DemoCoverCenter"
+import { DemoCoverCenterOverlay } from "../pages/demos/DemoCoverCenterOverlay"
+import { DemoCoverBottom } from "../pages/demos/DemoCoverBottom"
+import { DemoCoverBottomOverlay } from "../pages/demos/DemoCoverBottomOverlay"
 
 export type Route = {
     path: string
@@ -40,6 +44,17 @@ const demos: Array<Route> = [
     { path: "/demos/aside-default", element: <DemoAsideDefault /> },
     { path: "/demos/aside-small", element: <DemoAsideSmall /> },
     { path: "/demos/aside-both-sides", element: <DemoAsideBoth /> },
+
+    { path: "/cover/cover-center", element: <DemoCoverCenter /> },
+    {
+        path: "/cover/cover-center-overlay",
+        element: <DemoCoverCenterOverlay />,
+    },
+    { path: "/cover/cover-bottom", element: <DemoCoverBottom /> },
+    {
+        path: "/cover/cover-bottom-overlay",
+        element: <DemoCoverBottomOverlay />,
+    },
 ]
 
 export const routes: Array<Route> = [

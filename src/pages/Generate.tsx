@@ -5,13 +5,11 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "images: Array<string> => only if children is not defined",
-        "children: Array<ReactNode> => only if images is not defined",
-        "height?: string | number",
-        "imgFit?: CssObjectFit",
-        "controls?: boolean | Controls",
-        "options?: Options",
-        "pagination?: boolean | PaginationWithThumbnails | PaginationWithOther",
+        "img: string",
+        "alt?: string",
+        "overlay?: LibOverlays",
+        "height?: number | string",
+        "padding?: ILibPadding",
     ])
 
     // const propsInputs = replaceTypes([

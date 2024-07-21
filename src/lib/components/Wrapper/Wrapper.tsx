@@ -11,16 +11,28 @@ import type { ILibWrapper } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop backgroundColor?: Any color from the library
  */
 
 export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(
-    ({ "data-testid": testid, as, children, gap = "l", ...rest }, ref) => {
+    (
+        {
+            "data-testid": testid,
+            as,
+            children,
+            gap = "l",
+            backgroundColor = "transparent",
+            ...rest
+        },
+        ref
+    ) => {
         return (
             <StyledWrapper
                 data-testid={testid}
                 ref={ref}
-                as={as}
+                // as={as}
                 $gap={gap}
+                $backgroundColor={backgroundColor}
                 {...rest}
             >
                 {children}
