@@ -10,7 +10,6 @@ import {
     TRANSITIONS,
 } from "../../"
 import type { LibTabVariant, LibTabJustify } from "../../types"
-import type {} from "./types"
 
 const StyledTabsContainer = styled.div`
     ${Mixins.Flexbox({

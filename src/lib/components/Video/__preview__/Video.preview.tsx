@@ -1,7 +1,6 @@
 /*=============================================== VideoPreview ===============================================*/
 
 import { Video } from "../../../"
-import {} from "../../../types"
 import type { ILibVideo } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

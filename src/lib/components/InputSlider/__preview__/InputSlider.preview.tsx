@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { InputSlider } from "../../../"
-import type {} from "../../../types"
 import type { ILibInputSlider } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

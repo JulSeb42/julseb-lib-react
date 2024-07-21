@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom"
 import { FullBleed, Text } from "../../../"
-import {} from "../../../types"
 import type { ILibFullBleed } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

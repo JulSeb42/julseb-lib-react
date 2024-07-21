@@ -1,7 +1,6 @@
 /*=============================================== TextIconPreview ===============================================*/
 
 import { TextIcon } from "../../../"
-import {} from "../../../types"
 import type { ILibTextIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

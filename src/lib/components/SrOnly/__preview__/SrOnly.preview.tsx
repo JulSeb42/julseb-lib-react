@@ -1,7 +1,6 @@
 /*=============================================== SrOnlyPreview ===============================================*/
 
 import { SrOnly } from "../../../"
-import type {} from "../../../types"
 import type { ILibSrOnly } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -10,10 +9,10 @@ export const srOnlyPreview: ComponentPreview<ILibSrOnly> = {
     component: SrOnly,
     category: "components",
     import: "SrOnly",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibSrOnly",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", props: { children: "Hello", as: "h1" } },

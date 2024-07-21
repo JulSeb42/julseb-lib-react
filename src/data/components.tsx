@@ -75,6 +75,7 @@ import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slides
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
+import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -179,6 +180,7 @@ slideshowPreview,
 coverPreview,
 tablePreview,
 pageLoadingPreview,
+stickyPreview,
 // prependArr
 
     /*====================== Helpers ======================*/

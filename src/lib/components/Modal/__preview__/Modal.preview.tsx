@@ -11,7 +11,6 @@ import {
     Text,
     enableScroll,
 } from "../../../"
-import type {} from "../../../types"
 import type { ILibModal } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -21,10 +20,10 @@ export const modalPreview: ComponentPreview<ILibModal> = {
     category: "components",
     noStretch: true,
     import: "Modal",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibModal",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {

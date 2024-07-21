@@ -1,8 +1,6 @@
 /*=============================================== Cover component ===============================================*/
 
 import { forwardRef } from "react"
-import {} from "ts-utils-julseb"
-import {} from "../../"
 import { StyledCover, CoverImg, CoverContent } from "./styles"
 import type { ILibCover } from "./types"
 

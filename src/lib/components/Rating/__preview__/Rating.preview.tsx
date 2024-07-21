@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Rating } from "../../../"
-import type {} from "../../../types"
 import type { ILibRating } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

@@ -10,7 +10,6 @@ import {
 } from "../../"
 import { TextBaseMixin } from "../ComponentsMixins"
 import type { CssVerticalAlign, LibTableVariant } from "../../types"
-import type {} from "./types"
 
 const StyledTable = styled.table<{
     $vAlign: CssVerticalAlign

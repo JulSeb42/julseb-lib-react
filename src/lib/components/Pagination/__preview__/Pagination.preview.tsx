@@ -7,7 +7,6 @@ import {
     generateNumbers,
     usePaginatedData,
 } from "../../../"
-import type {} from "../../../types"
 import type { ILibPagination } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -19,7 +18,7 @@ export const paginationPreview: ComponentPreview<ILibPagination> = {
     additionalImports: ["usePaginatedData"],
     optionalImports: ["PaginationButton"],
     propsImport: "ILibPagination",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement", "ILibFlexbox"],
     previews: [{ demo: <PaginationDemo /> }],
 }

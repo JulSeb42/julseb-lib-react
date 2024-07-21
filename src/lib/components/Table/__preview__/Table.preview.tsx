@@ -2,7 +2,6 @@
 
 import { Table } from "../../../"
 import { toTitleCase } from "ts-utils-julseb"
-import type {} from "../../../types"
 import type { ILibTable } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -66,10 +65,10 @@ export const tablePreview: ComponentPreview<ILibTable> = {
     component: Table,
     category: "components",
     import: "Table",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibTable",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLTableElement"],
     previews: [
         { previewTitle: "Default", props: { headers, data, linkify: true } },

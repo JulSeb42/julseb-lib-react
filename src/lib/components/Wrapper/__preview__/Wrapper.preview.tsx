@@ -1,7 +1,6 @@
 /*=============================================== WrapperPreview ===============================================*/
 
 import { Wrapper } from "../../../"
-import type {} from "../../../types"
 import { ContainerPreview } from "../../../../data/previews/layouts/Container.preview"
 import type { ILibWrapper } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

@@ -34,7 +34,7 @@ export const stepperPreview: ComponentPreview<ILibStepper> = {
     component: Stepper,
     category: "components",
     import: "Stepper",
-    additionalImports: [],
+    additionalImports: null,
     optionalImports: ["Step"],
     propsImport: "ILibStepper",
     additionalTypeImports: ["LibStep"],

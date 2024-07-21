@@ -2,7 +2,6 @@
 
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { Form, Input } from "../../../"
-import type {} from "../../../types"
 import type { ILibForm } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

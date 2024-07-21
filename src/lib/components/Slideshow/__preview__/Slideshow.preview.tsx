@@ -2,7 +2,6 @@
 
 import { generateNumbers } from "ts-utils-julseb"
 import { Slideshow } from "../../../"
-import type {} from "../../../types"
 import type { ILibSlideshow } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -13,10 +12,10 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
     component: Slideshow,
     category: "components",
     import: "Slideshow",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibSlideshow",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {
@@ -46,5 +45,5 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 }
 
 function SlideshowDemo(props: Partial<ILibSlideshow>) {
-    return <Slideshow images={images} {...(props as any)} pagination={{}} />
+    return <Slideshow images={images} {...(props as any)} />
 }

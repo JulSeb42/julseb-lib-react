@@ -6,7 +6,6 @@ import {
     InputImageDemoWithValidation,
     InputImageDemoDisabled,
 } from "./InputImage.demo"
-import type {} from "../../../types"
 import type { ILibInputImage } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

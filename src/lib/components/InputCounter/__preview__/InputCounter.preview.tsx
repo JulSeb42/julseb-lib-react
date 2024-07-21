@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { InputCounter } from "../../../"
-import type {} from "../../../types"
 import type { ILibInputCounter } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

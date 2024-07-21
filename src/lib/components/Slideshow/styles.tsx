@@ -19,7 +19,6 @@ import type {
     LibSlideshowPaginationPosition,
     LibSlideshowPagination,
 } from "../../types"
-import type {} from "./types"
 
 const StyledSlideshow = styled.div`
     width: 100%;

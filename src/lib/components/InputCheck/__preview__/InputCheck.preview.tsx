@@ -1,7 +1,6 @@
 /*=============================================== InputCheckPreview ===============================================*/
 
 import { InputCheck } from "../../../"
-import type {} from "../../../types"
 import {
     InputCheckDemoCheckbox,
     InputCheckDemoRadio,

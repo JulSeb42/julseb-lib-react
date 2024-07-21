@@ -2,7 +2,6 @@
 
 import { uuid } from "ts-utils-julseb"
 import { Image, Masonry } from "../../../"
-import {} from "../../../types"
 import type { ILibMasonry } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

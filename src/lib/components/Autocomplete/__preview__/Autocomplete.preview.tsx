@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Autocomplete } from "../../../"
-import type {} from "../../../types"
 import type { ILibAutocomplete } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 import { frenchCities } from "../../../../data"

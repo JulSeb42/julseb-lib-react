@@ -7,7 +7,6 @@ import {
     Card,
     Grid,
 } from "../../../"
-import type {} from "../../../types"
 import type { ILibPaginator } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -16,10 +15,10 @@ export const paginatorPreview: ComponentPreview<ILibPaginator> = {
     component: Paginator,
     category: "components",
     import: "Paginator",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibPaginator",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement", "ILibFlexbox"],
     previews: [{ demo: <PaginatorDemo /> }],
 }

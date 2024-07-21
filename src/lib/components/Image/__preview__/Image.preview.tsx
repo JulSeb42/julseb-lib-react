@@ -1,7 +1,6 @@
 /*=============================================== ImagePreview ===============================================*/
 
 import { Image } from "../../../"
-import {} from "../../../types"
 import type { ILibImage } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

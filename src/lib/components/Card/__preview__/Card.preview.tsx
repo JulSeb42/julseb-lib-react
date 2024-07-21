@@ -1,7 +1,6 @@
 /*=============================================== CardPreview ===============================================*/
 
 import { Card, Text, Button, Image } from "../../../"
-import type {} from "../../../types"
 import type { ILibCard } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

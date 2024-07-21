@@ -3,7 +3,6 @@
 import styled, { css } from "styled-components"
 import { setDefaultTheme, Mixins, Text, TRANSITIONS } from "../../"
 import type { LibAllColors } from "../../types"
-import type {} from "./types"
 
 export const PROGRESS_CIRCLE_SIZE = 64
 

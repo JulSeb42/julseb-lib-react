@@ -10,10 +10,10 @@ export const progressBarPreview: ComponentPreview<ILibProgressBar> = {
     component: ProgressBar,
     category: "components",
     import: "ProgressBar",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibProgressBar",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: Object.values(typeValues.colorsHover).map(c => ({
         previewTitle: `Color ${c}`,

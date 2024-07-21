@@ -14,10 +14,10 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
     component: Alert,
     category: "components",
     import: "Alert",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibAlert",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         ...colors.map(c => ({

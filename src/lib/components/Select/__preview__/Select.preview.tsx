@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Select } from "../../../"
-import type {} from "../../../types"
 import type { ILibSelect } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

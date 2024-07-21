@@ -1,7 +1,6 @@
 /*=============================================== YoutubePreview ===============================================*/
 
 import { Youtube } from "../../../"
-import {} from "../../../types"
 import type { ILibYoutube } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

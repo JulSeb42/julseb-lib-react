@@ -1,7 +1,6 @@
 /*=============================================== ToastPreview ===============================================*/
 
 import { Button, Toast, useToast } from "../../../"
-import type {} from "../../../types"
 import type { ILibToast } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

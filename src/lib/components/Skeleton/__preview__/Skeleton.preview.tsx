@@ -1,7 +1,6 @@
 /*=============================================== SkeletonPreview ===============================================*/
 
 import { Skeleton, SkeletonCard } from "../../../"
-import {} from "../../../types"
 import type { ILibSkeleton } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

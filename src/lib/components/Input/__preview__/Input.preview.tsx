@@ -2,7 +2,6 @@
 
 import { Input } from "../../../"
 import { InputDemoValidation, InputDemoCounter } from "./Input.demo"
-import type {} from "../../../types"
 import type { ILibInput } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

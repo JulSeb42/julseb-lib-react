@@ -3,7 +3,7 @@
 import styled from "styled-components"
 import { setDefaultTheme } from "../../"
 
-const StyledSrOnly = styled.div<{}>`
+const StyledSrOnly = styled.div`
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     clip-path: inset(50%) !important;

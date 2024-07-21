@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom"
 import { PageLoading, Text } from "../../../"
-import type {} from "../../../types"
 import type { ILibPageLoading } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -11,10 +10,10 @@ export const pageLoadingPreview: ComponentPreview<ILibPageLoading> = {
     component: PageLoading,
     category: "components",
     import: "PageLoading",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibPageLoading",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {

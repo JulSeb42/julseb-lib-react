@@ -3,7 +3,6 @@
 import { Link } from "react-router-dom"
 import { toSentenceCase } from "ts-utils-julseb"
 import { Cover, Text } from "../../../"
-import type {} from "../../../types"
 import type { ILibCover } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -19,14 +18,12 @@ export const coverPreview: ComponentPreview<ILibCover> = {
     component: Cover,
     category: "components",
     import: "Cover",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibCover",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement", "ILibFlexbox"],
     previews: [
-        // { previewTitle: "Default", props: {  } },
-        // { previewTitle: "Default", demo: <Cover /> },
         {
             demo: (
                 <>

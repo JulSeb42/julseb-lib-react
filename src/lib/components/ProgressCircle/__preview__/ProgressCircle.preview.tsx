@@ -1,7 +1,6 @@
 /*=============================================== ProgressCirclePreview ===============================================*/
 
 import { ProgressCircle, getRandomNumber } from "../../../"
-import type {} from "../../../types"
 import type { ILibProgressCircle } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -10,10 +9,10 @@ export const progressCirclePreview: ComponentPreview<ILibProgressCircle> = {
     component: ProgressCircle,
     category: "components",
     import: "ProgressCircle",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibProgressCircle",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLSvgElement"],
     previews: [
         {

@@ -30,7 +30,7 @@ export const tabsPreview: ComponentPreview<ILibTabs> = {
     component: Tabs,
     category: "components",
     import: "Tabs",
-    additionalImports: [],
+    additionalImports: null,
     optionalImports: [
         "TabsContainer",
         "TabsButtonsContainer",
