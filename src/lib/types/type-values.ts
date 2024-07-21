@@ -207,6 +207,12 @@ export const typeValues = {
 
     slideshowButtonsSizes: { small: "small", large: "large" },
 
+    tableVariants: {
+        bordered: "bordered",
+        stripped: "stripped",
+        "border-bottom": "border-bottom",
+    },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

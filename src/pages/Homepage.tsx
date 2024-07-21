@@ -9,7 +9,7 @@ export function Homepage() {
         // "Tabs",
         // "Slideshow",
         // "Cover",
-        "Table",
+        // "Table",
         "Page Loading",
         "Sticky",
         "Messaging",

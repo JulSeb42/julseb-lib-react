@@ -119,4 +119,5 @@ export * from "./components/SrOnly"
 export * from "./components/Tabs"
 export * from "./components/Slideshow"
 export * from "./components/Cover"
+export * from "./components/Table"
 // prependHere

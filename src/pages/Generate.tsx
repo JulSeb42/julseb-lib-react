@@ -5,11 +5,12 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "img: string",
-        "alt?: string",
-        "overlay?: LibOverlays",
-        "height?: number | string",
-        "padding?: ILibPadding",
+        "data: Array<Array<string | JSX.Element>> => only if children is not defined",
+        "children: ReactChildren => only if data is not defined",
+        "headers?: Array<string | JSX.Element>",
+        "variant?: LibTableVariant",
+        "vAlign?: CssVerticalAlign",
+        "linkify?: boolean",
     ])
 
     // const propsInputs = replaceTypes([

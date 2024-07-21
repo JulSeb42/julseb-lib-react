@@ -73,6 +73,7 @@ import { progressCirclePreview } from "../lib/components/ProgressCircle/__previe
 import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
 import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
+import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -175,6 +176,7 @@ export const previews = [
     tabsPreview,
 slideshowPreview,
 coverPreview,
+tablePreview,
 // prependArr
 
     /*====================== Helpers ======================*/
