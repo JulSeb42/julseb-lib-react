@@ -194,6 +194,19 @@ export const typeValues = {
 
     tabsJustify: { start: "start", stretch: "stretch" },
 
+    slideshowPagination: {
+        dots: "dots",
+        "dots-outline": "dots-outline",
+        bars: "bars",
+        thumbnails: "thumbnails",
+    },
+
+    slideshowPaginationPosition: { inside: "inside", outside: "outside" },
+
+    slideshowButtonsPositions: { left: "left", right: "right" },
+
+    slideshowButtonsSizes: { small: "small", large: "large" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

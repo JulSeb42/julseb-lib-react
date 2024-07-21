@@ -7,7 +7,7 @@ export function Homepage() {
     const pages: Array<string> = [
         // "Progress Circle",
         // "Tabs",
-        "Slideshow",
+        // "Slideshow",
         "Cover",
         "Table",
         "Page Loading",

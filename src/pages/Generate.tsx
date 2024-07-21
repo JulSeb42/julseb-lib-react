@@ -5,11 +5,9 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "value: number",
-        "animated?: boolean",
-        "color?: LibAllColors",
-        "showValue?: boolean => only if icon is not defined",
-        "icon?: LibIcon => only if showValue is not defined",
+        "type?: LibSlideshowPagination",
+        "position?: LibSlideshowPaginationPosition",
+        "hideOnTouch?: boolean",
     ])
 
     // const propsInputs = replaceTypes([
@@ -206,5 +204,13 @@ function replaceTypes(arr: Array<string>) {
             .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
             .replaceAll("LibTabJustify", mapValues(typeValues.tabsJustify))
             .replaceAll("LibTabVariant", mapValues(typeValues.tabsVariants))
+            .replaceAll(
+                "LibSlideshowPaginationPosition",
+                mapValues(typeValues.slideshowPaginationPosition)
+            )
+            .replaceAll(
+                "LibSlideshowPagination",
+                mapValues(typeValues.slideshowPagination)
+            )
     })
 }

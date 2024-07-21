@@ -402,3 +402,10 @@ export type LibTextIconTag = Exclude<
 export type LibTooltipTrigger = keyof typeof typeValues.tooltipTriggers
 export type LibTabVariant = keyof typeof typeValues.tabsVariants
 export type LibTabJustify = keyof typeof typeValues.tabsJustify
+export type LibSlideshowPagination = keyof typeof typeValues.slideshowPagination
+export type LibSlideshowPaginationPosition =
+    keyof typeof typeValues.slideshowPaginationPosition
+export type LibSlideshowButtonPosition =
+    keyof typeof typeValues.slideshowButtonsPositions
+export type LibSlideshowButtonSize =
+    keyof typeof typeValues.slideshowButtonsSizes

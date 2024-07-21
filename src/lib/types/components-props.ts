@@ -55,4 +55,5 @@ export * from "../components/ProgressBar/types"
 export * from "../components/ProgressCircle/types"
 export * from "../components/SrOnly/types"
 export * from "../components/Tabs/types"
+export * from "../components/Slideshow/types"
 // prependHere

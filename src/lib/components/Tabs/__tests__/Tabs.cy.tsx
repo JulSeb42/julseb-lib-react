@@ -49,7 +49,7 @@ describe("<Tabs />", () => {
     })
 
     // ? Click change page
-    it.only("changes page on click", () => {
+    it("changes page on click", () => {
         cy.mount(
             <Tabs
                 data-testid="testid"

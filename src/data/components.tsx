@@ -71,6 +71,7 @@ import { stepperPreview } from "../lib/components/Stepper/__preview__/Stepper.pr
 import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
 import { progressCirclePreview } from "../lib/components/ProgressCircle/__preview__/ProgressCircle.preview"
 import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
+import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -171,6 +172,7 @@ export const previews = [
     progressBarPreview,
     progressCirclePreview,
     tabsPreview,
+slideshowPreview,
 // prependArr
 
     /*====================== Helpers ======================*/
