@@ -14,16 +14,52 @@ import {
 } from "./styles"
 import type { ILibSlideshow } from "./types"
 
+const DEFAULT_ICON_SIZE_SMALL = 24
+const DEFAULT_ICON_SIZE_LARGE = 32
+
 /**
  * @description Returns a Slideshow component
  * @link https://documentation-components-react.vercel.app/components/slideshow
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop images: Array<string> => only if children is not defined
+ * @prop children: Array<ReactNode> => only if images is not defined
+ * @prop height?: string | number
+ * @prop imgFit?: CssObjectFit
+ * @prop controls?: boolean | Controls
+ * @prop options?: Options
+ * @prop pagination?: boolean | PaginationWithThumbnails | PaginationWithOther
+ *
+ * @type Controls
+ * @type boolean or object
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop size?: LibSlideshowButtonSize
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop hideOnTouch?: boolean
+ * @prop iconPrev?: string | JSX.Element
+ * @prop iconNext?: string | JSX.Element
+ * @prop iconPrevSize?: number
+ * @prop iconNextSize?: number
+ * @prop labelPrev?: string
+ * @prop labelNext?: string
+ *
+ * @type Options
+ * @prop autoPlay?: number
+ * @prop speed?: number
+ *
+ * @type PaginationWithThumbnails
+ * @prop type?: "dots" | "dots-outline" | "bars" | "thumbnails"
+ * @prop position?: "inside" | "outside"
+ * @prop hideOnTouch?: boolean
+ *
+ * @type PaginationWithOther
+ * @prop type?: "dots" | "dots-outline" | "bars"
+ * @prop position?: "inside" | "outside"
+ * @prop hideOnTouch?: boolean
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  */
-
-const DEFAULT_ICON_SIZE_SMALL = 24
-const DEFAULT_ICON_SIZE_LARGE = 32
 
 export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
     (

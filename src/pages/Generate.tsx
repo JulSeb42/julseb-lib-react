@@ -5,9 +5,13 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "type?: LibSlideshowPagination",
-        "position?: LibSlideshowPaginationPosition",
-        "hideOnTouch?: boolean",
+        "images: Array<string> => only if children is not defined",
+        "children: Array<ReactNode> => only if images is not defined",
+        "height?: string | number",
+        "imgFit?: CssObjectFit",
+        "controls?: boolean | Controls",
+        "options?: Options",
+        "pagination?: boolean | PaginationWithThumbnails | PaginationWithOther",
     ])
 
     // const propsInputs = replaceTypes([
