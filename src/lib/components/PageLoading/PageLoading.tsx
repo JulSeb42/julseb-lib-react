@@ -12,6 +12,10 @@ import type { ILibPageLoading } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop backgroundColor?: Any color from the library
+ * @prop loaderColor?: Any color from the library
+ * @prop loaderVariant?: 1 | 2 | 3 | 4
+ * @prop stopScrolling?: boolean
  */
 
 export const PageLoading = forwardRef<HTMLDivElement, ILibPageLoading>(

@@ -10,7 +10,7 @@ export function Homepage() {
         // "Slideshow",
         // "Cover",
         // "Table",
-        "Page Loading",
+        // "Page Loading",
         "Sticky",
         "Messaging",
         "Markdown Editor",
