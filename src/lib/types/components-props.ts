@@ -60,4 +60,5 @@ export * from "../components/Cover/types"
 export * from "../components/Table/types"
 export * from "../components/PageLoading/types"
 export * from "../components/Sticky/types"
+export * from "../components/Messaging/types"
 // prependHere

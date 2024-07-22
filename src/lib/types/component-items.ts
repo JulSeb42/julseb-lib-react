@@ -9,6 +9,7 @@ import type {
     LibSpacers,
     LibToastStatus,
     ReactChildren,
+    LibMessageType,
 } from "./"
 
 /*====================== ButtonGroup ======================*/
@@ -235,4 +236,26 @@ export interface LibTabItem {
     className?: string
     title: string
     content: ReactNode
+}
+
+/*====================== Message ======================*/
+
+/**
+ * @description Props for Message component: https://documentation-components-react.vercel.app/components/messaging
+ * @prop data-testid?: string
+ * @prop type: "sent" | "received"
+ * @prop text: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop className?: string
+ * @prop date?: Date | string
+ * @prop time?: string
+ */
+export interface LibMessage {
+    ref?: ForwardedRef<HTMLDivElement>
+    "data-testid"?: string
+    className?: string
+    type: LibMessageType
+    text: string
+    date?: Date | string
+    time?: string
 }

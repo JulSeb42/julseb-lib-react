@@ -410,3 +410,4 @@ export type LibSlideshowButtonPosition =
 export type LibSlideshowButtonSize =
     keyof typeof typeValues.slideshowButtonsSizes
 export type LibTableVariant = keyof typeof typeValues.tableVariants
+export type LibMessageType = keyof typeof typeValues.messageType

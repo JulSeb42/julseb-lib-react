@@ -28,7 +28,6 @@ interface ILibAccordionItem extends LibComponentBase<HTMLDivElement> {
  * @prop variant?: "basic" | "rounded"
  * @prop defaultOpen?: boolean
  */
-
 export const AccordionItem = forwardRef<HTMLDivElement, ILibAccordionItem>(
     (
         {

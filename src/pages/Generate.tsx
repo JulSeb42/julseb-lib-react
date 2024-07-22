@@ -5,10 +5,16 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "backgroundColor?: LibAllColors",
-        "loaderColor?: LibAllColors",
-        "loaderVariant?: LibLoaderVariant",
-        "stopScrolling?: boolean",
+        'type: "sent" | "received"',
+        "text: string => only if children is not defined",
+        "children: ReactChildren => only if text is not defined",
+        "date?: Date | string",
+        "time?: string",
+        "textDateTime?: string",
+        "textToday?: string",
+        "textYesterday?: string",
+        'dateFormat?: "short" | "long"',
+        "className?: string",
     ])
 
     // const propsInputs = replaceTypes([
@@ -213,5 +219,6 @@ function replaceTypes(arr: Array<string>) {
                 "LibSlideshowPagination",
                 mapValues(typeValues.slideshowPagination)
             )
+            .replaceAll("LibMessageType", mapValues(typeValues.messageType))
     })
 }

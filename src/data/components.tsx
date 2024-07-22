@@ -76,6 +76,7 @@ import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
 import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
+import { messagingPreview } from "../lib/components/Messaging/__preview__/Messaging.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -181,6 +182,7 @@ coverPreview,
 tablePreview,
 pageLoadingPreview,
 stickyPreview,
+messagingPreview,
 // prependArr
 
     /*====================== Helpers ======================*/

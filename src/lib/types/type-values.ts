@@ -213,6 +213,8 @@ export const typeValues = {
         "border-bottom": "border-bottom",
     },
 
+    messageType: { sent: "sent", received: "received" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

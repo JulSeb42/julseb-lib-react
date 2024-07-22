@@ -11,7 +11,8 @@ import { useEffect } from "react"
 
 export function useKeyPress(
     keyCodes: string | Array<string>,
-    callback: () => void
+    callback: () => void,
+    excludeKeys?: Array<string>
 ): void {
     useEffect(() => {
         const singleHandler = ({ code }: KeyboardEvent) => {
@@ -30,6 +31,44 @@ export function useKeyPress(
                     keyCodes[0] === "Shift" ? e.shiftKey : undefined
                 const altKey = keyCodes[0] === "Alt" ? e.altKey : undefined
 
+                const excludedMetaKey =
+                    excludeKeys && excludeKeys[0] === "Command"
+                        ? e.metaKey
+                        : undefined
+                const excludedCtrlKey =
+                    excludeKeys && excludeKeys[0] === "Control"
+                        ? e.ctrlKey
+                        : undefined
+                const excludedShiftKey =
+                    excludeKeys && excludeKeys[0] === "Shift"
+                        ? e.shiftKey
+                        : undefined
+                const excludedAltKey =
+                    excludeKeys && excludeKeys[0] === "Alt"
+                        ? e.altKey
+                        : undefined
+
+                if (
+                    keyCodes.length === 1 &&
+                    !(
+                        excludedMetaKey ||
+                        excludedCtrlKey ||
+                        excludedShiftKey ||
+                        excludedAltKey
+                    )
+                ) {
+                    singleHandler(e)
+                }
+
+                if (
+                    excludedMetaKey ||
+                    excludedCtrlKey ||
+                    excludedShiftKey ||
+                    excludedAltKey
+                ) {
+                    return
+                }
+
                 if (
                     (metaKey || ctrlKey || shiftKey || altKey) &&
                     e.code === keyCodes[1]
@@ -41,7 +80,7 @@ export function useKeyPress(
 
         window.addEventListener(
             "keydown",
-            typeof keyCodes !== "string" && keyCodes.length > 1
+            typeof keyCodes !== "string" || (keyCodes && excludeKeys)
                 ? multiHandler
                 : singleHandler
         )
