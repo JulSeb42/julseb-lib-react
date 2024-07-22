@@ -11,12 +11,12 @@ import {
     LINE_HEIGHTS,
     Mixins,
     RADIUSES,
-    SHADOWS,
     SPACERS,
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
 import type {
+    LibShadows,
     LibColorsHover,
     LibInputListDirection,
     LibSpacers,
@@ -27,6 +27,7 @@ const StyledDropdown = styled.div<{
     $direction: LibInputListDirection
     $maxHeight: number
     $buttonOpenHeight: number
+    $shadow?: LibShadows
 }>`
     position: absolute;
     min-width: 200px;
@@ -34,7 +35,7 @@ const StyledDropdown = styled.div<{
     border-radius: ${RADIUSES.M};
     overflow: hidden;
     overflow-y: scroll;
-    box-shadow: ${({ $isOpen }) => $isOpen && SHADOWS.M};
+    box-shadow: ${({ $isOpen, $shadow }) => $isOpen && Mixins.Shadow($shadow)};
     max-height: ${({ $maxHeight, $isOpen }) =>
         $isOpen ? stringifyPx($maxHeight) : 0};
     transition: ${TRANSITIONS.SHORT};

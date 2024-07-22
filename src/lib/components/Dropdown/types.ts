@@ -7,6 +7,7 @@ import type {
     LibInputListDirection,
     ReactChildren,
     DispatchState,
+    LibShadows
 } from "../../types"
 
 interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
@@ -16,6 +17,7 @@ interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
     direction?: LibInputListDirection
     maxHeightOpen?: number
     positionFromButton?: number
+    shadow?: LibShadows | null
 }
 
 interface DropdownWithItems extends ILibDropdownBase {

@@ -68,6 +68,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
             "data-testid": testid,
             id,
             label,
+            labelComment,
             helper,
             helperBottom,
             validation,
@@ -88,6 +89,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation ||

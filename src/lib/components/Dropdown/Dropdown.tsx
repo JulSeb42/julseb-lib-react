@@ -21,6 +21,7 @@ import type { ILibDropdown } from "./types"
  * @prop direction?: "up" | "down"
  * @prop maxHeightOpen?: number
  * @prop positionFromButton?: number
+ * @prop shadow?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | null
  */
 
 export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
@@ -37,6 +38,7 @@ export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
             items,
             maxHeightOpen = items ? items.length * 40 : 300,
             positionFromButton = 34,
+            shadow = "m",
             ...rest
         },
         ref
@@ -58,6 +60,7 @@ export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
                 $direction={direction}
                 $maxHeight={maxHeightOpen}
                 $buttonOpenHeight={positionFromButton}
+                $shadow={shadow}
                 {...rest}
             >
                 {items

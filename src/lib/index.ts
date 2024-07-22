@@ -123,4 +123,5 @@ export * from "./components/Table"
 export * from "./components/PageLoading"
 export * from "./components/Sticky"
 export * from "./components/Messaging"
+export * from "./components/MarkdownEditor"
 // prependHere

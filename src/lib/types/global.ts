@@ -411,3 +411,6 @@ export type LibSlideshowButtonSize =
     keyof typeof typeValues.slideshowButtonsSizes
 export type LibTableVariant = keyof typeof typeValues.tableVariants
 export type LibMessageType = keyof typeof typeValues.messageType
+export type LibMdEditorEditor = keyof typeof typeValues.markdownEditorEditor
+export type LibMdEditorButton = keyof typeof typeValues.markdownEditorButtons
+export type LibMdEditorTitle = keyof typeof typeValues.markdownEditorTitles

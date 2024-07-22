@@ -4,18 +4,22 @@ import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = replaceTypes([
-        'type: "sent" | "received"',
-        "text: string => only if children is not defined",
-        "children: ReactChildren => only if text is not defined",
-        "date?: Date | string",
-        "time?: string",
-        "textDateTime?: string",
-        "textToday?: string",
-        "textYesterday?: string",
-        'dateFormat?: "short" | "long"',
-        "className?: string",
-    ])
+    const propsDoc = replaceTypes(["LibShadows"])
+
+    const buttons = [
+        "bold",
+        "italic",
+        "strikethrough",
+        "ul",
+        "ol",
+        "link",
+        "quote",
+        "hr",
+        "code",
+        "codeBlock",
+        "comment",
+        "image",
+    ]
 
     // const propsInputs = replaceTypes([
     //     "label?: string",
@@ -33,8 +37,31 @@ export function Generate() {
     return (
         <Page title="Generate">
             <ul>
+                {buttons.map(b => (
+                    <li key={b}>{`${b}: "${b}",`}</li>
+                ))}
+            </ul>
+            <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
+                ))}
+            </ul>
+
+            <ul>
+                {Object.keys({
+                    ...typeValues.markdownEditorButtons,
+                    ...typeValues.markdownEditorEditor,
+                    ...typeValues.markdownEditorTitles,
+                }).map(b => (
+                    <li key={b}>{`${b}: mdButtons.${b}.defaultIcon,`}</li>
+                ))}
+            </ul>
+
+            <ul>
+                {Object.keys(typeValues.markdownEditorTitles).map(t => (
+                    <li key={t}>{`case "${t}":\nreturn ${
+                        18 - Number(t.replace("h", ""))
+                    }`}</li>
                 ))}
             </ul>
 

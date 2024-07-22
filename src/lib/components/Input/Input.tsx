@@ -136,32 +136,22 @@ export const Input = forwardRef<
             ...rest,
         } as any
 
-        if (
-            label ||
-            labelComment ||
-            helper ||
-            helperBottom ||
-            validation ||
-            counter
+        return (
+            <InputContainer
+                data-testid={testid}
+                id={id}
+                label={label}
+                labelComment={labelComment}
+                helper={helper}
+                helperBottom={helperBottom}
+                validation={validation}
+                counter={counter}
+                maxLength={maxLength}
+                value={value}
+                className={className}
+            >
+                <InputFunction {...inputProps} />
+            </InputContainer>
         )
-            return (
-                <InputContainer
-                    data-testid={testid}
-                    id={id}
-                    label={label}
-                    labelComment={labelComment}
-                    helper={helper}
-                    helperBottom={helperBottom}
-                    validation={validation}
-                    counter={counter}
-                    maxLength={maxLength}
-                    value={value}
-                    className={className}
-                >
-                    <InputFunction {...inputProps} />
-                </InputContainer>
-            )
-
-        return <InputFunction {...inputProps} />
     }
 )

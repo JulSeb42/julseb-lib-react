@@ -215,6 +215,29 @@ export const typeValues = {
 
     messageType: { sent: "sent", received: "received" },
 
+    markdownEditorEditor: {
+        editorCode: "editorCode",
+        editorLive: "editorLive",
+        editorPreview: "editorPreview",
+    },
+
+    markdownEditorButtons: {
+        bold: "bold",
+        italic: "italic",
+        strikethrough: "strikethrough",
+        ul: "ul",
+        ol: "ol",
+        link: "link",
+        quote: "quote",
+        hr: "hr",
+        code: "code",
+        codeBlock: "codeBlock",
+        comment: "comment",
+        image: "image",
+    },
+
+    markdownEditorTitles: { ...textDisplayTags, h6: textTags.h6 },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",
