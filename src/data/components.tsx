@@ -80,6 +80,7 @@ import { messagingPreview } from "../lib/components/Messaging/__preview__/Messag
 import { markdownEditorPreview } from "../lib/components/MarkdownEditor/__preview__/MarkdownEditor.preview"
 import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__preview__/MarkdownContainer.preview"
 import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
+import { fadePreview } from "../lib/components/Fade/__preview__/Fade.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -189,6 +190,7 @@ messagingPreview,
 markdownEditorPreview,
 markdownContainerPreview,
 codeContainerPreview,
+fadePreview,
 // prependArr
 
     /*====================== Helpers ======================*/
