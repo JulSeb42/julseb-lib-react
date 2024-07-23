@@ -18,26 +18,25 @@ import {
     EditorLive,
     EditorPreview,
 } from "../../icons"
-import {
-    type LibMdEditorTitle,
-    type LibMdEditorButton,
-    type LibMdEditorEditor,
-    type LibIcon,
-    typeValues,
+import type {
+    LibMdEditorTitle,
+    LibMdEditorButton,
+    LibMdEditorEditor,
+    LibIcon,
 } from "../../types"
 
-const ICON_SIZE = roundIconSize(16)
+const DEFAULT_ICON_SIZE = roundIconSize(24)
 
-type ButtonBase = {
+export type ButtonBase = {
     name: LibMdEditorButton | LibMdEditorEditor | LibMdEditorTitle
     displayName?: string
 }
 
-type ButtonWithIcon = ButtonBase & {
+export type ButtonWithIcon = ButtonBase & {
     defaultIcon: LibIcon
 }
 
-type ButtonWithCode = ButtonBase & {
+export type ButtonWithCode = ButtonBase & {
     code: string
 }
 
@@ -45,81 +44,82 @@ export const mdButtons: Array<ButtonWithCode & ButtonWithIcon> = [
     {
         name: "bold",
         code: "** **",
-        defaultIcon: <Bold size={ICON_SIZE} />,
+        defaultIcon: <Bold size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "italic",
         code: "* *",
-        defaultIcon: <Italic size={ICON_SIZE} />,
+        defaultIcon: <Italic size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "strikethrough",
         code: "~~ ~~",
-        defaultIcon: <Strikethrough size={ICON_SIZE} />,
+        defaultIcon: <Strikethrough size={DEFAULT_ICON_SIZE} />,
     },
     {
-        displayName: "unordered list",
+        displayName: "Unordered list",
         name: "ul",
         code: "- ",
-        defaultIcon: <UnorderedList size={ICON_SIZE} />,
+        defaultIcon: <UnorderedList size={DEFAULT_ICON_SIZE} />,
     },
     {
-        displayName: "ordered-list",
+        displayName: "Ordered list",
         name: "ol",
         code: "1. ",
-        defaultIcon: <OrderedList size={ICON_SIZE} />,
+        defaultIcon: <OrderedList size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "link",
         code: "[](URL here)",
-        defaultIcon: <Link size={ICON_SIZE} />,
+        defaultIcon: <Link size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "quote",
-        displayName: "blockquote",
+        displayName: "Blockquote",
         code: "> ",
-        defaultIcon: <Quote size={ICON_SIZE} />,
+        defaultIcon: <Quote size={DEFAULT_ICON_SIZE} />,
     },
     {
+        displayName: "Separator",
         name: "hr",
         code: "\n\n---\n\n",
-        defaultIcon: <Separator size={ICON_SIZE} />,
+        defaultIcon: <Separator size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "code",
         code: "``",
-        defaultIcon: <Code size={ICON_SIZE} />,
+        defaultIcon: <Code size={DEFAULT_ICON_SIZE} />,
     },
     {
-        displayName: "code block",
+        displayName: "Code block",
         name: "codeBlock",
         code: "```\n\n```",
-        defaultIcon: <CodeBlock size={ICON_SIZE} />,
+        defaultIcon: <CodeBlock size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "comment",
         code: "<!--  -->",
-        defaultIcon: <Comment size={ICON_SIZE} />,
+        defaultIcon: <Comment size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "image",
         code: "![](https://example.com/your-image.png)",
-        defaultIcon: <Image size={ICON_SIZE} />,
+        defaultIcon: <Image size={DEFAULT_ICON_SIZE} />,
     },
 ]
 
 export const mdEditorButtons: Array<ButtonWithIcon> = [
     {
         name: "editorCode",
-        defaultIcon: <EditorCode size={ICON_SIZE} />,
+        defaultIcon: <EditorCode size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "editorLive",
-        defaultIcon: <EditorLive size={ICON_SIZE} />,
+        defaultIcon: <EditorLive size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "editorPreview",
-        defaultIcon: <EditorPreview size={ICON_SIZE} />,
+        defaultIcon: <EditorPreview size={DEFAULT_ICON_SIZE} />,
     },
 ]
 
@@ -156,7 +156,7 @@ export const mdTitlesButtons: Array<ButtonBase & ButtonWithCode> = [
     },
 ]
 
-export const titleNames = Object.keys(typeValues.markdownEditorTitles)
+
 
 export function getFontSizeButton(tag: LibMdEditorTitle): number | null {
     switch (tag) {

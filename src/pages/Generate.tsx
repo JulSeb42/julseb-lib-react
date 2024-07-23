@@ -4,22 +4,39 @@ import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = replaceTypes(["LibShadows"])
+    const propsDoc = replaceTypes([
+        "bold?: boolean",
+        "italic?: boolean",
+        "strikethrough?: boolean",
+        "ul?: boolean",
+        "ol?: boolean",
+        "link?: boolean",
+        "quote?: boolean",
+        "hr?: boolean",
+        "code?: boolean",
+        "codeBlock?: boolean",
+        "comment?: boolean",
+        "image?: boolean",
+        "editorCode?: boolean",
+        "editorLive?: boolean",
+        "editorPreview?: boolean",
+        "titles?: boolean",
+    ])
 
-    const buttons = [
-        "bold",
-        "italic",
-        "strikethrough",
-        "ul",
-        "ol",
-        "link",
-        "quote",
-        "hr",
-        "code",
-        "codeBlock",
-        "comment",
-        "image",
-    ]
+    // const buttons = [
+    //     "bold",
+    //     "italic",
+    //     "strikethrough",
+    //     "ul",
+    //     "ol",
+    //     "link",
+    //     "quote",
+    //     "hr",
+    //     "code",
+    //     "codeBlock",
+    //     "comment",
+    //     "image",
+    // ]
 
     // const propsInputs = replaceTypes([
     //     "label?: string",
@@ -37,17 +54,18 @@ export function Generate() {
     return (
         <Page title="Generate">
             <ul>
-                {buttons.map(b => (
-                    <li key={b}>{`${b}: "${b}",`}</li>
-                ))}
-            </ul>
-            <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
                 ))}
             </ul>
 
-            <ul>
+            {/* <ul>
+                {buttons.map(b => (
+                    <li key={b}>{`${b}: "${b}",`}</li>
+                ))}
+            </ul> */}
+
+            {/* <ul>
                 {Object.keys({
                     ...typeValues.markdownEditorButtons,
                     ...typeValues.markdownEditorEditor,
@@ -63,7 +81,7 @@ export function Generate() {
                         18 - Number(t.replace("h", ""))
                     }`}</li>
                 ))}
-            </ul>
+            </ul> */}
 
             {/* <ul>
                 {propsInputs.map(p => (
@@ -247,5 +265,9 @@ function replaceTypes(arr: Array<string>) {
                 mapValues(typeValues.slideshowPagination)
             )
             .replaceAll("LibMessageType", mapValues(typeValues.messageType))
+            .replaceAll(
+                "LibMdEditorEditor",
+                mapValues(typeValues.markdownEditorEditor)
+            )
     })
 }

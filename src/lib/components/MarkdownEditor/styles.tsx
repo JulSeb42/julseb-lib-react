@@ -1,6 +1,7 @@
 /*=============================================== MarkdownEditor styles ===============================================*/
 
 import styled, { css } from "styled-components"
+import Markdown from "markdown-to-jsx"
 import {
     setDefaultTheme,
     Flexbox,
@@ -13,16 +14,25 @@ import {
     ButtonIcon,
     Dropdown,
     DropdownItem,
+    COLORS_LIGHT,
 } from "../../"
 import { getFontSizeButton } from "./markdown-buttons"
-import type { LibInputBackground, LibMdEditorTitle } from "../../types"
+import type {
+    LibInputBackground,
+    LibMdEditorTitle,
+    LibValidationStatus,
+} from "../../types"
 import type {} from "./types"
 
-const MdEditorContainer = styled.div<{ $backgroundColor?: LibInputBackground }>`
+const MdEditorContainer = styled.div<{
+    $backgroundColor?: LibInputBackground
+    $validation: LibValidationStatus
+}>`
     border-radius: ${RADIUSES.M};
     height: fit-content;
     border: 1px solid ${({ theme }) => theme.GRAY_200};
-    background-color: ${({ theme }) => theme.BACKGROUND};
+    background-color: ${({ theme, $validation }) =>
+        $validation === false ? theme.DANGER_50 : theme.BACKGROUND};
     color: ${({ theme }) => theme.FONT};
     ${Mixins.Flexbox({
         $flexDirection: "column",
@@ -30,14 +40,18 @@ const MdEditorContainer = styled.div<{ $backgroundColor?: LibInputBackground }>`
     })}
 
     &:has(textarea:focus) {
-        border-color: ${({ theme }) => theme.PRIMARY_500};
+        border-color: ${({ theme, $validation }) =>
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $backgroundColor, theme }) =>
+    ${({ $backgroundColor, $validation, theme }) =>
         $backgroundColor === "light"
             ? css`
+                  /* background-color: ${$validation === false
+                      ? COLORS_LIGHT.DANGER_50
+                      : COLORS_LIGHT.BACKGROUND}; */
                   background-color: ${Mixins.AllColors(
-                      "background",
+                      $validation === false ? "danger-50" : "white",
                       theme,
                       "light"
                   )};
@@ -46,7 +60,7 @@ const MdEditorContainer = styled.div<{ $backgroundColor?: LibInputBackground }>`
             : $backgroundColor === "dark" &&
               css`
                   background-color: ${Mixins.AllColors(
-                      "background",
+                      $validation === false ? "danger-50" : "background",
                       theme,
                       "dark"
                   )};
@@ -93,11 +107,12 @@ const ButtonsContainer = styled(Flexbox).attrs({
 `
 
 const IconButton = styled(ButtonIcon).attrs({
-    size: 16,
+    size: 24,
     variant: "transparent",
     type: "button",
-})`
+})<{ $isActive?: boolean }>`
     border-radius: ${RADIUSES.S};
+    background-color: ${({ $isActive, theme }) => $isActive && theme.GRAY_100};
 `
 
 const TitlesDropdown = styled(Dropdown)`
@@ -109,6 +124,37 @@ const TitleDropdownItem = styled(DropdownItem)<{ $tag: LibMdEditorTitle }>`
     font-size: ${({ $tag }) => getFontSizeButton($tag)}px;
 `
 
+const ContainerGrid = styled.div<{ $col: number }>`
+    flex-grow: 1;
+    ${({ $col }) =>
+        Mixins.Grid({
+            $gap: "xs",
+            $col: $col === 3 ? "1fr 2px 1fr" : 1,
+        })}
+`
+
+const Separator = styled.span`
+    width: 2px;
+    height: 100%;
+    background-color: ${({ theme }) => theme.GRAY_200};
+`
+
+const MarkdownContainer = styled(Markdown)<{
+    $height: number
+    $isVisible: boolean
+}>`
+    height: ${({ $height }) => $height}px;
+    min-height: 250px;
+    border-radius: 0 0 ${RADIUSES.M} 0;
+    display: ${({ $isVisible }) => ($isVisible ? "flex" : "none")};
+    flex-direction: column;
+    gap: ${SPACERS.S};
+    align-items: stretch;
+    padding: ${SPACERS.XS};
+    overflow-y: scroll;
+    color: currentColor;
+`
+
 setDefaultTheme([
     MdEditorContainer,
     StyledMarkdownEditor,
@@ -116,6 +162,9 @@ setDefaultTheme([
     IconButton,
     TitlesDropdown,
     TitleDropdownItem,
+    ContainerGrid,
+    Separator,
+    MarkdownContainer,
 ])
 
 export {
@@ -125,4 +174,7 @@ export {
     IconButton,
     TitlesDropdown,
     TitleDropdownItem,
+    ContainerGrid,
+    Separator,
+    MarkdownContainer,
 }

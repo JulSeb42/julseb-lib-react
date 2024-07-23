@@ -10,14 +10,20 @@ export const markdownEditorPreview: ComponentPreview<ILibMarkdownEditor> = {
     name: "MarkdownEditor",
     component: MarkdownEditor,
     category: "components",
-    import: "MarkdownEditor", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibMarkdownEditor", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "MarkdownEditor",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibMarkdownEditor",
+    additionalTypeImports: ["LibMarkdownEditorOptions"],
     extends: ["HTMLTextAreaElement"],
     previews: [
-        // { previewTitle: "Default", props: {  } },
-        { demo: <MarkdownEditorDemo /> },
+        {
+            demo: (
+                <MarkdownEditorDemo
+                    data-testid="testid"
+                    className="className"
+                />
+            ),
+        },
     ],
 }

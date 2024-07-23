@@ -56,6 +56,11 @@ export {
 export * from "./Variables"
 export * from "./Mixins"
 
+export {
+    optionsMarkdown,
+    markdownEditorOptions,
+} from "./utils/options-markdown"
+
 export * from "./hooks"
 
 export * from "./context/Theme.context"

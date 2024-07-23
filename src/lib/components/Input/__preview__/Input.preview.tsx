@@ -57,7 +57,10 @@ export const inputPreview: ComponentPreview<ILibInput> = {
             previewTitle: "With counter and maxLength",
             demo: <InputDemoCounter />,
         },
-        { previewTitle: "Password", props: { type: "password" } },
+        {
+            previewTitle: "Password",
+            props: { type: "password", inputBackground: "dark" },
+        },
         { previewTitle: "Pill", props: { inputVariant: "pill" } },
         {
             previewTitle: "With background light",

@@ -343,6 +343,47 @@ export interface ILibThemeContext {
     toggleTheme: () => void
 }
 
+/*====================== MarkdownEditorOptions ======================*/
+
+/**
+ * @description Buttons showing in MarkdownEditor
+ * @prop titles?: boolean
+ * @prop bold?: boolean
+ * @prop italic?: boolean
+ * @prop strikethrough?: boolean
+ * @prop ul?: boolean
+ * @prop ol?: boolean
+ * @prop link?: boolean
+ * @prop quote?: boolean
+ * @prop hr?: boolean
+ * @prop code?: boolean
+ * @prop codeBlock?: boolean
+ * @prop comment?: boolean
+ * @prop image?: boolean
+ * @prop editorCode?: boolean
+ * @prop editorLive?: boolean
+ * @prop editorPreview?: boolean
+ */
+
+export interface LibMarkdownEditorOptions {
+    titles?: boolean
+    bold?: boolean
+    italic?: boolean
+    strikethrough?: boolean
+    ul?: boolean
+    ol?: boolean
+    link?: boolean
+    quote?: boolean
+    hr?: boolean
+    code?: boolean
+    codeBlock?: boolean
+    comment?: boolean
+    image?: boolean
+    editorCode?: boolean
+    editorLive?: boolean
+    editorPreview?: boolean
+}
+
 /*====================== React global ======================*/
 
 export type ReactChildren = ReactNode | Array<ReactNode>

@@ -7,7 +7,7 @@ import type {
     LibInputListDirection,
     ReactChildren,
     DispatchState,
-    LibShadows
+    LibShadows,
 } from "../../types"
 
 interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {

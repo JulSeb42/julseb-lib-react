@@ -54,93 +54,95 @@ function getColorMixinFromTheme(
     theme: DefaultTheme | null = COLORS_LIGHT,
     themeName?: LibThemeNames
 ) {
-    const THEME: DefaultTheme = (
-        theme === null && themeName
-            ? themeName === "dark"
-                ? COLORS_DARK
-                : COLORS_LIGHT
-            : theme === null
-            ? COLORS_LIGHT
-            : theme
-    ) as DefaultTheme
+    let THEME: DefaultTheme
+
+    if (themeName) {
+        THEME = (
+            themeName === "dark" ? COLORS_DARK : COLORS_LIGHT
+        ) as DefaultTheme
+    } else if (theme === null) {
+        THEME = COLORS_LIGHT
+    } else {
+        THEME = theme
+    }
 
     const colorsShortMap = new Map<LibColorsShort, keyof typeof THEME>([
-        ["primary", theme!.PRIMARY_500],
-        ["secondary", theme!.SECONDARY_500],
-        ["success", theme!.SUCCESS_500],
-        ["danger", theme!.DANGER_500],
-        ["warning", theme!.WARNING_500],
-        ["gray", theme!.GRAY_500],
-        ["black", theme!.BLACK],
-        ["white", theme!.WHITE],
+        ["primary", THEME.PRIMARY_500],
+        ["secondary", THEME.SECONDARY_500],
+        ["success", THEME.SUCCESS_500],
+        ["danger", THEME.DANGER_500],
+        ["warning", THEME.WARNING_500],
+        ["gray", THEME.GRAY_500],
+        ["black", THEME.BLACK],
+        ["white", THEME.WHITE],
     ])
 
     const allColorsMap = new Map<LibAllColors, keyof typeof THEME>([
         ...colorsShortMap,
-        ["gray-50", theme!.GRAY_50],
-        ["gray-100", theme!.GRAY_100],
-        ["gray-200", theme!.GRAY_200],
-        ["gray-300", theme!.GRAY_300],
-        ["gray-400", theme!.GRAY_400],
-        ["gray-500", theme!.GRAY_500],
-        ["gray-600", theme!.GRAY_600],
-        ["gray-700", theme!.GRAY_700],
-        ["gray-800", theme!.GRAY_800],
-        ["gray-900", theme!.GRAY_900],
-        ["primary-50", theme!.PRIMARY_50],
-        ["primary-100", theme!.PRIMARY_100],
-        ["primary-200", theme!.PRIMARY_200],
-        ["primary-300", theme!.PRIMARY_300],
-        ["primary-400", theme!.PRIMARY_400],
-        ["primary-500", theme!.PRIMARY_500],
-        ["primary-600", theme!.PRIMARY_600],
-        ["primary-700", theme!.PRIMARY_700],
-        ["primary-800", theme!.PRIMARY_800],
-        ["primary-900", theme!.PRIMARY_900],
-        ["secondary-50", theme!.SECONDARY_50],
-        ["secondary-100", theme!.SECONDARY_100],
-        ["secondary-200", theme!.SECONDARY_200],
-        ["secondary-300", theme!.SECONDARY_300],
-        ["secondary-400", theme!.SECONDARY_400],
-        ["secondary-500", theme!.SECONDARY_500],
-        ["secondary-600", theme!.SECONDARY_600],
-        ["secondary-700", theme!.SECONDARY_700],
-        ["secondary-800", theme!.SECONDARY_800],
-        ["secondary-900", theme!.SECONDARY_900],
-        ["success-50", theme!.SUCCESS_50],
-        ["success-100", theme!.SUCCESS_100],
-        ["success-200", theme!.SUCCESS_200],
-        ["success-300", theme!.SUCCESS_300],
-        ["success-400", theme!.SUCCESS_400],
-        ["success-500", theme!.SUCCESS_500],
-        ["success-600", theme!.SUCCESS_600],
-        ["success-700", theme!.SUCCESS_700],
-        ["success-800", theme!.SUCCESS_800],
-        ["success-900", theme!.SUCCESS_900],
-        ["danger-50", theme!.DANGER_50],
-        ["danger-100", theme!.DANGER_100],
-        ["danger-200", theme!.DANGER_200],
-        ["danger-300", theme!.DANGER_300],
-        ["danger-400", theme!.DANGER_400],
-        ["danger-500", theme!.DANGER_500],
-        ["danger-600", theme!.DANGER_600],
-        ["danger-700", theme!.DANGER_700],
-        ["danger-800", theme!.DANGER_800],
-        ["danger-900", theme!.DANGER_900],
-        ["warning-50", theme!.WARNING_50],
-        ["warning-100", theme!.WARNING_100],
-        ["warning-200", theme!.WARNING_200],
-        ["warning-300", theme!.WARNING_300],
-        ["warning-400", theme!.WARNING_400],
-        ["warning-500", theme!.WARNING_500],
-        ["warning-600", theme!.WARNING_600],
-        ["warning-700", theme!.WARNING_700],
-        ["warning-800", theme!.WARNING_800],
-        ["warning-900", theme!.WARNING_900],
-        ["background", theme!.BACKGROUND],
-        ["font", theme!.FONT],
-        ["currentColor", theme!.CURRENT_COLOR],
-        ["transparent", theme!.TRANSPARENT],
+        ["gray-50", THEME.GRAY_50],
+        ["gray-100", THEME.GRAY_100],
+        ["gray-200", THEME.GRAY_200],
+        ["gray-300", THEME.GRAY_300],
+        ["gray-400", THEME.GRAY_400],
+        ["gray-500", THEME.GRAY_500],
+        ["gray-600", THEME.GRAY_600],
+        ["gray-700", THEME.GRAY_700],
+        ["gray-800", THEME.GRAY_800],
+        ["gray-900", THEME.GRAY_900],
+        ["primary-50", THEME.PRIMARY_50],
+        ["primary-100", THEME.PRIMARY_100],
+        ["primary-200", THEME.PRIMARY_200],
+        ["primary-300", THEME.PRIMARY_300],
+        ["primary-400", THEME.PRIMARY_400],
+        ["primary-500", THEME.PRIMARY_500],
+        ["primary-600", THEME.PRIMARY_600],
+        ["primary-700", THEME.PRIMARY_700],
+        ["primary-800", THEME.PRIMARY_800],
+        ["primary-900", THEME.PRIMARY_900],
+        ["secondary-50", THEME.SECONDARY_50],
+        ["secondary-100", THEME.SECONDARY_100],
+        ["secondary-200", THEME.SECONDARY_200],
+        ["secondary-300", THEME.SECONDARY_300],
+        ["secondary-400", THEME.SECONDARY_400],
+        ["secondary-500", THEME.SECONDARY_500],
+        ["secondary-600", THEME.SECONDARY_600],
+        ["secondary-700", THEME.SECONDARY_700],
+        ["secondary-800", THEME.SECONDARY_800],
+        ["secondary-900", THEME.SECONDARY_900],
+        ["success-50", THEME.SUCCESS_50],
+        ["success-100", THEME.SUCCESS_100],
+        ["success-200", THEME.SUCCESS_200],
+        ["success-300", THEME.SUCCESS_300],
+        ["success-400", THEME.SUCCESS_400],
+        ["success-500", THEME.SUCCESS_500],
+        ["success-600", THEME.SUCCESS_600],
+        ["success-700", THEME.SUCCESS_700],
+        ["success-800", THEME.SUCCESS_800],
+        ["success-900", THEME.SUCCESS_900],
+        ["danger-50", THEME.DANGER_50],
+        ["danger-100", THEME.DANGER_100],
+        ["danger-200", THEME.DANGER_200],
+        ["danger-300", THEME.DANGER_300],
+        ["danger-400", THEME.DANGER_400],
+        ["danger-500", THEME.DANGER_500],
+        ["danger-600", THEME.DANGER_600],
+        ["danger-700", THEME.DANGER_700],
+        ["danger-800", THEME.DANGER_800],
+        ["danger-900", THEME.DANGER_900],
+        ["warning-50", THEME.WARNING_50],
+        ["warning-100", THEME.WARNING_100],
+        ["warning-200", THEME.WARNING_200],
+        ["warning-300", THEME.WARNING_300],
+        ["warning-400", THEME.WARNING_400],
+        ["warning-500", THEME.WARNING_500],
+        ["warning-600", THEME.WARNING_600],
+        ["warning-700", THEME.WARNING_700],
+        ["warning-800", THEME.WARNING_800],
+        ["warning-900", THEME.WARNING_900],
+        ["background", THEME.BACKGROUND],
+        ["font", THEME.FONT],
+        ["currentColor", THEME.CURRENT_COLOR],
+        ["transparent", THEME.TRANSPARENT],
     ])
 
     const ColorsShort = ($color: LibColorsShort = "primary") =>
@@ -168,15 +170,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_500],
-            ["secondary", theme!.SECONDARY_500],
-            ["success", theme!.SUCCESS_500],
-            ["danger", theme!.DANGER_500],
-            ["warning", theme!.WARNING_500],
-            ["white", theme!.WHITE],
-            ["gray", theme!.GRAY_500],
-            ["font", theme!.LINK_FONT_DEFAULT],
-            ["background", theme!.LINK_BACKGROUND_DEFAULT],
+            ["primary", THEME.PRIMARY_500],
+            ["secondary", THEME.SECONDARY_500],
+            ["success", THEME.SUCCESS_500],
+            ["danger", THEME.DANGER_500],
+            ["warning", THEME.WARNING_500],
+            ["white", THEME.WHITE],
+            ["gray", THEME.GRAY_500],
+            ["font", THEME.LINK_FONT_DEFAULT],
+            ["background", THEME.LINK_BACKGROUND_DEFAULT],
         ])
 
         return colorsMap.get($color)
@@ -186,15 +188,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_300],
-            ["secondary", theme!.SECONDARY_300],
-            ["success", theme!.SUCCESS_300],
-            ["danger", theme!.DANGER_300],
-            ["warning", theme!.WARNING_300],
-            ["white", theme!.GRAY_300],
-            ["gray", theme!.GRAY_300],
-            ["font", theme!.LINK_FONT_HOVER],
-            ["background", theme!.LINK_BACKGROUND_HOVER],
+            ["primary", THEME.PRIMARY_300],
+            ["secondary", THEME.SECONDARY_300],
+            ["success", THEME.SUCCESS_300],
+            ["danger", THEME.DANGER_300],
+            ["warning", THEME.WARNING_300],
+            ["white", THEME.GRAY_300],
+            ["gray", THEME.GRAY_300],
+            ["font", THEME.LINK_FONT_HOVER],
+            ["background", THEME.LINK_BACKGROUND_HOVER],
         ])
 
         return colorsMap.get($color)
@@ -206,15 +208,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_600],
-            ["secondary", theme!.SECONDARY_600],
-            ["success", theme!.SUCCESS_600],
-            ["danger", theme!.DANGER_600],
-            ["warning", theme!.WARNING_600],
-            ["white", theme!.GRAY_100],
-            ["gray", theme!.GRAY_600],
-            ["font", theme!.LINK_FONT_ACTIVE],
-            ["background", theme!.LINK_BACKGROUND_ACTIVE],
+            ["primary", THEME.PRIMARY_600],
+            ["secondary", THEME.SECONDARY_600],
+            ["success", THEME.SUCCESS_600],
+            ["danger", THEME.DANGER_600],
+            ["warning", THEME.WARNING_600],
+            ["white", THEME.GRAY_100],
+            ["gray", THEME.GRAY_600],
+            ["font", THEME.LINK_FONT_ACTIVE],
+            ["background", THEME.LINK_BACKGROUND_ACTIVE],
         ])
 
         return colorsMap.get($color)
@@ -226,15 +228,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_50],
-            ["secondary", theme!.SECONDARY_50],
-            ["success", theme!.SUCCESS_50],
-            ["danger", theme!.DANGER_50],
-            ["warning", theme!.WARNING_50],
-            ["white", theme!.GRAY_50],
-            ["gray", theme!.GRAY_50],
-            ["font", theme!.FONT_GHOST_DEFAULT],
-            ["background", theme!.BACKGROUND_GHOST_DEFAULT],
+            ["primary", THEME.PRIMARY_50],
+            ["secondary", THEME.SECONDARY_50],
+            ["success", THEME.SUCCESS_50],
+            ["danger", THEME.DANGER_50],
+            ["warning", THEME.WARNING_50],
+            ["white", THEME.GRAY_50],
+            ["gray", THEME.GRAY_50],
+            ["font", THEME.FONT_GHOST_DEFAULT],
+            ["background", THEME.BACKGROUND_GHOST_DEFAULT],
         ])
 
         return colorsMap.get($color)
@@ -244,15 +246,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_200],
-            ["secondary", theme!.SECONDARY_200],
-            ["success", theme!.SUCCESS_200],
-            ["danger", theme!.DANGER_200],
-            ["warning", theme!.WARNING_200],
-            ["white", theme!.GRAY_200],
-            ["gray", theme!.GRAY_200],
-            ["font", theme!.FONT_GHOST_HOVER],
-            ["background", theme!.BACKGROUND_GHOST_HOVER],
+            ["primary", THEME.PRIMARY_200],
+            ["secondary", THEME.SECONDARY_200],
+            ["success", THEME.SUCCESS_200],
+            ["danger", THEME.DANGER_200],
+            ["warning", THEME.WARNING_200],
+            ["white", THEME.GRAY_200],
+            ["gray", THEME.GRAY_200],
+            ["font", THEME.FONT_GHOST_HOVER],
+            ["background", THEME.BACKGROUND_GHOST_HOVER],
         ])
 
         return colorsMap.get($color)
@@ -264,15 +266,15 @@ function getColorMixinFromTheme(
         if ($color === "currentColor") return "currentColor"
 
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_100],
-            ["secondary", theme!.SECONDARY_100],
-            ["success", theme!.SUCCESS_100],
-            ["danger", theme!.DANGER_100],
-            ["warning", theme!.WARNING_100],
-            ["white", theme!.GRAY_100],
-            ["gray", theme!.GRAY_100],
-            ["font", theme!.FONT_GHOST_ACTIVE],
-            ["background", theme!.BACKGROUND_GHOST_ACTIVE],
+            ["primary", THEME.PRIMARY_100],
+            ["secondary", THEME.SECONDARY_100],
+            ["success", THEME.SUCCESS_100],
+            ["danger", THEME.DANGER_100],
+            ["warning", THEME.WARNING_100],
+            ["white", THEME.GRAY_100],
+            ["gray", THEME.GRAY_100],
+            ["font", THEME.FONT_GHOST_ACTIVE],
+            ["background", THEME.BACKGROUND_GHOST_ACTIVE],
         ])
 
         return colorsMap.get($color)
@@ -282,12 +284,12 @@ function getColorMixinFromTheme(
         $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
         const colorsMap = new Map<LibColorsShort, keyof typeof THEME>([
-            ["primary", theme!.PRIMARY_50],
-            ["secondary", theme!.SECONDARY_50],
-            ["success", theme!.SUCCESS_50],
-            ["danger", theme!.DANGER_50],
-            ["warning", theme!.WARNING_50],
-            ["gray", theme!.GRAY_50],
+            ["primary", THEME.PRIMARY_50],
+            ["secondary", THEME.SECONDARY_50],
+            ["success", THEME.SUCCESS_50],
+            ["danger", THEME.DANGER_50],
+            ["warning", THEME.WARNING_50],
+            ["gray", THEME.GRAY_50],
         ])
 
         return colorsMap.get($color)

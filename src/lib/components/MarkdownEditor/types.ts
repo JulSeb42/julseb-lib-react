@@ -6,6 +6,7 @@ import type {
     LibIcon,
     LibMdEditorEditor,
     DispatchState,
+    LibMarkdownEditorOptions,
 } from "../../types"
 import type { ILibExtendedInputBase } from "../InputComponents/types"
 
@@ -18,24 +19,7 @@ export interface ILibMarkdownEditor
     onChange?: never
     defaultEditor?: LibMdEditorEditor
     textButtonTitles?: string
-    showButtons?: {
-        bold?: boolean
-        italic?: boolean
-        strikethrough?: boolean
-        ul?: boolean
-        ol?: boolean
-        link?: boolean
-        quote?: boolean
-        hr?: boolean
-        code?: boolean
-        codeBlock?: boolean
-        comment?: boolean
-        image?: boolean
-        editorCode?: boolean
-        editorLive?: boolean
-        editorPreview?: boolean
-        titles?: boolean
-    }
+    showButtons?: LibMarkdownEditorOptions
     icons?: {
         bold?: LibIcon
         italic?: LibIcon
