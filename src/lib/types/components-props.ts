@@ -65,4 +65,5 @@ export * from "../components/MarkdownEditor/types"
 export * from "../components/MarkdownContainer/types"
 export * from "../components/CodeContainer/types"
 export * from "../components/Fade/types"
+export * from "../components/BackToTop/types"
 // prependHere

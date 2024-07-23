@@ -132,4 +132,5 @@ export * from "./components/MarkdownEditor"
 export * from "./components/MarkdownContainer"
 export * from "./components/CodeContainer"
 export * from "./components/Fade"
+export * from "./components/BackToTop"
 // prependHere
