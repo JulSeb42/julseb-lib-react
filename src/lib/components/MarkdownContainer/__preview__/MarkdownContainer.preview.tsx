@@ -9,11 +9,11 @@ export const markdownContainerPreview: ComponentPreview<ILibMarkdownContainer> =
         name: "MarkdownContainer",
         component: MarkdownContainer,
         category: "components",
-        import: "MarkdownContainer", // import Component (ex: Skeleton)
-        additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-        optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-        propsImport: "ILibMarkdownContainer", // import ILibComponent (ex: ILibAccordion)
-        additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+        import: "MarkdownContainer",
+        additionalImports: null,
+        optionalImports: null,
+        propsImport: "ILibMarkdownContainer",
+        additionalTypeImports: null,
         extends: ["HTMLDivElement"],
         previews: [
             {

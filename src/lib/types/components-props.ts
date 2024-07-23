@@ -63,4 +63,5 @@ export * from "../components/Sticky/types"
 export * from "../components/Messaging/types"
 export * from "../components/MarkdownEditor/types"
 export * from "../components/MarkdownContainer/types"
+export * from "../components/CodeContainer/types"
 // prependHere

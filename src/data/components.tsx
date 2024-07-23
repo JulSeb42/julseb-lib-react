@@ -79,6 +79,7 @@ import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.previ
 import { messagingPreview } from "../lib/components/Messaging/__preview__/Messaging.preview"
 import { markdownEditorPreview } from "../lib/components/MarkdownEditor/__preview__/MarkdownEditor.preview"
 import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__preview__/MarkdownContainer.preview"
+import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -187,6 +188,7 @@ stickyPreview,
 messagingPreview,
 markdownEditorPreview,
 markdownContainerPreview,
+codeContainerPreview,
 // prependArr
 
     /*====================== Helpers ======================*/

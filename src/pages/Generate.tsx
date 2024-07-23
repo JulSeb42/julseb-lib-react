@@ -5,22 +5,10 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "bold?: boolean",
-        "italic?: boolean",
-        "strikethrough?: boolean",
-        "ul?: boolean",
-        "ol?: boolean",
-        "link?: boolean",
-        "quote?: boolean",
-        "hr?: boolean",
-        "code?: boolean",
-        "codeBlock?: boolean",
-        "comment?: boolean",
-        "image?: boolean",
-        "editorCode?: boolean",
-        "editorLive?: boolean",
-        "editorPreview?: boolean",
-        "titles?: boolean",
+        "copyButton?: boolean | { conCopy?: LibIcon; iconCopied?: LibIcon; iconSizeCopy?: number; iconSizeCopied?: number; tooltipCopy?: string; tooltipCopied?: string }",
+        "color?: LibAllColors",
+        "highlighterStyle?: CSSProperties",
+        "highlighterProps?: SyntaxHighlighterProps => imported from react-syntax-highlighter",
     ])
 
     // const buttons = [
