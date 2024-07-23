@@ -2,8 +2,6 @@
 
 import styled from "styled-components"
 import { setDefaultTheme, SPACERS } from "../../"
-import type {} from "../../types"
-import type {} from "./types"
 
 const StyledFade = styled.div<{ $isVisible: boolean }>`
     opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};

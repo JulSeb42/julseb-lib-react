@@ -13,7 +13,6 @@ import {
     FONT_SIZES,
 } from "../../"
 import type { LibAllColors } from "../../types"
-import type {} from "./types"
 
 const StyledCodeContainer = styled.div<{ $color?: LibAllColors }>`
     position: relative;

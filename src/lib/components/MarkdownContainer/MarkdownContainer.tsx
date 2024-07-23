@@ -1,7 +1,6 @@
 /*=============================================== MarkdownContainer component ===============================================*/
 
 import { forwardRef } from "react"
-import {} from "ts-utils-julseb"
 import { optionsMarkdown } from "../../"
 import { StyledMarkdownContainer } from "./styles"
 import type { ILibMarkdownContainer } from "./types"

@@ -15,7 +15,6 @@ import {
     Flexbox,
 } from "../../"
 import type { LibMessageType } from "../../types"
-import type {} from "./types"
 
 const StyledMessagesContainer = styled.div`
     border: 1px solid ${({ theme }) => theme.GRAY_200};

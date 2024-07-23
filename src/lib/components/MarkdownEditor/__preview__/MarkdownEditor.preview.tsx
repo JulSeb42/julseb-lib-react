@@ -1,7 +1,6 @@
 /*=============================================== MarkdownEditorPreview ===============================================*/
 
 import { MarkdownEditor } from "../../../"
-import type {} from "../../../types"
 import type { ILibMarkdownEditor } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 import { MarkdownEditorDemo } from "./MarkdownEditor.demo"

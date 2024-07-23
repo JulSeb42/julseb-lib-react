@@ -1,9 +1,7 @@
 /*=============================================== CodeContainer component ===============================================*/
 
 import { forwardRef, useState } from "react"
-import {} from "ts-utils-julseb"
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs"
-import {} from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { Clipboard, Check } from "../../icons"
 import {

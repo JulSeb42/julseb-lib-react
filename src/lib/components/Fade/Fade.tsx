@@ -1,7 +1,6 @@
 /*=============================================== Fade component ===============================================*/
 
 import { forwardRef, useEffect, useRef, useState } from "react"
-import {} from "ts-utils-julseb"
 import { useMergeRefs } from "../../"
 import { StyledFade } from "./styles"
 import type { ILibFade } from "./types"

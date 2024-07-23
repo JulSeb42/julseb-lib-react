@@ -1,7 +1,6 @@
 /*=============================================== CodeContainerPreview ===============================================*/
 
 import { CodeContainer } from "../../../"
-import type {} from "../../../types"
 import type { ILibCodeContainer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

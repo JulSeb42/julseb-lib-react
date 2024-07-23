@@ -22,7 +22,6 @@ import type {
     LibMdEditorTitle,
     LibValidationStatus,
 } from "../../types"
-import type {} from "./types"
 
 const MdEditorContainer = styled.div<{
     $backgroundColor?: LibInputBackground
