@@ -13,7 +13,7 @@ export function Homepage() {
         // "Page Loading",
         // "Sticky",
         // "Messaging",
-        "Markdown Editor",
+        // "Markdown Editor",
         "Markdown Container",
         "Code Container",
         "Fade",
