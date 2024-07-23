@@ -1,10 +1,11 @@
 /*=============================================== Options markdown container ===============================================*/
 
+import type { MarkdownToJSX } from "markdown-to-jsx"
 import { Text } from "../components/Text"
 import { Table } from "../components/Table"
 import type { LibMarkdownEditorOptions } from "../types"
 
-export const optionsMarkdown = {
+export const optionsMarkdown: MarkdownToJSX.Options = {
     forceBlock: true,
     wrapper: "div",
     overrides: {

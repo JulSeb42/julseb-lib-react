@@ -78,6 +78,7 @@ import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/Pa
 import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
 import { messagingPreview } from "../lib/components/Messaging/__preview__/Messaging.preview"
 import { markdownEditorPreview } from "../lib/components/MarkdownEditor/__preview__/MarkdownEditor.preview"
+import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__preview__/MarkdownContainer.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -185,6 +186,7 @@ pageLoadingPreview,
 stickyPreview,
 messagingPreview,
 markdownEditorPreview,
+markdownContainerPreview,
 // prependArr
 
     /*====================== Helpers ======================*/
