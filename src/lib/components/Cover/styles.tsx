@@ -29,7 +29,11 @@ const StyledCover = styled.div<{
         `}
 `
 
-const CoverImg = styled(Image).attrs({ width: "100%", fit: "cover" })`
+const CoverImg = styled(Image).attrs({
+    width: "100%",
+    height: "100%",
+    fit: "cover",
+})`
     position: fixed;
     top: 0;
     left: 0;

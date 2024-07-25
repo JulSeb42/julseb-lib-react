@@ -238,6 +238,22 @@ export const typeValues = {
 
     markdownEditorTitles: { ...textDisplayTags, h6: textTags.h6 },
 
+    navMenuVariants: { left: "left", right: "right" },
+
+    navMobileVariants: { full: "full", top: "top", drawer: "drawer" },
+
+    headerVariants: {
+        primary: "primary",
+        white: "white",
+        transparent: "transparent",
+    },
+
+    headerPositions: {
+        relative: "relative",
+        absolute: "absolute",
+        fixed: "fixed",
+    },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

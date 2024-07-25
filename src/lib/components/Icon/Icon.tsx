@@ -23,7 +23,7 @@ export const Icon = forwardRef<SVGElement, ILibIcon>(
             src,
             size = 32,
             color = "currentColor",
-            baseURL = "icons",
+            baseURL = "/icons",
             ...rest
         },
         ref

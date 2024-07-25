@@ -280,7 +280,7 @@ export enum TRANSITIONS {
 export enum BREAKPOINTS {
     TABLET_LARGE = "(max-width: 1024px)",
     TABLET_SMALL = "(max-width: 768px)",
-    MOBILE = "(max-width= 600px)",
+    MOBILE = "(max-width: 600px)",
     TOUCH = "(hover: none) and (pointer: coarse)",
     HOVER = "(hover: hover)",
 }

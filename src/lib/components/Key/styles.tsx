@@ -21,6 +21,7 @@ const StyledKey = styled.span<{
             : `${SPACERS.XXS} ${SPACERS.XS}`};
     background-color: ${({ theme, $accentColor }) =>
         Mixins.Colors50($accentColor, theme)};
+    color: ${({ theme }) => theme.FONT};
 `
 
 setDefaultTheme([StyledKey])

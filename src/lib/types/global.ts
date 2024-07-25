@@ -384,6 +384,13 @@ export interface LibMarkdownEditorOptions {
     editorPreview?: boolean
 }
 
+/*====================== HeaderLinks ======================*/
+
+export type LibHeaderLink = LibButtonLinkBlankRequired & {
+    text: string
+    end?: boolean
+}
+
 /*====================== React global ======================*/
 
 export type ReactChildren = ReactNode | Array<ReactNode>
@@ -455,3 +462,7 @@ export type LibMessageType = keyof typeof typeValues.messageType
 export type LibMdEditorEditor = keyof typeof typeValues.markdownEditorEditor
 export type LibMdEditorButton = keyof typeof typeValues.markdownEditorButtons
 export type LibMdEditorTitle = keyof typeof typeValues.markdownEditorTitles
+export type LibNavMenuVariant = keyof typeof typeValues.navMenuVariants
+export type LibNavMobileVariant = keyof typeof typeValues.navMobileVariants
+export type LibHeaderVariant = keyof typeof typeValues.headerVariants
+export type LibHeaderPosition = keyof typeof typeValues.headerPositions

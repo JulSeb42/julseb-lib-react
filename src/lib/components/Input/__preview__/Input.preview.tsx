@@ -38,6 +38,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 focusKeys: ["Command", "KeyJ"],
                 showKeys: true,
                 type: "search",
+                icon: "search",
             },
         },
         {

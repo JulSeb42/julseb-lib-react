@@ -82,6 +82,7 @@ import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__
 import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 import { fadePreview } from "../lib/components/Fade/__preview__/Fade.preview"
 import { backToTopPreview } from "../lib/components/BackToTop/__preview__/BackToTop.preview"
+import { headerPreview } from "../lib/components/Header/__preview__/Header.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -193,6 +194,7 @@ markdownContainerPreview,
 codeContainerPreview,
 fadePreview,
 backToTopPreview,
+headerPreview,
 // prependArr
 
     /*====================== Helpers ======================*/
