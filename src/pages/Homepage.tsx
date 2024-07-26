@@ -21,7 +21,7 @@ export function Homepage() {
         // "Header",
         // "Icon Menu",
         // "Footer",
-        "Helmet",
+        // "Helmet",
         "Helpers",
         "Sr Only",
         "Variables",

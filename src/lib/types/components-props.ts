@@ -69,4 +69,5 @@ export * from "../components/BackToTop/types"
 export * from "../components/Header/types"
 export * from "../components/IconMenu/types"
 export * from "../components/Footer/types"
+export * from "../components/Helmet/types"
 // prependHere

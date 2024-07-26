@@ -136,4 +136,5 @@ export * from "./components/BackToTop"
 export * from "./components/Header"
 export * from "./components/IconMenu"
 export * from "./components/Footer"
+export * from "./components/Helmet"
 // prependHere

@@ -20,7 +20,7 @@ export default defineConfig({
                 "react-dom",
                 "fuse.js",
                 "markdown-to-jsx",
-                "react-helmet",
+                "react-helmet-async",
                 "react-inlinesvg",
                 "react-router-dom",
                 "react-syntax-highlighter",

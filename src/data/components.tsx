@@ -85,6 +85,7 @@ import { backToTopPreview } from "../lib/components/BackToTop/__preview__/BackTo
 import { headerPreview } from "../lib/components/Header/__preview__/Header.preview"
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
+import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -199,6 +200,7 @@ backToTopPreview,
 headerPreview,
 iconMenuPreview,
 footerPreview,
+helmetPreview,
 // prependArr
 
     /*====================== Helpers ======================*/
