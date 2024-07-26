@@ -86,10 +86,11 @@ import { headerPreview } from "../lib/components/Header/__preview__/Header.previ
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
 import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
-// prependImport
 
 /*====================== Helpers ======================*/
 
+import { helpersPreview } from "./previews/utils/Helpers.preview"
+// prependImport
 import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
 
 export type PreviewProp<T> = {
@@ -186,24 +187,25 @@ export const previews = [
     progressBarPreview,
     progressCirclePreview,
     tabsPreview,
-slideshowPreview,
-coverPreview,
-tablePreview,
-pageLoadingPreview,
-stickyPreview,
-messagingPreview,
-markdownEditorPreview,
-markdownContainerPreview,
-codeContainerPreview,
-fadePreview,
-backToTopPreview,
-headerPreview,
-iconMenuPreview,
-footerPreview,
-helmetPreview,
-// prependArr
+    slideshowPreview,
+    coverPreview,
+    tablePreview,
+    pageLoadingPreview,
+    stickyPreview,
+    messagingPreview,
+    markdownEditorPreview,
+    markdownContainerPreview,
+    codeContainerPreview,
+    fadePreview,
+    backToTopPreview,
+    headerPreview,
+    iconMenuPreview,
+    footerPreview,
+    helmetPreview,
 
     /*====================== Helpers ======================*/
+    helpersPreview,
+    // prependArr
     srOnlyPreview,
 ] as Array<ComponentPreview<any>>
 
