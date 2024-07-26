@@ -15,7 +15,7 @@ import type { ILibBreadcrumbs } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop breadcrumbsItems: Array<LibButtonLinkBlank & { text: string | JSX.Element }> => only if children is not defined
- * @prop children: Array<ReactNode> => only if breadcrumbsItems is not defined
+ * @prop children?: Array<ReactNode> => only if breadcrumbsItems is not defined
  * @prop linksColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop activeColor?: Any color from the library
  * @prop separatorColor?: Any color from the library

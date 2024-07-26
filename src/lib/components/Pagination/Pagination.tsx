@@ -20,7 +20,7 @@ import type { ILibPagination } from "./types"
  * @prop pageLimit?: number => only if children is not defined
  * @prop icons?: { previous?: string | JSX.Element; next?: string | JSX.Element } => only if children is not defined
  * @prop iconSizes?: { previous?: number; next?: number } => only if children is not defined
- * @prop children: ReactChildren => only if totalPages & pageLimit & icons & iconSizes are not defined
+ * @prop children?: ReactChildren => only if totalPages & pageLimit & icons & iconSizes are not defined
  * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop queries?: Array<Array<string>>
  */

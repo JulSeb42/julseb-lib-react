@@ -73,7 +73,7 @@ interface ILibSlideshowBase extends LibComponentBase<HTMLDivElement> {
 
 interface SlideshowWithChildren extends ILibSlideshowBase {
     images?: never
-    children: Array<ReactNode>
+    children?: Array<ReactNode>
     /**
      * @type PaginationWithOther
      * @type boolean or object

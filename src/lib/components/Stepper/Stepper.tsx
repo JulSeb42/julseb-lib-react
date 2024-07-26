@@ -13,7 +13,7 @@ import type { ILibStepper } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop steps: Array<LibStep> => only if children is not defined
- * @prop children: ReactChildren => only if steps is not defined
+ * @prop children?: ReactChildren => only if steps is not defined
  * @prop direction?: "column" | "row"
  * @prop activeStep?: number
  * @prop iconActive?: string | JSX.Element

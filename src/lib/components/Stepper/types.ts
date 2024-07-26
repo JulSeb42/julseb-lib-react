@@ -24,7 +24,7 @@ interface StepperWithSteps extends ILibStepperBase {
 
 interface StepperWithChildren extends ILibStepperBase {
     steps?: never
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 export type ILibStepper = StepperWithSteps | StepperWithChildren

@@ -185,6 +185,10 @@ export interface LibToastOptions {
     timerBackgroundColor?: LibAllColors
 }
 
+/**
+ * @description Props for Toast component: https://documentation-components-react.vercel.app/components/toast
+ * @prop "data-testid"?: string
+ */
 export interface LibToast {
     title: string
     id?: string
@@ -230,7 +234,6 @@ export type LibBreadcrumbItem = LibButtonLinkBlank & {
  * @prop title: string
  * @prop content: ReactNode
  */
-
 export interface LibTabItem {
     "data-testid"?: string
     className?: string
@@ -258,4 +261,72 @@ export interface LibMessage {
     text: string
     date?: Date | string
     time?: string
+}
+
+/*====================== MarkdownEditorOptions ======================*/
+
+/**
+ * @description Buttons showing in MarkdownEditor
+ * @prop titles?: boolean
+ * @prop bold?: boolean
+ * @prop italic?: boolean
+ * @prop strikethrough?: boolean
+ * @prop ul?: boolean
+ * @prop ol?: boolean
+ * @prop link?: boolean
+ * @prop quote?: boolean
+ * @prop hr?: boolean
+ * @prop code?: boolean
+ * @prop codeBlock?: boolean
+ * @prop comment?: boolean
+ * @prop image?: boolean
+ * @prop editorCode?: boolean
+ * @prop editorLive?: boolean
+ * @prop editorPreview?: boolean
+ */
+export interface LibMarkdownEditorOptions {
+    titles?: boolean
+    bold?: boolean
+    italic?: boolean
+    strikethrough?: boolean
+    ul?: boolean
+    ol?: boolean
+    link?: boolean
+    quote?: boolean
+    hr?: boolean
+    code?: boolean
+    codeBlock?: boolean
+    comment?: boolean
+    image?: boolean
+    editorCode?: boolean
+    editorLive?: boolean
+    editorPreview?: boolean
+}
+
+/*====================== HeaderLinks ======================*/
+
+/**
+ * @description Props for links in Header component items: https://documentation-components-react.vercel.app/components/header
+ * @extends LibButtonLinkBlankRequired
+ * @prop text: string
+ * @prop end?: boolean => prop from react-router, to render the active class only if path is not further
+ */
+export type LibHeaderLink = LibButtonLinkBlankRequired & {
+    text: string
+    end?: boolean
+}
+
+/*====================== IconMenuItem ======================*/
+
+/**
+ * @description Props for Items in IconMenu component items: https://documentation-components-react.vercel.app/icon-menu
+ * @extends LibButtonLinkBlankRequired
+ * @prop label: string
+ * @prop icon: string | JSX.Element
+ * @prop iconSize?: number
+ */
+export type LibIconMenuItem = LibButtonLinkBlankRequired & {
+    label: string
+    icon: LibIcon
+    iconSize?: number
 }

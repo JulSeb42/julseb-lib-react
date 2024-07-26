@@ -20,7 +20,7 @@ interface AccordionWithItems extends ILibAccordionBase {
 
 interface AccordionWithChildren extends ILibAccordionBase {
     items?: never
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 export type ILibAccordion = AccordionWithItems | AccordionWithChildren

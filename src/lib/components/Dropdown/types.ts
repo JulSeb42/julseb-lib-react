@@ -27,7 +27,7 @@ interface DropdownWithItems extends ILibDropdownBase {
 
 interface DropdownWithChildren extends ILibDropdownBase {
     items?: never
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 export type ILibDropdown = DropdownWithItems | DropdownWithChildren

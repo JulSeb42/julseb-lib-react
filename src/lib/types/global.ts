@@ -38,18 +38,25 @@ export type LibThemeNames = keyof typeof typeValues.theme
 export type LibIcon = string | JSX.Element
 export type LibInputVariant = keyof typeof typeValues.inputVariants
 export type LibInputBackground = keyof typeof typeValues.inputBackgrounds
+export type LibPositionExtract = Extract<
+    Property.Position,
+    "relative" | "absolute" | "fixed"
+>
 
 /*====================== Common component props ======================*/
 
 /* Component base */
-
+/**
+ * @description Props common to nearly all components
+ * @prop "data-testid"?: string
+ * @prop as?: ElementType
+ */
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
     "data-testid"?: string
     as?: ElementType
 }
 
 /* Box shadow */
-
 /**
  * @description Props for components with box shadow
  * @type "xxl" | "xl" | "l" | "m" | "s" | "xs"
@@ -64,7 +71,6 @@ export type ILibBoxShadow =
       }
 
 /* Border radius */
-
 /**
  * @description Props for components with border radius
  * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number
@@ -82,7 +88,6 @@ export type ILibRadius =
       }
 
 /* Padding */
-
 /**
  * @description Props for components with paddings
  * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
@@ -100,7 +105,6 @@ export type ILibPadding =
       }
 
 /* Margins */
-
 /**
  * @description Props for components with margins
  * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto"
@@ -121,7 +125,6 @@ export type ILibMargin =
       }
 
 /* Border */
-
 /**
  * @description Props for components with borders
  * @prop style?: CssBorderStyle
@@ -135,7 +138,6 @@ export type ILibBorder = {
 }
 
 /* Outline */
-
 /**
  * @description Props for components with outlines
  * @prop style?: CssOutlineStyle
@@ -148,16 +150,24 @@ export type ILibOutline = {
     color?: LibAllColors
 }
 
-/* Button variants */
-
-export type LibButtonVariant = keyof typeof typeValues.buttonVariants
-
-/* Button sizes */
-
-export type LibButtonSize = keyof typeof typeValues.buttonSizes
+/* Position */
+/**
+ * @description Props for components with CSS position
+ * @prop position?: "relative" | "absolute" | "fixed"
+ * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ */
+export interface ILibPosition {
+    position?: LibPositionExtract
+    left?: LibSpacers
+    top?: LibSpacers
+    right?: LibSpacers
+    bottom?: LibSpacers
+}
 
 /* Links & buttons */
-
 type LinkTo = { to?: string; href?: never }
 type LinkHref = { to?: never; href?: string }
 
@@ -263,7 +273,6 @@ export type LibButtonLinkBlankRequired = RequireAtLeastOne<
 >
 
 /* useTranslation hook */
-
 /**
  * @description Props for useTranslation hook
  * @prop [language: string]: { [key: string]: string }
@@ -274,12 +283,7 @@ export type TranslateLang = {
     }
 }
 
-/* Tooltip */
-
-export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
-
 /* BackgroundImage */
-
 /**
  * @description Props for background images
  * @prop img: string
@@ -289,7 +293,6 @@ export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
  * @prop repeat?: CssBackgroundRepeat
  * @prop size?: CssBackgroundSize
  */
-
 export interface ILibBackgroundImage {
     img: string
     clip?: Property.BackgroundClip
@@ -300,9 +303,6 @@ export interface ILibBackgroundImage {
 }
 
 /* Input phone */
-
-export type CountryCode = keyof typeof typeValues.countryCodes
-
 /**
  * @description Props for countries used in InputPhone component
  * @prop name: string
@@ -310,23 +310,12 @@ export type CountryCode = keyof typeof typeValues.countryCodes
  * @prop code: Any Alpha-2 Code from https://www.iban.com/country-codes
  * @prop flag: string
  */
-
 export type LibCountry = {
     name: string
     dial_code: string
     code: CountryCode
     flag: string
 }
-
-/* InputList */
-
-export type LibInputListDirection = keyof typeof typeValues.listInputDirections
-
-/* Toast */
-
-export type LibToastStatus = keyof typeof typeValues.toastStatus
-
-export type LibToasterPosition = keyof typeof typeValues.toasterPositions
 
 /*====================== Theme ======================*/
 
@@ -336,59 +325,10 @@ export type LibToasterPosition = keyof typeof typeValues.toasterPositions
  * @prop selectedTheme: "light" | "dark" | undefined
  * @prop toggleTheme: () => void
  */
-
 export interface ILibThemeContext {
     theme: DefaultTheme
     selectedTheme: LibThemeNames | undefined
     toggleTheme: () => void
-}
-
-/*====================== MarkdownEditorOptions ======================*/
-
-/**
- * @description Buttons showing in MarkdownEditor
- * @prop titles?: boolean
- * @prop bold?: boolean
- * @prop italic?: boolean
- * @prop strikethrough?: boolean
- * @prop ul?: boolean
- * @prop ol?: boolean
- * @prop link?: boolean
- * @prop quote?: boolean
- * @prop hr?: boolean
- * @prop code?: boolean
- * @prop codeBlock?: boolean
- * @prop comment?: boolean
- * @prop image?: boolean
- * @prop editorCode?: boolean
- * @prop editorLive?: boolean
- * @prop editorPreview?: boolean
- */
-
-export interface LibMarkdownEditorOptions {
-    titles?: boolean
-    bold?: boolean
-    italic?: boolean
-    strikethrough?: boolean
-    ul?: boolean
-    ol?: boolean
-    link?: boolean
-    quote?: boolean
-    hr?: boolean
-    code?: boolean
-    codeBlock?: boolean
-    comment?: boolean
-    image?: boolean
-    editorCode?: boolean
-    editorLive?: boolean
-    editorPreview?: boolean
-}
-
-/*====================== HeaderLinks ======================*/
-
-export type LibHeaderLink = LibButtonLinkBlankRequired & {
-    text: string
-    end?: boolean
 }
 
 /*====================== React global ======================*/
@@ -465,4 +405,14 @@ export type LibMdEditorTitle = keyof typeof typeValues.markdownEditorTitles
 export type LibNavMenuVariant = keyof typeof typeValues.navMenuVariants
 export type LibNavMobileVariant = keyof typeof typeValues.navMobileVariants
 export type LibHeaderVariant = keyof typeof typeValues.headerVariants
-export type LibHeaderPosition = keyof typeof typeValues.headerPositions
+export type LibHeaderPosition = LibPositionExtract
+export type LibIconMenuDirection = keyof typeof typeValues.iconMenuDirections
+export type LibIconMenuIcon = keyof typeof typeValues.iconMenuIcon
+export type LibIconMenuPosition = LibPositionExtract
+export type LibToastStatus = keyof typeof typeValues.toastStatus
+export type LibToasterPosition = keyof typeof typeValues.toasterPositions
+export type LibInputListDirection = keyof typeof typeValues.listInputDirections
+export type LibButtonVariant = keyof typeof typeValues.buttonVariants
+export type LibButtonSize = keyof typeof typeValues.buttonSizes
+export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
+export type CountryCode = keyof typeof typeValues.countryCodes

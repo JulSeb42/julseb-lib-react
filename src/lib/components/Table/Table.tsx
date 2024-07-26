@@ -12,7 +12,7 @@ import type { ILibTable } from "./types"
  * @extends HTMLTableElement
  * @prop data-testid?: string
  * @prop data: Array<Array<string | JSX.Element>> => only if children is not defined
- * @prop children: ReactChildren => only if data is not defined
+ * @prop children?: ReactChildren => only if data is not defined
  * @prop headers?: Array<string | JSX.Element>
  * @prop variant?: LibTableVariant
  * @prop vAlign?: CssVerticalAlign

@@ -41,6 +41,7 @@ import {
     type LibColorsHoverAndCurrent,
     type ILibBackgroundImage,
     type LibThemeNames,
+    type LibHeaderPosition,
 } from "./types"
 
 type ILibIconMixin = {
@@ -938,6 +939,26 @@ class mixins {
                   `)}
         `
     }
+
+    Position = ({
+        $position,
+        $left,
+        $top,
+        $right,
+        $bottom,
+    }: {
+        $position?: LibHeaderPosition
+        $left?: LibSpacers
+        $top?: LibSpacers
+        $right?: LibSpacers
+        $bottom?: LibSpacers
+    }) => css`
+        position: ${$position};
+        left: ${$left && Mixins.Spacer($left)};
+        top: ${$top && Mixins.Spacer($top)};
+        right: ${$right && Mixins.Spacer($right)};
+        bottom: ${$bottom && Mixins.Spacer($bottom)};
+    `
 }
 
 export const Mixins = new mixins()

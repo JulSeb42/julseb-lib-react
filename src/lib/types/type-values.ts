@@ -248,11 +248,14 @@ export const typeValues = {
         transparent: "transparent",
     },
 
-    headerPositions: {
-        relative: "relative",
-        absolute: "absolute",
-        fixed: "fixed",
+    iconMenuDirections: {
+        left: "left",
+        up: "up",
+        right: "right",
+        down: "down",
     },
+
+    iconMenuIcon: { plus: "plus", burger: "burger" },
 
     times: {
         "00:00": "00:00",

@@ -67,4 +67,5 @@ export * from "../components/CodeContainer/types"
 export * from "../components/Fade/types"
 export * from "../components/BackToTop/types"
 export * from "../components/Header/types"
+export * from "../components/IconMenu/types"
 // prependHere

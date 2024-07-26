@@ -5,10 +5,8 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "copyButton?: boolean | { conCopy?: LibIcon; iconCopied?: LibIcon; iconSizeCopy?: number; iconSizeCopied?: number; tooltipCopy?: string; tooltipCopied?: string }",
-        "color?: LibAllColors",
-        "highlighterStyle?: CSSProperties",
-        "highlighterProps?: SyntaxHighlighterProps => imported from react-syntax-highlighter",
+        '"data-testid"?: string',
+        "as?: ElementType",
     ])
 
     // const buttons = [
@@ -256,6 +254,10 @@ function replaceTypes(arr: Array<string>) {
             .replaceAll(
                 "LibMdEditorEditor",
                 mapValues(typeValues.markdownEditorEditor)
+            )
+            .replaceAll(
+                "LibPositionExtract",
+                '"relative" | "absolute" | "fixed"'
             )
     })
 }

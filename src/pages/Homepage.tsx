@@ -18,7 +18,7 @@ export function Homepage() {
         // "Code Container",
         // "Fade",
         // "Back To Top",
-        "Header",
+        // "Header",
         "Icon Menu",
         "Footer",
         "Helmet",

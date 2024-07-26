@@ -21,7 +21,7 @@ interface ILibPaginationWithChildren extends ILibPaginationBase {
     pageLimit?: never
     icons?: never
     iconSizes?: never
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 export type ILibPagination =

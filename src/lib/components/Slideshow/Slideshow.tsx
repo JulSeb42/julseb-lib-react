@@ -24,7 +24,7 @@ const DEFAULT_ICON_SIZE_LARGE = 32
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop images: Array<string> => only if children is not defined
- * @prop children: Array<ReactNode> => only if images is not defined
+ * @prop children?: Array<ReactNode> => only if images is not defined
  * @prop height?: string | number
  * @prop imgFit?: CssObjectFit
  * @prop controls?: boolean | Controls

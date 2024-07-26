@@ -25,7 +25,7 @@ interface BreadcrumbsWithItems extends ILibBreadcrumbsBase {
 
 interface BreadcrumbsWithChildren extends ILibBreadcrumbsBase {
     breadcrumbsItems?: never
-    children: Array<ReactNode>
+    children?: Array<ReactNode>
 }
 
 export type ILibBreadcrumbs = BreadcrumbsWithItems | BreadcrumbsWithChildren

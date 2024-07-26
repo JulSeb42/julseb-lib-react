@@ -89,7 +89,7 @@ interface MessageWithText extends ILibMessageBase {
 
 interface MessageWithChildren extends ILibMessageBase {
     text?: never
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 type ILibMessageContent = MessageWithText | MessageWithChildren
@@ -114,7 +114,7 @@ type MessageWithoutDate = ILibMessageContent & {
  * @prop as?: ElementType
  * @prop type: "sent" | "received"
  * @prop text: string => only if children is not defined
- * @prop children: ReactChildren => only if text is not defined
+ * @prop children?: ReactChildren => only if text is not defined
  * @prop date?: Date | string
  * @prop time?: string
  * @prop textDateTime?: string
