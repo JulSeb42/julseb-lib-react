@@ -84,6 +84,7 @@ import { fadePreview } from "../lib/components/Fade/__preview__/Fade.preview"
 import { backToTopPreview } from "../lib/components/BackToTop/__preview__/BackToTop.preview"
 import { headerPreview } from "../lib/components/Header/__preview__/Header.preview"
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
+import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -197,6 +198,7 @@ fadePreview,
 backToTopPreview,
 headerPreview,
 iconMenuPreview,
+footerPreview,
 // prependArr
 
     /*====================== Helpers ======================*/

@@ -257,6 +257,10 @@ export const typeValues = {
 
     iconMenuIcon: { plus: "plus", burger: "burger" },
 
+    footerDirections: { horizontal: "horizontal", vertical: "vertical" },
+
+    footerSeparators: { dot: "dot", dash: "dash" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

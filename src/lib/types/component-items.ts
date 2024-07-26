@@ -339,7 +339,7 @@ export interface LibMarkdownEditorOptions {
  * @prop "data-testid"?: string
  * @prop className?: string
  * @prop id?: string
- * @prop ref?: ForwardedRef<HTMLAnchorElement>
+ * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
  * @prop text: string
  * @prop end?: boolean => prop from react-router, to render the active class only if path is not further
  */
@@ -367,4 +367,20 @@ export type LibIconMenuItem = LibButtonLinkBlankRequired &
         label: string
         icon: LibIcon
         iconSize?: number
+    }
+
+/*====================== FooterLink ======================*/
+
+/**
+ * @description Props for links in Footer component items: https://documentation-components-react.vercel.app/components/footer
+ * @extends LibButtonLinkBlankRequired
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
+ * @prop text: string
+ */
+export type LibFooterLink = LibButtonLinkBlankRequired &
+    LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
+        text: string | JSX.Element
     }

@@ -135,4 +135,5 @@ export * from "./components/Fade"
 export * from "./components/BackToTop"
 export * from "./components/Header"
 export * from "./components/IconMenu"
+export * from "./components/Footer"
 // prependHere

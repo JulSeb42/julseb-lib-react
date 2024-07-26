@@ -68,4 +68,5 @@ export * from "../components/Fade/types"
 export * from "../components/BackToTop/types"
 export * from "../components/Header/types"
 export * from "../components/IconMenu/types"
+export * from "../components/Footer/types"
 // prependHere

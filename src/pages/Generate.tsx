@@ -5,10 +5,12 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        '"data-testid"?: string',
-        "className?: string",
-        "id?: string",
-        "ref?: ForwardedRef<T>",
+        "withSeparator?: boolean",
+        "linksSeparator?: LibFooterLinksSeparator",
+        "items: Array<LibFooterLink>",
+        "children?: ReactChildren => only if items is not defined",
+        "logo: { img: string => only if text is not defined; alt?: string => only if img is defined; width?: number => only if img is defined; height?: number => only if img is defined; text?: string => only if img is not defined }",
+        "direction?: LibFooterDirection",
     ])
 
     // const buttons = [
@@ -260,6 +262,14 @@ function replaceTypes(arr: Array<string>) {
             .replaceAll(
                 "LibPositionExtract",
                 '"relative" | "absolute" | "fixed"'
+            )
+            .replaceAll(
+                "LibFooterLinksSeparator",
+                mapValues(typeValues.footerSeparators)
+            )
+            .replaceAll(
+                "LibFooterDirection",
+                mapValues(typeValues.footerDirections)
             )
     })
 }

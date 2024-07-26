@@ -416,3 +416,5 @@ export type LibButtonVariant = keyof typeof typeValues.buttonVariants
 export type LibButtonSize = keyof typeof typeValues.buttonSizes
 export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
 export type CountryCode = keyof typeof typeValues.countryCodes
+export type LibFooterDirection = keyof typeof typeValues.footerDirections
+export type LibFooterLinksSeparator = keyof typeof typeValues.footerSeparators
