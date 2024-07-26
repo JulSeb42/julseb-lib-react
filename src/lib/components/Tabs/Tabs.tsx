@@ -87,12 +87,16 @@ export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
                         <TabButton
                             key={uuid()}
                             data-testid={
-                                testid &&
-                                `${testid}.TabsButtonsContainer.TabButton`
+                                item["data-testid"] ||
+                                (testid &&
+                                    `${testid}.TabsButtonsContainer.TabButton`)
                             }
                             className={
-                                item.className || (className && "TabButton")
+                                `${item.className}.Button` ||
+                                (className && "TabButton")
                             }
+                            id={`${item.id}.TabButton`}
+                            ref={item.ref}
                             isActive={activeTab === i}
                             onClick={() => handleClick(i)}
                             justify={justify}
@@ -106,8 +110,15 @@ export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
                 {tabsItems.map((item, i) => (
                     <TabItem
                         key={uuid()}
-                        data-testid={testid && `${testid}.TabItem`}
-                        className={className && "TabItem"}
+                        data-testid={
+                            item["data-testid"] ||
+                            (testid && `${testid}.TabItem`)
+                        }
+                        className={
+                            `${item.className}.Tab` || (className && "TabItem")
+                        }
+                        id={`${item.id}.Tab`}
+                        ref={item.ref}
                         as={typeof item.content === "string" ? Text : "span"}
                         isActive={activeTab.toString() === i.toString()}
                     >

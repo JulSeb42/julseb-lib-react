@@ -5,6 +5,7 @@ import { uuid, capitalize, filterObject } from "ts-utils-julseb"
 import { Button, ButtonIcon } from "../../"
 import type { ILibButton } from "../Button/types"
 import type { ILibButtonIcon } from "../ButtonIcon/types"
+import type { LibButtonGroupItem } from "../../types"
 import { StyledButtonGroup, Separator } from "./styles"
 import type { ILibButtonGroup } from "./types"
 
@@ -49,13 +50,17 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                 {...rest}
             >
                 {buttons.map((button, i) => {
-                    const commonProps: Partial<ILibButton | ILibButtonIcon> = {
+                    const commonProps: Partial<
+                        (ILibButton | ILibButtonIcon) & LibButtonGroupItem
+                    > = {
                         "data-testid":
                             button["data-testid"] ||
                             (testid && `${testid}.Button.${i}`),
                         className:
                             button.className ||
                             (className && `Button Button__${i}`),
+                        id: button.id,
+                        ref: button.ref,
                         color,
                         variant: variant as any,
                     }

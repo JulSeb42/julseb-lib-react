@@ -64,6 +64,8 @@ export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
                               className={
                                   step.className || (className && "Step")
                               }
+                              id={step.id}
+                              ref={step.ref}
                               number={i + 1}
                               isActive={activeStep >= i + 1}
                               isDone={activeStep >= i}

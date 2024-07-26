@@ -78,8 +78,15 @@ export function HeaderNav({
                     <Fragment key={uuid()}>
                         {link.to ? (
                             <NavLink
-                                data-testid={testid && `${testid}.NavLink`}
-                                className={className && "NavLink"}
+                                data-testid={
+                                    link["data-testid"] ||
+                                    (testid && `${testid}.NavLink`)
+                                }
+                                className={
+                                    link.className || (className && "NavLink")
+                                }
+                                id={link.id}
+                                ref={link.ref}
                                 to={link.to}
                                 end={link.end}
                                 target={link.blank ? "_blank" : undefined}
@@ -93,8 +100,15 @@ export function HeaderNav({
                             </NavLink>
                         ) : link.onClick ? (
                             <button
-                                data-testid={testid && `${testid}.NavButton`}
-                                className={className && "NavButton"}
+                                data-testid={
+                                    link["data-testid"] ||
+                                    (testid && `${testid}.NavButton`)
+                                }
+                                className={
+                                    link.className || (className && "NavButton")
+                                }
+                                id={link.id}
+                                ref={link.ref}
                                 onClick={link.onClick}
                                 disabled={link.disabled}
                             >
@@ -102,8 +116,15 @@ export function HeaderNav({
                             </button>
                         ) : link.href ? (
                             <a
-                                data-testid={testid && `${testid}.NavLink`}
-                                className={className && "NavLink"}
+                                data-testid={
+                                    link["data-testid"] ||
+                                    (testid && `${testid}.NavLink`)
+                                }
+                                className={
+                                    link.className || (className && "NavLink")
+                                }
+                                id={link.id}
+                                ref={link.ref}
                                 href={link.href}
                                 target={link.blank ? "_blank" : undefined}
                                 rel={

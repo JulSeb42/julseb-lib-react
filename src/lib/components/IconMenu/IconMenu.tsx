@@ -102,8 +102,16 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                     ? items?.map((item, i) => (
                           <IconMenuItem
                               key={i}
-                              data-testid={testid && `${testid}.Item`}
-                              className={className && "IconMenuItem"}
+                              data-testid={
+                                  item["data-testid"] ||
+                                  (testid && `${testid}.Item`)
+                              }
+                              className={
+                                  item.className ||
+                                  (className && "IconMenuItem")
+                              }
+                              id={item.id}
+                              ref={item.ref}
                               {...item}
                               direction={direction}
                               indexPosition={i + 1}

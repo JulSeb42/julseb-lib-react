@@ -56,10 +56,13 @@ export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
                                   item.className ||
                                   (className && "ListGroupItem")
                               }
+                              id={item.id}
+                              ref={item.ref}
                               item={item}
                               number={showNumbers ? i + 1 : undefined}
                               isInArray
                               key={uuid()}
+                              {...(item as any)}
                           />
                       ))
                     : children}

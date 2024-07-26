@@ -54,6 +54,7 @@ export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(
                                   item.className ||
                                   (className && "AccordionItem")
                               }
+                              id={item.id}
                               title={item.title}
                               icon={icon}
                               variant={variant}

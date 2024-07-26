@@ -111,55 +111,60 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                 $position={position}
                 {...rest}
             >
-                {toasts.map(({ title, id, options, status }) => {
+                {toasts.map(toast => {
                     const styles = toastStatusStyles[status || "success"]
 
                     return (
                         <Toast
                             data-testid={
-                                options?.["data-testid"] ||
+                                toast.options?.["data-testid"] ||
+                                toast["data-testid"] ||
                                 (testid && `${testid}.Toast`)
                             }
                             className={
-                                options?.className || (className && "Toast")
+                                toast.options?.className ||
+                                toast.className ||
+                                (className && "Toast")
                             }
-                            title={title}
-                            id={options?.id || id}
-                            ref={options?.ref}
+                            title={toast.title}
+                            id={toast.options?.id || toast.id}
+                            ref={toast.options?.ref || toast.ref}
                             toasterPosition={position}
                             options={{
                                 duration:
-                                    options?.duration ||
+                                    toast.options?.duration ||
                                     toastsOptions?.duration ||
                                     3000,
                                 icons: {
                                     left:
-                                        options?.icons?.left ||
+                                        toast.options?.icons?.left ||
                                         styles?.iconLeft,
-                                    close: options?.icons?.close || iconClose,
+                                    close:
+                                        toast.options?.icons?.close ||
+                                        iconClose,
                                 },
                                 iconSizes: {
                                     left:
-                                        options?.iconSizes?.left ||
+                                        toast.options?.iconSizes?.left ||
                                         styles?.iconLeftSize,
                                     close:
-                                        options?.iconSizes?.close ||
+                                        toast.options?.iconSizes?.close ||
                                         iconCloseSize,
                                 },
                                 iconLeftColor:
-                                    options?.iconLeftColor ||
+                                    toast.options?.iconLeftColor ||
                                     styles.iconLeftColor,
-                                ref: options?.ref,
+                                ref: toast.options?.ref || toast.ref,
                                 labelClose:
-                                    options?.labelClose ||
+                                    toast.options?.labelClose ||
                                     toastsOptions?.labelClose,
-                                body: options?.body,
-                                id: options?.id,
+                                body: toast.options?.body,
+                                id: toast.options?.id || toast.id,
                                 timerBackgroundColor:
-                                    options?.timerBackgroundColor ||
+                                    toast.options?.timerBackgroundColor ||
                                     styles.borderColor,
                                 ...toastsOptions,
-                                ...options,
+                                ...toast.options,
                             }}
                             toastStyle={{
                                 backgroundColor: styles.backgroundColor,

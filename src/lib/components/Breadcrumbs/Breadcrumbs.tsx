@@ -42,23 +42,37 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
                 {...rest}
             >
                 {breadcrumbsItems
-                    ? breadcrumbsItems.map(({ text, to }, i) =>
-                          to ? (
+                    ? breadcrumbsItems.map((item, i) =>
+                          item.to ? (
                               <Link
-                                  to={to}
-                                  data-testid={testid && `${testid}.Link.${i}`}
-                                  className={className && "Link"}
+                                  to={item.to}
+                                  data-testid={
+                                      item["data-testid"] ||
+                                      (testid && `${testid}.Link.${i}`)
+                                  }
+                                  className={
+                                      item.className || (className && "Link")
+                                  }
+                                  id={item.id}
+                                  ref={item.ref}
                                   key={uuid()}
                               >
-                                  {text}
+                                  {item.text}
                               </Link>
                           ) : (
                               <span
                                   key={uuid()}
-                                  data-testid={testid && `${testid}.Text.${i}`}
-                                  className={className && "Text"}
+                                  data-testid={
+                                      item["data-testid"] ||
+                                      (testid && `${testid}.Text.${i}`)
+                                  }
+                                  className={
+                                      item.className || (className && "Text")
+                                  }
+                                  id={item.id}
+                                  ref={item.ref}
                               >
-                                  {text}
+                                  {item.text}
                               </span>
                           )
                       )

@@ -6,7 +6,9 @@ import { typeValues } from "../lib/types"
 export function Generate() {
     const propsDoc = replaceTypes([
         '"data-testid"?: string',
-        "as?: ElementType",
+        "className?: string",
+        "id?: string",
+        "ref?: ForwardedRef<T>",
     ])
 
     // const buttons = [

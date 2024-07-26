@@ -80,7 +80,12 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
                                     message["data-testid"] ||
                                     (testid && `${testid}.MessagesList.Message`)
                                 }
-                                className={className && "Message"}
+                                className={
+                                    message.className ||
+                                    (className && "Message")
+                                }
+                                id={message.id}
+                                ref={message.ref}
                                 textDateTime={textDateTime}
                                 {...message}
                             />

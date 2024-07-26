@@ -12,13 +12,29 @@ import type {
     LibMessageType,
 } from "./"
 
+/*====================== Base ======================*/
+
+/**
+ * @description Base props for any ComponentItem
+ * @type T => HTMLElementType
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<T>
+ */
+interface LibComponentItemBase<T> {
+    "data-testid"?: string
+    className?: string
+    id?: string
+    ref?: ForwardedRef<T>
+}
+
 /*====================== ButtonGroup ======================*/
 
-type ButtonGroupItemsBase = LibButtonLinkBlank & {
-    "data-testid"?: string
-    "aria-label"?: string
-    className?: string
-}
+type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
+    LibButtonLinkBlank & {
+        "aria-label"?: string
+    }
 
 type ButtonGroupItemText = ButtonGroupItemsBase & {
     text: string
@@ -47,6 +63,10 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 /**
  * @description Props for ButtonGroup component items: https://documentation-components-react.vercel.app/components/button-group
  * @extends LibButtonLinkBlank
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
  * @prop text: string => only if `iconOnly` is not defined
  * @prop iconLeft?: string | JSX.Element
  * @prop iconRight?: string | JSX.Element
@@ -57,6 +77,8 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 export type LibButtonGroupItem = ButtonGroupItemText | ButtonGroupItemIcon
 
 /*====================== ListGroup ======================*/
+
+// ! DO NOT EXPORT
 
 type ListGroupItemBadgeColor = {
     backgroundColor?: LibAllColors
@@ -79,13 +101,13 @@ type ListGroupItemBadgeExtended =
     | ListGroupItemBadgeIcon
     | ListGroupItemBadgeNumber
 
-type ListGroupItemBase = LibButtonLinkBlank & {
-    "data-testid"?: string
-    className?: string
-    text: string
-    subtext?: string
-    ref?: ForwardedRef<HTMLLIElement>
-}
+// ! END DO NOT EXPORT
+
+type ListGroupItemBase = LibButtonLinkBlank &
+    LibComponentItemBase<HTMLLIElement> & {
+        text: string
+        subtext?: string
+    }
 
 type ListGroupItemWithBadge = ListGroupItemBase & {
     badge?: boolean | ListGroupItemBadgeExtended
@@ -100,9 +122,12 @@ type ListGroupItemWithDate = ListGroupItemBase & {
 /**
  * @description Props for ListGroup component items: https://documentation-components-react.vercel.app/components/list-group
  * @extends LibButtonLinkBlank
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLLIElement>
  * @prop text: string
  * @prop subtext?: string
- * @prop ref?: ForwardedRef<HTMLLIElement>
  * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
  * @prop date?: string | Date => only if `badge` is not defined
  */
@@ -112,18 +137,18 @@ export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
 
 /**
  * @description Props for Accordion component items: https://documentation-components-react.vercel.app/components/accordion
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop title: string
  * @prop isOpen?: boolean
  * @prop content?: string | ReactChildren
- * @prop ref?: ForwardedRef<HTMLDivElement>
  */
-export interface LibAccordionItem {
-    "data-testid"?: string
-    className?: string
+export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
     title: string
     content?: string | ReactChildren
     defaultOpen?: boolean
-    ref?: ForwardedRef<HTMLDivElement>
 }
 
 /*====================== DropdownItem ======================*/
@@ -131,21 +156,22 @@ export interface LibAccordionItem {
 /**
  * @description Props for Dropdown component items: https://documentation-components-react.vercel.app/components/dropdown
  * @extends LibButtonLinkBlankRequired
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  * @prop text: string
  * @prop icon?: string | JSX.Element
  * @prop iconSize?: number
  * @prop gap?: LibSpacers
- * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  */
-export type LibDropdownItem = LibButtonLinkBlankRequired & {
-    "data-testid"?: string
-    className?: string
-    text: string
-    icon?: LibIcon
-    iconSize?: number
-    gap?: LibSpacers
-    ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
-}
+export type LibDropdownItem = LibButtonLinkBlankRequired &
+    LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
+        text: string
+        icon?: LibIcon
+        iconSize?: number
+        gap?: LibSpacers
+    }
 
 /*====================== Toast ======================*/
 
@@ -154,20 +180,17 @@ export type LibDropdownItem = LibButtonLinkBlankRequired & {
  * @prop "data-testid"?: string
  * @prop className?: string
  * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop body?: string | ReactChildren
  * @prop duration?: number
  * @prop icons?: { left?: string | JSX.Element; close?: string | JSX.Element }
  * @prop iconSizes?: { left?: number close?: number }
  * @prop iconLeftColor?: Any color from the library
- * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop labelClose?: string
  * @prop withTimer?: boolean
  * @prop timerBackgroundColor?: Any color from the library
  */
-export interface LibToastOptions {
-    "data-testid"?: string
-    className?: string
-    id?: string
+export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
     body?: string | ReactChildren
     duration?: number
     icons?: {
@@ -179,7 +202,6 @@ export interface LibToastOptions {
         close?: number
     }
     iconLeftColor?: LibAllColors
-    ref?: ForwardedRef<HTMLDivElement>
     labelClose?: string
     withTimer?: boolean
     timerBackgroundColor?: LibAllColors
@@ -188,8 +210,11 @@ export interface LibToastOptions {
 /**
  * @description Props for Toast component: https://documentation-components-react.vercel.app/components/toast
  * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  */
-export interface LibToast {
+export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
     title: string
     id?: string
     status?: LibToastStatus
@@ -203,13 +228,14 @@ export interface LibToast {
  * @extends LibButtonLinkBlank
  * @prop "data-testid"?: string
  * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop text: string
  */
-export type LibStep = LibButtonLinkBlank & {
-    "data-testid"?: string
-    className?: string
-    text: string
-}
+export type LibStep = LibButtonLinkBlank &
+    LibComponentItemBase<HTMLDivElement> & {
+        text: string
+    }
 
 /*====================== BreadcrumbItem ======================*/
 
@@ -218,11 +244,14 @@ export type LibStep = LibButtonLinkBlank & {
  * @extends LibButtonLinkBlank
  * @prop "data-testid"?: string
  * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLSpanElement>
  * @prop text: string
  */
-export type LibBreadcrumbItem = LibButtonLinkBlank & {
-    text: string | JSX.Element
-}
+export type LibBreadcrumbItem = LibButtonLinkBlank &
+    LibComponentItemBase<HTMLAnchorElement & HTMLSpanElement> & {
+        text: string | JSX.Element
+    }
 
 /*====================== TabsItem ======================*/
 
@@ -231,12 +260,13 @@ export type LibBreadcrumbItem = LibButtonLinkBlank & {
  * @extends LibButtonLinkBlank
  * @prop "data-testid"?: string
  * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop title: string
  * @prop content: ReactNode
  */
-export interface LibTabItem {
-    "data-testid"?: string
-    className?: string
+export interface LibTabItem
+    extends LibComponentItemBase<HTMLDivElement & HTMLButtonElement> {
     title: string
     content: ReactNode
 }
@@ -245,18 +275,16 @@ export interface LibTabItem {
 
 /**
  * @description Props for Message component: https://documentation-components-react.vercel.app/components/messaging
- * @prop data-testid?: string
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop type: "sent" | "received"
  * @prop text: string
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop className?: string
  * @prop date?: Date | string
  * @prop time?: string
  */
-export interface LibMessage {
-    ref?: ForwardedRef<HTMLDivElement>
-    "data-testid"?: string
-    className?: string
+export interface LibMessage extends LibComponentItemBase<HTMLDivElement> {
     type: LibMessageType
     text: string
     date?: Date | string
@@ -308,25 +336,35 @@ export interface LibMarkdownEditorOptions {
 /**
  * @description Props for links in Header component items: https://documentation-components-react.vercel.app/components/header
  * @extends LibButtonLinkBlankRequired
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLAnchorElement>
  * @prop text: string
  * @prop end?: boolean => prop from react-router, to render the active class only if path is not further
  */
-export type LibHeaderLink = LibButtonLinkBlankRequired & {
-    text: string
-    end?: boolean
-}
+export type LibHeaderLink = LibButtonLinkBlankRequired &
+    LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
+        text: string
+        end?: boolean
+    }
 
 /*====================== IconMenuItem ======================*/
 
 /**
  * @description Props for Items in IconMenu component items: https://documentation-components-react.vercel.app/icon-menu
  * @extends LibButtonLinkBlankRequired
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
  * @prop label: string
  * @prop icon: string | JSX.Element
  * @prop iconSize?: number
  */
-export type LibIconMenuItem = LibButtonLinkBlankRequired & {
-    label: string
-    icon: LibIcon
-    iconSize?: number
-}
+export type LibIconMenuItem = LibButtonLinkBlankRequired &
+    LibComponentItemBase<HTMLButtonElement> & {
+        label: string
+        icon: LibIcon
+        iconSize?: number
+    }

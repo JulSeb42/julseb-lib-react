@@ -74,6 +74,8 @@ export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
                                   item.className ||
                                   (className && "DropdownItem")
                               }
+                              id={item.id}
+                              ref={item.ref}
                               accentColor={accentColor}
                               {...item}
                               key={uuid()}
