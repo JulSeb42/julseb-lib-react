@@ -11,9 +11,9 @@ import type { ILibTable } from "./types"
  * @link https://documentation-components-react.vercel.app/components/table
  * @extends HTMLTableElement
  * @prop data-testid?: string
- * @prop data: Array<Array<string | JSX.Element>> => only if children is not defined
+ * @prop data: Array<Array<ReactChildren>> => only if children is not defined
  * @prop children?: ReactChildren => only if data is not defined
- * @prop headers?: Array<string | JSX.Element>
+ * @prop headers?: Array<ReactChildren>
  * @prop variant?: LibTableVariant
  * @prop vAlign?: CssVerticalAlign
  * @prop linkify?: boolean

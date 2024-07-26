@@ -12,11 +12,11 @@ interface ILibTableBase
     variant?: LibTableVariant
     vAlign?: CssVerticalAlign
     linkify?: boolean
-    headers?: Array<string | JSX.Element>
+    headers?: Array<ReactChildren>
 }
 
 interface TableWithData extends ILibTableBase {
-    data: Array<Array<string | JSX.Element>>
+    data: Array<Array<ReactChildren>>
     children?: never
 }
 

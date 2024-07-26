@@ -1,16 +1,16 @@
 /*=============================================== Demo types ===============================================*/
 
-export type Color = {
+interface Base {
     name: string
     variable: string
     css: string
+}
+
+export interface Color extends Base {
     hex: string
     rgb: string
 }
 
-export type Variable = {
-    name: string
-    variable: string
-    css: string
-    value: string
+export interface Variable extends Base {
+    value: string | number
 }

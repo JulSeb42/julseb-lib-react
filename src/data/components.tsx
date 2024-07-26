@@ -90,6 +90,7 @@ import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.previ
 /*====================== Helpers ======================*/
 
 import { helpersPreview } from "./previews/utils/Helpers.preview"
+import { variablesPreview } from "./previews/utils/Variables.preview"
 // prependImport
 import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
 
@@ -205,6 +206,7 @@ export const previews = [
 
     /*====================== Helpers ======================*/
     helpersPreview,
+    variablesPreview,
     // prependArr
     srOnlyPreview,
 ] as Array<ComponentPreview<any>>

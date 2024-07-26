@@ -4,6 +4,7 @@ import { Table } from "../../../"
 import { toTitleCase } from "ts-utils-julseb"
 import type { ILibTable } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
+import type { ReactChildren } from "../../../types"
 
 const users: Array<User> = [
     {
@@ -43,7 +44,7 @@ const users: Array<User> = [
     },
 ]
 
-const headers: Array<string | JSX.Element> = [
+const headers: Array<ReactChildren> = [
     ...new Set(
         users
             .map(user => Object.keys(user))
@@ -52,11 +53,9 @@ const headers: Array<string | JSX.Element> = [
     ),
 ]
 
-const data: Array<Array<string | JSX.Element>> = users.map(user =>
+const data: Array<Array<ReactChildren>> = users.map(user =>
     Object.values(user).map((v, i) =>
-        i === Object.values(user).length - 1
-            ? `http://twitter.com/${v}`
-            : v.toString()
+        i === Object.values(user).length - 1 ? `http://twitter.com/${v}` : v
     )
 )
 

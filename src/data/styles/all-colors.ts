@@ -904,3 +904,5 @@ export const colorsDark: Array<Color> = [
         rgb: LIB_TOKENS.colors.dark.font.rgb,
     },
 ]
+
+export const allColors = [...colorsLight, ...colorsDark]
