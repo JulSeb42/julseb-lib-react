@@ -55,7 +55,7 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
             iconActive = (
                 <CheckCircle
                     data-testid={testid && `${testid}.NumberContainer.Icon`}
-                    className={className && "NumberContainer__Icon"}
+                    className={className && "Icon"}
                     size={iconActiveSize}
                 />
             ),
@@ -99,7 +99,7 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
             >
                 <NumberContainer
                     data-testid={testid && `${testid}.NumberContainer`}
-                    className={className && `${className}__NumberContainer`}
+                    className={className && "NumberContainer"}
                     $isActive={isActive || isDone}
                     $accentColor={accentColor}
                 >
@@ -113,7 +113,7 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
                 <Text
                     tag="small"
                     data-testid={testid && `${testid}.Text`}
-                    className={className && `${className}__Text`}
+                    className={className && "Text"}
                 >
                     {children}
                 </Text>

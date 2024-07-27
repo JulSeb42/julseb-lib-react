@@ -6,7 +6,7 @@ import { BasePage, StyledMain } from "../../components"
 export function DemoMainFull() {
     return (
         <BasePage title="Demo Main Full">
-            <StyledMain size="full">
+            <StyledMain size="full" data-testid="testid" className="className">
                 <Text tag="h2">Main</Text>
 
                 <Section gap="xs">

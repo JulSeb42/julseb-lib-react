@@ -45,8 +45,6 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
             if (isOpen) setIsOpen(false)
         })
 
-        // TODO: Add all classNames & data-testid
-
         return (
             <StyledIconMenu
                 data-testid={testid}
@@ -77,7 +75,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                                 data-testid={
                                     testid && `${testid}.OpenButton.Burger`
                                 }
-                                className={className && "Burger"}
+                                className={className && "OpenBurger"}
                                 isOpen={isOpen}
                                 color={color === "white" ? "primary" : "white"}
                                 as="span"
@@ -90,7 +88,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                                 data-testid={
                                     testid && `${testid}.OpenButton.Icon`
                                 }
-                                className={className && "OpenButton.Icon"}
+                                className={className && "OpenIcon"}
                                 $isOpen={isOpen}
                             />
                         )

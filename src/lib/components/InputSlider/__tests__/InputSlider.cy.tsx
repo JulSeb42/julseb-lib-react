@@ -27,16 +27,16 @@ describe("<InputSlider />", () => {
             .should("exist")
             .should("have.prop", "tagName", "SMALL")
             .should("have.text", "0")
-            .should("have.class", "SliderWrapper__Min")
+            .should("have.class", "SliderMin")
         cy.dataTest("testid.SliderWrapper.Max")
             .should("exist")
             .should("have.prop", "tagName", "SMALL")
             .should("have.text", "100")
-            .should("have.class", "SliderWrapper__Max")
+            .should("have.class", "SliderMax")
 
         cy.dataTest("testid.SliderWrapper.SliderContainer")
             .should("exist")
-            .should("have.class", "SliderWrapper__SliderContainer")
+            .should("have.class", "SliderContainer")
 
         cy.dataTest("testid.Input")
             .should("exist")
@@ -45,7 +45,7 @@ describe("<InputSlider />", () => {
 
         cy.dataTest("testid.SliderWrapper.SliderContainer.Tooltip")
             .should("exist")
-            .should("have.class", "SliderWrapper__SliderContainer__Tooltip")
+            .should("have.class", "SliderTooltip")
             .should("not.be.visible")
 
         cy.dataTest("testid.SliderWrapper.SliderContainer").trigger("mouseover")

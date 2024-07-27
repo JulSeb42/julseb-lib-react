@@ -20,7 +20,9 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
         "ILibInputBase",
         "ILibInputValidationIconComponent",
     ],
-    previews: [{ previewTitle: "Default", demo: <AutocompleteDemo /> }],
+    previews: [
+        { previewTitle: "Default", demo: <AutocompleteDemo label="City" /> },
+    ],
 }
 
 function AutocompleteDemo({ ...rest }: Partial<ILibAutocomplete>) {
@@ -32,6 +34,8 @@ function AutocompleteDemo({ ...rest }: Partial<ILibAutocomplete>) {
             value={location}
             setValue={setLocation}
             listResults={frenchCities}
+            data-testid="testid"
+            className="className"
         />
     )
 }

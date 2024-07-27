@@ -36,13 +36,13 @@ interface ILibInputCounterBase
 }
 
 interface InputCounterInputEditable extends ILibInputCounterBase {
-    isInputEditable?: true | undefined
+    inputNoEdit?: true | undefined
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
 }
 
 interface InputCounterInputNotEditable extends ILibInputCounterBase {
-    isInputEditable?: false
+    inputNoEdit?: false
     inputBackground?: never
     inputVariant?: never
 }

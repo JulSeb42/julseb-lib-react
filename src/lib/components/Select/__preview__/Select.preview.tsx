@@ -32,6 +32,8 @@ function SelectDemo({ ...rest }: Partial<ILibSelect>) {
             selected={selected}
             setSelected={setSelected}
             options={options}
+            data-testid="testid"
+            className="className"
             {...rest}
         />
     )

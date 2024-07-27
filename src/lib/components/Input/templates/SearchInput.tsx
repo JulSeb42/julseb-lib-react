@@ -82,7 +82,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
             iconClear = (
                 <Close
                     data-testid={testid && `${testid}.Button.Icon`}
-                    className={className && "Button__Icon"}
+                    className={className && "Icon"}
                     size={iconClearSize}
                 />
             ),

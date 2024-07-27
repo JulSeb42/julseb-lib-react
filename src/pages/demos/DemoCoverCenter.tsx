@@ -12,6 +12,8 @@ export function DemoCoverCenter() {
                 alt="Cover"
                 alignItems="center"
                 justifyContent="center"
+                data-testid="testid"
+                className="className"
             >
                 <Text tag="h1" display>
                     Title

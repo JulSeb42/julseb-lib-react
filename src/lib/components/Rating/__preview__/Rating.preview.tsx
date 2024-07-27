@@ -25,15 +25,32 @@ export const ratingPreview: ComponentPreview<ILibRating> = {
             demo: (
                 <RatingDemo
                     icons={{ default: "heart", checked: "heart-full" }}
+                    className="hello"
                 />
             ),
         },
-        { previewTitle: "Read only", props: { rating: 3, readOnly: true } },
+        {
+            previewTitle: "Read only",
+            props: {
+                rating: 3,
+                readOnly: true,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
     ],
 }
 
 function RatingDemo({ ...rest }: Partial<Omit<ILibRating, "readOnly">>) {
     const [rating, setRating] = useState(3)
 
-    return <Rating {...rest} rating={rating} setRating={setRating} />
+    return (
+        <Rating
+            {...rest}
+            rating={rating}
+            setRating={setRating}
+            data-testid="testid"
+            className="className"
+        />
+    )
 }

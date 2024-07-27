@@ -22,6 +22,8 @@ export const cardPreview: ComponentPreview<ILibCard> = {
                 borderRadius: "m",
                 padding: "s",
                 children: <Text tag="h4">Hello World</Text>,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -35,6 +37,8 @@ export const cardPreview: ComponentPreview<ILibCard> = {
                 backgroundImg: { img: "/images/image-card.jpg" },
                 children: <Text tag="h4">Hello World</Text>,
                 textColor: "white",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -45,6 +49,8 @@ export const cardPreview: ComponentPreview<ILibCard> = {
                 padding: { topBottom: "xxl", leftRight: "xs" },
                 border: { width: 4 },
                 children: <Text>To</Text>,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -56,6 +62,8 @@ export const cardPreview: ComponentPreview<ILibCard> = {
                 shadow: "xs",
                 flexDirection: "column",
                 borderRadius: "m",
+                "data-testid": "testid",
+                className: "className",
                 children: (
                     <>
                         <Image

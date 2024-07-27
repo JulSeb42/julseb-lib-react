@@ -50,7 +50,7 @@ function StickyDemo() {
                 mauris accumsan vitae. Praesent at scelerisque elit.
             </Text>
 
-            <Sticky>
+            <Sticky data-testid="testid" className="className">
                 <Button>Sticky button</Button>
             </Sticky>
 

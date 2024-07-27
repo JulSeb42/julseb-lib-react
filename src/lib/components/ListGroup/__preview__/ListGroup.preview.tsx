@@ -73,7 +73,9 @@ export const listGroupPreview: ComponentPreview<ILibListGroup> = {
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { items } },
-        { previewTitle: "Default", demo: <ListGroup /> },
+        {
+            previewTitle: "Default",
+            props: { items, "data-testid": "testid", className: "className" },
+        },
     ],
 }

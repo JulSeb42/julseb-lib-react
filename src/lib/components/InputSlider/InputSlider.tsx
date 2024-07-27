@@ -115,7 +115,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                                 data-testid={
                                     testid && `${testid}.SliderWrapper.Min`
                                 }
-                                className={className && "SliderWrapper__Min"}
+                                className={className && "SliderMin"}
                                 {...textProps}
                             >
                                 {min}
@@ -128,10 +128,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                                     testid &&
                                     `${testid}.SliderWrapper.SliderContainer`
                                 }
-                                className={
-                                    className &&
-                                    "SliderWrapper__SliderContainer"
-                                }
+                                className={className && "SliderContainer"}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
@@ -142,10 +139,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                                         testid &&
                                         `${testid}.SliderWrapper.SliderContainer.Tooltip`
                                     }
-                                    className={
-                                        className &&
-                                        "SliderWrapper__SliderContainer__Tooltip"
-                                    }
+                                    className={className && "SliderTooltip"}
                                     $isVisible={isTooltipVisible}
                                     $value={value || 0}
                                     $max={max}
@@ -162,7 +156,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                                 data-testid={
                                     testid && `${testid}.SliderWrapper.Max`
                                 }
-                                className={className && "SliderWrapper__Max"}
+                                className={className && "SliderMax"}
                                 {...textProps}
                             >
                                 {max}

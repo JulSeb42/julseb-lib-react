@@ -48,6 +48,8 @@ function FormDemo() {
             buttonPrimary={{ text: "Submit", iconLeft: "send" }}
             buttonSecondary={{ text: "Reset", onClick: resetForm }}
             onSubmit={handleSubmit}
+            data-testid="testid"
+            className="className"
         >
             <Input
                 id="name"

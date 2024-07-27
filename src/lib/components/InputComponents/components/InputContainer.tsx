@@ -75,7 +75,7 @@ export function InputContainer({
                                 data-testid={
                                     testid && `${testid}.Label.Comment`
                                 }
-                                className={className && "Label__Comment"}
+                                className={className && "Comment"}
                             >
                                 {labelComment}
                             </LabelComment>
@@ -128,19 +128,14 @@ export function InputContainer({
                             data-testid={
                                 testid && `${testid}.HelperBottom.IconContainer`
                             }
-                            className={
-                                className && "HelperBottom__IconContainer"
-                            }
+                            className={className && "BottomIconContainer"}
                         >
                             <LibIcon
                                 data-testid={
                                     testid &&
                                     `${testid}.HelperBottom.IconContainer.Icon`
                                 }
-                                className={
-                                    className &&
-                                    "HelperBottom__IconContainer__Icon"
-                                }
+                                className={className && "HelperBottomIcon"}
                                 icon={helperBottom.icon}
                                 color={helperBottom.iconColor || "primary"}
                                 size={
@@ -154,7 +149,7 @@ export function InputContainer({
                             data-testid={
                                 testid && `${testid}.HelperBottom.Text`
                             }
-                            className={className && "HelperBottom__Text"}
+                            className={className && "HelperBottomText"}
                             color={
                                 helperBottom.textColor
                                     ? helperBottom.textColor

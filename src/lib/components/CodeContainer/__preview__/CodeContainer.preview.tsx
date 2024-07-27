@@ -21,6 +21,8 @@ export const codeContainerPreview: ComponentPreview<ILibCodeContainer> = {
             props: {
                 highlighterProps: { language: "typescript" },
                 children: code,
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

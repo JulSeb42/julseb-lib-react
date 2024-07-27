@@ -50,6 +50,8 @@ function BurgerPreview() {
                     color={c}
                     isOpen={isOpen[c]}
                     onClick={() => setIsOpen({ ...isOpen, [c]: !isOpen[c] })}
+                    data-testid="testid"
+                    className="className"
                     key={i}
                 />
             ))}

@@ -113,7 +113,17 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
                         data-testid={testid && `${testid}.SubmitButton`}
                         className={className && "SubmitButton"}
                         type="submit"
-                        icon={button?.icon || <Send size={roundIconSize(32)} />}
+                        icon={
+                            button?.icon || (
+                                <Send
+                                    data-testid={
+                                        testid && `${testid}.SubmitButton.Icon`
+                                    }
+                                    className={className && "IconSubmit"}
+                                    size={roundIconSize(32)}
+                                />
+                            )
+                        }
                         disabled={!input.message.length}
                         size={32}
                         variant="transparent"

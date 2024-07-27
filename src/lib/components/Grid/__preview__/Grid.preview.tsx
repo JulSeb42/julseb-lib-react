@@ -21,6 +21,8 @@ export const gridPreview: ComponentPreview<ILibGrid> = {
                 col: 3,
                 columnGap: "s",
                 rowGap: "xxl",
+                "data-testid": "testid",
+                className: "className",
                 children: (
                     <>
                         <GridItem />

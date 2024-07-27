@@ -30,7 +30,7 @@ function EmptyContainer({
     icon = (
         <Image
             data-testid={testid && `${testid}.EmptyContainer.Icon`}
-            className={className && "EmptyContainer__Icon"}
+            className={className && "IconEmpty"}
             size={iconSize}
         />
     ),
@@ -41,7 +41,12 @@ function EmptyContainer({
             className={className && "EmptyContainer"}
             $validation={validation}
         >
-            <LibIcon icon={icon} size={iconSize} />
+            <LibIcon
+                data-testid={testid && `${testid}.EmptyContainer.Icon`}
+                className={className && "IconEmpty"}
+                icon={icon}
+                size={iconSize}
+            />
         </StyledEmptyContainer>
     )
 }
@@ -54,7 +59,7 @@ function HoverContainer({
     icon = (
         <Edit
             data-testid={testid && `${testid}.HoverContainer.Icon`}
-            className={className && "HoverContainer__Icon"}
+            className={className && "IconHover"}
             size={iconSize}
         />
     ),
@@ -72,7 +77,12 @@ function HoverContainer({
             $isVisible={isVisible}
             $disabled={disabled}
         >
-            <LibIcon icon={icon} size={iconSize} />
+            <LibIcon
+                data-testid={testid && `${testid}.EmptyContainer.Icon`}
+                className={className && "IconEmpty"}
+                icon={icon}
+                size={iconSize}
+            />
         </StyledHoverContainer>
     )
 }
@@ -174,10 +184,10 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                         />
                     ) : (
                         <StyledImage
-                            src={value}
-                            alt="Image input"
                             data-testid={testid && `${testid}.Image`}
                             className={className && "Image"}
+                            src={value}
+                            alt="Image input"
                             $disabled={disabled}
                         />
                     )}

@@ -55,7 +55,13 @@ function BadgePreview(props: ILibBadge) {
     return (
         <Flexbox gap="s" flexWrap="wrap">
             {arr.map((c, i) => (
-                <Badge backgroundColor={c} {...props} key={i} />
+                <Badge
+                    key={i}
+                    data-testid="testid"
+                    className="className"
+                    {...props}
+                    backgroundColor={c}
+                />
             ))}
         </Flexbox>
     )

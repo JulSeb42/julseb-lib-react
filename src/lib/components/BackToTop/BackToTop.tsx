@@ -18,7 +18,15 @@ import { roundIconSize } from "../../lib-utils"
 export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
     (
         {
-            icon = <ArrowUp size={roundIconSize(48)} />,
+            "data-testid": testid,
+            className,
+            icon = (
+                <ArrowUp
+                    size={roundIconSize(48)}
+                    data-testid={testid && `${testid}.Button.Icon`}
+                    className={className && "IconArrowUp"}
+                />
+            ),
             tooltip = "Back to top",
             showTooltip,
             ...rest
@@ -64,6 +72,8 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
 
         return (
             <StyledBackToTop
+                data-testid={testid}
+                className={className}
                 ref={ref}
                 icon={icon}
                 onClick={smoothScroll}

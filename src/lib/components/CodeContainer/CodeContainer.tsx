@@ -59,6 +59,8 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                     copyButton.iconCopied
                 ) : (
                     <Clipboard
+                        data-testid={testid && `${testid}.CopyButton.IconCopy`}
+                        className={className && "IconCopy"}
                         size={
                             typeof copyButton === "object" &&
                             copyButton.iconSizeCopy
@@ -83,6 +85,10 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                     copyButton.iconCopied
                 ) : (
                     <Check
+                        data-testid={
+                            testid && `${testid}.CopyButton.IconCopied`
+                        }
+                        className={className && "IconCopied"}
                         size={
                             typeof copyButton === "object" &&
                             copyButton.iconSizeCopy

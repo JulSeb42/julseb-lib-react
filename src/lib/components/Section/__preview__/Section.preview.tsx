@@ -27,6 +27,8 @@ export const sectionPreview: ComponentPreview<ILibSection> = {
                     <Text>Content</Text>
                 </>
             ),
+            "data-testid": "testid",
+            className: "className",
         },
     })),
 }

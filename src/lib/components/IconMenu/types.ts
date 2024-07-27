@@ -46,7 +46,7 @@ export type ILibIconMenu = IconMenuWithItems | IconMenuWithChildren
 /*====================== IconMenu ======================*/
 
 export type ILibIconMenuItem = ILibButtonIcon &
-    LibIconMenuItem & {
+    Omit<LibIconMenuItem, "ref"> & {
         indexPosition: number
         isOpen: boolean
         direction?: LibIconMenuDirection

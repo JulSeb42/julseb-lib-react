@@ -58,7 +58,7 @@ export function SelectButton({
             }
             className={
                 (hasContainer || hasWrapper || hasIcon) && className
-                    ? "SelectContainer__SelectButton"
+                    ? "SelectButton"
                     : className
             }
             onClick={handleClickButton}

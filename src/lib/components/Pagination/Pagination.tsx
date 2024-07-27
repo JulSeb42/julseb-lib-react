@@ -84,10 +84,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                             data-testid={
                                 testid && `${testid}.PaginationButton.Previous`
                             }
-                            className={
-                                className &&
-                                "PaginationButton PaginationButton__Previous"
-                            }
+                            className={className && "ButtonPrevious"}
                             onClick={handlePrev}
                             isActive={false}
                             disabled={page === 1}
@@ -98,10 +95,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                     testid &&
                                     `${testid}.PaginationButton.Previous.Icon`
                                 }
-                                className={
-                                    className &&
-                                    "PaginationButton PaginationButton__Previous__Icon"
-                                }
+                                className={className && "IconPrevious"}
                                 size={roundIconSize(iconSizes?.previous || 32)}
                                 icon={
                                     icons?.previous || (
@@ -111,8 +105,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                                 `${testid}.PaginationButton.Previous.Icon`
                                             }
                                             className={
-                                                className &&
-                                                "PaginationButton PaginationButton__Previous__Icon"
+                                                className && "IconPrevious"
                                             }
                                             size={roundIconSize(
                                                 iconSizes?.previous || 32
@@ -134,10 +127,9 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                     }
                                     className={
                                         className &&
-                                        classNames(
-                                            `PaginationButton PaginationButton__Number`,
-                                            { Active: page === 1 }
-                                        )
+                                        classNames(`Number`, {
+                                            Active: page === 1,
+                                        })
                                     }
                                     isActive={page === 1}
                                     onClick={() => handlePage(1)}
@@ -151,10 +143,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                         testid &&
                                         `${testid}.PaginationButton.More`
                                     }
-                                    className={
-                                        className &&
-                                        "PaginationButton PaginationButton__More"
-                                    }
+                                    className={className && "More"}
                                     accentColor={accentColor}
                                     readOnly
                                 >
@@ -173,10 +162,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                 }
                                 className={
                                     className &&
-                                    classNames(
-                                        "PaginationButton PaginationButton__Number",
-                                        { Active: page === n }
-                                    )
+                                    classNames("Number", { Active: page === n })
                                 }
                                 isActive={n === page}
                                 onClick={() => handlePage(n)}
@@ -195,10 +181,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                         testid &&
                                         `${testid}.PaginationButton.More`
                                     }
-                                    className={
-                                        className &&
-                                        "PaginationButton PaginationButton__More"
-                                    }
+                                    className={className && "More"}
                                     accentColor={accentColor}
                                     readOnly
                                 >
@@ -212,10 +195,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                             page === totalPages ? ".Active" : ""
                                         }`
                                     }
-                                    className={
-                                        className &&
-                                        "PaginationButton PaginationButton__Number"
-                                    }
+                                    className={className && "Number"}
                                     isActive={page === totalPages}
                                     onClick={() => handlePage(totalPages)}
                                     accentColor={accentColor}
@@ -229,10 +209,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                             data-testid={
                                 testid && `${testid}.PaginationButton.Next`
                             }
-                            className={
-                                className &&
-                                "PaginationButton PaginationButton__Next"
-                            }
+                            className={className && "ButtonNext"}
                             onClick={handleNext}
                             isActive={false}
                             disabled={page === totalPages}
@@ -243,10 +220,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                     testid &&
                                     `${testid}.PaginationButton.Next.Icon`
                                 }
-                                className={
-                                    className &&
-                                    "PaginationButton PaginationButton__Next__Icon"
-                                }
+                                className={className && "IconNext"}
                                 size={roundIconSize(iconSizes?.next || 32)}
                                 icon={
                                     icons?.next || (
@@ -255,10 +229,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                                 testid &&
                                                 `${testid}.PaginationButton.Next.Icon`
                                             }
-                                            className={
-                                                className &&
-                                                "PaginationButton PaginationButton__Next__Icon"
-                                            }
+                                            className={className && "IconNext"}
                                             size={roundIconSize(
                                                 iconSizes?.next || 32
                                             )}

@@ -199,9 +199,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                                     testid &&
                                                     `${testid}.Button.Caret`
                                                 }
-                                                className={
-                                                    className && "Button__Caret"
-                                                }
+                                                className={className && "Caret"}
                                                 size={
                                                     iconSizes?.caret ||
                                                     defaultIconSizes.caret

@@ -27,11 +27,34 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                     icon: "check",
                     iconColor: "success",
                 },
+                "data-testid": "testid",
+                className: "className",
             },
         },
-        { previewTitle: "File", props: { type: "file" } },
-        { previewTitle: "Disabled", props: { disabled: true } },
-        { previewTitle: "With icon", props: { icon: "mail" } },
+        {
+            previewTitle: "File",
+            props: {
+                type: "file",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+        {
+            previewTitle: "Disabled",
+            props: {
+                disabled: true,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+        {
+            previewTitle: "With icon",
+            props: {
+                icon: "mail",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Focus on keypress",
             props: {
@@ -39,17 +62,44 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 showKeys: true,
                 type: "search",
                 icon: "search",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "Date & time",
             demo: (
                 <>
-                    <Input id="input-date" type="date" />
-                    <Input id="input-datetime" type="datetime-local" />
-                    <Input id="input-month" type="month" />
-                    <Input id="input-week" type="week" />
-                    <Input id="input-time" type="time" />
+                    <Input
+                        id="input-date"
+                        type="date"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Input
+                        id="input-datetime"
+                        type="datetime-local"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Input
+                        id="input-month"
+                        type="month"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Input
+                        id="input-week"
+                        type="week"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Input
+                        id="input-time"
+                        type="time"
+                        data-testid="testid"
+                        className="className"
+                    />
                 </>
             ),
         },
@@ -60,21 +110,53 @@ export const inputPreview: ComponentPreview<ILibInput> = {
         },
         {
             previewTitle: "Password",
-            props: { type: "password", inputBackground: "dark" },
+            props: {
+                type: "password",
+                inputBackground: "dark",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
-        { previewTitle: "Pill", props: { inputVariant: "pill" } },
+        {
+            previewTitle: "Pill",
+            props: {
+                inputVariant: "pill",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "With background light",
-            props: { inputBackground: "light" },
+            props: {
+                inputBackground: "light",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "With background dark",
-            props: { inputBackground: "dark" },
+            props: {
+                inputBackground: "dark",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "Select",
-            props: { type: "select", children: <option value="1">1</option> },
+            props: {
+                type: "select",
+                children: <option value="1">1</option>,
+                "data-testid": "testid",
+                className: "className",
+            },
         },
-        { previewTitle: "Textarea", props: { type: "textarea" } },
+        {
+            previewTitle: "Textarea",
+            props: {
+                type: "textarea",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
     ],
 }

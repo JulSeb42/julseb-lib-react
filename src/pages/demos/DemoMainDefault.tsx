@@ -6,8 +6,8 @@ import { BasePage, StyledWrapper, StyledMain } from "../../components"
 export function DemoMainDefault() {
     return (
         <BasePage title="Demo Main Default">
-            <StyledWrapper>
-                <StyledMain>
+            <StyledWrapper data-testid="testid" className="className">
+                <StyledMain data-testid="testid" className="className">
                     <Text tag="h2">Main</Text>
                 </StyledMain>
             </StyledWrapper>

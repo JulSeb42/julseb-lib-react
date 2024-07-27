@@ -20,6 +20,8 @@ export const linkifyPreview: ComponentPreview<ILibLinkify> = {
             props: {
                 children: "Hello world https://julien-sebag.com/ foo baz",
                 blank: true,
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

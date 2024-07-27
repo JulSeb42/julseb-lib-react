@@ -24,7 +24,12 @@ export const keyPreview: ComponentPreview<ILibKey> = {
     previews: [
         ...sizes.map(size => ({
             previewTitle: capitalize(size),
-            props: { keys, size },
+            props: {
+                keys,
+                size,
+                "data-testid": "testid",
+                className: "className",
+            },
         })),
         ...sizes.map(size => ({
             previewTitle: `${capitalize(size)} with separator`,
@@ -32,6 +37,8 @@ export const keyPreview: ComponentPreview<ILibKey> = {
                 keys,
                 size,
                 withSeparator: true,
+                "data-testid": "testid",
+                className: "className",
             },
         })),
     ],

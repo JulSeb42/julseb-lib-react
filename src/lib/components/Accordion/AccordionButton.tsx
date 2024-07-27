@@ -35,7 +35,7 @@ export function AccordionButton({
             `${testid}.AccordionButton.IconContainer.Icon.${
                 icon === "plus" ? "Plus" : "Chevron"
             }`,
-        className: className && "AccordionButton__IconContainer__Icon",
+        className: className && "AccordionButtonIcon",
         size: 20,
     }
 
@@ -56,7 +56,7 @@ export function AccordionButton({
                 data-testid={
                     testid && `${testid}.AccordionButton.IconContainer`
                 }
-                className={className && "AccordionButton__IconContainer"}
+                className={className && "AccordionButtonIconContainer"}
                 $isOpen={isOpen}
                 $icon={icon}
             >

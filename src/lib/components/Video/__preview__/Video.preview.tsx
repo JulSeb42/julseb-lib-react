@@ -22,7 +22,14 @@ export const videoPreview: ComponentPreview<ILibVideo> = {
         "SourceHTMLAttributes<HTMLVideoElement>",
     ],
     previews: [
-        { previewTitle: "Default", props: { src: VIDEO_SRC } },
+        {
+            previewTitle: "Default",
+            props: {
+                src: VIDEO_SRC,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Autoplay",
             props: {
@@ -30,6 +37,8 @@ export const videoPreview: ComponentPreview<ILibVideo> = {
                 height: "40vw",
                 autoPlay: true,
                 fit: "cover",
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

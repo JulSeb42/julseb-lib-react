@@ -6,8 +6,7 @@ import type { LibValidationStatus } from "../../../types"
 
 export function InputDemoValidation() {
     const [input, setInput] = useState("")
-    const [validation, setValidation] =
-        useState<LibValidationStatus>(false)
+    const [validation, setValidation] = useState<LibValidationStatus>(false)
 
     const handleValidate = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value)
@@ -28,6 +27,8 @@ export function InputDemoValidation() {
             }}
             value={input}
             onChange={handleValidate}
+            data-testid="testid"
+            className="className"
         />
     )
 }
@@ -42,6 +43,8 @@ export function InputDemoCounter() {
             maxLength={140}
             value={input}
             onChange={e => setInput(e.target.value)}
+            data-testid="testid"
+            className="className"
         />
     )
 }

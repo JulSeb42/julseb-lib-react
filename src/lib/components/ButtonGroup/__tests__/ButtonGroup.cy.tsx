@@ -65,7 +65,7 @@ describe("<ButtonGroup />", () => {
         cy.dataTest().should("have.css", "height", "24px")
         firstButton()
             .should("have.attr", "data-testid", "testid.Button.0")
-            .should("have.class", "Button__0")
+            .should("have.class", "Button")
         firstButton().children().should("have.prop", "tagName", "svg")
 
         firstButton().click()
@@ -84,7 +84,7 @@ describe("<ButtonGroup />", () => {
 
         secondButton()
             .should("have.attr", "data-testid", "testid.Button.1")
-            .should("have.class", "Button__1")
+            .should("have.class", "Button")
             .should(
                 "have.css",
                 "background-color",
@@ -117,7 +117,7 @@ describe("<ButtonGroup />", () => {
             .eq(1)
             .should("have.prop", "tagName", "HR")
             .should("have.attr", "data-testid", "testid.Separator.0")
-            .should("have.class", "Separator__0")
+            .should("have.class", "Separator")
 
         cy.dataTest("testid.Button.2")
             .should("have.prop", "tagName", "A")
@@ -142,7 +142,7 @@ describe("<ButtonGroup />", () => {
         )
         fourthButton()
             .should("have.attr", "data-testid", "testid.Button.3")
-            .should("have.class", "Button__3")
+            .should("have.class", "Button")
             .should("have.attr", "href", "/")
     })
 })

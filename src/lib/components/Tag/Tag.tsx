@@ -71,7 +71,7 @@ export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
                 {icons?.left && (
                     <LibIcon
                         data-testid={testid && `${testid}.Icon.Left`}
-                        className={className && "Icon__Left"}
+                        className={className && "IconLeft"}
                         icon={icons.left}
                         size={iconSizes?.left}
                     />
@@ -82,7 +82,7 @@ export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
                 {icons?.right && (
                     <LibIcon
                         data-testid={testid && `${testid}.Icon.Right`}
-                        className={className && "Icon__Right"}
+                        className={className && "IconRight"}
                         icon={icons.right}
                         size={iconSizes?.right}
                     />

@@ -113,7 +113,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                                     data-testid={
                                         testid && `${testid}.ScrollButton.Icon`
                                     }
-                                    className={className && "Icon"}
+                                    className={className && "ScrollIcon"}
                                     size={roundIconSize(32)}
                                 />
                             )

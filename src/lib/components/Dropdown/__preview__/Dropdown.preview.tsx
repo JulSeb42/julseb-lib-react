@@ -39,13 +39,18 @@ function DropdownDemo() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <DropdownContainer isOpen={isOpen}>
+        <DropdownContainer
+            isOpen={isOpen}
+            data-testid="testid"
+            className="className"
+        >
             <Button onClick={() => setIsOpen(!isOpen)}>Open</Button>
             <Dropdown
                 items={items}
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
                 data-testid="testid.Dropdown"
+                className="Dropdown"
             />
         </DropdownContainer>
     )

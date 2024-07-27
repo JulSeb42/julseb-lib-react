@@ -164,7 +164,11 @@ export function BackToTopDemo() {
                         nibh. Duis vel neque tellus.
                     </Text>
 
-                    <BackToTop tooltip="Back to top" />
+                    <BackToTop
+                        tooltip="Back to top"
+                        data-testid="testid"
+                        className="className"
+                    />
                 </Main>
             </Wrapper>
         </BasePage>

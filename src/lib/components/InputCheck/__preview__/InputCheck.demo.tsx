@@ -28,7 +28,13 @@ function FlexDemo({
 export function InputCheckDemoCheckbox() {
     return (
         <FlexDemo>
-            <InputCheck id="checkbox-1" name="checkbox-demo-1" type="checkbox">
+            <InputCheck
+                id="checkbox-1"
+                name="checkbox-demo-1"
+                type="checkbox"
+                data-testid="testid"
+                className="className"
+            >
                 Checkbox
             </InputCheck>
             <InputCheck
@@ -36,6 +42,8 @@ export function InputCheckDemoCheckbox() {
                 name="checkbox-demo-1"
                 type="checkbox"
                 defaultChecked
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -44,6 +52,8 @@ export function InputCheckDemoCheckbox() {
                 name="checkbox-demo-2"
                 type="checkbox"
                 validation={false}
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -53,6 +63,8 @@ export function InputCheckDemoCheckbox() {
                 type="checkbox"
                 validation={false}
                 defaultChecked
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -61,6 +73,8 @@ export function InputCheckDemoCheckbox() {
                 name="checkbox-demo-3"
                 type="checkbox"
                 disabled
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -70,6 +84,8 @@ export function InputCheckDemoCheckbox() {
                 type="checkbox"
                 defaultChecked
                 disabled
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -80,7 +96,13 @@ export function InputCheckDemoCheckbox() {
 export function InputCheckDemoRadio() {
     return (
         <FlexDemo>
-            <InputCheck id="radio-1" name="radio-demo-1" type="radio">
+            <InputCheck
+                id="radio-1"
+                name="radio-demo-1"
+                type="radio"
+                data-testid="testid"
+                className="className"
+            >
                 Radio
             </InputCheck>
             <InputCheck
@@ -88,6 +110,8 @@ export function InputCheckDemoRadio() {
                 name="radio-demo-1"
                 type="radio"
                 defaultChecked
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -96,6 +120,8 @@ export function InputCheckDemoRadio() {
                 name="radio-demo-2"
                 type="radio"
                 validation={false}
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -105,10 +131,19 @@ export function InputCheckDemoRadio() {
                 type="radio"
                 validation={false}
                 defaultChecked
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
-            <InputCheck id="radio-5" name="radio-demo-3" type="radio" disabled>
+            <InputCheck
+                id="radio-5"
+                name="radio-demo-3"
+                type="radio"
+                disabled
+                data-testid="testid"
+                className="className"
+            >
                 Radio
             </InputCheck>
             <InputCheck
@@ -117,6 +152,8 @@ export function InputCheckDemoRadio() {
                 type="radio"
                 defaultChecked
                 disabled
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -133,6 +170,8 @@ export function InputCheckDemoCheckboxTile() {
                 name="checkbox-tile-demo-1"
                 type="checkbox"
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -142,6 +181,8 @@ export function InputCheckDemoCheckboxTile() {
                 type="checkbox"
                 defaultChecked
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -151,6 +192,8 @@ export function InputCheckDemoCheckboxTile() {
                 type="checkbox"
                 validation={false}
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -161,6 +204,8 @@ export function InputCheckDemoCheckboxTile() {
                 validation={false}
                 defaultChecked
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -170,6 +215,8 @@ export function InputCheckDemoCheckboxTile() {
                 type="checkbox"
                 disabled
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -180,6 +227,8 @@ export function InputCheckDemoCheckboxTile() {
                 defaultChecked
                 disabled
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -195,6 +244,8 @@ export function InputCheckDemoRadioTile() {
                 name="radio-tile-demo-1"
                 type="radio"
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -204,6 +255,8 @@ export function InputCheckDemoRadioTile() {
                 type="radio"
                 defaultChecked
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -213,6 +266,8 @@ export function InputCheckDemoRadioTile() {
                 type="radio"
                 validation={false}
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -223,6 +278,8 @@ export function InputCheckDemoRadioTile() {
                 validation={false}
                 defaultChecked
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -232,6 +289,8 @@ export function InputCheckDemoRadioTile() {
                 type="radio"
                 disabled
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -242,6 +301,8 @@ export function InputCheckDemoRadioTile() {
                 defaultChecked
                 disabled
                 variant="tile"
+                data-testid="testid"
+                className="className"
             >
                 Radio
             </InputCheck>
@@ -257,6 +318,8 @@ export function InputCheckDemoCheckboxToggle() {
                 name="checkbox-toggle-demo-1"
                 type="checkbox"
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -266,6 +329,8 @@ export function InputCheckDemoCheckboxToggle() {
                 type="checkbox"
                 defaultChecked
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -275,6 +340,8 @@ export function InputCheckDemoCheckboxToggle() {
                 type="checkbox"
                 validation={false}
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -285,6 +352,8 @@ export function InputCheckDemoCheckboxToggle() {
                 validation={false}
                 defaultChecked
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -294,6 +363,8 @@ export function InputCheckDemoCheckboxToggle() {
                 type="checkbox"
                 disabled
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -304,6 +375,8 @@ export function InputCheckDemoCheckboxToggle() {
                 defaultChecked
                 disabled
                 variant="toggle"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -319,6 +392,8 @@ export function InputCheckDemoCheckboxSelector() {
                 name="checkbox-selector-demo-1"
                 type="checkbox"
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -328,6 +403,8 @@ export function InputCheckDemoCheckboxSelector() {
                 type="checkbox"
                 defaultChecked
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -337,6 +414,8 @@ export function InputCheckDemoCheckboxSelector() {
                 type="checkbox"
                 validation={false}
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -347,6 +426,8 @@ export function InputCheckDemoCheckboxSelector() {
                 validation={false}
                 defaultChecked
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -356,6 +437,8 @@ export function InputCheckDemoCheckboxSelector() {
                 type="checkbox"
                 disabled
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>
@@ -366,6 +449,8 @@ export function InputCheckDemoCheckboxSelector() {
                 defaultChecked
                 disabled
                 variant="selector"
+                data-testid="testid"
+                className="className"
             >
                 Checkbox
             </InputCheck>

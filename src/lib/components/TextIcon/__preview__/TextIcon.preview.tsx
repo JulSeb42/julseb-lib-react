@@ -21,6 +21,8 @@ export const textIconPreview: ComponentPreview<ILibTextIcon> = {
                 tag: "h3",
                 gap: "l",
                 children: "Hello",
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

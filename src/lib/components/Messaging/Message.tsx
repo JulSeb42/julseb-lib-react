@@ -58,7 +58,7 @@ export const Message = forwardRef<HTMLDivElement, ILibMessage>(
             >
                 <StyledMessage
                     data-testid={testid && `${testid}.Message`}
-                    className={className && "Message"}
+                    className={className && "MessageText"}
                     $messageType={type}
                 >
                     {text ? linkifyText(text, true) : children}

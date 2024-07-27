@@ -22,6 +22,11 @@ export function InputValidationIcon({
     validationIcon,
     inputBackground,
 }: ILibInputValidationIcon) {
+    const commonIconProps = {
+        className: className && "ValidationIcon",
+        size: 16,
+    }
+
     return (
         <StyledInputValidationIcon
             data-testid={testid && `${testid}.ValidationIconContainer`}
@@ -31,7 +36,7 @@ export function InputValidationIcon({
         >
             <LibIcon
                 data-testid={testid && `${testid}.ValidationIconContainer.Icon`}
-                className={className && "ValidationIconContainer__Icon"}
+                className={className && "Icon"}
                 icon={
                     status === false
                         ? validationIcon?.iconValidationNotPassed || (
@@ -40,10 +45,7 @@ export function InputValidationIcon({
                                       testid &&
                                       `${testid}.Validation.NotPassed.Icon`
                                   }
-                                  className={
-                                      className && "Validation__NotPassed__Icon"
-                                  }
-                                  size={16}
+                                  {...commonIconProps}
                               />
                           )
                         : validationIcon?.iconValidationPassed || (
@@ -52,10 +54,7 @@ export function InputValidationIcon({
                                       testid &&
                                       `${testid}.Validation.Passed.Icon`
                                   }
-                                  className={
-                                      className && "Validation__Passed__Icon"
-                                  }
-                                  size={16}
+                                  {...commonIconProps}
                               />
                           )
                 }

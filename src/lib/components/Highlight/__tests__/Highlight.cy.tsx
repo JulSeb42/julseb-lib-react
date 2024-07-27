@@ -18,7 +18,7 @@ describe("<Highlight />", () => {
             .should("have.class", "className")
             .children()
             .should("have.prop", "tagName", "STRONG")
-            .should("have.class", "className__Highlight")
+            .should("have.class", "Highlight")
     })
 
     it("highlights selected text", () => {

@@ -64,7 +64,7 @@ export const ListGroupItem = forwardRef<
 
         const badgeProps: ILibBadge = {
             "data-testid": testid && `${testid}.Content.RightContainer.Badge`,
-            className: className && "Content__RightContainer__Badge",
+            className: className && "Badge",
             backgroundColor:
                 typeof badge === "object" ? badge?.backgroundColor : undefined,
             contentColor:
@@ -77,11 +77,7 @@ export const ListGroupItem = forwardRef<
                     isInArray && testid ? `${testid}.ListGroupItem` : testid
                 }
                 ref={ref}
-                className={
-                    isInArray && className
-                        ? `${className}__ListGroupItem`
-                        : className
-                }
+                className={isInArray && className ? `${className}` : className}
                 as={
                     as
                         ? as
@@ -111,7 +107,7 @@ export const ListGroupItem = forwardRef<
                             data-testid={
                                 testid && `${testid}.Content.LeftContainer`
                             }
-                            className={className && "Content__LeftContainer"}
+                            className={className && "LeftContainer"}
                         >
                             {number}.
                         </LeftContainer>
@@ -119,7 +115,7 @@ export const ListGroupItem = forwardRef<
 
                     <Text
                         data-testid={testid && `${testid}.Content.Text`}
-                        className={className && "Content__Text"}
+                        className={className && "Text"}
                         tag="h6"
                         as="p"
                     >
@@ -131,7 +127,7 @@ export const ListGroupItem = forwardRef<
                             data-testid={
                                 testid && `${testid}.Content.RightContainer`
                             }
-                            className={className && "Content__RightContainer"}
+                            className={className && "RightContainer"}
                         >
                             {badge &&
                                 (typeof badge === "object" ? (
@@ -151,10 +147,7 @@ export const ListGroupItem = forwardRef<
                                         testid &&
                                         `${testid}.Content.RightContainer.Date`
                                     }
-                                    className={
-                                        className &&
-                                        "Content__RightContainer__Date"
-                                    }
+                                    className={className && "Date"}
                                     tag="small"
                                     color="gray"
                                 >

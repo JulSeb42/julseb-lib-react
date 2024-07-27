@@ -21,7 +21,12 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
     extends: ["HTMLDivElement"],
     previews: [
         ...colors.map(c => ({
-            props: { alertColor: c, children: `Alert ${c}` },
+            props: {
+                alertColor: c,
+                children: `Alert ${c}`,
+                "data-testid": "testid",
+                className: "className",
+            },
         })),
         { previewTitle: "With buttons", demo: <DemoAlertButtons /> },
     ],
@@ -29,7 +34,7 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
 
 function DemoAlertButtons() {
     return (
-        <Alert alertColor="danger">
+        <Alert alertColor="danger" data-testid="testid" className="className">
             <Text>Alert with button</Text>
 
             <Flexbox alignItems="center" gap="xs">

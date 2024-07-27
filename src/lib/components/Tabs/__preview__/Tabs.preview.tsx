@@ -43,11 +43,22 @@ export const tabsPreview: ComponentPreview<ILibTabs> = {
     previews: [
         {
             previewTitle: "Basic",
-            props: { tabsItems, showInUrl: true },
+            props: {
+                tabsItems,
+                showInUrl: true,
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "Rounded",
-            props: { tabsItems, variant: "rounded", justify: "stretch" },
+            props: {
+                tabsItems,
+                variant: "rounded",
+                justify: "stretch",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

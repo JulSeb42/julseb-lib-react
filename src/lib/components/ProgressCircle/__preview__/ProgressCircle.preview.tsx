@@ -17,7 +17,11 @@ export const progressCirclePreview: ComponentPreview<ILibProgressCircle> = {
     previews: [
         {
             previewTitle: "Default",
-            props: { value: getRandomNumber() },
+            props: {
+                value: getRandomNumber(),
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "Different color",
@@ -25,15 +29,27 @@ export const progressCirclePreview: ComponentPreview<ILibProgressCircle> = {
                 value: getRandomNumber(),
                 color: "secondary",
                 showValue: true,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "Without animation",
-            props: { value: getRandomNumber(), animated: false },
+            props: {
+                value: getRandomNumber(),
+                animated: false,
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "With icon",
-            props: { value: getRandomNumber(), icon: "check" },
+            props: {
+                value: getRandomNumber(),
+                icon: "check",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

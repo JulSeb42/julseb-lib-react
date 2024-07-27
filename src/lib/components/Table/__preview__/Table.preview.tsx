@@ -70,14 +70,35 @@ export const tablePreview: ComponentPreview<ILibTable> = {
     additionalTypeImports: null,
     extends: ["HTMLTableElement"],
     previews: [
-        { previewTitle: "Default", props: { headers, data, linkify: true } },
+        {
+            previewTitle: "Default",
+            props: {
+                headers,
+                data,
+                linkify: true,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Border bottom",
-            props: { headers, data, variant: "border-bottom" },
+            props: {
+                headers,
+                data,
+                variant: "border-bottom",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "Stripped",
-            props: { headers, data, variant: "stripped" },
+            props: {
+                headers,
+                data,
+                variant: "stripped",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

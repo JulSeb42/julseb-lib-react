@@ -18,7 +18,14 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [
-        { previewTitle: "With img", props: { img: IMG_URL } },
+        {
+            previewTitle: "With img",
+            props: {
+                img: IMG_URL,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "With img and badge",
             props: {
@@ -32,15 +39,17 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
                     size: 16,
                     position: "bottom",
                 },
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "With letter",
-            demo: AvatarPreview({ letter: "A" }),
+            demo: <AvatarPreview letter="A" />,
         },
         {
             previewTitle: "With icon",
-            demo: AvatarPreview({ icon: "user", size: 64 }),
+            demo: <AvatarPreview icon="user" size={64} />,
         },
     ],
 }
@@ -51,7 +60,13 @@ function AvatarPreview(props: Omit<ILibAvatar, "img">) {
     return (
         <Flexbox gap="s">
             {arr.map((c, i) => (
-                <Avatar key={i} backgroundColor={c} {...(props as any)} />
+                <Avatar
+                    key={i}
+                    backgroundColor={c}
+                    data-testid="testid"
+                    className="className"
+                    {...(props as any)}
+                />
             ))}
         </Flexbox>
     )

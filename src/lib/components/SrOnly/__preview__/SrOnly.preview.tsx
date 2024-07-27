@@ -15,6 +15,14 @@ export const srOnlyPreview: ComponentPreview<ILibSrOnly> = {
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { children: "Hello", as: "h1" } },
+        {
+            previewTitle: "Default",
+            props: {
+                children: "Hello",
+                as: "h1",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
     ],
 }

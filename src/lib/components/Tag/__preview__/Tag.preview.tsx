@@ -31,7 +31,12 @@ export const tagPreview: ComponentPreview<ILibTag> = {
             previewTitle: "With icons",
             props: {
                 children: "Tag",
-                icons: { left: "chevron-right", right: "close" },
+                icons: {
+                    left: "chevron-right",
+                    right: "close",
+                },
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],
@@ -43,7 +48,13 @@ function TagDemo({ ...rest }: ILibTag) {
     return (
         <Flexbox gap="xs" alignItems="flex-start">
             {colors.map(c => (
-                <Tag key={c} backgroundColor={c} {...rest}>
+                <Tag
+                    key={c}
+                    backgroundColor={c}
+                    {...rest}
+                    data-testid="testid"
+                    className="className"
+                >
                     Tag
                 </Tag>
             ))}

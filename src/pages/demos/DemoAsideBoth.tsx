@@ -11,16 +11,24 @@ import {
 export function DemoAsideBoth() {
     return (
         <BasePage title="Demo Aside Both Sides">
-            <StyledWrapper>
-                <StyledAside size={100}>
+            <StyledWrapper data-testid="testid" className="className">
+                <StyledAside
+                    size={100}
+                    data-testid="testid"
+                    className="className"
+                >
                     <Text tag="h2">Aside</Text>
                 </StyledAside>
 
-                <StyledMain>
+                <StyledMain data-testid="testid" className="className">
                     <Text tag="h2">Main</Text>
                 </StyledMain>
 
-                <StyledAside size={100}>
+                <StyledAside
+                    size={100}
+                    data-testid="testid"
+                    className="className"
+                >
                     <Text tag="h2">Aside</Text>
                 </StyledAside>
             </StyledWrapper>

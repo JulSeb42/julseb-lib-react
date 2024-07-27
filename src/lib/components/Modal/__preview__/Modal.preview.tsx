@@ -47,7 +47,13 @@ function ModalDemo(rest: Partial<ILibModal>) {
     return (
         <>
             <Button onClick={() => setIsOpen(true)}>Open modal</Button>
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen} {...rest} />
+            <Modal
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                data-testid="testid"
+                className="className"
+                {...rest}
+            />
         </>
     )
 }
@@ -66,7 +72,13 @@ function ModalDemoAlert() {
                 Open modal
             </Button>
 
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen} contentWidth="100%">
+            <Modal
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                contentWidth="100%"
+                data-testid="testid"
+                className="className"
+            >
                 <Alert maxWidth={400} alertColor="danger">
                     <Text>Modal content</Text>
 

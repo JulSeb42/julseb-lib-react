@@ -30,7 +30,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
             iconClock = (
                 <Clock
                     data-testid={testid && `${testid}.Button.Icon`}
-                    className={className && "Button__Icon"}
+                    className={className && "Icon"}
                     size={iconClockSize}
                 />
             ),

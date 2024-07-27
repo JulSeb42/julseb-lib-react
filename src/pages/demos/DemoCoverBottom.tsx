@@ -12,6 +12,8 @@ export function DemoCoverBottom() {
                 alignItems="flex-start"
                 justifyContent="flex-end"
                 height="70vh"
+                data-testid="testid"
+                className="className"
             >
                 <Text tag="h1" display>
                     Title

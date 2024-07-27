@@ -32,6 +32,8 @@ export const iconPreview: ComponentPreview<ILibIcon> = {
                 src: "arrow-left",
                 color: "success",
                 size: 120,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -41,6 +43,8 @@ export const iconPreview: ComponentPreview<ILibIcon> = {
                 baseURL: "icons-alt",
                 color: "danger",
                 size: 48,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {

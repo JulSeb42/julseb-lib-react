@@ -38,12 +38,7 @@ export const Key = forwardRef<HTMLSpanElement, ILibKey>(
                 $accentColor={accentColor}
                 {...rest}
             >
-                {keys.map(
-                    (key, i) =>
-                        `${key}${
-                            withSeparator && i !== keys.length - 1 ? " + " : ""
-                        }`
-                )}
+                {keys.join(withSeparator ? " + " : "")}
             </StyledKey>
         )
     }

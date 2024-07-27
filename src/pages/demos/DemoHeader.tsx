@@ -30,7 +30,7 @@ export function DemoHeader() {
                 data-testid="testid"
                 className="className"
                 logo={{
-                    text: "Logo"
+                    text: "Logo",
                     // img: "/images/logo-fajny-css.svg",
                     // width: 100,
                     // height: 400,
@@ -48,7 +48,6 @@ export function DemoHeader() {
                     inputBackground: "light",
                     showKeys: true,
                 }}
-
                 // burgerPosition="left"
                 // navDesktopVariant="left"
                 variant="transparent"

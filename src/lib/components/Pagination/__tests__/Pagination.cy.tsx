@@ -11,13 +11,13 @@ describe("<Pagination />", () => {
 
         cy.dataTest("testid.PaginationButton.Previous")
             .should("exist")
-            .should("have.class", "PaginationButton PaginationButton__Previous")
+            .should("have.class", "Previous")
             .should("be.disabled")
 
         cy.dataTest("testid.PaginationButton.Number")
             .should("exist")
             .should("have.length", 4)
-            .should("have.class", "PaginationButton PaginationButton__Number")
+            .should("have.class", "Number")
             .should("not.be.disabled")
 
         cy.dataTest("testid.PaginationButton.Number.Active")

@@ -21,6 +21,8 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
                 tooltip: "Hello World!",
                 trigger: "click",
                 children: <Text>Hello, trigger on click</Text>,
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -31,6 +33,8 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
                 withArrow: false,
                 position: "bottom",
                 children: "Hello, trigger on hover",
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

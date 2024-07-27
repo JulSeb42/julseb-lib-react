@@ -22,6 +22,8 @@ export const flexboxPreview: ComponentPreview<ILibFlexbox> = {
                 rowGap: "xs",
                 alignItems: "flex-end",
                 justifyContent: "flex-end",
+                "data-testid": "testid",
+                className: "className",
                 children: (
                     <>
                         <GridItem />

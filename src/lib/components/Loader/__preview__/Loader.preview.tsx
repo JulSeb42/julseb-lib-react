@@ -18,7 +18,11 @@ export const loaderPreview: ComponentPreview<ILibLoader> = {
     previews: [
         ...Object.values(typeValues.loaderVariants).map(v => ({
             previewTitle: `Variant ${v}`,
-            props: { variant: v },
+            props: {
+                variant: v,
+                "data-testid": "testid",
+                className: "className",
+            },
         })),
         {
             previewTitle: "With different size & color",
@@ -27,6 +31,8 @@ export const loaderPreview: ComponentPreview<ILibLoader> = {
                 size: 120,
                 color: "secondary",
                 borderWidth: 4,
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

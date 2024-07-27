@@ -28,7 +28,7 @@ export function Homepage() {
         // "Mixins",
         // "Js Utils",
         // "Options Markdown",
-        "Hooks",
+        // "Hooks",
     ]
 
     const tests = ["ProgressCircle"]

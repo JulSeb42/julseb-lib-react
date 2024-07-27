@@ -3,5 +3,9 @@
 import { Text } from "../.."
 
 export function BlockQuote() {
-    return <Text tag="blockquote">Blockquote</Text>
+    return (
+        <Text tag="blockquote" data-testid="testid" className="className">
+            Blockquote
+        </Text>
+    )
 }

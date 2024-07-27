@@ -357,13 +357,13 @@ export type LibHeaderLink = LibButtonLinkBlankRequired &
  * @prop "data-testid"?: string
  * @prop className?: string
  * @prop id?: string
- * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  * @prop label: string
  * @prop icon: string | JSX.Element
  * @prop iconSize?: number
  */
 export type LibIconMenuItem = LibButtonLinkBlankRequired &
-    LibComponentItemBase<HTMLButtonElement> & {
+    LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
         label: string
         icon: LibIcon
         iconSize?: number

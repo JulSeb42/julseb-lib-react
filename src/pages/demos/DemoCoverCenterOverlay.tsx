@@ -13,6 +13,8 @@ export function DemoCoverCenterOverlay() {
                 justifyContent="center"
                 overlay="black-80"
                 padding="xs"
+                data-testid="testid"
+                className="className"
             >
                 <Text tag="h1" display>
                     Title

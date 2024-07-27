@@ -162,7 +162,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                     data-testid={
                         testid && `${testid}.ListInput.SearchContainer.Icon`
                     }
-                    className={className && "ListInput__SearchContainer__Icon"}
+                    className={className && "SearchIcon"}
                 />
             ),
             caret: (
@@ -172,9 +172,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                         testid &&
                         `${testid}.LeftContainer.CountryButton.CaretIcon`
                     }
-                    className={
-                        className && "LeftContainer__CountryButton__CaretIcon"
-                    }
+                    className={className && "CaretIcon"}
                 />
             ),
         }
@@ -221,9 +219,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                 testid &&
                                 `${testid}.LeftContainer.CountryButton`
                             }
-                            className={
-                                className && "LeftContainer__CountryButton"
-                            }
+                            className={className && "CountryButton"}
                             type="button"
                             disabled={disabled}
                             aria-disabled={disabled}
@@ -238,10 +234,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     testid &&
                                     `${testid}.LeftContainer.CountryButton.Flag`
                                 }
-                                className={
-                                    className &&
-                                    "LeftContainer__CountryButton__Flag"
-                                }
+                                className={className && "Flag"}
                                 src={country?.flag}
                                 alt={`Flag ${country?.name}`}
                             />
@@ -256,10 +249,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     testid &&
                                     `${testid}.LeftContainer.CountryButton.CaretIcon`
                                 }
-                                className={
-                                    className &&
-                                    "LeftContainer__CountryButton__CaretIcon"
-                                }
+                                className={className && "CaretIcon"}
                             />
                         </CountryButton>
 
@@ -267,9 +257,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             data-testid={
                                 testid && `${testid}.LeftContainer.CountryCode`
                             }
-                            className={
-                                className && "LeftContainer__CountryCode"
-                            }
+                            className={className && "CountryCode"}
                             $inputBackground={inputBackground}
                             $disabled={disabled}
                         >
@@ -327,9 +315,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     testid &&
                                     `${testid}.ListInput.SearchContainer`
                                 }
-                                className={
-                                    className && "ListInput__SearchContainer"
-                                }
+                                className={className && "SearchContainer"}
                                 $validation={validation?.status}
                                 $inputBackground={inputBackground}
                             >
@@ -343,10 +329,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                         testid &&
                                         `${testid}.ListInput.SearchContainer.Icon`
                                     }
-                                    className={
-                                        className &&
-                                        "ListInput__SearchContainer__Icon"
-                                    }
+                                    className={className && "IconSearch"}
                                 />
 
                                 <SearchInput
@@ -354,10 +337,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                         testid &&
                                         `${testid}.ListInput.SearchContainer.Input`
                                     }
-                                    className={
-                                        className &&
-                                        "ListInput__SearchContainer__Input"
-                                    }
+                                    className={className && "InputSearch"}
                                     placeholder={searchPlaceholder}
                                     value={search}
                                     onChange={handleChange}

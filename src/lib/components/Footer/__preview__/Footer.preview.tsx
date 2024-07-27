@@ -35,7 +35,15 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
     additionalTypeImports: ["LibFooterLink"],
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { logo: { text: "Hello" }, items } },
+        {
+            previewTitle: "Default",
+            props: {
+                logo: { text: "Hello" },
+                items,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Vertical with logo",
             props: {
@@ -43,11 +51,19 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
                 logo: { img: "/images/logo-fajny-css.svg" },
                 linksSeparator: "dash",
                 direction: "vertical",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "Vertical",
-            props: { items, withSeparator: true, direction: "vertical" },
+            props: {
+                items,
+                withSeparator: true,
+                direction: "vertical",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

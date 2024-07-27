@@ -17,7 +17,7 @@ export const getHighlightedText = (
             {slugify(part) === slugify(value) ? (
                 <Text
                     tag="strong"
-                    className={className && `${className}__Highlight`}
+                    className={className && "HighlightedText"}
                     style={styles}
                 >
                     {part}

@@ -16,5 +16,13 @@ export const youtubePreview: ComponentPreview<ILibYoutube> = {
     propsImport: "ILibYoutube",
     additionalTypeImports: null,
     extends: ["HTMLIFrameElement", "IframeHTMLAttributes<HTMLIFrameElement>"],
-    previews: [{ props: { src: YOUTUBE_SRC } }],
+    previews: [
+        {
+            props: {
+                src: YOUTUBE_SRC,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+    ],
 }

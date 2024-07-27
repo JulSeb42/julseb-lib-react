@@ -20,6 +20,8 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
             props: {
                 highlightedText: "hello",
                 children: "Hello world",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -27,6 +29,8 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
             props: {
                 highlightedText: "hello",
                 children: "Hello world",
+                "data-testid": "testid",
+                className: "className",
                 highlightStyle: {
                     color: "red",
                 },

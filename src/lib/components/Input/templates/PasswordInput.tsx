@@ -201,7 +201,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                                                           }
                                                           className={
                                                               className &&
-                                                              "Button__Icon"
+                                                              "Icon"
                                                           }
                                                           size={
                                                               button?.iconShowSize ||
@@ -217,7 +217,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                                                           }
                                                           className={
                                                               className &&
-                                                              "Button__Icon"
+                                                              "Icon"
                                                           }
                                                           size={
                                                               button?.iconHideSize ||

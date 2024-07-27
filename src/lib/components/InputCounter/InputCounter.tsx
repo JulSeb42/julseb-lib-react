@@ -64,7 +64,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 minus: "Minus",
             },
             showButtonTooltip,
-            isInputEditable = true,
+            inputNoEdit,
             disabled,
             ...rest
         },
@@ -165,20 +165,18 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                             ? "InputCounterWrapper"
                             : className
                     }
-                    $isInputEditable={isInputEditable}
+                    $isInputEditable={!inputNoEdit}
                 >
                     <ButtonIcon
                         data-testid={testid && `${testid}.Button.Minus`}
-                        className={className && "Button__Minus"}
+                        className={className && "ButtonMinus"}
                         icon={
                             icons?.minus || (
                                 <Minus
                                     data-testid={
                                         testid && `${testid}.Button.Minus.Icon`
                                     }
-                                    className={
-                                        className && "Button__Minus__Icon"
-                                    }
+                                    className={className && "IconMinus"}
                                     size={iconSizes.minus}
                                 />
                             )
@@ -192,7 +190,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                         {...buttonProps}
                     />
 
-                    {isInputEditable ? (
+                    {!inputNoEdit ? (
                         <Input
                             data-testid={testid && `${testid}.Input`}
                             className={className && "Input"}
@@ -218,7 +216,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                     ) : (
                         <NumberValue
                             data-testid={testid && `${testid}.Number`}
-                            className={className && "Number"}
+                            className={className && "NumberValue"}
                             ref={ref}
                             $disabled={disabled}
                             {...rest}
@@ -229,16 +227,14 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
 
                     <ButtonIcon
                         data-testid={testid && `${testid}.Button.Plus`}
-                        className={className && "Button__Plus"}
+                        className={className && "ButtonPlus"}
                         icon={
                             icons?.plus || (
                                 <Plus
                                     data-testid={
                                         testid && `${testid}.Button.Plus.Icon`
                                     }
-                                    className={
-                                        className && "Button__Plus__Icon"
-                                    }
+                                    className={className && "IconPlus"}
                                     size={iconSizes.plus}
                                 />
                             )

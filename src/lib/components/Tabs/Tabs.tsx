@@ -87,15 +87,17 @@ export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
                         <TabButton
                             key={uuid()}
                             data-testid={
-                                item["data-testid"] ||
-                                (testid &&
-                                    `${testid}.TabsButtonsContainer.TabButton`)
+                                item["data-testid"]
+                                    ? item["data-testid"]
+                                    : testid &&
+                                      `${testid}.TabsButtonsContainer.TabButton`
                             }
                             className={
-                                `${item.className}.Button` ||
-                                (className && "TabButton")
+                                item.className
+                                    ? `${item.className}.Button`
+                                    : className && "TabButton"
                             }
-                            id={`${item.id}.TabButton`}
+                            id={item.id && `${item.id}.TabButton`}
                             ref={item.ref}
                             isActive={activeTab === i}
                             onClick={() => handleClick(i)}
@@ -111,13 +113,16 @@ export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
                     <TabItem
                         key={uuid()}
                         data-testid={
-                            item["data-testid"] ||
-                            (testid && `${testid}.TabItem`)
+                            item["data-testid"]
+                                ? item["data-testid"]
+                                : testid && `${testid}.TabItem`
                         }
                         className={
-                            `${item.className}.Tab` || (className && "TabItem")
+                            item.className
+                                ? `${item.className}.Tab`
+                                : className && "TabItem"
                         }
-                        id={`${item.id}.Tab`}
+                        id={item.id && `${item.id}.Tab`}
                         ref={item.ref}
                         as={typeof item.content === "string" ? Text : "span"}
                         isActive={activeTab.toString() === i.toString()}

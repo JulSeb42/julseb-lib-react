@@ -1,6 +1,8 @@
 /*=============================================== InputCheck component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
+import { capitalize } from "ts-utils-julseb"
 import { LibIcon } from "../LibIcon"
 import { Check } from "../../icons"
 import {
@@ -44,7 +46,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                     data-testid={
                         testid && `${testid}.CheckContainer.Checkbox.Icon`
                     }
-                    className={className && "CheckContainer__Checkbox__Icon"}
+                    className={className && "Icon"}
                 />
             ),
             disabled,
@@ -55,7 +57,10 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
         return (
             <StyledInputCheck
                 data-testid={testid}
-                className={className}
+                className={
+                    className &&
+                    classNames(className, variant && capitalize(variant))
+                }
                 htmlFor={id}
                 $variant={variant}
                 $disabled={disabled}
@@ -83,16 +88,14 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                                 data-testid={
                                     testid && `${testid}.CheckContainer.Toggle`
                                 }
-                                className={
-                                    className && "CheckContainer__Toggle"
-                                }
+                                className={className && "Toggle"}
                             />
                         ) : type === "radio" ? (
                             <Radio
                                 data-testid={
                                     testid && `${testid}.CheckContainer.Radio`
                                 }
-                                className={className && "CheckContainer__Radio"}
+                                className={className && "Radio"}
                             />
                         ) : (
                             <Checkbox
@@ -100,19 +103,14 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                                     testid &&
                                     `${testid}.CheckContainer.Checkbox`
                                 }
-                                className={
-                                    className && "CheckContainer__Checkbox"
-                                }
+                                className={className && "Checkbox"}
                             >
                                 <LibIcon
                                     data-testid={
                                         testid &&
                                         `${testid}.CheckContainer.Checkbox.Icon`
                                     }
-                                    className={
-                                        className &&
-                                        "CheckContainer__Checkbox__Icon"
-                                    }
+                                    className={className && "CheckIcon"}
                                     icon={iconCheck}
                                     size={iconCheckSize}
                                 />

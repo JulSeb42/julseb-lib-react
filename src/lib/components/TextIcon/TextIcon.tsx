@@ -72,7 +72,7 @@ export const TextIcon = forwardRef<
                 >
                     <LibIcon
                         data-testid={testid && `${testid}.IconContainer.Icon`}
-                        className={className && "IconContainer__Icon"}
+                        className={className && "Icon"}
                         icon={icon}
                         size={iconSize || getIconHeight(tag, display)}
                         color={iconColor}

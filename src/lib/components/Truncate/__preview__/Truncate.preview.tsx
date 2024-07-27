@@ -44,7 +44,7 @@ function TruncateDemo() {
         <>
             <p>{names?.length} names</p>
 
-            <StyledTruncate>
+            <StyledTruncate data-testid="testid" className="className">
                 {names.map((name, i) => (
                     <Tag
                         borderRadius="round"

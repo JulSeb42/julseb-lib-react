@@ -29,7 +29,7 @@ export function InputValidationHelper({
                 data-testid={
                     testid && `${testid}.ValidationHelper.IconContainer.Icon`
                 }
-                className={className && "ValidationHelper__IconContainer__Icon"}
+                className={className && "ValidationIconBottom"}
                 size={getIconSizeFromFont("small")}
                 color="danger"
             />
@@ -40,7 +40,7 @@ export function InputValidationHelper({
                 data-testid={
                     testid && `${testid}.ValidationHelper.IconContainer.Icon`
                 }
-                className={className && "ValidationHelper__IconContainer__Icon"}
+                className={className && "ValidationIconBottom"}
                 size={getIconSizeFromFont("small")}
                 color="success"
             />
@@ -57,29 +57,23 @@ export function InputValidationHelper({
                 data-testid={
                     testid && `${testid}.ValidationHelper.IconContainer`
                 }
-                className={className && "ValidationHelper__IconContainer"}
+                className={className && "ValidationIconContainerBottom"}
             >
                 <LibIcon
                     data-testid={
                         testid &&
                         `${testid}.ValidationHelper.IconContainer.Icon`
                     }
-                    className={
-                        className && "ValidationHelper__IconContainer__Icon"
-                    }
+                    className={className && "ValidationIconBottom"}
                     icon={status === false ? iconNotPassed : iconPassed}
-                    size={
-                        status === false
-                            ? iconNotPassedSize
-                            : iconPassedSize
-                    }
+                    size={status === false ? iconNotPassedSize : iconPassedSize}
                     color={status === false ? "danger" : "success"}
                 />
             </HelperBottomIconContainer>
 
             <HelperBottom
                 data-testid={testid && `${testid}.ValidationHelper.Text`}
-                className={className && "ValidationHelper__Text"}
+                className={className && "ValidationTextBottom"}
             >
                 {message}
             </HelperBottom>

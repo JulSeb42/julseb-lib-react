@@ -78,14 +78,21 @@ export const DropdownItem = forwardRef<
                     <Fragment>
                         <IconContainer
                             data-testid={testid && `${testid}.IconContainer`}
-                            className={className && "IconContainer"}
+                            className={className && "DropdownItemIconContainer"}
                         >
-                            <LibIcon icon={icon} size={iconSize} />
+                            <LibIcon
+                                data-testid={
+                                    testid && `${testid}.IconContainer.Icon`
+                                }
+                                className={className && "DropdownItemIcon"}
+                                icon={icon}
+                                size={iconSize}
+                            />
                         </IconContainer>
 
                         <TextContent
                             data-testid={testid && `${testid}.TextContent`}
-                            className={className && "TextContent"}
+                            className={className && "DropdownItemTextContent"}
                         >
                             {children}
                         </TextContent>

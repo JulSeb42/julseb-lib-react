@@ -109,19 +109,14 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                                 testid &&
                                 `${testid}.TitleContainer.IconContainerLeft`
                             }
-                            className={
-                                className && "TitleContainer__IconContainerLeft"
-                            }
+                            className={className && "IconContainerLeft"}
                         >
                             <LibIcon
                                 data-testid={
                                     testid &&
                                     `${testid}.TitleContainer.IconContainerLeft.Icon`
                                 }
-                                className={
-                                    className &&
-                                    "TitleContainer__IconContainerLeft__Icon"
-                                }
+                                className={className && "Icon"}
                                 icon={options.icons.left}
                                 size={options.iconSizes?.left || 16}
                                 color={options?.iconLeftColor}
@@ -133,7 +128,7 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                         tag="h6"
                         as="p"
                         data-testid={testid && `${testid}.TitleContainer.Title`}
-                        className={className && "TitleContainer__Title"}
+                        className={className && "Title"}
                     >
                         {title}
                     </Text>
@@ -143,9 +138,7 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                             testid &&
                             `${testid}.TitleContainer.IconContainerRight`
                         }
-                        className={
-                            className && "TitleContainer__IconContainerRight"
-                        }
+                        className={className && "IconContainerRight"}
                     >
                         <CloseButton
                             onClick={remove}
@@ -154,23 +147,24 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                                 testid &&
                                 `${testid}.TitleContainer.IconContainerRight.CloseButton`
                             }
-                            className={
-                                className &&
-                                "TitleContainer__IconContainerRight__CloseButton"
-                            }
+                            className={className && "CloseButton"}
                         >
                             <LibIcon
                                 data-testid={
                                     testid &&
                                     `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
                                 }
-                                className={
-                                    className &&
-                                    "TitleContainer__IconContainerRight__CloseButton__Icon"
-                                }
+                                className={className && "CloseIcon"}
                                 icon={
                                     options?.icons?.close || (
-                                        <Close size={CLOSE_ICON_SIZE} />
+                                        <Close
+                                            size={CLOSE_ICON_SIZE}
+                                            data-testid={
+                                                testid &&
+                                                `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
+                                            }
+                                            className={className && "CloseIcon"}
+                                        />
                                     )
                                 }
                                 size={

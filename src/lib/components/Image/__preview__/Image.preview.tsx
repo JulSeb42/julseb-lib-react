@@ -18,10 +18,24 @@ export const imagePreview: ComponentPreview<ILibImage> = {
     additionalTypeImports: null,
     extends: ["HTMLImageElement", "ImgHTMLAttributes<HTMLImageElement>"],
     previews: [
-        { previewTitle: "Default", props: { src: IMG_URL, alt: IMG_ALT } },
+        {
+            previewTitle: "Default",
+            props: {
+                src: IMG_URL,
+                alt: IMG_ALT,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "With border radius",
-            props: { src: IMG_URL, alt: IMG_ALT, borderRadius: "xxl" },
+            props: {
+                src: IMG_URL,
+                alt: IMG_ALT,
+                borderRadius: "xxl",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "With caption",
@@ -30,11 +44,20 @@ export const imagePreview: ComponentPreview<ILibImage> = {
                 alt: IMG_ALT,
                 borderRadius: "xxl",
                 caption: "Caption",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "With fit cover",
-            props: { src: IMG_URL, alt: IMG_ALT, height: 300, fit: "cover" },
+            props: {
+                src: IMG_URL,
+                alt: IMG_ALT,
+                height: 300,
+                fit: "cover",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "With fit contain",
@@ -48,6 +71,8 @@ export const imagePreview: ComponentPreview<ILibImage> = {
                     textColor: "secondary",
                     background: "white-80",
                 },
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

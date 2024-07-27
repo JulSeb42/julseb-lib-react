@@ -44,12 +44,37 @@ export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
     additionalTypeImports: ["LibButtonGroupItem"],
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { buttons } },
-        { previewTitle: "Color", props: { buttons, color: "secondary" } },
-        { previewTitle: "Variant", props: { buttons, variant: "ghost" } },
+        {
+            previewTitle: "Default",
+            props: { buttons, "data-testid": "testid", className: "className" },
+        },
+        {
+            previewTitle: "Color",
+            props: {
+                buttons,
+                color: "secondary",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+        {
+            previewTitle: "Variant",
+            props: {
+                buttons,
+                variant: "ghost",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Size",
-            props: { buttons, variant: "transparent", size: "small" },
+            props: {
+                buttons,
+                variant: "transparent",
+                size: "small",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

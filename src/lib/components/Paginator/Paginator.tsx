@@ -85,7 +85,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
                         {texts?.page}
                         <StyledInput
                             data-testid={testid && `${testid}.Text.Input`}
-                            className={className && "Text__Input"}
+                            className={className && "Input"}
                             type="number"
                             value={currentPage}
                             onChange={handleChange}
@@ -105,14 +105,14 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
 
                 <ButtonIcon
                     data-testid={testid && `${testid}.Button.Prev`}
-                    className={className && "Button__Prev"}
+                    className={className && "ButtonPrev"}
                     icon={
                         icons?.prev || (
                             <ChevronLeft
                                 data-testid={
                                     testid && `${testid}.Button.Prev.Icon`
                                 }
-                                className={className && "Button__Prev__Icon"}
+                                className={className && "IconPrev"}
                                 size={iconSizes.prev}
                             />
                         )
@@ -130,14 +130,14 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
 
                 <ButtonIcon
                     data-testid={testid && `${testid}.Button.Next`}
-                    className={className && "Button__Next"}
+                    className={className && "ButtonNext"}
                     icon={
                         icons?.next || (
                             <ChevronRight
                                 data-testid={
                                     testid && `${testid}.Button.Next.Icon`
                                 }
-                                className={className && "Button__Next__Icon"}
+                                className={className && "IconNext"}
                                 size={iconSizes.next}
                             />
                         )

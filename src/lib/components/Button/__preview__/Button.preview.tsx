@@ -43,7 +43,13 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
             previewTitle: "With shadow",
             demo: (
                 <PreviewFlex>
-                    <Button shadow="s">Button</Button>
+                    <Button
+                        shadow="s"
+                        data-testid="testid"
+                        className="className"
+                    >
+                        Button
+                    </Button>
                     <Button
                         variant="plain"
                         color="secondary"
@@ -52,6 +58,8 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                             hover: "xl",
                             active: "l",
                         }}
+                        data-testid="testid"
+                        className="className"
                     >
                         Button
                     </Button>
@@ -64,7 +72,13 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                 <PreviewFlex>
                     {Object.values(typeValues.buttonVariants).map(
                         (variant, i) => (
-                            <Button key={i} variant={variant} disabled>
+                            <Button
+                                key={i}
+                                variant={variant}
+                                disabled
+                                data-testid="testid"
+                                className="className"
+                            >
                                 Button disabled
                             </Button>
                         )
@@ -76,8 +90,12 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
             previewTitle: "As link",
             demo: (
                 <PreviewFlex>
-                    <Button to="/">Button with to</Button>
-                    <Button href="#">Button with href</Button>
+                    <Button to="/" data-testid="testid" className="className">
+                        Button with to
+                    </Button>
+                    <Button href="#" data-testid="testid" className="className">
+                        Button with href
+                    </Button>
                 </PreviewFlex>
             ),
         },
@@ -89,6 +107,8 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                         variant="plain"
                         color="primary"
                         icons={{ left: "mail", right: "chevron-right" }}
+                        data-testid="testid"
+                        className="className"
                     >
                         Button
                     </Button>
@@ -97,6 +117,8 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                         color="secondary"
                         icons={{ right: "chevron-down" }}
                         size="small"
+                        data-testid="testid"
+                        className="className"
                     >
                         Button
                     </Button>
@@ -112,6 +134,8 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                         color="primary"
                         icons={{ left: "mail", right: "chevron-right" }}
                         isLoading
+                        data-testid="testid"
+                        className="className"
                     >
                         Button
                     </Button>
@@ -121,6 +145,8 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                         icons={{ right: "chevron-down" }}
                         size="small"
                         isLoading
+                        data-testid="testid"
+                        className="className"
                     >
                         Button
                     </Button>
@@ -136,7 +162,13 @@ function ButtonPreview(props: ILibButton) {
     return (
         <PreviewFlex>
             {colors.map((c, i) => (
-                <Button key={i} color={c} {...props} />
+                <Button
+                    key={i}
+                    color={c}
+                    {...props}
+                    data-testid="testid"
+                    className="className"
+                />
             ))}
         </PreviewFlex>
     )
@@ -144,7 +176,7 @@ function ButtonPreview(props: ILibButton) {
 
 function PreviewFlex({ children }: { children?: ReactChildren }) {
     return (
-        <Flexbox gap="s" alignItems="flex-start">
+        <Flexbox gap="s" alignItems="flex-start" flexWrap="wrap">
             {children}
         </Flexbox>
     )

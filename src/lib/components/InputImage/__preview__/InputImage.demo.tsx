@@ -35,6 +35,7 @@ export function InputImageDemo() {
             width="100%"
             height={180}
             data-testid="testid"
+            className="className"
         />
     )
 }
@@ -70,6 +71,8 @@ export function InputImageDemoWithValidation() {
                 status: false,
                 message: "Validation not passed",
             }}
+            data-testid="testid"
+            className="className"
         />
     )
 }
@@ -81,6 +84,8 @@ export function InputImageDemoDisabled() {
             value=""
             label="Input image disabled"
             disabled
+            data-testid="testid"
+            className="className"
         />
     )
 }

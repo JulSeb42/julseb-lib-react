@@ -27,7 +27,16 @@ export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
         },
         {
             previewTitle: "With min & max",
-            demo: <InputSliderDemo min={0} max={100} value={50} showMinMax />,
+            demo: (
+                <InputSliderDemo
+                    min={0}
+                    max={100}
+                    value={50}
+                    showMinMax
+                    data-testid="testid"
+                    className="className"
+                />
+            ),
         },
     ],
 }

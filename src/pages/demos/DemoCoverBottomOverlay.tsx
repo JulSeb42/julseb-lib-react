@@ -12,6 +12,8 @@ export function DemoCoverBottomOverlay() {
                 alignItems="flex-start"
                 justifyContent="flex-end"
                 overlay="gradient-black"
+                data-testid="testid"
+                className="className"
             >
                 <Text tag="h1" display>
                     Title

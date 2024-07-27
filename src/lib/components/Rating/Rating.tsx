@@ -61,9 +61,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                         testid &&
                         `${testid}.RatingContainer.Button.Icon.Default`
                     }
-                    className={
-                        className && "RatingContainer__Button__Icon__Default"
-                    }
+                    className={className && "IconRatingDefault"}
                     size={iconSizes?.default || defaultIconSizes.default}
                 />
             ),
@@ -73,9 +71,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                         testid &&
                         `${testid}.RatingContainer.Button.Icon.Checked`
                     }
-                    className={
-                        className && "RatingContainer__Button__Icon__Checked"
-                    }
+                    className={className && "IconRatingChecked"}
                     size={iconSizes?.checked || defaultIconSizes.checked}
                 />
             ),
@@ -118,7 +114,11 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                             data-testid={
                                 testid && `${testid}.RatingContainer.Button`
                             }
-                            className={className && "RatingContainer__Button"}
+                            className={
+                                className && n >= rating
+                                    ? "ButtonRatingDefault"
+                                    : "ButtonRatingChecked"
+                            }
                             as={readOnly ? "span" : "button"}
                             onClick={
                                 !readOnly ? () => handleClick(n) : undefined
@@ -138,8 +138,8 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                                 className={
                                     className &&
                                     (n >= rating
-                                        ? "RatingContainer__Button__Icon__Default"
-                                        : "RatingContainer__Button__Icon__Checked")
+                                        ? "IconRatingDefault"
+                                        : "IconRatingChecked")
                                 }
                                 icon={
                                     n >= rating

@@ -26,14 +26,27 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
     additionalTypeImports: null,
     extends: ["HTMLButtonElement"],
     previews: [
-        { previewTitle: "Default", props: { icon: "mail" } },
+        {
+            previewTitle: "Default",
+            props: {
+                icon: "mail",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         ...buttonVariants.map(variant => ({
             previewTitle: `Variant ${variant}`,
             demo: <ButtonsMap icon="mail" variant={variant} />,
         })),
         {
             previewTitle: "With a different size",
-            props: { icon: "mail", variant: "ghost", size: 48 },
+            props: {
+                icon: "mail",
+                variant: "ghost",
+                size: 48,
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "As link",
@@ -44,22 +57,48 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
                         variant="plain"
                         color="primary"
                         to="/"
+                        data-testid="testid"
+                        className="className"
                     />
                     <ButtonIcon
                         icon="mail"
                         variant="ghost"
                         color="secondary"
                         href="#"
+                        data-testid="testid"
+                        className="className"
                     />
                 </FlexPreview>
             ),
         },
         {
             previewTitle: "With tooltip",
-            props: { icon: "mail", tooltip: "Hello", showTooltip: true },
+            props: {
+                icon: "mail",
+                tooltip: "Hello",
+                showTooltip: true,
+                "data-testid": "testid",
+                className: "className",
+            },
         },
-        { previewTitle: "Disabled", props: { icon: "mail", disabled: true } },
-        { previewTitle: "Loading", props: { icon: "mail", isLoading: true } },
+        {
+            previewTitle: "Disabled",
+            props: {
+                icon: "mail",
+                disabled: true,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+        {
+            previewTitle: "Loading",
+            props: {
+                icon: "mail",
+                isLoading: true,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
     ],
 }
 
@@ -77,7 +116,13 @@ function ButtonsMap(props: ILibButtonIcon) {
     return (
         <FlexPreview>
             {colors.map((c, i) => (
-                <ButtonIcon key={i} color={c} {...props} />
+                <ButtonIcon
+                    key={i}
+                    color={c}
+                    {...props}
+                    data-testid="testid"
+                    className="className"
+                />
             ))}
         </FlexPreview>
     )

@@ -212,7 +212,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                                     `${testid}.Button.Icon`
                                                 }
                                                 className={
-                                                    className && "Button__Icon"
+                                                    className && "ClearIcon"
                                                 }
                                                 size={
                                                     iconSizes?.clear ||

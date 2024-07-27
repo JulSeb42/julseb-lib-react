@@ -34,7 +34,14 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { breadcrumbsItems } },
+        {
+            previewTitle: "Default",
+            props: {
+                breadcrumbsItems,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "With different colors",
             props: {
@@ -42,11 +49,18 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
                 linksColor: "secondary",
                 activeColor: "success",
                 separatorColor: "danger",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "With different separator",
-            props: { breadcrumbsItems, separator: "chevron" },
+            props: {
+                breadcrumbsItems,
+                separator: "chevron",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

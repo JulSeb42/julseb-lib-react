@@ -68,13 +68,14 @@ export const Form = forwardRef<HTMLFormElement, ILibForm>(
             children: buttonSecondary?.text,
             "data-testid":
                 testid && `${testid}.ButtonsContainer.ButtonSecondary`,
-            className: className && "ButtonsContainer__ButtonSecondary",
+            className: className && "ButtonSecondary",
         }
 
         return (
             <StyledForm
                 data-testid={testid}
                 ref={ref}
+                className={className}
                 $gap={gap}
                 $maxWidth={maxWidth}
                 {...rest}
@@ -93,10 +94,7 @@ export const Form = forwardRef<HTMLFormElement, ILibForm>(
                                     testid &&
                                     `${testid}.ButtonsContainer.ButtonSubmit`
                                 }
-                                className={
-                                    className &&
-                                    "ButtonsContainer__ButtonSubmit"
-                                }
+                                className={className && "ButtonSubmit"}
                                 type="submit"
                                 isLoading={isLoading}
                                 disabled={disabled}

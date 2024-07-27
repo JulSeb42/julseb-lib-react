@@ -22,7 +22,11 @@ export const fadePreview: ComponentPreview<ILibFade> = {
             demo: (
                 <>
                     {generateNumbers(0, 10).map(i => (
-                        <Fade key={i}>
+                        <Fade
+                            key={i}
+                            data-testid="testid"
+                            className="className"
+                        >
                             <Text>{text}</Text>
                         </Fade>
                     ))}

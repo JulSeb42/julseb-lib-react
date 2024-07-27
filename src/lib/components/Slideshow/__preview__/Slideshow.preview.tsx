@@ -32,8 +32,6 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
                         color: "secondary",
                     }}
                     height={150}
-                    data-testid="testid"
-                    className="className"
                 />
             ),
         },
@@ -45,5 +43,12 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 }
 
 function SlideshowDemo(props: Partial<ILibSlideshow>) {
-    return <Slideshow images={images} {...(props as any)} />
+    return (
+        <Slideshow
+            images={images}
+            {...(props as any)}
+            data-testid="testid"
+            className="className"
+        />
+    )
 }

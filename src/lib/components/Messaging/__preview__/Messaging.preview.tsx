@@ -107,11 +107,24 @@ export const messagingPreview: ComponentPreview<ILibMessaging> = {
     previews: [
         {
             previewTitle: "With messages",
-            demo: <MessagingDemo data={messages} />,
+            demo: (
+                <MessagingDemo
+                    data={messages}
+                    data-testid="testid"
+                    className="className"
+                />
+            ),
         },
         {
             previewTitle: "Empty",
-            demo: <MessagingDemo data={[]} button={{ text: "Send" }} />,
+            demo: (
+                <MessagingDemo
+                    data={[]}
+                    button={{ text: "Send" }}
+                    data-testid="testid"
+                    className="className"
+                />
+            ),
         },
     ],
 }

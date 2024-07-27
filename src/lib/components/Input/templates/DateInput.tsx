@@ -33,7 +33,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
             iconCalendar = (
                 <Calendar
                     data-testid={testid && `${testid}.Button.Icon`}
-                    className={className && "Button__Icon"}
+                    className={className && "Icon"}
                     size={iconCalendarSize}
                 />
             ),

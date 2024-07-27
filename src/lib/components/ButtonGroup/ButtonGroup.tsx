@@ -56,9 +56,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                         "data-testid":
                             button["data-testid"] ||
                             (testid && `${testid}.Button.${i}`),
-                        className:
-                            button.className ||
-                            (className && `Button Button__${i}`),
+                        className: button.className || (className && "Button"),
                         id: button.id,
                         ref: button.ref,
                         color,
@@ -118,7 +116,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                                         data-testid={
                                             testid && `${testid}.Separator.${i}`
                                         }
-                                        className={`Separator__${i}`}
+                                        className={className && "Separator"}
                                         $color={color}
                                     />
                                 )}

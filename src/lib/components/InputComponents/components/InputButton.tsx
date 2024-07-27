@@ -35,7 +35,7 @@ export function InputButton({
         <StyledInputButton
             aria-label={ariaLabel}
             data-testid={testid && `${testid}.Button`}
-            className={className && "Button"}
+            className={className && "InputButton"}
             onClick={onClick}
             disabled={disabled}
             as={onClick ? "button" : "span"}
@@ -50,7 +50,7 @@ export function InputButton({
                     icon={icon}
                     size={iconSize}
                     data-testid={testid && `${testid}.Button.Icon`}
-                    className={className && "Button__Icon"}
+                    className={className && "Icon"}
                 />
             ) : (
                 text

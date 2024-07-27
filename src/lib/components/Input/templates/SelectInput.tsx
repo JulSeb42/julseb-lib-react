@@ -30,7 +30,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
             iconSelect = (
                 <CaretDown
                     data-testid={testid && `${testid}.Button.Icon`}
-                    className={className && "Button__Icon"}
+                    className={className && "Icon"}
                     size={iconSelectSize}
                 />
             ),

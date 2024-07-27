@@ -7,9 +7,9 @@ import type { ILibIconMenu } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const items: Array<LibIconMenuItem> = [
-    { icon: "edit", href: "/", label: "Button" },
-    { icon: <Check />, to: "/", label: "Button" },
-    { icon: "show", onClick: () => alert("Clicked"), label: "Button" },
+    { icon: "edit", href: "/", label: "href" },
+    { icon: <Check />, to: "/", label: "to" },
+    { icon: "show", onClick: () => alert("Clicked"), label: "onClick" },
 ]
 
 export const iconMenuPreview: ComponentPreview<ILibIconMenu> = {
@@ -23,11 +23,27 @@ export const iconMenuPreview: ComponentPreview<ILibIconMenu> = {
     additionalTypeImports: ["LibIconMenuItem"],
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { items } },
-        { previewTitle: "With burger", props: { items, icon: "burger" } },
+        {
+            previewTitle: "Default",
+            props: { items, "data-testid": "testid", className: "className" },
+        },
+        {
+            previewTitle: "With burger",
+            props: {
+                items,
+                icon: "burger",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Secondary color",
-            props: { items, color: "secondary" },
+            props: {
+                items,
+                color: "secondary",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
         {
             previewTitle: "Fixed",
@@ -35,6 +51,8 @@ export const iconMenuPreview: ComponentPreview<ILibIconMenu> = {
                 items,
                 position: { position: "fixed", top: "xxl", right: "xxl" },
                 direction: "down",
+                "data-testid": "testid",
+                className: "className",
             },
         },
     ],

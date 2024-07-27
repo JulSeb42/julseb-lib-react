@@ -39,6 +39,7 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
             "data-testid": testid,
             as,
             children,
+            className,
             withSeparator,
             items,
             logo,
@@ -52,18 +53,35 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
             <StyledFooter
                 data-testid={testid}
                 ref={ref}
+                className={className}
                 as={as}
                 $withSeparator={withSeparator}
                 $direction={direction}
                 {...rest}
             >
-                {logo && <FooterLogo {...logo} />}
+                {logo && (
+                    <FooterLogo
+                        data-testid={testid && `${testid}.Logo`}
+                        className={className && "FooterLogo"}
+                        {...logo}
+                    />
+                )}
 
-                <FooterLinksContainer>
+                <FooterLinksContainer
+                    data-testid={testid && `${testid}.FooterLinksContainer`}
+                    className={className && "FooterLinksContainer"}
+                >
                     {items
                         ? items.map((item, i) => (
                               <Fragment key={uuid()}>
-                                  <FooterLink item={item} />
+                                  <FooterLink
+                                      data-testid={
+                                          testid &&
+                                          `${testid}.FooterLinksContainer.FooterLink`
+                                      }
+                                      className={className && "FooterLink"}
+                                      item={item}
+                                  />
 
                                   {i !== items.length - 1 && (
                                       <FooterLinkSeparatorContainer>

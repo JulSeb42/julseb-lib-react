@@ -49,7 +49,13 @@ export const accordionPreview: ComponentPreview<ILibAccordion> = {
         },
         {
             previewTitle: "Rounded",
-            props: { items, variant: "rounded", icon: "chevron" },
+            props: {
+                items,
+                variant: "rounded",
+                icon: "chevron",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

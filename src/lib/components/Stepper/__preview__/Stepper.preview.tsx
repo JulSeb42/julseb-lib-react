@@ -40,10 +40,24 @@ export const stepperPreview: ComponentPreview<ILibStepper> = {
     additionalTypeImports: ["LibStep"],
     extends: ["HTMLDivElement"],
     previews: [
-        { previewTitle: "Default", props: { steps, activeStep: 2 } },
+        {
+            previewTitle: "Default",
+            props: {
+                steps,
+                activeStep: 2,
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
         {
             previewTitle: "Column",
-            props: { steps, activeStep: 2, direction: "column" },
+            props: {
+                steps,
+                activeStep: 2,
+                direction: "column",
+                "data-testid": "testid",
+                className: "className",
+            },
         },
     ],
 }

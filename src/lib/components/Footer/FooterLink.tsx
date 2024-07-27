@@ -5,14 +5,18 @@ import { Link } from "react-router-dom"
 import type { LibFooterLink } from "../../types"
 
 interface ILibFooterLink {
+    "data-testid": string | undefined
+    className: string | undefined
     item: LibFooterLink
 }
 
 export const FooterLink = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
     ILibFooterLink
->(({ item }, ref) => {
+>(({ "data-testid": testid, className, item }, ref) => {
     const commonProps = {
+        "data-testid": testid,
+        className,
         ref,
         children: item.text,
         ...item,

@@ -83,7 +83,13 @@ export const Modal = forwardRef<HTMLDivElement, ILibModal>(
                         aria-label={buttonClose?.label || BUTTON_LABEL}
                         icon={
                             buttonClose?.icon || (
-                                <Close size={roundIconSize(BUTTON_SIZE)} />
+                                <Close
+                                    size={roundIconSize(BUTTON_SIZE)}
+                                    data-testid={
+                                        testid && `${testid}.ButtonClose.Icon`
+                                    }
+                                    className={className && "ButtonCloseIcon"}
+                                />
                             )
                         }
                         size={buttonClose?.size || BUTTON_SIZE}

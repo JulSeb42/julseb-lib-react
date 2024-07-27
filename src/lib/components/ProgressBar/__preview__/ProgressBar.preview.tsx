@@ -17,6 +17,11 @@ export const progressBarPreview: ComponentPreview<ILibProgressBar> = {
     extends: ["HTMLDivElement"],
     previews: Object.values(typeValues.colorsHover).map(c => ({
         previewTitle: `Color ${c}`,
-        props: { value: getRandomNumber(), color: c },
+        props: {
+            value: getRandomNumber(),
+            color: c,
+            "data-testid": "testid",
+            className: "className",
+        },
     })),
 }

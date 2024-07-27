@@ -6,24 +6,28 @@ import { Flexbox } from "../../../Flexbox"
 export function TextTitles() {
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
-            <Text tag="h1" display>
-                Title h1 display
+            <Text tag="h1" data-testid="testid" className="className">
+                Title h1
             </Text>
 
-            <Text tag="h2" display>
-                Title h2 display
+            <Text tag="h2" data-testid="testid" className="className">
+                Title h2
             </Text>
 
-            <Text tag="h3" display>
-                Title h3 display
+            <Text tag="h3" data-testid="testid" className="className">
+                Title h3
             </Text>
 
-            <Text tag="h4" display>
-                Title h4 display
+            <Text tag="h4" data-testid="testid" className="className">
+                Title h4
             </Text>
 
-            <Text tag="h5" display>
-                Title h5 display
+            <Text tag="h5" data-testid="testid" className="className">
+                Title h5
+            </Text>
+
+            <Text tag="h6" data-testid="testid" className="className">
+                Title h6
             </Text>
         </Flexbox>
     )

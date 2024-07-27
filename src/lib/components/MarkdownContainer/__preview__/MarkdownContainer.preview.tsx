@@ -20,6 +20,8 @@ export const markdownContainerPreview: ComponentPreview<ILibMarkdownContainer> =
                 props: {
                     children:
                         "## Hello world \n\n I'm some markdown content **compiled** to *jsx*",
+                    "data-testid": "testid",
+                    className: "className",
                 },
             },
         ],

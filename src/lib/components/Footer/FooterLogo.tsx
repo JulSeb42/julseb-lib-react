@@ -3,6 +3,8 @@
 import { LogoText, LogoImg } from "./styles"
 
 interface ILibFooterLogo {
+    "data-testid": string | undefined
+    className: string | undefined
     img?: string
     alt?: string
     width?: number
@@ -11,13 +13,29 @@ interface ILibFooterLogo {
 }
 
 export function FooterLogo({
+    "data-testid": testid,
+    className,
     img,
     alt = "Logo",
     width = 100,
     height = 30,
     text,
 }: ILibFooterLogo) {
-    if (text) return <LogoText>{text}</LogoText>
+    if (text)
+        return (
+            <LogoText data-testid={testid} className={className}>
+                {text}
+            </LogoText>
+        )
 
-    return <LogoImg src={img} alt={alt} width={width} height={height} />
+    return (
+        <LogoImg
+            data-testid={testid}
+            className={className}
+            src={img}
+            alt={alt}
+            width={width}
+            height={height}
+        />
+    )
 }

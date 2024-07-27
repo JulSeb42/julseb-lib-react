@@ -56,6 +56,8 @@ function InputPhoneDemo() {
                     setSelectedCountry={setSelectedCountry}
                     value={phone}
                     onChange={handlePhone}
+                    data-testid="testid"
+                    className="className"
                 />
 
                 <button type="submit">Submit</button>

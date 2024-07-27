@@ -22,6 +22,8 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
                 height: 150,
                 borderRadius: "l",
                 animation: "pulse",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
@@ -31,63 +33,83 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
                 height: 150,
                 borderRadius: "l",
                 animation: "shine",
+                "data-testid": "testid",
+                className: "className",
             },
         },
         {
             previewTitle: "Inside card & animation pulse",
-            demo: <SkeletonCardDemo1 />,
+            demo: (
+                <SkeletonCard
+                    flexDirection="column"
+                    gap="xs"
+                    border={{ width: 2 }}
+                    borderRadius={{
+                        topLeft: "xxl",
+                        topRight: "xs",
+                        bottomLeft: "m",
+                        bottomRight: "l",
+                    }}
+                    data-testid="testid"
+                    className="className"
+                >
+                    <Skeleton
+                        width="100%"
+                        height={24}
+                        borderRadius="s"
+                        animation="pulse"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Skeleton
+                        width="90%"
+                        height={24}
+                        borderRadius="s"
+                        animation="pulse"
+                        data-testid="testid"
+                        className="className"
+                    />
+                </SkeletonCard>
+            ),
         },
         {
             previewTitle: "Inside card & animation shine",
-            demo: <SkeletonCardDemo2 />,
+            demo: (
+                <SkeletonCard
+                    flexDirection="column"
+                    gap="xs"
+                    border={{
+                        width: 1,
+                    }}
+                    padding="s"
+                    borderRadius="m"
+                    isShiny
+                    data-testid="testid"
+                    className="className"
+                >
+                    <Skeleton
+                        width={200}
+                        height={150}
+                        borderRadius="l"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Skeleton
+                        width="100%"
+                        height={24}
+                        borderRadius="s"
+                        data-testid="testid"
+                        className="className"
+                    />
+                    <Skeleton
+                        width="90%"
+                        height={24}
+                        borderRadius="s"
+                        data-testid="testid"
+                        className="className"
+                    />
+                </SkeletonCard>
+            ),
         },
     ],
-}
-
-function SkeletonCardDemo1() {
-    return (
-        <SkeletonCard
-            flexDirection="column"
-            gap="xs"
-            border={{ width: 2 }}
-            borderRadius={{
-                topLeft: "xxl",
-                topRight: "xs",
-                bottomLeft: "m",
-                bottomRight: "l",
-            }}
-        >
-            <Skeleton
-                width="100%"
-                height={24}
-                borderRadius="s"
-                animation="pulse"
-            />
-            <Skeleton
-                width="90%"
-                height={24}
-                borderRadius="s"
-                animation="pulse"
-            />
-        </SkeletonCard>
-    )
-}
-
-function SkeletonCardDemo2() {
-    return (
-        <SkeletonCard
-            flexDirection="column"
-            gap="xs"
-            border={{
-                width: 1,
-            }}
-            padding="s"
-            borderRadius="m"
-            isShiny
-        >
-            <Skeleton width={200} height={150} borderRadius="l" />
-            <Skeleton width="100%" height={24} borderRadius="s" />
-            <Skeleton width="90%" height={24} borderRadius="s" />
-        </SkeletonCard>
-    )
 }

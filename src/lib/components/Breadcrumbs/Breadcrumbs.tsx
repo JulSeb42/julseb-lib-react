@@ -1,11 +1,9 @@
 /*=============================================== Breadcrumbs component ===============================================*/
 
-import { Fragment, forwardRef } from "react"
-import { Link } from "react-router-dom"
+import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
-import { LibIcon } from "../LibIcon"
-import { ChevronRight } from "../../icons"
-import { StyledBreadcrumbs, SeparatorContainer } from "./styles"
+import { BreadcrumbsFn } from "./BreadcrumbsFn"
+import { BreadcrumbItem } from "./BreadcrumbItem"
 import type { ILibBreadcrumbs } from "./types"
 
 /**
@@ -36,116 +34,23 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
     ) => {
         return (
             <BreadcrumbsFn
-                ref={ref}
                 data-testid={testid}
+                ref={ref}
                 className={className}
                 {...rest}
             >
                 {breadcrumbsItems
-                    ? breadcrumbsItems.map((item, i) =>
-                          item.to ? (
-                              <Link
-                                  to={item.to}
-                                  data-testid={
-                                      item["data-testid"] ||
-                                      (testid && `${testid}.Link.${i}`)
-                                  }
-                                  className={
-                                      item.className || (className && "Link")
-                                  }
-                                  id={item.id}
-                                  ref={item.ref}
-                                  key={uuid()}
-                              >
-                                  {item.text}
-                              </Link>
-                          ) : (
-                              <span
-                                  key={uuid()}
-                                  data-testid={
-                                      item["data-testid"] ||
-                                      (testid && `${testid}.Text.${i}`)
-                                  }
-                                  className={
-                                      item.className || (className && "Text")
-                                  }
-                                  id={item.id}
-                                  ref={item.ref}
-                              >
-                                  {item.text}
-                              </span>
-                          )
-                      )
+                    ? breadcrumbsItems.map((item, i) => (
+                          <BreadcrumbItem
+                              key={uuid()}
+                              data-testid={testid}
+                              className={className}
+                              item={item}
+                              i={i}
+                          />
+                      ))
                     : children}
             </BreadcrumbsFn>
-        )
-    }
-)
-
-const BreadcrumbsFn = forwardRef<
-    HTMLDivElement,
-    Exclude<ILibBreadcrumbs, "breadcrumbsItems">
->(
-    (
-        {
-            "data-testid": testid,
-            className,
-            as,
-            children,
-            linksColor = "primary",
-            activeColor = "currentColor",
-            gap = "xs",
-            separator = "slash",
-            separatorColor = "currentColor",
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledBreadcrumbs
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                className={className}
-                $gap={gap}
-                $linkColor={linksColor}
-                $activeColor={activeColor}
-                {...rest}
-            >
-                {children?.map((child, i) => (
-                    <Fragment key={uuid()}>
-                        {child}
-
-                        {i !== children.length - 1 && (
-                            <SeparatorContainer
-                                data-testid={
-                                    testid && `${testid}.SeparatorContainer`
-                                }
-                                className={className && "SeparatorContainer"}
-                                $color={separatorColor}
-                            >
-                                {separator === "chevron" ? (
-                                    <ChevronRight
-                                        size={16}
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.SeparatorContainer.Icon`
-                                        }
-                                        className={
-                                            className &&
-                                            "SeparatorContainer__Icon"
-                                        }
-                                    />
-                                ) : separator === "slash" ? (
-                                    "/"
-                                ) : (
-                                    <LibIcon icon={separator} />
-                                )}
-                            </SeparatorContainer>
-                        )}
-                    </Fragment>
-                ))}
-            </StyledBreadcrumbs>
         )
     }
 )

@@ -32,7 +32,7 @@ export function InputIcon({
     return (
         <StyledInputIconContainer
             data-testid={testid && `${testid}.IconContainer`}
-            className={className && "IconContainer"}
+            className={className && "IconContainerLeft"}
             $disabled={disabled}
             $inputBackground={inputBackground}
             $inputVariant={inputVariant}
@@ -40,7 +40,7 @@ export function InputIcon({
         >
             <LibIcon
                 data-testid={testid && `${testid}.IconContainer.Icon`}
-                className={className && "IconContainer__Icon"}
+                className={className && "IconLeft"}
                 icon={icon}
                 size={iconSize}
             />
