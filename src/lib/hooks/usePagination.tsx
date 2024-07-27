@@ -13,7 +13,7 @@ interface ILibUsePaginationNavigation {
 }
 
 /**
- * @description Hook to use with Pagination or Paginator buttons
+ * @description Hook to use for building Pagination or Paginator buttons
  * @link https://documentation-components-react.vercel.app/helpers/hooks#usePagination
  * @prop currentPage: number
  * @prop setCurrentPage: Dispatch<SetStateAction<number>>

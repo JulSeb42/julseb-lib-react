@@ -93,8 +93,9 @@ import { helpersPreview } from "./previews/utils/Helpers.preview"
 import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
 import { variablesPreview } from "./previews/utils/Variables.preview"
 import { mixinsPreview } from "./previews/utils/Mixins.preview"
-import { utilsPreview } from "./previews/utils/JsUtils.preview.tsx"
-import { optionsMarkdownPreview } from "./previews/utils/OptionsMarkdown.tsx"
+import { utilsPreview } from "./previews/utils/JsUtils.preview"
+import { optionsMarkdownPreview } from "./previews/utils/OptionsMarkdown"
+import { hooksPreview } from "./previews/utils/Hooks.preview"
 // prependImport
 
 export type PreviewProp<T> = {
@@ -214,6 +215,7 @@ export const previews = [
     mixinsPreview,
     utilsPreview,
     optionsMarkdownPreview,
+    hooksPreview,
     // prependArr
 ] as Array<ComponentPreview<any>>
 

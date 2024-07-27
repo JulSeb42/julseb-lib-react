@@ -19,6 +19,7 @@ import type { ILibGrid } from "./types"
  * @prop alignItems?: CssAlignItems
  * @prop justifyContent?: CssJustifyContent
  * @prop alignContent?: CssAlignContent
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 
 export const Grid = forwardRef<HTMLDivElement, ILibGrid>(
@@ -36,6 +37,7 @@ export const Grid = forwardRef<HTMLDivElement, ILibGrid>(
             alignItems,
             justifyContent,
             alignContent,
+            padding,
             ...rest
         },
         ref
@@ -54,6 +56,7 @@ export const Grid = forwardRef<HTMLDivElement, ILibGrid>(
                 $alignItems={alignItems}
                 $justifyContent={justifyContent}
                 $alignContent={alignContent}
+                $padding={padding}
                 {...rest}
             >
                 {children}

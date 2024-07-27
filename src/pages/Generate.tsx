@@ -1,17 +1,11 @@
 /*=============================================== Generate ===============================================*/
 
-import { toCamelCase } from "ts-utils-julseb"
+import { toCamelCase, toPascalCase } from "ts-utils-julseb"
 import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = replaceTypes([
-        "$position?: LibPositionExtract",
-        "$left?: LibSpacers",
-        "$top?: LibSpacers",
-        "$right?: LibSpacers",
-        "$bottom?: LibSpacers",
-    ])
+    const propsDoc = replaceTypes(["padding?: ILibPadding"])
 
     // const utils = [
     //     "calculate-average",
@@ -91,8 +85,31 @@ export function Generate() {
     // const propValidationIcon =
     //     "validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }"
 
+    const hooks = [
+        "useClickOutside",
+        "useCopyToClipboard",
+        "useDebounce",
+        "useExportData",
+        "useFetch",
+        "useForm",
+        "useIsOverflow",
+        "useKeyPress",
+        "useMaxWidth",
+        "useMergeRefs",
+        "useMinWidth",
+        "usePaginatedData",
+        "usePagination",
+        "useTouchScreen",
+        "useTranslation",
+    ]
+
     return (
         <Page title="Generate">
+            <ul>
+                {hooks.map(hook => (
+                    <li key={hook}>{`"${hook}",`}</li>
+                ))}
+            </ul>
             <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>

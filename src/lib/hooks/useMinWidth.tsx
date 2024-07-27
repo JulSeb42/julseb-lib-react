@@ -8,8 +8,8 @@ import { useState, useEffect } from "react"
  * @argument width: number
  */
 
-export function useMinWidth(width: number): Partial<boolean | undefined> {
-    const [isMin, setIsMin] = useState<undefined | boolean>(undefined)
+export function useMinWidth(width: number): boolean {
+    const [isMin, setIsMin] = useState<boolean>(false)
 
     useEffect(() => {
         const detectSize = () => {

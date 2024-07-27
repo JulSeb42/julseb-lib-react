@@ -20,7 +20,7 @@ export function useFetch<T>(fetchFunction: Promise<T>, dependencies?: any) {
             .catch((err: any) => setError(err))
 
         setLoading(false)
-    }, [fetchFunction, dependencies])
+    }, [dependencies])
 
     return { response, error, loading } as const
 }

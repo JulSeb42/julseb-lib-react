@@ -7,6 +7,7 @@ import type {
     CssJustifyItems,
     LibComponentBase,
     LibSpacers,
+    ILibPadding,
 } from "../../types"
 
 export interface ILibGrid extends LibComponentBase<HTMLDivElement> {
@@ -19,4 +20,5 @@ export interface ILibGrid extends LibComponentBase<HTMLDivElement> {
     alignItems?: CssAlignItems
     justifyContent?: CssJustifyContent
     alignContent?: CssAlignContent
+    padding?: ILibPadding
 }

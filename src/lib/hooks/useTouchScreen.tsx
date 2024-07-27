@@ -8,7 +8,7 @@ import { useState, useLayoutEffect } from "react"
  */
 
 export function useTouchScreen(): boolean {
-    const [isTouchScreen, setIsTouchScreen] = useState(false)
+    const [isTouchScreen, setIsTouchScreen] = useState<boolean>(false)
 
     useLayoutEffect(() => {
         const isTouchDevice = () => {

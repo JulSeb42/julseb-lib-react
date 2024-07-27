@@ -9,6 +9,7 @@ import type {
     CssFlexWrap,
     CssJustifyContent,
     CssJustifyItems,
+    ILibPadding,
     LibSpacers,
 } from "../../types"
 
@@ -23,6 +24,7 @@ const StyledFlexbox = styled.div<{
     $gap?: LibSpacers
     $columnGap?: LibSpacers
     $rowGap?: LibSpacers
+    $padding?: ILibPadding
 }>`
     ${Mixins.Flexbox}
 `

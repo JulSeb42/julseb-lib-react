@@ -8,8 +8,8 @@ import { useState, useEffect } from "react"
  * @argument width: number
  */
 
-export function useMaxWidth(width: number): Partial<undefined | boolean> {
-    const [isMax, setIsMax] = useState<undefined | boolean>(undefined)
+export function useMaxWidth(width: number): boolean {
+    const [isMax, setIsMax] = useState<boolean>(false)
 
     useEffect(() => {
         const detectSize = () => {

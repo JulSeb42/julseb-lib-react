@@ -9,6 +9,7 @@ import type {
     CssJustifyContent,
     CssJustifyItems,
     LibSpacers,
+    ILibPadding,
 } from "../../types"
 
 export interface ILibFlexbox extends LibComponentBase<HTMLDivElement> {
@@ -22,4 +23,5 @@ export interface ILibFlexbox extends LibComponentBase<HTMLDivElement> {
     gap?: LibSpacers
     columnGap?: LibSpacers
     rowGap?: LibSpacers
+    padding?: ILibPadding
 }

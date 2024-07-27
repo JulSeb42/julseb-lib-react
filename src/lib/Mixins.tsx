@@ -776,6 +776,7 @@ class mixins {
         $alignItems,
         $justifyContent,
         $alignContent,
+        $padding,
     }: {
         $inline?: boolean
         $col?: number | string
@@ -786,6 +787,7 @@ class mixins {
         $alignItems?: CssAlignItems
         $justifyContent?: CssJustifyContent
         $alignContent?: CssAlignContent
+        $padding?: ILibPadding
     }) => css`
         display: ${$inline ? "inline-grid" : "grid"};
         grid-template-columns: ${$col && typeof $col === "number"
@@ -798,6 +800,7 @@ class mixins {
         justify-items: ${$justifyItems};
         align-items: ${$alignItems};
         align-content: ${$alignContent};
+        ${Mixins.Padding($padding)}
     `
 
     /**
@@ -824,6 +827,7 @@ class mixins {
         $gap,
         $columnGap,
         $rowGap,
+        $padding,
     }: {
         $inline?: boolean
         $flexDirection?: CssFlexDirection
@@ -835,6 +839,7 @@ class mixins {
         $gap?: LibSpacers
         $columnGap?: LibSpacers
         $rowGap?: LibSpacers
+        $padding?: ILibPadding
     }) => css`
         display: ${$inline ? "inline-flex" : "flex"};
         flex-direction: ${$flexDirection};
@@ -846,6 +851,7 @@ class mixins {
         gap: ${$gap && Mixins.Spacer($gap)};
         column-gap: ${$columnGap && Mixins.Spacer($columnGap)};
         row-gap: ${$rowGap && Mixins.Spacer($rowGap)};
+        ${Mixins.Padding($padding)}
     `
 
     /**

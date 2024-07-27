@@ -7,6 +7,7 @@ import type {
     CssAlignItems,
     CssJustifyContent,
     CssJustifyItems,
+    ILibPadding,
     LibSpacers,
 } from "../../types"
 
@@ -20,6 +21,7 @@ const StyledGrid = styled.div<{
     $alignItems?: CssAlignItems
     $justifyContent?: CssJustifyContent
     $alignContent?: CssAlignContent
+    $padding?: ILibPadding
 }>`
     ${Mixins.Grid}
 `

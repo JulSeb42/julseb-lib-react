@@ -20,6 +20,7 @@ import type { ILibFlexbox } from "./types"
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 
 export const Flexbox = forwardRef<HTMLDivElement, ILibFlexbox>(
@@ -38,6 +39,7 @@ export const Flexbox = forwardRef<HTMLDivElement, ILibFlexbox>(
             gap,
             columnGap,
             rowGap,
+            padding,
             ...rest
         },
         ref
@@ -57,6 +59,7 @@ export const Flexbox = forwardRef<HTMLDivElement, ILibFlexbox>(
                 $gap={gap}
                 $columnGap={columnGap}
                 $rowGap={rowGap}
+                $padding={padding}
                 {...rest}
             >
                 {children}
