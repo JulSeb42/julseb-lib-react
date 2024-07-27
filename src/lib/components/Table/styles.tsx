@@ -22,6 +22,15 @@ const StyledTable = styled.table<{
     table-layout: fixed;
     width: 100%;
     vertical-align: ${({ $vAlign }) => $vAlign};
+    height: 1px;
+
+    td {
+        vertical-align: ${({ $vAlign }) => $vAlign};
+
+        & > * {
+            height: 100%;
+        }
+    }
 
     td,
     th {
@@ -94,6 +103,12 @@ const StyledTable = styled.table<{
     }}
 `
 
-setDefaultTheme([StyledTable])
+const StyledTd = styled.td<{ $noPadding: boolean }>`
+    && {
+        padding: ${({ $noPadding }) => $noPadding && 0};
+    }
+`
 
-export { StyledTable }
+setDefaultTheme([StyledTable, StyledTd])
+
+export { StyledTable, StyledTd }

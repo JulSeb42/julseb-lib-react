@@ -165,6 +165,7 @@ export interface ILibPosition {
     top?: LibSpacers
     right?: LibSpacers
     bottom?: LibSpacers
+    zIndex?: number
 }
 
 /* Links & buttons */

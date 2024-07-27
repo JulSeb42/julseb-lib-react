@@ -90,9 +90,10 @@ import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.previ
 /*====================== Helpers ======================*/
 
 import { helpersPreview } from "./previews/utils/Helpers.preview"
-import { variablesPreview } from "./previews/utils/Variables.preview"
-// prependImport
 import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
+import { variablesPreview } from "./previews/utils/Variables.preview"
+import { mixinsPreview } from "./previews/utils/Mixins.preview"
+// prependImport
 
 export type PreviewProp<T> = {
     props: T
@@ -206,9 +207,10 @@ export const previews = [
 
     /*====================== Helpers ======================*/
     helpersPreview,
-    variablesPreview,
-    // prependArr
     srOnlyPreview,
+    variablesPreview,
+    mixinsPreview,
+    // prependArr
 ] as Array<ComponentPreview<any>>
 
 export const componentPaths: ComponentPaths = previews.map(preview => ({

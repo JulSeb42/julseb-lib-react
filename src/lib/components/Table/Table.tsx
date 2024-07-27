@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Linkify } from "../../"
-import { StyledTable } from "./styles"
+import { StyledTable, StyledTd } from "./styles"
 import type { ILibTable } from "./types"
 
 /**
@@ -82,21 +82,28 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                                 data-testid={testid && `${testid}.TBody.Tr`}
                                 className={className && "TBodyTr"}
                             >
-                                {row.map(col => (
-                                    <td
-                                        key={uuid()}
-                                        data-testid={
-                                            testid && `${testid}.TBody.Tr.Td`
-                                        }
-                                        className={className && "TBodyTd"}
-                                    >
-                                        {linkify && typeof col === "string" ? (
-                                            <Linkify>{col}</Linkify>
-                                        ) : (
-                                            col
-                                        )}
-                                    </td>
-                                ))}
+                                {row.map(col => {
+                                    console.log({ col, type: typeof col })
+
+                                    return (
+                                        <StyledTd
+                                            key={uuid()}
+                                            data-testid={
+                                                testid &&
+                                                `${testid}.TBody.Tr.Td`
+                                            }
+                                            className={className && "TBodyTd"}
+                                            $noPadding={typeof col === "object"}
+                                        >
+                                            {linkify &&
+                                            typeof col === "string" ? (
+                                                <Linkify>{col}</Linkify>
+                                            ) : (
+                                                col
+                                            )}
+                                        </StyledTd>
+                                    )
+                                })}
                             </tr>
                         ))}
                     </tbody>

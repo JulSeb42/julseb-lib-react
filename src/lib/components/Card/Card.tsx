@@ -67,8 +67,8 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
                 }
                 to={to}
                 href={href}
-                target={blank && "_blank"}
-                rel={blank && "noreferrer noopener"}
+                target={blank ? "_blank" : null}
+                rel={blank ? "noreferrer noopener" : null}
                 onClick={onClick}
                 $border={border}
                 $borderRadius={borderRadius}
@@ -79,7 +79,16 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
                 $shadow={shadow}
                 $backgroundColor={backgroundColor}
                 $textColor={textColor}
-                $backgroundImg={backgroundImg}
+                $backgroundImg={
+                    backgroundImg && {
+                        $img: backgroundImg.img,
+                        $clip: backgroundImg.clip,
+                        $origin: backgroundImg.origin,
+                        $position: backgroundImg.position,
+                        $repeat: backgroundImg.repeat,
+                        $size: backgroundImg.size,
+                    }
+                }
                 $textAlign={textAlign}
                 {...rest}
             >

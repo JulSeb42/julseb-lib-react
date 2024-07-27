@@ -1,6 +1,7 @@
 /*=============================================== Mixins ===============================================*/
 
 import { css, type DefaultTheme } from "styled-components"
+import type { Property } from "csstype"
 import { stringifyPx } from "ts-utils-julseb"
 import { overlaysMap } from "./lib-utils"
 import {
@@ -39,9 +40,8 @@ import {
     type LibAllColorsAndOverlays,
     type ILibOutline,
     type LibColorsHoverAndCurrent,
-    type ILibBackgroundImage,
     type LibThemeNames,
-    type LibHeaderPosition,
+    type LibPositionExtract,
 } from "./types"
 
 type ILibIconMixin = {
@@ -433,7 +433,7 @@ class mixins {
      * @param $color: "primary" | "secondary" | "success" | "danger" | "warning" | "gray"
      * @param theme?: Default theme
      * @param themeName?: "light" | "dark"
-     * @example background-color:  ${({ theme }) => Mixins.Colors50("secondary", theme)}
+     * @example background-color: ${({ theme }) => Mixins.Colors50("secondary", theme)}
      */
     Colors50 = (
         $color: Exclude<LibColorsShort, "black" | "white">,
@@ -446,7 +446,6 @@ class mixins {
      * @prop $name: string
      * @prop $color?: Any color from the library
      * @prop $size?: number
-     * @prop $isLibIcon?: boolean
      */
     Icon = ({
         $name,
@@ -470,7 +469,7 @@ class mixins {
     }
 
     /**
-     * @description Returns an overlay
+     * @description Returns an overlay from the library
      * @param $overlay?: "black-50" | "black-80" | "white-50" | "white-80" | "gradient-black" | "gradient-white"
      */
     Overlay = ($overlay: LibOverlays | undefined) => {
@@ -480,7 +479,7 @@ class mixins {
     }
 
     /**
-     * @description Returns a border radius
+     * @description Returns a border radius with the radiuses from the library
      * @param $borderRadius: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
      */
     BorderRadius = ($borderRadius: ILibRadius | undefined) => {
@@ -522,7 +521,7 @@ class mixins {
     }
 
     /**
-     * @description Returns a transition
+     * @description Returns a transition from the library
      * @param $transition: "short" | "long" | "bezier"
      */
     Transition = ($transition: LibTransitions | undefined) => {
@@ -538,7 +537,7 @@ class mixins {
     }
 
     /**
-     * @description Returns a shadow
+     * @description Returns a shadow from the library
      * @param $shadow "xxl" | "xl" | "l" | "m" | "s" | "xs"
      */
     Shadow = ($shadow: LibShadows | undefined) => {
@@ -558,31 +557,31 @@ class mixins {
 
     /**
      * @description Returns a box shadow
-     * @param $shadow "xxl" | "xl" | "l" | "m" | "s" | "xs" | { default: LibShadows; hover: LibShadows; active: LibShadows }
+     * @param $boxShadow "xxl" | "xl" | "l" | "m" | "s" | "xs" | { default: LibShadows; hover: LibShadows; active: LibShadows }
      */
-    BoxShadow = ($shadow?: ILibBoxShadow) => {
-        if (!$shadow) return null
+    BoxShadow = ($boxShadow?: ILibBoxShadow) => {
+        if (!$boxShadow) return null
 
-        if (typeof $shadow === "string")
+        if (typeof $boxShadow === "string")
             return css`
-                box-shadow: ${Mixins.Shadow($shadow)};
+                box-shadow: ${Mixins.Shadow($boxShadow)};
             `
 
         return css`
-            box-shadow: ${Mixins.Shadow($shadow.default)};
+            box-shadow: ${Mixins.Shadow($boxShadow.default)};
 
             &:hover {
-                box-shadow: ${Mixins.Shadow($shadow.hover)};
+                box-shadow: ${Mixins.Shadow($boxShadow.hover)};
             }
 
             &:active {
-                box-shadow: ${Mixins.Shadow($shadow.active)};
+                box-shadow: ${Mixins.Shadow($boxShadow.active)};
             }
         `
     }
 
     /**
-     * @description Returns a font size
+     * @description Returns a font size from the library
      * @param $fontSize "display-h1" | "display-h2" | "display-h3" | "display-h4" | "display-h5" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small" | "inherit" | number
      */
     FontSize = (
@@ -616,7 +615,7 @@ class mixins {
     }
 
     /**
-     * @description Returns a font size
+     * @description Returns a font weight from the library
      * @param $fontWeight: "regular" | "bold" | "black"
      */
     FontWeight = ($fontWeight: LibFontWeights = "regular") => {
@@ -632,7 +631,7 @@ class mixins {
     }
 
     /**
-     * @description Returns a font size
+     * @description Returns a spacer from the library
      * @param $spacer: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto"
      */
     Spacer = ($spacer: LibSpacers | "auto" | undefined) => {
@@ -703,7 +702,7 @@ class mixins {
     `
 
     /**
-     * @description Shorthand for paddings
+     * @description Adds padding to element
      * @argument $padding: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
      */
     Padding = ($padding: ILibPadding | undefined) => {
@@ -727,7 +726,7 @@ class mixins {
     }
 
     /**
-     * @description Shorthand for margins
+     * @description Adds margins to element
      * @argument $margin: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
      */
     Margin = ($margin: ILibMargin) => {
@@ -850,7 +849,7 @@ class mixins {
     `
 
     /**
-     * @description Shorthand for borders
+     * @description Adds border to element
      * @prop style?: CssBorderStyle
      * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
      * @prop color?: Any color from the library
@@ -875,7 +874,7 @@ class mixins {
     }
 
     /**
-     * @description Shorthand for outlines
+     * @description Adds outline to element
      * @prop style?: CssOutlineStyle
      * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
      * @prop color?: Any color from the library
@@ -900,7 +899,7 @@ class mixins {
     }
 
     /**
-     * @description Shorthand for backgroundImage
+     * @description Adds background-image to element
      * @prop img: string
      * @prop clip?: CssBackgroundClip
      * @prop origin?: CssBackgroundOrigin
@@ -908,56 +907,72 @@ class mixins {
      * @prop repeat?: CssBackgroundRepeat
      * @prop size?: CssBackgroundSize
      */
-    BackgroundImage = (props?: ILibBackgroundImage) => {
-        if (!props) return null
-
-        const {
-            img,
-            clip,
-            origin = "border-box",
-            position = "center",
-            repeat = "no-repeat",
-            size = "cover",
-        } = props
+    BackgroundImage = ({
+        $img,
+        $clip,
+        $origin = "border-box",
+        $position = "center",
+        $repeat = "no-repeat",
+        $size = "cover",
+    }: {
+        $img: string
+        $clip?: Property.BackgroundClip
+        $origin?: Property.BackgroundOrigin
+        $position?: Property.BackgroundPosition
+        $repeat?: Property.BackgroundRepeat
+        $size?: Property.BackgroundSize
+    }) => {
+        if (!$img) return null
 
         return css`
-            background-image: url(${img});
-            background-origin: ${origin};
-            background-position: ${position};
-            background-repeat: ${repeat};
-            background-size: ${size};
+            background-image: url(${$img});
+            background-origin: ${$origin};
+            background-position: ${$position};
+            background-repeat: ${$repeat};
+            background-size: ${$size};
 
-            ${clip &&
-            (clip === "text"
+            ${$clip &&
+            ($clip === "text"
                 ? css`
                       background-clip: text;
                       -webkit-background-clip: text;
                       color: transparent;
                   `
                 : css`
-                      background-clip: ${clip};
+                      background-clip: ${$clip};
                   `)}
         `
     }
 
+    /**
+     * @description Adds position to element
+     * @prop $position?: "relative" | "absolute" | "fixed"
+     * @prop $left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     * @prop $bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+     */
     Position = ({
         $position,
         $left,
         $top,
         $right,
         $bottom,
+        $zIndex,
     }: {
-        $position?: LibHeaderPosition
+        $position?: LibPositionExtract
         $left?: LibSpacers
         $top?: LibSpacers
         $right?: LibSpacers
         $bottom?: LibSpacers
+        $zIndex?: number
     }) => css`
         position: ${$position};
         left: ${$left && Mixins.Spacer($left)};
         top: ${$top && Mixins.Spacer($top)};
         right: ${$right && Mixins.Spacer($right)};
         bottom: ${$bottom && Mixins.Spacer($bottom)};
+        z-index: ${$zIndex};
     `
 }
 

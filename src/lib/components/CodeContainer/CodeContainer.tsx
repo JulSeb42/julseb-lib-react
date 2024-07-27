@@ -111,6 +111,7 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                     data-testid={testid && `${testid}.SyntaxHighlighter`}
                     className={className && "SyntaxHighlighter"}
                     style={highlighterStyle}
+                    $color={color}
                     {...highlighterProps}
                 >
                     {children}

@@ -24,11 +24,11 @@ const StyledIconMenu = styled.nav<{
     $top?: LibSpacers
     $right?: LibSpacers
     $bottom?: LibSpacers
+    $zIndex?: number
 }>`
     ${Mixins.Position};
     width: ${DEFAULT_BUTTON_SIZE}px;
     height: ${DEFAULT_BUTTON_SIZE}px;
-    z-index: 999;
 `
 
 const OpenButton = styled(ButtonIcon).attrs({ size: DEFAULT_BUTTON_SIZE })`

@@ -57,6 +57,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                 $top={position?.top}
                 $right={position?.right}
                 $bottom={position?.bottom}
+                $zIndex={position?.zIndex || 999}
                 as={as}
                 {...rest}
             >

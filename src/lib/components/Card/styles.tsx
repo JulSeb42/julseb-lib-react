@@ -1,10 +1,10 @@
 /*=============================================== Card styles ===============================================*/
 
 import styled from "styled-components"
+import type { Property } from "csstype"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Flexbox, Mixins } from "../../"
 import type {
-    ILibBackgroundImage,
     CssCursor,
     LibAllColors,
     ILibBorder,
@@ -24,7 +24,14 @@ const StyledCard = styled(Flexbox)<{
     $shadow?: ILibBoxShadow
     $backgroundColor: LibAllColors
     $textColor: LibAllColors
-    $backgroundImg?: ILibBackgroundImage
+    $backgroundImg?: {
+        $img: string
+        $clip?: Property.BackgroundClip
+        $origin?: Property.BackgroundOrigin
+        $position?: Property.BackgroundPosition
+        $repeat?: Property.BackgroundRepeat
+        $size?: Property.BackgroundSize
+    }
     $textAlign?: CssTextAlign
 }>`
     text-decoration: none;
@@ -41,7 +48,8 @@ const StyledCard = styled(Flexbox)<{
     ${({ $border }) => Mixins.Border($border)};
     ${({ $padding }) => Mixins.Padding($padding)};
     ${({ $shadow }) => Mixins.BoxShadow($shadow)};
-    ${({ $backgroundImg }) => Mixins.BackgroundImage($backgroundImg)};
+    ${({ $backgroundImg }) =>
+        Mixins.BackgroundImage({ ...($backgroundImg as any) })};
 `
 
 setDefaultTheme([StyledCard])
