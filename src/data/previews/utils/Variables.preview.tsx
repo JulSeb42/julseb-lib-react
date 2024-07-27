@@ -14,25 +14,8 @@ import {
     allTransitions,
     allLayouts,
 } from "../../styles"
-import { Table, toTitleCase } from "../../../lib"
-import type { ReactChildren } from "../../../lib/types"
 import type { Color, Variable } from "../../types"
-
-interface IVariablesPreview {
-    headers: Array<ReactChildren>
-    data: Array<Variable | Color | (Variable & { valueTablet: string })>
-}
-
-function VariablesPreview({ headers, data }: IVariablesPreview) {
-    return (
-        <Table
-            headers={headers.map(h =>
-                typeof h === "string" ? toTitleCase(h?.toString()) : h
-            )}
-            data={data.map(d => Object.values(d).map(v => v))}
-        />
-    )
-}
+import { RenderPreview } from "./RenderPreview"
 
 interface List {
     name: string
@@ -65,11 +48,6 @@ export const variablesPreview: ComponentPreview<null> = {
     extends: null,
     previews: lists.map(list => ({
         previewTitle: list.name,
-        demo: (
-            <VariablesPreview
-                headers={Object.keys(list.list[0])}
-                data={list.list}
-            />
-        ),
+        demo: <RenderPreview data={list.list} />,
     })),
 }

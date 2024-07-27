@@ -33,6 +33,11 @@ const Common = ({
         $alignItems: "center",
         $justifyContent: "center",
     })}
+
+    && {
+        width: ${$size}px;
+        height: ${$size}px;
+    }
 `
 
 const StyledAvatarContainer = styled.span<{

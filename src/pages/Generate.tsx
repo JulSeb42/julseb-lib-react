@@ -1,5 +1,6 @@
 /*=============================================== Generate ===============================================*/
 
+import { toCamelCase } from "ts-utils-julseb"
 import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
@@ -11,6 +12,56 @@ export function Generate() {
         "$right?: LibSpacers",
         "$bottom?: LibSpacers",
     ])
+
+    // const utils = [
+    //     "calculate-average",
+    //     "calculate-total-sum",
+    //     "capitalize",
+    //     "convert-date-short",
+    //     "convert-date",
+    //     "convert-price",
+    //     "convert-youtube",
+    //     "delete-duplicates",
+    //     "detect-language",
+    //     "disable-scroll",
+    //     "enable-scroll",
+    //     "filter-object",
+    //     "format-date",
+    //     "format-hour",
+    //     "generate-numbers",
+    //     "get-first-name",
+    //     "get-last-name",
+    //     "get-percentage",
+    //     "get-random-avatar",
+    //     "get-random-date",
+    //     "get-random-number",
+    //     "get-random-string",
+    //     "get-random-time",
+    //     "get-random",
+    //     "get-time-now",
+    //     "get-today",
+    //     "get-tomorrow",
+    //     "get-yesterday",
+    //     "hex-to-rgb",
+    //     "regex",
+    //     "rgb-to-hex",
+    //     "scroll-to-top",
+    //     "slugify",
+    //     "sort-by-frequency",
+    //     "stringify-px",
+    //     "to-camel-case",
+    //     "to-constant-case",
+    //     "to-dot-case",
+    //     "to-kebab-case",
+    //     "to-pascal-case",
+    //     "to-path-case",
+    //     "to-sentence-case",
+    //     "to-snake-case",
+    //     "to-title-case",
+    //     "uuid",
+    //     "convert-to-email",
+    //     "unslugify",
+    // ]
 
     // const buttons = [
     //     "bold",
@@ -47,6 +98,20 @@ export function Generate() {
                     <li key={p}>{` * @prop ${p}`}</li>
                 ))}
             </ul>
+
+            {/* <ul>
+                {utils.sort().map(u => (
+                    <li key={u}>{`// { name: "${toCamelCase(
+                        u
+                    )}", effect: \`Transforms a string \${${toCamelCase(
+                        u
+                    )}("${u}")}\`, arguments: ["string: string"], example: '${toCamelCase(
+                        u
+                    )}("hello world")', result: ${toCamelCase(
+                        u
+                    )}("hello world"), },`}</li>
+                ))}
+            </ul> */}
 
             {/* <ul>
                 {buttons.map(b => (

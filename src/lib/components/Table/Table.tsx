@@ -76,36 +76,64 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                         data-testid={testid && `${testid}.TBody`}
                         className={className && "TBody"}
                     >
-                        {data.map(row => (
-                            <tr
-                                key={uuid()}
-                                data-testid={testid && `${testid}.TBody.Tr`}
-                                className={className && "TBodyTr"}
-                            >
-                                {row.map(col => {
-                                    console.log({ col, type: typeof col })
-
-                                    return (
-                                        <StyledTd
-                                            key={uuid()}
-                                            data-testid={
-                                                testid &&
-                                                `${testid}.TBody.Tr.Td`
-                                            }
-                                            className={className && "TBodyTd"}
-                                            $noPadding={typeof col === "object"}
-                                        >
-                                            {linkify &&
-                                            typeof col === "string" ? (
-                                                <Linkify>{col}</Linkify>
-                                            ) : (
-                                                col
-                                            )}
-                                        </StyledTd>
-                                    )
-                                })}
-                            </tr>
-                        ))}
+                        {data.map(row => {
+                            return (
+                                <tr
+                                    key={uuid()}
+                                    data-testid={testid && `${testid}.TBody.Tr`}
+                                    className={className && "TBodyTr"}
+                                >
+                                    {row.map(col => {
+                                        return (
+                                            <StyledTd
+                                                key={uuid()}
+                                                data-testid={
+                                                    testid &&
+                                                    `${testid}.TBody.Tr.Td`
+                                                }
+                                                className={
+                                                    className && "TBodyTd"
+                                                }
+                                                $noPadding={
+                                                    typeof col === "object"
+                                                }
+                                            >
+                                                {linkify &&
+                                                typeof col === "string" ? (
+                                                    <Linkify>{col}</Linkify>
+                                                ) : (
+                                                    col
+                                                )}
+                                            </StyledTd>
+                                        )
+                                    })}
+                                    {/* {row.map(col => {
+                                        return (
+                                            <StyledTd
+                                                key={uuid()}
+                                                data-testid={
+                                                    testid &&
+                                                    `${testid}.TBody.Tr.Td`
+                                                }
+                                                className={
+                                                    className && "TBodyTd"
+                                                }
+                                                $noPadding={
+                                                    typeof col === "object"
+                                                }
+                                            >
+                                                {linkify &&
+                                                typeof col === "string" ? (
+                                                    <Linkify>{col}</Linkify>
+                                                ) : (
+                                                    col
+                                                )}
+                                            </StyledTd>
+                                        )
+                                    })} */}
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 ) : (
                     children

@@ -4,7 +4,6 @@ import { css } from "styled-components"
 import {
     BREAKPOINTS,
     FONT_FAMILIES,
-    FONT_WEIGHTS,
     INPUT_HEIGHT,
     LINE_HEIGHTS,
     Mixins,
@@ -176,7 +175,6 @@ export const TextBaseMixin = ({
     $fontWeight,
     $textAlign,
     $color = "currentColor",
-    $linkColor = "primary",
 }: ILibTextBaseMixin) => css`
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${Mixins.FontSize($fontSize)};
@@ -187,30 +185,6 @@ export const TextBaseMixin = ({
 
     & > * {
         font-size: inherit;
-    }
-
-    a,
-    button {
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        text-decoration: none;
-        font-size: inherit;
-        font-weight: ${FONT_WEIGHTS.BLACK};
-        transition: ${TRANSITIONS.SHORT};
-        color: ${({ theme }) => Mixins.ColorsHoverDefault($linkColor, theme)};
-
-        @media ${BREAKPOINTS.HOVER} {
-            &:hover {
-                color: ${({ theme }) =>
-                    Mixins.ColorsHoverHover($linkColor, theme)};
-            }
-
-            &:active {
-                color: ${({ theme }) =>
-                    Mixins.ColorsHoverActive($linkColor, theme)};
-            }
-        }
     }
 
     code {
@@ -268,9 +242,7 @@ export const InputBaseMixin = ({
 
     &:focus {
         border-color: ${({ theme }) =>
-            $validation === false
-                ? theme.DANGER_500
-                : theme.PRIMARY_500};
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
     &::placeholder {
@@ -415,9 +387,7 @@ export const InputBaseMixin = ({
     ${$hasListOpen &&
     css`
         border-color: ${({ theme }) =>
-            $validation === false
-                ? theme.DANGER_500
-                : theme.PRIMARY_500};
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     `}
 
     ${$inputBackground === "light"
