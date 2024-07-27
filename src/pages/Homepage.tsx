@@ -26,7 +26,7 @@ export function Homepage() {
         // "Sr Only",
         // "Variables",
         // "Mixins",
-        "Js Utils",
+        // "Js Utils",
         "Options Markdown",
         "Hooks",
     ]

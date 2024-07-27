@@ -94,6 +94,7 @@ import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.previ
 import { variablesPreview } from "./previews/utils/Variables.preview"
 import { mixinsPreview } from "./previews/utils/Mixins.preview"
 import { utilsPreview } from "./previews/utils/JsUtils.preview.tsx"
+import { optionsMarkdownPreview } from "./previews/utils/OptionsMarkdown.tsx"
 // prependImport
 
 export type PreviewProp<T> = {
@@ -212,6 +213,7 @@ export const previews = [
     variablesPreview,
     mixinsPreview,
     utilsPreview,
+    optionsMarkdownPreview,
     // prependArr
 ] as Array<ComponentPreview<any>>
 
