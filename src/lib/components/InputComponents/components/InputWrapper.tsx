@@ -1,5 +1,6 @@
 /*=============================================== InputWrapper component ===============================================*/
 
+import classNames from "classnames"
 import { StyledInputWrapper } from "../styles"
 import type { ILibInputWrapper } from "../types"
 
@@ -21,8 +22,10 @@ export function InputWrapper({
     return (
         <StyledInputWrapper
             data-testid={hasContainer && testid ? `${testid}.Wrapper` : testid}
-            className={hasContainer && className ? "Wrapper" : className}
-            $hasListOpen={hasListOpen}
+            className={classNames(
+                hasContainer && className ? "Wrapper" : className,
+                { Open: hasListOpen }
+            )}
         >
             {children}
         </StyledInputWrapper>

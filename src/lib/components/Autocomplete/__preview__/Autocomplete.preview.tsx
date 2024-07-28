@@ -25,8 +25,8 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
             previewTitle: "Default",
             demo: (
                 <AutocompleteDemo
-                    // validation={{ status: false, message: "Hello" }}
-                    // inputBackground="dark"
+                // validation={{ status: false, message: "Hello" }}
+                // inputBackground="light"
                 />
             ),
         },

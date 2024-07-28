@@ -89,8 +89,10 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                                 data-testid={
                                     testid && `${testid}.OpenButton.Icon`
                                 }
-                                className={className && "OpenIcon"}
-                                $isOpen={isOpen}
+                                className={classNames(
+                                    { OpenIcon: className },
+                                    { Open: isOpen }
+                                )}
                             />
                         )
                     }
@@ -108,9 +110,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                               }
                               className={classNames(
                                   item.className,
-                                  {
-                                      IconMenuItem: className,
-                                  },
+                                  { IconMenuItem: className },
                                   { Open: isOpen }
                               )}
                               id={item.id}

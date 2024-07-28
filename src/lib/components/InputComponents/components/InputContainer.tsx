@@ -1,5 +1,6 @@
 /*=============================================== InputContainer component ===============================================*/
 
+import classNames from "classnames"
 import { Text } from "../../.."
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { LibIcon } from "../../LibIcon"
@@ -57,8 +58,7 @@ export function InputContainer({
     return (
         <StyledInputContainer
             data-testid={testid}
-            className={className}
-            $hasListOpen={hasListOpen}
+            className={classNames(className, { Open: hasListOpen })}
         >
             {(label || labelComment) && (
                 <Label

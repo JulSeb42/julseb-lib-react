@@ -1,91 +1,11 @@
 /*=============================================== InputImage component ===============================================*/
 
 import { forwardRef, useCallback, useState } from "react"
-import { LibIcon } from "../LibIcon"
-import { Image, Edit } from "../../icons"
 import { InputContainer } from "../InputComponents"
-import type { LibValidationStatus, LibIcon as LibIconType } from "../../types"
-import {
-    StyledInputImage,
-    StyledEmptyContainer,
-    StyledHoverContainer,
-    StyledImage,
-    StyledInput,
-} from "./styles"
+import { EmptyContainer } from "./EmptyContainer"
+import { HoverContainer } from "./HoverContainer"
+import { StyledInputImage, StyledImage, StyledInput } from "./styles"
 import type { ILibInputImage } from "./types"
-
-interface ILibInputImageContainer {
-    "data-testid": string | undefined
-    className: string | undefined
-    validation: LibValidationStatus
-    icon?: LibIconType
-    iconSize?: number
-}
-
-function EmptyContainer({
-    "data-testid": testid,
-    className,
-    validation,
-    iconSize = 48,
-    icon = (
-        <Image
-            data-testid={testid && `${testid}.EmptyContainer.Icon`}
-            className={className && "IconEmpty"}
-            size={iconSize}
-        />
-    ),
-}: ILibInputImageContainer) {
-    return (
-        <StyledEmptyContainer
-            data-testid={testid && `${testid}.EmptyContainer`}
-            className={className && "EmptyContainer"}
-            $validation={validation}
-        >
-            <LibIcon
-                data-testid={testid && `${testid}.EmptyContainer.Icon`}
-                className={className && "IconEmpty"}
-                icon={icon}
-                size={iconSize}
-            />
-        </StyledEmptyContainer>
-    )
-}
-
-function HoverContainer({
-    "data-testid": testid,
-    className,
-    validation,
-    iconSize = 32,
-    icon = (
-        <Edit
-            data-testid={testid && `${testid}.HoverContainer.Icon`}
-            className={className && "IconHover"}
-            size={iconSize}
-        />
-    ),
-    isVisible,
-    disabled = false,
-}: ILibInputImageContainer & {
-    isVisible: boolean
-    disabled: boolean | undefined
-}) {
-    return (
-        <StyledHoverContainer
-            data-testid={testid && `${testid}.HoverContainer`}
-            className={className && "HoverContainer"}
-            $validation={validation}
-            $isVisible={isVisible}
-            $disabled={disabled}
-        >
-            <LibIcon
-                data-testid={testid && `${testid}.EmptyContainer.Icon`}
-                className={className && "IconEmpty"}
-                icon={icon}
-                size={iconSize}
-            />
-        </StyledHoverContainer>
-    )
-}
 
 /**
  * @description Returns a InputImage component

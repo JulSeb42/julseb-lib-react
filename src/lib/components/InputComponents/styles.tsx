@@ -25,15 +25,19 @@ import type {
     LibInputListDirection,
 } from "../../types"
 
-const StyledInputContainer = styled.div<{ $hasListOpen?: boolean }>`
+const StyledInputContainer = styled.div`
     position: relative;
     width: 100%;
-    z-index: ${({ $hasListOpen }) => ($hasListOpen ? 20 : 1)};
+    z-index: 1;
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
         $gap: "xxs",
     })}
+
+    &.Open {
+        z-index: 20;
+    }
 `
 
 const Label = styled.label`
@@ -77,20 +81,20 @@ const StyledInputIconContainer = styled.span<{
     $inputVariant: LibInputVariant | undefined
 }>`
     height: ${INPUT_HEIGHT}px;
-    width: ${({ $inputVariant }) =>
-        $inputVariant === "pill"
-            ? `calc(${INPUT_HEIGHT}px + ${SPACERS.XS})`
-            : `${INPUT_HEIGHT}px`};
+    width: ${({ $inputVariant }) => {
+        if ($inputVariant === "pill")
+            return `calc(${INPUT_HEIGHT}px + ${SPACERS.XS})`
+        return `${INPUT_HEIGHT}px`
+    }};
     position: absolute;
     left: 0;
     top: 0;
     z-index: 2;
-    color: ${({ theme, $validationStatus, $disabled }) =>
-        $validationStatus === false
-            ? theme.DANGER_500
-            : $disabled
-            ? theme.GRAY_500
-            : theme.PRIMARY_500};
+    color: ${({ theme, $validationStatus, $disabled }) => {
+        if ($validationStatus === false) return theme.DANGER_50
+        if ($disabled) return theme.GRAY_500
+        return theme.PRIMARY_500
+    }};
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
@@ -107,23 +111,28 @@ const StyledInputIconContainer = styled.span<{
         background-color: ${({ theme }) => theme.GRAY_200};
     }
 
-    ${({ $inputBackground, $disabled, $validationStatus }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${$validationStatus === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : $disabled
-                      ? COLORS_LIGHT.GRAY_500
-                      : COLORS_LIGHT.PRIMARY_500};
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${$validationStatus === false
-                      ? COLORS_DARK.DANGER_500
-                      : $disabled
-                      ? COLORS_DARK.GRAY_500
-                      : COLORS_DARK.PRIMARY_500};
-              `}
+    ${({ $inputBackground, $validationStatus, $disabled }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${$validationStatus === false
+                        ? COLORS_LIGHT.DANGER_500
+                        : $disabled
+                        ? COLORS_LIGHT.GRAY_500
+                        : COLORS_LIGHT.PRIMARY_500};
+                `
+            case "dark":
+                return css`
+                    color: ${$validationStatus === false
+                        ? COLORS_DARK.DANGER_500
+                        : $disabled
+                        ? COLORS_DARK.GRAY_500
+                        : COLORS_DARK.PRIMARY_500};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledInputRightContainer = styled.span<{
@@ -231,92 +240,100 @@ const StyledInputButton = styled.button<{
             cursor: not-allowed;
         `}
 
-    ${({ $inputBackground, $validationStatus, $isSpan }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${Mixins.ColorsHoverDefault(
-                      $validationStatus === false ? "danger" : "primary",
-                      null,
-                      "light"
-                  )};
+    ${({ $inputBackground, $validationStatus, $isSpan }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${Mixins.ColorsHoverDefault(
+                        $validationStatus === false ? "danger" : "primary",
+                        null,
+                        "light"
+                    )};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          color: ${!$isSpan &&
-                          Mixins.ColorsHoverHover(
-                              $validationStatus === false
-                                  ? "danger"
-                                  : "primary",
-                              null,
-                              "light"
-                          )};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            color: ${!$isSpan &&
+                            Mixins.ColorsHoverHover(
+                                $validationStatus === false
+                                    ? "danger"
+                                    : "primary",
+                                null,
+                                "light"
+                            )};
+                        }
 
-                      &:not(:disabled):active {
-                          color: ${!$isSpan &&
-                          Mixins.ColorsHoverActive(
-                              $validationStatus === false
-                                  ? "danger"
-                                  : "primary",
-                              null,
-                              "light"
-                          )};
-                      }
-                  }
+                        &:not(:disabled):active {
+                            color: ${!$isSpan &&
+                            Mixins.ColorsHoverActive(
+                                $validationStatus === false
+                                    ? "danger"
+                                    : "primary",
+                                null,
+                                "light"
+                            )};
+                        }
+                    }
 
-                  &:disabled {
-                      color: ${COLORS_LIGHT.GRAY_500};
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${Mixins.ColorsHoverDefault(
-                      $validationStatus === false ? "danger" : "primary",
-                      null,
-                      "dark"
-                  )};
+                    &:disabled {
+                        color: ${COLORS_LIGHT.GRAY_500};
+                    }
+                `
+            case "dark":
+                return css`
+                    color: ${Mixins.ColorsHoverDefault(
+                        $validationStatus === false ? "danger" : "primary",
+                        null,
+                        "dark"
+                    )};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          color: ${!$isSpan &&
-                          Mixins.ColorsHoverHover(
-                              $validationStatus === false
-                                  ? "danger"
-                                  : "primary",
-                              null,
-                              "dark"
-                          )};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            color: ${!$isSpan &&
+                            Mixins.ColorsHoverHover(
+                                $validationStatus === false
+                                    ? "danger"
+                                    : "primary",
+                                null,
+                                "dark"
+                            )};
+                        }
 
-                      &:not(:disabled):active {
-                          color: ${!$isSpan &&
-                          Mixins.ColorsHoverActive(
-                              $validationStatus === false
-                                  ? "danger"
-                                  : "primary",
-                              null,
-                              "dark"
-                          )};
-                      }
-                  }
+                        &:not(:disabled):active {
+                            color: ${!$isSpan &&
+                            Mixins.ColorsHoverActive(
+                                $validationStatus === false
+                                    ? "danger"
+                                    : "primary",
+                                null,
+                                "dark"
+                            )};
+                        }
+                    }
 
-                  &:disabled {
-                      color: ${COLORS_DARK.GRAY_500};
-                  }
-              `}
+                    &:disabled {
+                        color: ${COLORS_DARK.GRAY_500};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
-const StyledInputWrapper = styled.div<{ $hasListOpen?: boolean }>`
+const StyledInputWrapper = styled.div`
     position: relative;
     width: 100%;
     height: fit-content;
     display: inline-block;
     height: ${INPUT_HEIGHT}px;
-    z-index: ${({ $hasListOpen }) => ($hasListOpen ? 20 : 1)};
+    z-index: 1;
+
+    &.Open {
+        z-index: 20;
+    }
 `
 
 const StyledListInput = styled.div<{
-    $isOpen: boolean
     $direction?: LibInputListDirection
     $inputBackground: LibInputBackground | undefined
     $validation: LibValidationStatus
@@ -325,16 +342,10 @@ const StyledListInput = styled.div<{
     position: absolute;
     left: 0;
     width: 100%;
-    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
-    border: 1px solid
-        ${({ theme, $isOpen, $validation }) =>
-            $isOpen
-                ? $validation === false
-                    ? theme.DANGER_500
-                    : theme.PRIMARY_500
-                : "transparent"};
-    max-height: ${({ $isOpen }) => ($isOpen ? "300px" : 0)};
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid transparent;
+    max-height: 0;
     overflow: hidden;
     overflow-y: scroll;
     transition: ${TRANSITIONS.BEZIER};
@@ -346,60 +357,84 @@ const StyledListInput = styled.div<{
             : RADIUSES.M};
     ${Mixins.HideScrollbar};
 
-    ${({ $direction, $isOpen }) =>
-        $direction === "up"
-            ? css`
-                  bottom: 0;
-                  padding-bottom: ${$isOpen && `${INPUT_HEIGHT}px`};
-              `
-            : css`
-                  top: 0;
-                  padding-top: ${$isOpen && `${INPUT_HEIGHT}px`};
-              `}
+    &.Open {
+        opacity: 1;
+        visibility: visible;
+        border-color: ${({ theme, $validation }) =>
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        max-height: 300px;
+    }
 
-    ${({ $inputBackground, $isOpen, $validation }) =>
-        $inputBackground === "light"
-            ? css`
-                  border-color: ${$isOpen
-                      ? $validation === false
-                          ? COLORS_LIGHT.DANGER_500
-                          : COLORS_LIGHT.PRIMARY_500
-                      : "transparent"};
-                  background-color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_50
-                      : COLORS_LIGHT.BACKGROUND};
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  border-color: ${$isOpen
-                      ? $validation === false
-                          ? COLORS_DARK.DANGER_500
-                          : COLORS_DARK.PRIMARY_500
-                      : "transparent"};
-                  background-color: ${$validation === false
-                      ? COLORS_DARK.DANGER_50
-                      : COLORS_DARK.BACKGROUND};
-              `}
+    ${({ $direction }) => {
+        switch ($direction) {
+            case "up":
+                return css`
+                    bottom: 0;
+
+                    &.Open {
+                        padding-bottom: ${INPUT_HEIGHT}px;
+                    }
+                `
+            case "down":
+                return css`
+                    top: 0;
+
+                    &.Open {
+                        padding-top: ${INPUT_HEIGHT}px;
+                    }
+                `
+            default:
+                return null
+        }
+    }}
+
+    ${({ $inputBackground, $validation }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    border-color: transparent;
+                    background-color: ${$validation === false
+                        ? COLORS_LIGHT.DANGER_50
+                        : COLORS_LIGHT.BACKGROUND};
+
+                    &.Open {
+                        border-color: ${$validation === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                    }
+                `
+            case "dark":
+                return css`
+                    border-color: transparent;
+                    background-color: ${$validation === false
+                        ? COLORS_DARK.DANGER_50
+                        : COLORS_DARK.BACKGROUND};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledListInputItem = styled.span<{
     $validation: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
-    $isActive: boolean | undefined
     $readOnly: boolean | undefined
 }>`
     padding: ${SPACERS.S};
     width: 100%;
-    background-color: ${({ theme, $isActive, $validation }) =>
-        $isActive &&
-        ($validation === false ? theme.DANGER_500 : theme.PRIMARY_500)};
-    color: ${({ $isActive, theme }) =>
-        $isActive ? theme.BACKGROUND : theme.FONT};
+    color: ${({ theme }) => theme.FONT};
     transition: ${TRANSITIONS.SHORT};
     ${Mixins.Flexbox({
         $alignItems: "center",
         $gap: "xs",
     })}
+
+    &.Active {
+        background-color: ${({ theme, $validation }) =>
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        color: ${({ theme }) => theme.BACKGROUND};
+    }
 
     ${({ theme, $readOnly, $validation }) =>
         !$readOnly &&
@@ -424,71 +459,86 @@ const StyledListInputItem = styled.span<{
             }
         `}
 
-        ${({ $inputBackground, $readOnly, $isActive, $validation }) =>
-        $inputBackground === "light"
-            ? css`
-                  background-color: ${$isActive &&
-                  ($validation === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.PRIMARY_500)};
-                  color: ${$isActive
-                      ? COLORS_LIGHT.BACKGROUND
-                      : COLORS_LIGHT.FONT};
+    ${({ $inputBackground, $validation, $readOnly }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${COLORS_LIGHT.FONT};
 
-                  ${!$readOnly &&
-                  css`
-                      @media ${BREAKPOINTS.HOVER} {
-                          &:hover {
-                              background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary",
-                                  null,
-                                  "light"
-                              )};
-                              color: ${COLORS_LIGHT.BACKGROUND};
-                          }
+                    &.Active {
+                        background-color: ${$validation === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                        color: ${COLORS_LIGHT.BACKGROUND};
+                    }
 
-                          &:active {
-                              background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary",
-                                  null,
-                                  "light"
-                              )};
-                          }
-                      }
-                  `}
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  background-color: ${$isActive &&
-                  ($validation === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.PRIMARY_500)};
-                  color: ${$isActive
-                      ? COLORS_DARK.BACKGROUND
-                      : COLORS_DARK.FONT};
+                    ${!$readOnly &&
+                    css`
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $validation === false
+                                        ? "danger"
+                                        : "primary",
+                                    null,
+                                    "light"
+                                )};
+                                color: ${COLORS_LIGHT.BACKGROUND};
+                            }
 
-                  ${!$readOnly &&
-                  css`
-                      @media ${BREAKPOINTS.HOVER} {
-                          &:hover {
-                              background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary",
-                                  null,
-                                  "dark"
-                              )};
-                              color: ${COLORS_DARK.BACKGROUND};
-                          }
+                            &:active {
+                                background-color: ${Mixins.ColorsHoverActive(
+                                    $validation === false
+                                        ? "danger"
+                                        : "primary",
+                                    null,
+                                    "light"
+                                )};
+                            }
+                        }
+                    `}
+                `
+            case "dark":
+                return css`
+                    color: ${COLORS_DARK.FONT};
 
-                          &:active {
-                              background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary",
-                                  null,
-                                  "dark"
-                              )};
-                          }
-                      }
-                  `}
-              `}
+                    &.Active {
+                        background-color: ${$validation === false
+                            ? COLORS_DARK.DANGER_500
+                            : COLORS_DARK.PRIMARY_500};
+                        color: ${COLORS_DARK.BACKGROUND};
+                    }
+
+                    ${!$readOnly &&
+                    css`
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $validation === false
+                                        ? "danger"
+                                        : "primary",
+                                    null,
+                                    "dark"
+                                )};
+                                color: ${COLORS_DARK.BACKGROUND};
+                            }
+
+                            &:active {
+                                background-color: ${Mixins.ColorsHoverActive(
+                                    $validation === false
+                                        ? "danger"
+                                        : "primary",
+                                    null,
+                                    "dark"
+                                )};
+                            }
+                        }
+                    `}
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 setDefaultTheme([

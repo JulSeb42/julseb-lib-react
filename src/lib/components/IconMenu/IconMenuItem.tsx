@@ -17,7 +17,6 @@ export const IconMenuItem = forwardRef<
                 ref={ref}
                 type="button"
                 variant={variant}
-                $isOpen={isOpen}
                 $direction={direction}
                 style={{
                     ["--button-position" as any]: indexPosition,

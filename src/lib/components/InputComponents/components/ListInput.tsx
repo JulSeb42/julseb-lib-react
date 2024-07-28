@@ -1,6 +1,7 @@
 /*=============================================== ListInput ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledListInput, StyledListInputItem } from "../styles"
 import type { ILibListInput, ILibListInputItem } from "../types"
 
@@ -18,9 +19,11 @@ export function ListInputItem({
     return (
         <StyledListInputItem
             data-testid={testid && `${testid}.ListItem`}
-            className={className && "ListItem"}
+            className={classNames(
+                { ListItem: className },
+                { Active: isActive }
+            )}
             onClick={onClick}
-            $isActive={isActive}
             $readOnly={readOnly}
             $validation={validation}
             $inputBackground={inputBackground}
@@ -48,9 +51,11 @@ export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
         return (
             <StyledListInput
                 data-testid={testid && `${testid}.ListInput`}
-                className={className && "ListInput"}
+                className={classNames(
+                    { ListInput: className },
+                    { Open: isOpen }
+                )}
                 ref={ref}
-                $isOpen={isOpen}
                 $direction={direction}
                 $inputBackground={inputBackground}
                 $validation={validation}

@@ -51,7 +51,6 @@ const ContainerCommon = css`
 
 const StyledHoverContainer = styled.div<{
     $validation: LibValidationStatus
-    $isVisible: boolean
     $disabled: boolean
 }>`
     ${ContainerCommon}
@@ -63,11 +62,15 @@ const StyledHoverContainer = styled.div<{
     left: 0;
     z-index: 1;
 
-    ${({ $disabled, $isVisible }) =>
+    ${({ $disabled }) =>
         !$disabled &&
         css`
             @media ${BREAKPOINTS.HOVER} {
-                opacity: ${$isVisible ? 1 : 0};
+                opacity: 0;
+
+                &.Visible {
+                    opacity: 1;
+                }
             }
         `}
 `

@@ -36,11 +36,13 @@ const OpenButton = styled(ButtonIcon).attrs({ size: DEFAULT_BUTTON_SIZE })`
     z-index: 1;
 `
 
-const OpenIcon = styled(Plus).attrs({ size: DEFAULT_BUTTON_SIZE })<{
-    $isOpen: boolean
-}>`
+const OpenIcon = styled(Plus).attrs({ size: DEFAULT_BUTTON_SIZE })`
     transition: ${TRANSITIONS.SHORT};
-    transform: rotate(${({ $isOpen }) => ($isOpen ? 45 : 0)}deg);
+    transform: rotate(0deg);
+
+    &.Open {
+        transform: rotate(45deg);
+    }
 `
 
 const getPosition = () =>
@@ -103,7 +105,7 @@ const StyledButtonIcon = styled(ButtonIcon)<{
                 `
         }
     }}
-`
+` as any
 
 setDefaultTheme([StyledIconMenu, OpenButton, OpenIcon, StyledButtonIcon])
 
