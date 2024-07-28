@@ -25,3 +25,5 @@ dist-ssr
 yarn.lock
 cypress/videos
 cypress/screenshots
+
+README.local.md

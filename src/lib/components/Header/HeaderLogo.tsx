@@ -63,6 +63,7 @@ export function HeaderLogo({
             className={className && "HeaderLogo"}
             to={to}
             href={href}
+            translate="no"
         >
             {children}
         </Logo>

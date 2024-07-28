@@ -21,7 +21,15 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
         "ILibInputValidationIconComponent",
     ],
     previews: [
-        { previewTitle: "Default", demo: <AutocompleteDemo label="City" /> },
+        {
+            previewTitle: "Default",
+            demo: (
+                <AutocompleteDemo
+                    // validation={{ status: false, message: "Hello" }}
+                    // inputBackground="dark"
+                />
+            ),
+        },
     ],
 }
 
@@ -36,6 +44,7 @@ function AutocompleteDemo({ ...rest }: Partial<ILibAutocomplete>) {
             listResults={frenchCities}
             data-testid="testid"
             className="className"
+            label="City"
         />
     )
 }
