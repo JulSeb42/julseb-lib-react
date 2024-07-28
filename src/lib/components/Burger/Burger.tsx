@@ -1,6 +1,7 @@
 /*=============================================== Burger component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledBurger } from "./styles"
 import type { ILibBurger } from "./types"
 
@@ -23,6 +24,7 @@ export const Burger = forwardRef<HTMLButtonElement, ILibBurger>(
         {
             "data-testid": testid,
             as,
+            className,
             isOpen,
             color = "primary",
             width = 32,
@@ -39,8 +41,8 @@ export const Burger = forwardRef<HTMLButtonElement, ILibBurger>(
                 data-testid={testid}
                 ref={ref}
                 as={as ? as : noHover ? "span" : "button"}
+                className={classNames(className, { Open: isOpen })}
                 aria-label={ariaLabel}
-                $isOpen={isOpen}
                 $noHover={noHover}
                 $borderWidth={borderWidth}
                 $color={color}

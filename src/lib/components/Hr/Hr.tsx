@@ -1,6 +1,7 @@
 /*=============================================== Hr component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledHr } from "./styles"
 import type { ILibHr } from "./types"
 
@@ -21,6 +22,7 @@ export const Hr = forwardRef<HTMLHRElement, ILibHr>(
         {
             "data-testid": testid,
             as,
+            className,
             height = 1,
             maxWidth = "100%",
             color = "gray-200",
@@ -35,11 +37,11 @@ export const Hr = forwardRef<HTMLHRElement, ILibHr>(
                 data-testid={testid}
                 ref={ref}
                 as={as}
+                className={classNames(className, { Rounded: isRounded })}
                 $height={height}
                 $maxWidth={maxWidth}
                 $color={color}
                 $margin={margin}
-                $isRounded={isRounded}
                 {...rest}
             />
         )

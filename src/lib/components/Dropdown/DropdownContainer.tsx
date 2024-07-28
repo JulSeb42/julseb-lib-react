@@ -1,6 +1,7 @@
 /*=============================================== DropdownContainer component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import type { ILibFlexbox } from "../Flexbox/types"
 import { StyledDropdownContainer } from "./styles"
 
@@ -16,6 +17,12 @@ import { StyledDropdownContainer } from "./styles"
 export const DropdownContainer = forwardRef<
     HTMLDivElement,
     ILibFlexbox & { isOpen: boolean }
->(({ isOpen, ...rest }, ref) => {
-    return <StyledDropdownContainer ref={ref} $isOpen={isOpen} {...rest} />
+>(({ isOpen, className, ...rest }, ref) => {
+    return (
+        <StyledDropdownContainer
+            ref={ref}
+            className={classNames(className, { Open: isOpen })}
+            {...rest}
+        />
+    )
 })

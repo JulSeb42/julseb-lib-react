@@ -1,7 +1,8 @@
 /*=============================================== HeaderNav ===============================================*/
 
-import { Fragment, useRef, type RefObject } from "react"
+import { Fragment, useRef, type RefObject, type ReactNode } from "react"
 import { NavLink } from "react-router-dom"
+import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import { useMaxWidth, useClickOutside } from "../../"
 import type {
@@ -53,16 +54,26 @@ export function HeaderNav({
         }
     })
 
+    const valueArr = links ? links : (children as Array<ReactNode>)
+
+    const searchHeight = isMobile && searchProps?.withSearch ? 32 : 0
+
+    const linksHeight =
+        valueArr.length * 24 + ([...valueArr, searchHeight].length - 1) * 12
+
+    const navHeight = searchHeight + linksHeight
+    console.log({ navHeight })
+
     return (
         <Nav
             data-testid={testid}
             ref={el}
-            className={className && "HeaderNav"}
-            $isOpen={isOpen}
+            className={classNames({ HeaderNav: className }, { Open: isOpen })}
             $headerHeight={headerHeight}
             $headerVariant={headerVariant}
             $positionVariant={positionVariant}
             $mobileVariant={mobileVariant}
+            $navHeight={navHeight}
         >
             {isMobile && searchProps?.withSearch && (
                 <HeaderSearch

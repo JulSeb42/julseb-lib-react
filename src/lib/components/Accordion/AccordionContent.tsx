@@ -1,5 +1,6 @@
 /*=============================================== AccordionContent component ===============================================*/
 
+import classNames from "classnames"
 import { StyledAccordionContent } from "./styles"
 import type { ReactChildren, LibAccordionVariant } from "../../types"
 
@@ -21,8 +22,10 @@ export function AccordionContent({
     return (
         <StyledAccordionContent
             data-testid={testid && `${testid}.AccordionContent`}
-            className={className && "AccordionContent"}
-            $isOpen={isOpen}
+            className={classNames(
+                { AccordionContent: className },
+                { Open: isOpen }
+            )}
             $variant={variant}
         >
             {children}

@@ -55,6 +55,7 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
             "aria-disabled": ariaDisabled = isLoading || disabled,
             color = "primary",
             className,
+            style,
             ...rest
         },
         ref
@@ -101,11 +102,12 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
                             ? showTooltip.offset
                             : undefined
                     }
+                    style={style}
                 >
                     <ButtonIconFunction {...(props as any)} />
                 </Tooltip>
             )
 
-        return <ButtonIconFunction {...(props as any)} />
+        return <ButtonIconFunction style={style} {...(props as any)} />
     }
 )

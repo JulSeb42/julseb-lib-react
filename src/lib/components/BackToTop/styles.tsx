@@ -2,16 +2,19 @@
 
 import styled from "styled-components"
 import { setDefaultTheme, ButtonIcon, SPACERS, TRANSITIONS } from "../../"
-import type {} from "../../types"
-import type {} from "./types"
 
-const StyledBackToTop = styled(ButtonIcon)<{ $isVisible: boolean }>`
+const StyledBackToTop = styled(ButtonIcon)`
     position: fixed;
     bottom: ${SPACERS.XL};
     right: ${SPACERS.XL};
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    opacity: 0;
+    visibility: hidden;
     transition: ${TRANSITIONS.SHORT};
+
+    &.Visible {
+        opacity: 1;
+        visibility: visible;
+    }
 `
 
 setDefaultTheme([StyledBackToTop])

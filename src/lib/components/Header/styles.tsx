@@ -48,8 +48,6 @@ const StyledHeader = styled.header<{
     $variant: LibHeaderVariant
     $burgerPosition: LibNavMenuVariant
     $position: LibHeaderPosition
-    $isHidden: boolean
-    $isOpen: boolean
     $headerHeight: number
 }>`
     position: ${({ $position }) => $position};
@@ -95,12 +93,14 @@ const StyledHeader = styled.header<{
             }
         `}
 
-    ${({ $position, $isHidden, $headerHeight }) =>
+    ${({ $position, $headerHeight }) =>
         ($position === "absolute" || $position === "fixed") &&
         css`
-            top: ${$isHidden
-                ? `calc(${$headerHeight * -1}px - ${SPACERS.S})`
-                : 0};
+            top: 0;
+
+            &.Hidden {
+                top: calc(${$headerHeight * -1}px - ${SPACERS.S});
+            }
         `}
 
     ${({ $variant }) =>
@@ -132,7 +132,7 @@ const StyledHeader = styled.header<{
             }
         `}
     
-    ${({ $variant, theme, $isOpen }) => {
+    ${({ $variant, theme }) => {
         switch ($variant) {
             case "white":
                 return css`
@@ -143,8 +143,9 @@ const StyledHeader = styled.header<{
                     background-color: transparent;
 
                     @media ${BREAKPOINTS.MOBILE} {
-                        ${$isOpen &&
-                        css`
+                        &.Open {
+                            background-color: ${theme.PRIMARY_500};
+
                             & > a,
                             & > button:not(${StyledHeaderBurger}),
                             & > nav > a,
@@ -175,7 +176,7 @@ const StyledHeader = styled.header<{
                                 color: ${({ theme }) =>
                                     Mixins.ColorsHoverDefault("white", theme)};
                             }
-                        `}
+                        }
                     }
                 `
             case "primary":
@@ -217,9 +218,9 @@ const StyledHeader = styled.header<{
 const Nav = styled.nav<{
     $mobileVariant: LibNavMobileVariant
     $positionVariant: LibNavMenuVariant
-    $isOpen: boolean
     $headerVariant: LibHeaderVariant
     $headerHeight: number
+    $navHeight: number
 }>`
     ${Mixins.Flexbox({
         $alignItems: "center",
@@ -237,16 +238,16 @@ const Nav = styled.nav<{
         background-color: ${({ theme, $headerVariant }) =>
             $headerVariant === "white" ? theme.WHITE : theme.PRIMARY_500};
         transition: ${TRANSITIONS.SHORT};
-        z-index: 998;
+        z-index: 997;
 
-        ${({ $mobileVariant, $isOpen, $headerHeight }) => {
+        ${({ $mobileVariant, $headerHeight, $navHeight }) => {
             switch ($mobileVariant) {
                 case "full":
                     return css`
                         width: 100vw;
                         height: 100vh;
                         top: 0;
-                        left: ${$isOpen ? 0 : "-600px"};
+                        left: -100vw;
                         flex-direction: column;
                         justify-content: center;
                         padding: ${SPACERS.L};
@@ -255,35 +256,48 @@ const Nav = styled.nav<{
                         & > button {
                             font-size: ${FONT_SIZES.H5};
                         }
+
+                        &.Open {
+                            left: 0;
+                        }
                     `
                 case "drawer":
                     return css`
                         width: 70%;
                         height: 100vh;
                         top: 0;
-                        left: ${$isOpen ? 0 : "-600px"};
+                        left: -100vw;
                         flex-direction: column;
                         justify-content: flex-start;
                         align-items: flex-start;
                         padding: calc(${$headerHeight}px + ${SPACERS.L}) 5vw
                             ${SPACERS.S};
+
+                        &.Open {
+                            left: 0;
+                        }
                     `
                 case "top":
                     return css`
-                        top: ${$isOpen ? `${$headerHeight}px` : "-300px"};
+                        top: calc(
+                            (${$navHeight}px + ${SPACERS.M} + ${SPACERS.M}) * -1
+                        );
                         left: 0;
                         padding: ${SPACERS.M} 5vw;
                         width: 100%;
                         flex-direction: column;
                         align-items: flex-start;
-                        z-index: 997;
+
+                        &.Open {
+                            top: ${$headerHeight}px;
+                        }
                     `
             }
         }}
     }
 `
 
-const Overlay = styled.span<{ $isVisible: boolean }>`
+const Overlay = styled.span`
     position: absolute;
     top: 0;
     left: 0;
@@ -291,9 +305,14 @@ const Overlay = styled.span<{ $isVisible: boolean }>`
     height: 100vh;
     background-color: ${OVERLAYS.BLACK_80};
     z-index: 995;
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+    visibility: hidden;
+    opacity: 0;
     transition: ${TRANSITIONS.SHORT};
+
+    &.Visible {
+        opacity: 1;
+        visibility: visible;
+    }
 `
 
 const SearchForm = styled.form<{ $maxWidth: string | number }>`

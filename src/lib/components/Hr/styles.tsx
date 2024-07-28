@@ -18,8 +18,11 @@ const StyledHr = styled.hr<{
     border: none;
     background-color: ${({ theme, $color }) => Mixins.AllColors($color, theme)};
     height: ${({ $height }) => stringifyPx($height)};
-    border-radius: ${({ $isRounded }) => $isRounded && RADIUSES.ROUND};
     ${({ $margin }) => Mixins.Margin($margin)}
+
+    &.Rounded {
+        border-radius: ${RADIUSES.ROUND};
+    }
 `
 
 setDefaultTheme([StyledHr])

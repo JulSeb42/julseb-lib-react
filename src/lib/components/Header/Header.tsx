@@ -1,6 +1,7 @@
 /*=============================================== Header component ===============================================*/
 
 import { forwardRef, useState, useEffect, useRef } from "react"
+import classNames from "classnames"
 import { useMaxWidth } from "../../"
 import { HeaderBurger } from "./HeaderBurger"
 import { HeaderSearch } from "./HeaderSearch"
@@ -125,9 +126,11 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
                 data-testid={testid}
                 ref={ref}
                 as={as}
-                className={className}
-                $isHidden={isHidden}
-                $isOpen={isOpen}
+                className={classNames(
+                    className,
+                    { Hidden: isHidden },
+                    { Open: isOpen }
+                )}
                 $burgerPosition={burgerPosition}
                 $headerHeight={headerHeight}
                 $position={position}
@@ -164,7 +167,10 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
                 {isMobile && navMobileVariant === "drawer" && (
                     <Overlay
                         onClick={() => setIsOpen(false)}
-                        $isVisible={isOpen}
+                        className={classNames(
+                            { HeaderOverlay: className },
+                            { Visible: isOpen }
+                        )}
                     />
                 )}
 

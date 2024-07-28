@@ -43,47 +43,63 @@ const OpenIcon = styled(Plus).attrs({ size: DEFAULT_BUTTON_SIZE })<{
     transform: rotate(${({ $isOpen }) => ($isOpen ? 45 : 0)}deg);
 `
 
-const getPositionOpenButton = ($isOpen: boolean, $buttonPosition: number) =>
-    $isOpen
-        ? `calc(${$buttonPosition} * ${DEFAULT_BUTTON_SIZE}px + ${SPACERS.XS} * ${$buttonPosition})`
-        : 0
+const getPosition = () =>
+    `calc(var(--button-position) * ${DEFAULT_BUTTON_SIZE}px + ${SPACERS.XS} * var(--button-position))`
 
 const StyledButtonIcon = styled(ButtonIcon)<{
     $direction?: LibIconMenuDirection
-    $isOpen: boolean
-    $buttonPosition: number
 }>`
     position: absolute;
     transition: left 200ms ease, top 200ms ease, right 200ms ease,
         bottom 200ms ease;
     display: block;
-    overflow: ${({ $isOpen }) => !$isOpen && "hidden"};
+    overflow: hidden;
     width: ${DEFAULT_BUTTON_SIZE}px;
     height: ${DEFAULT_BUTTON_SIZE}px;
-    z-index: ${({ $isOpen, $buttonPosition }) =>
-        $isOpen ? $buttonPosition + 1 : 0};
+    z-index: 0;
 
-    ${({ $direction, $isOpen, $buttonPosition }) => {
+    &.Open {
+        z-index: calc(var(--button-position) + 1);
+        overflow: visible;
+    }
+
+    ${({ $direction }) => {
         switch ($direction) {
             case "left":
                 return css`
                     top: 0;
-                    right: ${getPositionOpenButton($isOpen, $buttonPosition)};
+                    right: 0;
+
+                    &.Open {
+                        right: ${getPosition()};
+                    }
                 `
             case "up":
                 return css`
                     left: 0;
-                    bottom: ${getPositionOpenButton($isOpen, $buttonPosition)};
+                    bottom: 0;
+
+                    &.Open {
+                        bottom: ${getPosition()};
+                    }
                 `
             case "right":
                 return css`
                     top: 0;
-                    left: ${getPositionOpenButton($isOpen, $buttonPosition)};
+                    left: 0;
+
+                    &.Open {
+                        left: ${getPosition()};
+                    }
                 `
             case "down":
                 return css`
                     left: 0;
-                    top: ${getPositionOpenButton($isOpen, $buttonPosition)};
+                    top: 0;
+
+                    &.Open {
+                        top: ${getPosition()};
+                    }
                 `
         }
     }}

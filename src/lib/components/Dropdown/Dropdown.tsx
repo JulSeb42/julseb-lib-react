@@ -1,6 +1,7 @@
 /*=============================================== Dropdown component ===============================================*/
 
 import { forwardRef, useRef, useCallback } from "react"
+import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import { useMergeRefs, useClickOutside } from "../../"
 import { DropdownItem } from "./DropdownItem"
@@ -55,8 +56,7 @@ export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
                 data-testid={testid}
                 ref={useMergeRefs([ref, el])}
                 as={as}
-                className={className}
-                $isOpen={isOpen}
+                className={classNames(className, { Open: isOpen })}
                 $direction={direction}
                 $maxHeight={maxHeightOpen}
                 $buttonOpenHeight={positionFromButton}

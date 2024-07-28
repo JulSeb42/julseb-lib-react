@@ -1,6 +1,7 @@
 /*=============================================== IconMenu component ===============================================*/
 
 import { forwardRef, useState, useRef } from "react"
+import classNames from "classnames"
 import { Burger, useClickOutside, useMergeRefs } from "../../"
 import { IconMenuItem } from "./IconMenuItem"
 import {
@@ -105,10 +106,13 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                                   item["data-testid"] ||
                                   (testid && `${testid}.Item`)
                               }
-                              className={
-                                  item.className ||
-                                  (className && "IconMenuItem")
-                              }
+                              className={classNames(
+                                  item.className,
+                                  {
+                                      IconMenuItem: className,
+                                  },
+                                  { Open: isOpen }
+                              )}
                               id={item.id}
                               ref={item.ref}
                               {...item}

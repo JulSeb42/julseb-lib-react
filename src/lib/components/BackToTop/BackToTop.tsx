@@ -1,6 +1,7 @@
 /*=============================================== BackToTop component ===============================================*/
 
 import { forwardRef, useState, useEffect } from "react"
+import classNames from "classnames"
 import { scrollToTop } from "ts-utils-julseb"
 import { ArrowUp } from "../../icons"
 import { StyledBackToTop } from "./styles"
@@ -73,7 +74,7 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
         return (
             <StyledBackToTop
                 data-testid={testid}
-                className={className}
+                className={classNames(className, { Visible: isVisible })}
                 ref={ref}
                 icon={icon}
                 onClick={smoothScroll}
@@ -81,7 +82,6 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
                 iconSize={roundIconSize(48)}
                 tooltip={tooltip}
                 showTooltip={tooltipObj}
-                $isVisible={isVisible}
                 {...rest}
             />
         )

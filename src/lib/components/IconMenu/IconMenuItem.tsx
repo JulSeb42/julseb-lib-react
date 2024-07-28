@@ -7,16 +7,24 @@ import type { ILibIconMenuItem } from "./types"
 export const IconMenuItem = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
     ILibIconMenuItem
->(({ indexPosition, direction, isOpen, variant = "ghost", ...rest }, ref) => {
-    return (
-        <StyledButtonIcon
-            ref={ref}
-            type="button"
-            variant={variant}
-            $isOpen={isOpen}
-            $direction={direction}
-            $buttonPosition={indexPosition}
-            {...rest}
-        />
-    )
-})
+>(
+    (
+        { indexPosition, direction, isOpen, variant = "ghost", style, ...rest },
+        ref
+    ) => {
+        return (
+            <StyledButtonIcon
+                ref={ref}
+                type="button"
+                variant={variant}
+                $isOpen={isOpen}
+                $direction={direction}
+                style={{
+                    ["--button-position" as any]: indexPosition,
+                    ...style,
+                }}
+                {...rest}
+            />
+        )
+    }
+)

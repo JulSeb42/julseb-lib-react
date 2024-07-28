@@ -9,6 +9,7 @@ import type {
     ILibRadius,
     LibSpacers,
     LibAvatarBadgePosition,
+    ILibOutline,
 } from "../../types"
 
 const Common = ({
@@ -73,7 +74,7 @@ const StyledBadge = styled(Badge)<{
     $position?: LibAvatarBadgePosition
     $width: number
     $paddingLeftRight: LibSpacers | "auto"
-    $outline?: ILibBorder
+    $outline?: ILibOutline
 }>`
     position: absolute;
     right: ${({ $width, $paddingLeftRight }) =>

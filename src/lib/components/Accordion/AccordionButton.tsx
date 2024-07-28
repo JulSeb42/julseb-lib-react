@@ -1,6 +1,7 @@
 /*=============================================== AccordionButton component ===============================================*/
 
 import { useCallback } from "react"
+import classNames from "classnames"
 import { LibIcon } from "../LibIcon"
 import { Plus, ChevronDown } from "../../icons"
 import type {
@@ -56,8 +57,10 @@ export function AccordionButton({
                 data-testid={
                     testid && `${testid}.AccordionButton.IconContainer`
                 }
-                className={className && "AccordionButtonIconContainer"}
-                $isOpen={isOpen}
+                className={classNames(
+                    { AccordionButtonIconContainer: className },
+                    { Open: isOpen }
+                )}
                 $icon={icon}
             >
                 <LibIcon

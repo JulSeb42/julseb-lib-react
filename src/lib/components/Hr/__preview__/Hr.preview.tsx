@@ -14,5 +14,19 @@ export const hrPreview: ComponentPreview<ILibHr> = {
     propsImport: "ILibHr",
     additionalTypeImports: null,
     extends: ["HTMLHRElement"],
-    previews: [{ props: { "data-testid": "testid", className: "className" } }],
+    previews: [
+        {
+            previewTitle: "Default",
+            props: { "data-testid": "testid", className: "className" },
+        },
+        {
+            previewTitle: "Rounded",
+            props: {
+                "data-testid": "testid",
+                className: "className",
+                isRounded: true,
+                height: 5,
+            },
+        },
+    ],
 }

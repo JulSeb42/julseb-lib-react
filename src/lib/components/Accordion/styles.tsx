@@ -22,17 +22,22 @@ const StyledAccordion = styled.div<{ $variant: LibAccordionVariant }>`
         $alignItems: "stretch",
     })}
 
-    ${({ $variant, theme }) =>
-        $variant === "rounded"
-            ? css`
-                  border: 1px solid ${theme.GRAY_200};
-                  overflow: hidden;
-                  border-radius: ${RADIUSES.M};
-              `
-            : $variant === "basic" &&
-              css`
-                  gap: ${SPACERS.S};
-              `}
+    ${({ $variant, theme }) => {
+        switch ($variant) {
+            case "basic":
+                return css`
+                    gap: ${SPACERS.S};
+                `
+            case "rounded":
+                return css`
+                    border: 1px solid ${theme.GRAY_200};
+                    overflow: hidden;
+                    border-radius: ${RADIUSES.M};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
@@ -48,49 +53,57 @@ const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
         $justifyContent: "space-between",
     })}
 
-    ${({ $variant, theme }) =>
-        $variant === "rounded"
-            ? css`
-                  background-color: ${Mixins.ColorsHoverDefault(
-                      "primary",
-                      theme
-                  )};
-                  color: ${theme.BACKGROUND};
-                  padding: ${SPACERS.S};
+    ${({ $variant, theme }) => {
+        switch ($variant) {
+            case "basic":
+                return css`
+                    background-color: transparent;
+                    padding: 0;
+                    border-bottom: 1px solid ${theme.GRAY_200};
+                    color: ${Mixins.ColorsHoverDefault("primary", theme)};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:hover {
-                          background-color: ${Mixins.ColorsHoverHover(
-                              "primary",
-                              theme
-                          )};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:hover {
+                            color: ${Mixins.ColorsHoverHover("primary", theme)};
+                        }
 
-                      &:active {
-                          background-color: ${Mixins.ColorsHoverActive(
-                              "primary",
-                              theme
-                          )};
-                      }
-                  }
-              `
-            : $variant === "basic" &&
-              css`
-                  background-color: transparent;
-                  padding: 0;
-                  border-bottom: 1px solid ${theme.GRAY_200};
-                  color: ${Mixins.ColorsHoverDefault("primary", theme)};
+                        &:active {
+                            color: ${Mixins.ColorsHoverActive(
+                                "primary",
+                                theme
+                            )};
+                        }
+                    }
+                `
+            case "rounded":
+                return css`
+                    background-color: ${Mixins.ColorsHoverDefault(
+                        "primary",
+                        theme
+                    )};
+                    color: ${theme.BACKGROUND};
+                    padding: ${SPACERS.S};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:hover {
-                          color: ${Mixins.ColorsHoverHover("primary", theme)};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:hover {
+                            background-color: ${Mixins.ColorsHoverHover(
+                                "primary",
+                                theme
+                            )};
+                        }
 
-                      &:active {
-                          color: ${Mixins.ColorsHoverActive("primary", theme)};
-                      }
-                  }
-              `}
+                        &:active {
+                            background-color: ${Mixins.ColorsHoverActive(
+                                "primary",
+                                theme
+                            )};
+                        }
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledAccordionItem = styled.div<{ $variant: LibAccordionVariant }>`
@@ -109,7 +122,6 @@ const StyledAccordionItem = styled.div<{ $variant: LibAccordionVariant }>`
 `
 
 const StyledAccordionIcon = styled.span<{
-    $isOpen: boolean
     $icon?: LibAccordionIcon
 }>`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
@@ -119,28 +131,60 @@ const StyledAccordionIcon = styled.span<{
         $alignItems: "center",
     })}
 
-    ${({ $icon, $isOpen }) =>
-        $icon === "chevron"
-            ? css`
-                  transform: rotate(${$isOpen ? 180 : 0}deg);
-              `
-            : $icon === "plus" &&
-              css`
-                  transform: rotate(${$isOpen ? 45 : 0}deg);
-              `}
+    ${({ $icon }) => {
+        switch ($icon) {
+            case "chevron":
+                return css`
+                    transform: rotate(0deg);
+
+                    &.Open {
+                        transform: rotate(180deg);
+                    }
+                `
+            case "plus":
+                return css`
+                    transform: rotate(0deg);
+
+                    &.Open {
+                        transform: rotate(45deg);
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledAccordionContent = styled.div<{
-    $isOpen: boolean
     $variant: LibAccordionVariant
 }>`
     overflow: hidden;
-    max-height: ${({ $isOpen }) => ($isOpen ? "800px" : 0)};
+    max-height: 0;
     transition: ${TRANSITIONS.LONG};
-    padding: ${({ $isOpen, $variant }) =>
-        $variant === "rounded"
-            ? `${$isOpen ? SPACERS.XS : 0} ${SPACERS.S}`
-            : `${$isOpen ? SPACERS.XS : 0} 0`};
+    padding: ${({ $variant }) => {
+        switch ($variant) {
+            case "basic":
+                return `0 0`
+            case "rounded":
+                return `0 ${SPACERS.S}`
+            default:
+                return null
+        }
+    }};
+
+    &.Open {
+        max-height: 800px;
+        padding: ${({ $variant }) => {
+            switch ($variant) {
+                case "basic":
+                    return `${SPACERS.XS} 0`
+                case "rounded":
+                    return `${SPACERS.XS} ${SPACERS.S}`
+                default:
+                    return null
+            }
+        }};
+    }
 `
 
 setDefaultTheme([

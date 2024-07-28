@@ -1,6 +1,7 @@
 /*=============================================== Fade component ===============================================*/
 
 import { forwardRef, useEffect, useRef, useState } from "react"
+import classNames from "classnames"
 import { useMergeRefs } from "../../"
 import { StyledFade } from "./styles"
 import type { ILibFade } from "./types"
@@ -14,7 +15,7 @@ import type { ILibFade } from "./types"
  */
 
 export const Fade = forwardRef<HTMLDivElement, ILibFade>(
-    ({ "data-testid": testid, as, children, ...rest }, ref) => {
+    ({ "data-testid": testid, as, children, className, ...rest }, ref) => {
         const [isVisible, setVisible] = useState(true)
         const fadeRef = useRef<Element>(null)
 
@@ -31,7 +32,7 @@ export const Fade = forwardRef<HTMLDivElement, ILibFade>(
                 data-testid={testid}
                 ref={useMergeRefs([ref, fadeRef])}
                 as={as}
-                $isVisible={isVisible}
+                className={classNames(className, { Visible: isVisible })}
                 {...rest}
             >
                 {children}

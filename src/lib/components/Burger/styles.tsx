@@ -12,7 +12,6 @@ import {
 import type { LibColorsHoverAndCurrent } from "../../types"
 
 const StyledBurger = styled.button<{
-    $isOpen: boolean
     $color: LibColorsHoverAndCurrent
     $width: number
     $height: number
@@ -54,20 +53,36 @@ const StyledBurger = styled.button<{
         transition: ${TRANSITIONS.SHORT};
 
         &:first-child {
-            top: ${({ $isOpen }) => ($isOpen ? "45%" : 0)};
-            transform: ${({ $isOpen }) => $isOpen && "rotate(45deg)"};
+            top: 0;
         }
 
         &:nth-child(2) {
             top: calc(
                 50% - ${({ $borderWidth }) => stringifyPx($borderWidth)} / 2
             );
-            width: ${({ $isOpen }) => $isOpen && 0};
         }
 
         &:last-child {
-            bottom: ${({ $isOpen }) => ($isOpen ? "45%" : 0)};
-            transform: ${({ $isOpen }) => $isOpen && "rotate(-45deg)"};
+            bottom: 0;
+        }
+    }
+
+    &.Open span {
+        &:first-child {
+            top: 45%;
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            top: calc(
+                50% - ${({ $borderWidth }) => stringifyPx($borderWidth)} / 2
+            );
+            width: 0;
+        }
+
+        &:last-child {
+            bottom: 45%;
+            transform: rotate(-45deg);
         }
     }
 `

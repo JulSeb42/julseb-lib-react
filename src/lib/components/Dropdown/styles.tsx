@@ -23,7 +23,6 @@ import type {
 } from "../../types"
 
 const StyledDropdown = styled.div<{
-    $isOpen: boolean
     $direction: LibInputListDirection
     $maxHeight: number
     $buttonOpenHeight: number
@@ -35,9 +34,7 @@ const StyledDropdown = styled.div<{
     border-radius: ${RADIUSES.M};
     overflow: hidden;
     overflow-y: scroll;
-    box-shadow: ${({ $isOpen, $shadow }) => $isOpen && Mixins.Shadow($shadow)};
-    max-height: ${({ $maxHeight, $isOpen }) =>
-        $isOpen ? stringifyPx($maxHeight) : 0};
+    max-height: 0;
     transition: ${TRANSITIONS.SHORT};
     background-color: ${({ theme }) => theme.BACKGROUND};
     ${Mixins.Flexbox({
@@ -54,11 +51,16 @@ const StyledDropdown = styled.div<{
               css`
                   top: ${stringifyPx($buttonOpenHeight)};
               `}
+
+    &.Open {
+        box-shadow: ${({ $shadow }) => Mixins.Shadow($shadow)};
+        max-height: ${({ $maxHeight }) => stringifyPx($maxHeight)};
+    }
 `
 
-const StyledDropdownContainer = styled(Flexbox)<{ $isOpen: boolean }>`
+const StyledDropdownContainer = styled(Flexbox)`
     position: relative;
-    z-index: ${({ $isOpen }) => ($isOpen ? 20 : 0)};
+    z-index: 0;
 
     & > ${StyledDropdown} {
         ${({ justifyContent }) =>
@@ -70,6 +72,10 @@ const StyledDropdownContainer = styled(Flexbox)<{ $isOpen: boolean }>`
                   css`
                       left: 0;
                   `}
+    }
+
+    &.Open {
+        z-index: 20;
     }
 `
 
