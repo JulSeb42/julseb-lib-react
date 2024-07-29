@@ -1,6 +1,7 @@
 /*=============================================== AccordionContent component ===============================================*/
 
 import classNames from "classnames"
+import { capitalize } from "ts-utils-julseb"
 import { StyledAccordionContent } from "./styles"
 import type { ReactChildren, LibAccordionVariant } from "../../types"
 
@@ -24,9 +25,9 @@ export function AccordionContent({
             data-testid={testid && `${testid}.AccordionContent`}
             className={classNames(
                 { AccordionContent: className },
-                { Open: isOpen }
+                { Open: isOpen },
+                capitalize(variant)
             )}
-            $variant={variant}
         >
             {children}
         </StyledAccordionContent>

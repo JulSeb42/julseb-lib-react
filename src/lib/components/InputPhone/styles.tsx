@@ -64,23 +64,28 @@ const CountryButton = styled.button<{
         color: ${({ theme }) => theme.GRAY_500};
     }
 
-    ${({ $inputBackground }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${COLORS_LIGHT.FONT};
+    ${({ $inputBackground }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${COLORS_LIGHT.FONT};
 
-                  &:disabled {
-                      color: ${COLORS_LIGHT.GRAY_500};
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${COLORS_DARK.FONT};
+                    &:disabled {
+                        color: ${COLORS_LIGHT.GRAY_500};
+                    }
+                `
+            case "dark":
+                return css`
+                    color: ${COLORS_DARK.FONT};
 
-                  &:disabled {
-                      color: ${COLORS_DARK.GRAY_500};
-                  }
-              `}
+                    &:disabled {
+                        color: ${COLORS_DARK.GRAY_500};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const Flag = styled.img`
@@ -105,17 +110,24 @@ const CountryCode = styled.span<{
             color: ${theme.GRAY_500};
         `}
 
-    ${({ $inputBackground, $disabled }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${$disabled
-                      ? COLORS_LIGHT.GRAY_500
-                      : COLORS_LIGHT.FONT};
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${$disabled ? COLORS_DARK.GRAY_500 : COLORS_DARK.FONT};
-              `}
+    ${({ $inputBackground, $disabled }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${$disabled
+                        ? COLORS_LIGHT.GRAY_500
+                        : COLORS_LIGHT.FONT};
+                `
+            case "dark":
+                return css`
+                    color: ${$disabled
+                        ? COLORS_DARK.GRAY_500
+                        : COLORS_DARK.FONT};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const SearchContainer = styled.div<{
@@ -138,33 +150,38 @@ const SearchContainer = styled.div<{
             $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $inputBackground, $validation }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.PRIMARY_500};
-                  border-color: ${COLORS_LIGHT.GRAY_200};
+    ${({ $inputBackground, $validation }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${$validation === false
+                        ? COLORS_LIGHT.DANGER_500
+                        : COLORS_LIGHT.PRIMARY_500};
+                    border-color: ${COLORS_LIGHT.GRAY_200};
 
-                  &:has(input:focus) {
-                      border-bottom-color: ${$validation === false
-                          ? COLORS_LIGHT.DANGER_500
-                          : COLORS_LIGHT.PRIMARY_500};
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${$validation === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.PRIMARY_500};
-                  border-color: ${COLORS_DARK.GRAY_200};
+                    &:has(input:focus) {
+                        border-bottom-color: ${$validation === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                    }
+                `
+            case "dark":
+                return css`
+                    color: ${$validation === false
+                        ? COLORS_DARK.DANGER_500
+                        : COLORS_DARK.PRIMARY_500};
+                    border-color: ${COLORS_DARK.GRAY_200};
 
-                  &:has(input:focus) {
-                      border-bottom-color: ${$validation === false
-                          ? COLORS_DARK.DANGER_500
-                          : COLORS_DARK.PRIMARY_500};
-                  }
-              `}
+                    &:has(input:focus) {
+                        border-bottom-color: ${$validation === false
+                            ? COLORS_DARK.DANGER_500
+                            : COLORS_DARK.PRIMARY_500};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const SearchInput = styled.input<{
@@ -184,23 +201,28 @@ const SearchInput = styled.input<{
         color: ${({ theme }) => theme.GRAY_400};
     }
 
-    ${({ $inputBackground }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${COLORS_LIGHT.FONT};
+    ${({ $inputBackground }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${COLORS_LIGHT.FONT};
 
-                  &::placeholder {
-                      color: ${COLORS_LIGHT.GRAY_400};
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${COLORS_DARK.FONT};
+                    &::placeholder {
+                        color: ${COLORS_LIGHT.GRAY_400};
+                    }
+                `
+            case "dark":
+                return css`
+                    color: ${COLORS_DARK.FONT};
 
-                  &::placeholder {
-                      color: ${COLORS_DARK.GRAY_400};
-                  }
-              `}
+                    &::placeholder {
+                        color: ${COLORS_DARK.GRAY_400};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 setDefaultTheme([

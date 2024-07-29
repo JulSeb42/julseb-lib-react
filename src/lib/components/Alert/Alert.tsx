@@ -1,7 +1,10 @@
 /*=============================================== Alert component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
+import { stringifyPx, getRandomString } from "ts-utils-julseb"
 import { Text } from "../../"
+import { HelmetStyles } from "../../lib-utils"
 import type { LibAllColors } from "../../types"
 import { StyledAlert } from "./styles"
 import type { ILibAlert } from "./types"
@@ -59,6 +62,8 @@ export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
         {
             "data-testid": testid,
             as,
+            className,
+            id,
             children,
             maxWidth,
             textColor = "font",
@@ -73,28 +78,45 @@ export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
         ref
     ) => {
         const styles = alertStyles[alertColor]
+        const randomClass = getRandomString(10, true)
+        const withClass = className?.split(" ")[0] || randomClass
 
         return (
-            <StyledAlert
-                data-testid={testid}
-                ref={ref}
-                as={as || typeof children === "string" ? Text : "div"}
-                $backgroundColor={
-                    backgroundColor || styles.backgroundColor || "primary-50"
-                }
-                $border={{
-                    color: styles.borderColor || "primary",
-                    ...border,
-                }}
-                $borderRadius={borderRadius}
-                $gap={gap}
-                $maxWidth={maxWidth}
-                $padding={padding}
-                $textColor={textColor}
-                {...rest}
-            >
-                {children}
-            </StyledAlert>
+            <>
+                <HelmetStyles>
+                    {`
+                        ${id ? `#${id}` : `.${withClass}`} {
+                            --alert-max-width: ${stringifyPx(
+                                maxWidth || "100%"
+                            )};
+                        }
+                    `}
+                </HelmetStyles>
+
+                <StyledAlert
+                    data-testid={testid}
+                    ref={ref}
+                    as={as || typeof children === "string" ? Text : "div"}
+                    className={classNames(className, randomClass)}
+                    id={id}
+                    $backgroundColor={
+                        backgroundColor ||
+                        styles.backgroundColor ||
+                        "primary-50"
+                    }
+                    $border={{
+                        color: styles.borderColor || "primary",
+                        ...border,
+                    }}
+                    $borderRadius={borderRadius}
+                    $gap={gap}
+                    $padding={padding}
+                    $textColor={textColor}
+                    {...rest}
+                >
+                    {children}
+                </StyledAlert>
+            </>
         )
     }
 )

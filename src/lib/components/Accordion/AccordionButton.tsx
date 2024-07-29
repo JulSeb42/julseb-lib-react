@@ -2,6 +2,7 @@
 
 import { useCallback } from "react"
 import classNames from "classnames"
+import { capitalize } from "ts-utils-julseb"
 import { LibIcon } from "../LibIcon"
 import { Plus, ChevronDown } from "../../icons"
 import type {
@@ -47,9 +48,11 @@ export function AccordionButton({
     return (
         <StyledAccordionButton
             data-testid={testid && `${testid}.AccordionButton`}
-            className={className && "AccordionButton"}
+            className={classNames(
+                { AccordionButton: className },
+                capitalize(variant)
+            )}
             onClick={handleClick}
-            $variant={variant}
         >
             {title}
 
@@ -59,9 +62,9 @@ export function AccordionButton({
                 }
                 className={classNames(
                     { AccordionButtonIconContainer: className },
-                    { Open: isOpen }
+                    { Open: isOpen },
+                    { [capitalize(icon as string)]: typeof icon === "string" }
                 )}
-                $icon={icon}
             >
                 <LibIcon
                     icon={

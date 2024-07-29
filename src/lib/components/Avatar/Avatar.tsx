@@ -1,6 +1,8 @@
 /*=============================================== Avatar component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
+import { capitalize } from "ts-utils-julseb"
 import { roundIconSize } from "../../lib-utils"
 import { AvatarFunction } from "./AvatarFunction"
 import { StyledAvatarContainer, StyledBadge } from "./styles"
@@ -86,7 +88,14 @@ export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
 
                     <StyledBadge
                         data-testid={testid && `${testid}.Badge`}
-                        className={className && "Badge"}
+                        className={classNames(
+                            { Badge: className },
+                            `Position${capitalize(
+                                isBadgeObject && badge.position
+                                    ? badge.position
+                                    : "top"
+                            )}`
+                        )}
                         size={badgeSize}
                         number={
                             isBadgeObject && badge.content
@@ -107,11 +116,6 @@ export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
                             isBadgeObject && badge.padding
                                 ? badge.padding
                                 : undefined
-                        }
-                        $position={
-                            isBadgeObject && badge.position
-                                ? badge.position
-                                : "top"
                         }
                         $width={badgeSize}
                         $paddingLeftRight={

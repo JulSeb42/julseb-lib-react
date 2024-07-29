@@ -65,6 +65,9 @@ function AvatarPreview(props: Omit<ILibAvatar, "img">) {
                     backgroundColor={c}
                     data-testid="testid"
                     className="className"
+                    id={`avatar-${i}-${
+                        props?.letter || props?.icon?.toString()
+                    }`}
                     {...(props as any)}
                 />
             ))}

@@ -1,6 +1,6 @@
 /*=============================================== Accordion styles ===============================================*/
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {
     BREAKPOINTS,
     FONT_FAMILIES,
@@ -13,34 +13,26 @@ import {
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
-import type { LibAccordionIcon, LibAccordionVariant } from "../../types"
 
-const StyledAccordion = styled.div<{ $variant: LibAccordionVariant }>`
+const StyledAccordion = styled.div`
     position: relative;
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
     })}
 
-    ${({ $variant, theme }) => {
-        switch ($variant) {
-            case "basic":
-                return css`
-                    gap: ${SPACERS.S};
-                `
-            case "rounded":
-                return css`
-                    border: 1px solid ${theme.GRAY_200};
-                    overflow: hidden;
-                    border-radius: ${RADIUSES.M};
-                `
-            default:
-                return null
-        }
-    }}
+    &.Basic {
+        gap: ${SPACERS.S};
+    }
+
+    &.Rounded {
+        border: 1px solid ${({ theme }) => theme.GRAY_200};
+        overflow: hidden;
+        border-radius: ${RADIUSES.M};
+    }
 `
 
-const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
+const StyledAccordionButton = styled.button`
     width: 100%;
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${FONT_SIZES.BODY};
@@ -53,77 +45,59 @@ const StyledAccordionButton = styled.button<{ $variant: LibAccordionVariant }>`
         $justifyContent: "space-between",
     })}
 
-    ${({ $variant, theme }) => {
-        switch ($variant) {
-            case "basic":
-                return css`
-                    background-color: transparent;
-                    padding: 0;
-                    border-bottom: 1px solid ${theme.GRAY_200};
-                    color: ${Mixins.ColorsHoverDefault("primary", theme)};
+    &.Basic {
+        background-color: transparent;
+        padding: 0;
+        border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
+        color: ${({ theme }) => Mixins.ColorsHoverDefault("primary", theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
-                        &:hover {
-                            color: ${Mixins.ColorsHoverHover("primary", theme)};
-                        }
+        @media ${BREAKPOINTS.HOVER} {
+            &:hover {
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverHover("primary", theme)};
+            }
 
-                        &:active {
-                            color: ${Mixins.ColorsHoverActive(
-                                "primary",
-                                theme
-                            )};
-                        }
-                    }
-                `
-            case "rounded":
-                return css`
-                    background-color: ${Mixins.ColorsHoverDefault(
-                        "primary",
-                        theme
-                    )};
-                    color: ${theme.BACKGROUND};
-                    padding: ${SPACERS.S};
-
-                    @media ${BREAKPOINTS.HOVER} {
-                        &:hover {
-                            background-color: ${Mixins.ColorsHoverHover(
-                                "primary",
-                                theme
-                            )};
-                        }
-
-                        &:active {
-                            background-color: ${Mixins.ColorsHoverActive(
-                                "primary",
-                                theme
-                            )};
-                        }
-                    }
-                `
-            default:
-                return null
+            &:active {
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverActive("primary", theme)};
+            }
         }
-    }}
+    }
+
+    &.Rounded {
+        background-color: ${({ theme }) =>
+            Mixins.ColorsHoverDefault("primary", theme)};
+        color: ${({ theme }) => theme.BACKGROUND};
+        padding: ${SPACERS.S};
+
+        @media ${BREAKPOINTS.HOVER} {
+            &:hover {
+                background-color: ${({ theme }) =>
+                    Mixins.ColorsHoverHover("primary", theme)};
+            }
+
+            &:active {
+                background-color: ${({ theme }) =>
+                    Mixins.ColorsHoverActive("primary", theme)};
+            }
+        }
+    }
 `
 
-const StyledAccordionItem = styled.div<{ $variant: LibAccordionVariant }>`
+const StyledAccordionItem = styled.div`
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
     })}
 
-    ${({ $variant, theme }) =>
-        $variant === "rounded" &&
-        css`
-            &:not(:last-child) > ${StyledAccordionButton} {
-                border-bottom: 1px solid ${theme.BACKGROUND};
-            }
-        `}
+    &.Rounded {
+        &:not(:last-child) > ${StyledAccordionButton} {
+            border-bottom: 1px solid ${({ theme }) => theme.BACKGROUND};
+        }
+    }
 `
 
-const StyledAccordionIcon = styled.span<{
-    $icon?: LibAccordionIcon
-}>`
+const StyledAccordionIcon = styled.span`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
     transition: ${TRANSITIONS.SHORT};
     ${Mixins.Flexbox({
@@ -131,59 +105,46 @@ const StyledAccordionIcon = styled.span<{
         $alignItems: "center",
     })}
 
-    ${({ $icon }) => {
-        switch ($icon) {
-            case "chevron":
-                return css`
-                    transform: rotate(0deg);
+    &.Chevron {
+        transform: rotate(0deg);
 
-                    &.Open {
-                        transform: rotate(180deg);
-                    }
-                `
-            case "plus":
-                return css`
-                    transform: rotate(0deg);
-
-                    &.Open {
-                        transform: rotate(45deg);
-                    }
-                `
-            default:
-                return null
+        &.Open {
+            transform: rotate(180deg);
         }
-    }}
+    }
+
+    &.Plus {
+        transform: rotate(0deg);
+
+        &.Open {
+            transform: rotate(45deg);
+        }
+    }
 `
 
-const StyledAccordionContent = styled.div<{
-    $variant: LibAccordionVariant
-}>`
+const StyledAccordionContent = styled.div`
     overflow: hidden;
     max-height: 0;
     transition: ${TRANSITIONS.LONG};
-    padding: ${({ $variant }) => {
-        switch ($variant) {
-            case "basic":
-                return `0 0`
-            case "rounded":
-                return `0 ${SPACERS.S}`
-            default:
-                return null
-        }
-    }};
+
+    &.Basic {
+        padding: 0 0;
+    }
+
+    &.Rounded {
+        padding: 0 ${SPACERS.S};
+    }
 
     &.Open {
         max-height: 800px;
-        padding: ${({ $variant }) => {
-            switch ($variant) {
-                case "basic":
-                    return `${SPACERS.XS} 0`
-                case "rounded":
-                    return `${SPACERS.XS} ${SPACERS.S}`
-                default:
-                    return null
-            }
-        }};
+
+        &.Basic {
+            padding: ${SPACERS.XS} 0;
+        }
+
+        &.Rounded {
+            padding: ${SPACERS.XS} ${SPACERS.S};
+        }
     }
 `
 

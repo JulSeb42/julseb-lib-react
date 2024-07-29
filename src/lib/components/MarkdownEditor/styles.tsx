@@ -14,7 +14,6 @@ import {
     ButtonIcon,
     Dropdown,
     DropdownItem,
-    COLORS_LIGHT,
 } from "../../"
 import { getFontSizeButton } from "./markdown-buttons"
 import type {
@@ -43,28 +42,30 @@ const MdEditorContainer = styled.div<{
             $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $backgroundColor, $validation, theme }) =>
-        $backgroundColor === "light"
-            ? css`
-                  /* background-color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_50
-                      : COLORS_LIGHT.BACKGROUND}; */
-                  background-color: ${Mixins.AllColors(
-                      $validation === false ? "danger-50" : "white",
-                      theme,
-                      "light"
-                  )};
-                  color: ${Mixins.AllColors("font", theme, "light")};
-              `
-            : $backgroundColor === "dark" &&
-              css`
-                  background-color: ${Mixins.AllColors(
-                      $validation === false ? "danger-50" : "background",
-                      theme,
-                      "dark"
-                  )};
-                  color: ${Mixins.AllColors("font", theme, "dark")};
-              `}
+    ${({ $backgroundColor, $validation, theme }) => {
+        switch ($backgroundColor) {
+            case "light":
+                return css`
+                    background-color: ${Mixins.AllColors(
+                        $validation === false ? "danger-50" : "white",
+                        theme,
+                        "light"
+                    )};
+                    color: ${Mixins.AllColors("font", theme, "light")};
+                `
+            case "dark":
+                return css`
+                    background-color: ${Mixins.AllColors(
+                        $validation === false ? "danger-50" : "background",
+                        theme,
+                        "dark"
+                    )};
+                    color: ${Mixins.AllColors("font", theme, "dark")};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledMarkdownEditor = styled.textarea`

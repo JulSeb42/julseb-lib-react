@@ -8,23 +8,18 @@ import type {
     ILibBorder,
     ILibRadius,
     LibSpacers,
-    LibAvatarBadgePosition,
     ILibOutline,
 } from "../../types"
 
 const Common = ({
-    $size,
     $borderRadius,
     $backgroundColor,
     $contentColor,
 }: {
-    $size?: number
     $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
 }) => css`
-    width: ${$size}px;
-    height: ${$size}px;
     background-color: ${({ theme }) =>
         Mixins.AllColors($backgroundColor, theme)};
     color: ${({ theme }) => Mixins.AllColors($contentColor, theme)};
@@ -36,13 +31,12 @@ const Common = ({
     })}
 
     && {
-        width: ${$size}px;
-        height: ${$size}px;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
     }
 `
 
 const StyledAvatarContainer = styled.span<{
-    $size?: number
     $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
@@ -54,7 +48,6 @@ const StyledAvatarContainer = styled.span<{
 `
 
 const StyledAvatar = styled.span<{
-    $size?: number
     $border?: ILibBorder
     $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
@@ -66,12 +59,11 @@ const StyledAvatar = styled.span<{
     position: relative;
     z-index: 0;
     font-weight: ${FONT_WEIGHTS.BLACK};
-    line-height: ${({ $size }) => $size}px;
+    line-height: var(--avatar-size);
     text-transform: uppercase;
 `
 
 const StyledBadge = styled(Badge)<{
-    $position?: LibAvatarBadgePosition
     $width: number
     $paddingLeftRight: LibSpacers | "auto"
     $outline?: ILibOutline
@@ -79,9 +71,15 @@ const StyledBadge = styled(Badge)<{
     position: absolute;
     right: ${({ $width, $paddingLeftRight }) =>
         `calc((${$width / 2}px + ${Mixins.Spacer($paddingLeftRight)}) * -1)`};
-    top: ${({ $position }) => $position === "top" && SPACERS.XXS};
-    bottom: ${({ $position }) => $position === "bottom" && SPACERS.XXS};
     ${({ $outline }) => Mixins.Outline($outline)}
+
+    &.PositionTop {
+        top: ${SPACERS.XXS};
+    }
+
+    &.PositionBottom {
+        bottom: ${SPACERS.XXS};
+    }
 ` as FC<any>
 
 setDefaultTheme([StyledAvatarContainer, StyledAvatar, StyledBadge])

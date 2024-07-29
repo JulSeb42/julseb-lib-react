@@ -111,18 +111,18 @@ const StyledSlideshowButton = styled.button<{
             ${({ $size }) =>
                 $size === "large" ? BUTTON_SIZE_LARGE : BUTTON_SIZE}px / 2
     );
-    left: ${({ $position, $size }) =>
-        $position === "right"
-            ? null
-            : $size === "large"
-            ? 0
-            : $position === "left" && SPACERS.XS};
-    right: ${({ $position, $size }) =>
-        $position === "left"
-            ? null
-            : $size === "large"
-            ? 0
-            : $position === "right" && SPACERS.XS};
+    left: ${({ $position, $size }) => {
+        if ($position === "right") return null
+        if ($size === "large") return "0"
+        if ($position === "left") return SPACERS.XS
+        return null
+    }};
+    right: ${({ $position, $size }) => {
+        if ($position === "left") return null
+        if ($size === "large") return "0"
+        if ($position === "right") return SPACERS.XS
+        return null
+    }};
 
     @media ${BREAKPOINTS.HOVER} {
         &:hover {

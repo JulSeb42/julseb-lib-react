@@ -25,54 +25,65 @@ const StyledTabsButtonsContainer = styled.div<{
 }>`
     position: relative;
 
-    ${({ $variant, $justify }) =>
-        $variant === "basic"
-            ? css`
-                  width: ${$justify === "start" ? "100%" : ""};
-                  &:after {
-                      content: "";
-                      position: absolute;
-                      bottom: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 1px;
-                      background-color: ${({ theme }) => theme.GRAY_200};
-                      z-index: 0;
-                  }
-              `
-            : $variant === "rounded" &&
-              css`
-                  width: ${$justify === "start" ? "fit-content" : ""};
-                  background-color: ${({ theme }) => theme.GRAY_50};
-                  border-radius: ${RADIUSES.M};
-                  padding: ${RADIUSES.XS};
-              `}
+    ${({ $variant, $justify, theme }) => {
+        switch ($variant) {
+            case "basic":
+                return css`
+                    width: ${$justify === "start" && "100%"};
 
-    ${({ $justify, $cols }) =>
-        $justify === "start"
-            ? css`
-                  ${Mixins.Flexbox({
-                      $alignItems: "center",
-                      $gap: "xs",
-                      $flexWrap: "wrap",
-                      $inline: true,
-                  })};
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: ${theme.GRAY_200};
+                        z-index: 0;
+                    }
+                `
+            case "rounded":
+                return css`
+                    width: ${$justify === "start" ? "fit-content" : ""};
+                    background-color: ${theme.GRAY_50};
+                    border-radius: ${RADIUSES.M};
+                    padding: ${RADIUSES.XS};
+                `
+            default:
+                return null
+        }
+    }}
 
-                  @media ${BREAKPOINTS.MOBILE} {
-                      flex-direction: column;
-                  }
-              `
-            : $justify === "stretch" &&
-              css`
-                  ${Mixins.Grid({
-                      $gap: "xs",
-                      $col: $cols,
-                  })};
+    ${({ $justify, $cols }) => {
+        switch ($justify) {
+            case "start":
+                return css`
+                    ${Mixins.Flexbox({
+                        $alignItems: "center",
+                        $gap: "xs",
+                        $flexWrap: "wrap",
+                        $inline: true,
+                    })};
 
-                  @media ${BREAKPOINTS.MOBILE} {
-                      grid-template-columns: repeat(1, 1fr);
-                  }
-              `}
+                    @media ${BREAKPOINTS.MOBILE} {
+                        flex-direction: column;
+                    }
+                `
+            case "stretch":
+                return css`
+                    ${Mixins.Grid({
+                        $gap: "xs",
+                        $col: $cols,
+                    })};
+
+                    @media ${BREAKPOINTS.MOBILE} {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledTabButton = styled.button<{

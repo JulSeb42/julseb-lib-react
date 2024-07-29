@@ -1,6 +1,8 @@
 /*=============================================== AccordionItem component ===============================================*/
 
 import { forwardRef, useState } from "react"
+import classNames from "classnames"
+import { capitalize } from "ts-utils-julseb"
 import type {
     LibComponentBase,
     LibAccordionIcon,
@@ -50,7 +52,7 @@ export const AccordionItem = forwardRef<HTMLDivElement, ILibAccordionItem>(
                 data-testid={testid}
                 as={as}
                 ref={ref}
-                className={className}
+                className={classNames(className, capitalize(variant))}
                 $variant={variant}
                 {...rest}
             >

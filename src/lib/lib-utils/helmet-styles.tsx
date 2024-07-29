@@ -3,7 +3,7 @@
 import { Helmet, HelmetData } from "react-helmet-async"
 
 interface ILibHelmetStyles {
-    children: string
+    children?: string
 }
 
 const helmetData = new HelmetData({})

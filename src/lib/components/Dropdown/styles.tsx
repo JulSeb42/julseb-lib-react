@@ -42,17 +42,22 @@ const StyledDropdown = styled.div<{
         $alignItems: "stretch",
     })}
 
-    ${({ $direction, $buttonOpenHeight }) =>
-        $direction === "up"
-            ? css`
-                  bottom: ${stringifyPx($buttonOpenHeight)};
-              `
-            : $direction === "down" &&
-              css`
-                  top: ${stringifyPx($buttonOpenHeight)};
-              `}
+    ${({ $direction, $buttonOpenHeight }) => {
+        switch ($direction) {
+            case "up":
+                return css`
+                    bottom: ${stringifyPx($buttonOpenHeight)};
+                `
+            case "down":
+                return css`
+                    top: ${stringifyPx($buttonOpenHeight)};
+                `
+            default:
+                return css``
+        }
+    }}
 
-    &.Open {
+&.Open {
         box-shadow: ${({ $shadow }) => Mixins.Shadow($shadow)};
         max-height: ${({ $maxHeight }) => stringifyPx($maxHeight)};
     }
@@ -63,15 +68,18 @@ const StyledDropdownContainer = styled(Flexbox)`
     z-index: 0;
 
     & > ${StyledDropdown} {
-        ${({ justifyContent }) =>
-            justifyContent === "flex-end"
-                ? css`
-                      right: 0;
-                  `
-                : justifyContent === "flex-start" &&
-                  css`
-                      left: 0;
-                  `}
+        ${({ justifyContent }) => {
+            switch (justifyContent) {
+                case "flex-end":
+                    return css`
+                        right: 0;
+                    `
+                case "flex-start":
+                    return css`
+                        left: 0;
+                    `
+            }
+        }}
     }
 
     &.Open {

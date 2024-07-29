@@ -1,7 +1,8 @@
 /*=============================================== Accordion component ===============================================*/
 
 import { forwardRef } from "react"
-import { uuid } from "ts-utils-julseb"
+import classNames from "classnames"
+import { uuid, capitalize } from "ts-utils-julseb"
 import { Text } from "../../"
 import { AccordionItem } from "./AccordionItem"
 import { StyledAccordion } from "./styles"
@@ -33,13 +34,14 @@ export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(
         },
         ref
     ) => {
+        const variantClass = capitalize(variant)
+
         return (
             <StyledAccordion
                 data-testid={testid}
                 ref={ref}
                 as={as}
-                className={className}
-                $variant={variant}
+                className={classNames(className, variantClass)}
                 {...rest}
             >
                 {items

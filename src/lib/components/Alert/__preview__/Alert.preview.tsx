@@ -34,7 +34,13 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
 
 function DemoAlertButtons() {
     return (
-        <Alert alertColor="danger" data-testid="testid" className="className">
+        <Alert
+            alertColor="danger"
+            data-testid="testid"
+            className="className"
+            id="alert"
+            maxWidth={400}
+        >
             <Text>Alert with button</Text>
 
             <Flexbox alignItems="center" gap="xs">

@@ -45,9 +45,6 @@ const OpenIcon = styled(Plus).attrs({ size: DEFAULT_BUTTON_SIZE })`
     }
 `
 
-const getPosition = () =>
-    `calc(var(--button-position) * ${DEFAULT_BUTTON_SIZE}px + ${SPACERS.XS} * var(--button-position))`
-
 const StyledButtonIcon = styled(ButtonIcon)<{
     $direction?: LibIconMenuDirection
 }>`
@@ -66,6 +63,8 @@ const StyledButtonIcon = styled(ButtonIcon)<{
     }
 
     ${({ $direction }) => {
+        const POSITION = `calc(var(--button-position) * ${DEFAULT_BUTTON_SIZE}px + ${SPACERS.XS} * var(--button-position))`
+
         switch ($direction) {
             case "left":
                 return css`
@@ -73,7 +72,7 @@ const StyledButtonIcon = styled(ButtonIcon)<{
                     right: 0;
 
                     &.Open {
-                        right: ${getPosition()};
+                        right: ${POSITION};
                     }
                 `
             case "up":
@@ -82,7 +81,7 @@ const StyledButtonIcon = styled(ButtonIcon)<{
                     bottom: 0;
 
                     &.Open {
-                        bottom: ${getPosition()};
+                        bottom: ${POSITION};
                     }
                 `
             case "right":
@@ -91,7 +90,7 @@ const StyledButtonIcon = styled(ButtonIcon)<{
                     left: 0;
 
                     &.Open {
-                        left: ${getPosition()};
+                        left: ${POSITION};
                     }
                 `
             case "down":
@@ -100,7 +99,7 @@ const StyledButtonIcon = styled(ButtonIcon)<{
                     top: 0;
 
                     &.Open {
-                        top: ${getPosition()};
+                        top: ${POSITION};
                     }
                 `
         }

@@ -11,7 +11,6 @@ import {
     Flexbox,
 } from "../../"
 import type { LibFooterDirection } from "../../types"
-import type {} from "./types"
 
 const StyledFooter = styled.footer<{
     $withSeparator?: boolean

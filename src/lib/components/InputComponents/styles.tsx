@@ -169,19 +169,24 @@ const StyledInputValidationIcon = styled.span<{
     color: ${({ theme, $validationStatus }) =>
         $validationStatus === false ? theme.DANGER_500 : theme.SUCCESS_500};
 
-    ${({ $inputBackground, $validationStatus }) =>
-        $inputBackground === "light"
-            ? css`
-                  color: ${$validationStatus === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.SUCCESS_500};
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  color: ${$validationStatus === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.SUCCESS_500};
-              `}
+    ${({ $inputBackground, $validationStatus }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    color: ${$validationStatus === false
+                        ? COLORS_LIGHT.DANGER_500
+                        : COLORS_LIGHT.SUCCESS_500};
+                `
+            case "dark":
+                return css`
+                    color: ${$validationStatus === false
+                        ? COLORS_DARK.DANGER_500
+                        : COLORS_DARK.SUCCESS_500};
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const StyledInputButton = styled.button<{

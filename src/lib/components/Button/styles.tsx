@@ -24,12 +24,11 @@ const StyledButton = styled.button<ILibButtonStyle>`
     font-weight: ${FONT_WEIGHTS.BLACK};
     font-size: ${({ $size }) =>
         $size === "small" ? FONT_SIZES.SMALL : FONT_SIZES.BODY};
-    padding: ${({ $size, $noPadding }) =>
-        $noPadding
-            ? 0
-            : $size === "small"
-            ? `${SPACERS.XXS} ${SPACERS.XS}`
-            : `${SPACERS.XS} ${SPACERS.S}`};
+    padding: ${({ $size, $noPadding }) => {
+        if ($noPadding) return "0"
+        if ($size == "small") return `${SPACERS.XXS} ${SPACERS.XS}`
+        return `${SPACERS.XS} ${SPACERS.S}`
+    }};
     gap: ${({ $gap }) => Mixins.Spacer($gap)};
     ${ButtonMixin}
 `

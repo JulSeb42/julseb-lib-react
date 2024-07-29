@@ -35,19 +35,13 @@ export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
         ref
     ) => {
         const randomClass = getRandomString(10, true)
-        const withClass = className?.split(" ")[0]
+        const withClass = className?.split(" ")[0] || randomClass
 
         return (
             <>
                 <HelmetStyles>
                     {`
-                        ${
-                            id
-                                ? `#${id}`
-                                : withClass
-                                ? `.${withClass}`
-                                : `.${randomClass}`
-                        } {
+                        ${id ? `#${id}` : `.${withClass}`} {
                             --progress-value: ${getPercentage(
                                 value,
                                 Number(max)

@@ -25,22 +25,29 @@ const StyledBurger = styled.button<{
     height: ${({ $height }) => stringifyPx($height)};
     color: ${({ theme, $color }) => Mixins.ColorsHoverDefault($color, theme)};
 
-    ${({ $noHover, $color, theme }) =>
-        !$noHover
-            ? css`
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:hover {
-                          color: ${Mixins.ColorsHoverHover($color, theme)};
-                      }
+    ${({ $noHover, $color, theme }) => {
+        switch ($noHover) {
+            case true:
+                return css`
+                    cursor: inherit;
+                `
+            case false:
+            case undefined:
+                return css`
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:hover {
+                            color: ${Mixins.ColorsHoverHover($color, theme)};
+                        }
 
-                      &:active {
-                          color: ${Mixins.ColorsHoverActive($color, theme)};
-                      }
-                  }
-              `
-            : css`
-                  cursor: inherit;
-              `}
+                        &:active {
+                            color: ${Mixins.ColorsHoverActive($color, theme)};
+                        }
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 
     span {
         display: block;

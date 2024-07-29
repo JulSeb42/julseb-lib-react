@@ -123,119 +123,124 @@ const StyledInputSlider = styled.input<{
         }
     }
 
-    ${({ $inputBackground, $validation }) =>
-        $inputBackground === "light"
-            ? css`
-                  background-color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_50
-                      : COLORS_LIGHT.GRAY_200};
+    ${({ $inputBackground, $validation }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    background-color: ${$validation === false
+                        ? COLORS_LIGHT.DANGER_50
+                        : COLORS_LIGHT.GRAY_200};
 
-                  &::-webkit-slider-thumb {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
+                    &::-webkit-slider-thumb {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
 
-                      @media ${BREAKPOINTS.HOVER} {
-                          &:not(:disabled):hover {
-                              background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary"
-                              )};
-                          }
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:not(:disabled):hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $validation === false ? "danger" : "primary"
+                                )};
+                            }
 
-                          &:not(:disabled):active {
-                              background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary"
-                              )};
-                          }
-                      }
-                  }
+                            &:not(:disabled):active {
+                                background-color: ${Mixins.ColorsHoverActive(
+                                    $validation === false ? "danger" : "primary"
+                                )};
+                            }
+                        }
+                    }
 
-                  &::-moz-range-thumb {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
-                  }
+                    &::-moz-range-thumb {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
+                    }
 
-                  &:before,
-                  &::before {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
-                  }
+                    &:before,
+                    &::before {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
+                    }
 
-                  &:disabled {
-                      background-color: ${COLORS_LIGHT.GRAY_100};
+                    &:disabled {
+                        background-color: ${COLORS_LIGHT.GRAY_100};
 
-                      &::-webkit-slider-thumb {
-                          background-color: ${COLORS_LIGHT.GRAY_500};
-                      }
+                        &::-webkit-slider-thumb {
+                            background-color: ${COLORS_LIGHT.GRAY_500};
+                        }
 
-                      &::-moz-range-thumb {
-                          background-color: ${COLORS_LIGHT.GRAY_500};
-                      }
+                        &::-moz-range-thumb {
+                            background-color: ${COLORS_LIGHT.GRAY_500};
+                        }
 
-                      &:before,
-                      &::before {
-                          background-color: ${COLORS_LIGHT.GRAY_500};
-                      }
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  background-color: ${$validation === false
-                      ? COLORS_DARK.DANGER_50
-                      : COLORS_DARK.GRAY_200};
+                        &:before,
+                        &::before {
+                            background-color: ${COLORS_LIGHT.GRAY_500};
+                        }
+                    }
+                `
+            case "dark":
+                return css`
+                    background-color: ${$validation === false
+                        ? COLORS_DARK.DANGER_50
+                        : COLORS_DARK.GRAY_200};
 
-                  &::-webkit-slider-thumb {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
+                    &::-webkit-slider-thumb {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
 
-                      @media ${BREAKPOINTS.HOVER} {
-                          &:not(:disabled):hover {
-                              background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary"
-                              )};
-                          }
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:not(:disabled):hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $validation === false ? "danger" : "primary"
+                                )};
+                            }
 
-                          &:not(:disabled):active {
-                              background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary"
-                              )};
-                          }
-                      }
-                  }
+                            &:not(:disabled):active {
+                                background-color: ${Mixins.ColorsHoverActive(
+                                    $validation === false ? "danger" : "primary"
+                                )};
+                            }
+                        }
+                    }
 
-                  &::-moz-range-thumb {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
-                  }
+                    &::-moz-range-thumb {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
+                    }
 
-                  &:before,
-                  &::before {
-                      background-color: ${Mixins.ColorsHoverDefault(
-                          $validation === false ? "danger" : "primary"
-                      )};
-                  }
+                    &:before,
+                    &::before {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $validation === false ? "danger" : "primary"
+                        )};
+                    }
 
-                  &:disabled {
-                      background-color: ${COLORS_DARK.GRAY_100};
+                    &:disabled {
+                        background-color: ${COLORS_DARK.GRAY_100};
 
-                      &::-webkit-slider-thumb {
-                          background-color: ${COLORS_DARK.GRAY_500};
-                      }
+                        &::-webkit-slider-thumb {
+                            background-color: ${COLORS_DARK.GRAY_500};
+                        }
 
-                      &::-moz-range-thumb {
-                          background-color: ${COLORS_DARK.GRAY_500};
-                      }
+                        &::-moz-range-thumb {
+                            background-color: ${COLORS_DARK.GRAY_500};
+                        }
 
-                      &:before,
-                      &::before {
-                          background-color: ${COLORS_DARK.GRAY_500};
-                      }
-                  }
-              `}
+                        &:before,
+                        &::before {
+                            background-color: ${COLORS_DARK.GRAY_500};
+                        }
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 const Tooltip = styled.span<{

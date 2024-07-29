@@ -1,7 +1,9 @@
 /*=============================================== Badge component ===============================================*/
 
 import { forwardRef } from "react"
-import { roundIconSize } from "../../lib-utils"
+import classNames from "classnames"
+import { getRandomString } from "ts-utils-julseb"
+import { HelmetStyles, roundIconSize } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
 import { StyledBadge } from "./styles"
 import type { ILibBadge } from "./types"
@@ -27,6 +29,7 @@ export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
         {
             "data-testid": testid,
             className,
+            id,
             as,
             size = 16,
             icon,
@@ -46,33 +49,47 @@ export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
         },
         ref
     ) => {
-        return (
-            <StyledBadge
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                className={className}
-                $size={size}
-                $backgroundColor={backgroundColor}
-                $contentColor={contentColor}
-                $borderRadius={borderRadius}
-                $padding={padding}
-                $hasChildren={!!(icon || number)}
-                $childrenLength={number?.toString().length}
-                {...rest}
-            >
-                {icon && (
-                    <LibIcon
-                        data-testid={testid && `${testid}.Icon`}
-                        className={className && "Icon"}
-                        icon={icon}
-                        color={contentColor}
-                        size={iconSize}
-                    />
-                )}
+        const randomClass = getRandomString(10, true)
+        const withClass = className?.split(" ")[0] || randomClass
 
-                {number}
-            </StyledBadge>
+        return (
+            <>
+                <HelmetStyles>
+                    {`
+                        ${id ? `#${id}` : `.${withClass}`} {
+                            --badge-size: ${size}px;
+                            --badge-font-size: ${roundIconSize(size)}px;
+                        }
+                    `}
+                </HelmetStyles>
+
+                <StyledBadge
+                    data-testid={testid}
+                    ref={ref}
+                    as={as}
+                    className={classNames(className, randomClass)}
+                    id={id}
+                    $backgroundColor={backgroundColor}
+                    $contentColor={contentColor}
+                    $borderRadius={borderRadius}
+                    $padding={padding}
+                    $hasChildren={!!(icon || number)}
+                    $childrenLength={number?.toString().length}
+                    {...rest}
+                >
+                    {icon && (
+                        <LibIcon
+                            data-testid={testid && `${testid}.Icon`}
+                            className={className && "Icon"}
+                            icon={icon}
+                            color={contentColor}
+                            size={iconSize}
+                        />
+                    )}
+
+                    {number}
+                </StyledBadge>
+            </>
         )
     }
 )

@@ -18,16 +18,15 @@ const CheckContainer = styled.span<{
     $disabled: boolean | undefined
 }>`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
-    color: ${({ theme, $disabled, $validation }) =>
-        $disabled
-            ? theme.GRAY_500
-            : $validation === false
-            ? theme.DANGER_500
-            : theme.PRIMARY_500};
     ${Mixins.Flexbox({
         $alignItems: "center",
         $justifyContent: "center",
     })}
+    color: ${({ theme, $disabled, $validation }) => {
+        if ($disabled) return theme.GRAY_500
+        if ($validation === false) return theme.DANGER_500
+        return theme.PRIMARY_500
+    }}
 `
 
 const CHECK_SIZE = 16
@@ -127,18 +126,14 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               border-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   theme
                               )};
                           }
 
                           &:active {
                               border-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   theme
                               )};
                           }
@@ -162,18 +157,14 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   theme
                               )};
                           }
 
                           &:active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary",
+                                  $validation === false ? "danger" : "primary",
                                   theme
                               )};
                           }

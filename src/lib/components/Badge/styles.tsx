@@ -2,11 +2,9 @@
 
 import styled, { css } from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme } from "../../"
-import { roundIconSize } from "../../lib-utils"
 import type { LibAllColors, ILibPadding, ILibRadius } from "../../types"
 
 const StyledBadge = styled.span<{
-    $size: number
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
     $borderRadius?: ILibRadius
@@ -14,13 +12,13 @@ const StyledBadge = styled.span<{
     $hasChildren?: boolean
     $childrenLength?: number
 }>`
-    min-width: ${({ $size }) => $size}px;
-    height: ${({ $size }) => $size}px;
+    min-width: var(--badge-size);
+    height: var(--badge-size);
     background-color: ${({ $backgroundColor, theme }) =>
         Mixins.AllColors($backgroundColor, theme)};
     color: ${({ $contentColor, theme }) =>
         Mixins.AllColors($contentColor, theme)};
-    font-size: ${({ $size }) => roundIconSize($size)}px;
+    font-size: var(--badge-font-size);
     font-weight: ${FONT_WEIGHTS.BLACK};
     ${Mixins.Flexbox({
         $inline: true,

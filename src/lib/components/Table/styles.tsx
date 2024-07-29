@@ -15,7 +15,11 @@ const StyledTable = styled.table<{
     $vAlign: CssVerticalAlign
     $variant: LibTableVariant
 }>`
-    ${TextBaseMixin({ $fontSize: "small", $fontWeight: "regular" })};
+    ${TextBaseMixin({
+        $fontSize: "small",
+        $fontWeight: "regular",
+        $linkColor: "primary",
+    })};
     display: table;
     border-collapse: collapse;
     border-spacing: 0;
@@ -53,18 +57,20 @@ const StyledTable = styled.table<{
         text-align: left;
         color: ${({ theme }) => theme.BACKGROUND};
 
-        a {
-            color: ${({ theme }) =>
-                Mixins.ColorsHoverDefault("background", theme)};
-
-            &:hover {
+        && {
+            a {
                 color: ${({ theme }) =>
-                    Mixins.ColorsHoverHover("background", theme)};
-            }
+                    Mixins.ColorsHoverDefault("background", theme)};
 
-            &:active {
-                color: ${({ theme }) =>
-                    Mixins.ColorsHoverActive("background", theme)};
+                &:hover {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverHover("background", theme)};
+                }
+
+                &:active {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverActive("background", theme)};
+                }
             }
         }
     }

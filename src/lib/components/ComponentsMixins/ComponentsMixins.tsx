@@ -13,6 +13,7 @@ import {
     COLORS_LIGHT,
     COLORS_DARK,
     FONT_SIZES,
+    FONT_WEIGHTS,
 } from "../../"
 import type {
     LibButtonVariant,
@@ -53,113 +54,124 @@ export const ButtonMixin = ({
     })}
     ${Mixins.BoxShadow($shadow)}
 
-    ${({ theme }) =>
-        $variant === "plain"
-            ? css`
-                  background-color: ${Mixins.ColorsHoverDefault($color, theme)};
-                  color: ${$color === "white"
-                      ? theme.PRIMARY_500
-                      : $color === "background"
-                      ? theme.FONT
-                      : theme.BACKGROUND};
+    ${({ theme }) => {
+        switch ($variant) {
+            case "plain":
+                return css`
+                    background-color: ${Mixins.ColorsHoverDefault(
+                        $color,
+                        theme
+                    )};
+                    color: ${$color === "white"
+                        ? theme.PRIMARY_500
+                        : $color === "background"
+                        ? theme.FONT
+                        : theme.BACKGROUND};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          background-color: ${Mixins.ColorsHoverHover(
-                              $color,
-                              theme
-                          )};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            background-color: ${Mixins.ColorsHoverHover(
+                                $color,
+                                theme
+                            )};
+                        }
 
-                      &:not(:disabled):active {
-                          background-color: ${Mixins.ColorsHoverActive(
-                              $color,
-                              theme
-                          )};
-                      }
+                        &:not(:disabled):active {
+                            background-color: ${Mixins.ColorsHoverActive(
+                                $color,
+                                theme
+                            )};
+                        }
 
-                      &:disabled {
-                          background-color: ${theme.GRAY_100};
-                          color: ${theme.GRAY_500};
-                      }
-                  }
-              `
-            : $variant === "outline"
-            ? css`
-                  border-color: ${Mixins.ColorsHoverDefault($color, theme)};
-                  color: ${Mixins.ColorsHoverDefault($color, theme)};
+                        &:disabled {
+                            background-color: ${theme.GRAY_100};
+                            color: ${theme.GRAY_500};
+                        }
+                    }
+                `
+            case "transparent":
+                return css`
+                    color: ${Mixins.ColorsHoverDefault($color, theme)};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          border-color: ${Mixins.ColorsHoverHover(
-                              $color,
-                              theme
-                          )};
-                          color: ${Mixins.ColorsHoverHover($color, theme)};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            color: ${Mixins.ColorsHoverHover($color, theme)};
+                        }
 
-                      &:not(:disabled):active {
-                          border-color: ${Mixins.ColorsHoverActive(
-                              $color,
-                              theme
-                          )};
-                          color: ${Mixins.ColorsHoverActive($color, theme)};
-                      }
+                        &:not(:disabled):active {
+                            color: ${Mixins.ColorsHoverActive($color, theme)};
+                        }
 
-                      &:disabled {
-                          border-color: ${theme.GRAY_500};
-                          color: ${theme.GRAY_500};
-                      }
-                  }
-              `
-            : $variant === "ghost"
-            ? css`
-                  background-color: ${Mixins.ColorsGhostDefault($color, theme)};
-                  color: ${$color === "white" || $color === "background"
-                      ? theme.PRIMARY_500
-                      : $color === "font"
-                      ? theme.BACKGROUND
-                      : Mixins.ColorsHoverDefault($color, theme)};
+                        &:disabled {
+                            color: ${theme.GRAY_500};
+                        }
+                    }
+                `
+            case "ghost":
+                return css`
+                    background-color: ${Mixins.ColorsGhostDefault(
+                        $color,
+                        theme
+                    )};
+                    color: ${$color === "white" || $color === "background"
+                        ? theme.PRIMARY_500
+                        : $color === "font"
+                        ? theme.BACKGROUND
+                        : Mixins.ColorsHoverDefault($color, theme)};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          background-color: ${Mixins.ColorsGhostHover(
-                              $color,
-                              theme
-                          )};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            background-color: ${Mixins.ColorsGhostHover(
+                                $color,
+                                theme
+                            )};
+                        }
 
-                      &:not(:disabled):active {
-                          background-color: ${Mixins.ColorsGhostActive(
-                              $color,
-                              theme
-                          )};
-                      }
+                        &:not(:disabled):active {
+                            background-color: ${Mixins.ColorsGhostActive(
+                                $color,
+                                theme
+                            )};
+                        }
 
-                      &:disabled {
-                          background-color: ${theme.GRAY_50};
-                          color: ${theme.GRAY_500};
-                      }
-                  }
-              `
-            : $variant === "transparent" &&
-              css`
-                  color: ${Mixins.ColorsHoverDefault($color, theme)};
+                        &:disabled {
+                            background-color: ${theme.GRAY_50};
+                            color: ${theme.GRAY_500};
+                        }
+                    }
+                `
+            case "outline":
+                return css`
+                    border-color: ${Mixins.ColorsHoverDefault($color, theme)};
+                    color: ${Mixins.ColorsHoverDefault($color, theme)};
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          color: ${Mixins.ColorsHoverHover($color, theme)};
-                      }
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            border-color: ${Mixins.ColorsHoverHover(
+                                $color,
+                                theme
+                            )};
+                            color: ${Mixins.ColorsHoverHover($color, theme)};
+                        }
 
-                      &:not(:disabled):active {
-                          color: ${Mixins.ColorsHoverActive($color, theme)};
-                      }
+                        &:not(:disabled):active {
+                            border-color: ${Mixins.ColorsHoverActive(
+                                $color,
+                                theme
+                            )};
+                            color: ${Mixins.ColorsHoverActive($color, theme)};
+                        }
 
-                      &:disabled {
-                          color: ${theme.GRAY_500};
-                      }
-                  }
-              `}
+                        &:disabled {
+                            border-color: ${theme.GRAY_500};
+                            color: ${theme.GRAY_500};
+                        }
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 export interface ILibTextBaseMixin {
@@ -175,6 +187,7 @@ export const TextBaseMixin = ({
     $fontWeight,
     $textAlign,
     $color = "currentColor",
+    $linkColor = "primary",
 }: ILibTextBaseMixin) => css`
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${Mixins.FontSize($fontSize)};
@@ -187,7 +200,7 @@ export const TextBaseMixin = ({
         font-size: inherit;
     }
 
-    code {
+    & > code {
         font-family: ${FONT_FAMILIES.CODE};
         line-height: ${LINE_HEIGHTS.CODE};
         color: ${({ theme }) => theme.PRIMARY_500};
@@ -195,6 +208,30 @@ export const TextBaseMixin = ({
         background-color: ${({ theme }) => theme.GRAY_50};
         border-radius: ${RADIUSES.S};
         font-size: inherit;
+    }
+
+    & > a,
+    & > button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
+        font-size: inherit;
+        font-weight: ${FONT_WEIGHTS.BLACK};
+        transition: ${TRANSITIONS.SHORT};
+        color: ${({ theme }) => Mixins.ColorsHoverDefault($linkColor, theme)};
+
+        @media ${BREAKPOINTS.HOVER} {
+            &:hover {
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverHover($linkColor, theme)};
+            }
+
+            &:active {
+                color: ${({ theme }) =>
+                    Mixins.ColorsHoverActive($linkColor, theme)};
+            }
+        }
     }
 `
 
@@ -320,52 +357,58 @@ export const InputBaseMixin = ({
             }
         }
 
-        ${$inputBackground === "light"
-            ? css`
-                  &::file-selector-button {
-                      background-color: ${COLORS_LIGHT.GRAY_100};
-                      color: ${COLORS_LIGHT.FONT};
-                  }
+        ${() => {
+            switch ($inputBackground) {
+                case "light":
+                    return css`
+                        &::file-selector-button {
+                            background-color: ${COLORS_LIGHT.GRAY_100};
+                            color: ${COLORS_LIGHT.FONT};
+                        }
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover::file-selector-button {
-                          background-color: ${COLORS_LIGHT.GRAY_300};
-                      }
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:not(:disabled):hover::file-selector-button {
+                                background-color: ${COLORS_LIGHT.GRAY_300};
+                            }
 
-                      &:not(:disabled):active::file-selector-button {
-                          background-color: ${COLORS_LIGHT.GRAY_200};
-                      }
-                  }
+                            &:not(:disabled):active::file-selector-button {
+                                background-color: ${COLORS_LIGHT.GRAY_200};
+                            }
+                        }
 
-                  &:disabled {
-                      &::file-selector-button {
-                          color: ${COLORS_LIGHT.GRAY_500};
-                      }
-                  }
-              `
-            : $inputBackground === "dark" &&
-              css`
-                  &::file-selector-button {
-                      background-color: ${COLORS_DARK.GRAY_100};
-                      color: ${COLORS_DARK.FONT};
-                  }
+                        &:disabled {
+                            &::file-selector-button {
+                                color: ${COLORS_LIGHT.GRAY_500};
+                            }
+                        }
+                    `
+                case "dark":
+                    return css`
+                        &::file-selector-button {
+                            background-color: ${COLORS_DARK.GRAY_100};
+                            color: ${COLORS_DARK.FONT};
+                        }
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover::file-selector-button {
-                          background-color: ${COLORS_DARK.GRAY_300};
-                      }
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:not(:disabled):hover::file-selector-button {
+                                background-color: ${COLORS_DARK.GRAY_300};
+                            }
 
-                      &:not(:disabled):active::file-selector-button {
-                          background-color: ${COLORS_DARK.GRAY_200};
-                      }
-                  }
+                            &:not(:disabled):active::file-selector-button {
+                                background-color: ${COLORS_DARK.GRAY_200};
+                            }
+                        }
 
-                  &:disabled {
-                      &::file-selector-button {
-                          color: ${COLORS_DARK.GRAY_500};
-                      }
-                  }
-              `}
+                        &:disabled {
+                            &::file-selector-button {
+                                color: ${COLORS_DARK.GRAY_500};
+                            }
+                        }
+                    `
+                default:
+                    return null
+            }
+        }}
     }
 
     &[type="date"],
@@ -387,74 +430,84 @@ export const InputBaseMixin = ({
             $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${$inputBackground === "light"
-        ? css`
-              border-color: ${COLORS_LIGHT.GRAY_200};
-              background-color: ${$validation === false
-                  ? COLORS_LIGHT.DANGER_50
-                  : $disabled
-                  ? COLORS_LIGHT.GRAY_100
-                  : COLORS_LIGHT.BACKGROUND};
-              color: ${$disabled ? COLORS_LIGHT.GRAY_500 : COLORS_LIGHT.FONT};
+    ${() => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    border-color: ${COLORS_LIGHT.GRAY_200};
+                    background-color: ${$validation === false
+                        ? COLORS_LIGHT.DANGER_50
+                        : $disabled
+                        ? COLORS_LIGHT.GRAY_100
+                        : COLORS_LIGHT.BACKGROUND};
+                    color: ${$disabled
+                        ? COLORS_LIGHT.GRAY_500
+                        : COLORS_LIGHT.FONT};
 
-              &.WithListOpen {
-                  border-color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.PRIMARY_500};
-              }
+                    &.WithListOpen {
+                        border-color: ${$validation === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                    }
 
-              &:focus {
-                  border-color: ${$validation === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.PRIMARY_500};
-              }
+                    &:focus {
+                        border-color: ${$validation === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                    }
 
-              &::placeholder {
-                  color: ${COLORS_LIGHT.GRAY_400};
-              }
+                    &::placeholder {
+                        color: ${COLORS_LIGHT.GRAY_400};
+                    }
 
-              &:disabled {
-                  background-color: ${COLORS_LIGHT.GRAY_100};
-                  color: ${COLORS_LIGHT.GRAY_500};
+                    &:disabled {
+                        background-color: ${COLORS_LIGHT.GRAY_100};
+                        color: ${COLORS_LIGHT.GRAY_500};
 
-                  &::placeholder {
-                      color: ${COLORS_LIGHT.GRAY_500};
-                  }
-              }
-          `
-        : $inputBackground === "dark" &&
-          css`
-              border-color: ${COLORS_DARK.GRAY_200};
-              background-color: ${$validation === false
-                  ? COLORS_DARK.DANGER_50
-                  : $disabled
-                  ? COLORS_DARK.GRAY_100
-                  : COLORS_DARK.BACKGROUND};
-              color: ${$disabled ? COLORS_DARK.GRAY_500 : COLORS_DARK.FONT};
+                        &::placeholder {
+                            color: ${COLORS_LIGHT.GRAY_500};
+                        }
+                    }
+                `
+            case "dark":
+                return css`
+                    border-color: ${COLORS_DARK.GRAY_200};
+                    background-color: ${$validation === false
+                        ? COLORS_DARK.DANGER_50
+                        : $disabled
+                        ? COLORS_DARK.GRAY_100
+                        : COLORS_DARK.BACKGROUND};
+                    color: ${$disabled
+                        ? COLORS_DARK.GRAY_500
+                        : COLORS_DARK.FONT};
 
-              &:focus {
-                  border-color: ${$validation === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.PRIMARY_500};
-              }
+                    &:focus {
+                        border-color: ${$validation === false
+                            ? COLORS_DARK.DANGER_500
+                            : COLORS_DARK.PRIMARY_500};
+                    }
 
-              &::placeholder {
-                  color: ${COLORS_DARK.GRAY_400};
-              }
+                    &::placeholder {
+                        color: ${COLORS_DARK.GRAY_400};
+                    }
 
-              &:disabled {
-                  background-color: ${COLORS_DARK.GRAY_100};
-                  color: ${COLORS_DARK.GRAY_500};
+                    &:disabled {
+                        background-color: ${COLORS_DARK.GRAY_100};
+                        color: ${COLORS_DARK.GRAY_500};
 
-                  &::placeholder {
-                      color: ${COLORS_DARK.GRAY_500};
-                  }
-              }
+                        &::placeholder {
+                            color: ${COLORS_DARK.GRAY_500};
+                        }
+                    }
 
-              &.WithListOpen {
-                  border-color: ${$validation === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.PRIMARY_500};
-              }
-          `}
+                    &.WithListOpen {
+                        border-color: ${$validation === false
+                            ? COLORS_DARK.DANGER_500
+                            : COLORS_DARK.PRIMARY_500};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `

@@ -1,7 +1,6 @@
 /*=============================================== Alert styles ===============================================*/
 
 import styled from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
 import { Mixins, setDefaultTheme } from "../../"
 import type {
     LibAllColors,
@@ -12,7 +11,6 @@ import type {
 } from "../../types"
 
 const StyledAlert = styled.div<{
-    $maxWidth?: number
     $textColor: LibAllColors
     $padding?: ILibPadding
     $borderRadius?: ILibRadius
@@ -21,7 +19,7 @@ const StyledAlert = styled.div<{
     $border?: ILibBorder
 }>`
     width: 100%;
-    max-width: ${({ $maxWidth }) => $maxWidth && stringifyPx($maxWidth)};
+    max-width: var(--alert-max-width, 100%);
     color: ${({ $textColor, theme }) => Mixins.AllColors($textColor, theme)};
     background-color: ${({ $backgroundColor, theme }) =>
         Mixins.AllColors($backgroundColor, theme)};
