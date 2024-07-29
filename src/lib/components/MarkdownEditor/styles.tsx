@@ -67,10 +67,7 @@ const MdEditorContainer = styled.div<{
               `}
 `
 
-const StyledMarkdownEditor = styled.textarea<{
-    $isVisible: boolean
-    $inputHeight: number
-}>`
+const StyledMarkdownEditor = styled.textarea`
     font-family: ${FONT_FAMILIES.BODY};
     font-size: ${FONT_SIZES.BODY};
     width: 100%;
@@ -80,11 +77,15 @@ const StyledMarkdownEditor = styled.textarea<{
     background-color: transparent;
     outline: none;
     height: 100%;
-    display: ${({ $isVisible }) => ($isVisible ? "block" : "none")};
+    display: none;
     padding: ${SPACERS.XS};
-    height: ${({ $inputHeight }) => $inputHeight}px;
+    height: var(--markdown-input-height, 250px);
     min-height: 250px;
     color: currentColor;
+
+    &.Visible {
+        display: block;
+    }
 `
 
 const ButtonsContainer = styled(Flexbox).attrs({
@@ -109,9 +110,12 @@ const IconButton = styled(ButtonIcon).attrs({
     size: 24,
     variant: "transparent",
     type: "button",
-})<{ $isActive?: boolean }>`
+})`
     border-radius: ${RADIUSES.S};
-    background-color: ${({ $isActive, theme }) => $isActive && theme.GRAY_100};
+
+    &.Active {
+        background-color: ${({ theme }) => theme.GRAY_100};
+    }
 `
 
 const TitlesDropdown = styled(Dropdown)`
@@ -123,13 +127,13 @@ const TitleDropdownItem = styled(DropdownItem)<{ $tag: LibMdEditorTitle }>`
     font-size: ${({ $tag }) => getFontSizeButton($tag)}px;
 `
 
-const ContainerGrid = styled.div<{ $col: number }>`
+const ContainerGrid = styled.div`
     flex-grow: 1;
-    ${({ $col }) =>
-        Mixins.Grid({
-            $gap: "xs",
-            $col: $col === 3 ? "1fr 2px 1fr" : 1,
-        })}
+    ${Mixins.Grid({
+        $gap: "xs",
+        // $col: $col === 3 ? "1fr 2px 1fr" : 1,
+        $col: "var(--markdown-editor-grid)",
+    })}
 `
 
 const Separator = styled.span`
@@ -138,20 +142,21 @@ const Separator = styled.span`
     background-color: ${({ theme }) => theme.GRAY_200};
 `
 
-const MarkdownContainer = styled(Markdown)<{
-    $height: number
-    $isVisible: boolean
-}>`
-    height: ${({ $height }) => $height}px;
+const MarkdownContainer = styled(Markdown)`
+    height: var(--markdown-input-height, 250px);
     min-height: 250px;
     border-radius: 0 0 ${RADIUSES.M} 0;
-    display: ${({ $isVisible }) => ($isVisible ? "flex" : "none")};
+    display: none;
     flex-direction: column;
     gap: ${SPACERS.S};
     align-items: stretch;
     padding: ${SPACERS.XS};
     overflow-y: scroll;
     color: currentColor;
+
+    &.Visible {
+        display: flex;
+    }
 `
 
 setDefaultTheme([

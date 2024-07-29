@@ -1,6 +1,6 @@
 /*=============================================== Select component ===============================================*/
 
-import { forwardRef, useCallback } from "react"
+import { forwardRef, useEffect, type MouseEvent } from "react"
 import { useClickOutside } from "../../"
 import {
     InputContainer,
@@ -89,13 +89,19 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
 
         useClickOutside(listRef, () => setIsOpen(false))
 
+        const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+            e.stopPropagation()
+            if (!isOpen && options && options.length > 1) setIsOpen(true)
+        }
+
+        useEffect(() => {
+            setIsOpen(false)
+        }, [selected])
+
         const buttonProps: ILibSelectButton = {
             "data-testid": testid,
             className,
             selected,
-            onClick: () => {
-                if (options && options.length > 1) setIsOpen(!isOpen)
-            },
             id,
             tabIndex,
             disabled,
@@ -105,29 +111,9 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             validationStatus: validation?.status,
             hasOptions,
             isOpen,
-            setIsOpen,
             hasContainer,
             hasWrapper,
         }
-
-        const handleFocus = useCallback(() => {
-            if (options && options.length > 1) setIsOpen(true)
-        }, [options, setIsOpen])
-        const handleBlur = useCallback(() => {
-            setIsOpen(false)
-        }, [setIsOpen])
-
-        const handleClickButton = useCallback(() => {
-            setIsOpen(!isOpen)
-        }, [isOpen, setIsOpen])
-
-        const handleClickItem = useCallback(
-            (option: string) => {
-                setSelected(option)
-                setIsOpen(false)
-            },
-            [setIsOpen, setSelected]
-        )
 
         if (!hasContainer && !hasWrapper && !hasOptions)
             return <SelectButton {...buttonProps} />
@@ -153,8 +139,9 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                     className={hasContainer ? "SelectContainer" : className}
                     ref={ref}
                     as={as}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
+                    onClick={handleClick}
+                    onFocus={() => setIsOpen(true)}
+                    onBlur={() => setIsOpen(false)}
                     {...rest}
                 >
                     <InputIcon
@@ -213,7 +200,6 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                     }
                                     disabled={disabled}
                                     aria-label="Caret down"
-                                    onClick={handleClickButton}
                                     validationStatus={validation?.status}
                                 />
                             )}
@@ -237,9 +223,12 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                     className={className}
                                     inputBackground={inputBackground}
                                     validation={validation?.status}
-                                    onClick={() => handleClickItem(option)}
-                                    isActive={cursor === i}
-                                    key={option}
+                                    onClick={() => setSelected(option)}
+                                    isActive={selected === option}
+                                    isHovered={
+                                        cursor === i && selected !== option
+                                    }
+                                    key={`${option}-${i}`}
                                 >
                                     {option}
                                 </ListInputItem>

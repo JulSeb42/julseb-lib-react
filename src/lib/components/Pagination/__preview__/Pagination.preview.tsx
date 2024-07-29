@@ -23,7 +23,7 @@ export const paginationPreview: ComponentPreview<ILibPagination> = {
     previews: [{ demo: <PaginationDemo /> }],
 }
 
-const arr: Array<{ name: string }> = generateNumbers(1, 100).map(n => ({
+const arr: Array<{ name: string }> = generateNumbers(1, 200).map(n => ({
     name: `Hello ${n}`,
 }))
 

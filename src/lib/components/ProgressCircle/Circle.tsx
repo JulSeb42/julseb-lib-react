@@ -1,9 +1,11 @@
 /*=============================================== Circle ===============================================*/
 
+import classNames from "classnames"
 import { StyledCircle } from "./styles"
 import type { ILibProgressCircle } from "./types"
 
 export function Circle({
+    className,
     value,
     color = "primary",
     animated,
@@ -14,6 +16,7 @@ export function Circle({
 
     return (
         <StyledCircle
+            className={classNames(className, { Animated: animated })}
             r={r}
             cx={100}
             cy={100}
@@ -22,7 +25,6 @@ export function Circle({
             strokeDasharray={circ}
             strokeDashoffset={value ? strokePct : 0}
             $color={color}
-            $isAnimated={animated}
         />
     )
 }

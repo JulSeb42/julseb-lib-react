@@ -1,6 +1,7 @@
 /*=============================================== PaginationButton component ===============================================*/
 
 import { forwardRef, type ButtonHTMLAttributes } from "react"
+import classNames from "classnames"
 import type { LibColorsHover, LibComponentBase } from "../../types"
 import { StyledPaginationButton } from "./styles"
 
@@ -41,6 +42,7 @@ export const PaginationButton = forwardRef<
         {
             "data-testid": testid,
             as,
+            className,
             isActive,
             children,
             accentColor,
@@ -54,8 +56,8 @@ export const PaginationButton = forwardRef<
                 data-testid={testid}
                 as={as}
                 ref={ref}
+                className={classNames(className, { Active: isActive })}
                 type="button"
-                $isActive={isActive}
                 $accentColor={accentColor}
                 $readOnly={readOnly}
                 {...rest}

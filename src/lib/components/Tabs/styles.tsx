@@ -78,68 +78,78 @@ const StyledTabsButtonsContainer = styled.div<{
 const StyledTabButton = styled.button<{
     $variant: LibTabVariant
     $justify: LibTabJustify
-    $isActive: boolean
 }>`
     border: none;
     padding: 0;
     background-color: transparent;
 
-    ${({ $variant, $justify, $isActive, theme }) =>
-        $variant === "basic"
-            ? css`
-                  min-width: 100px;
-                  text-align: left;
-                  padding-bottom: ${SPACERS.XXS};
-                  border-bottom: 2px solid
-                      ${$isActive ? theme.PRIMARY_500 : "transparent"};
-                  z-index: 2;
-                  color: ${theme.FONT};
+    ${({ $variant, $justify, theme }) => {
+        switch ($variant) {
+            case "basic":
+                return css`
+                    min-width: 100px;
+                    text-align: left;
+                    padding-bottom: ${SPACERS.XXS};
+                    border-bottom: 2px solid transparent;
+                    z-index: 2;
+                    color: ${theme.FONT};
 
-                  @media ${BREAKPOINTS.MOBILE} {
-                      width: 100%;
-                  }
-              `
-            : $variant === "rounded" &&
-              css`
-                  border-radius: ${RADIUSES.S};
-                  padding: ${SPACERS.XXS};
-                  color: ${$isActive ? theme.BACKGROUND : theme.FONT};
-                  transition: ${TRANSITIONS.SHORT};
-                  min-width: ${$justify === "start" && "100px"};
-                  background-color: ${$isActive &&
-                  Mixins.ColorsHoverDefault("primary", theme)};
+                    @media ${BREAKPOINTS.MOBILE} {
+                        width: 100%;
+                    }
 
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:hover {
-                          background-color: ${Mixins.ColorsHoverHover(
-                              "primary",
-                              theme
-                          )};
-                          color: ${theme.BACKGROUND};
-                      }
+                    &.Active {
+                        border-bottom-color: ${theme.PRIMARY_500};
+                    }
+                `
+            case "rounded":
+                return css`
+                    border-radius: ${RADIUSES.S};
+                    padding: ${SPACERS.XXS};
+                    transition: ${TRANSITIONS.SHORT};
+                    min-width: ${$justify === "start" && "100px"};
+                    color: ${theme.FONT};
 
-                      &:active {
-                          background-color: ${Mixins.ColorsHoverActive(
-                              "primary",
-                              theme
-                          )};
-                      }
-                  }
-              `}
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:hover {
+                            background-color: ${Mixins.ColorsHoverHover(
+                                "primary",
+                                theme
+                            )};
+                            color: ${theme.BACKGROUND};
+                        }
+
+                        &:active {
+                            background-color: ${Mixins.ColorsHoverActive(
+                                "primary",
+                                theme
+                            )};
+                        }
+                    }
+
+                    &.Active {
+                        color: ${theme.BACKGROUND};
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            "primary",
+                            theme
+                        )};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
-const StyledTabItem = styled.div<{ $isActive: boolean }>`
-    ${({ $isActive }) =>
-        $isActive
-            ? css`
-                  ${Mixins.Flexbox({
-                      $flexDirection: "column",
-                      $alignItems: "stretch",
-                  })}
-              `
-            : css`
-                  display: none;
-              `}
+const StyledTabItem = styled.div`
+    display: none;
+
+    &.Active {
+        ${Mixins.Flexbox({
+            $flexDirection: "column",
+            $alignItems: "stretch",
+        })}
+    }
 `
 
 setDefaultTheme([

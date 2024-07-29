@@ -12,7 +12,7 @@ import {
     TRANSITIONS,
 } from "../../"
 
-const StyledModal = styled(Flexbox)<{ $isOpen: boolean }>`
+const StyledModal = styled(Flexbox)`
     position: fixed;
     top: 0;
     left: 0;
@@ -21,12 +21,17 @@ const StyledModal = styled(Flexbox)<{ $isOpen: boolean }>`
     height: 100vh;
     background-color: ${OVERLAYS.BLACK_80};
     transition: ${TRANSITIONS.SHORT};
-    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
+    opacity: 0;
+    visibility: hidden;
     ${Mixins.Flexbox({
         $alignItems: "center",
         $justifyContent: "center",
     })}
+
+    &.Open {
+        opacity: 1;
+        visibility: visible;
+    }
 `
 
 const ButtonClose = styled(ButtonIcon)`
@@ -36,7 +41,9 @@ const ButtonClose = styled(ButtonIcon)`
     right: ${SPACERS.S};
 `
 
-const ModalContent = styled.div<{ $width?: string | number }>`
+const ModalContent = styled.div<{
+    $width?: string | number // TODO: add dynamic width
+}>`
     width: ${({ $width }) => $width && stringifyPx($width)};
     max-width: 90%;
     max-height: 90%;

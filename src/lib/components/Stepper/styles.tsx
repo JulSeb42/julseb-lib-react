@@ -1,6 +1,6 @@
 /*=============================================== Stepper styles ===============================================*/
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {
     setDefaultTheme,
     Mixins,
@@ -13,8 +13,6 @@ import type { LibColorsHover, LibStepperDirection } from "../../types"
 const StyledStep = styled.span<{
     $direction: LibStepperDirection
     $accentColor: LibColorsHover
-    $isActive?: boolean
-    $isLink: boolean
 }>`
     position: relative;
     z-index: 1;
@@ -29,29 +27,28 @@ const StyledStep = styled.span<{
     })}
 
     small {
-        color: ${({ theme, $isLink, $accentColor }) =>
-            $isLink
-                ? Mixins.ColorsHoverDefault($accentColor, theme)
-                : theme.FONT};
-        font-weight: ${({ $isLink }) => $isLink && FONT_WEIGHTS.BLACK};
+        color: ${({ theme }) => theme.FONT};
     }
 
-    ${({ $isLink, $accentColor, theme }) =>
-        $isLink &&
-        css`
-            small {
-                cursor: pointer;
-                transition: ${TRANSITIONS.SHORT};
-            }
+    &.StepLink {
+        small {
+            color: ${({ theme, $accentColor }) =>
+                Mixins.ColorsHoverDefault($accentColor, theme)};
+            font-weight: ${FONT_WEIGHTS.BLACK};
+            cursor: pointer;
+            transition: ${TRANSITIONS.SHORT};
+        }
 
-            &:hover small {
-                color: ${Mixins.ColorsHoverHover($accentColor, theme)};
-            }
+        &:hover small {
+            color: ${({ theme, $accentColor }) =>
+                Mixins.ColorsHoverHover($accentColor, theme)};
+        }
 
-            &:active small {
-                color: ${Mixins.ColorsHoverActive($accentColor, theme)};
-            }
-        `}
+        &:active small {
+            color: ${({ theme, $accentColor }) =>
+                Mixins.ColorsHoverActive($accentColor, theme)};
+        }
+    }
 `
 
 const StyledStepper = styled.div<{
@@ -92,10 +89,7 @@ const StyledStepper = styled.div<{
 
 const NUMBER_SIZE = 24
 
-const NumberContainer = styled.span<{
-    $isActive: boolean | undefined
-    $accentColor: LibColorsHover
-}>`
+const NumberContainer = styled.span<{ $accentColor: LibColorsHover }>`
     width: ${NUMBER_SIZE}px;
     height: ${NUMBER_SIZE}px;
     border-radius: ${RADIUSES.CIRCLE};
@@ -106,11 +100,14 @@ const NumberContainer = styled.span<{
         $justifyContent: "center",
     })};
     font-weight: ${FONT_WEIGHTS.BLACK};
-    background-color: ${({ theme, $accentColor, $isActive }) =>
-        $isActive
-            ? Mixins.ColorsHoverDefault($accentColor, theme)
-            : Mixins.ColorsHoverHover($accentColor, theme)};
+    background-color: ${({ theme, $accentColor }) =>
+        Mixins.ColorsHoverHover($accentColor, theme)};
     color: ${({ theme }) => theme.BACKGROUND};
+
+    &.Active {
+        background-color: ${({ theme, $accentColor }) =>
+            Mixins.ColorsHoverDefault($accentColor, theme)};
+    }
 `
 
 setDefaultTheme([StyledStepper, StyledStep, NumberContainer])

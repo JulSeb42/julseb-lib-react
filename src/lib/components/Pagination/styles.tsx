@@ -13,7 +13,6 @@ import type { LibColorsHover } from "../../types"
 const BUTTON_SIZE = 32
 
 const StyledPaginationButton = styled.button<{
-    $isActive?: boolean
     $readOnly?: boolean
     $accentColor: LibColorsHover
 }>`
@@ -22,14 +21,9 @@ const StyledPaginationButton = styled.button<{
     padding: 0;
     border-radius: ${RADIUSES.CIRCLE};
     border: none;
-    background-color: ${({ $isActive, theme, $accentColor }) =>
-        $isActive
-            ? Mixins.ColorsHoverDefault($accentColor, theme)
-            : "transparent"};
-    color: ${({ $isActive, theme, $accentColor }) =>
-        $isActive
-            ? theme.BACKGROUND
-            : Mixins.ColorsHoverDefault($accentColor, theme)};
+    background-color: transparent;
+    color: ${({ theme, $accentColor }) =>
+        Mixins.ColorsHoverDefault($accentColor, theme)};
     transition: ${TRANSITIONS.SHORT};
     ${Mixins.Flexbox({
         $alignItems: "center",
@@ -41,29 +35,42 @@ const StyledPaginationButton = styled.button<{
         color: ${({ theme }) => theme.GRAY_500};
     }
 
-    ${({ $readOnly, theme, $accentColor }) =>
-        !$readOnly
-            ? css`
-                  @media ${BREAKPOINTS.HOVER} {
-                      &:not(:disabled):hover {
-                          background-color: ${Mixins.ColorsHoverHover(
-                              $accentColor,
-                              theme
-                          )};
-                          color: ${({ theme }) => theme.BACKGROUND};
-                      }
+    &.Active {
+        background-color: ${({ theme, $accentColor }) =>
+            Mixins.ColorsHoverDefault($accentColor, theme)};
+        color: ${({ theme }) => theme.BACKGROUND};
+    }
 
-                      &:not(:disabled):active {
-                          background-color: ${Mixins.ColorsHoverActive(
-                              $accentColor,
-                              theme
-                          )};
-                      }
-                  }
-              `
-            : css`
-                  cursor: default;
-              `}
+    ${({ $readOnly, theme, $accentColor }) => {
+        switch ($readOnly) {
+            case true:
+                return css`
+                    cursor: default;
+                `
+            case false:
+            case undefined:
+                return css`
+                    @media ${BREAKPOINTS.HOVER} {
+                        &:not(:disabled):hover {
+                            background-color: ${Mixins.ColorsHoverHover(
+                                $accentColor,
+                                theme
+                            )};
+                            color: ${({ theme }) => theme.BACKGROUND};
+                        }
+
+                        &:not(:disabled):active {
+                            background-color: ${Mixins.ColorsHoverActive(
+                                $accentColor,
+                                theme
+                            )};
+                        }
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 setDefaultTheme([StyledPaginationButton])

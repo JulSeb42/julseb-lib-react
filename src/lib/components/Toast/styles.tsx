@@ -47,7 +47,6 @@ const StyledToast = styled.div<{
     $textColor: LibAllColors
     $border: ILibBorder
     $shadow?: LibShadows
-    $isOpen: boolean
     $toasterPosition?: LibToasterPosition
 }>`
     position: relative;
@@ -62,28 +61,31 @@ const StyledToast = styled.div<{
     ${({ $border }) => Mixins.Border($border)};
     ${({ $shadow }) => Mixins.Shadow($shadow)};
 
-    ${({ $toasterPosition, $isOpen }) => {
+    ${({ $toasterPosition }) => {
         const speedAndFunction = "200ms ease"
 
-        if (
-            $toasterPosition === "top-left" ||
-            $toasterPosition === "bottom-left"
-        )
-            return css`
-                animation: ${$isOpen ? OpenFromLeft : CloseFromLeft}
-                    ${speedAndFunction};
-            `
+        switch ($toasterPosition) {
+            case "top-left":
+            case "bottom-left":
+                return css`
+                    animation: ${CloseFromLeft} ${speedAndFunction};
 
-        if (
-            $toasterPosition === "top-right" ||
-            $toasterPosition === "bottom-right"
-        )
-            return css`
-                animation: ${$isOpen ? OpenFromRight : CloseFromRight}
-                    ${speedAndFunction};
-            `
+                    &.Open {
+                        animation: ${OpenFromLeft} ${speedAndFunction};
+                    }
+                `
+            case "top-right":
+            case "bottom-right":
+                return css`
+                    animation: ${CloseFromRight} ${speedAndFunction};
 
-        return null
+                    &.Open {
+                        animation: ${OpenFromRight} ${speedAndFunction};
+                    }
+                `
+            default:
+                return null
+        }
     }}
 `
 
@@ -153,10 +155,7 @@ const Timer = styled.span<{
     animation: ${Progress} ${({ $duration }) => $duration}ms linear forwards;
 `
 
-const StyledToaster = styled.div<{
-    $isOpen: boolean
-    $position: LibToasterPosition
-}>`
+const StyledToaster = styled.div<{ $position: LibToasterPosition }>`
     position: fixed;
     width: 300px;
     height: fit-content;
@@ -172,31 +171,30 @@ const StyledToaster = styled.div<{
     ${({ $position }) => {
         const SPACING = SPACERS.S
 
-        if ($position === "top-left")
-            return css`
-                left: ${SPACING};
-                top: ${SPACING};
-            `
-
-        if ($position === "top-right")
-            return css`
-                right: ${SPACING};
-                top: ${SPACING};
-            `
-
-        if ($position === "bottom-left")
-            return css`
-                left: ${SPACING};
-                bottom: ${SPACING};
-            `
-
-        if ($position === "bottom-right")
-            return css`
-                right: ${SPACING};
-                bottom: ${SPACING};
-            `
-
-        return null
+        switch ($position) {
+            case "top-left":
+                return css`
+                    left: ${SPACING};
+                    top: ${SPACING};
+                `
+            case "top-right":
+                return css`
+                    right: ${SPACING};
+                    top: ${SPACING};
+                `
+            case "bottom-left":
+                return css`
+                    left: ${SPACING};
+                    bottom: ${SPACING};
+                `
+            case "bottom-right":
+                return css`
+                    right: ${SPACING};
+                    bottom: ${SPACING};
+                `
+            default:
+                return null
+        }
     }}
 `
 

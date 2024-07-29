@@ -1,6 +1,7 @@
 /*=============================================== InputCounter component ===============================================*/
 
 import { forwardRef, type ChangeEvent, useCallback } from "react"
+import classNames from "classnames"
 import { ButtonIcon } from "../../"
 import { InputContainer } from "../InputComponents"
 import { Plus, Minus } from "../../icons"
@@ -193,7 +194,10 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                     {!inputNoEdit ? (
                         <Input
                             data-testid={testid && `${testid}.Input`}
-                            className={className && "Input"}
+                            className={classNames(
+                                { Input: className },
+                                { WithListOpen: false }
+                            )}
                             id={id}
                             ref={ref}
                             type="number"
@@ -209,7 +213,6 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                             $disabled={disabled}
                             $validation={validation?.status}
                             $hasIcon={false}
-                            $hasListOpen={false}
                             $length={value.toString().length}
                             {...rest}
                         />

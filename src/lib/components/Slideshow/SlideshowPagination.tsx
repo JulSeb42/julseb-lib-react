@@ -1,6 +1,7 @@
 /*=============================================== SlideshowNav ===============================================*/
 
 import type { Dispatch, SetStateAction } from "react"
+import classNames from "classnames"
 import { uuid, generateNumbers } from "ts-utils-julseb"
 import { Image } from "../.."
 import type {
@@ -61,11 +62,15 @@ export function SlideshowPagination({
             {navType === "thumbnails"
                 ? images.map((img, i) => (
                       <SlideshowThumbnail
-                          data-testid={testid && `${testid}.Thumbnail`}
-                          className={className && "SlideshowThumbnail"}
                           key={uuid()}
+                          data-testid={testid && `${testid}.Thumbnail`}
+                          className={classNames(
+                              {
+                                  SlideshowThumbnail: className,
+                              },
+                              { Active: activeSlide === i }
+                          )}
                           onClick={() => setActive(i)}
-                          $isActive={activeSlide === i}
                       >
                           <Image
                               data-testid={
@@ -83,12 +88,14 @@ export function SlideshowPagination({
                 : generateNumbers(0, childrenLength - 1).map((_, i) => (
                       <SlideshowPaginationItem
                           data-testid={testid && `${testid}.PaginationItem`}
-                          className={className && "SlideshowPaginationItem"}
+                          className={classNames(
+                              { SlideshowPaginationItem: className },
+                              { Active: activeSlide === i }
+                          )}
                           key={uuid()}
                           onClick={() => setActive(i)}
                           $type={navType}
                           $color={color}
-                          $isActive={activeSlide === i}
                       />
                   ))}
         </StyledSlideshowPagination>

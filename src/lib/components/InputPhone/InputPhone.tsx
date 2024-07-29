@@ -9,6 +9,7 @@ import {
     useMemo,
     type ChangeEvent,
 } from "react"
+import classNames from "classnames"
 import { useClickOutside } from "../../"
 import {
     InputWrapper,
@@ -179,7 +180,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
 
         const listItemProps: Omit<
             ILibListInputItem,
-            "onClick" | "isActive" | "readOnly"
+            "onClick" | "isActive" | "readOnly" | "isHovered"
         > = {
             "data-testid": testid,
             className,
@@ -225,7 +226,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             aria-disabled={disabled}
                             aria-label={countryButtonAriaLabel}
                             onClick={handleClickCountry}
-                            $isOpen={isOpen}
                             $validation={validation?.status}
                             $inputBackground={inputBackground}
                         >
@@ -268,7 +268,10 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                     <StyledInputPhone
                         data-testid={testid && `${testid}.Input`}
                         ref={ref}
-                        className={className && "Input"}
+                        className={classNames(
+                            { Input: className },
+                            { WithListOpen: isOpen }
+                        )}
                         id={id}
                         type="tel"
                         disabled={disabled}
@@ -277,7 +280,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                         $inputBackground={inputBackground}
                         $validation={validation?.status}
                         $inputVariant={inputVariant}
-                        $hasListOpen={isOpen}
                         $leftContainerWidth={leftContainerWidth}
                         {...rest}
                     />

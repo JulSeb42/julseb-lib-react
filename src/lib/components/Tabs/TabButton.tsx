@@ -1,6 +1,7 @@
 /*=============================================== TabButton component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledTabButton } from "./styles"
 import type { ILibTabButton } from "./types"
 
@@ -21,6 +22,7 @@ export const TabButton = forwardRef<HTMLButtonElement, ILibTabButton>(
         {
             "data-testid": testid,
             as,
+            className,
             children,
             justify = "start",
             variant = "basic",
@@ -35,8 +37,8 @@ export const TabButton = forwardRef<HTMLButtonElement, ILibTabButton>(
                 data-testid={testid}
                 ref={ref}
                 as={as}
+                className={classNames(className, { Active: isActive })}
                 onClick={onClick}
-                $isActive={isActive}
                 $justify={justify}
                 $variant={variant}
                 {...rest}

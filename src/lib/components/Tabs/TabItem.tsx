@@ -1,6 +1,7 @@
 /*=============================================== TabItem component ===============================================*/
 
 import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledTabItem } from "./styles"
 import type { ILibTabItem } from "./types"
 
@@ -14,13 +15,16 @@ import type { ILibTabItem } from "./types"
  */
 
 export const TabItem = forwardRef<HTMLDivElement, ILibTabItem>(
-    ({ "data-testid": testid, as, children, isActive, ...rest }, ref) => {
+    (
+        { "data-testid": testid, as, children, className, isActive, ...rest },
+        ref
+    ) => {
         return (
             <StyledTabItem
                 data-testid={testid}
                 ref={ref}
                 as={as}
-                $isActive={isActive}
+                className={classNames(className, { Active: isActive })}
                 {...rest}
             >
                 {children}

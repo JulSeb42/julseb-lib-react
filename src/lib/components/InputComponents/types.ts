@@ -213,12 +213,14 @@ interface ILibListInputItemBase {
 
 interface ListInputItemActive extends ILibListInputItemBase {
     isActive: boolean
+    isHovered?: boolean
     onClick: MouseEventHandler<HTMLSpanElement>
     readOnly?: never
 }
 
 interface ListInputItemReadOnly extends ILibListInputItemBase {
     isActive?: never
+    isHovered?: never
     onClick?: never
     readOnly: true
 }

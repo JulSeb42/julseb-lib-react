@@ -27,7 +27,7 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
                         iconNext: "arrow-right",
                     }}
                     pagination={{
-                        type: "dots-outline",
+                        type: "dots",
                         // position: "inside",
                         color: "secondary",
                     }}

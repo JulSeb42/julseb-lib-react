@@ -6,7 +6,7 @@ import { RenderPreview } from "./RenderPreview"
 
 export const mixinsPreview: ComponentPreview<null> = {
     name: "Mixins",
-    category: "utils",
+    category: "helpers",
     component: null,
     import: "Mixins",
     additionalImports: null,

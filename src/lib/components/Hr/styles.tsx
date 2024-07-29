@@ -10,7 +10,6 @@ const StyledHr = styled.hr<{
     $height: number
     $maxWidth: string | number
     $margin?: ILibMargin
-    $isRounded?: boolean
 }>`
     display: block;
     width: 100%;

@@ -1,7 +1,9 @@
 /*=============================================== ProgressBar component ===============================================*/
 
-import { forwardRef, type CSSProperties } from "react"
-import { getPercentage } from "ts-utils-julseb"
+import { forwardRef } from "react"
+import classNames from "classnames"
+import { getPercentage, getRandomString } from "ts-utils-julseb"
+import { HelmetStyles } from "../../lib-utils"
 import { StyledProgressBar } from "./styles"
 import type { ILibProgressBar } from "./types"
 
@@ -21,38 +23,59 @@ export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
         {
             "data-testid": testid,
             as,
+            className,
             value,
             color = "primary",
             animated = true,
             min = 0,
             max = 100,
-            style,
+            id,
             ...rest
         },
         ref
     ) => {
-        const styles: CSSProperties = {
-            ["--progress-value" as any]:
-                getPercentage(value, Number(max)) + "%",
-            ["--progress-speed" as any]: value,
-            ...style,
-        }
+        const randomClass = getRandomString(10, true)
+        const withClass = className?.split(" ")[0]
 
         return (
-            <StyledProgressBar
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                style={styles}
-                min={min}
-                max={max}
-                value={value}
-                $value={value}
-                $color={color}
-                $isAnimated={animated}
-                $max={Number(max)}
-                {...rest}
-            />
+            <>
+                <HelmetStyles>
+                    {`
+                        ${
+                            id
+                                ? `#${id}`
+                                : withClass
+                                ? `.${withClass}`
+                                : `.${randomClass}`
+                        } {
+                            --progress-value: ${getPercentage(
+                                value,
+                                Number(max)
+                            )}%;
+                            --progress-speed: ${value};
+                        }
+                    `}
+                </HelmetStyles>
+
+                <StyledProgressBar
+                    data-testid={testid}
+                    ref={ref}
+                    as={as}
+                    className={classNames(
+                        className,
+                        { Animated: animated },
+                        randomClass,
+                        { RadiusCircle: value < 3 }
+                    )}
+                    id={id}
+                    min={min}
+                    max={max}
+                    value={value}
+                    $color={color}
+                    $max={Number(max)}
+                    {...rest}
+                />
+            </>
         )
     }
 )

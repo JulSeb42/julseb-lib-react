@@ -96,6 +96,7 @@ import { mixinsPreview } from "./previews/utils/Mixins.preview"
 import { utilsPreview } from "./previews/utils/JsUtils.preview"
 import { optionsMarkdownPreview } from "./previews/utils/OptionsMarkdown"
 import { hooksPreview } from "./previews/utils/Hooks.preview"
+import { resetScrollPreview } from "../lib/components/ResetScroll/__preview__/ResetScroll.preview"
 // prependImport
 
 export type PreviewProp<T> = {
@@ -109,7 +110,7 @@ export type PreviewDemo = {
 export interface ComponentPreview<T> {
     name: string
     component: FC | ForwardRefExoticComponent<T & RefAttributes<any>> | null
-    category: "styles" | "layouts" | "components" | "utils"
+    category: "styles" | "layouts" | "components" | "helpers"
     import: string | null // import Component (ex: Skeleton)
     additionalImports: Array<string> | null // import OtherComponent (ex: SkeletonCard)
     optionalImports: Array<string> | null // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
@@ -216,6 +217,7 @@ export const previews = [
     utilsPreview,
     optionsMarkdownPreview,
     hooksPreview,
+    resetScrollPreview,
     // prependArr
 ] as Array<ComponentPreview<any>>
 

@@ -7,6 +7,7 @@ import {
     useCallback,
     type ChangeEvent,
 } from "react"
+import classNames from "classnames"
 import { uuid, toSentenceCase } from "ts-utils-julseb"
 import {
     Flexbox,
@@ -17,7 +18,7 @@ import {
     optionsMarkdown,
     markdownEditorOptions,
 } from "../../"
-import { roundIconSize } from "../../lib-utils"
+import { roundIconSize, HelmetStyles } from "../../lib-utils"
 import type { LibMdEditorEditor } from "../../types"
 import { InputContainer } from "../InputComponents"
 import { mdButtons, mdEditorButtons, mdTitlesButtons } from "./markdown-buttons"
@@ -74,6 +75,7 @@ export const MarkdownEditor = forwardRef<
             counter,
             maxLength,
             textButtonTitles = "Titles",
+            // style,
             ...rest
         },
         ref
@@ -127,6 +129,18 @@ export const MarkdownEditor = forwardRef<
                 id={id}
                 value={value}
             >
+                <HelmetStyles>
+                    {`
+                        :root {
+                            --markdown-editor-grid: ${
+                                editor === "editorLive" ? "1fr 2px 1fr" : 1
+                            };
+                            --markdown-input-height: ${height}px;
+
+                        }
+                    `}
+                </HelmetStyles>
+
                 <MdEditorContainer
                     data-testid={
                         testid && hasContainer
@@ -310,7 +324,10 @@ export const MarkdownEditor = forwardRef<
                                             testid &&
                                             `${testid}.EditorContainer.ButtonsContainer.EditorButtonsContainer.EditorButton`
                                         }
-                                        className={className && "EditorButton"}
+                                        className={classNames(
+                                            { EditorButton: className },
+                                            { Active: editor === button.name }
+                                        )}
                                         icon={icon}
                                         iconSize={iconSize}
                                         onClick={() =>
@@ -323,7 +340,6 @@ export const MarkdownEditor = forwardRef<
                                             toSentenceCase(button.name)
                                         }
                                         showTooltip
-                                        $isActive={editor === button.name}
                                     />
                                 )
                             })}
@@ -335,24 +351,35 @@ export const MarkdownEditor = forwardRef<
                             testid && `${testid}.EditorContainer.ContainerGrid`
                         }
                         className={className && "ContainerGrid"}
-                        $col={editor === "editorLive" ? 3 : 1}
+                        // style={{
+                        //     // TODO: Remove and change to class from css module
+                        //     ["--markdown-editor-grid" as any]:
+                        //         editor === "editorLive" ? "1fr 2px 1fr" : 1,
+                        // }}
                     >
                         <StyledMarkdownEditor
                             data-testid={
                                 testid &&
                                 `${testid}.EditorContainer.ContainerGrid.Textarea`
                             }
-                            className={className && "Textarea"}
+                            className={classNames(
+                                { Textarea: className },
+                                {
+                                    Visible:
+                                        editor === "editorCode" ||
+                                        editor === "editorLive",
+                                }
+                            )}
                             ref={useMergeRefs([ref, inputRef])}
                             id={id}
                             value={value}
                             onChange={handleChange}
                             maxLength={maxLength}
-                            $isVisible={
-                                editor === "editorCode" ||
-                                editor === "editorLive"
-                            }
-                            $inputHeight={height}
+                            // style={{
+                            //     // TODO: Remove and change to class from css module
+                            //     ...style,
+                            //     ["--markdown-input-height" as any]: `${height}px`,
+                            // }}
                             {...rest}
                         />
 
@@ -371,13 +398,19 @@ export const MarkdownEditor = forwardRef<
                                 testid &&
                                 `${testid}.EditorContainer.ContainerGrid.MarkdownContent`
                             }
-                            className={className && "MarkdownContent"}
+                            className={classNames(
+                                { MarkdownContent: className },
+                                {
+                                    Visible:
+                                        editor === "editorPreview" ||
+                                        editor === "editorLive",
+                                }
+                            )}
+                            // style={{
+                            //     // TODO: Remove and change to class from css module
+                            //     ["--markdown-input-height" as any]: `${height}px`,
+                            // }}
                             options={optionsMarkdown as any}
-                            $height={height}
-                            $isVisible={
-                                editor === "editorPreview" ||
-                                editor === "editorLive"
-                            }
                         >
                             {value}
                         </MarkdownContainer>

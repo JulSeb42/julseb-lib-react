@@ -174,28 +174,26 @@ const DOT_SIZE = 8
 const SlideshowPaginationItem = styled.button<{
     $type: LibSlideshowPagination
     $color: LibColorsHover
-    $isActive: boolean
 }>`
     padding: 0;
     border: none;
     transition: ${TRANSITIONS.SHORT};
 
-    ${({ $type, $color, theme, $isActive }) => {
+    ${({ $type, $color, theme }) => {
         switch ($type) {
             case "bars":
                 return css`
                     flex-grow: 1;
                     height: 4px;
                     border-radius: ${RADIUSES.ROUND};
-                    background-color: ${$isActive
-                        ? Mixins.ColorsHoverDefault($color, theme)
-                        : Mixins.ColorsHoverHover($color, theme)};
+                    background-color: ${Mixins.ColorsHoverHover($color, theme)};
 
                     @media ${BREAKPOINTS.HOVER} {
                         &:hover {
-                            background-color: ${$isActive
-                                ? Mixins.ColorsHoverHover($color, theme)
-                                : Mixins.ColorsHoverDefault($color, theme)};
+                            background-color: ${Mixins.ColorsHoverDefault(
+                                $color,
+                                theme
+                            )};
                         }
 
                         &:active {
@@ -203,6 +201,22 @@ const SlideshowPaginationItem = styled.button<{
                                 $color,
                                 theme
                             )};
+                        }
+                    }
+
+                    &.Active {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $color,
+                            theme
+                        )};
+
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $color,
+                                    theme
+                                )};
+                            }
                         }
                     }
                 `
@@ -211,15 +225,14 @@ const SlideshowPaginationItem = styled.button<{
                     width: ${DOT_SIZE}px;
                     height: ${DOT_SIZE}px;
                     border-radius: 50%;
-                    background-color: ${$isActive
-                        ? Mixins.ColorsHoverDefault($color, theme)
-                        : Mixins.ColorsHoverHover($color, theme)};
+                    background-color: ${Mixins.ColorsHoverHover($color, theme)};
 
                     @media ${BREAKPOINTS.HOVER} {
                         &:hover {
-                            background-color: ${$isActive
-                                ? Mixins.ColorsHoverHover($color, theme)
-                                : Mixins.ColorsHoverDefault($color, theme)};
+                            background-color: ${Mixins.ColorsHoverDefault(
+                                $color,
+                                theme
+                            )};
                         }
 
                         &:active {
@@ -229,15 +242,29 @@ const SlideshowPaginationItem = styled.button<{
                             )};
                         }
                     }
+
+                    &.Active {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $color,
+                            theme
+                        )};
+
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $color,
+                                    theme
+                                )};
+                            }
+                        }
+                    }
                 `
             case "dots-outline":
                 return css`
                     width: ${DOT_SIZE}px;
                     height: ${DOT_SIZE}px;
                     border-radius: 50%;
-                    background-color: ${$isActive
-                        ? Mixins.ColorsHoverDefault($color, theme)
-                        : "transparent"};
+                    background-color: transparent;
                     border: 1px solid
                         ${Mixins.ColorsHoverDefault($color, theme)};
 
@@ -247,8 +274,6 @@ const SlideshowPaginationItem = styled.button<{
                                 $color,
                                 theme
                             )};
-                            background-color: ${$isActive &&
-                            Mixins.ColorsHoverHover($color, theme)};
                         }
 
                         &:active {
@@ -256,8 +281,29 @@ const SlideshowPaginationItem = styled.button<{
                                 $color,
                                 theme
                             )};
-                            background-color: ${$isActive &&
-                            Mixins.ColorsHoverActive($color, theme)};
+                        }
+                    }
+
+                    &.Active {
+                        background-color: ${Mixins.ColorsHoverDefault(
+                            $color,
+                            theme
+                        )};
+
+                        @media ${BREAKPOINTS.HOVER} {
+                            &:hover {
+                                background-color: ${Mixins.ColorsHoverHover(
+                                    $color,
+                                    theme
+                                )};
+                            }
+
+                            &:active {
+                                background-color: ${Mixins.ColorsHoverActive(
+                                    $color,
+                                    theme
+                                )};
+                            }
                         }
                     }
                 `
@@ -269,12 +315,12 @@ const SlideshowPaginationItem = styled.button<{
 
 const THUMBNAIL_SIZE = 48
 
-const SlideshowThumbnail = styled.button<{ $isActive: boolean }>`
+const SlideshowThumbnail = styled.button`
     width: ${THUMBNAIL_SIZE}px;
     height: ${THUMBNAIL_SIZE}px;
     padding: 0;
     border: none;
-    opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
+    opacity: 0.5;
     transition: ${TRANSITIONS.SHORT};
 
     @media ${BREAKPOINTS.HOVER} {
@@ -285,6 +331,10 @@ const SlideshowThumbnail = styled.button<{ $isActive: boolean }>`
         &:active {
             opacity: 0.9;
         }
+    }
+
+    &.Active {
+        opacity: 1;
     }
 `
 

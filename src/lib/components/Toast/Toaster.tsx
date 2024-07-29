@@ -107,7 +107,6 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                 as={as}
                 className={className}
                 ref={ref}
-                $isOpen={isOpen}
                 $position={position}
                 {...rest}
             >

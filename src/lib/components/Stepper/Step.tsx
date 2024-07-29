@@ -1,6 +1,7 @@
 /*=============================================== Step ===============================================*/
 
 import { forwardRef, type ElementType } from "react"
+import classNames from "classnames"
 import { Text } from "../../"
 import { LibIcon } from "../LibIcon"
 import { CheckCircle } from "../../icons"
@@ -83,7 +84,7 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
         return (
             <StyledStep
                 data-testid={testid}
-                className={className}
+                className={classNames(className, { StepLink: isLink })}
                 ref={ref}
                 as={getAs}
                 to={to}
@@ -93,14 +94,14 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
                 rel={blank ? "noreferrer noopener" : null}
                 $direction={direction}
                 $accentColor={accentColor}
-                $isActive={isActive || isDone}
-                $isLink={isLink}
                 {...rest}
             >
                 <NumberContainer
                     data-testid={testid && `${testid}.NumberContainer`}
-                    className={className && "NumberContainer"}
-                    $isActive={isActive || isDone}
+                    className={classNames(
+                        { NumberContainer: className },
+                        { Active: isActive }
+                    )}
                     $accentColor={accentColor}
                 >
                     {isActive && isDone ? (

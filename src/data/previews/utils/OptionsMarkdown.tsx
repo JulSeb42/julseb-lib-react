@@ -85,7 +85,7 @@ const optionsMarkdown = {
 
 export const optionsMarkdownPreview: ComponentPreview<null> = {
     name: "OptionsMarkdown",
-    category: "utils",
+    category: "helpers",
     component: null,
     import: "optionsMarkdown",
     additionalImports: null,

@@ -433,6 +433,15 @@ const StyledListInputItem = styled.span<{
     &.Active {
         background-color: ${({ theme, $validation }) =>
             $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+    }
+
+    &.Hovered {
+        background-color: ${({ theme, $validation }) =>
+            $validation === false ? theme.DANGER_300 : theme.PRIMARY_300};
+    }
+
+    &.Active,
+    &.Hovered {
         color: ${({ theme }) => theme.BACKGROUND};
     }
 

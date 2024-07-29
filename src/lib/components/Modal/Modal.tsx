@@ -1,6 +1,7 @@
 /*=============================================== Modal component ===============================================*/
 
 import { forwardRef, useCallback, useRef } from "react"
+import classNames from "classnames"
 import { enableScroll } from "ts-utils-julseb"
 import { useKeyPress, useClickOutside } from "../../"
 import { roundIconSize } from "../../lib-utils"
@@ -63,8 +64,7 @@ export const Modal = forwardRef<HTMLDivElement, ILibModal>(
                 data-testid={testid}
                 ref={ref}
                 as={as}
-                className={className}
-                $isOpen={isOpen}
+                className={classNames(className, { Open: isOpen })}
                 {...rest}
             >
                 <ModalContent

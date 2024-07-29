@@ -138,17 +138,13 @@ const StyledInputSlider = styled.input<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:not(:disabled):hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary"
+                                  $validation === false ? "danger" : "primary"
                               )};
                           }
 
                           &:not(:disabled):active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary"
+                                  $validation === false ? "danger" : "primary"
                               )};
                           }
                       }
@@ -198,17 +194,13 @@ const StyledInputSlider = styled.input<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:not(:disabled):hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary"
+                                  $validation === false ? "danger" : "primary"
                               )};
                           }
 
                           &:not(:disabled):active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false
-                                      ? "danger"
-                                      : "primary"
+                                  $validation === false ? "danger" : "primary"
                               )};
                           }
                       }
@@ -247,12 +239,11 @@ const StyledInputSlider = styled.input<{
 `
 
 const Tooltip = styled.span<{
-    $isVisible: boolean
     $value: number
     $max: number
 }>`
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 0;
     transform: translateY(-120%);
@@ -265,6 +256,11 @@ const Tooltip = styled.span<{
         const rangeWidth = getPercentage($value, $max)
         return `calc(${rangeWidth}% + ${-8 - rangeWidth * 0.22}px)`
     }};
+
+    &.Visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
     &:after {
         content: "";

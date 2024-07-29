@@ -14,6 +14,7 @@ export function ListInputItem({
     isActive,
     onClick,
     readOnly,
+    isHovered,
     ...rest
 }: ILibListInputItem) {
     return (
@@ -21,7 +22,8 @@ export function ListInputItem({
             data-testid={testid && `${testid}.ListItem`}
             className={classNames(
                 { ListItem: className },
-                { Active: isActive }
+                { Active: isActive },
+                { Hovered: isHovered }
             )}
             onClick={onClick}
             $readOnly={readOnly}

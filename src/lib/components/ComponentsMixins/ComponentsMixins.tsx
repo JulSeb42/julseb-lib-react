@@ -204,7 +204,6 @@ export interface ILibInputBaseMixin {
     $disabled: boolean | undefined
     $hasIcon: boolean | undefined
     $inputVariant: LibInputVariant | undefined
-    $hasListOpen?: boolean
 }
 
 export const InputBaseMixin = ({
@@ -213,7 +212,6 @@ export const InputBaseMixin = ({
     $inputBackground,
     $inputVariant,
     $validation,
-    $hasListOpen,
 }: ILibInputBaseMixin) => css`
     width: 100%;
     height: ${INPUT_HEIGHT}px;
@@ -384,25 +382,26 @@ export const InputBaseMixin = ({
         }
     }
 
-    ${$hasListOpen &&
-    css`
+    &.WithListOpen {
         border-color: ${({ theme }) =>
             $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
-    `}
+    }
 
     ${$inputBackground === "light"
         ? css`
-              border-color: ${$hasListOpen
-                  ? $validation === false
-                      ? COLORS_LIGHT.DANGER_500
-                      : COLORS_LIGHT.PRIMARY_500
-                  : COLORS_LIGHT.GRAY_200};
+              border-color: ${COLORS_LIGHT.GRAY_200};
               background-color: ${$validation === false
                   ? COLORS_LIGHT.DANGER_50
                   : $disabled
                   ? COLORS_LIGHT.GRAY_100
                   : COLORS_LIGHT.BACKGROUND};
               color: ${$disabled ? COLORS_LIGHT.GRAY_500 : COLORS_LIGHT.FONT};
+
+              &.WithListOpen {
+                  border-color: ${$validation === false
+                      ? COLORS_LIGHT.DANGER_500
+                      : COLORS_LIGHT.PRIMARY_500};
+              }
 
               &:focus {
                   border-color: ${$validation === false
@@ -425,11 +424,7 @@ export const InputBaseMixin = ({
           `
         : $inputBackground === "dark" &&
           css`
-              border-color: ${$hasListOpen
-                  ? $validation === false
-                      ? COLORS_DARK.DANGER_500
-                      : COLORS_DARK.PRIMARY_500
-                  : COLORS_DARK.GRAY_200};
+              border-color: ${COLORS_DARK.GRAY_200};
               background-color: ${$validation === false
                   ? COLORS_DARK.DANGER_50
                   : $disabled
@@ -454,6 +449,12 @@ export const InputBaseMixin = ({
                   &::placeholder {
                       color: ${COLORS_DARK.GRAY_500};
                   }
+              }
+
+              &.WithListOpen {
+                  border-color: ${$validation === false
+                      ? COLORS_DARK.DANGER_500
+                      : COLORS_DARK.PRIMARY_500};
               }
           `}
 `

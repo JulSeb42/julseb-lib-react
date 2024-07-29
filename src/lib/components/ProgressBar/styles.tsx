@@ -1,6 +1,6 @@
 /*=============================================== ProgressBar styles ===============================================*/
 
-import styled, { keyframes, css } from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { setDefaultTheme, RADIUSES, TRANSITIONS, Mixins } from "../../"
 import type { LibColorsHover } from "../../types"
 
@@ -16,9 +16,6 @@ const Progress = keyframes`
 
 const StyledProgressBar = styled.meter<{
     $color: LibColorsHover
-    $value: number
-    $isAnimated: boolean
-    $max: number
 }>`
     width: 100%;
     height: 16px;
@@ -41,14 +38,15 @@ const StyledProgressBar = styled.meter<{
         width: var(--progress-value);
         background-color: ${({ theme, $color }) =>
             Mixins.AllColors($color, theme)};
-        border-radius: ${({ $value }) =>
-            $value < 3 ? RADIUSES.CIRCLE : RADIUSES.ROUND};
+        border-radius: ${RADIUSES.ROUND};
+    }
 
-        ${({ $isAnimated }) =>
-            $isAnimated &&
-            css`
-                animation: ${Progress} calc(var(--progress-speed) * 50ms) 1;
-            `}
+    &.RadiusCircle:before {
+        border-radius: ${RADIUSES.CIRCLE};
+    }
+
+    &.Animated:before {
+        animation: ${Progress} calc(var(--progress-speed) * 50ms) 1;
     }
 `
 

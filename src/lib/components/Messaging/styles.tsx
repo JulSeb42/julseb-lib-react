@@ -43,8 +43,7 @@ const MessageListBottom = styled.div`
 `
 
 const ScrollButton = styled(ButtonIcon)<{
-    $isVisible: boolean
-    $bottom: number
+    $bottom: number // TODO: remove this prop and add more dynamic position
 }>`
     position: absolute;
     bottom: calc(
@@ -52,8 +51,13 @@ const ScrollButton = styled(ButtonIcon)<{
             (${SPACERS.XS} * 2)
     );
     right: ${SPACERS.XXS};
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    opacity: 0;
+    visibility: hidden;
+
+    &.Visible {
+        opacity: 1;
+        visibility: visible;
+    }
 `
 
 const StyledMessageForm = styled.form`

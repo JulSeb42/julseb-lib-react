@@ -1,6 +1,7 @@
 /*=============================================== MessagesList ===============================================*/
 
 import { forwardRef, useRef, useState, useEffect } from "react"
+import classNames from "classnames"
 import { Text, useMergeRefs } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { ChevronDown } from "../../icons"
@@ -105,7 +106,12 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                 {withScrollButtons && (
                     <ScrollButton
                         data-testid={testid && `${testid}.ScrollButton`}
-                        className={className && "MessagesListScrollButton"}
+                        className={classNames(
+                            {
+                                MessagesListScrollButton: className,
+                            },
+                            { Visible: isButtonVisible }
+                        )}
                         icon={
                             (typeof withScrollButtons === "object" &&
                                 withScrollButtons.icon) || (
@@ -121,7 +127,6 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                         onClick={scrollToBottom}
                         variant="ghost"
                         shadow="s"
-                        $isVisible={isButtonVisible}
                         $bottom={
                             typeof withScrollButtons === "object" &&
                             withScrollButtons.positionFromBottom

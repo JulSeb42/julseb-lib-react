@@ -46,7 +46,6 @@ const LeftContainer = styled.span<{
 `
 
 const CountryButton = styled.button<{
-    $isOpen: boolean
     $validation: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
 }>`
@@ -136,9 +135,7 @@ const SearchContainer = styled.div<{
 
     &:has(input:focus) {
         border-bottom-color: ${({ theme, $validation }) =>
-            $validation === false
-                ? theme.DANGER_500
-                : theme.PRIMARY_500};
+            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
     ${({ $inputBackground, $validation }) =>

@@ -1,6 +1,7 @@
 /*=============================================== Toast component ===============================================*/
 
 import { forwardRef, useEffect, useCallback, useRef, useState } from "react"
+import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import { Text, useToast, useMergeRefs } from "../.."
 import { LibIcon } from "../LibIcon"
@@ -90,12 +91,11 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                 as={as}
                 role={role}
                 id={id}
-                className={className}
+                className={classNames(className, { Open: isOpen })}
                 $backgroundColor={toastStyle?.backgroundColor || "background"}
                 $border={toastStyle?.border || { color: "gray-200" }}
                 $shadow={toastStyle?.shadow}
                 $textColor={toastStyle?.textColor || "font"}
-                $isOpen={isOpen}
                 $toasterPosition={toasterPosition}
                 {...rest}
             >

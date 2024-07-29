@@ -1,6 +1,6 @@
 /*=============================================== ProgressCircle styles ===============================================*/
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { setDefaultTheme, Mixins, Text, TRANSITIONS } from "../../"
 import type { LibAllColors } from "../../types"
 
@@ -14,15 +14,12 @@ const StyledProgressCircle = styled.svg``
 
 const StyledCircle = styled.circle<{
     $color: LibAllColors
-    $isAnimated?: boolean
 }>`
     stroke: ${({ $color, theme }) => Mixins.AllColors($color, theme)};
 
-    ${({ $isAnimated }) =>
-        $isAnimated &&
-        css`
-            transition: ${TRANSITIONS.PROGRESS_CIRCLE};
-        `}
+    &.Animated {
+        transition: ${TRANSITIONS.PROGRESS_CIRCLE};
+    }
 `
 
 const Content = styled.span`

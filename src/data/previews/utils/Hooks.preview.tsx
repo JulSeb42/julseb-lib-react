@@ -21,7 +21,7 @@ import type { ComponentPreview } from "../../components"
 
 export const hooksPreview: ComponentPreview<null> = {
     name: "Hooks",
-    category: "utils",
+    category: "helpers",
     component: null,
     import: null,
     additionalImports: [

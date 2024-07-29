@@ -29,7 +29,7 @@
         "react-router-dom": "^6.24.1",
         "react-syntax-highlighter": "^15.5.0",
         "styled-components": "^6.1.11",
-        "ts-utils-julseb": "2.3.9"
+        "ts-utils-julseb": "2.4.1"
     },
     "devDependencies": {
         "@eslint/compat": "^1.1.0",

@@ -1,6 +1,7 @@
 /*=============================================== Tooltip component ===============================================*/
 
 import { forwardRef, useState, useRef, useCallback } from "react"
+import classNames from "classnames"
 import { useTouchScreen, useClickOutside } from "../../"
 import type { LibTooltipTrigger } from "../../types"
 import { TooltipWrapper, StyledTooltip } from "./styles"
@@ -69,7 +70,7 @@ export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
                 data-testid={testid}
                 ref={ref}
                 as={as}
-                className={className}
+                className={classNames(className, { Visible: isVisible })}
                 onClick={
                     onClick
                         ? onClick
@@ -91,14 +92,15 @@ export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
                         ? handleLeave
                         : undefined
                 }
-                $isVisible={isVisible}
                 {...rest}
             >
                 <StyledTooltip
                     data-testid={testid && `${testid}.Tooltip`}
-                    className={className && "Tooltip"}
+                    className={classNames(
+                        { Tooltip: className },
+                        { Visible: isVisible }
+                    )}
                     ref={el}
-                    $isVisible={isVisible}
                     $position={position}
                     $withArrow={withArrow}
                     $backgroundColor={backgroundColor}

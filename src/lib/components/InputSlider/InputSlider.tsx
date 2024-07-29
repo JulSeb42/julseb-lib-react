@@ -1,6 +1,7 @@
 /*=============================================== InputSlider component ===============================================*/
 
 import { forwardRef, type ForwardedRef, useState, useCallback } from "react"
+import classNames from "classnames"
 import { Flexbox, Text } from "../../"
 import type { ILibText } from "../../types/components-props"
 import { Slider, type ILibInputSlider as IInpuSlider } from "./Slider"
@@ -139,8 +140,10 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                                         testid &&
                                         `${testid}.SliderWrapper.SliderContainer.Tooltip`
                                     }
-                                    className={className && "SliderTooltip"}
-                                    $isVisible={isTooltipVisible}
+                                    className={classNames(
+                                        { SliderTooltip: className },
+                                        { Visible: isTooltipVisible }
+                                    )}
                                     $value={value || 0}
                                     $max={max}
                                 >

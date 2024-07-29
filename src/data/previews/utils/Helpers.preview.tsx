@@ -6,7 +6,7 @@ import { RenderPreview } from "./RenderPreview"
 
 export const helpersPreview: ComponentPreview<null> = {
     name: "Helpers",
-    category: "utils",
+    category: "helpers",
     component: null,
     import: null,
     additionalImports: null,

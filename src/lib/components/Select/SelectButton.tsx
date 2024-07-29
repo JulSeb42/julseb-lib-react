@@ -1,11 +1,11 @@
 /*=============================================== Select Button component ===============================================*/
 
-import { useCallback, type MouseEventHandler } from "react"
+import { forwardRef, type MouseEventHandler } from "react"
+import classNames from "classnames"
 import type {
     LibInputBackground,
     LibInputVariant,
     LibValidationStatus,
-    DispatchState,
 } from "../../types"
 import { StyledSelectButton } from "./styles"
 
@@ -13,7 +13,7 @@ export interface ILibSelectButton {
     "data-testid": string | undefined
     className: string | undefined
     selected: string
-    onClick: MouseEventHandler<HTMLButtonElement>
+    onClick?: MouseEventHandler<HTMLButtonElement>
     id: string | undefined
     tabIndex: number | undefined
     disabled: boolean | undefined
@@ -22,18 +22,16 @@ export interface ILibSelectButton {
     inputVariant: LibInputVariant | undefined
     validationStatus: LibValidationStatus
     isOpen: boolean
-    setIsOpen: DispatchState<boolean>
     hasOptions: boolean
     hasContainer: boolean
     hasWrapper: boolean
 }
 
-export function SelectButton({
+export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(({
     "data-testid": testid,
     className,
     hasOptions,
     isOpen,
-    setIsOpen,
     id,
     tabIndex,
     disabled,
@@ -44,11 +42,8 @@ export function SelectButton({
     selected,
     hasWrapper,
     hasContainer,
-}: ILibSelectButton) {
-    const handleClickButton = useCallback(() => {
-        if (hasOptions) setIsOpen(!isOpen)
-    }, [hasOptions, isOpen, setIsOpen])
-
+    onClick,
+}: ILibSelectButton) => {
     return (
         <StyledSelectButton
             data-testid={
@@ -56,19 +51,19 @@ export function SelectButton({
                     ? `${testid}.SelectContainer.SelectButton`
                     : testid
             }
-            className={
+            className={classNames(
                 (hasContainer || hasWrapper || hasIcon) && className
                     ? "SelectButton"
-                    : className
-            }
-            onClick={handleClickButton}
+                    : className,
+                { WithListOpen: isOpen }
+            )}
+            onClick={onClick}
             id={id}
             tabIndex={tabIndex}
             disabled={disabled}
             aria-disabled={disabled && "true"}
             $disabled={disabled}
             $hasIcon={hasIcon}
-            $hasListOpen={isOpen}
             $inputBackground={inputBackground}
             $inputVariant={inputVariant}
             $validation={validationStatus}
@@ -78,3 +73,4 @@ export function SelectButton({
         </StyledSelectButton>
     )
 }
+)

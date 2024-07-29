@@ -38,7 +38,7 @@ const lists: Array<List> = [
 
 export const variablesPreview: ComponentPreview<null> = {
     name: "Variables",
-    category: "utils",
+    category: "helpers",
     component: null,
     import: null,
     additionalImports: null,

@@ -9,6 +9,7 @@ import {
     memo,
 } from "react"
 import Fuse from "fuse.js"
+import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import {
     Key,
@@ -174,7 +175,10 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
 
                     <StyledAutocomplete
                         data-testid={testid && `${testid}.Input`}
-                        className={className && "Input"}
+                        className={classNames(
+                            { Input: className },
+                            { WithListOpen: isOpen }
+                        )}
                         ref={useMergeRefs([ref, inputRef])}
                         id={id}
                         value={value}
@@ -183,7 +187,6 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                         type="search"
                         onFocus={handleOpen}
                         onBlur={handleClose}
-                        $hasListOpen={isOpen}
                         $hasIcon={!!icons?.iconLeft}
                         $disabled={disabled}
                         $validation={validation?.status}
@@ -277,6 +280,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                             handleSelectValue(result)
                                         }
                                         isActive={i === cursor}
+                                        isHovered={value === result}
                                         key={uuid()}
                                     >
                                         <Highlight highlightedText={value}>
@@ -284,17 +288,6 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                         </Highlight>
                                     </ListInputItem>
                                 ))}
-
-                                <ListInputItem
-                                    data-testid={testid}
-                                    className={className}
-                                    validation={validation?.status}
-                                    inputBackground={inputBackground}
-                                    isActive={cursor === fuzzyResults.length}
-                                    onClick={() => handleSelectValue(value)}
-                                >
-                                    {emptyText}
-                                </ListInputItem>
                             </>
                         ) : (
                             <ListInputItem

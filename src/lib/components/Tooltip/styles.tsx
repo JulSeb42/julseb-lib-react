@@ -20,11 +20,13 @@ const TooltipWrapper = styled.div<{ $isVisible: boolean }>`
     position: relative;
     width: fit-content;
     display: inline-block;
-    z-index: ${({ $isVisible }) => $isVisible && 20};
+
+    &.Visible {
+        z-index: 20;
+    }
 `
 
 const StyledTooltip = styled.div<{
-    $isVisible: boolean
     $position?: LibTooltipPosition
     $withArrow?: boolean
     $backgroundColor: LibAllColorsAndOverlays
@@ -44,11 +46,16 @@ const StyledTooltip = styled.div<{
         $position === "bottom" && `calc(-100% - ${Mixins.Spacer($offset)})`};
     left: 50%;
     transform: translateX(-50%);
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    opacity: 0;
+    visibility: hidden;
     background-color: ${({ theme, $backgroundColor }) =>
         Mixins.ColorsAndOverlays($backgroundColor, theme)};
     color: ${({ theme, $textColor }) => Mixins.AllColors($textColor, theme)};
+
+    &.Visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
     ${({ $withArrow, $position, $backgroundColor, theme }) =>
         $withArrow &&
