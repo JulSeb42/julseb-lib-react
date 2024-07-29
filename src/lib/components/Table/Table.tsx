@@ -107,30 +107,6 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                                             </StyledTd>
                                         )
                                     })}
-                                    {/* {row.map(col => {
-                                        return (
-                                            <StyledTd
-                                                key={uuid()}
-                                                data-testid={
-                                                    testid &&
-                                                    `${testid}.TBody.Tr.Td`
-                                                }
-                                                className={
-                                                    className && "TBodyTd"
-                                                }
-                                                $noPadding={
-                                                    typeof col === "object"
-                                                }
-                                            >
-                                                {linkify &&
-                                                typeof col === "string" ? (
-                                                    <Linkify>{col}</Linkify>
-                                                ) : (
-                                                    col
-                                                )}
-                                            </StyledTd>
-                                        )
-                                    })} */}
                                 </tr>
                             )
                         })}
