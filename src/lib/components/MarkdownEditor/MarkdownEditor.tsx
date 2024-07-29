@@ -351,11 +351,6 @@ export const MarkdownEditor = forwardRef<
                             testid && `${testid}.EditorContainer.ContainerGrid`
                         }
                         className={className && "ContainerGrid"}
-                        // style={{
-                        //     // TODO: Remove and change to class from css module
-                        //     ["--markdown-editor-grid" as any]:
-                        //         editor === "editorLive" ? "1fr 2px 1fr" : 1,
-                        // }}
                     >
                         <StyledMarkdownEditor
                             data-testid={
@@ -375,11 +370,6 @@ export const MarkdownEditor = forwardRef<
                             value={value}
                             onChange={handleChange}
                             maxLength={maxLength}
-                            // style={{
-                            //     // TODO: Remove and change to class from css module
-                            //     ...style,
-                            //     ["--markdown-input-height" as any]: `${height}px`,
-                            // }}
                             {...rest}
                         />
 
@@ -406,10 +396,6 @@ export const MarkdownEditor = forwardRef<
                                         editor === "editorLive",
                                 }
                             )}
-                            // style={{
-                            //     // TODO: Remove and change to class from css module
-                            //     ["--markdown-input-height" as any]: `${height}px`,
-                            // }}
                             options={optionsMarkdown as any}
                         >
                             {value}

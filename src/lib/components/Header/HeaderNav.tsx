@@ -1,10 +1,10 @@
 /*=============================================== HeaderNav ===============================================*/
 
-import { Fragment, useRef, type RefObject, type ReactNode } from "react"
-import { NavLink } from "react-router-dom"
+import { useRef, type RefObject, type ReactNode } from "react"
 import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import { useMaxWidth, useClickOutside } from "../../"
+import { HeaderNavLink } from "./HeaderNavLink"
 import type {
     DispatchState,
     ReactChildren,
@@ -86,68 +86,12 @@ export function HeaderNav({
 
             {links &&
                 links.map(link => (
-                    <Fragment key={uuid()}>
-                        {link.to ? (
-                            <NavLink
-                                data-testid={
-                                    link["data-testid"] ||
-                                    (testid && `${testid}.NavLink`)
-                                }
-                                className={
-                                    link.className || (className && "NavLink")
-                                }
-                                id={link.id}
-                                ref={link.ref}
-                                to={link.to}
-                                end={link.end}
-                                target={link.blank ? "_blank" : undefined}
-                                rel={
-                                    link.blank
-                                        ? "noreferrer noopener"
-                                        : undefined
-                                }
-                            >
-                                {link.text}
-                            </NavLink>
-                        ) : link.onClick ? (
-                            <button
-                                data-testid={
-                                    link["data-testid"] ||
-                                    (testid && `${testid}.NavButton`)
-                                }
-                                className={
-                                    link.className || (className && "NavButton")
-                                }
-                                id={link.id}
-                                ref={link.ref}
-                                onClick={link.onClick}
-                                disabled={link.disabled}
-                            >
-                                {link.text}
-                            </button>
-                        ) : link.href ? (
-                            <a
-                                data-testid={
-                                    link["data-testid"] ||
-                                    (testid && `${testid}.NavLink`)
-                                }
-                                className={
-                                    link.className || (className && "NavLink")
-                                }
-                                id={link.id}
-                                ref={link.ref}
-                                href={link.href}
-                                target={link.blank ? "_blank" : undefined}
-                                rel={
-                                    link.blank
-                                        ? "noreferrer noopener"
-                                        : undefined
-                                }
-                            >
-                                {link.text}
-                            </a>
-                        ) : null}
-                    </Fragment>
+                    <HeaderNavLink
+                        data-testid={testid}
+                        className={className}
+                        link={link}
+                        key={uuid()}
+                    />
                 ))}
 
             {children && children}
