@@ -212,7 +212,6 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                             $inputVariant={inputVariant}
                             $disabled={disabled}
                             $validation={validation?.status}
-                            $hasIcon={false}
                             $length={value.toString().length}
                             {...rest}
                         />

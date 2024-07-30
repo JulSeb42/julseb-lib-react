@@ -6,8 +6,9 @@ import { CaretDown } from "../../../icons"
 import {
     InputButton,
     InputRightContainer,
-    InputWrapper,
     InputIcon,
+    InputPrefix,
+    InputLeftContainer,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
 import type { ILibSelectInput } from "../types"
@@ -36,48 +37,52 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
             ),
             icon,
             iconSize,
+            prefix,
             ...rest
         },
         ref
     ) => {
-        const hasContainer: boolean = !!(
-            label ||
-            helper ||
-            helperBottom ||
-            validation
-        )
-
         const inputRef = useRef<HTMLSelectElement>(null)
-        const allRefs = useMergeRefs([inputRef, ref])
 
         return (
-            <InputWrapper
-                data-testid={testid}
-                className={className}
-                hasContainer={hasContainer}
-            >
-                <InputIcon
-                    data-testid={testid}
-                    className={className}
-                    icon={icon}
-                    iconSize={iconSize}
-                    validationStatus={validation?.status}
-                    disabled={disabled}
-                    inputBackground={inputBackground}
-                    inputVariant={inputVariant}
-                />
+            <>
+                {(prefix || icon) && (
+                    <InputLeftContainer
+                        data-testid={testid}
+                        className={className}
+                        disabled={disabled}
+                        withPadding={!!(!prefix && icon)}
+                    >
+                        <InputPrefix
+                            data-testid={testid}
+                            className={className}
+                            prefix={prefix}
+                            inputBackground={inputBackground}
+                        />
+
+                        <InputIcon
+                            data-testid={testid}
+                            className={className}
+                            icon={icon}
+                            iconSize={iconSize}
+                            validationStatus={validation?.status}
+                            disabled={disabled}
+                            inputBackground={inputBackground}
+                            inputVariant={inputVariant}
+                        />
+                    </InputLeftContainer>
+                )}
 
                 <StyledInput
+                    as="select"
                     data-testid={testid && `${testid}.Select`}
                     id={id}
                     className={className && "Select"}
-                    ref={allRefs}
+                    ref={useMergeRefs([inputRef as any, ref as any]) as any}
                     disabled={disabled}
-                    as="select"
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $hasIcon={!!icon}
                     $validation={validation?.status}
                     $isSelect
                     {...rest}
@@ -88,8 +93,9 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                 <InputRightContainer
                     data-testid={testid}
                     className={className}
-                    inputVariant={inputVariant}
                     disabled={disabled}
+                    withPadding
+                    withBorder={false}
                 >
                     <InputButton
                         data-testid={testid}
@@ -102,7 +108,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                         validationStatus={undefined}
                     />
                 </InputRightContainer>
-            </InputWrapper>
+            </>
         )
     }
 )

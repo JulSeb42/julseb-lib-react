@@ -29,6 +29,8 @@ import type {
     CssTextAlign,
 } from "../../types"
 
+/*====================== Button ======================*/
+
 export interface ILibButtonMixin {
     $color: LibColorsHover
     $shadow?: ILibBoxShadow
@@ -173,7 +175,7 @@ export const ButtonMixin = ({
         }
     }}
 `
-
+/*====================== Text ======================*/
 export interface ILibTextBaseMixin {
     $fontSize: LibFontSizes | "inherit"
     $fontWeight: LibFontWeights
@@ -235,50 +237,30 @@ export const TextBaseMixin = ({
     }
 `
 
+/*====================== Input ======================*/
+
 export interface ILibInputBaseMixin {
     $validation: LibValidationStatus | undefined
     $inputBackground: LibInputBackground | undefined
     $disabled: boolean | undefined
-    $hasIcon: boolean | undefined
     $inputVariant: LibInputVariant | undefined
 }
 
 export const InputBaseMixin = ({
-    $hasIcon,
     $disabled,
     $inputBackground,
     $inputVariant,
     $validation,
 }: ILibInputBaseMixin) => css`
-    width: 100%;
     height: ${INPUT_HEIGHT}px;
-    line-height: ${INPUT_HEIGHT}px;
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
     outline: none;
-    border: 1px solid ${({ theme }) => theme.GRAY_200};
     font-family: ${FONT_FAMILIES.BODY};
+    padding: 0 ${SPACERS.XS};
     font-size: ${FONT_SIZES.BODY};
-    box-sizing: border-box;
-    transition: ${TRANSITIONS.SHORT};
-    background-color: ${({ theme }) =>
-        $validation === false
-            ? theme.DANGER_50
-            : $disabled
-            ? theme.GRAY_100
-            : theme.BACKGROUND};
-    border-radius: ${$inputVariant === "pill" ? RADIUSES.ROUND : RADIUSES.S};
-    padding: 0 ${$inputVariant === "pill" ? SPACERS.S : SPACERS.XS};
-    padding-left: ${$hasIcon &&
-    ($inputVariant === "pill"
-        ? `calc(${INPUT_HEIGHT}px + ${SPACERS.XS} + ${SPACERS.XS})`
-        : `calc(${INPUT_HEIGHT}px + ${SPACERS.XS})`)};
-    color: ${({ theme }) => ($disabled ? theme.GRAY_500 : theme.FONT)};
-
-    &:focus {
-        border-color: ${({ theme }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
-    }
 
     &::placeholder {
         color: ${({ theme }) => theme.GRAY_400};
@@ -298,28 +280,6 @@ export const InputBaseMixin = ({
     &[type="color"] {
         padding: 0;
         cursor: pointer;
-    }
-
-    &[type="color"] {
-        padding: ${SPACERS.XS};
-        overflow: hidden;
-
-        &::-webkit-color-swatch-wrapper,
-        &::-webkit-color-swatch {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            border-radius: ${$inputVariant === "pill"
-                ? RADIUSES.ROUND
-                : RADIUSES.S};
-        }
-    }
-
-    &[type="search"] {
-        &::-webkit-search-cancel-button {
-            -webkit-appearance: none;
-            appearance: none;
-        }
     }
 
     &[type="file"] {
@@ -411,11 +371,28 @@ export const InputBaseMixin = ({
         }}
     }
 
+    &[type="color"] {
+        padding: ${SPACERS.XS};
+        overflow: hidden;
+
+        &::-webkit-color-swatch-wrapper,
+        &::-webkit-color-swatch {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            border-radius: ${$inputVariant === "pill"
+                ? RADIUSES.ROUND
+                : RADIUSES.S};
+        }
+    }
+
     &[type="date"],
     &[type="datetime-local"],
     &[type="month"],
     &[type="week"],
     &[type="time"] {
+        padding-left: ${SPACERS.XS};
+
         &::-webkit-inner-spin-button,
         &::-webkit-calendar-picker-indicator {
             -webkit-appearance: none;
@@ -425,16 +402,17 @@ export const InputBaseMixin = ({
         }
     }
 
-    &.WithListOpen {
-        border-color: ${({ theme }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+    &[type="search"] {
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
     }
 
     ${() => {
         switch ($inputBackground) {
             case "light":
                 return css`
-                    border-color: ${COLORS_LIGHT.GRAY_200};
                     background-color: ${$validation === false
                         ? COLORS_LIGHT.DANGER_50
                         : $disabled
@@ -443,18 +421,6 @@ export const InputBaseMixin = ({
                     color: ${$disabled
                         ? COLORS_LIGHT.GRAY_500
                         : COLORS_LIGHT.FONT};
-
-                    &.WithListOpen {
-                        border-color: ${$validation === false
-                            ? COLORS_LIGHT.DANGER_500
-                            : COLORS_LIGHT.PRIMARY_500};
-                    }
-
-                    &:focus {
-                        border-color: ${$validation === false
-                            ? COLORS_LIGHT.DANGER_500
-                            : COLORS_LIGHT.PRIMARY_500};
-                    }
 
                     &::placeholder {
                         color: ${COLORS_LIGHT.GRAY_400};
@@ -471,7 +437,6 @@ export const InputBaseMixin = ({
                 `
             case "dark":
                 return css`
-                    border-color: ${COLORS_DARK.GRAY_200};
                     background-color: ${$validation === false
                         ? COLORS_DARK.DANGER_50
                         : $disabled
@@ -480,12 +445,6 @@ export const InputBaseMixin = ({
                     color: ${$disabled
                         ? COLORS_DARK.GRAY_500
                         : COLORS_DARK.FONT};
-
-                    &:focus {
-                        border-color: ${$validation === false
-                            ? COLORS_DARK.DANGER_500
-                            : COLORS_DARK.PRIMARY_500};
-                    }
 
                     &::placeholder {
                         color: ${COLORS_DARK.GRAY_400};
@@ -498,12 +457,6 @@ export const InputBaseMixin = ({
                         &::placeholder {
                             color: ${COLORS_DARK.GRAY_500};
                         }
-                    }
-
-                    &.WithListOpen {
-                        border-color: ${$validation === false
-                            ? COLORS_DARK.DANGER_500
-                            : COLORS_DARK.PRIMARY_500};
                     }
                 `
             default:

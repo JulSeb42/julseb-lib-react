@@ -18,6 +18,10 @@ export function InputWrapper({
     hasContainer,
     children,
     hasListOpen,
+    isTextArea,
+    inputBackground,
+    inputVariant,
+    validationStatus,
 }: ILibInputWrapper) {
     return (
         <StyledInputWrapper
@@ -26,6 +30,10 @@ export function InputWrapper({
                 hasContainer && className ? "Wrapper" : className,
                 { Open: hasListOpen }
             )}
+            $isTextArea={isTextArea}
+            $inputBackground={inputBackground}
+            $inputVariant={inputVariant}
+            $validationStatus={validationStatus}
         >
             {children}
         </StyledInputWrapper>

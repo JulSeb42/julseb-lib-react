@@ -7,7 +7,8 @@ import {
     InputRightContainer,
     InputButton,
     InputValidationIcon,
-    InputWrapper,
+    InputPrefix,
+    InputLeftContainer,
 } from "../../InputComponents"
 import { Clock } from "../../../icons"
 import { StyledInput } from "../styles"
@@ -37,17 +38,11 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
             icon,
             iconSize,
             validationIcon,
+            prefix,
             ...rest
         },
         ref
     ) => {
-        const hasContainer: boolean = !!(
-            label ||
-            helper ||
-            helperBottom ||
-            validation
-        )
-
         const inputRef = useRef<HTMLInputElement>(null)
         const showPicker = useCallback(
             () => inputRef?.current?.showPicker(),
@@ -55,21 +50,33 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
         )
 
         return (
-            <InputWrapper
-                data-testid={testid}
-                className={className}
-                hasContainer={hasContainer}
-            >
-                <InputIcon
-                    data-testid={testid}
-                    className={className}
-                    icon={icon}
-                    iconSize={iconSize}
-                    validationStatus={validation?.status}
-                    disabled={disabled}
-                    inputBackground={inputBackground}
-                    inputVariant={inputVariant}
-                />
+            <>
+                {(prefix || icon) && (
+                    <InputLeftContainer
+                        data-testid={testid}
+                        className={className}
+                        disabled={disabled}
+                        withPadding={!!(!prefix && icon)}
+                    >
+                        <InputPrefix
+                            data-testid={testid}
+                            className={className}
+                            prefix={prefix}
+                            inputBackground={inputBackground}
+                        />
+
+                        <InputIcon
+                            data-testid={testid}
+                            className={className}
+                            icon={icon}
+                            iconSize={iconSize}
+                            validationStatus={validation?.status}
+                            disabled={disabled}
+                            inputBackground={inputBackground}
+                            inputVariant={inputVariant}
+                        />
+                    </InputLeftContainer>
+                )}
 
                 <StyledInput
                     data-testid={testid && `${testid}.Input`}
@@ -80,7 +87,6 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $hasIcon={!!icon}
                     $validation={validation?.status}
                     {...rest}
                 />
@@ -88,8 +94,9 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                 <InputRightContainer
                     data-testid={testid}
                     className={className}
-                    inputVariant={inputVariant}
                     disabled={disabled}
+                    withPadding
+                    withBorder={false}
                 >
                     <InputButton
                         data-testid={testid}
@@ -113,7 +120,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                         />
                     )}
                 </InputRightContainer>
-            </InputWrapper>
+            </>
         )
     }
 )

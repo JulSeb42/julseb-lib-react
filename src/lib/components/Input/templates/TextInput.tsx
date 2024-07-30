@@ -5,62 +5,12 @@ import {
     InputIcon,
     InputRightContainer,
     InputValidationIcon,
-    InputWrapper,
+    InputPrefix,
+    InputSuffix,
+    InputLeftContainer,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
 import type { ILibTextInput } from "../types"
-
-const Input = forwardRef<
-    HTMLInputElement,
-    ILibTextInput & { hasContainer: boolean; hasWrapper: boolean }
->(
-    (
-        {
-            "data-testid": testid,
-            hasContainer,
-            hasWrapper,
-            id,
-            className,
-            value,
-            maxLength,
-            disabled,
-            type,
-            inputBackground,
-            inputVariant,
-            icon,
-            validation,
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledInput
-                data-testid={
-                    (hasContainer || hasWrapper) && testid
-                        ? `${testid}.Input`
-                        : testid
-                }
-                id={id}
-                className={
-                    (hasContainer || hasWrapper) && className
-                        ? "Input"
-                        : className
-                }
-                ref={ref}
-                value={value}
-                maxLength={maxLength}
-                disabled={disabled}
-                type={type}
-                $inputBackground={inputBackground}
-                $inputVariant={inputVariant}
-                $disabled={disabled}
-                $hasIcon={!!icon}
-                $validation={validation?.status}
-                {...rest}
-            />
-        )
-    }
-)
 
 export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
     (
@@ -83,65 +33,67 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
             icon,
             iconSize,
             validationIcon,
+            prefix,
+            suffix,
             ...rest
         },
         ref
     ) => {
-        const hasContainer: boolean = !!(
-            label ||
-            labelComment ||
-            helper ||
-            helperBottom ||
-            validation ||
-            counter
-        )
-        const hasWrapper = !!(icon || validation)
-
-        const inputProps = {
-            "data-testid": testid,
-            hasContainer,
-            hasWrapper,
-            id,
-            className,
-            value,
-            maxLength,
-            disabled,
-            type,
-            inputBackground,
-            inputVariant,
-            icon,
-            validation,
-            ref,
-            ...rest,
-        }
-
-        if (hasWrapper)
-            return (
-                <InputWrapper
-                    data-testid={testid}
-                    className={className}
-                    hasContainer={hasContainer}
-                >
-                    <InputIcon
+        return (
+            <>
+                {(prefix || icon) && (
+                    <InputLeftContainer
                         data-testid={testid}
                         className={className}
-                        icon={icon}
-                        iconSize={iconSize}
-                        validationStatus={validation?.status}
                         disabled={disabled}
-                        inputBackground={inputBackground}
-                        inputVariant={inputVariant}
-                    />
-
-                    <Input {...inputProps} />
-
-                    {validation && (
-                        <InputRightContainer
+                        withPadding={!!(!prefix && icon)}
+                    >
+                        <InputPrefix
                             data-testid={testid}
                             className={className}
-                            inputVariant={inputVariant}
+                            prefix={prefix}
+                            inputBackground={inputBackground}
+                        />
+
+                        <InputIcon
+                            data-testid={testid}
+                            className={className}
+                            icon={icon}
+                            iconSize={iconSize}
+                            validationStatus={validation?.status}
                             disabled={disabled}
-                        >
+                            inputBackground={inputBackground}
+                            inputVariant={inputVariant}
+                        />
+                    </InputLeftContainer>
+                )}
+
+                <StyledInput
+                    data-testid={testid && `${testid}.Input`}
+                    id={id}
+                    className={className && "Input"}
+                    ref={ref}
+                    value={value}
+                    maxLength={maxLength}
+                    disabled={disabled}
+                    type={type}
+                    prefix={undefined as any}
+                    $inputBackground={inputBackground}
+                    $inputVariant={inputVariant}
+                    $disabled={disabled}
+                    $validation={validation?.status}
+                    {...rest}
+                />
+
+                {(validation || suffix) && (
+                    <InputRightContainer
+                        data-testid={testid}
+                        className={className}
+                        disabled={disabled}
+                        withPadding={validation && !suffix}
+                        withBorder={!!(suffix && !validation)}
+                    >
+                        {validation && (
                             <InputValidationIcon
                                 data-testid={testid}
                                 className={className}
@@ -149,11 +101,17 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                                 validationIcon={validationIcon}
                                 inputBackground={inputBackground}
                             />
-                        </InputRightContainer>
-                    )}
-                </InputWrapper>
-            )
+                        )}
 
-        return <Input {...inputProps} />
+                        <InputSuffix
+                            data-testid={testid}
+                            className={className}
+                            suffix={suffix}
+                            inputBackground={inputBackground}
+                        />
+                    </InputRightContainer>
+                )}
+            </>
+        )
     }
 )

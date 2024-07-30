@@ -10,6 +10,8 @@ import {
     ListInput,
     ListInputItem,
     InputIcon,
+    InputLeftContainer,
+    InputPrefix,
 } from "../InputComponents"
 import { CaretDown } from "../../icons"
 import { SelectButton, type ILibSelectButton } from "./SelectButton"
@@ -63,6 +65,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             icons,
             iconSizes,
             tabIndex,
+            prefix,
             ...rest
         },
         ref
@@ -144,16 +147,34 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                     onBlur={() => setIsOpen(false)}
                     {...rest}
                 >
-                    <InputIcon
-                        data-testid={testid}
-                        className={className}
-                        icon={icons?.iconLeft}
-                        iconSize={iconSizes?.iconLeft || defaultIconSizes.left}
-                        validationStatus={validation?.status}
-                        disabled={disabled}
-                        inputBackground={inputBackground}
-                        inputVariant={inputVariant}
-                    />
+                    {(prefix || icons?.iconLeft) && (
+                        <InputLeftContainer
+                            data-testid={testid}
+                            className={className}
+                            disabled={disabled}
+                            withPadding={!!(!prefix && icons?.iconLeft)}
+                        >
+                            <InputPrefix
+                                data-testid={testid}
+                                className={className}
+                                prefix={prefix}
+                                inputBackground={inputBackground}
+                            />
+
+                            <InputIcon
+                                data-testid={testid}
+                                className={className}
+                                icon={icons?.iconLeft}
+                                iconSize={
+                                    iconSizes?.iconLeft || defaultIconSizes.left
+                                }
+                                validationStatus={validation?.status}
+                                disabled={disabled}
+                                inputBackground={inputBackground}
+                                inputVariant={inputVariant}
+                            />
+                        </InputLeftContainer>
+                    )}
 
                     <SelectButton {...buttonProps} />
 
@@ -161,8 +182,8 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                         <InputRightContainer
                             data-testid={testid}
                             className={className}
-                            inputVariant={inputVariant}
                             disabled={disabled}
+                            withBorder={false}
                         >
                             {validation && (
                                 <InputValidationIcon

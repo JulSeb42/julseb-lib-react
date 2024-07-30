@@ -22,21 +22,11 @@ export const TextareaInput = forwardRef<HTMLTextAreaElement, ILibTextareaInput>(
         },
         ref
     ) => {
-        const hasContainer: boolean = !!(
-            label ||
-            helper ||
-            helperBottom ||
-            validation ||
-            counter
-        )
-
         return (
             <StyledInput
-                data-testid={
-                    hasContainer && testid ? `${testid}.Textarea` : testid
-                }
+                data-testid={testid && `${testid}.Textarea`}
                 id={id}
-                className={hasContainer && className ? "Textarea" : className}
+                className={className && "Textarea"}
                 ref={ref}
                 disabled={disabled}
                 as="textarea"
@@ -44,7 +34,6 @@ export const TextareaInput = forwardRef<HTMLTextAreaElement, ILibTextareaInput>(
                 $inputBackground={inputBackground}
                 $inputVariant={undefined}
                 $disabled={disabled}
-                $hasIcon={false}
                 $validation={validation?.status}
                 $isTextarea
                 {...rest}

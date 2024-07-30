@@ -37,10 +37,9 @@ const StyledInput = styled.input<ILibInputStyle>`
     ${({ $isTextarea }) =>
         $isTextarea &&
         css`
-            height: inherit;
             min-height: ${TEXTAREA_MIN_HEIGHT};
             resize: vertical;
-            padding: 0 ${SPACERS.XS};
+            padding: ${SPACERS.XS};
         `}
 `
 

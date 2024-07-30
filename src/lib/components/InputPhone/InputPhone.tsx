@@ -208,6 +208,10 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                     className={className}
                     hasContainer={hasContainer}
                     hasListOpen={isOpen}
+                    isTextArea={false}
+                    inputVariant={inputVariant}
+                    inputBackground={inputBackground}
+                    validationStatus={validation?.status}
                 >
                     <LeftContainer
                         data-testid={testid && `${testid}.LeftContainer`}
@@ -276,7 +280,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                         type="tel"
                         disabled={disabled}
                         $disabled={disabled}
-                        $hasIcon={false}
                         $inputBackground={inputBackground}
                         $validation={validation?.status}
                         $inputVariant={inputVariant}
@@ -288,8 +291,8 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                         <InputRightContainer
                             data-testid={testid}
                             className={className}
-                            inputVariant={inputVariant}
                             disabled={disabled}
+                            withBorder={false}
                         >
                             <InputValidationIcon
                                 data-testid={testid}

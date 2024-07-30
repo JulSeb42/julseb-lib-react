@@ -17,28 +17,21 @@ export const ColorInput = forwardRef<HTMLInputElement, ILibColorInput>(
             inputVariant = "rounded",
             className,
             disabled,
+            type = "color",
             ...rest
         },
         ref
     ) => {
-        const hasContainer: boolean = !!(
-            label ||
-            helper ||
-            helperBottom ||
-            validation
-        )
-
         return (
             <StyledInput
-                data-testid={hasContainer ? `${testid}.Input` : testid}
+                data-testid={testid && `${testid}.Input`}
+                className={className && "Input"}
                 id={id}
-                className={hasContainer ? "Input" : className}
                 ref={ref}
-                type="color"
+                type={type}
                 $inputBackground={inputBackground}
                 $inputVariant={inputVariant}
                 $disabled={disabled}
-                $hasIcon={false}
                 $validation={validation?.status}
                 {...rest}
             />

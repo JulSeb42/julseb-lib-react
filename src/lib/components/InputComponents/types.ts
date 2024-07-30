@@ -11,6 +11,7 @@ import type {
     LibInputVariant,
     LibValidationStatus,
     RequireAtLeastOne,
+    LibInputPrefixAndSuffix,
 } from "../../types"
 
 /*====================== Validation ======================*/
@@ -145,8 +146,19 @@ export interface ILibInputRightContainer {
     "data-testid": string | undefined
     className: string | undefined
     children?: ReactChildren
-    inputVariant: LibInputVariant | undefined
     disabled: boolean | undefined
+    withPadding?: boolean
+    withBorder: boolean | undefined
+}
+
+/*====================== InputLeftContainer ======================*/
+
+export interface ILibInputLeftContainer {
+    "data-testid": string | undefined
+    className: string | undefined
+    children?: ReactChildren
+    disabled: boolean | undefined
+    withPadding?: boolean
 }
 
 /*====================== InputButton ======================*/
@@ -186,6 +198,10 @@ export interface ILibInputWrapper {
     hasContainer: boolean | undefined
     children?: ReactChildren
     hasListOpen?: boolean
+    isTextArea: boolean
+    inputBackground: LibInputBackground | undefined
+    inputVariant: LibInputVariant | undefined
+    validationStatus: LibValidationStatus
 }
 
 /*====================== List input ======================*/
@@ -227,9 +243,58 @@ interface ListInputItemReadOnly extends ILibListInputItemBase {
 
 export type ILibListInputItem = ListInputItemActive | ListInputItemReadOnly
 
-/*====================== Input with icon ======================*/
+/*====================== Input with icon and prefix / suffix ======================*/
 
-export interface ILibInputIcon {
+interface ILibInputIconBase {
+    suffix?: LibInputPrefixAndSuffix
+}
+
+interface InputWithIcon extends ILibInputIconBase {
     icon?: LibIcon
     iconSize?: number
+    prefix?: never
+}
+
+interface InputWithPrefixAndSuffix extends ILibInputIconBase {
+    icon?: never
+    iconSize?: never
+    prefix?: LibInputPrefixAndSuffix
+}
+
+export type ILibInputIcon = InputWithIcon | InputWithPrefixAndSuffix
+
+/*====================== Inputs with prefix and suffix ======================*/
+
+interface ILibPrefixAndSuffixBase {
+    "data-testid": string | undefined
+    className: string | undefined
+    inputBackground: LibInputBackground | undefined
+}
+
+export interface ILibInputPrefix extends ILibPrefixAndSuffixBase {
+    /**
+     * @description Add prefix on inputs with text
+     * @prop "data-testid": string | undefined
+     * @prop className: string | undefined
+     * @prop validation: boolean | undefined
+     * @prop inputBackground: "light" | "dark" | undefined
+     * @prop disabled: boolean | undefined
+     * @prop inputVariant: "rounded" | "pill" | undefined
+     * @prop prefix: string | JSX.Element
+     */
+    prefix?: LibInputPrefixAndSuffix
+}
+
+export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
+    /**
+     * @description Add suffix on inputs with text
+     * @prop "data-testid": string | undefined
+     * @prop className: string | undefined
+     * @prop validation: boolean | undefined
+     * @prop inputBackground: "light" | "dark" | undefined
+     * @prop disabled: boolean | undefined
+     * @prop inputVariant: "rounded" | "pill" | undefined
+     * @prop suffix: string | JSX.Element
+     */
+    suffix?: LibInputPrefixAndSuffix
 }

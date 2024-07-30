@@ -1,7 +1,11 @@
 /*=============================================== InputPreview ===============================================*/
 
 import { Input } from "../../../"
-import { InputDemoValidation, InputDemoCounter } from "./Input.demo"
+import {
+    InputDemoValidation,
+    InputDemoCounter,
+    InputSearch,
+} from "./Input.demo"
 import type { ILibInput } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -27,14 +31,25 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                     icon: "check",
                     iconColor: "success",
                 },
+                prefix: "Hello",
+                suffix: "World",
                 "data-testid": "testid",
                 className: "className",
+                placeholder: "Placeholder",
             },
         },
         {
             previewTitle: "File",
             props: {
                 type: "file",
+                "data-testid": "testid",
+                className: "className",
+            },
+        },
+        {
+            previewTitle: "Color",
+            props: {
+                type: "color",
                 "data-testid": "testid",
                 className: "className",
             },
@@ -57,49 +72,21 @@ export const inputPreview: ComponentPreview<ILibInput> = {
         },
         {
             previewTitle: "Focus on keypress",
-            props: {
-                focusKeys: ["Command", "KeyJ"],
-                showKeys: true,
-                type: "search",
-                icon: "search",
-                "data-testid": "testid",
-                className: "className",
-            },
+            demo: <InputSearch />,
         },
         {
             previewTitle: "Date & time",
             demo: (
                 <>
-                    <Input
-                        id="input-date"
-                        type="date"
-                        data-testid="testid"
-                        className="className"
-                    />
+                    <Input id="input-date" type="date" data-testid="testid" />
                     <Input
                         id="input-datetime"
                         type="datetime-local"
                         data-testid="testid"
-                        className="className"
                     />
-                    <Input
-                        id="input-month"
-                        type="month"
-                        data-testid="testid"
-                        className="className"
-                    />
-                    <Input
-                        id="input-week"
-                        type="week"
-                        data-testid="testid"
-                        className="className"
-                    />
-                    <Input
-                        id="input-time"
-                        type="time"
-                        data-testid="testid"
-                        className="className"
-                    />
+                    <Input id="input-month" type="month" data-testid="testid" />
+                    <Input id="input-week" type="week" data-testid="testid" />
+                    <Input id="input-time" type="time" data-testid="testid" />
                 </>
             ),
         },
@@ -112,7 +99,6 @@ export const inputPreview: ComponentPreview<ILibInput> = {
             previewTitle: "Password",
             props: {
                 type: "password",
-                inputBackground: "dark",
                 "data-testid": "testid",
                 className: "className",
             },
@@ -126,11 +112,22 @@ export const inputPreview: ComponentPreview<ILibInput> = {
             },
         },
         {
+            previewTitle: "Pill with icon",
+            props: {
+                inputVariant: "pill",
+                "data-testid": "testid",
+                className: "className",
+                icon: "send",
+            },
+        },
+        {
             previewTitle: "With background light",
             props: {
                 inputBackground: "light",
                 "data-testid": "testid",
                 className: "className",
+                prefix: "Hello",
+                suffix: "World",
             },
         },
         {
@@ -139,6 +136,8 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 inputBackground: "dark",
                 "data-testid": "testid",
                 className: "className",
+                prefix: "Hello",
+                suffix: "World",
             },
         },
         {
@@ -148,6 +147,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 children: <option value="1">1</option>,
                 "data-testid": "testid",
                 className: "className",
+                icon: "user",
             },
         },
         {
@@ -156,6 +156,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 type: "textarea",
                 "data-testid": "testid",
                 className: "className",
+                label: "Textarea",
             },
         },
     ],

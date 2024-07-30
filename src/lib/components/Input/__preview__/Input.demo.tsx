@@ -29,6 +29,8 @@ export function InputDemoValidation() {
             onChange={handleValidate}
             data-testid="testid"
             className="className"
+            prefix="Prefix"
+            suffix="Suffix"
         />
     )
 }
@@ -45,6 +47,27 @@ export function InputDemoCounter() {
             onChange={e => setInput(e.target.value)}
             data-testid="testid"
             className="className"
+            prefix="Prefix"
+            suffix="Suffix"
+        />
+    )
+}
+
+export function InputSearch() {
+    const [value, setValue] = useState("")
+
+    return (
+        <Input
+            data-testid="testid"
+            className="className"
+            id="search"
+            type="search"
+            value={value}
+            onChange={e => setValue(e.target.value)}
+            clearSearch={() => setValue("")}
+            icon="search"
+            focusKeys={["Command", "KeyJ"]}
+            showKeys
         />
     )
 }

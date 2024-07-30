@@ -1,69 +1,18 @@
 /*=============================================== SearchInput component ===============================================*/
 
-import { forwardRef, useRef, type ForwardedRef, useCallback } from "react"
+import { forwardRef, useRef, useCallback } from "react"
 import { Key, useKeyPress, useMergeRefs, useTouchScreen } from "../../.."
 import {
     InputButton,
     InputIcon,
+    InputPrefix,
     InputRightContainer,
-    InputWrapper,
+    InputLeftContainer,
 } from "../../InputComponents"
 import { Close } from "../../../icons"
 import { transformSearchKeys } from "../../../lib-utils"
 import { StyledInput } from "../styles"
 import type { ILibSearchInput } from "../types"
-
-const Input = forwardRef<
-    HTMLInputElement,
-    ILibSearchInput & {
-        hasContainer: boolean
-        hasWrapper: boolean
-        inputRef: ForwardedRef<HTMLInputElement>
-    }
->(
-    (
-        {
-            "data-testid": testid,
-            hasContainer,
-            hasWrapper,
-            className,
-            id,
-            inputRef,
-            disabled,
-            value,
-            inputBackground,
-            inputVariant,
-            icon,
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledInput
-                data-testid={
-                    (hasContainer || hasWrapper) && testid
-                        ? `${testid}.Input`
-                        : testid
-                }
-                id={id}
-                className={
-                    (hasContainer || hasWrapper) && className
-                        ? "Input"
-                        : className
-                }
-                ref={useMergeRefs([ref, inputRef])}
-                disabled={disabled}
-                value={value}
-                $inputBackground={inputBackground}
-                $inputVariant={inputVariant}
-                $disabled={disabled}
-                $hasIcon={!!icon}
-                $validation={undefined}
-                {...rest}
-            />
-        )
-    }
-)
 
 export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
     (
@@ -78,7 +27,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
             className,
             disabled,
             clearSearch,
-            iconClearSize = 16,
+            iconClearSize = 24,
             iconClear = (
                 <Close
                     data-testid={testid && `${testid}.Button.Icon`}
@@ -91,18 +40,12 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
             focusKeys,
             showKeys,
             value,
+            prefix,
             ...rest
         },
         ref
     ) => {
         const isTouchScreen = useTouchScreen()
-
-        const hasContainer: boolean = !!(label || helper || helperBottom)
-        const hasWrapper: boolean = !!(
-            clearSearch ||
-            icon ||
-            (showKeys && !isTouchScreen)
-        )
 
         const inputRef = useRef<HTMLInputElement>(null)
 
@@ -111,78 +54,85 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
         const keys = focusKeys || [""]
         useKeyPress(keys, () => handleFocus())
 
-        const inputProps = {
-            "data-testid": testid,
-            hasContainer,
-            hasWrapper,
-            className,
-            id,
-            inputRef,
-            ref,
-            disabled,
-            value,
-            inputBackground,
-            inputVariant,
-            icon,
-            ...rest,
-        }
-
-        if (hasWrapper)
-            return (
-                <InputWrapper
-                    data-testid={testid}
-                    className={className}
-                    hasContainer={hasContainer}
-                >
-                    <InputIcon
+        return (
+            <>
+                {(prefix || icon) && (
+                    <InputLeftContainer
                         data-testid={testid}
                         className={className}
-                        icon={icon}
-                        iconSize={iconSize}
-                        validationStatus={undefined}
                         disabled={disabled}
-                        inputBackground={inputBackground}
-                        inputVariant={inputVariant}
-                    />
-
-                    <Input {...inputProps} />
-
-                    {(clearSearch || (showKeys && !isTouchScreen)) && (
-                        <InputRightContainer
+                        withPadding={!!(!prefix && icon)}
+                    >
+                        <InputPrefix
                             data-testid={testid}
                             className={className}
-                            disabled={disabled}
-                            inputVariant={inputVariant}
-                        >
-                            {clearSearch &&
-                                value &&
-                                value.toString().length > 0 && (
-                                    <InputButton
-                                        data-testid={testid}
-                                        className={className}
-                                        icon={iconClear}
-                                        iconSize={iconClearSize}
-                                        inputBackground={inputBackground}
-                                        disabled={disabled}
-                                        aria-label="Clear"
-                                        onClick={clearSearch}
-                                        validationStatus={undefined}
-                                    />
-                                )}
+                            prefix={prefix}
+                            inputBackground={inputBackground}
+                        />
 
-                            {showKeys && !isTouchScreen && (
-                                <Key
-                                    data-testid={testid && `${testid}.Keys`}
-                                    keys={transformSearchKeys(keys)}
-                                    accentColor="primary"
-                                    className={className && "Keys"}
+                        <InputIcon
+                            data-testid={testid}
+                            className={className}
+                            icon={icon}
+                            iconSize={iconSize}
+                            validationStatus={undefined}
+                            disabled={disabled}
+                            inputBackground={inputBackground}
+                            inputVariant={inputVariant}
+                        />
+                    </InputLeftContainer>
+                )}
+
+                <StyledInput
+                    data-testid={testid && `${testid}.Input`}
+                    id={id}
+                    className={className && "Input"}
+                    ref={useMergeRefs([ref, inputRef])}
+                    disabled={disabled}
+                    value={value}
+                    prefix={undefined as any}
+                    $inputBackground={inputBackground}
+                    $inputVariant={inputVariant}
+                    $disabled={disabled}
+                    $validation={undefined}
+                    {...rest}
+                />
+
+                {(clearSearch || (showKeys && !isTouchScreen)) && (
+                    <InputRightContainer
+                        data-testid={testid}
+                        className={className}
+                        disabled={disabled}
+                        withPadding
+                        withBorder={false}
+                    >
+                        {clearSearch &&
+                            value &&
+                            value.toString().length > 0 && (
+                                <InputButton
+                                    data-testid={testid}
+                                    className={className}
+                                    icon={iconClear}
+                                    iconSize={iconClearSize}
+                                    inputBackground={inputBackground}
+                                    disabled={disabled}
+                                    aria-label="Clear"
+                                    onClick={clearSearch}
+                                    validationStatus={undefined}
                                 />
                             )}
-                        </InputRightContainer>
-                    )}
-                </InputWrapper>
-            )
 
-        return <Input {...inputProps} />
+                        {showKeys && !isTouchScreen && (
+                            <Key
+                                data-testid={testid && `${testid}.Keys`}
+                                keys={transformSearchKeys(keys)}
+                                accentColor="primary"
+                                className={className && "Keys"}
+                            />
+                        )}
+                    </InputRightContainer>
+                )}
+            </>
+        )
     }
 )

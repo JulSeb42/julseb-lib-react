@@ -1,35 +1,34 @@
-/*=============================================== InputRightContainer component ===============================================*/
+/*=============================================== InputLeftContainer component ===============================================*/
 
-import { StyledInputRightContainer } from "../styles"
-import type { ILibInputRightContainer } from "../types"
+import { StyledInputLeftContainer } from "../styles"
+import type { ILibInputLeftContainer } from "../types"
 
 /**
- * @description Returns a container on the right of an input
+ * @description Returns a container on the left of an input
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
  * @prop inputVariant: LibInputVariant | undefined
  * @prop disabled: boolean | undefined
- * @prop withSuffix: boolean | undefined
+ * @prop withPrefix: boolean | undefined
  */
 
-export function InputRightContainer({
+export function InputLeftContainer({
     "data-testid": testid,
     className,
     children,
     disabled,
     withPadding,
-    withBorder,
-}: ILibInputRightContainer) {
+}: ILibInputLeftContainer) {
     return (
-        <StyledInputRightContainer
+        <StyledInputLeftContainer
             data-testid={testid && `${testid}.RightContainer`}
             className={className && "RightContainer"}
             $disabled={disabled}
             $withPadding={withPadding}
-            $withBorder={withBorder}
+            $withBorder
         >
             {children}
-        </StyledInputRightContainer>
+        </StyledInputLeftContainer>
     )
 }

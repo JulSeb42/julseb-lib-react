@@ -26,17 +26,16 @@ export interface ILibColorInput
 
 /*====================== DateInput ======================*/
 
-export interface ILibDateInput
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon,
-        ILibInputValidationIconComponent,
-        ILibInputNoFocusKeys {
-    type: "date" | "datetime-local" | "month" | "week"
-    iconCalendar?: LibIcon
-    iconCalendarSize?: number
-    children?: never
-}
+export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
+    ILibExtendedInputBase &
+    ILibInputIcon &
+    ILibInputValidationIconComponent &
+    ILibInputNoFocusKeys & {
+        type: "date" | "datetime-local" | "month" | "week"
+        iconCalendar?: LibIcon
+        iconCalendarSize?: number
+        children?: never
+    }
 
 /*====================== FileInput ======================*/
 
@@ -51,17 +50,19 @@ export interface ILibFileInput
 
 /*====================== PasswordInput ======================*/
 
-interface ILibPasswordInputBase
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon,
-        ILibInputValidationIconComponent,
-        ILibInputNoFocusKeys {
-    type: "password"
-    children?: never
-}
+type ILibPasswordInputBase = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "prefix"
+> &
+    ILibExtendedInputBase &
+    ILibInputIcon &
+    ILibInputValidationIconComponent &
+    ILibInputNoFocusKeys & {
+        type: "password"
+        children?: never
+    }
 
-interface PasswordInputWithButtonIcon extends ILibPasswordInputBase {
+type PasswordInputWithButtonIcon = ILibPasswordInputBase & {
     hideButton?: false
     button?: {
         iconShow: LibIcon
@@ -73,7 +74,7 @@ interface PasswordInputWithButtonIcon extends ILibPasswordInputBase {
     }
 }
 
-interface PasswordWithButtonText extends ILibPasswordInputBase {
+type PasswordWithButtonText = ILibPasswordInputBase & {
     hideButton?: false
     button?: {
         iconShow?: never
@@ -85,7 +86,7 @@ interface PasswordWithButtonText extends ILibPasswordInputBase {
     }
 }
 
-interface PasswordWithoutButton extends ILibPasswordInputBase {
+type PasswordWithoutButton = ILibPasswordInputBase & {
     hideButton?: true
     button?: never
 }
@@ -97,23 +98,25 @@ export type ILibPasswordInput =
 
 /*====================== SearchInput ======================*/
 
-interface ILibSearchInputBase
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon {
-    type: "search"
-    clearSearch?: MouseEventHandler<HTMLButtonElement>
-    iconClear?: LibIcon
-    iconClearSize?: number
-    children?: never
-}
+type ILibSearchInputBase = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "prefix"
+> &
+    ILibExtendedInputBase &
+    ILibInputIcon & {
+        type: "search"
+        clearSearch?: MouseEventHandler<HTMLButtonElement>
+        iconClear?: LibIcon
+        iconClearSize?: number
+        children?: never
+    }
 
-interface SearchInputShowKeys extends ILibSearchInputBase {
+type SearchInputShowKeys = ILibSearchInputBase & {
     focusKeys?: Array<string>
     showKeys?: boolean
 }
 
-interface SearchInputHideKeys extends ILibSearchInputBase {
+type SearchInputHideKeys = ILibSearchInputBase & {
     focusKeys?: undefined
     showKeys?: never
 }
@@ -122,16 +125,18 @@ export type ILibSearchInput = SearchInputShowKeys | SearchInputHideKeys
 
 /*====================== SelectInput ======================*/
 
-export interface ILibSelectInput
-    extends SelectHTMLAttributes<HTMLSelectElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon,
-        ILibInputNoFocusKeys {
-    type: "select"
-    iconSelect?: LibIcon
-    iconSelectSize?: number
-    children?: ReactChildren
-}
+export type ILibSelectInput = Omit<
+    SelectHTMLAttributes<HTMLSelectElement>,
+    "prefix"
+> &
+    ILibExtendedInputBase &
+    ILibInputIcon &
+    ILibInputNoFocusKeys & {
+        type: "select"
+        iconSelect?: LibIcon
+        iconSelectSize?: number
+        children?: ReactChildren
+    }
 
 /*====================== TextareaInput ======================*/
 
@@ -146,29 +151,33 @@ export interface ILibTextareaInput
 
 /*====================== TextInput ======================*/
 
-export interface ILibTextInput
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon,
-        ILibInputValidationIconComponent,
-        Partial<ILibInputNoFocusKeys> {
-    type?: "email" | "number" | "tel" | "text" | "url" | undefined
-    children?: never
-}
+export type ILibTextInput = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "prefix"
+> &
+    ILibExtendedInputBase &
+    ILibInputIcon &
+    ILibInputValidationIconComponent &
+    Partial<ILibInputNoFocusKeys> & {
+        type?: "email" | "number" | "tel" | "text" | "url" | undefined
+        children?: never
+    }
 
 /*====================== TimeInput ======================*/
 
-export interface ILibTimeInput
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
-        ILibInputIcon,
-        ILibInputValidationIconComponent,
-        ILibInputNoFocusKeys {
-    type: "time"
-    iconClock?: LibIcon
-    iconClockSize?: number
-    children?: never
-}
+export type ILibTimeInput = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "prefix"
+> &
+    ILibExtendedInputBase &
+    ILibInputIcon &
+    ILibInputValidationIconComponent &
+    ILibInputNoFocusKeys & {
+        type: "time"
+        iconClock?: LibIcon
+        iconClockSize?: number
+        children?: never
+    }
 
 export type ILibInput =
     | ILibColorInput

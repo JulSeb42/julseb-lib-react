@@ -20,10 +20,11 @@ const StyledNavDemo = styled.nav`
     overflow-y: scroll;
     background-color: ${({ theme }) => theme.PRIMARY_500};
     padding: ${SPACERS.S};
-    ${Mixins.Flexbox({
-        $flexDirection: "column",
-        $alignItems: "stretch",
+    ${Mixins.Grid({
+        $col: 1,
         $gap: "xs",
+        $alignItems: "start",
+        $alignContent: "start",
     })}
 
     a {

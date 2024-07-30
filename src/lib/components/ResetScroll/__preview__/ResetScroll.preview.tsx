@@ -7,11 +7,11 @@ export const resetScrollPreview: ComponentPreview<null> = {
     name: "ResetScroll",
     component: ResetScroll,
     category: "helpers",
-    import: "ResetScroll", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibResetScroll", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "ResetScroll",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibResetScroll",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", demo: <Text>Demo impossible here.</Text> },

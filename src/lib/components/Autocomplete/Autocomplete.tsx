@@ -27,6 +27,7 @@ import {
     ListInput,
     ListInputItem,
     InputButton,
+    InputLeftContainer,
 } from "../InputComponents"
 import { Close } from "../../icons"
 import { transformSearchKeys } from "../../lib-utils"
@@ -161,17 +162,32 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                     className={className}
                     hasContainer={hasContainer}
                     hasListOpen={isOpen}
+                    isTextArea={false}
+                    inputVariant={inputVariant}
+                    inputBackground={inputBackground}
+                    validationStatus={validation?.status}
                 >
-                    <InputIcon
-                        data-testid={testid}
-                        className={className}
-                        icon={icons?.iconLeft}
-                        iconSize={iconSizes?.iconLeft || defaultIconSizes.left}
-                        validationStatus={validation?.status}
-                        disabled={disabled}
-                        inputBackground={inputBackground}
-                        inputVariant={inputVariant}
-                    />
+                    {icons?.iconLeft && (
+                        <InputLeftContainer
+                            data-testid={testid}
+                            className={className}
+                            disabled={disabled}
+                            withPadding
+                        >
+                            <InputIcon
+                                data-testid={testid}
+                                className={className}
+                                icon={icons.iconLeft}
+                                iconSize={
+                                    iconSizes?.iconLeft || defaultIconSizes.left
+                                }
+                                validationStatus={validation?.status}
+                                disabled={disabled}
+                                inputBackground={inputBackground}
+                                inputVariant={inputVariant}
+                            />
+                        </InputLeftContainer>
+                    )}
 
                     <StyledAutocomplete
                         data-testid={testid && `${testid}.Input`}
@@ -187,7 +203,6 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                         type="search"
                         onFocus={handleOpen}
                         onBlur={handleClose}
-                        $hasIcon={!!icons?.iconLeft}
                         $disabled={disabled}
                         $validation={validation?.status}
                         $inputBackground={inputBackground}
@@ -199,8 +214,9 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                         <InputRightContainer
                             data-testid={testid}
                             className={className}
-                            inputVariant={inputVariant}
                             disabled={disabled}
+                            withPadding
+                            withBorder={false}
                         >
                             {value.length ? (
                                 <InputButton

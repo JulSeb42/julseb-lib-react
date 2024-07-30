@@ -5,7 +5,30 @@ import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = replaceTypes(["padding?: ILibPadding"])
+    const propsDoc = replaceTypes([
+        '"data-testid": string | undefined',
+        "className: string | undefined",
+        "validation: LibValidationStatus",
+        "inputBackground: LibInputBackground | undefined",
+        "disabled: boolean | undefined",
+        "inputVariant: LibInputVariant | undefined",
+    ])
+
+    const propsInput = [
+        "id",
+        "label",
+        "helper",
+        "helperBottom",
+        "validation",
+        "counter",
+        "maxLength",
+        "value",
+        "className",
+        "ref",
+        "type",
+        "inputBackground",
+        "inputVariant",
+    ]
 
     // const utils = [
     //     "calculate-average",
@@ -105,6 +128,11 @@ export function Generate() {
 
     return (
         <Page title="Generate">
+            <ul>
+                {propsInput.map(p => (
+                    <li key={p}>{`${p}={${p}}`}</li>
+                ))}
+            </ul>
             <ul>
                 {hooks.map(hook => (
                     <li key={hook}>{`"${hook}",`}</li>

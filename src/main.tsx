@@ -7,7 +7,7 @@ import { ThemeProviderWrapper } from "./lib"
 import "./lib/index.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <ThemeProviderWrapper>
+    <ThemeProviderWrapper stylesheetManager>
         <App />
     </ThemeProviderWrapper>
 )

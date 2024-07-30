@@ -5,6 +5,7 @@ import type {
     LibIcon,
     LibInputListDirection,
     DispatchState,
+    LibInputPrefixAndSuffix
 } from "../../types"
 import type {
     ILibInputBase,
@@ -12,7 +13,7 @@ import type {
 } from "../InputComponents/types"
 
 export interface ILibSelect
-    extends LibComponentBase<HTMLDivElement>,
+    extends Omit<LibComponentBase<HTMLDivElement>, "prefix">,
         ILibInputBase,
         ILibInputValidationIconComponent {
     selected: string
@@ -21,6 +22,7 @@ export interface ILibSelect
     disabled?: boolean
     listDirection?: LibInputListDirection
     tabIndex?: number
+    prefix?: LibInputPrefixAndSuffix
     icons?: {
         iconLeft?: LibIcon
         caret?: LibIcon

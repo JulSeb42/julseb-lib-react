@@ -9,11 +9,11 @@ export const helmetPreview: ComponentPreview<ILibHelmet> = {
     name: "Helmet",
     component: Helmet as any,
     category: "components",
-    import: "Helmet", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibHelmet", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Helmet",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibHelmet",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         {

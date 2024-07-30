@@ -27,50 +27,50 @@ export interface ILibSelectButton {
     hasWrapper: boolean
 }
 
-export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(({
-    "data-testid": testid,
-    className,
-    hasOptions,
-    isOpen,
-    id,
-    tabIndex,
-    disabled,
-    hasIcon,
-    inputBackground,
-    inputVariant,
-    validationStatus,
-    selected,
-    hasWrapper,
-    hasContainer,
-    onClick,
-}: ILibSelectButton) => {
-    return (
-        <StyledSelectButton
-            data-testid={
-                (hasContainer || hasWrapper || hasIcon) && testid
-                    ? `${testid}.SelectContainer.SelectButton`
-                    : testid
-            }
-            className={classNames(
-                (hasContainer || hasWrapper || hasIcon) && className
-                    ? "SelectButton"
-                    : className,
-                { WithListOpen: isOpen }
-            )}
-            onClick={onClick}
-            id={id}
-            tabIndex={tabIndex}
-            disabled={disabled}
-            aria-disabled={disabled && "true"}
-            $disabled={disabled}
-            $hasIcon={hasIcon}
-            $inputBackground={inputBackground}
-            $inputVariant={inputVariant}
-            $validation={validationStatus}
-            $hasOptions={hasOptions}
-        >
-            {selected}
-        </StyledSelectButton>
-    )
-}
+export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
+    ({
+        "data-testid": testid,
+        className,
+        hasOptions,
+        isOpen,
+        id,
+        tabIndex,
+        disabled,
+        hasIcon,
+        inputBackground,
+        inputVariant,
+        validationStatus,
+        selected,
+        hasWrapper,
+        hasContainer,
+        onClick,
+    }: ILibSelectButton) => {
+        return (
+            <StyledSelectButton
+                data-testid={
+                    (hasContainer || hasWrapper || hasIcon) && testid
+                        ? `${testid}.SelectContainer.SelectButton`
+                        : testid
+                }
+                className={classNames(
+                    (hasContainer || hasWrapper || hasIcon) && className
+                        ? "SelectButton"
+                        : className,
+                    { WithListOpen: isOpen }
+                )}
+                onClick={onClick}
+                id={id}
+                tabIndex={tabIndex}
+                disabled={disabled}
+                aria-disabled={disabled && "true"}
+                $disabled={disabled}
+                $inputBackground={inputBackground}
+                $inputVariant={inputVariant}
+                $validation={validationStatus}
+                $hasOptions={hasOptions}
+            >
+                {selected}
+            </StyledSelectButton>
+        )
+    }
 )

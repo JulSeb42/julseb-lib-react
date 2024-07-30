@@ -25,6 +25,8 @@ import type {
     LibInputListDirection,
 } from "../../types"
 
+/*====================== InputContainer ======================*/
+
 const StyledInputContainer = styled.div`
     position: relative;
     width: 100%;
@@ -40,10 +42,14 @@ const StyledInputContainer = styled.div`
     }
 `
 
+/*====================== Label ======================*/
+
 const Label = styled.label`
     color: ${({ theme }) => theme.PRIMARY_500};
     font-weight: ${FONT_WEIGHTS.BLACK};
 `
+
+/*====================== LabelComment ======================*/
 
 const LabelComment = styled.span`
     font-size: ${FONT_SIZES.SMALL};
@@ -53,11 +59,15 @@ const LabelComment = styled.span`
     line-height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
 `
 
+/*====================== HelperBottomContainer ======================*/
+
 const HelperBottomContainer = styled.div`
     ${Mixins.Flexbox({
         $gap: "xxs",
     })}
 `
+
+/*====================== HelperBottomIconContainer ======================*/
 
 const HelperBottomIconContainer = styled.span`
     height: calc(${FONT_SIZES.SMALL} * ${LINE_HEIGHTS.BODY});
@@ -68,11 +78,15 @@ const HelperBottomIconContainer = styled.span`
     })}
 `
 
+/*====================== HelperBottom ======================*/
+
 const HelperBottom = styled(Text).attrs({ tag: "small" })<{
     $fontStyle?: CssFontStyle
 }>`
     font-style: ${({ $fontStyle }) => $fontStyle};
 ` as FC<any>
+
+/*====================== IconContainer ======================*/
 
 const StyledInputIconContainer = styled.span<{
     $validationStatus: LibValidationStatus | undefined
@@ -81,35 +95,17 @@ const StyledInputIconContainer = styled.span<{
     $inputVariant: LibInputVariant | undefined
 }>`
     height: ${INPUT_HEIGHT}px;
-    width: ${({ $inputVariant }) => {
-        if ($inputVariant === "pill")
-            return `calc(${INPUT_HEIGHT}px + ${SPACERS.XS})`
-        return `${INPUT_HEIGHT}px`
-    }};
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
     color: ${({ theme, $validationStatus, $disabled }) => {
         if ($validationStatus === false) return theme.DANGER_50
         if ($disabled) return theme.GRAY_500
         return theme.PRIMARY_500
     }};
+    position: relative;
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
         $justifyContent: "center",
     })}
-
-    &:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 1px;
-        width: 1px;
-        height: calc(${INPUT_HEIGHT}px - 2px);
-        background-color: ${({ theme }) => theme.GRAY_200};
-    }
 
     ${({ $inputBackground, $validationStatus, $disabled }) => {
         switch ($inputBackground) {
@@ -135,25 +131,79 @@ const StyledInputIconContainer = styled.span<{
     }}
 `
 
-const StyledInputRightContainer = styled.span<{
-    $inputVariant: LibInputVariant | undefined
+/*====================== LeftContainer ======================*/
+
+const CommonLeftAndRight = ({
+    $disabled,
+    $withPadding,
+    $withBorder,
+}: {
     $disabled: boolean | undefined
-}>`
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
+    $withPadding?: boolean
+    $withBorder: boolean | undefined
+}) => css`
     height: ${INPUT_HEIGHT}px;
-    cursor: ${({ $disabled }) => $disabled && "not-allowed"};
-    padding: 0
-        ${({ $inputVariant }) =>
-            $inputVariant === "pill" ? SPACERS.S : SPACERS.XS};
+    cursor: ${$disabled && "not-allowed"};
+    position: relative;
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
         $gap: "xs",
     })};
+
+    ${$withPadding &&
+    css`
+        padding: 0 ${SPACERS.XS};
+    `}
+
+    ${$withBorder &&
+    css`
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 1px;
+            height: ${INPUT_HEIGHT}px;
+            background-color: ${({ theme }) => theme.GRAY_200};
+        }
+    `}
 `
+
+const StyledInputLeftContainer = styled.span<{
+    $disabled: boolean | undefined
+    $withPadding?: boolean
+    $withBorder: boolean | undefined
+}>`
+    ${CommonLeftAndRight}
+
+    ${({ $withBorder }) =>
+        $withBorder &&
+        css`
+            &:after {
+                right: 0;
+            }
+        `}
+`
+
+/*====================== RightContainer ======================*/
+
+const StyledInputRightContainer = styled.span<{
+    $disabled: boolean | undefined
+    $withPadding?: boolean
+    $withBorder: boolean | undefined
+}>`
+    ${CommonLeftAndRight}
+
+    ${({ $withBorder }) =>
+        $withBorder &&
+        css`
+            &:after {
+                left: 0;
+            }
+        `}
+`
+
+/*====================== InputValidationIcon ======================*/
 
 const StyledInputValidationIcon = styled.span<{
     $inputBackground: LibInputBackground | undefined
@@ -188,6 +238,8 @@ const StyledInputValidationIcon = styled.span<{
         }
     }}
 `
+
+/*====================== InputButton ======================*/
 
 const StyledInputButton = styled.button<{
     $inputBackground: LibInputBackground | undefined
@@ -325,18 +377,44 @@ const StyledInputButton = styled.button<{
     }}
 `
 
-const StyledInputWrapper = styled.div`
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    display: inline-block;
-    height: ${INPUT_HEIGHT}px;
-    z-index: 1;
+/*====================== InputWrapper ======================*/
 
-    &.Open {
-        z-index: 20;
+const StyledInputWrapper = styled.div<{
+    $inputBackground: LibInputBackground | undefined
+    $inputVariant: LibInputVariant | undefined
+    $isTextArea?: boolean
+    $validationStatus: LibValidationStatus
+}>`
+    height: ${({ $isTextArea }) => !$isTextArea && `${INPUT_HEIGHT}px`};
+    width: 100%;
+    border-radius: ${({ $inputVariant }) =>
+        $inputVariant === "pill" ? RADIUSES.ROUND : RADIUSES.S};
+    border: 1px solid ${({ theme }) => theme.GRAY_200};
+    background-color: ${({ theme, $validationStatus }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.BACKGROUND};
+    color: ${({ theme }) => theme.FONT};
+    ${Mixins.Flexbox({
+        $alignItems: "stretch",
+    })}
+    overflow: hidden;
+
+    &:has(input:focus),
+    &:has(select:focus),
+    &:has(textarea:focus) {
+        border-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
+    }
+
+    &:has(input:disabled),
+    &:has(select:disabled),
+    &:has(textarea:disabled) {
+        cursor: not-allowed;
+        background-color: ${({ theme }) => theme.GRAY_100};
+        color: ${({ theme }) => theme.GRAY_500};
     }
 `
+
+/*====================== ListInput ======================*/
 
 const StyledListInput = styled.div<{
     $direction?: LibInputListDirection
@@ -420,6 +498,8 @@ const StyledListInput = styled.div<{
         }
     }}
 `
+
+/*====================== ListInputItem ======================*/
 
 const StyledListInputItem = styled.span<{
     $validation: LibValidationStatus
@@ -555,6 +635,80 @@ const StyledListInputItem = styled.span<{
     }}
 `
 
+/*====================== InputPrefix and InputSuffix ======================*/
+
+const InputPrefixAndSuffixCommon = ({
+    $inputBackground,
+}: {
+    $inputBackground: LibInputBackground | undefined
+}) => css`
+    height: 100%;
+    line-height: ${INPUT_HEIGHT}px;
+    background-color: ${({ theme }) => theme.GRAY_100};
+    color: ${({ theme }) => theme.FONT};
+    padding: 0 ${SPACERS.XS};
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: ${({ theme }) => theme.GRAY_200};
+        display: inline-block;
+        position: absolute;
+        top: 0;
+    }
+
+    ${() => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    background-color: ${COLORS_LIGHT.GRAY_100};
+                    color: ${COLORS_LIGHT.FONT};
+
+                    ${
+                        "" /* &:before {
+                        background-color: ${COLORS_LIGHT.GRAY_200};
+                    } */
+                    }
+                `
+            case "dark":
+                return css`
+                    background-color: ${COLORS_DARK.GRAY_100};
+                    color: ${COLORS_DARK.FONT};
+
+                    ${
+                        "" /* &:before {
+                        background-color: ${COLORS_DARK.GRAY_200};
+                    } */
+                    }
+                `
+            default:
+                return null
+        }
+    }}
+`
+
+const StyledInputPrefix = styled.span<{
+    $inputBackground: LibInputBackground | undefined
+}>`
+    ${InputPrefixAndSuffixCommon};
+
+    &:before {
+        right: 0;
+    }
+`
+
+const StyledInputSuffix = styled.span<{
+    $inputBackground: LibInputBackground | undefined
+}>`
+    ${InputPrefixAndSuffixCommon};
+
+    &:before {
+        left: 0;
+    }
+`
+
 setDefaultTheme([
     StyledInputContainer,
     Label,
@@ -563,12 +717,15 @@ setDefaultTheme([
     HelperBottomIconContainer,
     HelperBottom,
     StyledInputIconContainer,
+    StyledInputLeftContainer,
     StyledInputRightContainer,
     StyledInputValidationIcon,
     StyledInputButton,
     StyledInputWrapper,
     StyledListInput,
     StyledListInputItem,
+    StyledInputPrefix,
+    StyledInputSuffix,
 ])
 
 export {
@@ -579,10 +736,13 @@ export {
     HelperBottomIconContainer,
     HelperBottom,
     StyledInputIconContainer,
+    StyledInputLeftContainer,
     StyledInputRightContainer,
     StyledInputValidationIcon,
     StyledInputButton,
     StyledInputWrapper,
     StyledListInput,
     StyledListInputItem,
+    StyledInputPrefix,
+    StyledInputSuffix,
 }
