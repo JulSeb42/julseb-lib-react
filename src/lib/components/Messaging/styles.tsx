@@ -16,6 +16,8 @@ import {
 } from "../../"
 import type { LibMessageType } from "../../types"
 
+const VAR_INPUT_HEIGHT = "var(--input-height, 24px)"
+
 const StyledMessagesContainer = styled.div`
     border: 1px solid ${({ theme }) => theme.GRAY_200};
     overflow-y: scroll;
@@ -47,7 +49,7 @@ const ScrollButton = styled(ButtonIcon)<{
 }>`
     position: absolute;
     bottom: calc(
-        ${({ $bottom }) => $bottom}px + ${SPACERS.XXS} + ${SPACERS.S} +
+        ${VAR_INPUT_HEIGHT} + ${SPACERS.XXS} + ${SPACERS.S} +
             (${SPACERS.XS} * 2)
     );
     right: ${SPACERS.XXS};
@@ -65,9 +67,10 @@ const StyledMessageForm = styled.form`
         $alignItems: "center",
         $gap: "xs",
     })}
+    height: ${VAR_INPUT_HEIGHT};
 `
 
-const StyledMessageInput = styled.textarea<{ $height: number }>`
+const StyledMessageInput = styled.textarea`
     flex-grow: 1;
     font-size: ${FONT_SIZES.BODY};
     font-family: ${FONT_FAMILIES.BODY};
@@ -76,7 +79,7 @@ const StyledMessageInput = styled.textarea<{ $height: number }>`
     border: none;
     color: ${({ theme }) => theme.FONT};
     background-color: transparent;
-    height: ${({ $height }) => $height}px;
+    height: ${VAR_INPUT_HEIGHT};
     max-height: calc(24px * 3);
     padding: ${SPACERS.XXS} ${SPACERS.XS};
     outline: none;

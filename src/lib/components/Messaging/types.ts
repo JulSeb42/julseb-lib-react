@@ -37,6 +37,7 @@ export interface ILibMessagesList
         ILibFlexbox {
     children?: Array<ReactNode>
     emptyText?: string
+    inputHeight: number
     withScrollButtons?:
         | boolean
         | {
@@ -71,7 +72,10 @@ interface MessageFormCommon {
 
 export interface ILibMessageForm
     extends Exclude<LibComponentBase<HTMLFormElement>, "as">,
-        MessageFormCommon {}
+        MessageFormCommon {
+    inputHeight: number
+    setInputHeight: DispatchState<number>
+}
 
 /*====================== Message ======================*/
 

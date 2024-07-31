@@ -39,17 +39,15 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
                 className={className}
                 {...rest}
             >
-                {breadcrumbsItems
-                    ? breadcrumbsItems.map((item, i) => (
-                          <BreadcrumbItem
-                              key={uuid()}
-                              data-testid={testid}
-                              className={className}
-                              item={item}
-                              i={i}
-                          />
-                      ))
-                    : children}
+                {breadcrumbsItems?.map((item, i) => (
+                    <BreadcrumbItem
+                        key={uuid()}
+                        data-testid={testid}
+                        className={className}
+                        item={item}
+                        i={i}
+                    />
+                )) ?? children}
             </BreadcrumbsFn>
         )
     }

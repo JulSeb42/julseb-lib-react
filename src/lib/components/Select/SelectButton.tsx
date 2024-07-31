@@ -28,23 +28,26 @@ export interface ILibSelectButton {
 }
 
 export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
-    ({
-        "data-testid": testid,
-        className,
-        hasOptions,
-        isOpen,
-        id,
-        tabIndex,
-        disabled,
-        hasIcon,
-        inputBackground,
-        inputVariant,
-        validationStatus,
-        selected,
-        hasWrapper,
-        hasContainer,
-        onClick,
-    }: ILibSelectButton) => {
+    (
+        {
+            "data-testid": testid,
+            className,
+            hasOptions,
+            isOpen,
+            id,
+            tabIndex,
+            disabled,
+            hasIcon,
+            inputBackground,
+            inputVariant,
+            validationStatus,
+            selected,
+            hasWrapper,
+            hasContainer,
+            onClick,
+        },
+        ref
+    ) => {
         return (
             <StyledSelectButton
                 data-testid={
@@ -52,6 +55,7 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
                         ? `${testid}.SelectContainer.SelectButton`
                         : testid
                 }
+                ref={ref}
                 className={classNames(
                     (hasContainer || hasWrapper || hasIcon) && className
                         ? "SelectButton"

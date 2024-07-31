@@ -3,7 +3,11 @@
 import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Linkify } from "../../"
-import { StyledTable, StyledTd } from "./styles"
+import { THead } from "./THead"
+import { TBody } from "./TBody"
+import { Tr } from "./Tr"
+import { Td } from "./Td"
+import { StyledTable } from "./styles"
 import type { ILibTable } from "./types"
 
 /**
@@ -44,16 +48,16 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                 {...rest}
             >
                 {headers && (
-                    <thead
+                    <THead
                         data-testid={testid && `${testid}.THead`}
                         className={className && "THead"}
                     >
-                        <tr
+                        <Tr
                             data-testid={testid && `${testid}.THead.Tr`}
                             className={className && "TheadTr"}
                         >
                             {headers.map(header => (
-                                <td
+                                <Td
                                     key={uuid()}
                                     data-testid={
                                         testid && `${testid}.THead.Tr.Td`
@@ -65,27 +69,27 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                                     ) : (
                                         header
                                     )}
-                                </td>
+                                </Td>
                             ))}
-                        </tr>
-                    </thead>
+                        </Tr>
+                    </THead>
                 )}
 
                 {data ? (
-                    <tbody
+                    <TBody
                         data-testid={testid && `${testid}.TBody`}
                         className={className && "TBody"}
                     >
                         {data.map(row => {
                             return (
-                                <tr
+                                <Tr
                                     key={uuid()}
                                     data-testid={testid && `${testid}.TBody.Tr`}
                                     className={className && "TBodyTr"}
                                 >
                                     {row.map(col => {
                                         return (
-                                            <StyledTd
+                                            <Td
                                                 key={uuid()}
                                                 data-testid={
                                                     testid &&
@@ -94,7 +98,7 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                                                 className={
                                                     className && "TBodyTd"
                                                 }
-                                                $noPadding={
+                                                noPadding={
                                                     typeof col === "object"
                                                 }
                                             >
@@ -104,13 +108,13 @@ export const Table = forwardRef<HTMLTableElement, ILibTable>(
                                                 ) : (
                                                     col
                                                 )}
-                                            </StyledTd>
+                                            </Td>
                                         )
                                     })}
-                                </tr>
+                                </Tr>
                             )
                         })}
-                    </tbody>
+                    </TBody>
                 ) : (
                     children
                 )}

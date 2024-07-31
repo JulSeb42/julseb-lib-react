@@ -30,6 +30,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
             children,
             emptyText: textEmpty = "No message yet.",
             withScrollButtons = true,
+            inputHeight,
             ...rest
         },
         ref
@@ -112,6 +113,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                             },
                             { Visible: isButtonVisible }
                         )}
+                        id="message-container-scroll-button"
                         icon={
                             (typeof withScrollButtons === "object" &&
                                 withScrollButtons.icon) || (

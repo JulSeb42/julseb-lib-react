@@ -30,7 +30,7 @@ export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(
             <StyledWrapper
                 data-testid={testid}
                 ref={ref}
-                // as={as}
+                as={as}
                 $gap={gap}
                 $backgroundColor={backgroundColor}
                 {...rest}

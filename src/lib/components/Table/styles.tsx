@@ -109,7 +109,7 @@ const StyledTable = styled.table<{
     }}
 `
 
-const StyledTd = styled.td<{ $noPadding: boolean }>`
+const StyledTd = styled.td<{ $noPadding: boolean | undefined }>`
     && {
         padding: ${({ $noPadding }) => $noPadding && 0};
     }

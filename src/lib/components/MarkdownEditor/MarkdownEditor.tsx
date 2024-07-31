@@ -1,41 +1,16 @@
 /*=============================================== MarkdownEditor component ===============================================*/
 
-import {
-    forwardRef,
-    useState,
-    useRef,
-    useCallback,
-    type ChangeEvent,
-} from "react"
-import classNames from "classnames"
-import { uuid, toSentenceCase } from "ts-utils-julseb"
-import {
-    Flexbox,
-    useClickOutside,
-    Button,
-    DropdownContainer,
-    useMergeRefs,
-    optionsMarkdown,
-    markdownEditorOptions,
-} from "../../"
-import { roundIconSize, HelmetStyles } from "../../lib-utils"
+import { forwardRef, useState, useRef, useCallback } from "react"
+import { Flexbox, markdownEditorOptions } from "../../"
+import { MdEditorHelmet } from "./MdEditorHelmet"
+import { EditorButtons } from "./MdEditorButtons/EditorButtons"
+import { EditorButtonTitles } from "./MdEditorButtons/EditorButtonTitles"
+import { MarkdownButtons } from "./MdEditorButtons/MarkdownButtons"
+import { MdEditorInput } from "./MdEditorInput"
 import type { LibMdEditorEditor } from "../../types"
 import { InputContainer } from "../InputComponents"
-import { mdButtons, mdEditorButtons, mdTitlesButtons } from "./markdown-buttons"
-import {
-    MdEditorContainer,
-    StyledMarkdownEditor,
-    ButtonsContainer,
-    IconButton,
-    TitlesDropdown,
-    TitleDropdownItem,
-    ContainerGrid,
-    Separator,
-    MarkdownContainer,
-} from "./styles"
+import { MdEditorContainer, ButtonsContainer } from "./styles"
 import type { ILibMarkdownEditor } from "./types"
-
-const DEFAULT_ICON_SIZE = roundIconSize(24)
 
 /**
  * @description Returns a MarkdownEditor component
@@ -75,28 +50,14 @@ export const MarkdownEditor = forwardRef<
             counter,
             maxLength,
             textButtonTitles = "Titles",
-            // style,
             ...rest
         },
         ref
     ) => {
         const [editor, setEditor] = useState<LibMdEditorEditor>(defaultEditor)
         const [height, setHeight] = useState(250)
-        const [isTextOpen, setIsTextOpen] = useState(false)
-
-        const titlesDropdownRef = useRef<HTMLDivElement>(null)
-        useClickOutside(titlesDropdownRef, () => setIsTextOpen(false))
 
         const inputRef = useRef<HTMLTextAreaElement>(null)
-        const handleChange = useCallback(
-            (e: ChangeEvent<HTMLTextAreaElement>) => {
-                setValue(e.target.value)
-                setHeight(e.target.scrollHeight)
-
-                if (!e.target.value.length) setHeight(250)
-            },
-            [setValue, setHeight]
-        )
 
         const addCode = useCallback(
             (code: string) => {
@@ -129,17 +90,7 @@ export const MarkdownEditor = forwardRef<
                 id={id}
                 value={value}
             >
-                <HelmetStyles>
-                    {`
-                        :root {
-                            --markdown-editor-grid: ${
-                                editor === "editorLive" ? "1fr 2px 1fr" : 1
-                            };
-                            --markdown-input-height: ${height}px;
-
-                        }
-                    `}
-                </HelmetStyles>
+                <MdEditorHelmet height={height} editor={editor} />
 
                 <MdEditorContainer
                     data-testid={
@@ -171,236 +122,45 @@ export const MarkdownEditor = forwardRef<
                             gap="xs"
                             alignItems="center"
                         >
-                            {showButtons?.titles !== false && (
-                                <DropdownContainer
-                                    data-testid={
-                                        testid &&
-                                        `${testid}.EditorContainer.ButtonsContainer.ActionButtonsContainer.DropdownContainer`
-                                    }
-                                    className={className && "DropdownContainer"}
-                                    isOpen={isTextOpen}
-                                >
-                                    <Button
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.EditorContainer.ButtonsContainer.ActionButtonsContainer.DropdownContainer.ButtonDropdown`
-                                        }
-                                        className={
-                                            className && "ButtonDropdown"
-                                        }
-                                        variant="transparent"
-                                        noPadding
-                                        onClick={() =>
-                                            setIsTextOpen(!isTextOpen)
-                                        }
-                                        size="small"
-                                        type="button"
-                                    >
-                                        {textButtonTitles}
-                                    </Button>
+                            <EditorButtonTitles
+                                data-testid={testid}
+                                showButtons={showButtons}
+                                className={className}
+                                textButtonTitles={textButtonTitles}
+                                inputRef={inputRef}
+                                addCode={addCode}
+                            />
 
-                                    <TitlesDropdown
-                                        isOpen={isTextOpen}
-                                        setIsOpen={setIsTextOpen}
-                                        positionFromButton={20}
-                                        shadow={null}
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.EditorContainer.ButtonsContainer.ActionButtonsContainer.DropdownContainer.Dropdown`
-                                        }
-                                        className={className && "Dropdown"}
-                                    >
-                                        {mdTitlesButtons.map(tag => (
-                                            <TitleDropdownItem
-                                                data-testid={
-                                                    testid &&
-                                                    `${testid}.EditorContainer.ButtonsContainer.ActionButtonsContainer.DropdownContainer.Dropdown.Item`
-                                                }
-                                                className={
-                                                    className && "DropdownItem"
-                                                }
-                                                key={tag.name}
-                                                onClick={() => {
-                                                    addCode(tag!.code)
-                                                    setIsTextOpen(false)
-                                                    inputRef?.current?.focus()
-                                                }}
-                                                $tag={tag.name as any}
-                                            >
-                                                {tag.displayName || tag.name}
-                                            </TitleDropdownItem>
-                                        ))}
-                                    </TitlesDropdown>
-                                </DropdownContainer>
-                            )}
-
-                            {mdButtons.map(button => {
-                                if (
-                                    showButtons[
-                                        button.name as keyof typeof showButtons
-                                    ] === false
-                                )
-                                    return null
-
-                                const icon =
-                                    icons &&
-                                    icons[button.name as keyof typeof icons]
-                                        ? icons[
-                                              button.name as keyof typeof icons
-                                          ]
-                                        : button.defaultIcon
-
-                                const iconSize =
-                                    iconsSizes &&
-                                    iconsSizes[
-                                        button.name as keyof typeof iconsSizes
-                                    ]
-                                        ? iconsSizes[
-                                              button.name as keyof typeof iconsSizes
-                                          ]
-                                        : DEFAULT_ICON_SIZE
-
-                                return (
-                                    // @ts-ignore
-                                    <IconButton
-                                        key={uuid()}
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.EditorContainer.ButtonsContainer.ActionButtonsContainer.ActionButton`
-                                        }
-                                        className={className && "ActionButton"}
-                                        icon={icon}
-                                        iconSize={iconSize}
-                                        onClick={() => addCode(button.code)}
-                                        tooltip={
-                                            button.displayName ||
-                                            toSentenceCase(button.name)
-                                        }
-                                        showTooltip
-                                    />
-                                )
-                            })}
+                            <MarkdownButtons
+                                data-testid={testid}
+                                className={className}
+                                showButtons={showButtons}
+                                icons={icons}
+                                iconsSizes={iconsSizes}
+                                addCode={addCode}
+                            />
                         </Flexbox>
 
-                        <Flexbox
-                            data-testid={
-                                testid &&
-                                `${testid}.EditorContainer.ButtonsContainer.EditorButtonsContainer`
-                            }
-                            className={className && "EditorButtonsContainer"}
-                            gap="xs"
-                            alignItems="center"
-                        >
-                            {mdEditorButtons.map(button => {
-                                if (
-                                    showButtons[
-                                        button.name as keyof typeof showButtons
-                                    ] === false
-                                )
-                                    return null
-
-                                const icon =
-                                    icons &&
-                                    icons[button.name as keyof typeof icons]
-                                        ? icons[
-                                              button.name as keyof typeof icons
-                                          ]
-                                        : button.defaultIcon
-                                const iconSize =
-                                    iconsSizes &&
-                                    iconsSizes[
-                                        button.name as keyof typeof iconsSizes
-                                    ]
-                                        ? iconsSizes[
-                                              button.name as keyof typeof iconsSizes
-                                          ]
-                                        : 24
-
-                                return (
-                                    // @ts-ignore
-                                    <IconButton
-                                        key={uuid()}
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.EditorContainer.ButtonsContainer.EditorButtonsContainer.EditorButton`
-                                        }
-                                        className={classNames(
-                                            { EditorButton: className },
-                                            { Active: editor === button.name }
-                                        )}
-                                        icon={icon}
-                                        iconSize={iconSize}
-                                        onClick={() =>
-                                            setEditor(
-                                                button.name as LibMdEditorEditor
-                                            )
-                                        }
-                                        tooltip={
-                                            button.displayName ||
-                                            toSentenceCase(button.name)
-                                        }
-                                        showTooltip
-                                    />
-                                )
-                            })}
-                        </Flexbox>
+                        <EditorButtons
+                            showButtons={showButtons}
+                            editor={editor}
+                            setEditor={setEditor}
+                        />
                     </ButtonsContainer>
 
-                    <ContainerGrid
-                        data-testid={
-                            testid && `${testid}.EditorContainer.ContainerGrid`
-                        }
-                        className={className && "ContainerGrid"}
-                    >
-                        <StyledMarkdownEditor
-                            data-testid={
-                                testid &&
-                                `${testid}.EditorContainer.ContainerGrid.Textarea`
-                            }
-                            className={classNames(
-                                { Textarea: className },
-                                {
-                                    Visible:
-                                        editor === "editorCode" ||
-                                        editor === "editorLive",
-                                }
-                            )}
-                            ref={useMergeRefs([ref, inputRef])}
-                            id={id}
-                            value={value}
-                            onChange={handleChange}
-                            maxLength={maxLength}
-                            {...rest}
-                        />
-
-                        {editor === "editorLive" && (
-                            <Separator
-                                data-testid={
-                                    testid &&
-                                    `${testid}.EditorContainer.ContainerGrid.Separator`
-                                }
-                                className={className && "Separator"}
-                            />
-                        )}
-
-                        <MarkdownContainer
-                            data-testid={
-                                testid &&
-                                `${testid}.EditorContainer.ContainerGrid.MarkdownContent`
-                            }
-                            className={classNames(
-                                { MarkdownContent: className },
-                                {
-                                    Visible:
-                                        editor === "editorPreview" ||
-                                        editor === "editorLive",
-                                }
-                            )}
-                            options={optionsMarkdown as any}
-                        >
-                            {value}
-                        </MarkdownContainer>
-                    </ContainerGrid>
+                    <MdEditorInput
+                        data-testid={testid}
+                        ref={ref}
+                        className={className}
+                        editor={editor}
+                        setHeight={setHeight}
+                        inputRef={inputRef}
+                        setValue={setValue}
+                        id={id}
+                        value={value}
+                        maxLength={maxLength}
+                        {...rest}
+                    />
                 </MdEditorContainer>
             </InputContainer>
         )

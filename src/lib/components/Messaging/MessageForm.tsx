@@ -32,11 +32,12 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
             handleSubmit: submiForm,
             input,
             button,
+            inputHeight,
+            setInputHeight,
             ...rest
         },
         ref
     ) => {
-        const [inputHeight, setInputHeight] = useState(32)
         const [isInputSelected, setIsInputSelected] = useState(false)
 
         const handleInput = useCallback(
@@ -82,6 +83,7 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
                 ref={ref}
                 className={className}
                 onSubmit={handleSubmit}
+                id="messaging-form"
                 {...rest}
             >
                 <StyledMessageInput
@@ -94,7 +96,7 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
                     onFocus={() => setIsInputSelected(true)}
                     onBlur={() => setIsInputSelected(false)}
                     onKeyDown={handleKeyPress}
-                    $height={inputHeight}
+                    id="messaging-form-input"
                 />
 
                 {button?.text ? (

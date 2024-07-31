@@ -1,8 +1,9 @@
 /*=============================================== Messaging component ===============================================*/
 
-import { forwardRef } from "react"
-import { getToday, uuid } from "ts-utils-julseb"
+import { forwardRef, useState } from "react"
+import { getToday, uuid, stringifyPx } from "ts-utils-julseb"
 import { Hr } from "../../"
+import { HelmetStyles } from "../../lib-utils"
 import { MessagesContainer } from "./MessagesContainer"
 import { MessagesList } from "./MessagesList"
 import { MessageForm } from "./MessageForm"
@@ -50,6 +51,8 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
         },
         ref
     ) => {
+        const [inputHeight, setInputHeight] = useState(32)
+
         return (
             <MessagesContainer
                 data-testid={testid}
@@ -58,10 +61,23 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
                 className={className}
                 {...rest}
             >
+                <HelmetStyles>
+                    {`
+                        #message-container-scroll-button, 
+                        #messaging-form,
+                        #messaging-form-input {
+                            --input-height: ${stringifyPx(
+                                inputHeight >= 72 ? 72 : inputHeight
+                            )};
+                        }
+                    `}
+                </HelmetStyles>
+
                 <MessagesList
                     data-testid={testid && `${testid}.MessagesList`}
                     className={className && "MessagesList"}
                     emptyText={emptyText}
+                    inputHeight={inputHeight}
                 >
                     {data
                         ?.sort(
@@ -103,6 +119,8 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
                     handleSubmit={handleSubmit}
                     input={input}
                     button={button}
+                    inputHeight={inputHeight}
+                    setInputHeight={setInputHeight}
                 />
             </MessagesContainer>
         )

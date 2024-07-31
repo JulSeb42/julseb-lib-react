@@ -1,44 +1,11 @@
 /*=============================================== Masonry component ===============================================*/
 
-import {
-    forwardRef,
-    useEffect,
-    useRef,
-    useState,
-    type ReactNode,
-    useCallback,
-} from "react"
+import { forwardRef, useEffect, useRef, useState, useCallback } from "react"
 import { uuid } from "ts-utils-julseb"
 import { useMergeRefs } from "../../"
+import { useEventListener, fillCols } from "./utils"
 import { StyledMasonry, Col } from "./styles"
 import type { ILibMasonry } from "./types"
-
-function useEventListener(
-    eventNames: keyof GlobalEventHandlersEventMap,
-    handler: () => void,
-    element = globalThis
-) {
-    const savedHandler = useRef<() => void>()
-    useEffect(() => (savedHandler.current = handler), [handler])
-
-    useEffect(() => {
-        if (!element.addEventListener) return
-
-        const listener = (e: EventListenerOrEventListenerObject) =>
-            (savedHandler as any).current(e!)
-
-        for (const e of eventNames as any) element.addEventListener(e, listener)
-
-        return () => {
-            for (const e of eventNames as any)
-                element.removeEventListener(e, listener)
-        }
-    }, [element, eventNames])
-}
-
-function fillCols(children: Array<ReactNode>, cols: Array<any>) {
-    children.forEach((child, i) => cols[i % cols.length].push(child))
-}
 
 /**
  * @description Returns a Masonry component
