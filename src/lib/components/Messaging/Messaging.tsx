@@ -77,7 +77,6 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
                     data-testid={testid && `${testid}.MessagesList`}
                     className={className && "MessagesList"}
                     emptyText={emptyText}
-                    inputHeight={inputHeight}
                 >
                     {data
                         ?.sort(

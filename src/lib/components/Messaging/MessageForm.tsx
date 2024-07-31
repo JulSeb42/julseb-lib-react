@@ -20,6 +20,8 @@ import { roundIconSize } from "../../lib-utils"
  * @extends HTMLFormElement
  * @prop data-testid?: string
  * @prop handleSubmit: () => void
+ * @prop inputHeight: number
+ * @prop setInputHeight: Dispatch<SetStateAction<number>>
  * @prop input: { message: string; setMessage: Dispatch<SetStateAction<string>>; placeholder?: string; autoFocus?: boolean }
  * @prop button?: { icon?: string | JSX.Element => only if text is not defined; text?: string => only if icon is not defined }
  */

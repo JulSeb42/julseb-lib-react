@@ -37,7 +37,6 @@ export interface ILibMessagesList
         ILibFlexbox {
     children?: Array<ReactNode>
     emptyText?: string
-    inputHeight: number
     withScrollButtons?:
         | boolean
         | {

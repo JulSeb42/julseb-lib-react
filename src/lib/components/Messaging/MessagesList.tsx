@@ -30,7 +30,6 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
             children,
             emptyText: textEmpty = "No message yet.",
             withScrollButtons = true,
-            inputHeight,
             ...rest
         },
         ref
