@@ -2,7 +2,6 @@
 
 import { forwardRef } from "react"
 import { Link } from "react-router-dom"
-import { convertDateShort } from "ts-utils-julseb"
 import { Text, Badge } from "../../"
 import type { ILibBadge } from "../Badge/types"
 import {
@@ -11,46 +10,32 @@ import {
     RightContainer,
     ListItemContent,
 } from "./styles"
-import type { LibComponentBase, LibListGroupItem } from "../../types"
-
-interface ILibListGroupItemComponent extends LibComponentBase<HTMLDivElement> {
-    item: Omit<LibListGroupItem, "ref">
-    number?: number
-    children?: never
-    isInArray?: boolean
-}
+import type { ILibListGroupItem } from "./types"
 
 /**
  * @description Returns a ListGroupItem component
  * @link https://documentation-components-react.vercel.app/components/list-group
- * @extends HTMLDivElement
+ * @extends HTMLDivElement & LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop text: string
  * @prop subtext?: string
- * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
- * @prop date?: string | Date => only if `badge` is not defined
- * @prop number?: number
  * @prop isInArray?: boolean
+ * @prop noSeparator?: boolean
+ * @prop number?: number
+ * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: Any color from the library; contentColor?: Any color from the library } => only if `date` is not defined
+ * @prop date?: string | Date => only if badge is not defined
  */
 
-export const ListGroupItem = forwardRef<
-    HTMLDivElement,
-    ILibListGroupItemComponent
->(
+export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItem>(
     (
         {
             "data-testid": testid,
             className,
             as,
-            item,
             number,
             isInArray,
-            ...rest
-        },
-        ref
-    ) => {
-        const {
+            noSeparator,
             text,
             subtext,
             badge,
@@ -60,8 +45,10 @@ export const ListGroupItem = forwardRef<
             href,
             disabled,
             blank,
-        } = item
-
+            ...rest
+        },
+        ref
+    ) => {
         const badgeProps: ILibBadge = {
             "data-testid": testid && `${testid}.Content.RightContainer.Badge`,
             className: className && "Badge",
@@ -71,31 +58,30 @@ export const ListGroupItem = forwardRef<
                 typeof badge === "object" ? badge?.contentColor : undefined,
         }
 
+        const asElement = as
+            ? as
+            : to
+            ? Link
+            : href
+            ? "a"
+            : onClick
+            ? "button"
+            : "div"
+
         return (
             <StyledListItem
-                data-testid={
-                    isInArray && testid ? `${testid}.ListGroupItem` : testid
-                }
+                data-testid={testid && `${testid}.ListGroupItem`}
                 ref={ref}
-                className={isInArray && className ? `${className}` : className}
-                as={
-                    as
-                        ? as
-                        : to
-                        ? Link
-                        : href
-                        ? "a"
-                        : onClick
-                        ? "button"
-                        : "div"
-                }
+                className={className}
+                as={asElement}
                 onClick={onClick}
                 to={to}
                 href={href}
                 disabled={disabled}
-                target={blank && "_blank"}
-                rel={blank && "noreferrer noopener"}
+                target={blank ? "_blank" : undefined}
+                rel={blank ? "noreferrer noopener" : undefined}
                 $isHoverable={!!(to || href || onClick)}
+                $noSeparator={noSeparator}
                 {...rest}
             >
                 <ListItemContent
@@ -151,7 +137,7 @@ export const ListGroupItem = forwardRef<
                                     tag="small"
                                     color="gray"
                                 >
-                                    {convertDateShort(new Date(date))}
+                                    {date.toString()}
                                 </Text>
                             )}
                         </RightContainer>

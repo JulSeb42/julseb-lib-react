@@ -67,8 +67,8 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
                 }
                 to={to}
                 href={href}
-                target={blank ? "_blank" : null}
-                rel={blank ? "noreferrer noopener" : null}
+                target={blank ? "_blank" : undefined}
+                rel={blank ? "noreferrer noopener" : undefined}
                 onClick={onClick}
                 $border={border}
                 $borderRadius={borderRadius}

@@ -1,7 +1,10 @@
 /*=============================================== ListGroup component ===============================================*/
 
-import { forwardRef } from "react"
+import { forwardRef, useRef } from "react"
+import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
+import { useMergeRefs } from "../../hooks"
+import { ListGroupTitle } from "./ListGroupTitle"
 import { ListGroupItem } from "./ListGroupItem"
 import { StyledListGroup } from "./styles"
 import type { ILibListGroup } from "./types"
@@ -35,37 +38,65 @@ export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
             showNumbers,
             items,
             maxHeight,
+            title,
+            noSeparator,
             ...rest
         },
         ref
     ) => {
+        const listRef = useRef<HTMLDivElement>(null)
+
         return (
             <StyledListGroup
                 data-testid={testid}
-                ref={ref}
+                ref={useMergeRefs([ref, listRef])}
                 as={as}
                 className={className}
                 $maxHeight={maxHeight}
+                $hasTitleFixed={
+                    !!(title && typeof title === "object" && title.isFixed)
+                }
                 {...rest}
             >
-                {items
-                    ? items.map((item, i) => (
-                          <ListGroupItem
-                              data-testid={item["data-testid"] || testid}
-                              className={
-                                  item.className ||
-                                  (className && "ListGroupItem")
-                              }
-                              id={item.id}
-                              ref={item.ref}
-                              item={item}
-                              number={showNumbers ? i + 1 : undefined}
-                              isInArray
-                              key={uuid()}
-                              {...(item as any)}
-                          />
-                      ))
-                    : children}
+                {title && (
+                    <ListGroupTitle
+                        data-testid={testid && `${testid}.ListGroupTitle`}
+                        className={className && "ListGroupTitle"}
+                        backgroundColor={
+                            typeof title === "object"
+                                ? title.backgroundColor
+                                : "primary"
+                        }
+                        contentColor={
+                            typeof title === "object"
+                                ? title.contentColor
+                                : "background"
+                        }
+                        noSeparator={noSeparator}
+                        isFixed={typeof title === "object" && title.isFixed}
+                        listRef={listRef}
+                        {...(title as any)}
+                    >
+                        {typeof title === "object" ? title.text : title}
+                    </ListGroupTitle>
+                )}
+
+                {items?.map((item, i) => (
+                    <ListGroupItem
+                        data-testid={item["data-testid"] || testid}
+                        className={classNames(item.className, {
+                            ListGroupItem: !!className,
+                        })}
+                        id={item.id}
+                        ref={item.ref}
+                        item={item}
+                        number={showNumbers ? i + 1 : undefined}
+                        isInArray
+                        noSeparator={noSeparator}
+                        {...(item as any)}
+                        key={uuid()}
+                    />
+                )) ?? children}
             </StyledListGroup>
         )
     }

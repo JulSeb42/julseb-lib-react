@@ -14,7 +14,7 @@
         "cy:ct:run": "cypress run --component --browser electron",
         "cy:ct:open": "cypress open --component --browser electron",
         "plop": "plop --plopfile 'plop/plopfile.js'",
-        "plop:c": "yarn plop component",
+        "plop:c": "yarn run plop component",
         "plop:p": "yarn plop preview",
         "docgen": "react-docgen -o ./src/data/docgen.json ./src/lib/components/**/*.tsx"
     },
@@ -54,6 +54,9 @@
         "typescript-eslint": "^7.16.0",
         "vite": "^5.3.3",
         "vite-plugin-dts": "^3.9.1"
+    },
+    "resolutions": {
+        "inquirer": "9.3.5"
     },
     "files": [
         "dist"

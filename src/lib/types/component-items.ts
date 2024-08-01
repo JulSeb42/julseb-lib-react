@@ -104,7 +104,7 @@ type ListGroupItemBadgeExtended =
 // ! END DO NOT EXPORT
 
 type ListGroupItemBase = LibButtonLinkBlank &
-    LibComponentItemBase<HTMLLIElement> & {
+    LibComponentItemBase<HTMLDivElement> & {
         text: string
         subtext?: string
     }

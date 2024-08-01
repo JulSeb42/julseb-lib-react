@@ -6,12 +6,13 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        '"data-testid": string | undefined',
-        "className: string | undefined",
-        "validation: LibValidationStatus",
-        "inputBackground: LibInputBackground | undefined",
-        "disabled: boolean | undefined",
-        "inputVariant: LibInputVariant | undefined",
+        "text: string",
+        "subtext?: string",
+        "isInArray?: boolean",
+        "noSeparator?: boolean",
+        "number?: number",
+        "badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined",
+        "date?: string | Date => only if badge is not defined",
     ])
 
     const propsInput = [

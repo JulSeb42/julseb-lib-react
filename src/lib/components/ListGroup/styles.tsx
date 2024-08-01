@@ -13,34 +13,59 @@ import {
     TRANSITIONS,
     setDefaultTheme,
 } from "../../"
+import type { LibAllColors, LibShadows } from "../../types"
 
-const StyledListGroup = styled.div<{ $maxHeight?: number | string }>`
+const StyledListGroup = styled.div<{
+    $maxHeight?: number | string
+    $hasTitleFixed: boolean
+}>`
     border: 1px solid ${({ theme }) => theme.GRAY_200};
     border-radius: ${RADIUSES.M};
     max-height: ${({ $maxHeight }) => $maxHeight && stringifyPx($maxHeight)};
     overflow: hidden;
     overflow-y: scroll;
+    position: relative;
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",
     })}
 
-    & > *:not(:last-child) {
-        border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
-    }
+    ${({ $hasTitleFixed }) =>
+        $hasTitleFixed &&
+        css`
+            /* padding-top: 49px; */
+        `}
 `
 
-const StyledListItem = styled.div<{ $isHoverable?: boolean }>`
+const CommonItemAndTitle = ({
+    $noSeparator,
+}: {
+    $noSeparator: boolean | undefined
+}) => css`
     padding: ${SPACERS.S};
-    text-decoration: none;
-    color: ${({ theme }) => theme.FONT};
     border: none;
     width: 100%;
     text-align: left;
+
+    ${!$noSeparator &&
+    css`
+        &:not(:last-child) {
+            border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
+        }
+    `}
+`
+
+const StyledListItem = styled.div<{
+    $isHoverable?: boolean
+    $noSeparator: boolean | undefined
+}>`
+    text-decoration: none;
+    color: ${({ theme }) => theme.FONT};
     background-color: transparent;
     ${Mixins.Flexbox({
         $flexDirection: "column",
     })}
+    ${CommonItemAndTitle}
 
     ${({ $isHoverable, theme }) =>
         $isHoverable &&
@@ -107,12 +132,41 @@ const RightContainer = styled.span`
     ${CommonContainer}
 `
 
+const StyledListGroupTitle = styled.div<{
+    $backgroundColor: LibAllColors
+    $contentColor: LibAllColors
+    $noSeparator: boolean | undefined
+    $isFixed?: boolean
+    $shadow?: LibShadows
+}>`
+    ${CommonItemAndTitle}
+    font-weight: ${FONT_WEIGHTS.BLACK};
+    background-color: ${({ theme, $backgroundColor }) =>
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ theme, $contentColor }) =>
+        Mixins.AllColors($contentColor, theme)};
+
+    ${({ $isFixed }) =>
+        $isFixed &&
+        css`
+            position: sticky;
+            top: 0;
+            left: 0;
+        `}
+
+    &.Scrolled {
+        box-shadow: ${({ $shadow }) => Mixins.Shadow($shadow)};
+        transition: ${TRANSITIONS.SHORT};
+    }
+`
+
 setDefaultTheme([
     StyledListGroup,
     StyledListItem,
     ListItemContent,
     LeftContainer,
     RightContainer,
+    StyledListGroupTitle,
 ])
 
 export {
@@ -121,4 +175,5 @@ export {
     ListItemContent,
     LeftContainer,
     RightContainer,
+    StyledListGroupTitle,
 }
