@@ -2183,7 +2183,12 @@ export const typeValues = {
 
     tooltipTriggers: { hover: "hover", click: "click" },
 
-    tooltipPositions: { top: "top", bottom: "bottom" },
+    tooltipPositions: {
+        top: "top",
+        bottom: "bottom",
+        left: "left",
+        right: "right",
+    },
 
     buttonVariants: {
         plain: "plain",

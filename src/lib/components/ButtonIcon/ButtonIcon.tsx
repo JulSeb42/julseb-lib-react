@@ -102,6 +102,22 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
                             ? showTooltip.offset
                             : undefined
                     }
+                    withArrow={
+                        typeof showTooltip === "object" && showTooltip.withArrow
+                            ? showTooltip.withArrow
+                            : true
+                    }
+                    backgroundColor={
+                        typeof showTooltip === "object" &&
+                        showTooltip.backgroundColor
+                            ? showTooltip.backgroundColor
+                            : "black-80"
+                    }
+                    textColor={
+                        typeof showTooltip === "object" && showTooltip.textColor
+                            ? showTooltip.textColor
+                            : "white"
+                    }
                     style={style}
                 >
                     <ButtonIconFunction {...(props as any)} />

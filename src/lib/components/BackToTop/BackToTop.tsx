@@ -66,9 +66,9 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
 
         const tooltipObj =
             showTooltip && typeof showTooltip === "object"
-                ? { offset: -12, ...showTooltip }
+                ? { offset: 42, ...showTooltip }
                 : showTooltip !== false
-                ? { offset: -12 }
+                ? { offset: 42 }
                 : false
 
         return (
@@ -81,7 +81,12 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
                 size={48}
                 iconSize={roundIconSize(48)}
                 tooltip={tooltip}
-                showTooltip={tooltipObj}
+                showTooltip={{
+                    ...tooltipObj,
+                    position: "left",
+                    backgroundColor: "white",
+                    textColor: "black",
+                }}
                 {...rest}
             />
         )

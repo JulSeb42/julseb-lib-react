@@ -37,5 +37,23 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
                 className: "className",
             },
         },
+        {
+            previewTitle: "Left",
+            props: {
+                tooltip: "Hello World!",
+                position: "left",
+                children: "Hello tooltip left",
+                offset: -8,
+            },
+        },
+        {
+            previewTitle: "Right",
+            props: {
+                tooltip: "Hello World!",
+                position: "right",
+                children: "Hello tooltip right",
+                offset: -20,
+            },
+        },
     ],
 }

@@ -40,12 +40,6 @@ const StyledTooltip = styled.div<{
     padding: ${SPACERS.XXS} ${SPACERS.XS};
     border-radius: ${RADIUSES.M};
     position: absolute;
-    top: ${({ $position, $offset }) =>
-        $position === "top" && `calc(-100% - ${Mixins.Spacer($offset)})`};
-    bottom: ${({ $position, $offset }) =>
-        $position === "bottom" && `calc(-100% - ${Mixins.Spacer($offset)})`};
-    left: 50%;
-    transform: translateX(-50%);
     opacity: 0;
     visibility: hidden;
     background-color: ${({ theme, $backgroundColor }) =>
@@ -57,6 +51,37 @@ const StyledTooltip = styled.div<{
         visibility: visible;
     }
 
+    ${({ $position, $offset }) => {
+        switch ($position) {
+            case "left":
+                return css`
+                    left: calc(-100% - ${Mixins.Spacer($offset)});
+                    top: 50%;
+                    transform: translateY(-50%);
+                `
+            case "top":
+                return css`
+                    top: calc(-100% - ${Mixins.Spacer($offset)});
+                    left: 50%;
+                    transform: translateX(-50%);
+                `
+            case "right":
+                return css`
+                    right: calc(-100% - ${Mixins.Spacer($offset)});
+                    top: 50%;
+                    transform: translateY(-50%);
+                `
+            case "bottom":
+                return css`
+                    bottom: calc(-100% - ${Mixins.Spacer($offset)});
+                    left: 50%;
+                    transform: translateX(-50%);
+                `
+            default:
+                return null
+        }
+    }}
+
     ${({ $withArrow, $position, $backgroundColor, theme }) =>
         $withArrow &&
         css`
@@ -65,19 +90,58 @@ const StyledTooltip = styled.div<{
                 position: absolute;
                 border-style: solid;
                 border-width: 4px;
-                border-color: ${$position === "bottom"
-                    ? `transparent transparent ${Mixins.ColorsAndOverlays(
-                          $backgroundColor,
-                          theme
-                      )} transparent`
-                    : `${Mixins.ColorsAndOverlays(
-                          $backgroundColor,
-                          theme
-                      )} transparent transparent transparent`};
-                left: 50%;
-                transform: translateX(-50%);
-                top: ${$position === "top" && "100%"};
-                bottom: ${$position === "bottom" && "100%"};
+
+                ${() => {
+                    switch ($position) {
+                        case "left":
+                            return css`
+                                right: -8px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                border-color: transparent transparent
+                                    transparent
+                                    ${Mixins.ColorsAndOverlays(
+                                        $backgroundColor,
+                                        theme
+                                    )};
+                            `
+                        case "top":
+                            return css`
+                                top: 100%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                border-color: ${Mixins.ColorsAndOverlays(
+                                        $backgroundColor,
+                                        theme
+                                    )}
+                                    transparent transparent transparent;
+                            `
+                        case "right":
+                            return css`
+                                left: -8px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                border-color: transparent
+                                    ${Mixins.ColorsAndOverlays(
+                                        $backgroundColor,
+                                        theme
+                                    )}
+                                    transparent transparent;
+                            `
+                        case "bottom":
+                            return css`
+                                bottom: 100%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                border-color: transparent transparent
+                                    ${Mixins.ColorsAndOverlays(
+                                        $backgroundColor,
+                                        theme
+                                    )}
+                                    transparent;
+                            `
+                    }
+                }}
             }
         `}
 `

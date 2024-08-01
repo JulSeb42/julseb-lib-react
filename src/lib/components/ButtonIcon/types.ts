@@ -12,6 +12,7 @@ import type {
     LibSpacers,
     LibButtonIconVariant,
     LibLoaderVariant,
+    LibAllColors,
 } from "../../types"
 
 type ILibButtonIconBase = LibComponentBase<
@@ -31,6 +32,9 @@ type ILibButtonIconBase = LibComponentBase<
             | {
                   position?: LibTooltipPosition
                   offset?: LibSpacers
+                  backgroundColor?: LibAllColors
+                  textColor?: LibAllColors
+                  withArrow?: boolean
               }
     }
 
