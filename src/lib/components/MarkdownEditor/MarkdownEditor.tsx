@@ -61,10 +61,11 @@ export const MarkdownEditor = forwardRef<
 
         const addCode = useCallback(
             (code: string) => {
-                setValue(`${value}${code}`)
+                const newValue = `${value}${code}`
+                setValue(newValue)
                 inputRef?.current?.focus()
             },
-            [setValue, inputRef]
+            [value, setValue, inputRef]
         )
 
         const hasContainer: boolean = !!(

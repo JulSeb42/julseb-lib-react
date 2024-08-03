@@ -48,6 +48,8 @@ export const ButtonMixin = ({
     text-decoration: none;
     background-color: transparent;
     line-height: 100%;
+    transition: ${TRANSITIONS.SHORT};
+    cursor: pointer;
     ${Mixins.BorderRadius($borderRadius)}
     ${Mixins.Flexbox({
         $inline: true,

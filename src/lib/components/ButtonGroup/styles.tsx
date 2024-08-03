@@ -1,7 +1,8 @@
 /*=============================================== ButtonGroup styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { Mixins, setDefaultTheme } from "../../"
+import { FONT_WEIGHTS, Mixins, setDefaultTheme, SPACERS } from "../../"
+import { ButtonMixin } from "../ComponentsMixins"
 import type {
     LibButtonSize,
     LibButtonVariant,
@@ -45,6 +46,46 @@ const Separator = styled.hr<{ $color: LibColorsHover }>`
         Mixins.ColorsHoverDefault($color, theme)};
 `
 
-setDefaultTheme([StyledButtonGroup, Separator])
+const StyledToggle = styled.label<{
+    $size?: LibButtonSize
+    $variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
+    $color: LibColorsHover
+    $withIcon: boolean
+}>`
+    width: ${({ $withIcon, $size }) =>
+        $withIcon && ($size === "small" ? 22 : 34)}px;
+    height: ${({ $size }) => ($size === "small" ? 22 : 34)}px;
+    ${ButtonMixin}
+    padding: ${({ $withIcon }) => !$withIcon && `0 ${SPACERS.XS}`};
+    font-weight: ${FONT_WEIGHTS.BLACK};
 
-export { StyledButtonGroup, Separator }
+    &:has(input:checked) {
+        background-color: ${({ $color, theme }) =>
+            Mixins.AllColors(`${$color}-300` as any, theme)};
+        color: ${({ theme }) => Mixins.AllColors("background", theme)};
+
+        ${({ $variant, $color, theme }) =>
+            $variant === "transparent" &&
+            css`
+                &:hover {
+                    color: ${Mixins.ColorsHoverDefault($color, theme)};
+                }
+            `}
+    }
+`
+
+const ToggleInput = styled.input`
+    display: none;
+`
+
+const ToggleLabel = styled.span``
+
+setDefaultTheme([
+    StyledButtonGroup,
+    Separator,
+    StyledToggle,
+    ToggleInput,
+    ToggleLabel,
+])
+
+export { StyledButtonGroup, Separator, StyledToggle, ToggleInput, ToggleLabel }

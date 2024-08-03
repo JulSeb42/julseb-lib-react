@@ -1,11 +1,15 @@
 /*=============================================== ButtonGroupPreview ===============================================*/
 
+import { capitalize } from "ts-utils-julseb"
 import { ButtonGroup } from "../../../"
-import type { LibButtonGroupItem } from "../../../types"
+import type {
+    LibButtonGroupButtonItem,
+    LibButtonGroupToggle,
+} from "../../../types"
 import type { ILibButtonGroup } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-const buttons: Array<LibButtonGroupItem> = [
+const buttons: Array<LibButtonGroupButtonItem> = [
     {
         iconOnly: "arrow-left",
         disabled: true,
@@ -32,6 +36,19 @@ const buttons: Array<LibButtonGroupItem> = [
         to: "/",
     },
 ]
+
+const toggles: Array<LibButtonGroupToggle> = [
+    { id: "bold", icon: "bold", value: false },
+    { id: "italic", icon: "italic", value: false },
+    { id: "strikethrough", icon: "strikethrough", value: false },
+    { id: "underline", icon: "underline", value: false },
+]
+
+const textToggles: Array<LibButtonGroupToggle> = toggles.map(t => ({
+    id: `text-${t.id}`,
+    text: capitalize(t.icon?.toString() ?? ""),
+    value: t.value,
+}))
 
 export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
     name: "ButtonGroup",
@@ -74,6 +91,26 @@ export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
                 size: "small",
                 "data-testid": "testid",
                 className: "className",
+            },
+        },
+        { previewTitle: "With toggles", props: { toggles, name: "toggles" } },
+        {
+            previewTitle: "With multi toggles",
+            props: {
+                toggles: toggles.map(t => ({ ...t, id: `multi-${t.id}` })),
+                name: "multi-toggles",
+                toggleType: "multi",
+                variant: "ghost",
+                color: "secondary",
+            },
+        },
+        {
+            previewTitle: "With text toggles",
+            props: {
+                toggles: textToggles,
+                name: "text-toggles",
+                variant: "transparent",
+                size: "small",
             },
         },
     ],

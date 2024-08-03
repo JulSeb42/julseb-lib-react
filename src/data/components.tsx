@@ -86,6 +86,7 @@ import { headerPreview } from "../lib/components/Header/__preview__/Header.previ
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
 import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
+// prependImport
 
 /*====================== Helpers ======================*/
 
@@ -97,7 +98,6 @@ import { utilsPreview } from "./previews/utils/JsUtils.preview"
 import { optionsMarkdownPreview } from "./previews/utils/OptionsMarkdown"
 import { hooksPreview } from "./previews/utils/Hooks.preview"
 import { resetScrollPreview } from "../lib/components/ResetScroll/__preview__/ResetScroll.preview"
-// prependImport
 
 export type PreviewProp<T> = {
     props: T
@@ -218,6 +218,7 @@ export const previews = [
     optionsMarkdownPreview,
     hooksPreview,
     resetScrollPreview,
+
     // prependArr
 ] as Array<ComponentPreview<any>>
 

@@ -225,6 +225,7 @@ export const typeValues = {
         bold: "bold",
         italic: "italic",
         strikethrough: "strikethrough",
+        underline: "underline",
         ul: "ul",
         ol: "ol",
         link: "link",
@@ -260,6 +261,8 @@ export const typeValues = {
     footerDirections: { horizontal: "horizontal", vertical: "vertical" },
 
     footerSeparators: { dot: "dot", dash: "dash" },
+
+    buttonGroupToggleSelects: { single: "single", multi: "multi" },
 
     times: {
         "00:00": "00:00",

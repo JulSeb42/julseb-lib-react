@@ -420,3 +420,5 @@ export type CountryCode = keyof typeof typeValues.countryCodes
 export type LibFooterDirection = keyof typeof typeValues.footerDirections
 export type LibFooterLinksSeparator = keyof typeof typeValues.footerSeparators
 export type LibInputPrefixAndSuffix = string | JSX.Element
+export type LibButtonGroupToggleSelect =
+    keyof typeof typeValues.buttonGroupToggleSelects

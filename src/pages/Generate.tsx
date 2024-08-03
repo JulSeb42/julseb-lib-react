@@ -6,13 +6,12 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "text: string",
-        "subtext?: string",
-        "isInArray?: boolean",
-        "noSeparator?: boolean",
-        "number?: number",
-        "badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined",
-        "date?: string | Date => only if badge is not defined",
+        "text: string => only if icon is not defined",
+        "icon: LibIcon => only if text is not defined",
+        "iconSize?: number => only if text is not defined",
+        "label?: string => only if text is not defined",
+        "tooltip?: string => only if text is not defined",
+        "showTooltip?: boolean => only if text is not defined",
     ])
 
     const propsInput = [

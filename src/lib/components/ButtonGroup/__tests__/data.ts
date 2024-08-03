@@ -1,8 +1,8 @@
 /*=============================================== Data ===============================================*/
 
-import type { LibButtonGroupItem } from "../../../types"
+import type { LibButtonGroupButtonItem } from "../../../types"
 
-export const buttons: Array<LibButtonGroupItem> = [
+export const buttons: Array<LibButtonGroupButtonItem> = [
     {
         iconOnly: "arrow-left",
         onClick: () => alert("Clicked"),

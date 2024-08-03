@@ -1,11 +1,9 @@
 /*=============================================== ButtonGroup component ===============================================*/
 
-import { forwardRef, Fragment } from "react"
-import { uuid, capitalize, filterObject } from "ts-utils-julseb"
-import { Button, ButtonIcon } from "../../"
-import type { ILibButton } from "../Button/types"
-import type { ILibButtonIcon } from "../ButtonIcon/types"
-import type { LibButtonGroupItem } from "../../types"
+import { forwardRef, useState, Fragment } from "react"
+import { uuid } from "ts-utils-julseb"
+import { ButtonGroupButton } from "./ButtonGroupButton"
+import { ButtonGroupToggle } from "./ButtonGroupToggle"
 import { StyledButtonGroup, Separator } from "./styles"
 import type { ILibButtonGroup } from "./types"
 
@@ -33,10 +31,40 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
             variant = "plain",
             size = "default",
             borderRadius = size === "small" ? "s" : "m",
+            toggles,
+            toggleType = "single",
+            name,
             ...rest
         },
         ref
     ) => {
+        const commonProps = {
+            "data-testid": testid,
+            className,
+            color,
+            variant,
+            size,
+        }
+
+        const separatorProps = (i: number) => ({
+            "data-testid": testid && `${testid}.Separator.${i}`,
+            className: className && "Separator",
+            $color: color,
+        })
+
+        const [allToggles, setAllToggles] = useState(
+            toggles
+                ? Object.assign(
+                      {},
+                      ...(toggles
+                          ?.map(t => ({
+                              [t.id]: t.value ?? false,
+                          }))
+                          ?.filter(v => v !== undefined) as any)
+                  )
+                : null
+        )
+
         return (
             <StyledButtonGroup
                 data-testid={testid}
@@ -49,80 +77,45 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                 $color={color}
                 {...rest}
             >
-                {buttons.map((button, i) => {
-                    const commonProps: Partial<
-                        (ILibButton | ILibButtonIcon) & LibButtonGroupItem
-                    > = {
-                        "data-testid":
-                            button["data-testid"] ||
-                            (testid && `${testid}.Button.${i}`),
-                        className: button.className || (className && "Button"),
-                        id: button.id,
-                        ref: button.ref,
-                        color,
-                        variant: variant as any,
-                    }
+                {buttons?.map((button, i) => (
+                    <Fragment key={uuid()}>
+                        <ButtonGroupButton
+                            button={button}
+                            i={i}
+                            {...(commonProps as any)}
+                        />
 
-                    const filteredButtonRest = filterObject(
-                        button,
-                        // @ts-expect-error
-                        ([n]) => n !== "iconOnly"
-                    )
-
-                    return (
-                        <Fragment key={uuid()}>
-                            {button.iconOnly ? (
-                                <ButtonIcon
-                                    {...(commonProps as any)}
-                                    icon={button.iconOnly}
-                                    borderRadius={0}
-                                    size={size === "small" ? 24 : (34 as any)}
-                                    aria-label={
-                                        button["aria-label"] ||
-                                        capitalize(
-                                            typeof button.iconOnly === "string"
-                                                ? button.iconOnly
-                                                : "button"
-                                        )
-                                    }
-                                    iconSize={button?.iconSizes?.only}
-                                    {...(filteredButtonRest as any)}
+                        {variant === "transparent" &&
+                            i !== buttons.length - 1 && (
+                                <Separator
+                                    key={uuid()}
+                                    {...separatorProps(i)}
                                 />
-                            ) : (
-                                <Button
-                                    {...(commonProps as any)}
-                                    borderRadius={0}
-                                    size={size as any}
-                                    icons={{
-                                        left: button.iconLeft,
-                                        right: button.iconRight,
-                                    }}
-                                    iconSizes={{
-                                        left: button?.iconSizes?.left,
-                                        right: button?.iconSizes?.right,
-                                    }}
-                                    aria-label={
-                                        button["aria-label"] || button.text
-                                    }
-                                    {...(filteredButtonRest as any)}
-                                >
-                                    {button.text}
-                                </Button>
                             )}
+                    </Fragment>
+                ))}
 
-                            {variant === "transparent" &&
-                                i !== buttons.length - 1 && (
-                                    <Separator
-                                        data-testid={
-                                            testid && `${testid}.Separator.${i}`
-                                        }
-                                        className={className && "Separator"}
-                                        $color={color}
-                                    />
-                                )}
-                        </Fragment>
-                    )
-                })}
+                {toggles?.map((toggle, i) => (
+                    <Fragment key={uuid()}>
+                        <ButtonGroupToggle
+                            {...(commonProps as any)}
+                            toggle={toggle}
+                            toggleType={toggleType}
+                            name={name}
+                            i={i}
+                            toggles={allToggles}
+                            setToggles={setAllToggles}
+                        />
+
+                        {variant === "transparent" &&
+                            i !== toggles.length - 1 && (
+                                <Separator
+                                    key={uuid()}
+                                    {...separatorProps(i)}
+                                />
+                            )}
+                    </Fragment>
+                ))}
             </StyledButtonGroup>
         )
     }

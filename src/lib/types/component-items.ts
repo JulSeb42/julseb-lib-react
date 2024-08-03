@@ -29,7 +29,7 @@ interface LibComponentItemBase<T> {
     ref?: ForwardedRef<T>
 }
 
-/*====================== ButtonGroup ======================*/
+/*====================== ButtonGroupButtons ======================*/
 
 type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
     LibButtonLinkBlank & {
@@ -61,7 +61,7 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 }
 
 /**
- * @description Props for ButtonGroup component items: https://documentation-components-react.vercel.app/components/button-group
+ * @description Props for buttons in ButtonGroup component: https://documentation-components-react.vercel.app/components/button-group
  * @extends LibButtonLinkBlank
  * @prop "data-testid"?: string
  * @prop className?: string
@@ -74,7 +74,51 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
  * @prop iconSizes?: { left?: number; right?: number; only?: number }
  * @prop "aria-label"?: string
  */
-export type LibButtonGroupItem = ButtonGroupItemText | ButtonGroupItemIcon
+export type LibButtonGroupButtonItem = ButtonGroupItemText | ButtonGroupItemIcon
+
+/*====================== ButtonGroupToggles ======================*/
+
+interface LibButtonGroupToggleBase
+    extends LibComponentItemBase<HTMLInputElement> {
+    id: string
+    value: boolean
+}
+
+interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
+    icon: LibIcon
+    iconSize?: number
+    label?: string
+    tooltip?: string
+    showTooltip?: boolean
+    text?: never
+}
+
+interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
+    icon?: never
+    iconSize?: never
+    label?: never
+    tooltip?: never
+    showTooltip?: never
+    text: string
+}
+
+/**
+ * @description Props for toggles in ButtonGroup component: https://documentation-components-react.vercel.app/components/button-group
+ * @extends HTMLInputElement
+ * @prop "data-testid"?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop text: string => only if icon is not defined
+ * @prop icon: string | JSX.Element => only if text is not defined
+ * @prop iconSize?: number => only if text is not defined
+ * @prop label?: string => only if text is not defined
+ * @prop tooltip?: string => only if text is not defined
+ * @prop showTooltip?: boolean => only if text is not defined
+ */
+export type LibButtonGroupToggle =
+    | ButtonGroupToggleWithIcon
+    | ButtonGroupToggleWithText
 
 /*====================== ListGroup ======================*/
 

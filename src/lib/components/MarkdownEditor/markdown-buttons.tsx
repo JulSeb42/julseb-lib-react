@@ -17,6 +17,7 @@ import {
     EditorCode,
     EditorLive,
     EditorPreview,
+    Underline,
 } from "../../icons"
 import type {
     LibMdEditorTitle,
@@ -57,15 +58,20 @@ export const mdButtons: Array<ButtonWithCode & ButtonWithIcon> = [
         defaultIcon: <Strikethrough size={DEFAULT_ICON_SIZE} />,
     },
     {
+        name: "underline",
+        code: "<u> </u>",
+        defaultIcon: <Underline size={DEFAULT_ICON_SIZE} />,
+    },
+    {
         displayName: "Unordered list",
         name: "ul",
-        code: "- ",
+        code: "\n- ",
         defaultIcon: <UnorderedList size={DEFAULT_ICON_SIZE} />,
     },
     {
         displayName: "Ordered list",
         name: "ol",
-        code: "1. ",
+        code: "\n1. ",
         defaultIcon: <OrderedList size={DEFAULT_ICON_SIZE} />,
     },
     {
@@ -76,7 +82,7 @@ export const mdButtons: Array<ButtonWithCode & ButtonWithIcon> = [
     {
         name: "quote",
         displayName: "Blockquote",
-        code: "> ",
+        code: "\n> ",
         defaultIcon: <Quote size={DEFAULT_ICON_SIZE} />,
     },
     {
@@ -93,12 +99,12 @@ export const mdButtons: Array<ButtonWithCode & ButtonWithIcon> = [
     {
         displayName: "Code block",
         name: "codeBlock",
-        code: "```\n\n```",
+        code: "\n```\n\n```\n",
         defaultIcon: <CodeBlock size={DEFAULT_ICON_SIZE} />,
     },
     {
         name: "comment",
-        code: "<!--  -->",
+        code: "\n<!--  -->\n",
         defaultIcon: <Comment size={DEFAULT_ICON_SIZE} />,
     },
     {
@@ -127,36 +133,34 @@ export const mdTitlesButtons: Array<ButtonBase & ButtonWithCode> = [
     {
         displayName: "Title 1",
         name: "h1",
-        code: "# ",
+        code: "\n# ",
     },
     {
         displayName: "Title 2",
         name: "h2",
-        code: "## ",
+        code: "\n## ",
     },
     {
         displayName: "Title 3",
         name: "h3",
-        code: "### ",
+        code: "\n### ",
     },
     {
         displayName: "Title 4",
         name: "h4",
-        code: "#### ",
+        code: "\n#### ",
     },
     {
         displayName: "Title 5",
         name: "h5",
-        code: "##### ",
+        code: "\n##### ",
     },
     {
         displayName: "Title 6",
         name: "h6",
-        code: "###### ",
+        code: "\n###### ",
     },
 ]
-
-
 
 export function getFontSizeButton(tag: LibMdEditorTitle): number | null {
     switch (tag) {
