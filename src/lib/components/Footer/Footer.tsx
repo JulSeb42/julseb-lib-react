@@ -26,7 +26,7 @@ import type { ILibFooter } from "./types"
  *
  * @type LibFooterLink
  * @extends LibButtonLinkBlankRequired
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>

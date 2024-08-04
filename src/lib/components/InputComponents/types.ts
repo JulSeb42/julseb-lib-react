@@ -79,7 +79,7 @@ export interface ILibInputNoFocusKeys {
 
 /**
  * @description Base props for inputs
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop id?: string
  * @prop label?: string
  * @prop labelComment?: string
@@ -171,6 +171,7 @@ export interface ILibInputLeftContainer {
     children?: ReactChildren
     disabled: boolean | undefined
     withPadding?: boolean
+    noBorder?: boolean
 }
 
 /*====================== InputButton ======================*/
@@ -286,7 +287,7 @@ interface ILibPrefixAndSuffixBase {
 export interface ILibInputPrefix extends ILibPrefixAndSuffixBase {
     /**
      * @description Add prefix on inputs with text
-     * @prop "data-testid": string | undefined
+     * @prop data-testid: string | undefined
      * @prop className: string | undefined
      * @prop validation: boolean | undefined
      * @prop inputBackground: "light" | "dark" | undefined
@@ -300,7 +301,7 @@ export interface ILibInputPrefix extends ILibPrefixAndSuffixBase {
 export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
     /**
      * @description Add suffix on inputs with text
-     * @prop "data-testid": string | undefined
+     * @prop data-testid: string | undefined
      * @prop className: string | undefined
      * @prop validation: boolean | undefined
      * @prop inputBackground: "light" | "dark" | undefined
@@ -309,4 +310,12 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
      * @prop suffix: string | JSX.Element
      */
     suffix?: LibInputPrefixAndSuffix
+}
+
+/*====================== InputAndListContainer ======================*/
+
+export interface ILibInputAndListContainer {
+    "data-testid": string | undefined
+    className: string | undefined
+    children?: ReactChildren
 }

@@ -772,6 +772,12 @@ const StyledInputSuffix = styled.span<{
     }
 `
 
+/*====================== InputAndListContainer ======================*/
+
+const StyledInputAndListContainer = styled.div`
+    position: relative;
+`
+
 setDefaultTheme([
     StyledInputContainer,
     Label,
@@ -789,6 +795,7 @@ setDefaultTheme([
     StyledListInputItem,
     StyledInputPrefix,
     StyledInputSuffix,
+    StyledInputAndListContainer,
 ])
 
 export {
@@ -808,4 +815,5 @@ export {
     StyledListInputItem,
     StyledInputPrefix,
     StyledInputSuffix,
+    StyledInputAndListContainer,
 }

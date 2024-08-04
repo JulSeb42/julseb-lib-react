@@ -33,7 +33,7 @@ const DEFAULT_ICON_SIZE_LARGE = 32
  *
  * @type Controls
  * @type boolean or object
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop size?: LibSlideshowButtonSize
  * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"

@@ -4,7 +4,6 @@ import styled, { css } from "styled-components"
 import {
     FONT_FAMILIES,
     FONT_SIZES,
-    INPUT_HEIGHT,
     Mixins,
     SPACERS,
     TRANSITIONS,
@@ -12,37 +11,12 @@ import {
     COLORS_LIGHT,
     COLORS_DARK,
 } from "../../"
-import type {
-    LibInputBackground,
-    LibInputVariant,
-    LibValidationStatus,
-} from "../../types"
+import type { LibInputBackground, LibValidationStatus } from "../../types"
 import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
 
-interface ILibStyledInputPhone extends ILibInputBaseMixin {
-    $leftContainerWidth: number
-}
-
-const StyledInputPhone = styled.input<ILibStyledInputPhone>`
+const StyledInputPhone = styled.input<ILibInputBaseMixin>`
     ${InputBaseMixin}
-    padding-left: ${({ $leftContainerWidth }) => $leftContainerWidth}px;
-`
-
-const LeftContainer = styled.span<{
-    $inputVariant: LibInputVariant | undefined
-}>`
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    height: ${INPUT_HEIGHT}px;
-    padding: 0 ${SPACERS.XS};
-    padding-left: ${({ $inputVariant }) =>
-        $inputVariant === "pill" && SPACERS.S};
-    ${Mixins.Flexbox({
-        $alignItems: "center",
-        $gap: "xs",
-    })};
+    padding-left: 0;
 `
 
 const CountryButton = styled.button<{
@@ -55,6 +29,7 @@ const CountryButton = styled.button<{
     padding: 0;
     border: none;
     color: ${({ theme }) => theme.FONT};
+    width: 32px;
     ${Mixins.Flexbox({
         $alignItems: "center",
         $gap: "xxs",
@@ -227,7 +202,6 @@ const SearchInput = styled.input<{
 
 setDefaultTheme([
     StyledInputPhone,
-    LeftContainer,
     CountryButton,
     SearchContainer,
     SearchInput,
@@ -237,7 +211,6 @@ setDefaultTheme([
 
 export {
     StyledInputPhone,
-    LeftContainer,
     CountryButton,
     SearchContainer,
     SearchInput,

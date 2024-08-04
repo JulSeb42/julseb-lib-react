@@ -4,7 +4,6 @@ import {
     forwardRef,
     useState,
     useRef,
-    useEffect,
     useCallback,
     useMemo,
     type ChangeEvent,
@@ -18,6 +17,8 @@ import {
     InputContainer,
     InputRightContainer,
     InputValidationIcon,
+    InputLeftContainer,
+    InputAndListContainer,
 } from "../InputComponents"
 import { LibIcon } from "../LibIcon"
 import { Search, CaretDown } from "../../icons"
@@ -25,7 +26,6 @@ import { countries } from "./utils/countries"
 import type { LibCountry } from "../../types"
 import {
     StyledInputPhone,
-    LeftContainer,
     CountryButton,
     SearchContainer,
     SearchInput,
@@ -124,15 +124,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             }, [isOpen])
         )
 
-        const leftContainerRef = useRef<HTMLSpanElement>(null)
-        const [leftContainerWidth, setLeftContainerWidth] = useState(0)
-
-        useEffect(() => {
-            if (leftContainerRef && leftContainerRef?.current?.clientWidth) {
-                setLeftContainerWidth(leftContainerRef.current.clientWidth)
-            }
-        }, [leftContainerRef, country])
-
         const [search, setSearch] = useState("")
         const results = useMemo(() => {
             return countries.filter(
@@ -204,106 +195,112 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                 maxLength={maxLength}
                 hasListOpen={isOpen}
             >
-                <InputWrapper
+                <InputAndListContainer
                     data-testid={testid}
                     className={className}
-                    hasContainer={hasContainer}
-                    hasListOpen={isOpen}
-                    isTextArea={false}
-                    inputVariant={inputVariant}
-                    inputBackground={inputBackground}
-                    validationStatus={validation?.status}
                 >
-                    <LeftContainer
-                        data-testid={testid && `${testid}.LeftContainer`}
-                        className={className && "LeftContainer"}
-                        ref={leftContainerRef}
-                        $inputVariant={inputVariant}
+                    <InputWrapper
+                        data-testid={testid}
+                        className={className}
+                        hasContainer={hasContainer}
+                        hasListOpen={isOpen}
+                        isTextArea={false}
+                        inputVariant={inputVariant}
+                        inputBackground={inputBackground}
+                        validationStatus={validation?.status}
                     >
-                        <CountryButton
-                            data-testid={
-                                testid &&
-                                `${testid}.LeftContainer.CountryButton`
-                            }
-                            className={className && "CountryButton"}
-                            type="button"
-                            disabled={disabled}
-                            aria-disabled={disabled}
-                            aria-label={countryButtonAriaLabel}
-                            onClick={handleClickCountry}
-                            $validation={validation?.status}
-                            $inputBackground={inputBackground}
-                        >
-                            <Flag
-                                data-testid={
-                                    testid &&
-                                    `${testid}.LeftContainer.CountryButton.Flag`
-                                }
-                                className={className && "Flag"}
-                                src={country?.flag}
-                                alt={`Flag ${country?.name}`}
-                            />
-
-                            <LibIcon
-                                icon={icons?.caret || defaultIcons.caret}
-                                size={
-                                    iconSizes?.caret ||
-                                    DEFAULT_ICONS_SIZES.CARET
-                                }
-                                data-testid={
-                                    testid &&
-                                    `${testid}.LeftContainer.CountryButton.CaretIcon`
-                                }
-                                className={className && "CaretIcon"}
-                            />
-                        </CountryButton>
-
-                        <CountryCode
-                            data-testid={
-                                testid && `${testid}.LeftContainer.CountryCode`
-                            }
-                            className={className && "CountryCode"}
-                            $inputBackground={inputBackground}
-                            $disabled={disabled}
-                        >
-                            {country?.dial_code}
-                        </CountryCode>
-                    </LeftContainer>
-
-                    <StyledInputPhone
-                        data-testid={testid && `${testid}.Input`}
-                        ref={ref}
-                        className={classNames(
-                            { Input: className },
-                            { WithListOpen: isOpen }
-                        )}
-                        id={id}
-                        type="tel"
-                        disabled={disabled}
-                        $disabled={disabled}
-                        $inputBackground={inputBackground}
-                        $validation={validation?.status}
-                        $inputVariant={inputVariant}
-                        $leftContainerWidth={leftContainerWidth}
-                        {...rest}
-                    />
-
-                    {validation && (
-                        <InputRightContainer
+                        <InputLeftContainer
                             data-testid={testid}
                             className={className}
                             disabled={disabled}
-                            withBorder={false}
+                            withPadding
+                            noBorder
                         >
-                            <InputValidationIcon
+                            <CountryButton
+                                data-testid={
+                                    testid &&
+                                    `${testid}.LeftContainer.CountryButton`
+                                }
+                                className={className && "CountryButton"}
+                                type="button"
+                                disabled={disabled}
+                                aria-disabled={disabled}
+                                aria-label={countryButtonAriaLabel}
+                                onClick={handleClickCountry}
+                                $validation={validation?.status}
+                                $inputBackground={inputBackground}
+                            >
+                                <Flag
+                                    data-testid={
+                                        testid &&
+                                        `${testid}.LeftContainer.CountryButton.Flag`
+                                    }
+                                    className={className && "Flag"}
+                                    src={country?.flag}
+                                    alt={`Flag ${country?.name}`}
+                                />
+
+                                <LibIcon
+                                    icon={icons?.caret || defaultIcons.caret}
+                                    size={
+                                        iconSizes?.caret ||
+                                        DEFAULT_ICONS_SIZES.CARET
+                                    }
+                                    data-testid={
+                                        testid &&
+                                        `${testid}.LeftContainer.CountryButton.CaretIcon`
+                                    }
+                                    className={className && "CaretIcon"}
+                                />
+                            </CountryButton>
+
+                            <CountryCode
+                                data-testid={
+                                    testid &&
+                                    `${testid}.LeftContainer.CountryCode`
+                                }
+                                className={className && "CountryCode"}
+                                $inputBackground={inputBackground}
+                                $disabled={disabled}
+                            >
+                                {country?.dial_code}
+                            </CountryCode>
+                        </InputLeftContainer>
+
+                        <StyledInputPhone
+                            data-testid={testid && `${testid}.Input`}
+                            ref={ref}
+                            className={classNames(
+                                { Input: className },
+                                { WithListOpen: isOpen }
+                            )}
+                            id={id}
+                            type="tel"
+                            disabled={disabled}
+                            $disabled={disabled}
+                            $inputBackground={inputBackground}
+                            $validation={validation?.status}
+                            $inputVariant={inputVariant}
+                            {...rest}
+                        />
+
+                        {validation && (
+                            <InputRightContainer
                                 data-testid={testid}
                                 className={className}
-                                validation={validation}
-                                validationIcon={validationIcon}
-                                inputBackground={inputBackground}
-                            />
-                        </InputRightContainer>
-                    )}
+                                disabled={disabled}
+                                withBorder={false}
+                            >
+                                <InputValidationIcon
+                                    data-testid={testid}
+                                    className={className}
+                                    validation={validation}
+                                    validationIcon={validationIcon}
+                                    inputBackground={inputBackground}
+                                />
+                            </InputRightContainer>
+                        )}
+                    </InputWrapper>
 
                     <ListInput
                         data-testid={testid}
@@ -374,7 +371,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             </ListInputItem>
                         )}
                     </ListInput>
-                </InputWrapper>
+                </InputAndListContainer>
             </InputContainer>
         )
     }

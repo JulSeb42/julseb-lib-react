@@ -48,7 +48,7 @@ export type LibPositionExtract = Extract<
 /* Component base */
 /**
  * @description Props common to nearly all components
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop as?: ElementType
  */
 export interface LibComponentBase<T> extends HTMLAttributes<T> {

@@ -75,7 +75,7 @@ const toastStatusStyles: {
 /**
  * @description Returns a Toaster component
  * @link https://documentation-components-react.vercel.app/components/toast
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop toasts: Array<{ title: string; id?: string; status?: "success" | "error" | "warning" | "info" | "loading"; options?: LibToastOptions }>
  * @prop toastsOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }

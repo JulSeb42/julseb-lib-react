@@ -50,7 +50,7 @@ interface ILibSlideshowBase extends LibComponentBase<HTMLDivElement> {
     /**
      * @type Controls
      * @type boolean or object
-     * @prop "data-testid"?: string
+     * @prop data-testid?: string
      * @prop className?: string
      * @prop size?: LibSlideshowButtonSize
      * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"

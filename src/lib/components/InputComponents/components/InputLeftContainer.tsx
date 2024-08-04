@@ -1,5 +1,6 @@
 /*=============================================== InputLeftContainer component ===============================================*/
 
+import { forwardRef } from "react"
 import { StyledInputLeftContainer } from "../styles"
 import type { ILibInputLeftContainer } from "../types"
 
@@ -8,27 +9,37 @@ import type { ILibInputLeftContainer } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
- * @prop inputVariant: LibInputVariant | undefined
+ * @prop children?: ReactChildren
  * @prop disabled: boolean | undefined
- * @prop withPrefix: boolean | undefined
+ * @prop withPadding?: boolean
  */
 
-export function InputLeftContainer({
-    "data-testid": testid,
-    className,
-    children,
-    disabled,
-    withPadding,
-}: ILibInputLeftContainer) {
-    return (
-        <StyledInputLeftContainer
-            data-testid={testid && `${testid}.RightContainer`}
-            className={className && "RightContainer"}
-            $disabled={disabled}
-            $withPadding={withPadding}
-            $withBorder
-        >
-            {children}
-        </StyledInputLeftContainer>
-    )
-}
+export const InputLeftContainer = forwardRef<
+    HTMLSpanElement,
+    ILibInputLeftContainer
+>(
+    (
+        {
+            "data-testid": testid,
+            className,
+            children,
+            disabled,
+            withPadding,
+            noBorder,
+        },
+        ref
+    ) => {
+        return (
+            <StyledInputLeftContainer
+                data-testid={testid && `${testid}.LeftContainer`}
+                ref={ref}
+                className={className && "LeftContainer"}
+                $disabled={disabled}
+                $withPadding={withPadding}
+                $withBorder={!noBorder}
+            >
+                {children}
+            </StyledInputLeftContainer>
+        )
+    }
+)

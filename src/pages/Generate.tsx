@@ -8,13 +8,9 @@ export function Generate() {
     const propsDoc = replaceTypes([
         '"data-testid": string | undefined',
         "className: string | undefined",
-        "hasContainer: boolean | undefined",
         "children?: ReactChildren",
-        "hasListOpen?: boolean",
-        "isTextArea: boolean",
-        "inputBackground: LibInputBackground | undefined",
-        "inputVariant: LibInputVariant | undefined",
-        "validationStatus: LibValidationStatus",
+        "disabled: boolean | undefined",
+        "withPadding?: boolean",
     ])
 
     const propsInput = [
@@ -383,5 +379,6 @@ function replaceTypes(arr: Array<string>) {
                 "LibFooterDirection",
                 mapValues(typeValues.footerDirections)
             )
+            .replaceAll(`"data-testid"`, "data-testid")
     })
 }

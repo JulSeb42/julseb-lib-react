@@ -25,7 +25,7 @@ import type { ILibTabs } from "./types"
  *
  * @type LibTabItem
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop title: string
  * @prop content: ReactNode

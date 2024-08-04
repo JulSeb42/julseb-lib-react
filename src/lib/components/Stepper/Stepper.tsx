@@ -22,7 +22,7 @@ import type { ILibStepper } from "./types"
  *
  * @type LibStep
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop text: string
  */

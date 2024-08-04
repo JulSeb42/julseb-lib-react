@@ -31,7 +31,7 @@ const CLOSE_ICON_SIZE = 24
  * @prop toastStyle?: { maxWidth?: string | number; border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }; backgroundColor?: Any color from the library; textColor?: Any color from the library; shadow?: LibShadows }
  *
  * @type LibToastOptions
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop body?: string | ReactChildren

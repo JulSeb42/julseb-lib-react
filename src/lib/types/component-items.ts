@@ -17,7 +17,7 @@ import type {
 /**
  * @description Base props for any ComponentItem
  * @type T => HTMLElementType
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<T>
@@ -63,7 +63,7 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 /**
  * @description Props for buttons in ButtonGroup component: https://documentation-components-react.vercel.app/components/button-group
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLButtonElement>
@@ -105,7 +105,7 @@ interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
 /**
  * @description Props for toggles in ButtonGroup component: https://documentation-components-react.vercel.app/components/button-group
  * @extends HTMLInputElement
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLButtonElement>
@@ -166,7 +166,7 @@ type ListGroupItemWithDate = ListGroupItemBase & {
 /**
  * @description Props for ListGroup component items: https://documentation-components-react.vercel.app/components/list-group
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLLIElement>
@@ -181,7 +181,7 @@ export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
 
 /**
  * @description Props for Accordion component items: https://documentation-components-react.vercel.app/components/accordion
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -200,7 +200,7 @@ export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
 /**
  * @description Props for Dropdown component items: https://documentation-components-react.vercel.app/components/dropdown
  * @extends LibButtonLinkBlankRequired
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
@@ -221,7 +221,7 @@ export type LibDropdownItem = LibButtonLinkBlankRequired &
 
 /**
  * @description Props for Toaster component items: https://documentation-components-react.vercel.app/components/toast
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -253,7 +253,7 @@ export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
 
 /**
  * @description Props for Toast component: https://documentation-components-react.vercel.app/components/toast
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -270,7 +270,7 @@ export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
 /**
  * @description Props for Step component items: https://documentation-components-react.vercel.app/components/stepper
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -286,7 +286,7 @@ export type LibStep = LibButtonLinkBlank &
 /**
  * @description Props for Breadcrumbs component items: https://documentation-components-react.vercel.app/components/breadcrumbs
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLSpanElement>
@@ -302,7 +302,7 @@ export type LibBreadcrumbItem = LibButtonLinkBlank &
 /**
  * @description Props for Tabs component items: https://documentation-components-react.vercel.app/components/tabs
  * @extends LibButtonLinkBlank
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -319,7 +319,7 @@ export interface LibTabItem
 
 /**
  * @description Props for Message component: https://documentation-components-react.vercel.app/components/messaging
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
@@ -380,7 +380,7 @@ export interface LibMarkdownEditorOptions {
 /**
  * @description Props for links in Header component items: https://documentation-components-react.vercel.app/components/header
  * @extends LibButtonLinkBlankRequired
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
@@ -398,7 +398,7 @@ export type LibHeaderLink = LibButtonLinkBlankRequired &
 /**
  * @description Props for Items in IconMenu component items: https://documentation-components-react.vercel.app/icon-menu
  * @extends LibButtonLinkBlankRequired
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
@@ -418,7 +418,7 @@ export type LibIconMenuItem = LibButtonLinkBlankRequired &
 /**
  * @description Props for links in Footer component items: https://documentation-components-react.vercel.app/components/footer
  * @extends LibButtonLinkBlankRequired
- * @prop "data-testid"?: string
+ * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
