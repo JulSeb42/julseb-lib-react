@@ -28,6 +28,7 @@ import {
     ListInputItem,
     InputButton,
     InputLeftContainer,
+    InputAndListContainer,
 } from "../InputComponents"
 import { Close } from "../../icons"
 import { transformSearchKeys } from "../../lib-utils"
@@ -158,122 +159,130 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                 counter={false}
                 maxLength={undefined}
             >
-                <InputWrapper
+                <InputAndListContainer
                     data-testid={testid}
                     className={className}
-                    hasContainer={hasContainer}
-                    hasListOpen={isOpen}
-                    isTextArea={false}
-                    inputVariant={inputVariant}
-                    inputBackground={inputBackground}
-                    validationStatus={validation?.status}
                 >
-                    {icons?.iconLeft && (
-                        <InputLeftContainer
-                            data-testid={testid}
-                            className={className}
-                            disabled={disabled}
-                            withPadding
-                        >
-                            <InputIcon
+                    <InputWrapper
+                        data-testid={testid}
+                        className={className}
+                        hasContainer={hasContainer}
+                        hasListOpen={isOpen}
+                        isTextArea={false}
+                        inputVariant={inputVariant}
+                        inputBackground={inputBackground}
+                        validationStatus={validation?.status}
+                    >
+                        {icons?.iconLeft && (
+                            <InputLeftContainer
                                 data-testid={testid}
                                 className={className}
-                                icon={icons.iconLeft}
-                                iconSize={
-                                    iconSizes?.iconLeft || defaultIconSizes.left
-                                }
-                                validationStatus={validation?.status}
                                 disabled={disabled}
-                                inputBackground={inputBackground}
-                                inputVariant={inputVariant}
-                            />
-                        </InputLeftContainer>
-                    )}
-
-                    <StyledAutocomplete
-                        data-testid={testid && `${testid}.Input`}
-                        className={classNames(
-                            { Input: className },
-                            { WithListOpen: isOpen }
-                        )}
-                        ref={useMergeRefs([ref, inputRef])}
-                        id={id}
-                        value={value}
-                        disabled={disabled}
-                        onChange={handleChange}
-                        type="search"
-                        onFocus={handleOpen}
-                        onBlur={handleClose}
-                        $disabled={disabled}
-                        $validation={validation?.status}
-                        $inputBackground={inputBackground}
-                        $inputVariant={inputVariant}
-                        {...rest}
-                    />
-
-                    {(value.length || validation || showKeys) && (
-                        <InputRightContainer
-                            data-testid={testid}
-                            className={className}
-                            disabled={disabled}
-                            withPadding
-                            withBorder={false}
-                        >
-                            {value.length ? (
-                                <InputButton
+                                withPadding
+                            >
+                                <InputIcon
                                     data-testid={testid}
                                     className={className}
-                                    onClick={handleClear}
-                                    icon={
-                                        icons?.clear || (
-                                            <Close
-                                                data-testid={
-                                                    testid &&
-                                                    `${testid}.Button.Icon`
-                                                }
-                                                className={
-                                                    className && "ClearIcon"
-                                                }
-                                                size={
-                                                    iconSizes?.clear ||
-                                                    defaultIconSizes.clear
-                                                }
-                                            />
-                                        )
-                                    }
+                                    icon={icons.iconLeft}
                                     iconSize={
-                                        iconSizes?.clear ||
-                                        defaultIconSizes.clear
+                                        iconSizes?.iconLeft ||
+                                        defaultIconSizes.left
                                     }
-                                    inputBackground={inputBackground}
-                                    disabled={disabled}
-                                    aria-label="Clear"
                                     validationStatus={validation?.status}
+                                    disabled={disabled}
+                                    inputBackground={inputBackground}
+                                    inputVariant={inputVariant}
                                 />
-                            ) : null}
+                            </InputLeftContainer>
+                        )}
 
-                            {showKeys &&
-                                focusKeys &&
-                                !isTouchScreen &&
-                                !disabled && (
-                                    <Key
-                                        data-testid={testid && `${testid}.Keys`}
-                                        className={className && "Keys"}
-                                        keys={transformSearchKeys(keys)}
+                        <StyledAutocomplete
+                            data-testid={testid && `${testid}.Input`}
+                            className={classNames(
+                                { Input: className },
+                                { WithListOpen: isOpen }
+                            )}
+                            ref={useMergeRefs([ref, inputRef])}
+                            id={id}
+                            value={value}
+                            disabled={disabled}
+                            onChange={handleChange}
+                            type="search"
+                            onFocus={handleOpen}
+                            onBlur={handleClose}
+                            $disabled={disabled}
+                            $validation={validation?.status}
+                            $inputBackground={inputBackground}
+                            $inputVariant={inputVariant}
+                            {...rest}
+                        />
+
+                        {(value.length || validation || showKeys) && (
+                            <InputRightContainer
+                                data-testid={testid}
+                                className={className}
+                                disabled={disabled}
+                                withPadding
+                                withBorder={false}
+                            >
+                                {value.length ? (
+                                    <InputButton
+                                        data-testid={testid}
+                                        className={className}
+                                        onClick={handleClear}
+                                        icon={
+                                            icons?.clear || (
+                                                <Close
+                                                    data-testid={
+                                                        testid &&
+                                                        `${testid}.Button.Icon`
+                                                    }
+                                                    className={
+                                                        className && "ClearIcon"
+                                                    }
+                                                    size={
+                                                        iconSizes?.clear ||
+                                                        defaultIconSizes.clear
+                                                    }
+                                                />
+                                            )
+                                        }
+                                        iconSize={
+                                            iconSizes?.clear ||
+                                            defaultIconSizes.clear
+                                        }
+                                        inputBackground={inputBackground}
+                                        disabled={disabled}
+                                        aria-label="Clear"
+                                        validationStatus={validation?.status}
+                                    />
+                                ) : null}
+
+                                {showKeys &&
+                                    focusKeys &&
+                                    !isTouchScreen &&
+                                    !disabled && (
+                                        <Key
+                                            data-testid={
+                                                testid && `${testid}.Keys`
+                                            }
+                                            className={className && "Keys"}
+                                            keys={transformSearchKeys(keys)}
+                                        />
+                                    )}
+
+                                {validation && (
+                                    <InputValidationIcon
+                                        data-testid={testid}
+                                        className={className}
+                                        validation={validation}
+                                        validationIcon={validationIcon}
+                                        inputBackground={inputBackground}
                                     />
                                 )}
-
-                            {validation && (
-                                <InputValidationIcon
-                                    data-testid={testid}
-                                    className={className}
-                                    validation={validation}
-                                    validationIcon={validationIcon}
-                                    inputBackground={inputBackground}
-                                />
-                            )}
-                        </InputRightContainer>
-                    )}
+                            </InputRightContainer>
+                        )}
+                    </InputWrapper>
 
                     <ListInput
                         data-testid={testid}
@@ -318,7 +327,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                             </ListInputItem>
                         )}
                     </ListInput>
-                </InputWrapper>
+                </InputAndListContainer>
             </InputContainer>
         )
     }
