@@ -6,15 +6,15 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        '"data-testid"?: string',
-        "id?: string",
-        "label?: string",
-        "labelComment?: string",
-        "helper?: string",
-        "helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: CssFontStyle; icon?: LibIcon; iconColor?: LibAllColors; iconSize?: number }",
-        "validation?: ValidationHelper",
-        "inputBackground?: LibInputBackground",
-        "inputVariant?: LibInputVariant",
+        '"data-testid": string | undefined',
+        "className: string | undefined",
+        "hasContainer: boolean | undefined",
+        "children?: ReactChildren",
+        "hasListOpen?: boolean",
+        "isTextArea: boolean",
+        "inputBackground: LibInputBackground | undefined",
+        "inputVariant: LibInputVariant | undefined",
+        "validationStatus: LibValidationStatus",
     ])
 
     const propsInput = [

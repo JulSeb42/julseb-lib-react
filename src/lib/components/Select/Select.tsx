@@ -12,6 +12,7 @@ import {
     InputIcon,
     InputLeftContainer,
     InputPrefix,
+    InputWrapper,
 } from "../InputComponents"
 import { CaretDown } from "../../icons"
 import { SelectButton, type ILibSelectButton } from "./SelectButton"
@@ -148,85 +149,100 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                     onBlur={() => setIsOpen(false)}
                     {...rest}
                 >
-                    {(prefix || icons?.iconLeft) && (
-                        <InputLeftContainer
-                            data-testid={testid}
-                            className={className}
-                            disabled={disabled}
-                            withPadding={!!(!prefix && icons?.iconLeft)}
-                        >
-                            <InputPrefix
+                    <InputWrapper
+                        data-testid={testid}
+                        className={className}
+                        hasContainer={hasContainer}
+                        hasListOpen={isOpen}
+                        isTextArea={false}
+                        inputVariant={inputVariant}
+                        inputBackground={inputBackground}
+                        validationStatus={validation?.status}
+                    >
+                        {(prefix || icons?.iconLeft) && (
+                            <InputLeftContainer
                                 data-testid={testid}
                                 className={className}
-                                prefix={prefix}
-                                inputBackground={inputBackground}
-                            />
-
-                            <InputIcon
-                                data-testid={testid}
-                                className={className}
-                                icon={icons?.iconLeft}
-                                iconSize={
-                                    iconSizes?.iconLeft || defaultIconSizes.left
-                                }
-                                validationStatus={validation?.status}
                                 disabled={disabled}
-                                inputBackground={inputBackground}
-                                inputVariant={inputVariant}
-                            />
-                        </InputLeftContainer>
-                    )}
-
-                    <SelectButton {...buttonProps} />
-
-                    {(hasOptions || validation) && (
-                        <InputRightContainer
-                            data-testid={testid}
-                            className={className}
-                            disabled={disabled}
-                            withBorder={false}
-                        >
-                            {validation && (
-                                <InputValidationIcon
+                                withPadding={!!(!prefix && icons?.iconLeft)}
+                            >
+                                <InputPrefix
                                     data-testid={testid}
                                     className={className}
-                                    validation={validation}
-                                    validationIcon={validationIcon}
+                                    prefix={prefix}
                                     inputBackground={inputBackground}
                                 />
-                            )}
 
-                            {hasOptions && (
-                                <InputButton
+                                <InputIcon
                                     data-testid={testid}
                                     className={className}
-                                    inputBackground={inputBackground}
-                                    icon={
-                                        icons?.caret || (
-                                            <CaretDown
-                                                data-testid={
-                                                    testid &&
-                                                    `${testid}.Button.Caret`
-                                                }
-                                                className={className && "Caret"}
-                                                size={
-                                                    iconSizes?.caret ||
-                                                    defaultIconSizes.caret
-                                                }
-                                            />
-                                        )
-                                    }
+                                    icon={icons?.iconLeft}
                                     iconSize={
-                                        iconSizes?.caret ||
-                                        defaultIconSizes.caret
+                                        iconSizes?.iconLeft ||
+                                        defaultIconSizes.left
                                     }
-                                    disabled={disabled}
-                                    aria-label="Caret down"
                                     validationStatus={validation?.status}
+                                    disabled={disabled}
+                                    inputBackground={inputBackground}
+                                    inputVariant={inputVariant}
                                 />
-                            )}
-                        </InputRightContainer>
-                    )}
+                            </InputLeftContainer>
+                        )}
+
+                        <SelectButton {...buttonProps} />
+
+                        {(hasOptions || validation) && (
+                            <InputRightContainer
+                                data-testid={testid}
+                                className={className}
+                                disabled={disabled}
+                                withBorder={false}
+                                withPadding
+                            >
+                                {validation && (
+                                    <InputValidationIcon
+                                        data-testid={testid}
+                                        className={className}
+                                        validation={validation}
+                                        validationIcon={validationIcon}
+                                        inputBackground={inputBackground}
+                                    />
+                                )}
+
+                                {hasOptions && (
+                                    <InputButton
+                                        data-testid={testid}
+                                        className={className}
+                                        inputBackground={inputBackground}
+                                        icon={
+                                            icons?.caret || (
+                                                <CaretDown
+                                                    data-testid={
+                                                        testid &&
+                                                        `${testid}.Button.Caret`
+                                                    }
+                                                    className={
+                                                        className && "Caret"
+                                                    }
+                                                    size={
+                                                        iconSizes?.caret ||
+                                                        defaultIconSizes.caret
+                                                    }
+                                                />
+                                            )
+                                        }
+                                        iconSize={
+                                            iconSizes?.caret ||
+                                            defaultIconSizes.caret
+                                        }
+                                        disabled={disabled}
+                                        aria-label="Caret down"
+                                        validationStatus={validation?.status}
+                                    />
+                                )}
+                            </InputRightContainer>
+                        )}
+                    </InputWrapper>
 
                     {options && options?.length > 1 && (
                         <ListInput

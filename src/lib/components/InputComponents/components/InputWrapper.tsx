@@ -7,9 +7,15 @@ import type { ILibInputWrapper } from "../types"
 /**
  * @description Returns a wrapper for inputs holding icon left, input and right container
  * @access Only for building library, do not export
- * @prop data-testid: string | undefined
+ * @prop "data-testid": string | undefined
  * @prop className: string | undefined
  * @prop hasContainer: boolean | undefined
+ * @prop children?: ReactChildren
+ * @prop hasListOpen?: boolean
+ * @prop isTextArea: boolean
+ * @prop inputBackground: "light" | "dark" | undefined
+ * @prop inputVariant: "rounded" | "pill" | undefined
+ * @prop validationStatus: boolean | undefined
  */
 
 export function InputWrapper({

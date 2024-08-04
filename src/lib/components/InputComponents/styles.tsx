@@ -95,12 +95,13 @@ const StyledInputIconContainer = styled.span<{
     $inputVariant: LibInputVariant | undefined
 }>`
     height: ${INPUT_HEIGHT}px;
+    position: relative;
+    z-index: 1;
     color: ${({ theme, $validationStatus, $disabled }) => {
         if ($validationStatus === false) return theme.DANGER_50
         if ($disabled) return theme.GRAY_500
         return theme.PRIMARY_500
     }};
-    position: relative;
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
@@ -145,6 +146,7 @@ const CommonLeftAndRight = ({
     height: ${INPUT_HEIGHT}px;
     cursor: ${$disabled && "not-allowed"};
     position: relative;
+    z-index: 1;
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
@@ -387,6 +389,8 @@ const StyledInputWrapper = styled.div<{
 }>`
     height: ${({ $isTextArea }) => !$isTextArea && `${INPUT_HEIGHT}px`};
     width: 100%;
+    position: relative;
+    z-index: 1;
     border-radius: ${({ $inputVariant }) =>
         $inputVariant === "pill" ? RADIUSES.ROUND : RADIUSES.S};
     border: 1px solid ${({ theme }) => theme.GRAY_200};
@@ -412,6 +416,64 @@ const StyledInputWrapper = styled.div<{
         background-color: ${({ theme }) => theme.GRAY_100};
         color: ${({ theme }) => theme.GRAY_500};
     }
+
+    &.Open {
+        border-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
+    }
+
+    ${({ $inputBackground, $validationStatus }) => {
+        switch ($inputBackground) {
+            case "light":
+                return css`
+                    border: 1px solid ${COLORS_LIGHT.GRAY_200};
+                    background-color: ${$validationStatus === false
+                        ? COLORS_LIGHT.DANGER_50
+                        : COLORS_LIGHT.BACKGROUND};
+                    color: ${COLORS_LIGHT.FONT};
+
+                    &:has(input:focus),
+                    &:has(select:focus),
+                    &:has(textarea:focus) {
+                        border-color: ${$validationStatus === false
+                            ? COLORS_LIGHT.DANGER_500
+                            : COLORS_LIGHT.PRIMARY_500};
+                    }
+
+                    &:has(input:disabled),
+                    &:has(select:disabled),
+                    &:has(textarea:disabled) {
+                        background-color: ${COLORS_LIGHT.GRAY_100};
+                        color: ${COLORS_LIGHT.GRAY_500};
+                    }
+                `
+            case "dark":
+                return css`
+                    border: 1px solid ${COLORS_DARK.GRAY_200};
+                    background-color: ${$validationStatus === false
+                        ? COLORS_DARK.DANGER_50
+                        : COLORS_DARK.BACKGROUND};
+                    color: ${COLORS_DARK.FONT};
+
+                    &:has(input:focus),
+                    &:has(select:focus),
+                    &:has(textarea:focus) {
+                        border-color: ${$validationStatus === false
+                            ? COLORS_DARK.DANGER_500
+                            : COLORS_DARK.PRIMARY_500};
+                    }
+
+                    &:has(input:disabled),
+                    &:has(select:disabled),
+                    &:has(textarea:disabled) {
+                        background-color: ${COLORS_DARK.GRAY_100};
+                        color: ${COLORS_DARK.GRAY_500};
+                    }
+                `
+            default:
+                return null
+        }
+    }}
 `
 
 /*====================== ListInput ======================*/
@@ -439,6 +501,7 @@ const StyledListInput = styled.div<{
             ? `${RADIUSES.XL} ${RADIUSES.XL} ${RADIUSES.M} ${RADIUSES.M}`
             : RADIUSES.M};
     ${Mixins.HideScrollbar};
+    z-index: 0;
 
     &.Open {
         opacity: 1;
