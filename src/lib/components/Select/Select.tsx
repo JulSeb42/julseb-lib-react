@@ -72,6 +72,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

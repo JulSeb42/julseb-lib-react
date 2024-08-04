@@ -128,6 +128,7 @@ export const Input = forwardRef<
     ) => {
         const hasContainer = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation ||

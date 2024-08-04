@@ -83,6 +83,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

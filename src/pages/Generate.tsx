@@ -6,12 +6,15 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "text: string => only if icon is not defined",
-        "icon: LibIcon => only if text is not defined",
-        "iconSize?: number => only if text is not defined",
-        "label?: string => only if text is not defined",
-        "tooltip?: string => only if text is not defined",
-        "showTooltip?: boolean => only if text is not defined",
+        '"data-testid"?: string',
+        "id?: string",
+        "label?: string",
+        "labelComment?: string",
+        "helper?: string",
+        "helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: CssFontStyle; icon?: LibIcon; iconColor?: LibAllColors; iconSize?: number }",
+        "validation?: ValidationHelper",
+        "inputBackground?: LibInputBackground",
+        "inputVariant?: LibInputVariant",
     ])
 
     const propsInput = [

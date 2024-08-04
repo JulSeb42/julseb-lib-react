@@ -10,10 +10,10 @@ export const helmetPreview: ComponentPreview<ILibHelmet> = {
     component: Helmet as any,
     category: "components",
     import: "Helmet",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibHelmet",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {

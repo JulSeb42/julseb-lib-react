@@ -96,6 +96,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

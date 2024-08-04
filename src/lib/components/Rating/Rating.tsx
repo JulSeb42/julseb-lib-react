@@ -47,7 +47,13 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
         },
         ref
     ) => {
-        const hasContainer = !!(label || helper || helperBottom || validation)
+        const hasContainer = !!(
+            label ||
+            labelComment ||
+            helper ||
+            helperBottom ||
+            validation
+        )
 
         const defaultIconSizes = {
             default: roundIconSize(BUTTON_SIZE),

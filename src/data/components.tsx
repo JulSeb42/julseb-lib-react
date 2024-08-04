@@ -57,6 +57,7 @@ import { inputSliderPreview } from "../lib/components/InputSlider/__preview__/In
 import { selectPreview } from "../lib/components/Select/__preview__/Select.preview"
 import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/Autocomplete.preview"
 import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
+import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin.preview"
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
 import { breadcrumbsPreview } from "../lib/components/Breadcrumbs/__preview__/Breadcrumbs.preview"
@@ -179,6 +180,7 @@ export const previews = [
     selectPreview,
     autocompletePreview,
     ratingPreview,
+    inputPinPreview,
     formPreview,
     listGroupPreview,
     breadcrumbsPreview,
@@ -208,6 +210,7 @@ export const previews = [
     iconMenuPreview,
     footerPreview,
     helmetPreview,
+    // prependArr
 
     /*====================== Helpers ======================*/
     helpersPreview,
@@ -218,8 +221,6 @@ export const previews = [
     optionsMarkdownPreview,
     hooksPreview,
     resetScrollPreview,
-
-    // prependArr
 ] as Array<ComponentPreview<any>>
 
 export const componentPaths: ComponentPaths = previews.map(preview => ({

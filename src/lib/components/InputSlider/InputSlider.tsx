@@ -50,6 +50,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

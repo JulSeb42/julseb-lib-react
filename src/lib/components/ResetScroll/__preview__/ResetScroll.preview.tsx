@@ -8,10 +8,10 @@ export const resetScrollPreview: ComponentPreview<null> = {
     component: ResetScroll,
     category: "helpers",
     import: "ResetScroll",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibResetScroll",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", demo: <Text>Demo impossible here.</Text> },

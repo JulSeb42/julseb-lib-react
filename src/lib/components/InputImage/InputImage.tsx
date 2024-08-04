@@ -50,6 +50,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

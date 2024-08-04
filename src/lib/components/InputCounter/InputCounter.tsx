@@ -73,6 +73,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
     ) => {
         const hasContainer: boolean = !!(
             label ||
+            labelComment ||
             helper ||
             helperBottom ||
             validation

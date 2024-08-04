@@ -48,6 +48,8 @@ export function InputValidationHelper({
         iconPassedSize = getIconSizeFromFont("small"),
     },
 }: ILibInputValidationHelper) {
+    if (!message) return null
+
     return (
         <HelperBottomContainer
             data-testid={testid && `${testid}.ValidationHelper`}
