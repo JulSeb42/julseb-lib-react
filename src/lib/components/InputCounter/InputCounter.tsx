@@ -7,7 +7,12 @@ import { InputContainer } from "../InputComponents"
 import { Plus, Minus } from "../../icons"
 import { roundIconSize } from "../../lib-utils"
 import type { ILibButtonIcon } from "../ButtonIcon/types"
-import { InputCounterWrapper, Input, NumberValue } from "./styles"
+import {
+    InputCounterWrapper,
+    Input,
+    NumberValue,
+    StyledInputWrapper,
+} from "./styles"
 import type { ILibInputCounter } from "./types"
 
 /**
@@ -193,29 +198,39 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                     />
 
                     {!inputNoEdit ? (
-                        <Input
-                            data-testid={testid && `${testid}.Input`}
-                            className={classNames(
-                                { Input: className },
-                                { WithListOpen: false }
-                            )}
-                            id={id}
-                            ref={ref}
-                            type="number"
-                            value={value}
-                            onChange={handleChange}
-                            min={min}
-                            max={max}
-                            step={step}
-                            disabled={disabled}
-                            aria-disabled={disabled}
-                            $inputBackground={inputBackground}
-                            $inputVariant={inputVariant}
-                            $disabled={disabled}
-                            $validation={validation?.status}
-                            $length={value.toString().length}
-                            {...rest}
-                        />
+                        <StyledInputWrapper
+                            data-testid={testid}
+                            className={className}
+                            hasContainer={hasContainer}
+                            isTextArea={false}
+                            inputBackground={inputBackground}
+                            inputVariant={inputVariant}
+                            validationStatus={validation?.status}
+                        >
+                            <Input
+                                data-testid={testid && `${testid}.Input`}
+                                className={classNames(
+                                    { Input: className },
+                                    { WithListOpen: false }
+                                )}
+                                id={id}
+                                ref={ref}
+                                type="number"
+                                value={value}
+                                onChange={handleChange}
+                                min={min}
+                                max={max}
+                                step={step}
+                                disabled={disabled}
+                                aria-disabled={disabled}
+                                $inputBackground={inputBackground}
+                                $inputVariant={inputVariant}
+                                $disabled={disabled}
+                                $validation={validation?.status}
+                                $length={value.toString().length}
+                                {...rest}
+                            />
+                        </StyledInputWrapper>
                     ) : (
                         <NumberValue
                             data-testid={testid && `${testid}.Number`}

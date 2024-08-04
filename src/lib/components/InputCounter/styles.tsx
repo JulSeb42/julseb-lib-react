@@ -9,6 +9,7 @@ import {
     setDefaultTheme,
 } from "../../"
 import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
+import { InputWrapper } from "../InputComponents"
 
 interface ILibInputStyles extends ILibInputBaseMixin {
     $length: number
@@ -24,11 +25,16 @@ const InputCounterWrapper = styled.div<{
         })}
 `
 
+const StyledInputWrapper = styled(InputWrapper)`
+    width: fit-content;
+`
+
 const Input = styled.input<ILibInputStyles>`
     ${InputBaseMixin}
     width: ${({ $length }) =>
         $length > 3 ? `calc(48px + ${$length} * ${SPACERS.XS})` : "48px"};
     text-align: center;
+    flex-grow: inherit;
     -moz-appearance: textfield;
 
     &::-webkit-outer-spin-button,
@@ -47,4 +53,4 @@ const NumberValue = styled.span<{ $disabled: boolean | undefined }>`
 
 setDefaultTheme([InputCounterWrapper, Input, NumberValue])
 
-export { InputCounterWrapper, Input, NumberValue }
+export { InputCounterWrapper, Input, NumberValue, StyledInputWrapper }
