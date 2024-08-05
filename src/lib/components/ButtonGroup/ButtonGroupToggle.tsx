@@ -101,6 +101,7 @@ export const ButtonGroupToggle = forwardRef<
                         <LibIcon
                             icon={toggle.icon}
                             size={toggle.iconSize ?? roundIconSize(24)}
+                            baseUrl={toggle.iconBaseUrl}
                         />
                     )}
 

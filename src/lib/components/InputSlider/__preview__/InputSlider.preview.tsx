@@ -35,6 +35,7 @@ export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
                     showMinMax
                     data-testid="testid"
                     className="className"
+                    showValue="always"
                 />
             ),
         },

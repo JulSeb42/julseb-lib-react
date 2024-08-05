@@ -43,6 +43,7 @@ export const TextIcon = forwardRef<
             tag = "p",
             display,
             gap,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -76,6 +77,7 @@ export const TextIcon = forwardRef<
                         icon={icon}
                         size={iconSize || getIconHeight(tag, display)}
                         color={iconColor}
+                        baseUrl={iconBaseUrl}
                     />
                 </IconContainer>
 

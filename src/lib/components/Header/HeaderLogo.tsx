@@ -1,37 +1,31 @@
 /*=============================================== HeaderLogo ===============================================*/
 
 import { Link } from "react-router-dom"
-import type { ReactChildren } from "../../types"
 import { Logo, LogoImg } from "./styles"
-
-interface ILibHeaderLogo {
-    "data-testid": string | undefined
-    className: string | undefined
-    to?: string
-    href?: string
-    children?: ReactChildren
-    img?: string
-    alt?: string
-    width?: number
-    height?: number
-}
+import type { ILibHeaderLogo } from "./sub-types"
 
 export function HeaderLogo({
     "data-testid": testid,
     className,
-    to = "/",
-    href,
+    logo,
     children,
-    img,
-    alt = "Logo",
-    width = 100,
-    height = 30,
+    isOpen,
 }: ILibHeaderLogo) {
+    const {
+        to = "/",
+        href,
+        img,
+        imgOpen,
+        alt = "Logo",
+        width = 100,
+        height = 30,
+    } = logo as any
+
     if (img) {
         const imgProps = {
             "data-testid": testid && `${testid}.HeaderLogo.Img`,
             className: className && "HeaderLogoImg",
-            src: img,
+            src: imgOpen && isOpen ? imgOpen : img,
             alt,
             width,
             height,

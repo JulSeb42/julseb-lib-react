@@ -29,6 +29,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
             disabled,
             icon,
             iconSize,
+            iconBaseUrl,
             validationIcon,
             counter,
             hideButton,
@@ -54,6 +55,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
             | "aria-label"
             | "validationStatus"
             | "className"
+            | "iconBaseUrl"
         > = {
             "data-testid": testid,
             onClick: () =>
@@ -65,6 +67,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
             } password`,
             validationStatus: validation?.status,
             className,
+            iconBaseUrl,
         }
 
         return (
@@ -95,6 +98,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                                 disabled={disabled}
                                 inputBackground={inputBackground}
                                 inputVariant={inputVariant}
+                                iconBaseUrl={iconBaseUrl}
                             />
                         )}
                     </InputLeftContainer>
@@ -186,6 +190,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                                 validation={validation}
                                 inputBackground={inputBackground}
                                 validationIcon={validationIcon}
+                                iconBaseUrl={iconBaseUrl}
                             />
                         )}
                     </InputRightContainer>

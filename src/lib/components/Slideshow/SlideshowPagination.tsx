@@ -1,69 +1,46 @@
 /*=============================================== SlideshowNav ===============================================*/
 
-import type { Dispatch, SetStateAction } from "react"
 import classNames from "classnames"
 import { uuid, generateNumbers } from "ts-utils-julseb"
 import { Image } from "../.."
-import type {
-    LibColorsHover,
-    LibSlideshowPagination,
-    LibSlideshowPaginationPosition,
-} from "../../types"
 import {
     SlideshowThumbnail,
     SlideshowPaginationItem,
     StyledSlideshowPagination,
 } from "./styles"
-
-interface ILibSlideshowPaginationBase {
-    "data-testid": string | undefined
-    setActive: Dispatch<SetStateAction<number>>
-    position: LibSlideshowPaginationPosition | undefined
-    childrenLength: number
-    hideOnTouch: boolean | undefined
-    color: LibColorsHover
-    activeSlide: number
-    className: string | undefined
-}
-
-interface SlideshowWithThumbnails extends ILibSlideshowPaginationBase {
-    navType: Extract<LibSlideshowPagination, "thumbnails">
-    images: Array<string>
-}
-
-interface SlideshowWithoutThumbnails extends ILibSlideshowPaginationBase {
-    navType: Exclude<LibSlideshowPagination, "thumbnails">
-    images?: never
-}
-
-type ILibSlideshowPagination =
-    | SlideshowWithThumbnails
-    | SlideshowWithoutThumbnails
+import type { ILibSlideshowPagination } from "./sub-types"
 
 export function SlideshowPagination({
     "data-testid": testid,
-    setActive,
-    navType,
-    images,
-    childrenLength,
-    position = "outside",
-    hideOnTouch = false,
-    color,
-    activeSlide,
     className,
+    pagination,
+    images,
+    setActive,
+    contentLength,
+    activeSlide,
 }: ILibSlideshowPagination) {
+    const {
+        position = "outside",
+        hideOnTouch,
+        type = "dots",
+        color = "primary",
+    } = pagination as any
+
     return (
         <StyledSlideshowPagination
-            data-testid={testid}
-            className={className}
+            data-testid={testid && `${testid}.SlideshowPagination`}
+            className={className && "SlideshowPagination"}
             $position={position}
             $hideOnTouch={hideOnTouch}
         >
-            {navType === "thumbnails"
-                ? images.map((img, i) => (
+            {type === "thumbnails"
+                ? images?.map((img, i) => (
                       <SlideshowThumbnail
                           key={uuid()}
-                          data-testid={testid && `${testid}.Thumbnail`}
+                          data-testid={
+                              testid &&
+                              `${testid}.SlideshowPagination.Thumbnail`
+                          }
                           className={classNames(
                               {
                                   SlideshowThumbnail: className,
@@ -74,7 +51,8 @@ export function SlideshowPagination({
                       >
                           <Image
                               data-testid={
-                                  testid && `${testid}.Thumbnail.Image`
+                                  testid &&
+                                  `${testid}.SlideshowPagination.Thumbnail.Image`
                               }
                               className={className && "SlideshowThumbnailImage"}
                               src={img}
@@ -85,16 +63,19 @@ export function SlideshowPagination({
                           />
                       </SlideshowThumbnail>
                   ))
-                : generateNumbers(0, childrenLength - 1).map((_, i) => (
+                : generateNumbers(0, contentLength - 1).map((_, i) => (
                       <SlideshowPaginationItem
-                          data-testid={testid && `${testid}.PaginationItem`}
+                          data-testid={
+                              testid &&
+                              `${testid}.SlideshowPagination.PaginationItem`
+                          }
                           className={classNames(
                               { SlideshowPaginationItem: className },
                               { Active: activeSlide === i }
                           )}
                           key={uuid()}
                           onClick={() => setActive(i)}
-                          $type={navType}
+                          $type={type}
                           $color={color}
                       />
                   ))}

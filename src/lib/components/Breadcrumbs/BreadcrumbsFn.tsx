@@ -61,7 +61,10 @@ export const BreadcrumbsFn = forwardRef<
                                 ) : separator === "slash" ? (
                                     "/"
                                 ) : (
-                                    <LibIcon icon={separator} />
+                                    <LibIcon
+                                        icon={separator}
+                                        baseUrl={undefined}
+                                    />
                                 )}
                             </SeparatorContainer>
                         )}

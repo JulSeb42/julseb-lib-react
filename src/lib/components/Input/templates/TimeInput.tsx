@@ -37,6 +37,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
             ),
             icon,
             iconSize,
+            iconBaseUrl,
             validationIcon,
             prefix,
             ...rest
@@ -74,6 +75,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                             disabled={disabled}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     </InputLeftContainer>
                 )}
@@ -108,6 +110,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                         aria-label="Clock"
                         onClick={showPicker}
                         validationStatus={validation?.status}
+                        iconBaseUrl={iconBaseUrl}
                     />
 
                     {validation && (
@@ -117,6 +120,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                             validation={validation}
                             validationIcon={validationIcon}
                             inputBackground={inputBackground}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     )}
                 </InputRightContainer>

@@ -22,6 +22,7 @@ type ILibButtonIconBase = LibComponentBase<
     LibButtonLinkBlank & {
         icon: LibIcon
         iconSize?: number
+        iconBaseUrl?: string
         size?: number
         shadow?: ILibBoxShadow
         borderRadius?: ILibRadius

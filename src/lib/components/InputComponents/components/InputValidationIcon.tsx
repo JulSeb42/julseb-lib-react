@@ -21,6 +21,7 @@ export function InputValidationIcon({
     validation: { status },
     validationIcon,
     inputBackground,
+    iconBaseUrl,
 }: ILibInputValidationIcon) {
     const commonIconProps = {
         className: className && "ValidationIcon",
@@ -63,6 +64,7 @@ export function InputValidationIcon({
                         ? validationIcon?.iconValidationNotPassedSize || 16
                         : validationIcon?.iconValidationPassedSize || 16
                 }
+                baseUrl={iconBaseUrl}
             />
         </StyledInputValidationIcon>
     )

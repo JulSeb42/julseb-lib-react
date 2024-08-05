@@ -37,6 +37,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
             ),
             icon,
             iconSize,
+            iconBaseUrl,
             prefix,
             ...rest
         },
@@ -69,6 +70,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                             disabled={disabled}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     </InputLeftContainer>
                 )}
@@ -105,6 +107,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                         inputBackground={inputBackground}
                         icon={iconSelect}
                         iconSize={iconSelectSize}
+                        iconBaseUrl={iconBaseUrl}
                         validationStatus={undefined}
                     />
                 </InputRightContainer>

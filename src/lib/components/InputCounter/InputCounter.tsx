@@ -65,6 +65,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 minus: roundIconSize(BUTTON_SIZE),
             },
             icons,
+            iconBaseUrl,
             labelButtons = {
                 plus: "Plus",
                 minus: "Minus",
@@ -93,6 +94,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 | "aria-disabled"
                 | "variant"
                 | "color"
+                | "iconBaseUrl"
             >
         > = {
             size: 32,
@@ -102,6 +104,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
             },
             variant: buttonVariant,
             color: validation?.status === false ? "danger" : "primary",
+            iconBaseUrl,
         }
 
         const isMinDisabled = disabled || !!(min && value <= min)
@@ -160,6 +163,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 value={value}
                 counter={undefined}
                 maxLength={undefined}
+                iconBaseUrl={iconBaseUrl}
             >
                 <InputCounterWrapper
                     data-testid={

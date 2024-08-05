@@ -49,6 +49,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                     className={className && "Icon"}
                 />
             ),
+            iconBaseUrl,
             disabled,
             ...rest
         },
@@ -113,6 +114,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                                     className={className && "CheckIcon"}
                                     icon={iconCheck}
                                     size={iconCheckSize}
+                                    baseUrl={iconBaseUrl}
                                 />
                             </Checkbox>
                         )}

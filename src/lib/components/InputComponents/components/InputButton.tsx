@@ -25,6 +25,7 @@ export function InputButton({
     onClick,
     icon,
     iconSize = 16,
+    iconBaseUrl,
     text,
     disabled,
     inputBackground,
@@ -51,6 +52,7 @@ export function InputButton({
                     size={iconSize}
                     data-testid={testid && `${testid}.Button.Icon`}
                     className={className && "Icon"}
+                    baseUrl={iconBaseUrl}
                 />
             ) : (
                 text

@@ -13,6 +13,7 @@ interface ILibPaginationWithItems extends ILibPaginationBase {
     pageLimit?: number
     icons?: { previous?: LibIcon; next?: LibIcon }
     iconSizes?: { previous?: number; next?: number }
+    iconBaseUrl?: string
     children?: never
 }
 
@@ -21,6 +22,7 @@ interface ILibPaginationWithChildren extends ILibPaginationBase {
     pageLimit?: never
     icons?: never
     iconSizes?: never
+    iconBaseUrl?: never
     children?: ReactChildren
 }
 

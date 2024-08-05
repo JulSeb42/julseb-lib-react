@@ -5,7 +5,7 @@ import type { ILibInputBase } from "../InputComponents/types"
 
 export interface ILibInputSlider
     extends InputHTMLAttributes<HTMLInputElement>,
-        Omit<ILibInputBase, "inputVariant"> {
+        Omit<ILibInputBase, "inputVariant" | "iconBaseUrl"> {
     type?: never
     showMinMax?: boolean
     showValue?: "hover" | "always" | "never"

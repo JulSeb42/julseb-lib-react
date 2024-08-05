@@ -33,6 +33,7 @@ interface AvatarWithImage extends ILibAvatarBase {
     letter?: never
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     backgroundColor?: never
     contentColor?: never
 }
@@ -42,6 +43,7 @@ interface AvatarWithLetter extends ILibAvatarBase {
     letter: string
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     backgroundColor?: LibAllColors
     contentColor?: LibAllColors
 }
@@ -51,6 +53,7 @@ interface AvatarWithIcon extends ILibAvatarBase {
     letter?: never
     icon: LibIcon
     iconSize?: number
+    iconBaseUrl?: string
     backgroundColor?: LibAllColors
     contentColor?: LibAllColors
 }

@@ -26,6 +26,7 @@ type ILibButtonBase = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
 type ButtonWithoutIcon = ILibButtonBase & {
     icons?: undefined
     iconSizes?: never
+    iconBaseUrl?: never
     isLoading?: undefined | null
     gap?: never
 }
@@ -39,6 +40,7 @@ type ButtonWithIcon = ILibButtonBase & {
         left?: number
         right?: number
     }
+    iconBaseUrl?: string
     isLoading?: boolean
     gap?: LibSpacers
 }

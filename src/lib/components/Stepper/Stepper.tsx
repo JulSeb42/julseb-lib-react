@@ -39,6 +39,7 @@ export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
             direction = "row",
             iconActive,
             iconActiveSize,
+            iconBaseUrl,
             accentColor = "primary",
             ...rest
         },
@@ -73,6 +74,7 @@ export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
                               iconActiveSize={iconActiveSize}
                               direction={direction}
                               accentColor={accentColor}
+                              iconBaseUrl={iconBaseUrl}
                               key={uuid()}
                               {...step}
                           >

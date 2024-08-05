@@ -1,5 +1,6 @@
 /*=============================================== Dropdown types ===============================================*/
 
+import type { ButtonHTMLAttributes } from "react"
 import type {
     LibDropdownItem,
     LibColorsHover,
@@ -8,7 +9,12 @@ import type {
     ReactChildren,
     DispatchState,
     LibShadows,
+    LibButtonLinkBlankRequired,
+    LibIcon,
+    LibSpacers,
 } from "../../types"
+
+/*====================== Dropdown ======================*/
 
 interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
     isOpen: boolean
@@ -31,3 +37,29 @@ interface DropdownWithChildren extends ILibDropdownBase {
 }
 
 export type ILibDropdown = DropdownWithItems | DropdownWithChildren
+
+/*====================== DropdownItem ======================*/
+
+type ILibDropdownItemBase = LibComponentBase<
+    HTMLButtonElement & HTMLAnchorElement
+> &
+    ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
+    LibButtonLinkBlankRequired & {
+        accentColor?: LibColorsHover
+
+        gap?: LibSpacers
+    }
+
+type DropdownItemWithIcon = ILibDropdownItemBase & {
+    icon?: LibIcon
+    iconSize?: number
+    iconBaseUrl?: string
+}
+
+type DropdownItemWithoutIcon = ILibDropdownItemBase & {
+    icon?: undefined | null
+    iconSize?: never
+    iconBaseUrl?: never
+}
+
+export type ILibDropdownItem = DropdownItemWithIcon | DropdownItemWithoutIcon

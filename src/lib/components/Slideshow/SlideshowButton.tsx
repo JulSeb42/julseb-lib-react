@@ -1,58 +1,92 @@
 /*=============================================== SlideshowButton ===============================================*/
 
 import { LibIcon } from "../LibIcon"
-import type {
-    LibColorsHover,
-    LibIcon as LibIconType,
-    LibSlideshowButtonPosition,
-    LibSlideshowButtonSize,
-} from "../../types"
+import { ChevronLeft, ChevronRight } from "../../icons"
 import { StyledSlideshowButton } from "./styles"
+import type { ILibSlideshowButton } from "./sub-types"
 
-interface ILibSlideshowButton {
-    "data-testid": string | undefined
-    className: string | undefined
-    onClick: () => void
-    position: LibSlideshowButtonPosition
-    hideTouch: boolean
-    size: LibSlideshowButtonSize
-    color: LibColorsHover
-    "aria-label": string | undefined
-    icon: LibIconType
-    iconSize: number
-}
+const DEFAULT_ICON_SIZE_SMALL = 24
+const DEFAULT_ICON_SIZE_LARGE = 32
 
 export function SlideshowButton({
     "data-testid": testid,
     className,
     onClick,
     position,
-    hideTouch = false,
-    size = "small",
-    color = "primary",
-    "aria-label": label,
-    icon,
-    iconSize,
+    controls,
 }: ILibSlideshowButton) {
+    const {
+        "data-testid": controlTestid,
+        className: controlClassName,
+        size = "small",
+        color = "primary",
+        hideOnTouch,
+        "aria-label": label = position === "right" ? "Previous" : "Next",
+        iconPrevSize = size === "large"
+            ? DEFAULT_ICON_SIZE_LARGE
+            : DEFAULT_ICON_SIZE_SMALL,
+        iconNextSize = size === "large"
+            ? DEFAULT_ICON_SIZE_LARGE
+            : DEFAULT_ICON_SIZE_SMALL,
+        iconPrev = (
+            <ChevronLeft
+                data-testid={
+                    controlTestid ??
+                    (testid &&
+                        `${testid}.SlideshowButton.${
+                            position === "right" ? "Next" : "Prev"
+                        }.Icon`)
+                }
+                size={iconPrevSize}
+            />
+        ),
+        iconNext = (
+            <ChevronRight
+                data-testid={
+                    controlTestid ??
+                    (testid &&
+                        `${testid}.SlideshowButton.${
+                            position === "right" ? "Next" : "Prev"
+                        }.Icon`)
+                }
+                size={iconNextSize}
+            />
+        ),
+        iconBaseUrl,
+    } = controls as any
+
     return (
         <StyledSlideshowButton
-            data-testid={testid}
-            className={className}
+            data-testid={
+                controlTestid ??
+                (testid &&
+                    `${testid}.SlideshowButton.${
+                        position === "right" ? "Next" : "Prev"
+                    }`)
+            }
+            className={controlClassName ?? (className && "SlideshowButton")}
             onClick={onClick}
             type="button"
             role="button"
             aria-label={label}
-            $hideOnTouch={hideTouch}
+            $hideOnTouch={hideOnTouch}
             $color={color}
             $position={position}
             $size={size}
         >
             <LibIcon
-                data-testid={testid && `${testid}.Icon`}
-                className={className && "ButtonIcon"}
-                icon={icon}
-                size={iconSize}
+                data-testid={
+                    controlTestid ??
+                    (testid &&
+                        `${testid}.SlideshowButton.${
+                            position === "right" ? "Next" : "Prev"
+                        }.Icon`)
+                }
+                className={(className || controlClassName) && "SlideshowIcon"}
+                icon={position === "right" ? iconNext : iconPrev}
+                size={position === "right" ? iconNextSize : iconPrevSize}
                 color="currentColor"
+                baseUrl={iconBaseUrl}
             />
         </StyledSlideshowButton>
     )

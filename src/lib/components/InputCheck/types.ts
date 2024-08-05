@@ -18,12 +18,14 @@ interface InputCheckbox extends ILibInputCheckBase {
     type?: "checkbox"
     iconCheck?: LibIcon
     iconCheckSize?: number
+    iconBaseUrl?: string
 }
 
 interface InputRadio extends ILibInputCheckBase {
     type?: "radio"
     iconCheck?: never
     iconCheckSize?: never
+    iconBaseUrl?: never
 }
 
 export type ILibInputCheck = InputCheckbox | InputRadio

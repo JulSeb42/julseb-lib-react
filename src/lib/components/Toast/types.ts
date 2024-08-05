@@ -19,4 +19,6 @@ export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
         textColor?: LibAllColors
         shadow?: LibShadows
     }
+    iconBaseUrl?: string
+    hideCloseButton?: boolean
 }

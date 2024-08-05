@@ -15,5 +15,6 @@ export type ILibTextIcon = ILibText & {
     icon: LibIcon
     iconColor?: LibAllColors
     iconSize?: number
+    iconBaseUrl?: string
     gap?: LibSpacers
 }

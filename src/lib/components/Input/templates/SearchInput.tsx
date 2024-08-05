@@ -37,6 +37,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
             ),
             icon,
             iconSize,
+            iconBaseUrl,
             focusKeys,
             showKeys,
             value,
@@ -79,6 +80,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
                             disabled={disabled}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     </InputLeftContainer>
                 )}
@@ -119,6 +121,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
                                     aria-label="Clear"
                                     onClick={clearSearch}
                                     validationStatus={undefined}
+                                    iconBaseUrl={iconBaseUrl}
                                 />
                             )}
 

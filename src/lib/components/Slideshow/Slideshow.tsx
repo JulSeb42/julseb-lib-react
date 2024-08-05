@@ -3,7 +3,6 @@
 import { forwardRef, useState, useCallback, useEffect } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Image } from "../../"
-import { ChevronLeft, ChevronRight } from "../../icons"
 import { SlideshowButton } from "./SlideshowButton"
 import { SlideshowPagination } from "./SlideshowPagination"
 import {
@@ -13,9 +12,6 @@ import {
     SlideshowContent,
 } from "./styles"
 import type { ILibSlideshow } from "./types"
-
-const DEFAULT_ICON_SIZE_SMALL = 24
-const DEFAULT_ICON_SIZE_LARGE = 32
 
 /**
  * @description Returns a Slideshow component
@@ -122,14 +118,6 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
             setTouchPosition(null)
         }
 
-        const controlsProps = {
-            hideTouch:
-                (typeof controls === "object" && controls.hideOnTouch) || false,
-            size: (typeof controls === "object" && controls.size) || "small",
-            color:
-                (typeof controls === "object" && controls.color) || "primary",
-        }
-
         const showControls: boolean = !!(
             (children && children.length > 1) ||
             (images && images.length > 1 && controls)
@@ -154,49 +142,11 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
                 >
                     {showControls && (
                         <SlideshowButton
-                            data-testid={
-                                testid &&
-                                `${testid}.SlideshowWrapper.SlideshowButton.Prev`
-                            }
-                            className={className && "SlideshowButton"}
+                            data-testid={testid}
+                            className={className}
                             onClick={handlePrev}
                             position="left"
-                            aria-label={
-                                (typeof controls === "object" &&
-                                    controls.labelPrev) ||
-                                "Previous"
-                            }
-                            icon={
-                                (typeof controls === "object" &&
-                                    controls.iconPrev) || (
-                                    <ChevronLeft
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.SlideshowWrapper.SlideshowButton.Prev.Icon`
-                                        }
-                                        size={
-                                            typeof controls === "object" &&
-                                            controls.iconPrevSize
-                                                ? controls.iconPrevSize
-                                                : typeof controls ===
-                                                      "object" &&
-                                                  controls.size === "large"
-                                                ? DEFAULT_ICON_SIZE_LARGE
-                                                : DEFAULT_ICON_SIZE_SMALL
-                                        }
-                                    />
-                                )
-                            }
-                            iconSize={
-                                typeof controls === "object" &&
-                                controls.iconPrevSize
-                                    ? controls.iconPrevSize
-                                    : typeof controls === "object" &&
-                                      controls.size === "large"
-                                    ? DEFAULT_ICON_SIZE_LARGE
-                                    : DEFAULT_ICON_SIZE_SMALL
-                            }
-                            {...(controlsProps as any)}
+                            controls={controls}
                         />
                     )}
 
@@ -241,80 +191,23 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
 
                     {showControls && (
                         <SlideshowButton
-                            data-testid={
-                                testid &&
-                                `${testid}.SlideshowWrapper.SlideshowButton.Next`
-                            }
-                            className={className && "SlideshowButton"}
-                            onClick={handleNext}
+                            data-testid={testid}
+                            className={className}
+                            onClick={handlePrev}
                             position="right"
-                            aria-label={
-                                (typeof controls === "object" &&
-                                    controls.labelNext) ||
-                                "Next"
-                            }
-                            icon={
-                                (typeof controls === "object" &&
-                                    controls.iconNext) || (
-                                    <ChevronRight
-                                        data-testid={
-                                            testid &&
-                                            `${testid}.SlideshowWrapper.SlideshowButton.Next.Icon`
-                                        }
-                                        size={
-                                            typeof controls === "object" &&
-                                            controls.iconNextSize
-                                                ? controls.iconNextSize
-                                                : typeof controls ===
-                                                      "object" &&
-                                                  controls.size === "large"
-                                                ? DEFAULT_ICON_SIZE_LARGE
-                                                : DEFAULT_ICON_SIZE_SMALL
-                                        }
-                                    />
-                                )
-                            }
-                            iconSize={
-                                typeof controls === "object" &&
-                                controls.iconNextSize
-                                    ? controls.iconNextSize
-                                    : typeof controls === "object" &&
-                                      controls.size === "large"
-                                    ? DEFAULT_ICON_SIZE_LARGE
-                                    : DEFAULT_ICON_SIZE_SMALL
-                            }
-                            {...(controlsProps as any)}
+                            controls={controls}
                         />
                     )}
                 </SlideshowWrapper>
 
                 {showPagination && (
                     <SlideshowPagination
-                        data-testid={testid && `${testid}.SlideshowPagination`}
-                        className={className && "SlideshowWrapper"}
-                        setActive={setActive}
-                        navType={
-                            ((typeof pagination === "object" &&
-                                pagination.type) ||
-                                "dots") as any
-                        }
+                        data-testid={testid}
+                        className={className}
+                        pagination={pagination}
                         images={images}
-                        childrenLength={length}
-                        position={
-                            (typeof pagination === "object" &&
-                                pagination.position) ||
-                            "outside"
-                        }
-                        hideOnTouch={
-                            (typeof pagination === "object" &&
-                                pagination.hideOnTouch) ||
-                            false
-                        }
-                        color={
-                            (typeof pagination === "object" &&
-                                pagination.color) ||
-                            "primary"
-                        }
+                        setActive={setActive}
+                        contentLength={(images || children)?.length ?? 0}
                         activeSlide={active}
                     />
                 )}

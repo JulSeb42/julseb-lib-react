@@ -20,6 +20,7 @@ export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
             disabled,
             validationIcon,
             type = "file",
+            iconValidationBaseUrl,
             ...rest
         },
         ref
@@ -54,6 +55,7 @@ export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
                             validation={validation}
                             inputBackground={inputBackground}
                             validationIcon={validationIcon}
+                            iconBaseUrl={iconValidationBaseUrl}
                         />
                     </InputRightContainer>
                 )}

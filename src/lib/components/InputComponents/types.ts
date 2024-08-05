@@ -23,6 +23,7 @@ interface ValidationHelper {
     iconNotPassedSize?: number
     iconPassed?: LibIcon
     iconPassedSize?: number
+    iconBaseUrl: string | undefined
 }
 
 export interface ILibInputValidationIconComponent {
@@ -48,6 +49,7 @@ export interface ILibInputValidationIcon
     className: string | undefined
     inputBackground: LibInputBackground | undefined
     validation: { status: LibValidationStatus }
+    iconBaseUrl: string | undefined
 }
 
 /*====================== No focus ======================*/
@@ -100,6 +102,7 @@ export interface ILibInputBase
             | "helper"
             | "helperBottom"
             | "validation"
+            | "iconBaseUrl"
         >
     > {
     inputBackground?: LibInputBackground
@@ -137,6 +140,7 @@ export interface ILibInputContainer {
     counter: boolean | undefined
     maxLength: number | undefined
     hasListOpen?: boolean
+    iconBaseUrl: string | undefined
 }
 
 /*====================== InputIconContainer ======================*/
@@ -146,6 +150,7 @@ export interface ILibInputIconContainer {
     className: string | undefined
     icon: LibIcon | undefined
     iconSize: number | undefined
+    iconBaseUrl: string | undefined
     validationStatus: LibValidationStatus | undefined
     disabled: boolean | undefined
     inputBackground: LibInputBackground | undefined
@@ -189,12 +194,14 @@ interface ILibInputButtonBase {
 interface InputButtonWithIcon extends ILibInputButtonBase {
     icon: LibIcon | undefined
     iconSize: number | undefined
+    iconBaseUrl: string | undefined
     text?: never
 }
 
 interface InputButtonWithText extends ILibInputButtonBase {
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     text: string | undefined
 }
 
@@ -265,12 +272,14 @@ interface ILibInputIconBase {
 interface InputWithIcon extends ILibInputIconBase {
     icon?: LibIcon
     iconSize?: number
+    iconBaseUrl?: string
     prefix?: never
 }
 
 interface InputWithPrefixAndSuffix extends ILibInputIconBase {
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     prefix?: LibInputPrefixAndSuffix
 }
 

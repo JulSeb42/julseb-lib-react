@@ -1,27 +1,10 @@
 /*=============================================== DropdownItem component ===============================================*/
 
-import { forwardRef, type ButtonHTMLAttributes, Fragment } from "react"
+import { forwardRef, Fragment } from "react"
 import { Link } from "react-router-dom"
 import { LibIcon } from "../LibIcon"
-import type {
-    LibComponentBase,
-    LibColorsHover,
-    LibButtonLinkBlankRequired,
-    LibIcon as LibIconType,
-    LibSpacers,
-} from "../../types"
 import { StyledDropdownItem, IconContainer, TextContent } from "./styles"
-
-type ILibDropdownItem = LibComponentBase<
-    HTMLButtonElement & HTMLAnchorElement
-> &
-    ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
-    LibButtonLinkBlankRequired & {
-        accentColor?: LibColorsHover
-        icon?: LibIconType
-        iconSize?: number
-        gap?: LibSpacers
-    }
+import type { ILibDropdownItem } from "./types"
 
 /**
  * @description Returns a DropdownItem component
@@ -53,6 +36,7 @@ export const DropdownItem = forwardRef<
             disabled,
             icon,
             iconSize = 16,
+            iconBaseUrl,
             gap = "xxs",
             ...rest
         },
@@ -87,6 +71,7 @@ export const DropdownItem = forwardRef<
                                 className={className && "DropdownItemIcon"}
                                 icon={icon}
                                 size={iconSize}
+                                baseUrl={iconBaseUrl}
                             />
                         </IconContainer>
 

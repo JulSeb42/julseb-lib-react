@@ -3,59 +3,39 @@
 import { useState, type FormEvent, type ChangeEvent } from "react"
 import { useNavigate, createSearchParams } from "react-router-dom"
 import { Input } from "../../"
-import type {
-    DispatchState,
-    LibIcon,
-    LibInputBackground,
-    LibInputVariant,
-} from "../../types"
 import { SearchForm } from "./styles"
-
-export interface ILibHeaderSearch {
-    "data-testid": string | undefined
-    className: string | undefined
-    pathname?: string
-    queries?: Array<Array<string>>
-    withSearch: boolean | undefined
-    maxWidth: string | number
-    icon: LibIcon | undefined
-    iconClear: LibIcon | undefined
-    iconSize: number | undefined
-    iconClearSize: number | undefined
-    placeholder: string | undefined
-    inputBackground: LibInputBackground | undefined
-    inputVariant: LibInputVariant | undefined
-    keyboardShortcut: Array<string> | undefined
-    showKeys: boolean | undefined
-    setIsOpen: DispatchState<boolean>
-}
+import type { ILibHeaderSearch } from "./sub-types"
 
 export function HeaderSearch({
     "data-testid": testid,
     className,
-    withSearch,
-    maxWidth,
-    placeholder,
-    icon,
-    iconClear,
-    iconSize,
-    iconClearSize,
-    inputBackground,
-    inputVariant,
-    keyboardShortcut,
-    showKeys,
-    pathname,
-    queries,
-    setIsOpen,
+    search,
+    handleClose,
 }: ILibHeaderSearch) {
-    if (withSearch === false) return null
+    if (!search) return null
+
+    const {
+        maxWidth,
+        placeholder,
+        icon,
+        iconClear,
+        iconSize,
+        iconClearSize,
+        iconBaseUrl,
+        inputBackground,
+        inputVariant,
+        keyboardShortcut,
+        showKeys,
+        pathname,
+        queries,
+    } = search
 
     const navigate = useNavigate()
 
-    const [search, setSearch] = useState("")
+    const [searchValue, setSearchValue] = useState("")
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) =>
-        setSearch(e.target.value)
-    const clearSearch = () => setSearch("")
+        setSearchValue(e.target.value)
+    const clearSearch = () => setSearchValue("")
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -63,18 +43,18 @@ export function HeaderSearch({
         navigate({
             pathname: pathname,
             search: createSearchParams({
-                query: search,
+                query: searchValue,
                 ...Object.fromEntries(queries || []),
             }).toString(),
         })
 
-        setSearch("")
-        setIsOpen(false)
+        setSearchValue("")
+        handleClose()
     }
 
     return (
         <SearchForm
-            data-testid={testid}
+            data-testid={testid && `${testid}.HeaderSearch`}
             className={className && "HeaderSearch"}
             onSubmit={handleSubmit}
             role="search"
@@ -86,7 +66,7 @@ export function HeaderSearch({
                 type="search"
                 clearSearch={clearSearch}
                 onChange={handleSearch}
-                value={search}
+                value={searchValue}
                 placeholder={placeholder}
                 icon={icon}
                 iconSize={iconSize}

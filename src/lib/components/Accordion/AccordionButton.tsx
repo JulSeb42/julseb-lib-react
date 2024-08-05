@@ -78,6 +78,7 @@ export function AccordionButton({
                             icon
                         )
                     }
+                    baseUrl={undefined}
                 />
             </StyledAccordionIcon>
         </StyledAccordionButton>

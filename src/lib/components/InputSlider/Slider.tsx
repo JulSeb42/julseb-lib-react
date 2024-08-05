@@ -1,23 +1,13 @@
 /*=============================================== Slider component ===============================================*/
 
-import { forwardRef, type InputHTMLAttributes } from "react"
-import type { LibInputBackground, LibValidationStatus } from "../../types"
+import { forwardRef } from "react"
+import type { ILibInputSlider } from "./types"
 import { StyledInputSlider } from "./styles"
 
-export interface ILibInputSlider extends InputHTMLAttributes<HTMLInputElement> {
-    "data-testid": string | undefined
-    className: string | undefined
-    id: string | undefined
-    min: number | undefined
-    max: number | undefined
-    validationStatus: LibValidationStatus
-    hasContainer: boolean
-    hasWrapper: boolean
-    inputBackground: undefined | LibInputBackground
-    value: number | undefined
-}
-
-export const Slider = forwardRef<HTMLInputElement, ILibInputSlider>(
+export const Slider = forwardRef<
+    HTMLInputElement,
+    ILibInputSlider & { hasContainer: boolean; hasWrapper: boolean }
+>(
     (
         {
             "data-testid": testid,
@@ -25,13 +15,13 @@ export const Slider = forwardRef<HTMLInputElement, ILibInputSlider>(
             id,
             min = 0,
             max = 100,
-            validationStatus,
+            validation,
             hasContainer,
             hasWrapper,
             inputBackground,
             value,
             ...rest
-        }: ILibInputSlider,
+        },
         ref
     ) => {
         return (
@@ -51,7 +41,7 @@ export const Slider = forwardRef<HTMLInputElement, ILibInputSlider>(
                 min={min}
                 max={max}
                 type="range"
-                $validation={validationStatus}
+                $validation={validation?.status}
                 $inputBackground={inputBackground}
                 $value={value || 0}
                 $max={max}

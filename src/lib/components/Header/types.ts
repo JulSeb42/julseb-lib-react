@@ -7,16 +7,18 @@ import type {
     LibInputBackground,
     LibInputVariant,
     LibLink,
-    LibNavMenuVariant,
+    LibNavBurgerPosition,
     LibNavMobileVariant,
     LibHeaderLink,
     ReactChildren,
     LibHeaderVariant,
+    LibColorsHover,
 } from "../../types"
 
 type LogoWithText = LibLink & {
     text: string
     img?: never
+    imgOpen?: never
     alt?: never
     width?: never
     height?: never
@@ -25,6 +27,7 @@ type LogoWithText = LibLink & {
 type LogoWithImg = LibLink & {
     text?: never
     img: string
+    imgOpen?: string
     alt?: string
     width?: number
     height?: number
@@ -33,15 +36,20 @@ type LogoWithImg = LibLink & {
 interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
     logo: string | LogoWithText | LogoWithImg
     variant?: LibHeaderVariant
-    burgerPosition?: LibNavMenuVariant
-    navDesktopVariant?: LibNavMenuVariant
+    burgerPosition?: LibNavBurgerPosition
+    burgerColor?:
+        | LibColorsHover
+        | { closed: LibColorsHover; open: LibColorsHover }
+    navDesktopVariant?: LibNavBurgerPosition
     navMobileVariant?: LibNavMobileVariant
+    enableScrollingOpen?: boolean
     search?: {
         pathname: string
         queries?: Array<Array<string>>
         icon?: LibIcon
         iconClear?: LibIcon
         iconSize?: number
+        iconBaseUrl?: string
         iconClearSize?: number
         placeholder?: string
         keyboardShortcut?: Array<string>

@@ -37,6 +37,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
             readOnly,
             iconSizes,
             icons,
+            iconBaseUrl,
             label,
             labelComment,
             helper,
@@ -103,6 +104,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                 value={rating}
                 counter={false}
                 maxLength={undefined}
+                iconBaseUrl={iconBaseUrl}
             >
                 <Flexbox
                     data-testid={
@@ -159,6 +161,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                                         : iconSizes?.checked ||
                                           defaultIconSizes?.checked
                                 }
+                                baseUrl={iconBaseUrl}
                             />
                         </RatingButton>
                     ))}

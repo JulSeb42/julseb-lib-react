@@ -9,6 +9,7 @@ export interface ILibLibIcon {
     size?: number
     color?: LibAllColors
     className?: string
+    baseUrl: string | undefined
 }
 
 /**
@@ -26,6 +27,7 @@ export function LibIcon({
     size,
     color,
     className,
+    baseUrl,
 }: ILibLibIcon) {
     if (typeof icon !== "string") return icon
 
@@ -36,6 +38,7 @@ export function LibIcon({
             src={icon}
             size={size}
             color={color}
+            baseURL={baseUrl}
         />
     )
 }

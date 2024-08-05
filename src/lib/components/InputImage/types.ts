@@ -20,6 +20,7 @@ export interface ILibInputImage
         empty?: number
         hover?: number
     }
+    iconBaseUrl?: string
     children?: never
     type?: never
 }

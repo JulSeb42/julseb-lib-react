@@ -19,7 +19,7 @@ import {
 import type {
     LibHeaderPosition,
     LibHeaderVariant,
-    LibNavMenuVariant,
+    LibNavBurgerPosition,
     LibNavMobileVariant,
 } from "../../types"
 
@@ -46,7 +46,7 @@ const StyledHeaderBurger = styled(Burger)`
 
 const StyledHeader = styled.header<{
     $variant: LibHeaderVariant
-    $burgerPosition: LibNavMenuVariant
+    $burgerPosition: LibNavBurgerPosition
     $position: LibHeaderPosition
     $headerHeight: number
 }>`
@@ -216,9 +216,9 @@ const StyledHeader = styled.header<{
 `
 
 const Nav = styled.nav<{
-    $mobileVariant: LibNavMobileVariant
-    $positionVariant: LibNavMenuVariant
-    $headerVariant: LibHeaderVariant
+    $navMobileVariant: LibNavMobileVariant | undefined
+    $burgerPosition: LibNavBurgerPosition | undefined
+    $variant: LibHeaderVariant | undefined
     $headerHeight: number
     $navHeight: number
 }>`
@@ -227,21 +227,21 @@ const Nav = styled.nav<{
         $gap: "s",
     })};
 
-    ${({ $positionVariant }) =>
-        $positionVariant === "left" &&
+    ${({ $burgerPosition }) =>
+        $burgerPosition === "left" &&
         css`
             flex-grow: 1;
         `}
 
     @media ${BREAKPOINTS.MOBILE} {
         position: absolute;
-        background-color: ${({ theme, $headerVariant }) =>
-            $headerVariant === "white" ? theme.WHITE : theme.PRIMARY_500};
+        background-color: ${({ theme, $variant }) =>
+            $variant === "white" ? theme.WHITE : theme.PRIMARY_500};
         transition: ${TRANSITIONS.SHORT};
         z-index: 997;
 
-        ${({ $mobileVariant, $headerHeight, $navHeight }) => {
-            switch ($mobileVariant) {
+        ${({ $navMobileVariant, $headerHeight, $navHeight }) => {
+            switch ($navMobileVariant) {
                 case "full":
                     return css`
                         width: 100vw;
@@ -315,9 +315,9 @@ const Overlay = styled.span`
     }
 `
 
-const SearchForm = styled.form<{ $maxWidth: string | number }>`
+const SearchForm = styled.form<{ $maxWidth?: string | number }>`
     width: 100%;
-    max-width: ${({ $maxWidth }) => stringifyPx($maxWidth)};
+    max-width: ${({ $maxWidth }) => $maxWidth && stringifyPx($maxWidth)};
 
     @media ${BREAKPOINTS.MOBILE} {
         max-width: 100%;

@@ -34,6 +34,7 @@ export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
             size = 16,
             icon,
             iconSize = roundIconSize(size),
+            iconBaseUrl,
             number,
             backgroundColor = "primary",
             contentColor = backgroundColor === "white"
@@ -84,6 +85,7 @@ export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
                             icon={icon}
                             color={contentColor}
                             size={iconSize}
+                            baseUrl={iconBaseUrl}
                         />
                     )}
 

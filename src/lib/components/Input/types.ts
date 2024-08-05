@@ -45,6 +45,7 @@ export interface ILibFileInput
         ILibInputValidationIconComponent,
         ILibInputNoFocusKeys {
     type: "file"
+    iconValidationBaseUrl?: string
     children?: never
 }
 

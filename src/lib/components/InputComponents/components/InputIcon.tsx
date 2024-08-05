@@ -22,6 +22,7 @@ export function InputIcon({
     className,
     icon,
     iconSize = 24,
+    iconBaseUrl,
     validationStatus,
     inputBackground,
     disabled,
@@ -43,6 +44,7 @@ export function InputIcon({
                 className={className && "IconLeft"}
                 icon={icon}
                 size={iconSize}
+                baseUrl={iconBaseUrl}
             />
         </StyledInputIconContainer>
     )

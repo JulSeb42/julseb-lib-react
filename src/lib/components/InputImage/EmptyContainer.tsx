@@ -2,41 +2,47 @@
 
 import { Image } from "../../icons"
 import { LibIcon } from "../LibIcon"
-import type { LibValidationStatus, LibIcon as LibIconType } from "../../types"
 import { StyledEmptyContainer } from "./styles"
-
-export interface ILibInputImageContainer {
-    "data-testid": string | undefined
-    className: string | undefined
-    validation: LibValidationStatus
-    icon?: LibIconType
-    iconSize?: number
-}
+import type { ILibInputImage } from "./types"
 
 export function EmptyContainer({
     "data-testid": testid,
     className,
     validation,
-    iconSize = 48,
-    icon = (
-        <Image
-            data-testid={testid && `${testid}.EmptyContainer.Icon`}
-            className={className && "IconEmpty"}
-            size={iconSize}
-        />
-    ),
-}: ILibInputImageContainer) {
+    iconSizes,
+    icons,
+    iconBaseUrl,
+}: Pick<
+    ILibInputImage,
+    | "data-testid"
+    | "className"
+    | "validation"
+    | "iconSizes"
+    | "icons"
+    | "iconBaseUrl"
+>) {
     return (
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}
             className={className && "EmptyContainer"}
-            $validation={validation}
+            $validation={validation?.status}
         >
             <LibIcon
                 data-testid={testid && `${testid}.EmptyContainer.Icon`}
                 className={className && "IconEmpty"}
-                icon={icon}
-                size={iconSize}
+                icon={
+                    icons?.empty ?? (
+                        <Image
+                            data-testid={
+                                testid && `${testid}.EmptyContainer.Icon`
+                            }
+                            className={className && "IconEmpty"}
+                            size={iconSizes?.empty ?? 48}
+                        />
+                    )
+                }
+                size={iconSizes?.empty ?? 48}
+                baseUrl={iconBaseUrl}
             />
         </StyledEmptyContainer>
     )

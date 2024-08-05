@@ -30,15 +30,15 @@ export function DemoHeader() {
                 data-testid="testid"
                 className="className"
                 logo={{
-                    text: "Logo",
-                    // img: "/images/logo-fajny-css.svg",
-                    // width: 100,
+                    // text: "Logo",
+                    img: "/images/logo-fajny-css.svg",
+                    imgOpen: "/images/logo-fajny-css-white.svg",
+                    width: 100,
                     // height: 400,
                 }}
                 links={links}
                 position="fixed"
                 hideOnScroll
-                // navMobileVariant="top"
                 search={{
                     pathname: "",
                     icon: "search",
@@ -48,9 +48,10 @@ export function DemoHeader() {
                     inputBackground: "light",
                     showKeys: true,
                 }}
+                variant="transparent"
                 // burgerPosition="left"
                 // navDesktopVariant="left"
-                variant="transparent"
+                navMobileVariant="top"
             />
 
             <Cover

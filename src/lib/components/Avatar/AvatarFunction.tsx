@@ -6,29 +6,33 @@ import { getRandomString } from "ts-utils-julseb"
 import { Image } from "../../"
 import { HelmetStyles } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
-import type {
-    LibAllColors,
-    ILibBorder,
-    LibComponentBase,
-    LibIcon as LibIconType,
-    ILibRadius,
-} from "../../types"
+import type { LibComponentBase } from "../../types"
 import { StyledAvatar } from "./styles"
+import type { ILibAvatar } from "./types"
 
-interface ILibAvatarFunction extends LibComponentBase<HTMLSpanElement> {
-    hasBadge?: boolean
-    backgroundColor?: LibAllColors
-    border?: ILibBorder
-    borderRadius?: ILibRadius
-    size?: number
-    contentColor?: LibAllColors
-    img?: string | { src: string; alt: string }
-    letter?: string
-    icon?: LibIconType
-    iconSize?: number
-}
-
-export const AvatarFunction = forwardRef<HTMLSpanElement, ILibAvatarFunction>(
+export const AvatarFunction = forwardRef<
+    HTMLSpanElement,
+    Pick<
+        ILibAvatar,
+        | "data-testid"
+        | "as"
+        | "className"
+        | "id"
+        | "backgroundColor"
+        | "border"
+        | "borderRadius"
+        | "size"
+        | "contentColor"
+        | "img"
+        | "letter"
+        | "icon"
+        | "iconSize"
+        | "iconBaseUrl"
+    > &
+        LibComponentBase<HTMLSpanElement> & {
+            hasBadge?: boolean
+        }
+>(
     (
         {
             "data-testid": testid,
@@ -45,6 +49,7 @@ export const AvatarFunction = forwardRef<HTMLSpanElement, ILibAvatarFunction>(
             letter,
             icon,
             iconSize,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -99,6 +104,7 @@ export const AvatarFunction = forwardRef<HTMLSpanElement, ILibAvatarFunction>(
                             icon={icon}
                             size={iconSize}
                             color={contentColor}
+                            baseUrl={iconBaseUrl}
                         />
                     )}
                 </StyledAvatar>

@@ -29,12 +29,14 @@ interface TagWithIcon extends ILibTagBase {
         left?: number
         right?: number
     }
+    iconBaseUrl?: string
     gap?: LibSpacers
 }
 
 interface TagWithoutIcon extends ILibTagBase {
     icons?: undefined
     iconSizes?: never
+    iconBaseUrl?: never
     gap?: never
 }
 

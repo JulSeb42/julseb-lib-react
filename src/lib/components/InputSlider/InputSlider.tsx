@@ -4,7 +4,7 @@ import { forwardRef, type ForwardedRef, useState, useCallback } from "react"
 import classNames from "classnames"
 import { Flexbox, Text } from "../../"
 import type { ILibText } from "../../types/components-props"
-import { Slider, type ILibInputSlider as IInpuSlider } from "./Slider"
+import { Slider } from "./Slider"
 import { InputContainer } from "../InputComponents"
 import { SliderContainer, Tooltip } from "./styles"
 import type { ILibInputSlider } from "./types"
@@ -57,8 +57,10 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
         )
         const hasWrapper: boolean = !!(showValue !== "never" || showMinMax)
 
-        const sliderProps: IInpuSlider & {
+        const sliderProps: ILibInputSlider & {
             ref: ForwardedRef<HTMLInputElement>
+            hasContainer: boolean
+            hasWrapper: boolean
         } = {
             "data-testid": testid,
             className,
@@ -66,7 +68,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
             id,
             min,
             max,
-            validationStatus: validation?.status,
+            validation,
             hasContainer,
             hasWrapper,
             inputBackground,
@@ -102,6 +104,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                 value={value}
                 counter={false}
                 maxLength={undefined}
+                iconBaseUrl={undefined}
             >
                 {showMinMax || showValue !== "never" ? (
                     <Flexbox

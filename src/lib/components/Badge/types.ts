@@ -20,12 +20,14 @@ interface ILibBadgeBase extends LibComponentBase<HTMLSpanElement> {
 interface BadgeWithIcon extends ILibBadgeBase {
     icon?: LibIcon
     iconSize?: number
+    iconBaseUrl?: string
     number?: never
 }
 
 interface BadgeWithNumber extends ILibBadgeBase {
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     number?: number
 }
 

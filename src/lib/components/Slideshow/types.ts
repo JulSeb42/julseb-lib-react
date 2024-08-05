@@ -37,6 +37,7 @@ type Controls = {
     iconNextSize?: number
     labelPrev?: string
     labelNext?: string
+    iconBaseUrl?: string
 }
 
 type Options = {

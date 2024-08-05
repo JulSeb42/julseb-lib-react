@@ -44,6 +44,7 @@ export function InputContainer({
     value,
     className,
     hasListOpen,
+    iconBaseUrl,
 }: ILibInputContainer) {
     if (
         !label &&
@@ -142,6 +143,7 @@ export function InputContainer({
                                     helperBottom.iconSize ||
                                     getIconSizeFromFont("small")
                                 }
+                                baseUrl={iconBaseUrl}
                             />
                         </HelperBottomIconContainer>
 

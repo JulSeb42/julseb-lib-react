@@ -1,7 +1,8 @@
 /*=============================================== Header component ===============================================*/
 
-import { forwardRef, useState, useEffect, useRef } from "react"
+import { forwardRef, useState, useEffect, useRef, type RefObject } from "react"
 import classNames from "classnames"
+import { enableScroll, disableScroll } from "ts-utils-julseb"
 import { useMaxWidth } from "../../"
 import { HeaderBurger } from "./HeaderBurger"
 import { HeaderSearch } from "./HeaderSearch"
@@ -9,6 +10,11 @@ import { HeaderNav } from "./HeaderNav"
 import { HeaderLogo } from "./HeaderLogo"
 import { StyledHeader, Overlay } from "./styles"
 import type { ILibHeader } from "./types"
+import type {
+    ILibHeaderNav,
+    ILibHeaderBurger,
+    ILibHeaderSearch,
+} from "./sub-types"
 
 /**
  * @description Returns a Header component
@@ -34,11 +40,22 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
             position = "relative",
             hideOnScroll,
             links,
+            enableScrollingOpen,
             ...rest
         },
         ref
     ) => {
         const [isOpen, setIsOpen] = useState(false)
+
+        const handleOpen = () => {
+            if (!enableScrollingOpen) disableScroll()
+            setIsOpen(true)
+        }
+
+        const handleClose = () => {
+            if (!enableScrollingOpen) enableScroll()
+            setTimeout(() => setIsOpen(false), 10)
+        }
 
         const isMobile = useMaxWidth(600)
 
@@ -74,51 +91,41 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
             }
         }, [hidePosition])
 
-        const navRef = useRef<HTMLButtonElement>(null)
+        const burgerRef = useRef<HTMLButtonElement>(null)
 
-        const burgerProps = {
-            "data-testid": testid && `${testid}.HeaderBurger`,
+        const burgerProps: ILibHeaderBurger & {
+            ref: RefObject<HTMLButtonElement>
+        } = {
+            "data-testid": testid,
             className,
             isOpen,
-            setIsOpen,
             navMobileVariant,
-            headerVariant: variant,
-            ref: navRef,
+            variant,
+            ref: burgerRef,
+            handleOpen,
+            handleClose,
         }
 
-        const searchProps = {
-            "data-testid": testid && `${testid}.HeaderSearch`,
+        const navProps: ILibHeaderNav = {
+            "data-testid": testid,
             className,
-            withSearch: !!search,
-            maxWidth: search?.maxWidth || 400,
-            icon: search?.icon,
-            iconClear: search?.iconClear,
-            iconSize: search?.iconSize,
-            iconClearSize: search?.iconClearSize,
-            placeholder: search?.placeholder,
-            inputBackground: search?.inputBackground,
-            inputVariant: search?.inputVariant,
-            keyboardShortcut: search?.keyboardShortcut,
-            showKeys: search?.showKeys,
-            pathName: search?.pathname,
-            queries: search?.queries,
-            setIsOpen,
-        }
-
-        const navProps = {
-            "data-testid": testid && `${testid}.HeaderNav`,
-            className,
-            withSearch: !!search,
-            searchProps,
+            search,
             isOpen,
-            setIsOpen,
-            children,
+            handleClose,
             links,
+            children,
             headerHeight,
-            headerVariant: variant,
-            positionVariant: navDesktopVariant,
-            mobileVariant: navMobileVariant,
-            navRef,
+            variant,
+            navMobileVariant,
+            burgerPosition,
+            burgerRef,
+        }
+
+        const searchProps: ILibHeaderSearch = {
+            "data-testid": testid,
+            className,
+            search,
+            handleClose,
         }
 
         return (
@@ -142,12 +149,8 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
                 <HeaderLogo
                     data-testid={testid}
                     className={className}
-                    to={logoObj?.to}
-                    href={logoObj?.href}
-                    img={logoObj?.img}
-                    alt={logoObj?.alt}
-                    width={logoObj?.width}
-                    height={logoObj?.height}
+                    logo={logo}
+                    isOpen={isOpen}
                 >
                     {typeof logo === "object" ? logo.text : logo}
                 </HeaderLogo>

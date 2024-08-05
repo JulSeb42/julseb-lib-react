@@ -9,6 +9,7 @@ interface ILibRatingBase
     rating: number
     icons?: { default?: LibIcon; checked?: LibIcon }
     iconSizes?: { default?: number; checked?: number }
+    iconBaseUrl?: string
 }
 
 interface RatingInput extends ILibRatingBase {

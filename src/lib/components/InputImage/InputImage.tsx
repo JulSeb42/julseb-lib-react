@@ -40,6 +40,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
             value,
             icons,
             iconSizes,
+            iconBaseUrl,
             width = 64,
             height = 64,
             borderRadius = "m",
@@ -78,6 +79,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                 counter={undefined}
                 maxLength={undefined}
                 value={undefined}
+                iconBaseUrl={iconBaseUrl}
             >
                 <StyledInputImage
                     data-testid={
@@ -99,9 +101,10 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                         <EmptyContainer
                             data-testid={testid}
                             className={className}
-                            validation={validation?.status}
-                            icon={icons?.empty}
-                            iconSize={iconSizes?.empty}
+                            validation={validation}
+                            icons={icons}
+                            iconSizes={iconSizes}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     ) : (
                         <StyledImage
@@ -116,11 +119,12 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                     <HoverContainer
                         data-testid={testid}
                         className={className}
-                        validation={validation?.status}
-                        icon={icons?.hover}
-                        iconSize={iconSizes?.hover}
+                        validation={validation}
+                        icons={icons}
+                        iconSizes={iconSizes}
                         isVisible={isHovered}
                         disabled={disabled}
+                        iconBaseUrl={iconBaseUrl}
                     />
 
                     <StyledInput

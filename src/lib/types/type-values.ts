@@ -239,7 +239,7 @@ export const typeValues = {
 
     markdownEditorTitles: { ...textDisplayTags, h6: textTags.h6 },
 
-    navMenuVariants: { left: "left", right: "right" },
+    navBurgerPositions: { left: "left", right: "right" },
 
     navMobileVariants: { full: "full", top: "top", drawer: "drawer" },
 

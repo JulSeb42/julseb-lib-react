@@ -83,6 +83,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             defaultCountry = "de",
             iconSizes,
             icons,
+            iconBaseUrl,
             searchPlaceholder = "Search country or code",
             listDirection,
             value,
@@ -194,6 +195,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                 counter={undefined}
                 maxLength={maxLength}
                 hasListOpen={isOpen}
+                iconBaseUrl={iconBaseUrl}
             >
                 <InputAndListContainer
                     data-testid={testid}
@@ -251,6 +253,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                         `${testid}.LeftContainer.CountryButton.CaretIcon`
                                     }
                                     className={className && "CaretIcon"}
+                                    baseUrl={iconBaseUrl}
                                 />
                             </CountryButton>
 
@@ -297,6 +300,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     validation={validation}
                                     validationIcon={validationIcon}
                                     inputBackground={inputBackground}
+                                    iconBaseUrl={iconBaseUrl}
                                 />
                             </InputRightContainer>
                         )}
@@ -333,6 +337,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                         `${testid}.ListInput.SearchContainer.Icon`
                                     }
                                     className={className && "IconSearch"}
+                                    baseUrl={iconBaseUrl}
                                 />
 
                                 <SearchInput

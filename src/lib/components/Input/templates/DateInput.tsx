@@ -29,6 +29,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
             disabled,
             icon,
             iconSize,
+            iconBaseUrl,
             type,
             iconCalendarSize = 16,
             iconCalendar = (
@@ -75,6 +76,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                             disabled={disabled}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     </InputLeftContainer>
                 )}
@@ -119,6 +121,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                             validation={validation}
                             validationIcon={validationIcon}
                             inputBackground={inputBackground}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     )}
                 </InputRightContainer>

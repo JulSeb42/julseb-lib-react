@@ -38,6 +38,7 @@ describe("<Avatar />", () => {
                 icon="user"
                 backgroundColor="secondary-300"
                 contentColor="danger-800"
+                iconBaseUrl="icons/"
             />
         )
         cy.dataTest()

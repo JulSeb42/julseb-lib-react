@@ -5,38 +5,40 @@ import { Link } from "react-router-dom"
 import { Loader } from "../../"
 import { LibIcon } from "../LibIcon"
 import type { ILibLoader } from "../Loader/types"
-import type {
-    LibComponentBase,
-    LibButtonLinkBlank,
-    ILibBoxShadow,
-    LibColorsHover,
-    ILibRadius,
-    LibIcon as LibIconType,
-    LibLoaderVariant,
-    LibButtonIconVariant,
-} from "../../types"
+import type { LibComponentBase, LibButtonLinkBlank } from "../../types"
 import { StyledButtonIcon } from "./styles"
-
-type ILibButtonFn = LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
-    ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
-    LibButtonLinkBlank & {
-        showTooltip?: boolean
-        isLoading?: boolean
-        variant?: LibButtonIconVariant
-        showBackgroundHover?: boolean
-        borderRadius?: ILibRadius
-        color?: LibColorsHover
-        shadow?: ILibBoxShadow
-        size?: number
-        loaderVariant?: LibLoaderVariant
-        iconSize?: number
-        icon: LibIconType
-        loaderBorderWidth?: number
-    }
+import type { ILibButtonIcon } from "./types"
 
 export const ButtonIconFunction = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
-    ILibButtonFn
+    Pick<
+        ILibButtonIcon,
+        | "data-testid"
+        | "as"
+        | "className"
+        | "showTooltip"
+        | "to"
+        | "href"
+        | "isLoading"
+        | "disabled"
+        | "aria-disabled"
+        | "aria-label"
+        | "blank"
+        | "variant"
+        | "showBackgroundHover"
+        | "borderRadius"
+        | "color"
+        | "shadow"
+        | "size"
+        | "loaderVariant"
+        | "icon"
+        | "iconSize"
+        | "iconBaseUrl"
+        | "loaderBorderWidth"
+    > &
+        LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
+        ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
+        LibButtonLinkBlank
 >(
     (
         {
@@ -60,6 +62,7 @@ export const ButtonIconFunction = forwardRef<
             loaderVariant,
             icon,
             iconSize,
+            iconBaseUrl,
             loaderBorderWidth,
             ...rest
         },
@@ -111,6 +114,7 @@ export const ButtonIconFunction = forwardRef<
                         className={className && "Icon"}
                         icon={icon}
                         size={iconSize}
+                        baseUrl={iconBaseUrl}
                     />
                 )}
             </StyledButtonIcon>

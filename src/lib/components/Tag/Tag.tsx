@@ -48,6 +48,7 @@ export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
                 left: getIconSizeFromFont(fontSize),
                 right: getIconSizeFromFont(fontSize),
             },
+            iconBaseUrl,
             gap = "xs",
             ...rest
         },
@@ -74,6 +75,7 @@ export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
                         className={className && "IconLeft"}
                         icon={icons.left}
                         size={iconSizes?.left}
+                        baseUrl={iconBaseUrl}
                     />
                 )}
 
@@ -85,6 +87,7 @@ export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
                         className={className && "IconRight"}
                         icon={icons.right}
                         size={iconSizes?.right}
+                        baseUrl={iconBaseUrl}
                     />
                 )}
             </StyledTag>

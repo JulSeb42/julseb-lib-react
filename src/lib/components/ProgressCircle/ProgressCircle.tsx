@@ -31,6 +31,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
             animated = true,
             showValue,
             icon,
+            iconBaseUrl,
             color = "primary",
             className,
             ...rest
@@ -64,6 +65,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
                             icon={icon}
                             size={PROGRESS_CIRCLE_SIZE * 0.4}
                             color="gray"
+                            baseUrl={iconBaseUrl}
                         />
                     )}
 

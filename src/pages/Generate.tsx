@@ -5,6 +5,27 @@ import { Page } from "../components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
+    const pickProps = [
+        "showTooltip",
+        "to",
+        "href",
+        "isLoading",
+        "disabled",
+        "aria-disabled",
+        "aria-label",
+        "blank",
+        "variant",
+        "showBackgroundHover",
+        "borderRadius",
+        "color",
+        "shadow",
+        "size",
+        "loaderVariant",
+        "icon",
+        "iconSize",
+        "loaderBorderWidth",
+    ]
+
     const propsDoc = replaceTypes([
         '"data-testid": string | undefined',
         "className: string | undefined",
@@ -127,6 +148,9 @@ export function Generate() {
 
     return (
         <Page title="Generate">
+            <ul>
+                {pickProps.map(p => <li key={p}>{`"${p}" | `}</li>)}
+            </ul>
             <ul>
                 {propsInput.map(p => (
                     <li key={p}>{`${p}={${p}}`}</li>

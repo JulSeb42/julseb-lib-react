@@ -34,6 +34,7 @@ interface LibComponentItemBase<T> {
 type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
     LibButtonLinkBlank & {
         "aria-label"?: string
+        iconBaseUrl?: string
     }
 
 type ButtonGroupItemText = ButtonGroupItemsBase & {
@@ -82,11 +83,13 @@ interface LibButtonGroupToggleBase
     extends LibComponentItemBase<HTMLInputElement> {
     id: string
     value: boolean
+    
 }
 
 interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
     icon: LibIcon
     iconSize?: number
+    iconBaseUrl?: string
     label?: string
     tooltip?: string
     showTooltip?: boolean
@@ -96,6 +99,7 @@ interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
 interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
     icon?: never
     iconSize?: never
+    iconBaseUrl?: never
     label?: never
     tooltip?: never
     showTooltip?: never

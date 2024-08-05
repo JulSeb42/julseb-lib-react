@@ -58,6 +58,8 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
             toastStyle,
             toasterPosition,
             role = "alert",
+            iconBaseUrl,
+            hideCloseButton,
             ...rest
         },
         ref
@@ -120,6 +122,7 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                                 icon={options.icons.left}
                                 size={options.iconSizes?.left || 16}
                                 color={options?.iconLeftColor}
+                                baseUrl={iconBaseUrl}
                             />
                         </IconContainer>
                     )}
@@ -133,47 +136,55 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                         {title}
                     </Text>
 
-                    <IconContainer
-                        data-testid={
-                            testid &&
-                            `${testid}.TitleContainer.IconContainerRight`
-                        }
-                        className={className && "IconContainerRight"}
-                    >
-                        <CloseButton
-                            onClick={remove}
-                            aria-label={options?.labelClose || "Close toast"}
+                    {!hideCloseButton && (
+                        <IconContainer
                             data-testid={
                                 testid &&
-                                `${testid}.TitleContainer.IconContainerRight.CloseButton`
+                                `${testid}.TitleContainer.IconContainerRight`
                             }
-                            className={className && "CloseButton"}
+                            className={className && "IconContainerRight"}
                         >
-                            <LibIcon
+                            <CloseButton
+                                onClick={remove}
+                                aria-label={
+                                    options?.labelClose || "Close toast"
+                                }
                                 data-testid={
                                     testid &&
-                                    `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
+                                    `${testid}.TitleContainer.IconContainerRight.CloseButton`
                                 }
-                                className={className && "CloseIcon"}
-                                icon={
-                                    options?.icons?.close || (
-                                        <Close
-                                            size={CLOSE_ICON_SIZE}
-                                            data-testid={
-                                                testid &&
-                                                `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
-                                            }
-                                            className={className && "CloseIcon"}
-                                        />
-                                    )
-                                }
-                                size={
-                                    options?.iconSizes?.close || CLOSE_ICON_SIZE
-                                }
-                                color="currentColor"
-                            />
-                        </CloseButton>
-                    </IconContainer>
+                                className={className && "CloseButton"}
+                            >
+                                <LibIcon
+                                    data-testid={
+                                        testid &&
+                                        `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
+                                    }
+                                    className={className && "CloseIcon"}
+                                    icon={
+                                        options?.icons?.close || (
+                                            <Close
+                                                size={CLOSE_ICON_SIZE}
+                                                data-testid={
+                                                    testid &&
+                                                    `${testid}.TitleContainer.IconContainerRight.CloseButton.Icon`
+                                                }
+                                                className={
+                                                    className && "CloseIcon"
+                                                }
+                                            />
+                                        )
+                                    }
+                                    size={
+                                        options?.iconSizes?.close ||
+                                        CLOSE_ICON_SIZE
+                                    }
+                                    color="currentColor"
+                                    baseUrl={iconBaseUrl}
+                                />
+                            </CloseButton>
+                        </IconContainer>
+                    )}
                 </TitleContainer>
 
                 {body && (

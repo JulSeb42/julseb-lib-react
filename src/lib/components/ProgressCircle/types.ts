@@ -12,11 +12,13 @@ interface ILibProgressCircleBase
 interface ProgressCircleWithValue extends ILibProgressCircleBase {
     showValue?: true
     icon?: never
+    iconBaseUrl?: never
 }
 
 interface ProgressCircleWithIcon extends ILibProgressCircleBase {
     showValue?: never
     icon?: LibIcon
+    iconBaseUrl?: string
 }
 
 export type ILibProgressCircle =

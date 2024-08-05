@@ -38,6 +38,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
             pageLimit = 5,
             icons,
             iconSizes,
+            iconBaseUrl,
             justifyContent = "center",
             gap,
             ...rest
@@ -113,6 +114,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                         />
                                     )
                                 }
+                                baseUrl={iconBaseUrl}
                             />
                         </PaginationButton>
 
@@ -236,6 +238,7 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
                                         />
                                     )
                                 }
+                                baseUrl={iconBaseUrl}
                             />
                         </PaginationButton>
                     </>

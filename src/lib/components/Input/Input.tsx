@@ -122,6 +122,7 @@ export const Input = forwardRef<
             type = "text",
             inputBackground,
             inputVariant = "rounded",
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -148,6 +149,7 @@ export const Input = forwardRef<
                 maxLength={maxLength}
                 value={value}
                 className={className}
+                iconBaseUrl={iconBaseUrl}
             >
                 <InputWrapper
                     data-testid={testid}

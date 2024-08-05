@@ -46,6 +46,7 @@ export function InputValidationHelper({
             />
         ),
         iconPassedSize = getIconSizeFromFont("small"),
+        iconBaseUrl,
     },
 }: ILibInputValidationHelper) {
     if (!message) return null
@@ -70,6 +71,7 @@ export function InputValidationHelper({
                     icon={status === false ? iconNotPassed : iconPassed}
                     size={status === false ? iconNotPassedSize : iconPassedSize}
                     color={status === false ? "danger" : "success"}
+                    baseUrl={iconBaseUrl}
                 />
             </HelperBottomIconContainer>
 

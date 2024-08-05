@@ -22,6 +22,7 @@ export const toastPreview: ComponentPreview<ILibToast> = {
                 title: "Toast",
                 "data-testid": "testid",
                 className: "className",
+                hideCloseButton: true,
             },
         },
         { previewTitle: "With toaster", demo: <ToasterDemo /> },

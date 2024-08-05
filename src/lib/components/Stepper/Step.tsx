@@ -1,30 +1,13 @@
 /*=============================================== Step ===============================================*/
 
 import { forwardRef, type ElementType } from "react"
+import { Link } from "react-router-dom"
 import classNames from "classnames"
 import { Text } from "../../"
 import { LibIcon } from "../LibIcon"
 import { CheckCircle } from "../../icons"
-import type {
-    LibComponentBase,
-    LibButtonLinkBlank,
-    LibColorsHover,
-    LibIcon as LibIconType,
-    LibStepperDirection,
-} from "../../types"
 import { StyledStep, NumberContainer } from "./styles"
-import { Link } from "react-router-dom"
-
-type ILibStep = LibComponentBase<HTMLSpanElement> &
-    LibButtonLinkBlank & {
-        direction?: LibStepperDirection
-        accentColor?: LibColorsHover
-        isActive?: boolean
-        isDone?: boolean
-        iconActive?: LibIconType
-        iconActiveSize?: number
-        number?: number
-    }
+import type { ILibStep } from "./types"
 
 /**
  * @description Returns a Step component
@@ -60,6 +43,7 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
                     size={iconActiveSize}
                 />
             ),
+            iconBaseUrl,
             number,
             to,
             href,
@@ -105,7 +89,11 @@ export const Step = forwardRef<HTMLSpanElement, ILibStep>(
                     $accentColor={accentColor}
                 >
                     {isActive && isDone ? (
-                        <LibIcon icon={iconActive} size={iconActiveSize} />
+                        <LibIcon
+                            icon={iconActive}
+                            size={iconActiveSize}
+                            baseUrl={iconBaseUrl}
+                        />
                     ) : (
                         number
                     )}

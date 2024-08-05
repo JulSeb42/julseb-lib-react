@@ -46,6 +46,7 @@ export const Button = forwardRef<
             borderRadius = size === "small" ? "s" : "m",
             icons,
             iconSizes,
+            iconBaseUrl,
             gap = "xs",
             variant = "plain",
             noPadding,
@@ -95,6 +96,7 @@ export const Button = forwardRef<
                         data-testid={testid && `${testid}.IconLeft`}
                         className={className && "IconLeft"}
                         size={iconSizes?.left || defaultIconSize}
+                        baseUrl={iconBaseUrl}
                     />
                 )}
 
@@ -117,6 +119,7 @@ export const Button = forwardRef<
                         data-testid={testid && `${testid}.IconRight`}
                         className={className && "IconRight"}
                         size={iconSizes?.right || defaultIconSize}
+                        baseUrl={iconBaseUrl}
                     />
                 )}
             </StyledButton>

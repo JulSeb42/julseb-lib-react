@@ -32,6 +32,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
             type = "text",
             icon,
             iconSize,
+            iconBaseUrl,
             validationIcon,
             prefix,
             suffix,
@@ -64,6 +65,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                             disabled={disabled}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
+                            iconBaseUrl={iconBaseUrl}
                         />
                     </InputLeftContainer>
                 )}
@@ -100,6 +102,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                                 validation={validation}
                                 validationIcon={validationIcon}
                                 inputBackground={inputBackground}
+                                iconBaseUrl={iconBaseUrl}
                             />
                         )}
 

@@ -1,22 +1,9 @@
 /*=============================================== HeaderBurger ===============================================*/
 
 import { forwardRef } from "react"
-import type {
-    DispatchState,
-    LibNavMobileVariant,
-    LibHeaderVariant,
-    LibColorsHover,
-} from "../../types"
+import type { LibColorsHover } from "../../types"
 import { StyledHeaderBurger } from "./styles"
-
-interface ILibHeaderBurger {
-    "data-testid": string | undefined
-    className: string | undefined
-    isOpen: boolean
-    setIsOpen: DispatchState<boolean>
-    navMobileVariant: LibNavMobileVariant
-    headerVariant: LibHeaderVariant
-}
+import type { ILibHeaderBurger } from "./sub-types"
 
 export const HeaderBurger = forwardRef<HTMLButtonElement, ILibHeaderBurger>(
     (
@@ -24,20 +11,28 @@ export const HeaderBurger = forwardRef<HTMLButtonElement, ILibHeaderBurger>(
             "data-testid": testid,
             className,
             isOpen,
-            setIsOpen,
             navMobileVariant,
-            headerVariant,
+            variant,
+            burgerColor,
+            handleOpen,
+            handleClose,
         },
         ref
     ) => {
         const getBurgerColor = (): LibColorsHover => {
+            if (burgerColor) {
+                if (typeof burgerColor === "string") return burgerColor
+
+                return isOpen ? burgerColor.open : burgerColor.closed
+            }
+
             if (
                 (navMobileVariant === "drawer" && isOpen) ||
-                headerVariant === "primary" ||
+                variant === "primary" ||
                 navMobileVariant === "full" ||
                 (navMobileVariant === "top" &&
                     isOpen &&
-                    headerVariant === "transparent")
+                    variant === "transparent")
             ) {
                 return "white"
             }
@@ -47,13 +42,13 @@ export const HeaderBurger = forwardRef<HTMLButtonElement, ILibHeaderBurger>(
 
         return (
             <StyledHeaderBurger
-                data-testid={testid}
+                data-testid={testid && `${testid}.HeaderBurger`}
                 ref={ref}
                 className={className && "HeaderBurger"}
                 isOpen={isOpen}
                 onClick={() => {
-                    if (isOpen) setTimeout(() => setIsOpen(false), 10)
-                    setIsOpen(true)
+                    if (isOpen) handleClose()
+                    else handleOpen()
                 }}
                 width={32}
                 height={24}
