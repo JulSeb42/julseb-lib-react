@@ -5,7 +5,8 @@ import { Preview, PreviewNotEditable, PreviewColor } from "./Preview"
 
 describe("<Paginator />", () => {
     const textContainer = () => cy.dataTest("testid.Text")
-    const input = () => cy.dataTest("testid.Text.Input")
+    const inputWrapper = () => cy.dataTest("testid.Text.Input")
+    const input = () => cy.dataTest("testid.Text.Input.Input")
     const buttonPrev = () => cy.dataTest("testid.Button.Prev")
     const buttonNext = () => cy.dataTest("testid.Button.Next")
     const card = () => cy.dataTest("card")
@@ -63,13 +64,12 @@ describe("<Paginator />", () => {
             "color",
             LIB_TOKENS.colors.light["secondary-500"].rgb
         )
-        input()
-            .focus()
-            .should(
-                "have.css",
-                "border-color",
-                LIB_TOKENS.colors.light["secondary-500"].rgb
-            )
+        input().focus()
+        inputWrapper().should(
+            "have.css",
+            "border-color",
+            LIB_TOKENS.colors.light["secondary-500"].rgb
+        )
     })
 
     // ? accentColor

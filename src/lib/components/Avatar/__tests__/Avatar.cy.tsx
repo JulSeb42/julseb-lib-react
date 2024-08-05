@@ -3,6 +3,7 @@
 import { Avatar, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { StarFull } from "../../../icons"
+import { SITE_DATA } from "../../../../data"
 
 describe("<Avatar />", () => {
     it("renders <Avatar /> component", () => {
@@ -38,7 +39,7 @@ describe("<Avatar />", () => {
                 icon="user"
                 backgroundColor="secondary-300"
                 contentColor="danger-800"
-                iconBaseUrl="icons/"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest()

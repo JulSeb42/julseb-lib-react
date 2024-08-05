@@ -21,11 +21,12 @@ describe("<Modal />", () => {
         trigger().click()
 
         cy.dataTest().should("be.visible")
-        cy.get("body").should("have.class", "stop-scrolling")
+        cy.get("body")
+            .should("have.css", "height", "800px")
+            .should("have.css", "overflow", "hidden")
 
         cy.dataTest("testid.ButtonClose").click()
         cy.dataTest().should("not.be.visible")
-        cy.get("body").should("not.have.class", "stop-scrolling")
 
         trigger().click()
         cy.wait(200)

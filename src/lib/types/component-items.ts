@@ -89,7 +89,6 @@ interface LibButtonGroupToggleBase
 interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
     icon: LibIcon
     iconSize?: number
-    iconBaseUrl?: string
     label?: string
     tooltip?: string
     showTooltip?: boolean
@@ -99,7 +98,6 @@ interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
 interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
     icon?: never
     iconSize?: never
-    iconBaseUrl?: never
     label?: never
     tooltip?: never
     showTooltip?: never

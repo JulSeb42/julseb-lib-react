@@ -18,6 +18,7 @@ export const ButtonGroupToggle = forwardRef<
         | "variant"
         | "size"
         | "name"
+        | "iconBaseUrl"
     > & {
         toggle: LibButtonGroupToggle
         toggles: { [id: string]: boolean }
@@ -38,6 +39,7 @@ export const ButtonGroupToggle = forwardRef<
             i,
             toggles,
             setToggles,
+            iconBaseUrl,
         },
         ref
     ) => {
@@ -101,7 +103,7 @@ export const ButtonGroupToggle = forwardRef<
                         <LibIcon
                             icon={toggle.icon}
                             size={toggle.iconSize ?? roundIconSize(24)}
-                            baseUrl={toggle.iconBaseUrl}
+                            baseUrl={iconBaseUrl}
                         />
                     )}
 

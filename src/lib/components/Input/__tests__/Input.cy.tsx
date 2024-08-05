@@ -9,59 +9,67 @@ describe("<Input />", () => {
         cy.dataTest()
             .should("exist")
             .should("have.class", "className")
-            .should("have.prop", "tagName", "INPUT")
+            .should("have.prop", "tagName", "DIV")
             .should(
                 "have.css",
                 "border-color",
                 LIB_TOKENS.colors.light["gray-200"].rgb
             )
 
-        cy.dataTest()
-            .focus()
-            .should(
-                "have.css",
-                "border-color",
-                LIB_TOKENS.colors.light["primary-500"].rgb
-            )
-            .type("Hello")
+        cy.dataTest("testid.Input").focus().type("Hello")
 
-        cy.dataTest().should("have.value", "Hello")
+        cy.dataTest().should(
+            "have.css",
+            "border-color",
+            LIB_TOKENS.colors.light["primary-500"].rgb
+        )
+
+        cy.dataTest("testid.Input").should("have.value", "Hello")
     })
 
     it("renders several props", () => {
         cy.mount(<InputPropsPreview />)
 
         cy.dataTest().should("exist").should("have.class", "className")
+
         cy.dataTest("testid.Label")
             .should("exist")
             .should("have.class", "Label")
+
         cy.dataTest("testid.Helper")
             .should("exist")
             .should("have.class", "Helper")
+
         cy.dataTest("testid.HelperBottomContainer")
             .should("exist")
             .should("have.class", "HelperBottomContainer")
+
         cy.dataTest("testid.HelperBottom.IconContainer")
             .should("exist")
-            .should("have.class", "IconContainer")
+            .should("have.class", "BottomIconContainer")
+
         cy.dataTest("testid.HelperBottom.IconContainer.Icon")
             .should("exist")
-            .should("have.class", "Icon")
+            .should("have.class", "HelperBottomIcon")
+
         cy.dataTest("testid.Counter")
             .should("exist")
             .should("have.class", "Counter")
+
         cy.dataTest("testid.ValidationHelper")
             .should("exist")
             .should("have.class", "ValidationHelper")
+
         cy.dataTest("testid.ValidationHelper.IconContainer")
             .should("exist")
-            .should("have.class", "IconContainer")
-        cy.dataTest("testid.ValidationHelper.IconContainer.Icon")
+            .should("have.class", "ValidationIconContainerBottom")
+
+        cy.dataTest("testid.ValidationHelper.IconContainer")
             .should("exist")
-            .should("have.class", "Icon")
+            .should("have.class", "ValidationIconContainerBottom")
         cy.dataTest("testid.ValidationHelper.Text")
             .should("exist")
-            .should("have.class", "Text")
+            .should("have.class", "ValidationTextBottom")
         cy.dataTest("testid.Input")
             .should("exist")
             .should("have.class", "Input")
@@ -129,6 +137,9 @@ describe("<Input />", () => {
 
     it("renders a textarea", () => {
         cy.mount(<Input data-testid="testid" type="textarea" />)
-        cy.dataTest().should("exist").should("have.prop", "tagName", "TEXTAREA")
+        cy.dataTest().should("exist").should("have.prop", "tagName", "DIV")
+        cy.dataTest("testid.Textarea")
+            .should("exist")
+            .should("have.prop", "tagName", "TEXTAREA")
     })
 })

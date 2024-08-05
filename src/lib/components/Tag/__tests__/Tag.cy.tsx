@@ -3,6 +3,7 @@
 import { Tag, LIB_TOKENS } from "../../.."
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { Close } from "../../../icons"
+import { SITE_DATA } from "../../../../data"
 
 describe("<Tag />", () => {
     it("renders <Tag /> component", () => {
@@ -138,6 +139,7 @@ describe("<Tag />", () => {
                     ),
                 }}
                 gap="m"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             >
                 Hello
             </Tag>

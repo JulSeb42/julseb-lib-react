@@ -12,11 +12,25 @@ export const ButtonGroupButton = forwardRef<
     HTMLButtonElement,
     Pick<
         ILibButtonGroup,
-        "variant" | "color" | "className" | "data-testid" | "size"
+        | "variant"
+        | "color"
+        | "className"
+        | "data-testid"
+        | "size"
+        | "iconBaseUrl"
     > & { button: LibButtonGroupButtonItem; i: number }
 >(
     (
-        { "data-testid": testid, className, button, color, variant, size, i },
+        {
+            "data-testid": testid,
+            className,
+            button,
+            color,
+            variant,
+            size,
+            i,
+            iconBaseUrl,
+        },
         ref
     ) => {
         const commonProps: Partial<
@@ -53,6 +67,7 @@ export const ButtonGroupButton = forwardRef<
                         )
                     }
                     iconSize={button?.iconSizes?.only}
+                    iconBaseUrl={iconBaseUrl}
                     {...(filteredButtonRest as any)}
                 />
             )
@@ -71,6 +86,7 @@ export const ButtonGroupButton = forwardRef<
                     right: button?.iconSizes?.right,
                 }}
                 aria-label={button["aria-label"] || button.text}
+                iconBaseUrl={iconBaseUrl}
                 {...(filteredButtonRest as any)}
             >
                 {button.text}

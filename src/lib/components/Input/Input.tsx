@@ -175,6 +175,7 @@ export const Input = forwardRef<
                         type={type}
                         inputBackground={inputBackground}
                         inputVariant={inputVariant}
+                        iconBaseUrl={iconBaseUrl}
                         {...(rest as any)}
                     />
                 </InputWrapper>

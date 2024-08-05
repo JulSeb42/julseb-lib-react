@@ -34,6 +34,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
             toggles,
             toggleType = "single",
             name,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -82,6 +83,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                         <ButtonGroupButton
                             button={button}
                             i={i}
+                            iconBaseUrl={iconBaseUrl}
                             {...(commonProps as any)}
                         />
 
@@ -105,6 +107,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                             i={i}
                             toggles={allToggles}
                             setToggles={setAllToggles}
+                            iconBaseUrl={iconBaseUrl}
                         />
 
                         {variant === "transparent" &&

@@ -23,7 +23,6 @@ interface ValidationHelper {
     iconNotPassedSize?: number
     iconPassed?: LibIcon
     iconPassedSize?: number
-    iconBaseUrl: string | undefined
 }
 
 export interface ILibInputValidationIconComponent {
@@ -41,6 +40,7 @@ export interface ILibInputValidationHelper {
     "data-testid": string | undefined
     className: string | undefined
     validation: ValidationHelper
+    iconBaseUrl?: string
 }
 
 export interface ILibInputValidationIcon
@@ -140,7 +140,7 @@ export interface ILibInputContainer {
     counter: boolean | undefined
     maxLength: number | undefined
     hasListOpen?: boolean
-    iconBaseUrl: string | undefined
+    iconBaseUrl?: string
 }
 
 /*====================== InputIconContainer ======================*/

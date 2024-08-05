@@ -1,6 +1,7 @@
 /*=============================================== Button tests ===============================================*/
 
 import { Button, LIB_TOKENS } from "../../.."
+import { SITE_DATA } from "../../../../data"
 
 describe("<Button />", () => {
     it("renders <Button /> component", () => {
@@ -88,6 +89,7 @@ describe("<Button />", () => {
             <Button
                 data-testid="testid"
                 icons={{ left: "arrow-left", right: "arrow-right" }}
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
                 gap="s"
                 className="className"
             >

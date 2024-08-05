@@ -2,6 +2,7 @@
 
 import { useState, type ChangeEvent } from "react"
 import { Input } from "../../.."
+import { SITE_DATA } from "../../../../data"
 
 export function InputPropsPreview() {
     const [input, setInput] = useState("")
@@ -31,6 +32,7 @@ export function InputPropsPreview() {
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setInput(e.target.value)
             }
+            iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
         />
     )
 }

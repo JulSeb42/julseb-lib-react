@@ -8,7 +8,7 @@ describe("<Highlight />", () => {
             <Highlight
                 data-testid="testid"
                 className="className"
-                highlightedText=""
+                highlightedText="hello"
             >
                 Hello world
             </Highlight>
@@ -18,7 +18,7 @@ describe("<Highlight />", () => {
             .should("have.class", "className")
             .children()
             .should("have.prop", "tagName", "STRONG")
-            .should("have.class", "Highlight")
+            .should("have.class", "HighlightedText")
     })
 
     it("highlights selected text", () => {

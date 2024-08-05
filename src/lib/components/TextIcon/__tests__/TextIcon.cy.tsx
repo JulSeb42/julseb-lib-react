@@ -1,7 +1,8 @@
 /*=============================================== TextIcon tests ===============================================*/
 
-import { TextIcon, LIB_TOKENS } from "../../.."
 import { stringifyPx } from "ts-utils-julseb"
+import { TextIcon, LIB_TOKENS } from "../../.."
+import { SITE_DATA } from "../../../../data"
 
 describe("<TextIcon />", () => {
     const testIdIconContainer = (testid: string) =>
@@ -16,6 +17,7 @@ describe("<TextIcon />", () => {
                 data-testid="testid"
                 className="className"
                 icon="close-circle"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             >
                 Hello
             </TextIcon>
@@ -32,7 +34,11 @@ describe("<TextIcon />", () => {
         )
 
         cy.mount(
-            <TextIcon data-testid="testid" icon="heart-full">
+            <TextIcon
+                data-testid="testid"
+                icon="heart-full"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            >
                 Hello
             </TextIcon>
         )
@@ -54,7 +60,12 @@ describe("<TextIcon />", () => {
         const height = Number(LIB_TOKENS["font-sizes"].h1.px.replace("px", ""))
 
         cy.mount(
-            <TextIcon data-testid="testid" icon="heart-full" tag="h1">
+            <TextIcon
+                data-testid="testid"
+                icon="heart-full"
+                tag="h1"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            >
                 Hello
             </TextIcon>
         )
@@ -79,6 +90,7 @@ describe("<TextIcon />", () => {
                 icon="heart-full"
                 color="secondary-400"
                 iconColor="warning-600"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             >
                 Hello
             </TextIcon>
@@ -104,6 +116,7 @@ describe("<TextIcon />", () => {
                 tag="small"
                 iconSize={48}
                 gap="l"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             >
                 Hello
             </TextIcon>

@@ -46,8 +46,8 @@ export function InputValidationHelper({
             />
         ),
         iconPassedSize = getIconSizeFromFont("small"),
-        iconBaseUrl,
     },
+    iconBaseUrl,
 }: ILibInputValidationHelper) {
     if (!message) return null
 

@@ -16,6 +16,7 @@ interface ILibButtonGroupBase extends LibComponentBase<HTMLDivElement> {
     variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
     borderRadius?: ILibRadius
     size?: LibButtonSize
+    iconBaseUrl?: string
 }
 
 interface ButtonGroupWithButtons extends ILibButtonGroupBase {

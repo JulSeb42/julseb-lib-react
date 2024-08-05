@@ -1,6 +1,7 @@
 /*=============================================== ProgressCircle tests ===============================================*/
 
 import { ProgressCircle, LIB_TOKENS } from "../../.."
+import { SITE_DATA } from "../../../../data"
 
 describe("<ProgressCircle />", () => {
     it("renders <ProgressCircle /> component", () => {
@@ -43,13 +44,14 @@ describe("<ProgressCircle />", () => {
     })
 
     // ? With an icon
-    it("renders a number", () => {
+    it("renders an icon", () => {
         cy.mount(
             <ProgressCircle
                 value={42}
                 data-testid="testid"
                 className="className"
                 icon="check"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
 

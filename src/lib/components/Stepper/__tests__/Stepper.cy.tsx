@@ -50,7 +50,7 @@ describe("<Stepper />", () => {
         )
 
         cy.dataTest("active").should("exist").should("have.attr", "href")
-        cy.dataTest("active.NumberContainer").should(
+        cy.dataTest("passed.NumberContainer").should(
             "have.css",
             "background-color",
             LIB_TOKENS.colors.light["primary-500"].rgb

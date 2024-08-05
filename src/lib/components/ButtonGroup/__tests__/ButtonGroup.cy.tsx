@@ -2,6 +2,7 @@
 
 import { ButtonGroup, LIB_TOKENS } from "../../.."
 import { buttons } from "./data"
+import { SITE_DATA } from "../../../../data"
 
 describe("<ButtonGroup />", () => {
     const firstButton = () => cy.dataTest().children().eq(0)
@@ -60,6 +61,7 @@ describe("<ButtonGroup />", () => {
                 className="className"
                 buttons={buttons}
                 size="small"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest().should("have.css", "height", "24px")
@@ -145,4 +147,6 @@ describe("<ButtonGroup />", () => {
             .should("have.class", "Button")
             .should("have.attr", "href", "/")
     })
+
+    // TODO: add with toggles
 })

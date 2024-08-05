@@ -3,6 +3,7 @@
 import { Badge, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { Plus } from "../../../icons"
+import { SITE_DATA } from "../../../../data"
 
 describe("<Badge />", () => {
     it("renders <Badge /> component", () => {
@@ -94,7 +95,12 @@ describe("<Badge />", () => {
 
     it("renders an icon", () => {
         cy.mount(
-            <Badge data-testid="testid" icon="star" className="className" />
+            <Badge
+                data-testid="testid"
+                icon="star"
+                className="className"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            />
         )
         cy.dataTest()
             .children()

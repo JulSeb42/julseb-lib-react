@@ -18,14 +18,16 @@ const StyledInput = styled(Input)<{ $accentColor: LibColorsHover }>`
     -moz-appearance: textfield;
     appearance: textfield;
 
-    &:focus {
+    &:has(input:focus) {
         border-color: ${({ theme, $accentColor }) =>
             Mixins.ColorsHoverDefault($accentColor, theme)};
     }
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+    input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
     }
 ` as FC<any>
 

@@ -24,7 +24,7 @@ export function PreviewNotEditable() {
             data-testid="testid"
             value={counter}
             setValue={setCounter}
-            inputNoEdit={false}
+            inputNoEdit
         />
     )
 }

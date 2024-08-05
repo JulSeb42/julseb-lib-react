@@ -6,15 +6,15 @@ import type { LibHeaderLink } from "../../../types"
 const links: Array<LibHeaderLink> = [
     {
         text: "Link",
-        to: "#",
-    },
-    {
-        text: "Link",
         to: "/",
     },
     {
         text: "Link",
-        to: "/",
+        to: "/about",
+    },
+    {
+        text: "Link",
+        to: "/hello",
     },
     {
         text: "Button",
@@ -23,13 +23,12 @@ const links: Array<LibHeaderLink> = [
 ]
 
 describe("<Header />", () => {
-    const search = () => cy.dataTest("testid.HeaderSearch.SearchInput")
-    const searchInput = () =>
-        cy.dataTest("testid.HeaderSearch.SearchInput.Input")
+    const search = () => cy.dataTest("testid.SearchInput")
+    const searchInput = () => cy.dataTest("testid.SearchInput.Input")
     const logo = () => cy.dataTest("testid.HeaderLogo")
     const nav = () => cy.dataTest("testid.HeaderNav")
-    const navLink = () => cy.dataTest("testid.HeaderNav.NavLink")
-    const navButton = () => cy.dataTest("testid.HeaderNav.NavButton")
+    const navLink = () => cy.dataTest("testid.NavLink")
+    const navButton = () => cy.dataTest("testid.NavButton")
 
     it("renders <Header /> component", () => {
         cy.mount(

@@ -185,6 +185,7 @@ export function InputContainer({
                     data-testid={testid}
                     className={className}
                     validation={validation}
+                    iconBaseUrl={iconBaseUrl}
                 />
             )}
         </StyledInputContainer>

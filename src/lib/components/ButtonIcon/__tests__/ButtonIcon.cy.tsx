@@ -1,6 +1,7 @@
 /*=============================================== ButtonIcon tests ===============================================*/
 
 import { ButtonIcon, LIB_TOKENS } from "../../.."
+import { SITE_DATA } from "../../../../data"
 
 describe("<ButtonIcon />", () => {
     it("renders <ButtonIcon /> component", () => {
@@ -10,6 +11,7 @@ describe("<ButtonIcon />", () => {
                 className="className"
                 icon="mail"
                 onClick={() => alert("Hello World")}
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest()
@@ -45,6 +47,7 @@ describe("<ButtonIcon />", () => {
                 icon="mail"
                 tooltip="Email"
                 showTooltip
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
 
@@ -67,14 +70,29 @@ describe("<ButtonIcon />", () => {
     })
 
     it("renders a <Link />", () => {
-        cy.mount(<ButtonIcon data-testid="testid" icon="mail" to="/" />)
+        cy.mount(
+            <ButtonIcon
+                data-testid="testid"
+                icon="mail"
+                to="/"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            />
+        )
         cy.dataTest()
             .should("have.prop", "tagName", "A")
             .should("have.attr", "href", "/")
     })
 
     it("renders a <a />", () => {
-        cy.mount(<ButtonIcon data-testid="testid" icon="mail" href="/" blank />)
+        cy.mount(
+            <ButtonIcon
+                data-testid="testid"
+                icon="mail"
+                href="/"
+                blank
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            />
+        )
         cy.dataTest()
             .should("have.prop", "tagName", "A")
             .should("have.attr", "href", "/")
@@ -88,6 +106,7 @@ describe("<ButtonIcon />", () => {
                 icon="mail"
                 variant="plain"
                 color="secondary"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest()
@@ -106,6 +125,7 @@ describe("<ButtonIcon />", () => {
                 icon="mail"
                 variant="transparent"
                 color="success"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest()
@@ -128,6 +148,7 @@ describe("<ButtonIcon />", () => {
                 icon="mail"
                 variant="ghost"
                 color="warning"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
             />
         )
         cy.dataTest()
@@ -144,7 +165,14 @@ describe("<ButtonIcon />", () => {
     })
 
     it("renders loading state", () => {
-        cy.mount(<ButtonIcon data-testid="testid" icon="mail" isLoading />)
+        cy.mount(
+            <ButtonIcon
+                data-testid="testid"
+                icon="mail"
+                isLoading
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            />
+        )
         cy.dataTest().should("have.attr", "disabled")
 
         cy.dataTest("testid.Loader").should("exist")

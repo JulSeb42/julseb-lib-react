@@ -34,12 +34,8 @@ describe("<Slideshow />", () => {
                 controls
             />
         )
-        cy.dataTest("testid.SlideshowWrapper.SlideshowButton.Prev").should(
-            "exist"
-        )
-        cy.dataTest("testid.SlideshowWrapper.SlideshowButton.Next").should(
-            "exist"
-        )
+        cy.dataTest("testid.SlideshowButton.Prev").should("exist")
+        cy.dataTest("testid.SlideshowButton.Next").should("exist")
         cy.dataTest("testid.SlideshowPagination").should("exist")
     })
 
@@ -70,10 +66,10 @@ describe("<Slideshow />", () => {
             />
         )
 
-        cy.dataTest("testid.SlideshowWrapper.SlideshowButton.Prev")
+        cy.dataTest("testid.SlideshowButton.Prev")
             .should("have.css", "width", "48px")
             .should("have.css", "height", "48px")
-        cy.dataTest("testid.SlideshowWrapper.SlideshowButton.Next")
+        cy.dataTest("testid.SlideshowButton.Next")
             .should("have.css", "width", "48px")
             .should("have.css", "height", "48px")
         cy.dataTest("testid.SlideshowPagination").should(
