@@ -7,15 +7,17 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        '"data-testid": string | undefined',
-        "className: string | undefined",
-        "validation: LibValidationStatus",
-        "inputBackground: LibInputBackground | undefined",
+        "label?: string",
+        "labelComment?: string",
+        "helper?: string",
+        "helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: CssFontStyle; icon?: LibIcon; iconColor?: LibAllColors; iconSize?: number }",
         "children?: ReactChildren",
-        "isActive: boolean",
-        "isHovered?: boolean => only if isActive is defined",
-        "onClick: MouseEventHandler<HTMLSpanElement> => only if isActive is defined",
-        "readOnly?: boolean => only if isActive is not defined",
+        "value?: any",
+        "counter?: boolean",
+        "maxLength?: number",
+        "hasListOpen?: boolean",
+        "validation?: ValidationHelper",
+        "iconBaseUrl?: string",
     ])
 
     // const pickProps = [
@@ -38,8 +40,6 @@ export function Generate() {
     //     "iconSize",
     //     "loaderBorderWidth",
     // ]
-
-   
 
     // const propsInput = [
     //     "id",
@@ -183,7 +183,6 @@ export function Generate() {
                     <li key={hook}>{`"${hook}",`}</li>
                 ))}
             </ul> */}
-            
 
             {/* <ul>
                 {utils.sort().map(u => (

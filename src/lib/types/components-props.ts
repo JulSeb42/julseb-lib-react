@@ -71,4 +71,5 @@ export * from "../components/IconMenu/types"
 export * from "../components/Footer/types"
 export * from "../components/Helmet/types"
 export * from "../components/InputPin/types"
+export * from "../components/InputContainer/types"
 // prependHere

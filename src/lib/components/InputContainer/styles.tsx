@@ -1,0 +1,80 @@
+/*=============================================== InputContainer styles ===============================================*/
+
+import type { FC } from "react"
+import styled from "styled-components"
+import {
+    setDefaultTheme,
+    Mixins,
+    Text,
+    FONT_SIZES,
+    FONT_WEIGHTS,
+    LINE_HEIGHTS,
+} from "../../"
+import type { CssFontStyle } from "../../types"
+
+const StyledInputContainer = styled.div`
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    ${Mixins.Flexbox({
+        $flexDirection: "column",
+        $alignItems: "stretch",
+        $gap: "xxs",
+    })}
+
+    &.Open {
+        z-index: 20;
+    }
+`
+
+const Label = styled.label`
+    color: ${({ theme }) => theme.PRIMARY_500};
+    font-weight: ${FONT_WEIGHTS.BLACK};
+`
+
+const LabelComment = styled.span`
+    font-size: ${FONT_SIZES.SMALL};
+    color: ${({ theme }) => theme.GRAY_500};
+    font-weight: ${FONT_WEIGHTS.REGULAR};
+    font-style: italic;
+    line-height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
+`
+
+const HelperBottomContainer = styled.div`
+    ${Mixins.Flexbox({
+        $gap: "xxs",
+    })}
+`
+
+const HelperBottomIconContainer = styled.span`
+    height: calc(${FONT_SIZES.SMALL} * ${LINE_HEIGHTS.BODY});
+    ${Mixins.Flexbox({
+        $inline: true,
+        $alignItems: "center",
+        $justifyContent: "center",
+    })}
+`
+
+const HelperBottom = styled(Text).attrs({ tag: "small" })<{
+    $fontStyle?: CssFontStyle
+}>`
+    font-style: ${({ $fontStyle }) => $fontStyle};
+` as FC<any>
+
+setDefaultTheme([
+    StyledInputContainer,
+    Label,
+    LabelComment,
+    HelperBottomContainer,
+    HelperBottomIconContainer,
+    HelperBottom,
+])
+
+export {
+    StyledInputContainer,
+    Label,
+    LabelComment,
+    HelperBottomContainer,
+    HelperBottomIconContainer,
+    HelperBottom,
+}
