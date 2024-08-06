@@ -48,9 +48,4 @@ describe("<Pagination />", () => {
             .should("have.length", 1)
             .should("have.text", "...")
     })
-
-    // TODO
-    // ? accentColor
-    // ? pageLimit
-    // ? queries
 })

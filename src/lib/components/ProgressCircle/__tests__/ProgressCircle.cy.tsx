@@ -29,7 +29,6 @@ describe("<ProgressCircle />", () => {
             )
     })
 
-    // ? With number
     it("renders a number", () => {
         cy.mount(
             <ProgressCircle
@@ -43,7 +42,6 @@ describe("<ProgressCircle />", () => {
         cy.dataTest("testid.Value").should("exist").should("have.text", "42%")
     })
 
-    // ? With an icon
     it("renders an icon", () => {
         cy.mount(
             <ProgressCircle
@@ -60,7 +58,6 @@ describe("<ProgressCircle />", () => {
             .should("have.prop", "tagName", "svg")
     })
 
-    // ? Color
     it("renders a different color", () => {
         cy.mount(
             <ProgressCircle

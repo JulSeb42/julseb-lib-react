@@ -43,10 +43,6 @@ describe("<Image />", () => {
             .should("have.css", "border-radius", LIB_TOKENS.radiuses.xs)
     })
 
-    // TODO
-    // ? width & auto size
-    // ? height and auto width
-
     it("renders with a caption", () => {
         cy.mount(
             <Image

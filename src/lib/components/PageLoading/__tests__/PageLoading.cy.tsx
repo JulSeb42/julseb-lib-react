@@ -17,7 +17,5 @@ describe("<PageLoading />", () => {
         cy.dataTest("testid.Loader")
             .should("exist")
             .should("have.class", "Loader")
-
-        // ? check all default props
     })
 })

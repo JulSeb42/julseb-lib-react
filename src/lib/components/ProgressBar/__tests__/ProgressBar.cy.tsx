@@ -16,7 +16,6 @@ describe("<ProgressBar />", () => {
         cy.dataTest().should("exist").should("have.class", "className")
     })
 
-    // ? value
     it("renders a value", () => {
         cy.mount(
             <ProgressBar
@@ -28,7 +27,6 @@ describe("<ProgressBar />", () => {
         cy.dataTest().should("have.attr", "value", PROGRESS_VALUE.toString())
     })
 
-    // ? color
     it("renders a different color", () => {
         cy.mount(
             <ProgressBar
@@ -46,7 +44,6 @@ describe("<ProgressBar />", () => {
         )
     })
 
-    // ? animation
     it("renders without animation", () => {
         cy.mount(
             <ProgressBar

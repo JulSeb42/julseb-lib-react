@@ -132,7 +132,6 @@ const ContainerGrid = styled.div`
     flex-grow: 1;
     ${Mixins.Grid({
         $gap: "xs",
-        // $col: $col === 3 ? "1fr 2px 1fr" : 1,
         $col: "var(--markdown-editor-grid)",
     })}
 `

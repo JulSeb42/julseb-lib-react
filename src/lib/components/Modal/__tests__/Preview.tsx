@@ -34,10 +34,6 @@ export function Preview() {
 export function PreviewWithAlert() {
     const [isOpen, setIsOpen] = useState(false)
 
-    // ? hide button close
-    // ? disable esc
-    // ? content width
-
     return (
         <>
             <Button

@@ -161,7 +161,6 @@ export function InputCheckDemoRadio() {
     )
 }
 
-// Checkbox tile
 export function InputCheckDemoCheckboxTile() {
     return (
         <FlexDemo flexDirection="column" gap="xs">
@@ -235,7 +234,7 @@ export function InputCheckDemoCheckboxTile() {
         </FlexDemo>
     )
 }
-// Radio tile
+
 export function InputCheckDemoRadioTile() {
     return (
         <FlexDemo flexDirection="column" gap="xs">
@@ -309,7 +308,7 @@ export function InputCheckDemoRadioTile() {
         </FlexDemo>
     )
 }
-// Toggle
+
 export function InputCheckDemoCheckboxToggle() {
     return (
         <FlexDemo>
@@ -383,7 +382,7 @@ export function InputCheckDemoCheckboxToggle() {
         </FlexDemo>
     )
 }
-// Checkbox selector
+
 export function InputCheckDemoCheckboxSelector() {
     return (
         <FlexDemo>

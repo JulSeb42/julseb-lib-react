@@ -67,9 +67,4 @@ describe("<Breadcrumbs />", () => {
 
         cy.dataTest().should("have.css", "gap", LIB_TOKENS.spacers.xl)
     })
-
-    // TODO
-    // ? separators
-    // ? colors
-    // ? gap
 })

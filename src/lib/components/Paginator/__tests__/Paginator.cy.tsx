@@ -71,6 +71,4 @@ describe("<Paginator />", () => {
             LIB_TOKENS.colors.light["secondary-500"].rgb
         )
     })
-
-    // ? accentColor
 })

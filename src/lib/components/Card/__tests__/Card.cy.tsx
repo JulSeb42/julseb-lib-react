@@ -48,7 +48,6 @@ describe("<Card />", () => {
     })
 
     // TODO
-    // ? border + border radius + padding + shadow + background color + font
     // ? background img
     // ? as button
 })

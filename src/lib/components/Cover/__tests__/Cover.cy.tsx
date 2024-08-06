@@ -20,7 +20,6 @@ describe("<Cover />", () => {
             .should("have.class", "CoverContent")
     })
 
-    // ? overlays
     it("renders an overlay", () => {
         cy.mount(
             <Cover
@@ -37,7 +36,6 @@ describe("<Cover />", () => {
         )
     })
 
-    // ? height + padding
     it("renders a different height and padding", () => {
         cy.mount(
             <Cover

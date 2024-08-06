@@ -30,7 +30,6 @@ describe("<Tabs />", () => {
         cy.dataTest("testid.TabItem").eq(1).should("not.be.visible")
     })
 
-    // ? Variants
     it("renders a rounded variant", () => {
         cy.mount(
             <Tabs
@@ -48,7 +47,6 @@ describe("<Tabs />", () => {
         )
     })
 
-    // ? Click change page
     it("changes page on click", () => {
         cy.mount(
             <Tabs

@@ -33,12 +33,12 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
     ],
 }
 
-function AutocompleteDemo({ ...rest }: Partial<ILibAutocomplete>) {
+function AutocompleteDemo(props: Partial<ILibAutocomplete>) {
     const [location, setLocation] = useState("")
 
     return (
         <Autocomplete
-            {...rest}
+            {...props}
             value={location}
             setValue={setLocation}
             listResults={frenchCities}
