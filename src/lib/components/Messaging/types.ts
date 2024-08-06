@@ -32,19 +32,30 @@ export interface ILibMessagesContainer
 
 /*====================== MessagesList ======================*/
 
-export interface ILibMessagesList
+interface ILibMessagesListBase
     extends LibComponentBase<HTMLDivElement>,
         ILibFlexbox {
     children?: Array<ReactNode>
     emptyText?: string
-    withScrollButtons?:
-        | boolean
-        | {
-              icon?: LibIcon
-              iconSize?: number
-              positionFromBottom?: number
-          }
 }
+
+interface MessagesListWithScrollButton extends ILibMessagesListBase {
+    hideScrollButton?: false | undefined
+    scrollButton?: {
+        icon?: LibIcon
+        iconSize?: number
+        positionFromBottom?: number
+    }
+}
+
+interface MessagesListWithoutScrollButton extends ILibMessagesListBase {
+    hideScrollButton: true
+    scrollButton?: never
+}
+
+export type ILibMessagesList =
+    | MessagesListWithScrollButton
+    | MessagesListWithoutScrollButton
 
 /*====================== MessageForm ======================*/
 

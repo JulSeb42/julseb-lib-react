@@ -30,7 +30,7 @@ export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
             children,
             tooltip,
             position = "top",
-            withArrow = true,
+            hideArrow,
             trigger,
             backgroundColor = "black-80",
             textColor = "white",
@@ -38,6 +38,7 @@ export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
             onMouseEnter,
             onMouseLeave,
             offset = "xs",
+            tooltipStyles,
             ...rest
         },
         ref
@@ -100,8 +101,9 @@ export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
                         { Visible: isVisible }
                     )}
                     ref={el}
+                    style={tooltipStyles}
                     $position={position}
-                    $withArrow={withArrow}
+                    $withArrow={!hideArrow}
                     $backgroundColor={backgroundColor}
                     $textColor={textColor}
                     $offset={offset}

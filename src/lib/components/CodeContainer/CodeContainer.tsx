@@ -34,7 +34,8 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
             highlighterProps,
             highlighterStyle = atomOneDark,
             color,
-            copyButton = true,
+            hideCopyButton,
+            copyButton,
             ...rest
         },
         ref
@@ -122,7 +123,7 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                     {children}
                 </StyledSyntaxHighlighter>
 
-                {copyButton !== false && (
+                {!hideCopyButton && (
                     <StyledButtonIcon
                         data-testid={testid && `${testid}.CopyButton`}
                         className={className && "CopyButton"}

@@ -8,7 +8,7 @@ export function Circle({
     className,
     value,
     color = "primary",
-    animated,
+    noAnimation,
 }: ILibProgressCircle) {
     const r = 70
     const circ = 2 * Math.PI * r
@@ -16,7 +16,7 @@ export function Circle({
 
     return (
         <StyledCircle
-            className={classNames(className, { Animated: animated })}
+            className={classNames(className, { Animated: !noAnimation })}
             r={r}
             cx={100}
             cy={100}

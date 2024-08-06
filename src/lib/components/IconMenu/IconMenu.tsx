@@ -31,7 +31,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
             direction = "right",
             color = "primary",
             items,
-            showTooltips = true,
+            hideTooltips,
             buttonsVariant,
             ...rest
         },
@@ -120,7 +120,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                               isOpen={isOpen}
                               size={DEFAULT_BUTTON_SIZE}
                               tooltip={item?.label}
-                              showTooltip={showTooltips && { offset: -12 }}
+                              showTooltip={!hideTooltips && { offset: -12 }}
                               variant={buttonsVariant}
                           />
                       ))

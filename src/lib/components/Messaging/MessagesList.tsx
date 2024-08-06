@@ -28,7 +28,8 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
             className,
             children,
             emptyText: textEmpty = "No message yet.",
-            withScrollButtons = true,
+            scrollButton,
+            hideScrollButton,
             ...rest
         },
         ref
@@ -102,7 +103,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                     </Text>
                 )}
 
-                {withScrollButtons && (
+                {!hideScrollButton && (
                     <ScrollButton
                         data-testid={testid && `${testid}.ScrollButton`}
                         className={classNames(
@@ -113,8 +114,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                         )}
                         id="message-container-scroll-button"
                         icon={
-                            (typeof withScrollButtons === "object" &&
-                                withScrollButtons.icon) || (
+                            scrollButton?.icon ?? (
                                 <ChevronDown
                                     data-testid={
                                         testid && `${testid}.ScrollButton.Icon`

@@ -25,7 +25,7 @@ export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
             className,
             value,
             color = "primary",
-            animated = true,
+            noAnimation,
             min = 0,
             max = 100,
             id,
@@ -56,7 +56,7 @@ export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
                     as={as}
                     className={classNames(
                         className,
-                        { Animated: animated },
+                        { Animated: !noAnimation },
                         randomClass,
                         { RadiusCircle: value < 3 }
                     )}

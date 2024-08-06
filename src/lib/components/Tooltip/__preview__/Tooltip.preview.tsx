@@ -30,9 +30,9 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
             props: {
                 tooltip: "Hello World!",
                 trigger: "hover",
-                withArrow: false,
+                hideArrow: true,
                 position: "bottom",
-                children: "Hello, trigger on hover",
+                children: "Hello, trigger on hover without arrow",
                 "data-testid": "testid",
                 className: "className",
             },

@@ -32,7 +32,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
             as,
             className,
             totalPages,
-            isInputEditable = true,
+            inputNotEditable,
             texts = { page: "Page", of: "of" },
             iconSizes = {
                 prev: roundIconSize(DEFAULT_ICON_SIZE),
@@ -76,7 +76,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
                 alignItems={alignItems}
                 {...rest}
             >
-                {isInputEditable ? (
+                {!inputNotEditable ? (
                     <TextContainer
                         data-testid={testid && `${testid}.Text`}
                         className={className && "Text"}

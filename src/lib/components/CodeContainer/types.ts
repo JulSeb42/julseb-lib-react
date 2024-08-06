@@ -199,18 +199,29 @@ interface HighlighterLangs extends Omit<SyntaxHighlighterProps, "children"> {
         | "zephir"
 }
 
-export interface ILibCodeContainer extends LibComponentBase<HTMLDivElement> {
+interface ILibCodeContainerBase extends LibComponentBase<HTMLDivElement> {
     highlighterProps?: HighlighterLangs
-    copyButton?:
-        | boolean
-        | {
-              iconCopy?: LibIcon
-              iconCopied?: LibIcon
-              iconSizeCopy?: number
-              iconSizeCopied?: number
-              tooltipCopy?: string
-              tooltipCopied?: string
-          }
     color?: LibAllColors
     highlighterStyle?: CSSProperties
 }
+
+interface CodeContainerWithCopyButton extends ILibCodeContainerBase {
+    hideCopyButton?: undefined | false
+    copyButton?: {
+        iconCopy?: LibIcon
+        iconCopied?: LibIcon
+        iconSizeCopy?: number
+        iconSizeCopied?: number
+        tooltipCopy?: string
+        tooltipCopied?: string
+    }
+}
+
+interface CodeContainerWithoutCopyButton extends ILibCodeContainerBase {
+    hideCopyButton: true
+    copyButton?: never
+}
+
+export type ILibCodeContainer =
+    | CodeContainerWithCopyButton
+    | CodeContainerWithoutCopyButton

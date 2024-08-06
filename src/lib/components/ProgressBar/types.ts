@@ -8,5 +8,5 @@ export interface ILibProgressBar
         MeterHTMLAttributes<HTMLMeterElement> {
     value: number
     color?: LibColorsHover
-    animated?: boolean
+    noAnimation?: boolean
 }

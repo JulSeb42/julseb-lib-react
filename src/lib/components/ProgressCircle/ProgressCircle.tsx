@@ -27,7 +27,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
         {
             "data-testid": testid,
             value,
-            animated = true,
+            noAnimation,
             showValue,
             icon,
             iconBaseUrl,
@@ -42,7 +42,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
                 testid &&
                 (showValue || icon ? `${testid}.ProgressCircle` : testid),
             ref,
-            animated,
+            noAnimation,
             value,
             color,
             className: showValue || icon ? "ProgressCircle" : className,

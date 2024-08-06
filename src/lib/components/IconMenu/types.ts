@@ -19,7 +19,7 @@ interface ILibIconMenuBase extends LibComponentBase<HTMLDivElement> {
     direction?: LibIconMenuDirection
     color?: LibColorsHover
     position?: ILibPosition
-    showTooltips?: boolean
+    hideTooltips?: boolean
     buttonsVariant?: LibButtonIconVariant
     icon?:
         | LibIconMenuIcon

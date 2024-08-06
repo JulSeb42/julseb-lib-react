@@ -1,5 +1,6 @@
 /*=============================================== Tooltip types ===============================================*/
 
+import type { CSSProperties } from "react"
 import type {
     LibComponentBase,
     LibAllColorsAndOverlays,
@@ -12,9 +13,10 @@ import type {
 export interface ILibTooltip extends LibComponentBase<HTMLDivElement> {
     tooltip: string | JSX.Element
     position?: LibTooltipPosition
-    withArrow?: boolean
+    hideArrow?: boolean
     trigger?: LibTooltipTrigger
     backgroundColor?: LibAllColorsAndOverlays
     textColor?: LibAllColors
     offset?: LibSpacers
+    tooltipStyles?: CSSProperties
 }

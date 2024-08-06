@@ -10,7 +10,7 @@ export const ProgressCircleFn = forwardRef(
     (
         {
             "data-testid": testid,
-            animated,
+            noAnimation,
             value,
             color = "primary",
             ...rest
@@ -37,8 +37,8 @@ export const ProgressCircleFn = forwardRef(
                 <g transform={`rotate(-90 ${"100 100"})`}>
                     <Circle value={100} color="gray-200" />
                     <Circle
-                        value={animated ? animatedValue : pct}
-                        animated={animated}
+                        value={!noAnimation ? animatedValue : pct}
+                        noAnimation={noAnimation}
                         color={color}
                     />
                 </g>

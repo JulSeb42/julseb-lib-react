@@ -6,7 +6,7 @@ import type { ILibFlexbox } from "../Flexbox/types"
 export interface ILibPaginator extends ILibFlexbox {
     totalPages: number
     accentColor?: LibColorsHover
-    isInputEditable?: boolean
+    inputNotEditable?: boolean
     texts?: { page?: string; of?: string }
     icons?: { prev?: LibIcon; next?: LibIcon }
     iconSizes?: { prev?: number; next?: number }

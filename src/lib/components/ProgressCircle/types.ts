@@ -5,7 +5,7 @@ import type { LibComponentBase, LibAllColors, LibIcon } from "../../types"
 interface ILibProgressCircleBase
     extends Exclude<LibComponentBase<SVGElement>, "as"> {
     value: number
-    animated?: boolean
+    noAnimation?: boolean
     color?: LibAllColors
 }
 
