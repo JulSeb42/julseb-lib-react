@@ -31,8 +31,6 @@ describe("<Burger />", () => {
         borderCenter().should("have.css", "width", "32px")
         cy.dataTest().click()
         borderCenter().should("have.css", "width", "0px")
-
-        // TODO => check rotation of borders
     })
 
     it("renders with set props", () => {

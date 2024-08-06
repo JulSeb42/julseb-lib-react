@@ -1,7 +1,7 @@
 /*=============================================== ButtonGroup tests ===============================================*/
 
 import { ButtonGroup, LIB_TOKENS } from "../../.."
-import { buttons } from "./data"
+import { buttons, toggles } from "./data"
 import { SITE_DATA } from "../../../../data"
 
 describe("<ButtonGroup />", () => {
@@ -148,5 +148,37 @@ describe("<ButtonGroup />", () => {
             .should("have.attr", "href", "/")
     })
 
-    // TODO: add with toggles
+    it("renders toggles", () => {
+        cy.mount(
+            <ButtonGroup
+                data-testid="testid"
+                className="className"
+                toggles={toggles}
+                name="toggles"
+                iconBaseUrl={SITE_DATA.TESTS_ICON_BASE_URL}
+            />
+        )
+
+        cy.dataTest("testid.Button.0").should("not.exist")
+        cy.dataTest("testid.ToggleContainer.0")
+            .should("exist")
+            .should("have.prop", "tagName", "LABEL")
+
+        cy.dataTest("testid.ToggleContainer.0")
+            .children()
+            .eq(0)
+            .should("have.prop", "tagName", "INPUT")
+            .should("have.attr", "type", "radio")
+
+        cy.dataTest("testid.ToggleContainer.0").click()
+        cy.dataTest("testid.ToggleContainer.0")
+            .children()
+            .eq(0)
+            .should("have.attr", "checked")
+        cy.dataTest("testid.ToggleContainer.0").click()
+        cy.dataTest("testid.ToggleContainer.0")
+            .children()
+            .eq(0)
+            .should("not.have.attr", "checked")
+    })
 })

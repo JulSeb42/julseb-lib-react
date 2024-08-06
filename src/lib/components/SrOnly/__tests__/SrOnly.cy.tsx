@@ -9,8 +9,9 @@ describe("<SrOnly />", () => {
                 Hello
             </SrOnly>
         )
-        cy.dataTest().should("exist").should("have.class", "className")
-
-        // ? check all default props
+        cy.dataTest()
+            .should("exist")
+            .should("have.class", "className")
+            .should("have.css", "width", "1px")
     })
 })

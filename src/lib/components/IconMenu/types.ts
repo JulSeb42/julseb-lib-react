@@ -21,6 +21,7 @@ interface ILibIconMenuBase extends LibComponentBase<HTMLDivElement> {
     position?: ILibPosition
     hideTooltips?: boolean
     buttonsVariant?: LibButtonIconVariant
+    iconBaseUrl?: string
     icon?:
         | LibIconMenuIcon
         | {
@@ -51,4 +52,5 @@ export type ILibIconMenuItem = ILibButtonIcon &
         isOpen: boolean
         direction?: LibIconMenuDirection
         variant?: LibButtonIconVariant
+        iconBaseUrl?: string
     }

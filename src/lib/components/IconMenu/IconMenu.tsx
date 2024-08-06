@@ -33,6 +33,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
             items,
             hideTooltips,
             buttonsVariant,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -122,6 +123,7 @@ export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
                               tooltip={item?.label}
                               showTooltip={!hideTooltips && { offset: -12 }}
                               variant={buttonsVariant}
+                              iconBaseUrl={iconBaseUrl}
                           />
                       ))
                     : children}

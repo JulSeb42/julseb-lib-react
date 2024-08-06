@@ -46,8 +46,4 @@ describe("<Card />", () => {
             .should("have.css", "border-radius", LIB_TOKENS.radiuses.xxl)
             .should("have.css", "padding", LIB_TOKENS.spacers.xxl)
     })
-
-    // TODO
-    // ? background img
-    // ? as button
 })

@@ -81,7 +81,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                     <Fragment key={uuid()}>
                         <ButtonGroupButton
                             button={button}
-                            i={i}
+                            index={i}
                             iconBaseUrl={iconBaseUrl}
                             {...(commonProps as any)}
                         />
@@ -103,7 +103,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
                             toggle={toggle}
                             toggleType={toggleType}
                             name={name}
-                            i={i}
+                            index={i}
                             toggles={allToggles}
                             setToggles={setAllToggles}
                             iconBaseUrl={iconBaseUrl}

@@ -68,35 +68,45 @@ export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
         {
             previewTitle: "Color",
             props: {
-                buttons,
-                color: "secondary",
                 "data-testid": "testid",
                 className: "className",
+                buttons,
+                color: "secondary",
             },
         },
         {
             previewTitle: "Variant",
             props: {
-                buttons,
-                variant: "ghost",
                 "data-testid": "testid",
                 className: "className",
+                buttons,
+                variant: "ghost",
             },
         },
         {
             previewTitle: "Size",
             props: {
+                "data-testid": "testid",
+                className: "className",
                 buttons,
                 variant: "transparent",
                 size: "small",
-                "data-testid": "testid",
-                className: "className",
             },
         },
-        { previewTitle: "With toggles", props: { toggles, name: "toggles" } },
+        {
+            previewTitle: "With toggles",
+            props: {
+                "data-testid": "testid",
+                className: "className",
+                toggles,
+                name: "toggles",
+            },
+        },
         {
             previewTitle: "With multi toggles",
             props: {
+                "data-testid": "testid",
+                className: "className",
                 toggles: toggles.map(t => ({ ...t, id: `multi-${t.id}` })),
                 name: "multi-toggles",
                 toggleType: "multi",
@@ -107,6 +117,8 @@ export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
         {
             previewTitle: "With text toggles",
             props: {
+                "data-testid": "testid",
+                className: "className",
                 toggles: textToggles,
                 name: "text-toggles",
                 variant: "transparent",

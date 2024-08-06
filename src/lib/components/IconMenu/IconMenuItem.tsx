@@ -9,7 +9,15 @@ export const IconMenuItem = forwardRef<
     ILibIconMenuItem
 >(
     (
-        { indexPosition, direction, isOpen, variant = "ghost", style, ...rest },
+        {
+            indexPosition,
+            direction,
+            isOpen,
+            variant = "ghost",
+            style,
+            iconBaseUrl,
+            ...rest
+        },
         ref
     ) => {
         return (
@@ -17,6 +25,7 @@ export const IconMenuItem = forwardRef<
                 ref={ref}
                 type="button"
                 variant={variant}
+                iconBaseUrl={iconBaseUrl}
                 $direction={direction}
                 style={{
                     ["--button-position" as any]: indexPosition,

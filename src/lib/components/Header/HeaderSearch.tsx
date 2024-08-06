@@ -76,6 +76,7 @@ export function HeaderSearch({
                 inputVariant={inputVariant}
                 focusKeys={keyboardShortcut}
                 showKeys={showKeys}
+                iconBaseUrl={iconBaseUrl}
             />
         </SearchForm>
     )
