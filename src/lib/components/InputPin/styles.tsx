@@ -9,15 +9,10 @@ import {
     COLORS_LIGHT,
     COLORS_DARK,
 } from "../../"
-import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
-import type { LibFontSizes } from "../../types"
+import { InputBaseMixin } from "../ComponentsMixins"
+import type { IStyledInputPin } from "./subtypes"
 
-type IStyledInput = ILibInputBaseMixin & {
-    $inputSize: number
-    $fontSize: LibFontSizes
-}
-
-const StyledInputPin = styled.input<IStyledInput>`
+const StyledInputPin = styled.input<IStyledInputPin>`
     ${InputBaseMixin}
     border: 1px solid ${({ theme }) => theme.GRAY_200};
     border-radius: ${RADIUSES.S};

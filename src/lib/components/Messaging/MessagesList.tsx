@@ -127,12 +127,6 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                         onClick={scrollToBottom}
                         variant="ghost"
                         shadow="s"
-                        $bottom={
-                            typeof withScrollButtons === "object" &&
-                            withScrollButtons.positionFromBottom
-                                ? withScrollButtons.positionFromBottom
-                                : 32
-                        }
                     />
                 )}
             </StyledMessagesList>

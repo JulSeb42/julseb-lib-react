@@ -3,16 +3,10 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { BREAKPOINTS, setDefaultTheme } from "../../"
-import { ButtonMixin, type ILibButtonMixin } from "../ComponentsMixins"
-import type { LibButtonVariant } from "../../types"
+import { ButtonMixin } from "../ComponentsMixins"
+import type { ILibButtonIconStyles } from "./subtypes"
 
-interface ILibButtonIcon extends ILibButtonMixin {
-    $variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
-    $size: number
-    $showBackgroundHover?: boolean
-}
-
-const StyledButtonIcon = styled.button<ILibButtonIcon>`
+const StyledButtonIcon = styled.button<ILibButtonIconStyles>`
     ${ButtonMixin}
     position: relative;
     padding: 0;

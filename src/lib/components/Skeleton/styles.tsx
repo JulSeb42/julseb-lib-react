@@ -3,24 +3,8 @@
 import styled, { css, keyframes } from "styled-components"
 import { stringifyPx } from "ts-utils-julseb"
 import { setDefaultTheme, Flexbox, Mixins } from "../../"
-import type {
-    LibAllColors,
-    ILibBorder,
-    ILibPadding,
-    ILibRadius,
-    LibSkeletonAnimation,
-} from "../../types"
-
-type ILibSkeletonCommonStyles = {
-    $width?: string | number
-    $maxWidth?: string | number
-    $height?: string | number
-    $backgroundColor?: LibAllColors
-    $aspectRatio?: string
-    $borderRadius?: ILibRadius
-    $flex?: string | number
-    $flexGrow?: string | number
-}
+import type { ILibBorder, ILibPadding, LibSkeletonAnimation } from "../../types"
+import type { ILibSkeletonCommonStyles } from "./subtypes"
 
 /*====================== Keyframes ======================*/
 

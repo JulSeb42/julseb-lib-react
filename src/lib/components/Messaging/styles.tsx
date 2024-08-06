@@ -14,7 +14,6 @@ import {
     BREAKPOINTS,
     Flexbox,
 } from "../../"
-import type { LibMessageType } from "../../types"
 
 const VAR_INPUT_HEIGHT = "var(--input-height, 24px)"
 
@@ -44,9 +43,7 @@ const MessageListBottom = styled.div`
     height: 0;
 `
 
-const ScrollButton = styled(ButtonIcon)<{
-    $bottom: number // TODO: remove this prop and add more dynamic position
-}>`
+const ScrollButton = styled(ButtonIcon)`
     position: absolute;
     bottom: calc(
         ${VAR_INPUT_HEIGHT} + ${SPACERS.XXS} + ${SPACERS.S} +
@@ -95,45 +92,65 @@ const StyledMessageInput = styled.textarea`
     }
 `
 
-const StyledMessage = styled.p<{ $messageType: LibMessageType }>`
+const StyledMessage = styled.p`
     padding: ${SPACERS.XS};
     border-radius: ${RADIUSES.S};
     width: fit-content;
     max-width: 70%;
-    background-color: ${({ theme, $messageType }) =>
-        $messageType === "sent" ? theme.PRIMARY_500 : theme.GRAY_100};
-    color: ${({ theme, $messageType }) =>
-        $messageType === "sent" ? theme.BACKGROUND : theme.FONT};
-
-    & > * {
-        color: ${({ theme, $messageType }) =>
-            $messageType === "sent" ? theme.BACKGROUND : theme.FONT};
-    }
 
     a {
-        color: ${({ theme, $messageType }) =>
-            Mixins.ColorsHoverDefault(
-                $messageType === "sent" ? "background" : "font",
-                theme
-            )};
         transition: ${TRANSITIONS.SHORT};
         text-decoration: none;
+    }
 
-        @media ${BREAKPOINTS.HOVER} {
-            &:hover {
-                color: ${({ theme, $messageType }) =>
-                    Mixins.ColorsHoverHover(
-                        $messageType === "sent" ? "background" : "font",
-                        theme
-                    )};
+    &.Sent {
+        background-color: ${({ theme }) => theme.PRIMARY_500};
+        color: ${({ theme }) => theme.BACKGROUND};
+
+        & > * {
+            color: ${({ theme }) => theme.BACKGROUND};
+        }
+
+        a {
+            color: ${({ theme }) =>
+                Mixins.ColorsHoverDefault("background", theme)};
+
+            @media ${BREAKPOINTS.HOVER} {
+                &:hover {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverHover("background", theme)};
+                }
+
+                &:active {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverActive("background", theme)};
+                }
             }
+        }
+    }
 
-            &:active {
-                color: ${({ theme, $messageType }) =>
-                    Mixins.ColorsHoverActive(
-                        $messageType === "sent" ? "background" : "font",
-                        theme
-                    )};
+    &.Received {
+        background-color: ${({ theme }) => theme.GRAY_100};
+        color: ${({ theme }) => theme.FONT};
+
+        & > * {
+            color: ${({ theme }) => theme.FONT};
+        }
+
+        a {
+            color: ${({ theme }) =>
+                Mixins.ColorsHoverDefault("primary", theme)};
+
+            @media ${BREAKPOINTS.HOVER} {
+                &:hover {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverHover("primary", theme)};
+                }
+
+                &:active {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverActive("primary", theme)};
+                }
             }
         }
     }

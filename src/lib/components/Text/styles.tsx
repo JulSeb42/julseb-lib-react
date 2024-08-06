@@ -9,17 +9,7 @@ import {
     setDefaultTheme,
 } from "../../"
 import { TextBaseMixin } from "../ComponentsMixins"
-import type { LibAllColors, LibColorsHover, CssTextAlign } from "../../types"
-
-interface ILibTextStyle {
-    $color?: LibAllColors
-    $textAlign?: CssTextAlign
-    $linkColor: LibColorsHover
-}
-
-interface ILibTextStyleHeading extends ILibTextStyle {
-    $display?: boolean
-}
+import type { ILibTextStyle, ILibTextStyleHeading } from "./subtypes"
 
 const StyledH1 = styled.h1<ILibTextStyleHeading>`
     ${({ $textAlign, $color, $display, $linkColor }) =>

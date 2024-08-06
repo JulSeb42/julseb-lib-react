@@ -16,27 +16,12 @@ import {
     FONT_WEIGHTS,
 } from "../../"
 import type {
-    LibButtonVariant,
-    LibAllColors,
-    ILibBoxShadow,
-    LibColorsHover,
-    LibFontSizes,
-    LibFontWeights,
-    LibInputBackground,
-    LibInputVariant,
-    ILibRadius,
-    LibValidationStatus,
-    CssTextAlign,
-} from "../../types"
+    ILibButtonMixin,
+    ILibInputBaseMixin,
+    ILibTextBaseMixin,
+} from "./types"
 
 /*====================== Button ======================*/
-
-export interface ILibButtonMixin {
-    $color: LibColorsHover
-    $shadow?: ILibBoxShadow
-    $borderRadius?: ILibRadius
-    $variant?: LibButtonVariant
-}
 
 export const ButtonMixin = ({
     $color,
@@ -178,13 +163,6 @@ export const ButtonMixin = ({
     }}
 `
 /*====================== Text ======================*/
-export interface ILibTextBaseMixin {
-    $fontSize: LibFontSizes | "inherit"
-    $fontWeight: LibFontWeights
-    $textAlign?: CssTextAlign
-    $color?: LibAllColors
-    $linkColor?: LibColorsHover
-}
 
 export const TextBaseMixin = ({
     $fontSize,
@@ -240,13 +218,6 @@ export const TextBaseMixin = ({
 `
 
 /*====================== Input ======================*/
-
-export interface ILibInputBaseMixin {
-    $validation: LibValidationStatus | undefined
-    $inputBackground: LibInputBackground | undefined
-    $disabled: boolean | undefined
-    $inputVariant: LibInputVariant | undefined
-}
 
 export const InputBaseMixin = ({
     $disabled,

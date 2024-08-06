@@ -2,18 +2,15 @@
 
 import styled from "styled-components"
 import { FONT_WEIGHTS, setDefaultTheme } from "../../"
-import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
+import { InputBaseMixin } from "../ComponentsMixins"
+import type { ILibSelectButtonStyles } from "./subtypes"
 
 const SelectContainer = styled.div`
     position: relative;
     width: 100%;
 `
 
-interface ISelectButton extends ILibInputBaseMixin {
-    $hasOptions: boolean
-}
-
-const StyledSelectButton = styled.button<ISelectButton>`
+const StyledSelectButton = styled.button<ILibSelectButtonStyles>`
     ${InputBaseMixin}
     text-align: left;
     font-weight: ${FONT_WEIGHTS.REGULAR};

@@ -1,7 +1,13 @@
 /*=============================================== Message ===============================================*/
 
 import { forwardRef } from "react"
-import { convertDateShort, convertDate, getYesterday } from "ts-utils-julseb"
+import classNames from "classnames"
+import {
+    convertDateShort,
+    convertDate,
+    getYesterday,
+    capitalize,
+} from "ts-utils-julseb"
 import { Flexbox, Text, linkifyText } from "../../"
 import { StyledMessage } from "./styles"
 import type { ILibMessage } from "./types"
@@ -57,8 +63,10 @@ export const Message = forwardRef<HTMLDivElement, ILibMessage>(
             >
                 <StyledMessage
                     data-testid={testid && `${testid}.Message`}
-                    className={className && "MessageText"}
-                    $messageType={type}
+                    className={classNames(
+                        { MessageText: className },
+                        capitalize(type)
+                    )}
                 >
                     {text ? linkifyText(text, true) : children}
                 </StyledMessage>

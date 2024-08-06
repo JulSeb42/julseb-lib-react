@@ -2,6 +2,7 @@
 
 import type { MouseEventHandler } from "react"
 import type { ILibSelect } from "./types"
+import type { ILibInputBaseMixin } from "../ComponentsMixins"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN SELECT COMPONENTS
 
@@ -24,4 +25,8 @@ export interface ILibSelectButton
     isOpen: boolean
     hasContainer: boolean
     hasWrapper: boolean
+}
+
+export interface ILibSelectButtonStyles extends ILibInputBaseMixin {
+    $hasOptions: boolean
 }

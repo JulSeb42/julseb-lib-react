@@ -8,12 +8,9 @@ import {
     SPACERS,
     setDefaultTheme,
 } from "../../"
-import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"
+import { InputBaseMixin } from "../ComponentsMixins"
 import { InputWrapper } from "../InputComponents"
-
-interface ILibInputStyles extends ILibInputBaseMixin {
-    $length: number
-}
+import type { ILibInputCounterStyles } from "./subtypes"
 
 const InputCounterWrapper = styled.div<{
     $isInputEditable: boolean | undefined
@@ -29,7 +26,7 @@ const StyledInputWrapper = styled(InputWrapper)`
     width: fit-content;
 `
 
-const Input = styled.input<ILibInputStyles>`
+const Input = styled.input<ILibInputCounterStyles>`
     ${InputBaseMixin}
     width: ${({ $length }) =>
         $length > 3 ? `calc(48px + ${$length} * ${SPACERS.XS})` : "48px"};

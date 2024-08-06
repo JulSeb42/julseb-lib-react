@@ -6,13 +6,19 @@ import type {
     SelectHTMLAttributes,
     TextareaHTMLAttributes,
 } from "react"
-import type { LibIcon, ReactChildren } from "../../types"
+import type {
+    LibIcon,
+    LibInputBackground,
+    LibInputVariant,
+    ReactChildren,
+} from "../../types"
 import type {
     ILibExtendedInputBase,
     ILibInputIcon,
     ILibInputNoFocusKeys,
     ILibInputValidationIconComponent,
 } from "../InputComponents/types"
+import type { ILibInputBaseMixin } from "../ComponentsMixins"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN INPUT COMPONENTS
 
@@ -181,3 +187,12 @@ export type ILibTimeInput = Omit<
         iconClockSize?: number
         children?: never
     }
+
+/*====================== Styles ======================*/
+
+export interface ILibInputStyle extends ILibInputBaseMixin {
+    $inputVariant: LibInputVariant | undefined
+    $inputBackground: LibInputBackground | undefined
+    $isSelect?: boolean
+    $isTextarea?: boolean
+}

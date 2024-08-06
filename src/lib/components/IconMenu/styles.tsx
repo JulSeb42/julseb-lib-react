@@ -14,7 +14,6 @@ import type {
     LibPositionExtract,
     LibSpacers,
 } from "../../types"
-import type {} from "./types"
 
 const DEFAULT_BUTTON_SIZE = 48
 
