@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom"
 import { Header, Text } from "../../../"
-import type {} from "../../../types"
 import type { ILibHeader } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
