@@ -1,14 +1,9 @@
 /*=============================================== InputComponents styles ===============================================*/
 
-import type { FC } from "react"
 import styled, { css } from "styled-components"
 import {
-    FONT_SIZES,
-    FONT_WEIGHTS,
-    INPUT_HEIGHT,
-    LINE_HEIGHTS,
     Mixins,
-    Text,
+    INPUT_HEIGHT,
     setDefaultTheme,
     COLORS_LIGHT,
     COLORS_DARK,
@@ -18,73 +13,11 @@ import {
     RADIUSES,
 } from "../.."
 import type {
-    CssFontStyle,
     LibInputBackground,
     LibInputVariant,
     LibValidationStatus,
     LibInputListDirection,
 } from "../../types"
-
-/*====================== InputContainer ======================*/
-
-const StyledInputContainer = styled.div`
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    ${Mixins.Flexbox({
-        $flexDirection: "column",
-        $alignItems: "stretch",
-        $gap: "xxs",
-    })}
-
-    &.Open {
-        z-index: 20;
-    }
-`
-
-/*====================== Label ======================*/
-
-const Label = styled.label`
-    color: ${({ theme }) => theme.PRIMARY_500};
-    font-weight: ${FONT_WEIGHTS.BLACK};
-`
-
-/*====================== LabelComment ======================*/
-
-const LabelComment = styled.span`
-    font-size: ${FONT_SIZES.SMALL};
-    color: ${({ theme }) => theme.GRAY_500};
-    font-weight: ${FONT_WEIGHTS.REGULAR};
-    font-style: italic;
-    line-height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
-`
-
-/*====================== HelperBottomContainer ======================*/
-
-const HelperBottomContainer = styled.div`
-    ${Mixins.Flexbox({
-        $gap: "xxs",
-    })}
-`
-
-/*====================== HelperBottomIconContainer ======================*/
-
-const HelperBottomIconContainer = styled.span`
-    height: calc(${FONT_SIZES.SMALL} * ${LINE_HEIGHTS.BODY});
-    ${Mixins.Flexbox({
-        $inline: true,
-        $alignItems: "center",
-        $justifyContent: "center",
-    })}
-`
-
-/*====================== HelperBottom ======================*/
-
-const HelperBottom = styled(Text).attrs({ tag: "small" })<{
-    $fontStyle?: CssFontStyle
-}>`
-    font-style: ${({ $fontStyle }) => $fontStyle};
-` as FC<any>
 
 /*====================== IconContainer ======================*/
 
@@ -779,12 +712,6 @@ const StyledInputAndListContainer = styled.div`
 `
 
 setDefaultTheme([
-    StyledInputContainer,
-    Label,
-    LabelComment,
-    HelperBottomContainer,
-    HelperBottomIconContainer,
-    HelperBottom,
     StyledInputIconContainer,
     StyledInputLeftContainer,
     StyledInputRightContainer,
@@ -799,12 +726,6 @@ setDefaultTheme([
 ])
 
 export {
-    StyledInputContainer,
-    Label,
-    LabelComment,
-    HelperBottomContainer,
-    HelperBottomIconContainer,
-    HelperBottom,
     StyledInputIconContainer,
     StyledInputLeftContainer,
     StyledInputRightContainer,

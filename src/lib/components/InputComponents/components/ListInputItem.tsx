@@ -19,21 +19,25 @@ import type { ILibListInputItem } from "../types"
  * @prop readOnly?: boolean => only if isActive is not defined
  */
 export const ListInputItem = forwardRef<HTMLSpanElement, ILibListInputItem>(
-    ({
-        "data-testid": testid,
-        className,
-        validation,
-        inputBackground,
-        children,
-        isActive,
-        onClick,
-        readOnly,
-        isHovered,
-        ...rest
-    }) => {
+    (
+        {
+            "data-testid": testid,
+            className,
+            validation,
+            inputBackground,
+            children,
+            isActive,
+            onClick,
+            readOnly,
+            isHovered,
+            ...rest
+        },
+        ref
+    ) => {
         return (
             <StyledListInputItem
                 data-testid={testid && `${testid}.ListItem`}
+                ref={ref}
                 className={classNames(
                     { ListItem: className },
                     { Active: isActive },

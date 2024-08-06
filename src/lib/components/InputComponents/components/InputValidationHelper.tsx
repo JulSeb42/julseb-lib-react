@@ -7,7 +7,7 @@ import {
     HelperBottomContainer,
     HelperBottomIconContainer,
     HelperBottom,
-} from "../styles"
+} from "../../InputContainer/styles"
 import type { ILibInputValidationHelper } from "../types"
 
 /**
