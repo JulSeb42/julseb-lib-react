@@ -1,7 +1,6 @@
 /*=============================================== Modal styles ===============================================*/
 
 import styled from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
 import {
     Flexbox,
     Mixins,
@@ -41,10 +40,8 @@ const ButtonClose = styled(ButtonIcon)`
     right: ${SPACERS.S};
 `
 
-const ModalContent = styled.div<{
-    $width?: string | number // TODO: add dynamic width
-}>`
-    width: ${({ $width }) => $width && stringifyPx($width)};
+const ModalContent = styled.div`
+    width: var(--modal-content-width, 90%);
     max-width: 90%;
     max-height: 90%;
     position: relative;
@@ -54,6 +51,10 @@ const ModalContent = styled.div<{
         $alignItems: "center",
         $justifyContent: "center",
     })}
+
+    & > * {
+        max-height: 90vh;
+    }
 `
 
 setDefaultTheme([StyledModal, ButtonClose, ModalContent])

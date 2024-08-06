@@ -34,7 +34,11 @@ export const modalPreview: ComponentPreview<ILibModal> = {
             previewTitle: "With image",
             demo: (
                 <ModalDemo>
-                    <Image src="/images/image-card.jpg" />
+                    <Image
+                        src="/images/image-card.jpg"
+                        height="100%"
+                        fit="contain"
+                    />
                 </ModalDemo>
             ),
         },

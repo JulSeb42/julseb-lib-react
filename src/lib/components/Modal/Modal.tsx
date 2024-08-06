@@ -2,9 +2,9 @@
 
 import { forwardRef, useCallback, useRef } from "react"
 import classNames from "classnames"
-import { enableScroll } from "ts-utils-julseb"
+import { enableScroll, getRandomString, stringifyPx } from "ts-utils-julseb"
 import { useKeyPress, useClickOutside } from "../../"
-import { roundIconSize } from "../../lib-utils"
+import { roundIconSize, HelmetStyles } from "../../lib-utils"
 import { Close } from "../../icons"
 import { StyledModal, ButtonClose, ModalContent } from "./styles"
 import type { ILibModal } from "./types"
@@ -38,6 +38,7 @@ export const Modal = forwardRef<HTMLDivElement, ILibModal>(
             buttonClose,
             hideCloseButton,
             contentWidth,
+            contentId,
             ...rest
         },
         ref
@@ -58,46 +59,66 @@ export const Modal = forwardRef<HTMLDivElement, ILibModal>(
 
         useClickOutside(el, () => handleClose())
 
-        return (
-            <StyledModal
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                className={classNames(className, { Open: isOpen })}
-                {...rest}
-            >
-                <ModalContent
-                    data-testid={testid && `${testid}.ModalContent`}
-                    className={className && "ModalContent"}
-                    ref={el}
-                    $width={contentWidth}
-                >
-                    {children}
-                </ModalContent>
+        const randomClass = getRandomString(10, true)
+        const withClass = className?.split(" ")[0] || randomClass
 
-                {!hideCloseButton && (
-                    <ButtonClose
-                        data-testid={testid && `${testid}.ButtonClose`}
-                        className={className && "ButtonClose"}
-                        aria-label={buttonClose?.label || BUTTON_LABEL}
-                        icon={
-                            buttonClose?.icon || (
-                                <Close
-                                    size={roundIconSize(BUTTON_SIZE)}
-                                    data-testid={
-                                        testid && `${testid}.ButtonClose.Icon`
-                                    }
-                                    className={className && "ButtonCloseIcon"}
-                                />
-                            )
+        return (
+            <>
+                <HelmetStyles>
+                    {`
+                        ${contentId ? `#${contentId}` : `.${withClass}`} {
+                            --modal-content-width: ${stringifyPx(
+                                contentWidth || "90%"
+                            )};
                         }
-                        size={buttonClose?.size || BUTTON_SIZE}
-                        color={buttonClose?.color || "white"}
-                        variant={buttonClose?.variant || "transparent"}
-                        onClick={handleClose}
-                    />
-                )}
-            </StyledModal>
+                    `}
+                </HelmetStyles>
+
+                <StyledModal
+                    data-testid={testid}
+                    ref={ref}
+                    as={as}
+                    className={classNames(className, randomClass, {
+                        Open: isOpen,
+                    })}
+                    {...rest}
+                >
+                    <ModalContent
+                        data-testid={testid && `${testid}.ModalContent`}
+                        className={className && "ModalContent"}
+                        ref={el}
+                        id={contentId}
+                    >
+                        {children}
+                    </ModalContent>
+
+                    {!hideCloseButton && (
+                        <ButtonClose
+                            data-testid={testid && `${testid}.ButtonClose`}
+                            className={className && "ButtonClose"}
+                            aria-label={buttonClose?.label || BUTTON_LABEL}
+                            icon={
+                                buttonClose?.icon || (
+                                    <Close
+                                        size={roundIconSize(BUTTON_SIZE)}
+                                        data-testid={
+                                            testid &&
+                                            `${testid}.ButtonClose.Icon`
+                                        }
+                                        className={
+                                            className && "ButtonCloseIcon"
+                                        }
+                                    />
+                                )
+                            }
+                            size={buttonClose?.size || BUTTON_SIZE}
+                            color={buttonClose?.color || "white"}
+                            variant={buttonClose?.variant || "transparent"}
+                            onClick={handleClose}
+                        />
+                    )}
+                </StyledModal>
+            </>
         )
     }
 )

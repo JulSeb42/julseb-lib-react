@@ -14,6 +14,7 @@ interface ILibModalBase extends LibComponentBase<HTMLDivElement>, ILibFlexbox {
     setIsOpen: DispatchState<boolean>
     disableEsc?: boolean
     contentWidth?: string | number
+    contentId?: string
 }
 
 interface ModalWithCloseButton extends ILibModalBase {
