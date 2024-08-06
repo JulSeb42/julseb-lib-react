@@ -10,7 +10,7 @@ import {
     InputLeftContainer,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { ILibTextInput } from "../types"
+import type { ILibTextInput } from "../subtypes"
 
 export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
     (

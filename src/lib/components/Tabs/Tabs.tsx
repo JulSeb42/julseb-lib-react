@@ -30,7 +30,6 @@ import type { ILibTabs } from "./types"
  * @prop title: string
  * @prop content: ReactNode
  */
-
 export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
     (
         {

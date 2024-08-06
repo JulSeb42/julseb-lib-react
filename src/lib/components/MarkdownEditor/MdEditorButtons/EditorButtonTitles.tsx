@@ -1,10 +1,10 @@
 /*=============================================== EditorButtonTitles component ===============================================*/
 
-import { useState, type RefObject } from "react"
+import { useState } from "react"
 import { Button, DropdownContainer } from "../../../"
 import { mdTitlesButtons } from "../markdown-buttons"
 import { TitlesDropdown, TitleDropdownItem } from "../styles"
-import type { ILibMarkdownEditor } from "../types"
+import type { ILibMarkdownEditorTitles } from "../subtypes"
 
 export function EditorButtonTitles({
     "data-testid": testid,
@@ -13,13 +13,7 @@ export function EditorButtonTitles({
     textButtonTitles,
     inputRef,
     addCode,
-}: Pick<
-    ILibMarkdownEditor,
-    "data-testid" | "showButtons" | "className" | "textButtonTitles"
-> & {
-    inputRef: RefObject<HTMLTextAreaElement>
-    addCode: (code: string) => void
-}) {
+}: ILibMarkdownEditorTitles) {
     const [isTextOpen, setIsTextOpen] = useState(false)
 
     if (showButtons?.titles === false) return null

@@ -13,6 +13,7 @@ import type {
     LibIcon,
     LibSpacers,
 } from "../../types"
+import type { ILibFlexbox } from "../Flexbox/types"
 
 /*====================== Dropdown ======================*/
 
@@ -38,6 +39,12 @@ interface DropdownWithChildren extends ILibDropdownBase {
 
 export type ILibDropdown = DropdownWithItems | DropdownWithChildren
 
+/*====================== DropdownContainer ======================*/
+
+export interface ILibDropdownContainer extends ILibFlexbox {
+    isOpen: boolean
+}
+
 /*====================== DropdownItem ======================*/
 
 type ILibDropdownItemBase = LibComponentBase<
@@ -46,7 +53,6 @@ type ILibDropdownItemBase = LibComponentBase<
     ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
     LibButtonLinkBlankRequired & {
         accentColor?: LibColorsHover
-
         gap?: LibSpacers
     }
 

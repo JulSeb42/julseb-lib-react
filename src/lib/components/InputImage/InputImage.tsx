@@ -25,7 +25,6 @@ import type { ILibInputImage } from "./types"
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
  */
-
 export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     (
         {

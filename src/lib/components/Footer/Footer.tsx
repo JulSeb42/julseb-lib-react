@@ -32,7 +32,6 @@ import type { ILibFooter } from "./types"
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
  * @prop text: string
  */
-
 export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
     (
         {
@@ -63,7 +62,7 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
                     <FooterLogo
                         data-testid={testid && `${testid}.Logo`}
                         className={className && "FooterLogo"}
-                        {...logo}
+                        logo={logo}
                     />
                 )}
 

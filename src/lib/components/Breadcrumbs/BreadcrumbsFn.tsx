@@ -9,7 +9,7 @@ import type { ILibBreadcrumbs } from "./types"
 
 export const BreadcrumbsFn = forwardRef<
     HTMLDivElement,
-    Exclude<ILibBreadcrumbs, "breadcrumbsItems">
+    Omit<ILibBreadcrumbs, "breadcrumbsItems">
 >(
     (
         {

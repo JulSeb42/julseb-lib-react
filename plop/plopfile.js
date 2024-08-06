@@ -1,5 +1,7 @@
 /*=============================================== Plopfile ===============================================*/
 
+import { allComponents } from "./all-components.js"
+
 export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
     const { setGenerator } = plop
 
@@ -173,5 +175,24 @@ export default (/** @type {import('plop').NodePlopAPI} */ plop) => {
 
             return actions
         },
+    })
+
+    setGenerator("subtype", {
+        description: "Generates a sub-types.ts file for selected component",
+        prompts: [
+            {
+                name: "name",
+                message: "Select your component",
+                type: "list",
+                choices: allComponents,
+            },
+        ],
+        actions: [
+            {
+                type: "add",
+                path: "../src/lib/components/{{ pascalCase name }}/subtypes.ts",
+                templateFile: "./templates/subtypes.hbs",
+            },
+        ],
     })
 }

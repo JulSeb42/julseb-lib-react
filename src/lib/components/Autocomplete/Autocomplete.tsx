@@ -75,6 +75,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
             fuzzyOptions = {},
             icons,
             iconSizes,
+            iconBaseUrl,
             focusKeys,
             showKeys,
             disabled,
@@ -192,6 +193,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                     disabled={disabled}
                                     inputBackground={inputBackground}
                                     inputVariant={inputVariant}
+                                    iconBaseUrl={iconBaseUrl}
                                 />
                             </InputLeftContainer>
                         )}
@@ -278,6 +280,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                         validation={validation}
                                         validationIcon={validationIcon}
                                         inputBackground={inputBackground}
+                                        iconBaseUrl={iconBaseUrl}
                                     />
                                 )}
                             </InputRightContainer>

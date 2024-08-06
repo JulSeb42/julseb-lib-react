@@ -26,7 +26,6 @@ import type { ILibStepper } from "./types"
  * @prop className?: string
  * @prop text: string
  */
-
 export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
     (
         {

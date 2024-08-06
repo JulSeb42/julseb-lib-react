@@ -17,7 +17,6 @@ import type { ILibPageLoading } from "./types"
  * @prop loaderVariant?: 1 | 2 | 3 | 4
  * @prop stopScrolling?: boolean
  */
-
 export const PageLoading = forwardRef<HTMLDivElement, ILibPageLoading>(
     (
         {

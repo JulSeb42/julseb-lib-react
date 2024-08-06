@@ -1,44 +1,16 @@
 /*=============================================== ButtonIconFunction ===============================================*/
 
-import { forwardRef, type ButtonHTMLAttributes } from "react"
+import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { Loader } from "../../"
 import { LibIcon } from "../LibIcon"
 import type { ILibLoader } from "../Loader/types"
-import type { LibComponentBase, LibButtonLinkBlank } from "../../types"
 import { StyledButtonIcon } from "./styles"
 import type { ILibButtonIcon } from "./types"
 
 export const ButtonIconFunction = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
-    Pick<
-        ILibButtonIcon,
-        | "data-testid"
-        | "as"
-        | "className"
-        | "showTooltip"
-        | "to"
-        | "href"
-        | "isLoading"
-        | "disabled"
-        | "aria-disabled"
-        | "aria-label"
-        | "blank"
-        | "variant"
-        | "showBackgroundHover"
-        | "borderRadius"
-        | "color"
-        | "shadow"
-        | "size"
-        | "loaderVariant"
-        | "icon"
-        | "iconSize"
-        | "iconBaseUrl"
-        | "loaderBorderWidth"
-    > &
-        LibComponentBase<HTMLButtonElement & HTMLAnchorElement> &
-        ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> &
-        LibButtonLinkBlank
+    ILibButtonIcon
 >(
     (
         {

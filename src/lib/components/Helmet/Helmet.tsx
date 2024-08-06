@@ -1,8 +1,6 @@
 /*=============================================== Helmet component ===============================================*/
 
 import { Helmet as Meta, HelmetData } from "react-helmet-async"
-import {} from "ts-utils-julseb"
-import {} from "../../"
 import type { ILibHelmet } from "./types"
 
 const helmetData = new HelmetData({})
@@ -13,7 +11,6 @@ const helmetData = new HelmetData({})
  * @extends HelmetProps => imported from react-helmet-async
  * @prop data-testid?: string
  */
-
 export function Helmet({
     title,
     favicon,

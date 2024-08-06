@@ -19,7 +19,6 @@ import type { ILibInputPin } from "./types"
  * @prop data-testid?: string
 
  */
-
 export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
     (
         {

@@ -13,7 +13,6 @@ import type { ILibHighlight } from "./types"
  * @prop children?: string
  * @prop highlightStyle?: CSSProperties
  */
-
 export const Highlight = forwardRef<
     HTMLHeadingElement &
         HTMLParagraphElement &

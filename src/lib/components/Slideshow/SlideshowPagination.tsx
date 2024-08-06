@@ -8,7 +8,7 @@ import {
     SlideshowPaginationItem,
     StyledSlideshowPagination,
 } from "./styles"
-import type { ILibSlideshowPagination } from "./sub-types"
+import type { ILibSlideshowPagination } from "./subtypes"
 
 export function SlideshowPagination({
     "data-testid": testid,

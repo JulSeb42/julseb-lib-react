@@ -2,20 +2,14 @@
 
 import { SrOnly } from "../../"
 import { Value as StyledValue } from "./styles"
-
-interface ILibValue {
-    "data-testid": string | undefined
-    className: string | undefined
-    showValue: boolean | undefined
-    value: number
-}
+import type { ILibProgressCircleValue } from "./subtypes"
 
 export function Value({
     "data-testid": testid,
     className,
     showValue,
     value,
-}: ILibValue) {
+}: ILibProgressCircleValue) {
     if (!showValue)
         return (
             <SrOnly

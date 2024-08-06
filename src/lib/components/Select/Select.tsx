@@ -15,10 +15,11 @@ import {
     InputWrapper,
 } from "../InputComponents"
 import { CaretDown } from "../../icons"
-import { SelectButton, type ILibSelectButton } from "./SelectButton"
+import { SelectButton } from "./SelectButton"
 import { useKeyboardNavigation } from "../ComponentsMixins"
 import { SelectContainer } from "./styles"
 import type { ILibSelect } from "./types"
+import type { ILibSelectButton } from "./subtypes"
 
 /**
  * @description Returns a Select component
@@ -42,7 +43,6 @@ import type { ILibSelect } from "./types"
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
  */
-
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     (
         {
@@ -65,6 +65,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             listDirection,
             icons,
             iconSizes,
+            iconBaseUrl,
             tabIndex,
             prefix,
             ...rest
@@ -110,11 +111,11 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             id,
             tabIndex,
             disabled,
-            hasIcon: !!icons?.iconLeft,
+            icons,
             inputBackground,
             inputVariant,
-            validationStatus: validation?.status,
-            hasOptions,
+            validation,
+            options,
             isOpen,
             hasContainer,
             hasWrapper,
@@ -185,6 +186,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                     disabled={disabled}
                                     inputBackground={inputBackground}
                                     inputVariant={inputVariant}
+                                    iconBaseUrl={iconBaseUrl}
                                 />
                             </InputLeftContainer>
                         )}
@@ -206,6 +208,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                         validation={validation}
                                         validationIcon={validationIcon}
                                         inputBackground={inputBackground}
+                                        iconBaseUrl={iconBaseUrl}
                                     />
                                 )}
 
@@ -238,6 +241,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                         disabled={disabled}
                                         aria-label="Caret down"
                                         validationStatus={validation?.status}
+                                        iconBaseUrl={iconBaseUrl}
                                     />
                                 )}
                             </InputRightContainer>

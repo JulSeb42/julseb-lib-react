@@ -29,7 +29,6 @@ import type { ILibText } from "./types"
  * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"
  * @prop display?: boolean => only if tag is "h1" | "h2" | "h3" | "h4" | "h5"
  */
-
 export const Text = forwardRef<
     HTMLHeadingElement &
         HTMLParagraphElement &

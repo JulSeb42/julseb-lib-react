@@ -10,7 +10,6 @@ type Event = MouseEvent | TouchEvent
  * @argument ref: RefObject<T>,
  * @argument handler: (event: Event) => void
  */
-
 export function useClickOutside<T extends HTMLElement = HTMLElement>(
     ref: RefObject<T>,
     handler: (event: Event) => void

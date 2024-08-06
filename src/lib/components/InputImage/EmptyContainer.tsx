@@ -3,7 +3,7 @@
 import { Image } from "../../icons"
 import { LibIcon } from "../LibIcon"
 import { StyledEmptyContainer } from "./styles"
-import type { ILibInputImage } from "./types"
+import type { ILibEmptyContainer } from "./subtypes"
 
 export function EmptyContainer({
     "data-testid": testid,
@@ -12,15 +12,7 @@ export function EmptyContainer({
     iconSizes,
     icons,
     iconBaseUrl,
-}: Pick<
-    ILibInputImage,
-    | "data-testid"
-    | "className"
-    | "validation"
-    | "iconSizes"
-    | "icons"
-    | "iconBaseUrl"
->) {
+}: ILibEmptyContainer) {
     return (
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}

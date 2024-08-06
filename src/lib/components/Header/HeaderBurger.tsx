@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import type { LibColorsHover } from "../../types"
 import { StyledHeaderBurger } from "./styles"
-import type { ILibHeaderBurger } from "./sub-types"
+import type { ILibHeaderBurger } from "./subtypes"
 
 export const HeaderBurger = forwardRef<HTMLButtonElement, ILibHeaderBurger>(
     (

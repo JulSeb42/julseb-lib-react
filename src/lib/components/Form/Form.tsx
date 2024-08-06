@@ -18,7 +18,6 @@ import type { ILibForm } from "./types"
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop maxWidth?: string | number
  */
-
 export const Form = forwardRef<HTMLFormElement, ILibForm>(
     (
         {

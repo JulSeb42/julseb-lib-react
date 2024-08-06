@@ -7,6 +7,8 @@ import type {
     LibShadows,
     LibToasterPosition,
     LibToast,
+    LibToastOptions,
+    LibIcon,
 } from "../../types"
 
 export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
@@ -21,4 +23,17 @@ export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
     }
     iconBaseUrl?: string
     hideCloseButton?: boolean
+}
+
+export interface ILibToaster extends LibComponentBase<HTMLDivElement> {
+    className?: string
+    toasts: Array<LibToast>
+    toastsOptions?: Pick<
+        LibToastOptions,
+        "duration" | "labelClose" | "withTimer"
+    >
+    isOpen: boolean
+    iconClose?: LibIcon
+    iconCloseSize?: number
+    position?: LibToasterPosition
 }

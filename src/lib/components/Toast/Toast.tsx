@@ -44,7 +44,6 @@ const CLOSE_ICON_SIZE = 24
  * @prop withTimer?: boolean
  * @prop timerBackgroundColor?: Any color from the library
  */
-
 export const Toast = forwardRef<HTMLDivElement, ILibToast>(
     (
         {

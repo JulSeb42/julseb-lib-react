@@ -2,13 +2,7 @@
 
 import { forwardRef } from "react"
 import { Link } from "react-router-dom"
-import type { LibFooterLink } from "../../types"
-
-interface ILibFooterLink {
-    "data-testid": string | undefined
-    className: string | undefined
-    item: LibFooterLink
-}
+import type { ILibFooterLink } from "./subtypes"
 
 export const FooterLink = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,

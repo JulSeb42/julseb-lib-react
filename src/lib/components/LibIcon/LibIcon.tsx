@@ -1,16 +1,7 @@
 /*=============================================== LibIcon component ===============================================*/
 
 import { Icon } from "../../"
-import type { LibAllColors, LibIcon as LibIconType } from "../../types"
-
-export interface ILibLibIcon {
-    "data-testid"?: string
-    icon: LibIconType
-    size?: number
-    color?: LibAllColors
-    className?: string
-    baseUrl: string | undefined
-}
+import type { ILibLibIcon } from "./types"
 
 /**
  * @description Icon used to build components from library, use Icon component to build your app.
@@ -20,7 +11,6 @@ export interface ILibLibIcon {
  * @prop color?: Any color from the library
  * @prop className?: string
  */
-
 export function LibIcon({
     "data-testid": testid,
     icon,

@@ -14,7 +14,7 @@ import type {
     ILibHeaderNav,
     ILibHeaderBurger,
     ILibHeaderSearch,
-} from "./sub-types"
+} from "./subtypes"
 
 /**
  * @description Returns a Header component
@@ -23,7 +23,6 @@ import type {
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const Header = forwardRef<HTMLDivElement, ILibHeader>(
     (
         {

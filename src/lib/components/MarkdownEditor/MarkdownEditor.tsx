@@ -25,7 +25,6 @@ import type { ILibMarkdownEditor } from "./types"
  * @prop icons?: { bold?: string | JSX.Element; italic?: string | JSX.Element; strikethrough?: string | JSX.Element; ul?: string | JSX.Element; ol?: string | JSX.Element; link?: string | JSX.Element; quote?: string | JSX.Element; hr?: string | JSX.Element; code?: string | JSX.Element; codeBlock?: string | JSX.Element; comment?: string | JSX.Element; image?: string | JSX.Element; editorCode?: string | JSX.Element; editorLive?: string | JSX.Element; editorPreview?: string | JSX.Element }
  * @prop iconsSizes?: { bold?: number; italic?: number; strikethrough?: number; ul?: number; ol?: number; link?: number; quote?: number; hr?: number; code?: number; codeBlock?: number; comment?: number; image?: number; editorCode?: number; editorLive?: number; editorPreview?: number }
  */
-
 export const MarkdownEditor = forwardRef<
     HTMLTextAreaElement,
     ILibMarkdownEditor

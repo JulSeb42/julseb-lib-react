@@ -29,7 +29,6 @@ import type { ILibInputContainer } from "../types"
  * @prop counter: boolean | undefined
  * @prop maxLength: number | undefined
  */
-
 export function InputContainer({
     "data-testid": testid,
     id,

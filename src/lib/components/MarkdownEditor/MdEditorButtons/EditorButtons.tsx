@@ -3,10 +3,10 @@
 import classNames from "classnames"
 import { uuid, toSentenceCase } from "ts-utils-julseb"
 import { Flexbox } from "../../../"
-import type { LibMdEditorEditor, DispatchState } from "../../../types"
+import type { LibMdEditorEditor } from "../../../types"
 import { mdEditorButtons } from "../markdown-buttons"
 import { IconButton } from "../styles"
-import type { ILibMarkdownEditor } from "../types"
+import type { ILibMdEditorButtons } from "../subtypes"
 
 export function EditorButtons({
     "data-testid": testid,
@@ -16,13 +16,7 @@ export function EditorButtons({
     iconsSizes,
     editor,
     setEditor,
-}: Pick<
-    Partial<ILibMarkdownEditor>,
-    "showButtons" | "className" | "data-testid" | "icons" | "iconsSizes"
-> & {
-    editor: LibMdEditorEditor
-    setEditor: DispatchState<LibMdEditorEditor>
-}) {
+}: ILibMdEditorButtons) {
     return (
         <Flexbox
             data-testid={

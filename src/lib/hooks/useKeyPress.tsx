@@ -8,7 +8,6 @@ import { useEffect } from "react"
  * @argument keyCodes: string | Array<string>
  * @argument callback: () => void
  */
-
 export function useKeyPress(
     keyCodes: string | Array<string>,
     callback: () => void,

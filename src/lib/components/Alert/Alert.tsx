@@ -56,7 +56,6 @@ const alertStyles: {
  * @prop backgroundColor?: Any color from the library => only if alertColor is not defined
  * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library } => color only if alertColor is not defined
  */
-
 export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
     (
         {

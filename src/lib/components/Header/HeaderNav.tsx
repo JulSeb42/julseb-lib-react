@@ -7,7 +7,7 @@ import { useMaxWidth, useClickOutside } from "../../"
 import { HeaderNavLink } from "./HeaderNavLink"
 import { HeaderSearch } from "./HeaderSearch"
 import { Nav } from "./styles"
-import type { ILibHeaderNav } from "./sub-types"
+import type { ILibHeaderNav } from "./subtypes"
 
 export function HeaderNav({
     "data-testid": testid,

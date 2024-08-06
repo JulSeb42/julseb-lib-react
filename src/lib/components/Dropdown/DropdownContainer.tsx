@@ -2,8 +2,8 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import type { ILibFlexbox } from "../Flexbox/types"
 import { StyledDropdownContainer } from "./styles"
+import type { ILibDropdownContainer } from "./types"
 
 /**
  * @description Returns a DropdownContainer component
@@ -13,10 +13,9 @@ import { StyledDropdownContainer } from "./styles"
  * @prop as?: ElementType
  * @prop isOpen: boolean
  */
-
 export const DropdownContainer = forwardRef<
     HTMLDivElement,
-    ILibFlexbox & { isOpen: boolean }
+    ILibDropdownContainer
 >(({ isOpen, className, ...rest }, ref) => {
     return (
         <StyledDropdownContainer

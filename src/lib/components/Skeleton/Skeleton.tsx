@@ -20,7 +20,6 @@ import type { ILibSkeleton } from "./types"
  * @prop flexGrow?: string | number
  * @prop animation?: "pulse" | "shine"
  */
-
 export const Skeleton = forwardRef<HTMLDivElement, ILibSkeleton>(
     (
         {

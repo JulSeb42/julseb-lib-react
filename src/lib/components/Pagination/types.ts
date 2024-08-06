@@ -1,7 +1,15 @@
 /*=============================================== Pagination types ===============================================*/
 
-import type { LibColorsHover, LibIcon, ReactChildren } from "../../types"
+import type { ButtonHTMLAttributes } from "react"
+import type {
+    LibColorsHover,
+    LibComponentBase,
+    LibIcon,
+    ReactChildren,
+} from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
+
+/*====================== Pagination ======================*/
 
 interface ILibPaginationBase extends ILibFlexbox {
     accentColor?: LibColorsHover
@@ -29,3 +37,25 @@ interface ILibPaginationWithChildren extends ILibPaginationBase {
 export type ILibPagination =
     | ILibPaginationWithItems
     | ILibPaginationWithChildren
+
+/*====================== PaginationButton ======================*/
+
+interface ILibPaginationButtonBase
+    extends LibComponentBase<HTMLButtonElement>,
+        ButtonHTMLAttributes<HTMLButtonElement> {
+    accentColor?: LibColorsHover
+}
+
+interface PaginationButtonActive extends ILibPaginationButtonBase {
+    isActive: boolean
+    readOnly?: never
+}
+
+interface PaginationButtonReadOnly extends ILibPaginationButtonBase {
+    isActive?: never
+    readOnly: boolean
+}
+
+export type ILibPaginationButton =
+    | PaginationButtonActive
+    | PaginationButtonReadOnly

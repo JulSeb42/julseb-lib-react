@@ -18,7 +18,6 @@ import type { ILibBurger } from "./types"
  * @prop noHover?: boolean
  * @prop borderWidth?: number
  */
-
 export const Burger = forwardRef<HTMLButtonElement, ILibBurger>(
     (
         {

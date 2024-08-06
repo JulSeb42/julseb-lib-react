@@ -14,7 +14,6 @@ import type { ILibInputValidationIcon } from "../types"
  * @prop validation: { status: LibValidationStatus }
  * @prop validationIcon: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number } | undefined
  */
-
 export function InputValidationIcon({
     "data-testid": testid,
     className,

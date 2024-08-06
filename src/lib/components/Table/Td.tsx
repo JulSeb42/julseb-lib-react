@@ -11,7 +11,6 @@ import type { ILibTd } from "./types"
  * @prop data-testid?: string
  * @prop noPadding?: boolean
  */
-
 export const Td = forwardRef<HTMLTableCellElement, ILibTd>(
     ({ "data-testid": testid, noPadding, ...rest }, ref) => {
         return (

@@ -10,7 +10,6 @@ import type { ILibInputAndListContainer } from "../types"
  * @prop className: string | undefined
  * @prop children?: ReactChildren
  */
-
 export function InputAndListContainer({
     "data-testid": testid,
     className,

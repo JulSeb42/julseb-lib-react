@@ -15,7 +15,6 @@ import type { ILibIcon } from "./types"
  * @prop color?: Any color from the library
  * @prop baseURL?: string => directory inside "/public" folder where the SVG files are located
  */
-
 export const Icon = forwardRef<SVGElement, ILibIcon>(
     (
         {

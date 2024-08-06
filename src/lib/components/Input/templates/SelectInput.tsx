@@ -11,7 +11,7 @@ import {
     InputLeftContainer,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { ILibSelectInput } from "../types"
+import type { ILibSelectInput } from "../subtypes"
 
 export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
     (

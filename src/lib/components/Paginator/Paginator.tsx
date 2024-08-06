@@ -25,7 +25,6 @@ const DEFAULT_ICON_SIZE = 32
  * @prop labels?: { prev?: string; next?: string; show?: boolean }
  * @prop queries?: Array<Array<string>>
  */
-
 export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
     (
         {

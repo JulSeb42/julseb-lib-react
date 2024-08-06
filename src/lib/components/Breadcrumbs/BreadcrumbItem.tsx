@@ -2,27 +2,20 @@
 
 import { Link } from "react-router-dom"
 import { uuid } from "ts-utils-julseb"
-import type { LibBreadcrumbItem } from "../../types"
-
-interface ILibBreadcrumbItem {
-    "data-testid": string | undefined
-    className: string | undefined
-    item: LibBreadcrumbItem
-    i: number
-}
+import type { ILibBreadcrumbItem } from "./subtypes"
 
 export function BreadcrumbItem({
     "data-testid": testid,
     className,
     item,
-    i,
+    index,
 }: ILibBreadcrumbItem) {
     if (item.to)
         return (
             <Link
                 to={item.to}
                 data-testid={
-                    item["data-testid"] || (testid && `${testid}.Link.${i}`)
+                    item["data-testid"] || (testid && `${testid}.Link.${index}`)
                 }
                 className={item.className || (className && "Link")}
                 id={item.id}
@@ -37,7 +30,7 @@ export function BreadcrumbItem({
         <span
             key={uuid()}
             data-testid={
-                item["data-testid"] || (testid && `${testid}.Text.${i}`)
+                item["data-testid"] || (testid && `${testid}.Text.${index}`)
             }
             className={item.className || (className && "Text")}
             id={item.id}

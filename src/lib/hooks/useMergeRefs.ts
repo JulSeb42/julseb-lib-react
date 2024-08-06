@@ -12,7 +12,6 @@ import {
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMergeRefs
  * @argument refs: Array<Ref<Instance> | undefined>
  */
-
 export function useMergeRefs<Instance>(
     refs: Array<Ref<Instance> | undefined>
 ): RefCallback<Instance> | null {

@@ -9,7 +9,6 @@ import type { ILibTHead } from "./types"
  * @extends HTMLTableSectionElement
  * @prop data-testid?: string
  */
-
 export const THead = forwardRef<HTMLTableSectionElement, ILibTHead>(
     ({ "data-testid": testid, ...rest }, ref) => {
         return <thead data-testid={testid} ref={ref} {...rest} />

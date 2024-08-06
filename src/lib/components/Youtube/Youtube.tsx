@@ -13,7 +13,6 @@ import type { ILibYoutube } from "./types"
  * @prop as?: ElementType
  * @prop aspectRatio?: string
  */
-
 export const Youtube = forwardRef<HTMLIFrameElement, ILibYoutube>(
     (
         {

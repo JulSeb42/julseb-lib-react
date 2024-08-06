@@ -22,7 +22,6 @@ import type { ILibTable } from "./types"
  * @prop vAlign?: CssVerticalAlign
  * @prop linkify?: boolean
  */
-
 export const Table = forwardRef<HTMLTableElement, ILibTable>(
     (
         {

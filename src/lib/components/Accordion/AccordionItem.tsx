@@ -3,21 +3,10 @@
 import { forwardRef, useState } from "react"
 import classNames from "classnames"
 import { capitalize } from "ts-utils-julseb"
-import type {
-    LibComponentBase,
-    LibAccordionIcon,
-    LibAccordionVariant,
-} from "../../types"
 import { AccordionButton } from "./AccordionButton"
 import { AccordionContent } from "./AccordionContent"
 import { StyledAccordionItem } from "./styles"
-
-interface ILibAccordionItem extends LibComponentBase<HTMLDivElement> {
-    title: string
-    icon?: LibAccordionIcon
-    variant?: LibAccordionVariant
-    defaultOpen?: boolean
-}
+import type { ILibAccordionItem } from "./types"
 
 /**
  * @description Returns an item for Accordion component

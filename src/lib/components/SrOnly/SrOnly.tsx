@@ -11,7 +11,6 @@ import type { ILibSrOnly } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const SrOnly = forwardRef<HTMLDivElement, ILibSrOnly>(
     ({ "data-testid": testid, as, children, ...rest }, ref) => {
         return (

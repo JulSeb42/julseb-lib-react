@@ -1,46 +1,24 @@
 /*=============================================== Select Button component ===============================================*/
 
-import { forwardRef, type MouseEventHandler } from "react"
+import { forwardRef } from "react"
 import classNames from "classnames"
-import type {
-    LibInputBackground,
-    LibInputVariant,
-    LibValidationStatus,
-} from "../../types"
 import { StyledSelectButton } from "./styles"
-
-export interface ILibSelectButton {
-    "data-testid": string | undefined
-    className: string | undefined
-    selected: string
-    onClick?: MouseEventHandler<HTMLButtonElement>
-    id: string | undefined
-    tabIndex: number | undefined
-    disabled: boolean | undefined
-    hasIcon: boolean
-    inputBackground: LibInputBackground | undefined
-    inputVariant: LibInputVariant | undefined
-    validationStatus: LibValidationStatus
-    isOpen: boolean
-    hasOptions: boolean
-    hasContainer: boolean
-    hasWrapper: boolean
-}
+import type { ILibSelectButton } from "./subtypes"
 
 export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
     (
         {
             "data-testid": testid,
             className,
-            hasOptions,
+            options,
             isOpen,
             id,
             tabIndex,
             disabled,
-            hasIcon,
+            icons,
             inputBackground,
             inputVariant,
-            validationStatus,
+            validation,
             selected,
             hasWrapper,
             hasContainer,
@@ -51,13 +29,13 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
         return (
             <StyledSelectButton
                 data-testid={
-                    (hasContainer || hasWrapper || hasIcon) && testid
+                    (hasContainer || hasWrapper || icons?.iconLeft) && testid
                         ? `${testid}.SelectContainer.SelectButton`
                         : testid
                 }
                 ref={ref}
                 className={classNames(
-                    (hasContainer || hasWrapper || hasIcon) && className
+                    (hasContainer || hasWrapper || icons?.iconLeft) && className
                         ? "SelectButton"
                         : className,
                     { WithListOpen: isOpen }
@@ -70,8 +48,8 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
                 $disabled={disabled}
                 $inputBackground={inputBackground}
                 $inputVariant={inputVariant}
-                $validation={validationStatus}
-                $hasOptions={hasOptions}
+                $validation={validation?.status}
+                $hasOptions={!!options}
             >
                 {selected}
             </StyledSelectButton>

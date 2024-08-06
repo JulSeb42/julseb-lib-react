@@ -12,7 +12,7 @@ import {
 import { Close } from "../../../icons"
 import { transformSearchKeys } from "../../../lib-utils"
 import { StyledInput } from "../styles"
-import type { ILibSearchInput } from "../types"
+import type { ILibSearchInput } from "../subtypes"
 
 export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
     (

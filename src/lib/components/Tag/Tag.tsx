@@ -22,7 +22,6 @@ import type { ILibTag } from "./types"
  * @prop iconSizes?: { left?: number; right?: number }
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
-
 export const Tag = forwardRef<HTMLSpanElement, ILibTag>(
     (
         {

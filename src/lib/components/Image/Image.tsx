@@ -18,7 +18,6 @@ import type { ILibImage } from "./types"
  * @prop fallback?: JSX.Element
  * @prop caption?: string | { text: string; textColor?: Any color from the library; background?: Any color or overlay from the library, except "gradient-black" | "gradient-white"; as?: ElementType }
  */
-
 export const Image = forwardRef<HTMLImageElement, ILibImage>(
     (
         {
@@ -48,7 +47,7 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
             "data-testid": testid,
             ref,
             fallback,
-            hasCaption: !!caption,
+            caption,
             className,
             src,
             alt,

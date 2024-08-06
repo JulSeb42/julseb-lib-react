@@ -20,7 +20,6 @@ import type { ILibMessagesList } from "./types"
  * @prop iconButtonScrollSize?: number
  * @prop positionScrollButton?: number
  */
-
 export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
     (
         {

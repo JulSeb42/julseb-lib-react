@@ -47,7 +47,6 @@ const initialState = {
  * @prop toastOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
  * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
-
 export function ToasterProviderWrapper({
     "data-testid": testid,
     className,
@@ -128,7 +127,6 @@ export function ToasterProviderWrapper({
  * @function loading
  * @function remove
  */
-
 export function useToast() {
     return useContext(ToastContext) as ILibToasterContext
 }

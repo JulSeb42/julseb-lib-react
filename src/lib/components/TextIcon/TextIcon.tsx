@@ -20,7 +20,6 @@ import type { ILibTextIcon } from "./types"
  * @prop iconSize?: number
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
-
 export const TextIcon = forwardRef<
     HTMLHeadingElement &
         HTMLParagraphElement &

@@ -17,7 +17,6 @@ import type { ILibProgressBar } from "./types"
  * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop animated?: boolean
  */
-
 export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
     (
         {

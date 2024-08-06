@@ -23,7 +23,6 @@ import type { ILibBadge } from "./types"
  * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  * @prop iconSize?: number
  */
-
 export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
     (
         {

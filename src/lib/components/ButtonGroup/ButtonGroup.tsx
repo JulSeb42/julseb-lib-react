@@ -19,7 +19,6 @@ import type { ILibButtonGroup } from "./types"
  * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
  * @prop size?: "default" | "small"
  */
-
 export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
     (
         {

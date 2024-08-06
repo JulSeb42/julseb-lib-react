@@ -8,7 +8,6 @@ import { useSearchParams } from "react-router-dom"
  * @argument data: Array<T> => to define
  * @argument defaultLimit?: number
  */
-
 export function usePaginatedData<T>(
     data: Array<T>,
     defaultLimit = 20

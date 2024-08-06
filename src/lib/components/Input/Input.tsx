@@ -101,7 +101,6 @@ const InputFunction = forwardRef<
  * @type for type `email` | `number` | `tel` | `text` | `url`
  * @prop suffix?: string | JSX.Element
  */
-
 export const Input = forwardRef<
     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
     ILibInput

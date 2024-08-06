@@ -13,7 +13,6 @@ import type { ILibFade } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const Fade = forwardRef<HTMLDivElement, ILibFade>(
     ({ "data-testid": testid, as, children, className, ...rest }, ref) => {
         const [isVisible, setVisible] = useState(true)

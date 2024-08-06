@@ -24,3 +24,10 @@ interface AccordionWithChildren extends ILibAccordionBase {
 }
 
 export type ILibAccordion = AccordionWithItems | AccordionWithChildren
+
+export interface ILibAccordionItem extends LibComponentBase<HTMLDivElement> {
+    title: string
+    icon?: LibAccordionIcon
+    variant?: LibAccordionVariant
+    defaultOpen?: boolean
+}

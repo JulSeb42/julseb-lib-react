@@ -56,7 +56,6 @@ import type { ILibSlideshow } from "./types"
  * @prop hideOnTouch?: boolean
  * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  */
-
 export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
     (
         {

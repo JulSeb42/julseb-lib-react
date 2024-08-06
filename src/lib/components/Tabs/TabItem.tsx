@@ -13,7 +13,6 @@ import type { ILibTabItem } from "./types"
  * @prop as?: ElementType
  * @prop isActive: boolean
  */
-
 export const TabItem = forwardRef<HTMLDivElement, ILibTabItem>(
     (
         { "data-testid": testid, as, children, className, isActive, ...rest },

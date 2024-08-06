@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import { StyledInput } from "../styles"
-import type { ILibTextareaInput } from "../types"
+import type { ILibTextareaInput } from "../subtypes"
 
 export const TextareaInput = forwardRef<HTMLTextAreaElement, ILibTextareaInput>(
     (

@@ -5,31 +5,17 @@ import classNames from "classnames"
 import { capitalize } from "ts-utils-julseb"
 import { LibIcon } from "../LibIcon"
 import { Plus, ChevronDown } from "../../icons"
-import type {
-    DispatchState,
-    LibAccordionVariant,
-    LibAccordionIcon,
-} from "../../types"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"
-
-interface ILibAccordionButton {
-    "data-testid": string | undefined
-    className: string | undefined
-    variant: LibAccordionVariant | undefined
-    title: string
-    icon: LibAccordionIcon | undefined
-    isOpen: boolean
-    setIsOpen: DispatchState<boolean>
-}
+import type { ILibAccordionButton } from "./subtypes"
 
 export function AccordionButton({
     "data-testid": testid,
     className,
     variant = "basic",
     icon = "plus",
-    title,
     isOpen,
     setIsOpen,
+    title,
 }: ILibAccordionButton) {
     const iconProps = {
         "data-testid":

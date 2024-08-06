@@ -21,7 +21,6 @@ import type { ILibTooltip } from "./types"
  * @prop textColor?: Any color from the library
  * @prop offset?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
-
 export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
     (
         {

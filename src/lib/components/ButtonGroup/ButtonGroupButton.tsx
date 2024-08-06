@@ -6,19 +6,11 @@ import { Button, ButtonIcon } from "../.."
 import type { ILibButton } from "../Button/types"
 import type { ILibButtonIcon } from "../ButtonIcon/types"
 import type { LibButtonGroupButtonItem } from "../../types"
-import type { ILibButtonGroup } from "./types"
+import type { ILibButtonGroupButton } from "./subtypes"
 
 export const ButtonGroupButton = forwardRef<
     HTMLButtonElement,
-    Pick<
-        ILibButtonGroup,
-        | "variant"
-        | "color"
-        | "className"
-        | "data-testid"
-        | "size"
-        | "iconBaseUrl"
-    > & { button: LibButtonGroupButtonItem; i: number }
+    ILibButtonGroupButton
 >(
     (
         {
@@ -28,7 +20,7 @@ export const ButtonGroupButton = forwardRef<
             color,
             variant,
             size,
-            i,
+            index,
             iconBaseUrl,
         },
         ref
@@ -37,7 +29,8 @@ export const ButtonGroupButton = forwardRef<
             (ILibButton | ILibButtonIcon) & LibButtonGroupButtonItem
         > = {
             "data-testid":
-                button["data-testid"] || (testid && `${testid}.Button.${i}`),
+                button["data-testid"] ||
+                (testid && `${testid}.Button.${index}`),
             className: button.className || (className && "Button"),
             id: button.id,
             ref: ref || button.ref,

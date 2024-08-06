@@ -20,7 +20,6 @@ import type { ILibBreadcrumbs } from "./types"
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop separator?: "slash" | "chevron" | JSX.Element
  */
-
 export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
     (
         {
@@ -45,7 +44,7 @@ export const Breadcrumbs = forwardRef<HTMLDivElement, ILibBreadcrumbs>(
                         data-testid={testid}
                         className={className}
                         item={item}
-                        i={i}
+                        index={i}
                     />
                 )) ?? children}
             </BreadcrumbsFn>

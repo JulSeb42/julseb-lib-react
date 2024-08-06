@@ -12,7 +12,7 @@ import {
     InputPrefix,
 } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { ILibDateInput } from "../types"
+import type { ILibDateInput } from "../subtypes"
 
 export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
     (

@@ -17,7 +17,6 @@ import type { ILibInputWrapper } from "../types"
  * @prop inputVariant: "rounded" | "pill" | undefined
  * @prop validationStatus: boolean | undefined
  */
-
 export function InputWrapper({
     "data-testid": testid,
     className,

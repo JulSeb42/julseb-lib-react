@@ -13,7 +13,6 @@ import type { ILibInputLeftContainer } from "../types"
  * @prop disabled: boolean | undefined
  * @prop withPadding?: boolean
  */
-
 export const InputLeftContainer = forwardRef<
     HTMLSpanElement,
     ILibInputLeftContainer

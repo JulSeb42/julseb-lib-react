@@ -1,32 +1,12 @@
 /*=============================================== Toaster component ===============================================*/
 
-import { forwardRef, type ElementType } from "react"
+import { forwardRef } from "react"
 import { uuid } from "ts-utils-julseb"
 import { Loader } from "../Loader"
 import { Toast } from "./Toast"
-import type {
-    LibAllColors,
-    LibIcon,
-    LibToastOptions,
-    LibToasterPosition,
-    LibToast,
-} from "../../types"
+import type { LibAllColors } from "../../types"
 import { StyledToaster } from "./styles"
-
-interface ILibToaster {
-    "data-testid"?: string
-    as?: ElementType
-    className?: string
-    toasts: Array<LibToast>
-    toastsOptions?: Pick<
-        LibToastOptions,
-        "duration" | "labelClose" | "withTimer"
-    >
-    isOpen: boolean
-    iconClose?: LibIcon
-    iconCloseSize?: number
-    position?: LibToasterPosition
-}
+import type { ILibToaster } from "./types"
 
 const DEFAULT_ICON_SIZE = 16
 
@@ -84,7 +64,6 @@ const toastStatusStyles: {
  * @prop iconCloseSize?: number
  * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
-
 export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
     (
         {

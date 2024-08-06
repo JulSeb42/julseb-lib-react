@@ -4,7 +4,7 @@ import { uuid, toSentenceCase } from "ts-utils-julseb"
 import { roundIconSize } from "../../../lib-utils"
 import { mdButtons } from "../markdown-buttons"
 import { IconButton } from "../styles"
-import type { ILibMarkdownEditor } from "../types"
+import type { ILibMarkdownEditorMdButtons } from "../subtypes"
 
 const DEFAULT_ICON_SIZE = roundIconSize(24)
 
@@ -15,10 +15,7 @@ export function MarkdownButtons({
     icons,
     iconsSizes,
     addCode,
-}: Pick<
-    ILibMarkdownEditor,
-    "showButtons" | "icons" | "iconsSizes" | "data-testid" | "className"
-> & { addCode: (code: string) => void }) {
+}: ILibMarkdownEditorMdButtons) {
     return mdButtons.map(button => {
         if (
             showButtons &&

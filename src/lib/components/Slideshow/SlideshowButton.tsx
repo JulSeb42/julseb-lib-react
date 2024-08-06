@@ -3,7 +3,7 @@
 import { LibIcon } from "../LibIcon"
 import { ChevronLeft, ChevronRight } from "../../icons"
 import { StyledSlideshowButton } from "./styles"
-import type { ILibSlideshowButton } from "./sub-types"
+import type { ILibSlideshowButton } from "./subtypes"
 
 const DEFAULT_ICON_SIZE_SMALL = 24
 const DEFAULT_ICON_SIZE_LARGE = 32

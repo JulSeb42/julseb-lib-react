@@ -28,7 +28,6 @@ import type { ILibInputCheck } from "./types"
  * @prop iconCheck?: string | JSX.Element => only if type is set to "checkbox"
  * @prop iconCheckSize?: number => only if type is set to "checkbox"
  */
-
 export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
     (
         {

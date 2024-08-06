@@ -18,7 +18,6 @@ import type { ILibInputButton } from "../types"
  * @prop iconSize: number | undefined => only if icon is defined
  * @prop text: string | undefined => only if icon is not defined
  */
-
 export function InputButton({
     "data-testid": testid,
     "aria-label": ariaLabel,

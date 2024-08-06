@@ -23,7 +23,6 @@ import type { ILibMessage } from "./types"
  * @prop dateFormat?: "short" | "long"
  * @prop className?: string
  */
-
 export const Message = forwardRef<HTMLDivElement, ILibMessage>(
     (
         {

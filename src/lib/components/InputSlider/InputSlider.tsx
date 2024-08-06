@@ -26,7 +26,6 @@ import type { ILibInputSlider } from "./types"
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
  * @prop inputBackground?: "light" | "dark"
  */
-
 export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
     (
         {

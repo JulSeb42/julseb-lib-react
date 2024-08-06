@@ -25,7 +25,6 @@ import type { ILibAvatar } from "./types"
  * @prop backgroundColor?: Any color from the library => only if letter or icon are defined
  * @prop contentColor?: Any color from the library => only if letter or icon are defined
  */
-
 export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
     (
         {

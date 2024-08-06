@@ -3,15 +3,7 @@
 import classNames from "classnames"
 import { capitalize } from "ts-utils-julseb"
 import { StyledAccordionContent } from "./styles"
-import type { ReactChildren, LibAccordionVariant } from "../../types"
-
-interface ILibAccordionContent {
-    "data-testid": string | undefined
-    className: string | undefined
-    isOpen: boolean
-    variant: LibAccordionVariant | undefined
-    children?: ReactChildren
-}
+import type { ILibAccordionContent } from "./subtypes"
 
 export function AccordionContent({
     "data-testid": testid,

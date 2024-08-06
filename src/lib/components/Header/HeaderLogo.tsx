@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom"
 import { Logo, LogoImg } from "./styles"
-import type { ILibHeaderLogo } from "./sub-types"
+import type { ILibHeaderLogo } from "./subtypes"
 
 export function HeaderLogo({
     "data-testid": testid,

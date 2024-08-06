@@ -8,7 +8,6 @@ import { useState, useEffect } from "react"
  * @argument value: <T> => type to define
  * @argument delay?: number
  */
-
 export function useDebounce<T>(value: T, delay: number = 1000) {
     const [debouncedValue, setDebouncedValue] = useState<T>(value)
 

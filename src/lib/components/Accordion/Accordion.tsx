@@ -19,7 +19,6 @@ import type { ILibAccordion } from "./types"
  * @prop variant?: "basic" | "rounded"
  * @prop icon?: "plus" | "chevron" | JSX.Element
  */
-
 export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(
     (
         {

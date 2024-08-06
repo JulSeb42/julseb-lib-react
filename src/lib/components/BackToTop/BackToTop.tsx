@@ -15,7 +15,6 @@ import { roundIconSize } from "../../lib-utils"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
     (
         {

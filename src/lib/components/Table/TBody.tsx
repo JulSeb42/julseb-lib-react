@@ -9,7 +9,6 @@ import type { ILibTBody } from "./types"
  * @extends HTMLTableSectionElement
  * @prop data-testid?: string
  */
-
 export const TBody = forwardRef<HTMLTableSectionElement, ILibTBody>(
     ({ "data-testid": testid, ...rest }, ref) => {
         return <tbody data-testid={testid} ref={ref} {...rest} />

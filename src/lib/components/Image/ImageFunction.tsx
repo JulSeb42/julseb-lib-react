@@ -1,34 +1,22 @@
 /*=============================================== ImageFunction ===============================================*/
 
-import { forwardRef, lazy, Suspense, type ImgHTMLAttributes } from "react"
-import type { LibComponentBase, ILibRadius, CssObjectFit } from "../../types"
+import { forwardRef, lazy, Suspense } from "react"
+import type { ILibImage } from "./types"
 
 const StyledImage = lazy(() => import("./styles"))
 
-interface ILibImageFn
-    extends Omit<LibComponentBase<HTMLImageElement>, "as">,
-        ImgHTMLAttributes<HTMLImageElement> {
-    fallback?: JSX.Element
-    hasCaption?: boolean
-    aspectRatio?: string
-    borderRadius?: ILibRadius
-    fit?: CssObjectFit
-    width: string | number
-    height: string | number
-}
-
-export const ImageFunction = forwardRef<HTMLImageElement, ILibImageFn>(
+export const ImageFunction = forwardRef<HTMLImageElement, ILibImage>(
     (
         {
             "data-testid": testid,
             fallback,
-            hasCaption,
+            caption,
             className,
             src,
             alt,
             aspectRatio,
-            width,
-            height,
+            width = "100%",
+            height = "auto",
             borderRadius,
             fit,
             ...rest
@@ -39,9 +27,9 @@ export const ImageFunction = forwardRef<HTMLImageElement, ILibImageFn>(
             <Suspense fallback={fallback}>
                 <StyledImage
                     data-testid={
-                        !hasCaption ? testid : testid && `${testid}.Image`
+                        !caption ? testid : testid && `${testid}.Image`
                     }
-                    className={!hasCaption ? className : className && "Image"}
+                    className={!caption ? className : className && "Image"}
                     ref={ref}
                     src={src}
                     alt={alt}

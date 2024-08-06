@@ -21,7 +21,6 @@ import type { ILibGrid } from "./types"
  * @prop alignContent?: CssAlignContent
  * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
-
 export const Grid = forwardRef<HTMLDivElement, ILibGrid>(
     (
         {

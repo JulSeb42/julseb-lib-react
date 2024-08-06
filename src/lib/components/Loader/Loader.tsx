@@ -18,7 +18,6 @@ import type { ILibLoader } from "./types"
  * @prop variant?: 1 | 2 | 3 | 4
  * @prop borderWidth?: number => only if variant is set to 1 | 2 | 3
  */
-
 export const Loader = forwardRef<HTMLSpanElement, ILibLoader>(
     ({ variant, size = 48, color = "primary", ...rest }, ref) => {
         if (variant === 2)

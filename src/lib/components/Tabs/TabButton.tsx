@@ -16,7 +16,6 @@ import type { ILibTabButton } from "./types"
  * @prop justify?: "start" | "stretch"
  * @prop variant?: "basic" | "rounded"
  */
-
 export const TabButton = forwardRef<HTMLButtonElement, ILibTabButton>(
     (
         {

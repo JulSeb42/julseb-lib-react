@@ -16,7 +16,6 @@ const URL_REGEX =
  * @prop as?: ElementType
  * @prop blank?: boolean
  */
-
 export const Linkify = forwardRef<
     HTMLHeadingElement &
         HTMLParagraphElement &

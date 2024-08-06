@@ -24,7 +24,6 @@ import type { ILibDropdown } from "./types"
  * @prop positionFromButton?: number
  * @prop shadow?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | null
  */
-
 export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
     (
         {

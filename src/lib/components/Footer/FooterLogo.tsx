@@ -1,26 +1,15 @@
 /*=============================================== FooterLogo ===============================================*/
 
 import { LogoText, LogoImg } from "./styles"
-
-interface ILibFooterLogo {
-    "data-testid": string | undefined
-    className: string | undefined
-    img?: string
-    alt?: string
-    width?: number
-    height?: number
-    text?: string
-}
+import type { ILibFooterLogo } from "./subtypes"
 
 export function FooterLogo({
     "data-testid": testid,
     className,
-    img,
-    alt = "Logo",
-    width = 100,
-    height = 30,
-    text,
+    logo,
 }: ILibFooterLogo) {
+    const { text, img, alt = "Logo", width = 100, height = 30 } = logo as any
+
     if (text)
         return (
             <LogoText data-testid={testid} className={className}>

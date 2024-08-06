@@ -22,7 +22,6 @@ import type { ILibProgressCircle } from "./types"
  * @prop showValue?: boolean => only if icon is not defined
  * @prop icon?: string | JSX.Element => only if showValue is not defined
  */
-
 export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
     (
         {

@@ -3,28 +3,12 @@
 import { forwardRef, type ChangeEvent } from "react"
 import { roundIconSize } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
-import type { DispatchState, LibButtonGroupToggle } from "../../types"
 import { StyledToggle, ToggleInput, ToggleLabel } from "./styles"
-import type { ILibButtonGroup } from "./types"
+import type { ILibButtonGroupToggle } from "./subtypes"
 
 export const ButtonGroupToggle = forwardRef<
     HTMLLabelElement,
-    Pick<
-        ILibButtonGroup,
-        | "data-testid"
-        | "className"
-        | "toggleType"
-        | "color"
-        | "variant"
-        | "size"
-        | "name"
-        | "iconBaseUrl"
-    > & {
-        toggle: LibButtonGroupToggle
-        toggles: { [id: string]: boolean }
-        setToggles: DispatchState<{ [id: string]: boolean }>
-        i: number
-    }
+    ILibButtonGroupToggle
 >(
     (
         {
@@ -36,7 +20,7 @@ export const ButtonGroupToggle = forwardRef<
             variant,
             size,
             name,
-            i,
+            index,
             toggles,
             setToggles,
             iconBaseUrl,
@@ -77,7 +61,7 @@ export const ButtonGroupToggle = forwardRef<
             <StyledToggle
                 data-testid={
                     toggle["data-testid"] ||
-                    (testid && `${testid}.ToggleContainer.${i}`)
+                    (testid && `${testid}.ToggleContainer.${index}`)
                 }
                 ref={ref}
                 className={toggle.className ?? (className && "ToggleContainer")}

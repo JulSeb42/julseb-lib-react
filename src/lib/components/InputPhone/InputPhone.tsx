@@ -63,7 +63,6 @@ const DEFAULT_ICONS_SIZES = {
  * @prop inputVariant?: "rounded" | "pill"
  * @prop validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }
  */
-
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
     (
         {

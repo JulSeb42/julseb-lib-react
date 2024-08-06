@@ -13,7 +13,6 @@ import type { ILibWrapper } from "./types"
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop backgroundColor?: Any color from the library
  */
-
 export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(
     (
         {

@@ -24,7 +24,6 @@ import type { ILibPagination } from "./types"
  * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop queries?: Array<Array<string>>
  */
-
 export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
     (
         {

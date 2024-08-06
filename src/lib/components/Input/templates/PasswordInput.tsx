@@ -12,7 +12,7 @@ import {
 } from "../../InputComponents"
 import type { ILibInputButton } from "../../InputComponents/types"
 import { StyledInput } from "../styles"
-import type { ILibPasswordInput } from "../types"
+import type { ILibPasswordInput } from "../subtypes"
 
 export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
     (

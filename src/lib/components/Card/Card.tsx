@@ -24,7 +24,6 @@ import type { ILibCard } from "./types"
  * @prop backgroundImg?: { img: string; clip?: CssBackgroundClip; origin?: CssBackgroundOrigin; position?: CssBackgroundPosition; repeat?: CssBackgroundRepeat; size?: CssBackgroundSize }
  * @prop textAlign?: CssTextAlign
  */
-
 export const Card = forwardRef<HTMLDivElement, ILibCard>(
     (
         {

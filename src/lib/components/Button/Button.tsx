@@ -26,7 +26,6 @@ import type { ILibButton } from "./types"
  * @prop noPadding?: boolean => only if variant is set to transparent
  * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if isLoading is defined
  */
-
 export const Button = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
     ILibButton

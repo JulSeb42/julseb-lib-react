@@ -16,6 +16,7 @@
         "plop": "plop --plopfile 'plop/plopfile.js'",
         "plop:c": "yarn run plop component",
         "plop:p": "yarn plop preview",
+        "plop:st": "yarn plop subtype",
         "docgen": "react-docgen -o ./src/data/docgen.json ./src/lib/components/**/*.tsx"
     },
     "dependencies": {

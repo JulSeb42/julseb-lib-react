@@ -19,7 +19,6 @@ import type { ILibIconMenu } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
     (
         {

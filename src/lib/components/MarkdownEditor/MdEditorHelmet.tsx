@@ -1,12 +1,7 @@
 /*=============================================== MdEditorHelmet component ===============================================*/
 
 import { HelmetStyles } from "../../lib-utils"
-import type { LibMdEditorEditor } from "../../types"
-
-interface ILibMdEditorHelmet {
-    editor: LibMdEditorEditor
-    height: number
-}
+import type { ILibMdEditorHelmet } from "./subtypes"
 
 export function MdEditorHelmet({ editor, height }: ILibMdEditorHelmet) {
     return (

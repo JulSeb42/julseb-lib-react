@@ -16,7 +16,6 @@ import type { ILibInputIconContainer } from "../types"
  * @prop inputBackground: LibInputBackground | undefined
  * @prop inputVariant: LibInputVariant | undefined
  */
-
 export function InputIcon({
     "data-testid": testid,
     className,

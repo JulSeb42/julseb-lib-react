@@ -15,7 +15,6 @@ import type { ILibKey } from "./types"
  * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "gray"
  * @prop withSeparator?: boolean
  */
-
 export const Key = forwardRef<HTMLSpanElement, ILibKey>(
     (
         {

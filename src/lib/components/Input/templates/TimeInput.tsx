@@ -12,7 +12,7 @@ import {
 } from "../../InputComponents"
 import { Clock } from "../../../icons"
 import { StyledInput } from "../styles"
-import type { ILibTimeInput } from "../types"
+import type { ILibTimeInput } from "../subtypes"
 
 export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
     (

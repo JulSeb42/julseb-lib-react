@@ -12,7 +12,6 @@ import type { ILibMessagesContainer } from "./types"
  * @prop as?: ElementType
  * @prop children?: ReactChildren
  */
-
 export const MessagesContainer = forwardRef<
     HTMLDivElement,
     ILibMessagesContainer

@@ -13,7 +13,6 @@ import type { ILibTabsButtonsContainer } from "./types"
  * @prop justify?: "start" | "stretch"
  * @prop variant?: "basic" | "rounded"
  */
-
 export const TabsButtonsContainer = forwardRef<
     HTMLDivElement,
     ILibTabsButtonsContainer

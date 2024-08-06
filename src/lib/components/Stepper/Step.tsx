@@ -23,7 +23,6 @@ import type { ILibStep } from "./types"
  * @prop iconActiveSize?: number
  * @prop number?: number
  */
-
 export const Step = forwardRef<HTMLSpanElement, ILibStep>(
     (
         {

@@ -4,7 +4,7 @@ import { useState, type FormEvent, type ChangeEvent } from "react"
 import { useNavigate, createSearchParams } from "react-router-dom"
 import { Input } from "../../"
 import { SearchForm } from "./styles"
-import type { ILibHeaderSearch } from "./sub-types"
+import type { ILibHeaderSearch } from "./subtypes"
 
 export function HeaderSearch({
     "data-testid": testid,

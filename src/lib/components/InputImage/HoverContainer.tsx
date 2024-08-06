@@ -4,8 +4,7 @@ import classNames from "classnames"
 import { LibIcon } from "../LibIcon"
 import { Edit } from "../../icons"
 import { StyledHoverContainer } from "./styles"
-import type { ILibInputImage } from "./types"
-// import type { ILibInputImageContainer } from "./EmptyContainer"
+import type { ILibHoverContainer } from "./subtypes"
 
 export function HoverContainer({
     "data-testid": testid,
@@ -16,18 +15,7 @@ export function HoverContainer({
     iconBaseUrl,
     isVisible,
     disabled = false,
-}: Pick<
-    ILibInputImage,
-    | "data-testid"
-    | "className"
-    | "validation"
-    | "icons"
-    | "iconSizes"
-    | "iconBaseUrl"
-    | "disabled"
-> & {
-    isVisible: boolean
-}) {
+}: ILibHoverContainer) {
     return (
         <StyledHoverContainer
             data-testid={testid && `${testid}.HoverContainer`}

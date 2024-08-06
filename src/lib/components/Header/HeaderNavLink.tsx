@@ -1,7 +1,7 @@
 /*=============================================== HeaderNavLink ===============================================*/
 
 import { NavLink } from "react-router-dom"
-import type { ILibHeaderNavLink } from "./sub-types"
+import type { ILibHeaderNavLink } from "./subtypes"
 
 export function HeaderNavLink({
     "data-testid": testid,

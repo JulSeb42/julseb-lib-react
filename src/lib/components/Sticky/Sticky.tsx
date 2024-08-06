@@ -11,7 +11,6 @@ import type { ILibSticky } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const Sticky = forwardRef<HTMLDivElement, ILibSticky>(
     ({ "data-testid": testid, as, children, top = "s", ...rest }, ref) => {
         return (

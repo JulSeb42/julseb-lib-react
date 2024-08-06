@@ -9,7 +9,6 @@ type CopyFn = (text: string) => Promise<boolean>
  * @description Hook to trigger a function to copy content
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useCopyToClipboard
  */
-
 export function useCopyToClipboard(): [CopiedValue, CopyFn] {
     const [copiedText, setCopiedText] = useState<CopiedValue>(null)
 

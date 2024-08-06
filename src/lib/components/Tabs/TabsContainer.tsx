@@ -11,7 +11,6 @@ import type { ILibTabsContainer } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const TabsContainer = forwardRef<HTMLDivElement, ILibTabsContainer>(
     ({ "data-testid": testid, as, children, ...rest }, ref) => {
         return (

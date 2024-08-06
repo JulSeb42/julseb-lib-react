@@ -13,7 +13,6 @@ import {
  * @argument ref: RefObject<HTMLElement>,
  * @argument options?: { callback: RefCallback<boolean>; check?: "width" | "height" }
  */
-
 export const useIsOverflow = (
     ref: RefObject<HTMLElement>,
     options?: {

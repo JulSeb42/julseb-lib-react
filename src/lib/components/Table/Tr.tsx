@@ -9,7 +9,6 @@ import type { ILibTr } from "./types"
  * @extends HTMLTableRowElement
  * @prop data-testid?: string
  */
-
 export const Tr = forwardRef<HTMLTableRowElement, ILibTr>(
     ({ "data-testid": testid, ...rest }, ref) => {
         return <tr data-testid={testid} ref={ref} {...rest} />

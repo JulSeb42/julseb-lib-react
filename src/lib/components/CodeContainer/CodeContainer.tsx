@@ -24,7 +24,6 @@ const DEFAULT_ICON_SIZE = 24
  * @prop highlighterStyle?: CSSProperties
  * @prop highlighterProps?: SyntaxHighlighterProps => imported from react-syntax-highlighter
  */
-
 export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
     (
         {

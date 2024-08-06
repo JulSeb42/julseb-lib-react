@@ -17,7 +17,6 @@ import type { ILibInputValidationHelper } from "../types"
  * @prop className: string | undefined
  * @prop validation: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number } | undefined
  */
-
 export function InputValidationHelper({
     "data-testid": testid,
     className,

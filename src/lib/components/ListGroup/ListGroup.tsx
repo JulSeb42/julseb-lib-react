@@ -27,7 +27,6 @@ import type { ILibListGroup } from "./types"
  * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
  * @prop date?: string | Date => only if `badge` is not defined
  */
-
 export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
     (
         {

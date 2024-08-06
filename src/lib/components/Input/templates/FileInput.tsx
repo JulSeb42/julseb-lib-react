@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import { InputRightContainer, InputValidationIcon } from "../../InputComponents"
 import { StyledInput } from "../styles"
-import type { ILibFileInput } from "../types"
+import type { ILibFileInput } from "../subtypes"
 
 export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
     (

@@ -1,27 +1,15 @@
 /*=============================================== MdEditorInput ===============================================*/
 
-import {
-    forwardRef,
-    useCallback,
-    type ChangeEvent,
-    type RefObject,
-} from "react"
+import { forwardRef, useCallback, type ChangeEvent } from "react"
 import classNames from "classnames"
 import { useMergeRefs, optionsMarkdown } from "../../"
-import type { LibMdEditorEditor, DispatchState } from "../../types"
 import {
     StyledMarkdownEditor,
     ContainerGrid,
     Separator,
     MarkdownContainer,
 } from "./styles"
-import type { ILibMarkdownEditor } from "./types"
-
-interface ILibMdEditorInput extends ILibMarkdownEditor {
-    editor: LibMdEditorEditor
-    setHeight: DispatchState<number>
-    inputRef: RefObject<HTMLTextAreaElement>
-}
+import type { ILibMdEditorInput } from "./subtypes"
 
 export const MdEditorInput = forwardRef<HTMLTextAreaElement, ILibMdEditorInput>(
     (

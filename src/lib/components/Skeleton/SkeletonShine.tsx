@@ -11,7 +11,6 @@ import type { ILibSkeletonShine } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  */
-
 export const SkeletonShine = forwardRef<HTMLSpanElement, ILibSkeletonShine>(
     ({ "data-testid": testid, as, ...rest }, ref) => {
         return (

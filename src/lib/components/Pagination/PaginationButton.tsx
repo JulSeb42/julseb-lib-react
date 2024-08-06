@@ -1,27 +1,9 @@
 /*=============================================== PaginationButton component ===============================================*/
 
-import { forwardRef, type ButtonHTMLAttributes } from "react"
+import { forwardRef } from "react"
 import classNames from "classnames"
-import type { LibColorsHover, LibComponentBase } from "../../types"
 import { StyledPaginationButton } from "./styles"
-
-interface ILibPaginationButtonBase
-    extends LibComponentBase<HTMLButtonElement>,
-        ButtonHTMLAttributes<HTMLButtonElement> {
-    accentColor?: LibColorsHover
-}
-
-interface PaginationButtonActive extends ILibPaginationButtonBase {
-    isActive: boolean
-    readOnly?: never
-}
-
-interface PaginationButtonReadOnly extends ILibPaginationButtonBase {
-    isActive?: never
-    readOnly: boolean
-}
-
-type ILibPaginationButton = PaginationButtonActive | PaginationButtonReadOnly
+import type { ILibPaginationButton } from "./types"
 
 /**
  * @description Returns a PaginationButton component
@@ -33,7 +15,6 @@ type ILibPaginationButton = PaginationButtonActive | PaginationButtonReadOnly
  * @prop readOnly: boolean => only if isActive is not defined
  * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  */
-
 export const PaginationButton = forwardRef<
     HTMLButtonElement,
     ILibPaginationButton

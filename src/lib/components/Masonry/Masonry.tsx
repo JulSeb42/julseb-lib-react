@@ -17,7 +17,6 @@ import type { ILibMasonry } from "./types"
  * @prop col?: number
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
-
 export const Masonry = forwardRef<HTMLDivElement, ILibMasonry>(
     (
         {

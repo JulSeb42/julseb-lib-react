@@ -25,7 +25,6 @@ import { roundIconSize } from "../../lib-utils"
  * @prop input: { message: string; setMessage: Dispatch<SetStateAction<string>>; placeholder?: string; autoFocus?: boolean }
  * @prop button?: { icon?: string | JSX.Element => only if text is not defined; text?: string => only if icon is not defined }
  */
-
 export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
     (
         {

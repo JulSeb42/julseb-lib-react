@@ -27,7 +27,6 @@ import type { ILibButtonIcon } from "./types"
  * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if isLoading is defined
  * @prop loaderBorderWidth?: number => only if isLoading is defined and loaderVariant is set to 1 | 2 | 3
  */
-
 export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
     (
         {

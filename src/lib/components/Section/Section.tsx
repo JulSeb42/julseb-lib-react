@@ -12,7 +12,6 @@ import type { ILibSection } from "./types"
  * @prop as?: ElementType
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
-
 export const Section = forwardRef<HTMLDivElement, ILibSection>(
     ({ "data-testid": testid, as, children, gap = "m", ...rest }, ref) => {
         return (

@@ -14,7 +14,6 @@ import type { ILibFullBleed } from "./types"
  * @prop aspectRatio?: string
  * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
-
 export const FullBleed = forwardRef<HTMLDivElement, ILibFullBleed>(
     (
         {

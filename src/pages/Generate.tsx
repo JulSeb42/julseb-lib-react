@@ -2,53 +2,62 @@
 
 import { toCamelCase, toPascalCase } from "ts-utils-julseb"
 import { Page } from "../components"
+import { previews } from "../data/components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const pickProps = [
-        "showTooltip",
-        "to",
-        "href",
-        "isLoading",
-        "disabled",
-        "aria-disabled",
-        "aria-label",
-        "blank",
-        "variant",
-        "showBackgroundHover",
-        "borderRadius",
-        "color",
-        "shadow",
-        "size",
-        "loaderVariant",
-        "icon",
-        "iconSize",
-        "loaderBorderWidth",
-    ]
-
     const propsDoc = replaceTypes([
         '"data-testid": string | undefined',
         "className: string | undefined",
+        "validation: LibValidationStatus",
+        "inputBackground: LibInputBackground | undefined",
         "children?: ReactChildren",
-        "disabled: boolean | undefined",
-        "withPadding?: boolean",
+        "isActive: boolean",
+        "isHovered?: boolean => only if isActive is defined",
+        "onClick: MouseEventHandler<HTMLSpanElement> => only if isActive is defined",
+        "readOnly?: boolean => only if isActive is not defined",
     ])
 
-    const propsInput = [
-        "id",
-        "label",
-        "helper",
-        "helperBottom",
-        "validation",
-        "counter",
-        "maxLength",
-        "value",
-        "className",
-        "ref",
-        "type",
-        "inputBackground",
-        "inputVariant",
-    ]
+    // const pickProps = [
+    //     "showTooltip",
+    //     "to",
+    //     "href",
+    //     "isLoading",
+    //     "disabled",
+    //     "aria-disabled",
+    //     "aria-label",
+    //     "blank",
+    //     "variant",
+    //     "showBackgroundHover",
+    //     "borderRadius",
+    //     "color",
+    //     "shadow",
+    //     "size",
+    //     "loaderVariant",
+    //     "icon",
+    //     "iconSize",
+    //     "loaderBorderWidth",
+    // ]
+
+   
+
+    // const propsInput = [
+    //     "id",
+    //     "label",
+    //     "helper",
+    //     "helperBottom",
+    //     "validation",
+    //     "counter",
+    //     "maxLength",
+    //     "value",
+    //     "className",
+    //     "ref",
+    //     "type",
+    //     "inputBackground",
+    //     "inputVariant",
+    // ]
+
+    // const allPreviews = previews.map(p => p.name)
 
     // const utils = [
     //     "calculate-average",
@@ -149,7 +158,20 @@ export function Generate() {
     return (
         <Page title="Generate">
             <ul>
-                {pickProps.map(p => <li key={p}>{`"${p}" | `}</li>)}
+                {propsDoc.map(p => (
+                    <li key={p}>{` * @prop ${p}`}</li>
+                ))}
+            </ul>
+
+            {/* <ul>
+                {allPreviews.map(p => (
+                    <li key={p}>{`"${p}",`}</li>
+                ))}
+            </ul>
+            <ul>
+                {pickProps.map(p => (
+                    <li key={p}>{`"${p}" | `}</li>
+                ))}
             </ul>
             <ul>
                 {propsInput.map(p => (
@@ -160,12 +182,8 @@ export function Generate() {
                 {hooks.map(hook => (
                     <li key={hook}>{`"${hook}",`}</li>
                 ))}
-            </ul>
-            <ul>
-                {propsDoc.map(p => (
-                    <li key={p}>{` * @prop ${p}`}</li>
-                ))}
-            </ul>
+            </ul> */}
+            
 
             {/* <ul>
                 {utils.sort().map(u => (

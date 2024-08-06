@@ -12,7 +12,6 @@ import type { ILibInputRightContainer } from "../types"
  * @prop disabled: boolean | undefined
  * @prop withSuffix: boolean | undefined
  */
-
 export function InputRightContainer({
     "data-testid": testid,
     className,
