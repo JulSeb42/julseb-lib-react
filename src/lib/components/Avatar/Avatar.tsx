@@ -14,6 +14,7 @@ import type { ILibAvatar } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLSpanElement>
  * @prop img: string | { src: string; alt: string } => only if letter or icon are not defined
  * @prop letter: string => only if img or icon are not defined
  * @prop icon: string | JSX.Element => only if letter or img are not defined

@@ -13,6 +13,7 @@ import type { ILibMasonry } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop children?: Array<ReactNode>
  * @prop col?: number
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"

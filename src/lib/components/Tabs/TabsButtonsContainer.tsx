@@ -10,6 +10,7 @@ import type { ILibTabsButtonsContainer } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop justify?: "start" | "stretch"
  * @prop variant?: "basic" | "rounded"
  */

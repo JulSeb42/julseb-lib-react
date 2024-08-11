@@ -10,6 +10,7 @@ import type { ILibSkeleton } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop width?: string | number
  * @prop maxWidth?: string | number
  * @prop height?: string | number

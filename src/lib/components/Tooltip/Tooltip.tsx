@@ -13,6 +13,7 @@ import type { ILibTooltip } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop tooltip: string | JSX.Element
  * @prop position?: "top" | "bottom"
  * @prop withArrow?: boolean

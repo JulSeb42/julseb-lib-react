@@ -14,6 +14,7 @@ import type { ILibMessagesList } from "./types"
  * @extends HTMLDivElement & ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop children?: ReactChildren
  * @prop emptyText?: string
  * @prop iconButtonScroll?: string | JSX.Element

@@ -23,6 +23,7 @@ import type { ILibInputContainer } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop label?: string
  * @prop labelComment?: string
  * @prop helper?: string

@@ -12,6 +12,7 @@ import type { ILibDropdownItem } from "./types"
  * @extends HTMLButtonElement & HTMLAnchorElement & LibButtonLinkBlankRequired
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop icon?: string | JSX.Element
  * @prop iconSize?: number

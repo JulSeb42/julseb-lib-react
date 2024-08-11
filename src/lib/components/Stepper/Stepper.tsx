@@ -12,6 +12,7 @@ import type { ILibStepper } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop steps: Array<LibStep> => only if children is not defined
  * @prop children?: ReactChildren => only if steps is not defined
  * @prop direction?: "column" | "row"

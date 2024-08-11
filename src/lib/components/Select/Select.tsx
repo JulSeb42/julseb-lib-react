@@ -26,6 +26,7 @@ import type { ILibSelectButton } from "./subtypes"
  * @link https://documentation-components-react.vercel.app/components/select
  * @extends HTMLDivElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop selected: string
  * @prop setSelected: Dispatch<SetStateAction< string>>
  * @prop options?: Array<string>

@@ -18,8 +18,9 @@ import type { ILibInputCounter } from "./types"
 /**
  * @description Returns a InputCounter component
  * @link https://documentation-components-react.vercel.app/components/input-counter
- * @extends HTMLElement
+ * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop value: number
  * @prop setValue: Dispatch<SetStateAction<number>>
  * @prop min?: number

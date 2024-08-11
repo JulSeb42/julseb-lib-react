@@ -41,6 +41,7 @@ import type { ILibAutocomplete } from "./types"
  * @link https://documentation-components-react.vercel.app/components/autocomplete
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop value: string
  * @prop setValue: Dispatch<SetStateAction<string>>
  * @prop listResults: Array<string>

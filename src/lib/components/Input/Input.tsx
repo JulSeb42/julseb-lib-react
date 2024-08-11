@@ -54,9 +54,10 @@ const InputFunction = forwardRef<
 /**
  * @description Returns a Input component
  * @link https://documentation-components-react.vercel.app/components/input
- * @extends HTMLInputElement
+ * @extends HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
  * @constant => for all inputs
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
  * @prop label?: string
  * @prop labelComment?: string
  * @prop helper?: string

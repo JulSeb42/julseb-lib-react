@@ -9,6 +9,7 @@ import type { ILibTd } from "./types"
  * @link https://documentation-components-react.vercel.app/components/table
  * @extends HTMLTableCellElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLTableCellElement>
  * @prop noPadding?: boolean
  */
 export const Td = forwardRef<HTMLTableCellElement, ILibTd>(

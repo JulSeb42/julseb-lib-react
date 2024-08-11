@@ -14,6 +14,7 @@ import type { ILibBadge } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLSpanElement>
  * @prop icon?: string | JSX.Element => only if number is not defined
  * @prop number?: number => only if icon is not defined
  * @prop size?: number

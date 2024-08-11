@@ -11,6 +11,7 @@ import type { ILibDropdownContainer } from "./types"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop isOpen: boolean
  */
 export const DropdownContainer = forwardRef<

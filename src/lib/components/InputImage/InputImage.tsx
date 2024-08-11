@@ -12,6 +12,7 @@ import type { ILibInputImage } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-image
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop id: string
  * @prop value: string
  * @prop width?: string | number

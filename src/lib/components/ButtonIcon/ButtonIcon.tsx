@@ -13,6 +13,7 @@ import type { ILibButtonIcon } from "./types"
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  * @prop icon: string | JSX.Element
  * @prop iconSize?: number
  * @prop size?: number
@@ -27,7 +28,10 @@ import type { ILibButtonIcon } from "./types"
  * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if isLoading is defined
  * @prop loaderBorderWidth?: number => only if isLoading is defined and loaderVariant is set to 1 | 2 | 3
  */
-export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
+export const ButtonIcon = forwardRef<
+    HTMLButtonElement & HTMLAnchorElement,
+    ILibButtonIcon
+>(
     (
         {
             "data-testid": testid,

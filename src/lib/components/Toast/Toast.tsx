@@ -23,6 +23,7 @@ const CLOSE_ICON_SIZE = 24
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop title: string
  * @prop id?: string
  * @prop status?: "success" | "error" | "warning" | "info" | "loading"

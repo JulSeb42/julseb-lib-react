@@ -12,6 +12,7 @@ import type { ILibImage } from "./types"
  * @extends HTMLImageElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLImageElement>
  * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
  * @prop fit?: CssObjectFit
  * @prop aspectRatio?: string

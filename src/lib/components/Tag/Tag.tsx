@@ -12,6 +12,7 @@ import type { ILibTag } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLSpanElement>
  * @prop backgroundColor?: Any color from the library
  * @prop textColor?: Any color from the library
  * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }

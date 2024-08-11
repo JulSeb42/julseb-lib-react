@@ -11,6 +11,7 @@ import type { ILibTabButton } from "./types"
  * @extends HTMLButtonElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
  * @prop isActive: boolean
  * @prop onClick: () => void
  * @prop justify?: "start" | "stretch"

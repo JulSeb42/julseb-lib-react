@@ -19,6 +19,7 @@ import { roundIconSize } from "../../lib-utils"
  * @link https://documentation-components-react.vercel.app/components/messaging
  * @extends HTMLFormElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLFormElement>
  * @prop handleSubmit: () => void
  * @prop inputHeight: number
  * @prop setInputHeight: Dispatch<SetStateAction<number>>

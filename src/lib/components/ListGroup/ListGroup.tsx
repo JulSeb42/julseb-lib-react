@@ -15,6 +15,7 @@ import type { ILibListGroup } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop items: Array<LibListGroupItem> => only if children is not defined
  * @prop children?: ReactChildren => only if items is not defined
  * @prop showNumbers?: boolean

@@ -21,6 +21,7 @@ import type { ILibInputCheck } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-check
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop id: string
  * @prop validation?: boolean | undefined
  * @prop variant?: "tile" | "toggle" | "selector"

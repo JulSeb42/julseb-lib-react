@@ -8,6 +8,7 @@ import type { ILibTHead } from "./types"
  * @link https://documentation-components-react.vercel.app/components/table
  * @extends HTMLTableSectionElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLTableSectionElement>
  */
 export const THead = forwardRef<HTMLTableSectionElement, ILibTHead>(
     ({ "data-testid": testid, ...rest }, ref) => {

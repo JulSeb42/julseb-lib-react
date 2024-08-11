@@ -11,6 +11,7 @@ import type { ILibForm } from "./types"
  * @link https://documentation-components-react.vercel.app/components/form
  * @extends HTMLFormElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLFormElement>
  * @prop buttonPrimary?: string | { text: string; iconLeft?: string | JSX.Element; iconRight?: string | JSX.Element; iconLeftSize?: number; iconRightSize?: number }
  * @prop buttonSecondary?: ButtonLinkRequired & { text: string; iconLeft?: string | JSX.Element; iconRight?: string | JSX.Element; iconLeftSize?: number; iconRightSize?: number }
  * @prop isLoading?: boolean

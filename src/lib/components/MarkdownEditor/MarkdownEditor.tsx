@@ -17,6 +17,7 @@ import type { ILibMarkdownEditor } from "./types"
  * @link https://documentation-components-react.vercel.app/components/markdown-editor
  * @extends HTMLTextAreaElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLTextAreaElement>
  * @prop value: string
  * @prop setValue: Dispatch<SetStateAction<string>>
  * @prop defaultEditor?: "editorCode" | "editorLive" | "editorPreview"

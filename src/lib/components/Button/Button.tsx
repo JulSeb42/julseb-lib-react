@@ -14,6 +14,7 @@ import type { ILibButton } from "./types"
  * @extends HTMLButtonElement & LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
  * @prop variant?: "plain" | "outline" | "ghost" | "transparent"
  * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  * @prop shadow?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | { default: LibShadows; hover: LibShadows; active: LibShadows }

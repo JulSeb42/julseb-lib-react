@@ -11,6 +11,7 @@ import type { ILibYoutube } from "./types"
  * @extends HTMLIframeElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLIframeElement>
  * @prop aspectRatio?: string
  */
 export const Youtube = forwardRef<HTMLIFrameElement, ILibYoutube>(

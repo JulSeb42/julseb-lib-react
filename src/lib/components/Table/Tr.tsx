@@ -8,6 +8,7 @@ import type { ILibTr } from "./types"
  * @link https://documentation-components-react.vercel.app/components/table
  * @extends HTMLTableRowElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLTableRowElement>
  */
 export const Tr = forwardRef<HTMLTableRowElement, ILibTr>(
     ({ "data-testid": testid, ...rest }, ref) => {

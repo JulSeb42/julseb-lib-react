@@ -16,6 +16,7 @@ import type { ILibTabs } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop tabsItems: Array<LibTabItem>
  * @prop justify?: "start" | "stretch"
  * @prop active?: number

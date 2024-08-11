@@ -12,6 +12,7 @@ import type { ILibDropdown } from "./types"
  * @description Returns a Dropdown component
  * @link https://documentation-components-react.vercel.app/components/dropdown
  * @extends HTMLDivElement
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop isOpen: boolean

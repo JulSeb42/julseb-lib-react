@@ -10,6 +10,7 @@ import type { ILibMarkdownContainer } from "./types"
  * @link https://documentation-components-react.vercel.app/components/markdown-container
  * @extends HTMLDivElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop options?: MarkdownToJSX.Options => imported from package markdown-to-jsx
  */
 export const MarkdownContainer = forwardRef<

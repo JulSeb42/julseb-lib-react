@@ -10,6 +10,7 @@ import type { ILibFlexbox } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop inline?: boolean
  * @prop flexDirection?: CssFlexDirection
  * @prop flexWrap?: CssFlexWrap

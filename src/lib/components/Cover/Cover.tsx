@@ -10,6 +10,7 @@ import type { ILibCover } from "./types"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop img: string
  * @prop alt?: string
  * @prop overlay?: "black-50" | "black-80" | "white-50" | "white-80" | "gradient-black" | "gradient-white"

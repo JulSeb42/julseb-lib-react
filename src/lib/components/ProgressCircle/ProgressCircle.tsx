@@ -16,6 +16,7 @@ import type { ILibProgressCircle } from "./types"
  * @link https://documentation-components-react.vercel.app/components/progress-circle
  * @extends SVGElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<SVGElement>
  * @prop value: number
  * @prop animated?: boolean
  * @prop color?: Any color from the library

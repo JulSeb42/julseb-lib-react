@@ -11,6 +11,7 @@ import type { ILibSkeletonCard } from "./types"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop width?: string | number
  * @prop maxWidth?: string | number
  * @prop height?: string | number

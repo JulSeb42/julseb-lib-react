@@ -19,6 +19,7 @@ const DEFAULT_ICON_SIZE = 24
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop copyButton?: boolean | { conCopy?: string | JSX.Element; iconCopied?: string | JSX.Element; iconSizeCopy?: number; iconSizeCopied?: number; tooltipCopy?: string; tooltipCopied?: string }
  * @prop color?: Any color from the library
  * @prop highlighterStyle?: CSSProperties

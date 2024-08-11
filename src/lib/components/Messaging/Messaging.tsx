@@ -16,6 +16,7 @@ import type { ILibMessaging } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop data: Array<LibMessage>
  * @prop handleSubmit: () => void
  * @prop input: { message: string; setMessage: Dispatch<SetStateAction<string>>; placeholder?: string; autoFocus?: boolean }

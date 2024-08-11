@@ -10,6 +10,7 @@ import type { ILibSkeletonShine } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  */
 export const SkeletonShine = forwardRef<HTMLSpanElement, ILibSkeletonShine>(
     ({ "data-testid": testid, as, ...rest }, ref) => {

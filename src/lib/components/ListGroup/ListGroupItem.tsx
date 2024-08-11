@@ -18,6 +18,7 @@ import type { ILibListGroupItem } from "./types"
  * @extends HTMLDivElement & LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop text: string
  * @prop subtext?: string
  * @prop isInArray?: boolean

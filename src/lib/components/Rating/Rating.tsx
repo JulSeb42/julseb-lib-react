@@ -15,6 +15,7 @@ import type { ILibRating } from "./types"
  * @link https://documentation-components-react.vercel.app/components/rating
  * @extends HTMLDivElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop rating: number
  * @prop setRating: Dispatch<SetStateAction< number => only if readOnly is not defined>>
  * @prop readOnly: boolean => only if setRating is not defined

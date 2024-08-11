@@ -17,6 +17,7 @@ import type { ILibFooter } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop withSeparator?: boolean
  * @prop linksSeparator?: "dot" | "dash"
  * @prop items: Array<LibFooterLink>

@@ -45,6 +45,7 @@ const DEFAULT_ICONS_SIZES = {
  * @link https://documentation-components-react.vercel.app/components/input-phone
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop selectedCountry: name: string; dial_code: string; code: CountryCode; flag: string | undefined
  * @prop setSelectedCountry: Dispatch<SetStateAction<LibCountry | undefined>>
  * @prop defaultCountry?: Any Alpha-2 Code from https://www.iban.com/country-codes

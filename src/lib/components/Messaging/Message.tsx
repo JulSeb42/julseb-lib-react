@@ -18,6 +18,7 @@ import type { ILibMessage } from "./types"
  * @extends HTMLDivElement & ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop type: "sent" | "received"
  * @prop text: string => only if children is not defined
  * @prop children: ReactChildren => only if text is not defined

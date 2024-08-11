@@ -13,6 +13,7 @@ import type { ILibLoader } from "./types"
  * @extends HTMLSpanElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLSpanElement>
  * @prop size?: number
  * @prop color?: Any color from the library
  * @prop variant?: 1 | 2 | 3 | 4

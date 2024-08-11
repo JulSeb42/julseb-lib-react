@@ -10,6 +10,7 @@ import type { ILibTabsContainer } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  */
 export const TabsContainer = forwardRef<HTMLDivElement, ILibTabsContainer>(
     ({ "data-testid": testid, as, children, ...rest }, ref) => {

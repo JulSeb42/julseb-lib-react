@@ -16,6 +16,7 @@ import type { ILibPagination } from "./types"
  * @extends ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop totalPages: number => only if children is not defined
  * @prop pageLimit?: number => only if children is not defined
  * @prop icons?: { previous?: string | JSX.Element; next?: string | JSX.Element } => only if children is not defined

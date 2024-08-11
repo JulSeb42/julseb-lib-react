@@ -19,6 +19,7 @@ import type { ILibSlideshow } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop images: Array<string> => only if children is not defined
  * @prop children?: Array<ReactNode> => only if images is not defined
  * @prop height?: string | number

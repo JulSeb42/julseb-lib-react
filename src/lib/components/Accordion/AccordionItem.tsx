@@ -14,6 +14,7 @@ import type { ILibAccordionItem } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop title: string
  * @prop icon?: "plus" | "chevron" | JSX.Element
  * @prop variant?: "basic" | "rounded"

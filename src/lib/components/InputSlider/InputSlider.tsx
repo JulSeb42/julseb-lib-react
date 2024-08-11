@@ -14,6 +14,7 @@ import type { ILibInputSlider } from "./types"
  * @link https://documentation-components-react.vercel.app/components/input-slider
  * @extends HTMLInputElement
  * @prop data-testid?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop min?: number
  * @prop max?: number
  * @prop showMinMax?: boolean => only if min and max are defined
