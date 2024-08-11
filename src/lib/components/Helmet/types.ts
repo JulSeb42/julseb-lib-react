@@ -1,7 +1,7 @@
 /*=============================================== Helmet types ===============================================*/
 
-import type { ReactNode } from "react"
 import type { HelmetProps } from "react-helmet-async"
+import type { ReactChildren } from "../../types"
 
 export interface ILibHelmet extends HelmetProps {
     title: string
@@ -13,5 +13,5 @@ export interface ILibHelmet extends HelmetProps {
     cover?: string
     siteName?: string
     language?: string
-    children?: ReactNode
+    children?: ReactChildren
 }

@@ -11,9 +11,15 @@ import { roundIconSize } from "../../lib-utils"
 /**
  * @description Returns a BackToTop component
  * @link https://documentation-components-react.vercel.app/components/back-to-top
- * @extends ILibButtonIcon
+ * @extends Partial<ILibButtonIcon>
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
+ * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
+ * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
+ * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
+ * @prop zIndex?: number
  */
 export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
     (
@@ -29,6 +35,7 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
             ),
             tooltip = "Back to top",
             showTooltip,
+            position,
             ...rest
         },
         ref
@@ -86,6 +93,11 @@ export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
                     backgroundColor: "white",
                     textColor: "black",
                 }}
+                $left={position?.left}
+                $top={position?.top}
+                $right={position?.right ?? "xl"}
+                $bottom={position?.bottom ?? "xl"}
+                $zIndex={position?.zIndex ?? 999}
                 {...rest}
             />
         )

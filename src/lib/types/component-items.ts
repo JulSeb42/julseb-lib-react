@@ -83,7 +83,6 @@ interface LibButtonGroupToggleBase
     extends LibComponentItemBase<HTMLInputElement> {
     id: string
     value: boolean
-    
 }
 
 interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {

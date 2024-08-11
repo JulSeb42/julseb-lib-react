@@ -967,17 +967,17 @@ class mixins {
         $zIndex,
     }: {
         $position?: LibPositionExtract
-        $left?: LibSpacers
-        $top?: LibSpacers
-        $right?: LibSpacers
-        $bottom?: LibSpacers
+        $left?: LibSpacers | "unset"
+        $top?: LibSpacers | "unset"
+        $right?: LibSpacers | "unset"
+        $bottom?: LibSpacers | "unset"
         $zIndex?: number
     }) => css`
         position: ${$position};
-        left: ${$left && Mixins.Spacer($left)};
-        top: ${$top && Mixins.Spacer($top)};
-        right: ${$right && Mixins.Spacer($right)};
-        bottom: ${$bottom && Mixins.Spacer($bottom)};
+        left: ${$left && $left !== "unset" && Mixins.Spacer($left)};
+        top: ${$top && $top !== "unset" && Mixins.Spacer($top)};
+        right: ${$right && $right !== "unset" && Mixins.Spacer($right)};
+        bottom: ${$bottom && $bottom !== "unset" && Mixins.Spacer($bottom)};
         z-index: ${$zIndex};
     `
 }

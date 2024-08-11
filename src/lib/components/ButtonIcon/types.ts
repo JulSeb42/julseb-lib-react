@@ -35,7 +35,7 @@ type ILibButtonIconBase = LibComponentBase<
                   offset?: LibSpacers
                   backgroundColor?: LibAllColors
                   textColor?: LibAllColors
-                  withArrow?: boolean
+                  hideArrow?: boolean
               }
     }
 

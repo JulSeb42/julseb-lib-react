@@ -12,6 +12,7 @@ import type { ILibFade } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  */
 export const Fade = forwardRef<HTMLDivElement, ILibFade>(
     ({ "data-testid": testid, as, children, className, ...rest }, ref) => {

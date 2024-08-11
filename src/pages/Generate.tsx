@@ -7,17 +7,14 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "label?: string",
-        "labelComment?: string",
-        "helper?: string",
-        "helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: CssFontStyle; icon?: LibIcon; iconColor?: LibAllColors; iconSize?: number }",
-        "children?: ReactChildren",
-        "value?: any",
-        "counter?: boolean",
-        "maxLength?: number",
-        "hasListOpen?: boolean",
-        "validation?: ValidationHelper",
-        "iconBaseUrl?: string",
+        'values: { [n: number]: number | "" | undefined }',
+        'setValues: DispatchState<{ [n: number]: number | "" | undefined }>',
+        "placeholders?: Array<string>",
+        "container?: { justifyContent?: CssJustifyContent; columnGap?: LibSpacers }",
+        "inputSize?: number",
+        "inputFontSize?: LibFontSizes",
+        "hideValues?: boolean",
+        "disabled?: boolean",
     ])
 
     // const pickProps = [
@@ -285,8 +282,20 @@ function replaceTypes(arr: Array<string>) {
             return `${prop}: Dispatch<SetStateAction<${type}>>`
         }
 
+        //
+
         return str
             .replaceAll("LibSpacers", mappedSpacers)
+            .replaceAll(
+                "LibIconMenuDirection",
+                mapValues(typeValues.iconMenuDirections)
+            )
+            .replaceAll("ILibPosition", '"relative" | "absolute" | "fixed"')
+            .replaceAll(
+                "LibButtonIconVariant",
+                '"plain" | "transparent" | "ghost"'
+            )
+            .replaceAll("LibIconMenuIcon", mapValues(typeValues.iconMenuIcon))
             .replaceAll("LibColorsShort", mappedColorsShort)
             .replaceAll("LibAllColorsAndOverlays", allColorsAndOverlaysDesc)
             .replaceAll("LibAllColors", allColorsDesc)
@@ -421,5 +430,6 @@ function replaceTypes(arr: Array<string>) {
                 mapValues(typeValues.footerDirections)
             )
             .replaceAll(`"data-testid"`, "data-testid")
+            .replaceAll("string | JSX.ElementMenuItem", "LibIconMenuItem")
     })
 }

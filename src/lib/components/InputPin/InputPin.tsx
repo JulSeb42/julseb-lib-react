@@ -12,12 +12,26 @@ import { InputContainer } from "../InputComponents"
 import { StyledInputPin } from "./styles"
 import type { ILibInputPin } from "./types"
 
-/** 
+/**
  * @description Returns a InputPin component
  * @link https://documentation-components-react.vercel.app/components/input-pin
  * @extends HTMLDivElement
  * @prop data-testid?: string
-
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop values: { [n: number]: number | "" | undefined }
+ * @prop setValues: Dispatch<SetStateAction<{ [n: number]: number | "" | undefined }>>
+ * @prop placeholders?: Array<string>
+ * @prop container?: { justifyContent?: CssJustifyContent; columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" }
+ * @prop inputSize?: number
+ * @prop inputFontSize?: "display-h1" | "display-h2" | "display-h3" | "display-h4" | "display-h5" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small"
+ * @prop hideValues?: boolean
+ * @prop disabled?: boolean
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
+ * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
+ * @prop inputBackground?: LibInputBackground
  */
 export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
     (

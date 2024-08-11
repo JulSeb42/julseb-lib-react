@@ -318,6 +318,15 @@ export type LibCountry = {
     flag: string
 }
 
+/* BackToTop */
+export interface LibBackToTopPosition {
+    left?: LibSpacers | "unset"
+    top?: LibSpacers | "unset"
+    right?: LibSpacers | "unset"
+    bottom?: LibSpacers | "unset"
+    zIndex?: number
+}
+
 /*====================== Theme ======================*/
 
 /**

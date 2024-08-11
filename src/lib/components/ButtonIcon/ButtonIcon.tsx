@@ -101,10 +101,10 @@ export const ButtonIcon = forwardRef<HTMLButtonElement, ILibButtonIcon>(
                             ? showTooltip.offset
                             : undefined
                     }
-                    withArrow={
-                        typeof showTooltip === "object" && showTooltip.withArrow
-                            ? showTooltip.withArrow
-                            : true
+                    hideArrow={
+                        typeof showTooltip === "object" && showTooltip.hideArrow
+                            ? showTooltip.hideArrow
+                            : false
                     }
                     backgroundColor={
                         typeof showTooltip === "object" &&

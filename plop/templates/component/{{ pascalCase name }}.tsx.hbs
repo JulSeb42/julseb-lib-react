@@ -12,6 +12,7 @@ import type { ILib{{ pascalCase name }} } from "./types"
  * @extends HTML{{ pascalCase attribute }}Element
  * @prop data-testid?: string
 {{#if as}} * @prop as?: ElementType{{/if}}
+ * @prop ref?: ForwardedRef<HTML{{ pascalCase attribute }}Element>
  */
 export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, ILib{{ pascalCase name }}>(
     (

@@ -22,6 +22,14 @@ import type {
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop logo: string | { text: string => only if img is not defined; img: string => only if text is not defined; imgOpen?: string => only if img is defined, logo image rendered when the mobile navigation is opened; alt?: string => only if img is defined; width?: number => only if img is defined; height?: number => only if img is defined; to?: string => only if href is not defined (default "/"); href?: string => only if to is not defined }
+ * @prop variant?: LibHeaderVariant
+ * @prop burgerPosition?: LibNavBurgerPosition
+ * @prop burgerColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" | { closed: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"; open: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" }
+ * @prop navDesktopVariant?: LibNavBurgerPosition
+ * @prop navMobileVariant?: LibNavMobileVariant
+ * @prop enableScrollingOpen?: boolean
+ * @prop search?: { pathname: string; queries?: Array<Array<string>>; icon?: string | JSX.Element; iconClear?: string | JSX.Element; iconSize?: number; iconBaseUrl?: string; iconClearSize?: number; placeholder?: string; keyboardShortcut?: Array<string>; showKeys?: boolean; inputBackground?: "light" | "dark"; maxWidth?: string | number; inputVariant?: "rounded" | "pill" }
  */
 export const Header = forwardRef<HTMLDivElement, ILibHeader>(
     (

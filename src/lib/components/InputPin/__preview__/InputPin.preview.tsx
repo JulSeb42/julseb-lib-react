@@ -15,7 +15,7 @@ export const inputPinPreview: ComponentPreview<ILibInputPin> = {
     optionalImports: null,
     propsImport: "ILibInputPin",
     additionalTypeImports: ["LibValueInputPin"],
-    extends: ["HTMLInputElement"],
+    extends: ["HTMLDivElement"],
     previews: [
         {
             previewTitle: "Default",
