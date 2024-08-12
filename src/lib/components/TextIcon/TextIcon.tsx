@@ -44,6 +44,7 @@ export const TextIcon = forwardRef<
             display,
             gap,
             iconBaseUrl,
+            containerStyle,
             ...rest
         },
         ref
@@ -62,6 +63,7 @@ export const TextIcon = forwardRef<
                 ref={ref}
                 as={as}
                 className={className}
+                style={containerStyle}
                 $gap={gap}
             >
                 <IconContainer

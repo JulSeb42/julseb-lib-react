@@ -1,6 +1,6 @@
 /*=============================================== ButtonIcon types ===============================================*/
 
-import type { ButtonHTMLAttributes } from "react"
+import type { ButtonHTMLAttributes, CSSProperties } from "react"
 import type {
     LibComponentBase,
     LibIcon,
@@ -27,16 +27,6 @@ type ILibButtonIconBase = LibComponentBase<
         shadow?: ILibBoxShadow
         borderRadius?: ILibRadius
         color?: LibColorsHover
-        tooltip?: string
-        showTooltip?:
-            | boolean
-            | {
-                  position?: LibTooltipPosition
-                  offset?: LibSpacers
-                  backgroundColor?: LibAllColors
-                  textColor?: LibAllColors
-                  hideArrow?: boolean
-              }
     }
 
 type ButtonIconVariantsBackground = ILibButtonIconBase & {
@@ -71,7 +61,29 @@ type ButtonIconNotLoading = ButtonIconVariant & {
     loaderBorderWidth?: never
 }
 
-export type ILibButtonIcon =
+type ILibButtonIconAndLoader =
     | ButtonIconLoading
     | ButtonIconLoadingVariant
     | ButtonIconNotLoading
+
+type ButtonIconWithTooltip = ILibButtonIconAndLoader & {
+    tooltip?: string
+    showTooltip?:
+        | boolean
+        | {
+              position?: LibTooltipPosition
+              offset?: LibSpacers
+              backgroundColor?: LibAllColors
+              textColor?: LibAllColors
+              hideArrow?: boolean
+          }
+    containerStyle?: CSSProperties
+}
+
+type ButtonIconWithoutTooltip = ILibButtonIconAndLoader & {
+    tooltip?: undefined
+    showTooltip?: never
+    containerStyle?: never
+}
+
+export type ILibButtonIcon = ButtonIconWithTooltip | ButtonIconWithoutTooltip

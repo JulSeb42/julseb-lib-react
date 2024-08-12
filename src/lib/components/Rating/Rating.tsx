@@ -26,6 +26,7 @@ import type { ILibRating } from "./types"
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop containerStyle?: CSSProperties
  */
 export const Rating = forwardRef<HTMLDivElement, ILibRating>(
     (
@@ -44,6 +45,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
             helperBottom,
             id,
             validation,
+            containerStyle,
             ...rest
         },
         ref
@@ -105,6 +107,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                 counter={false}
                 maxLength={undefined}
                 iconBaseUrl={iconBaseUrl}
+                style={containerStyle}
             >
                 <Flexbox
                     data-testid={

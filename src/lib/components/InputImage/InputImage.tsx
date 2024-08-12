@@ -25,6 +25,7 @@ import type { ILibInputImage } from "./types"
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop containerStyle?: CSSProperties
  */
 export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     (
@@ -45,6 +46,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
             height = 64,
             borderRadius = "m",
             disabled,
+            containerStyle,
             ...rest
         },
         ref
@@ -80,6 +82,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                 maxLength={undefined}
                 value={undefined}
                 iconBaseUrl={iconBaseUrl}
+                style={containerStyle}
             >
                 <StyledInputImage
                     data-testid={

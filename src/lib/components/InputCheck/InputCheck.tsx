@@ -28,6 +28,7 @@ import type { ILibInputCheck } from "./types"
  * @prop type?: "checkbox" | "radio"
  * @prop iconCheck?: string | JSX.Element => only if type is set to "checkbox"
  * @prop iconCheckSize?: number => only if type is set to "checkbox"
+ * @prop containerStyle?: CSSProperties
  */
 export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
     (
@@ -51,6 +52,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
             ),
             iconBaseUrl,
             disabled,
+            containerStyle,
             ...rest
         },
         ref
@@ -63,6 +65,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                     classNames(className, variant && capitalize(variant))
                 }
                 htmlFor={id}
+                style={containerStyle}
                 $variant={variant}
                 $disabled={disabled}
                 $validation={validation}

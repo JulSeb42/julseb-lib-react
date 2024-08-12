@@ -1,5 +1,6 @@
 /*=============================================== Avatar types ===============================================*/
 
+import type { CSSProperties } from "react"
 import type {
     LibComponentBase,
     ILibBorder,
@@ -14,18 +15,6 @@ interface ILibAvatarBase extends LibComponentBase<HTMLSpanElement> {
     size?: number
     border?: ILibBorder
     borderRadius?: ILibRadius
-    badge?:
-        | boolean
-        | number
-        | {
-              content?: number
-              contentColor?: LibAllColors
-              backgroundColor?: LibAllColors
-              position?: LibAvatarBadgePosition
-              size?: number
-              padding?: ILibPadding
-              outline?: ILibBorder
-          }
 }
 
 interface AvatarWithImage extends ILibAvatarBase {
@@ -58,4 +47,27 @@ interface AvatarWithIcon extends ILibAvatarBase {
     contentColor?: LibAllColors
 }
 
-export type ILibAvatar = AvatarWithImage | AvatarWithLetter | AvatarWithIcon
+type ILibAvatarContent = AvatarWithImage | AvatarWithLetter | AvatarWithIcon
+
+type AvatarWithBadge = ILibAvatarContent & {
+    badge?:
+        | boolean
+        | number
+        | {
+              content?: number
+              contentColor?: LibAllColors
+              backgroundColor?: LibAllColors
+              position?: LibAvatarBadgePosition
+              size?: number
+              padding?: ILibPadding
+              outline?: ILibBorder
+          }
+    containerStyle?: CSSProperties
+}
+
+type AvatarWithoutBadge = ILibAvatarContent & {
+    badge?: undefined | false
+    containerStyle?: never
+}
+
+export type ILibAvatar = AvatarWithBadge | AvatarWithoutBadge

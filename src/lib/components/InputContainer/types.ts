@@ -1,5 +1,6 @@
 /*=============================================== InputContainer types ===============================================*/
 
+import type { CSSProperties } from "react"
 import type {
     CssFontStyle,
     LibAllColors,
@@ -30,4 +31,5 @@ export interface ILibInputContainer
     counter?: boolean
     maxLength?: number
     hasListOpen?: boolean
+    style?: CSSProperties
 }

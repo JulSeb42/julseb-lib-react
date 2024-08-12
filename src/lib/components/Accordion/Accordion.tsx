@@ -63,7 +63,11 @@ export const Accordion = forwardRef<HTMLDivElement, ILibAccordion>(
                               defaultOpen={item.defaultOpen}
                               key={uuid()}
                           >
-                              <Text>{item.content}</Text>
+                              {typeof item.content === "string" ? (
+                                  <Text>{item.content}</Text>
+                              ) : (
+                                  item.content
+                              )}
                           </AccordionItem>
                       ))
                     : children}

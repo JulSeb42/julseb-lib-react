@@ -32,6 +32,7 @@ export function InputContainer({
     className,
     hasListOpen,
     iconBaseUrl,
+    style,
 }: ILibInputContainer) {
     if (
         !label &&
@@ -58,6 +59,7 @@ export function InputContainer({
             className={className}
             hasListOpen={hasListOpen}
             iconBaseUrl={iconBaseUrl}
+            style={style}
         >
             {children}
         </Container>

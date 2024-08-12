@@ -54,6 +54,7 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
             className,
             hasListOpen,
             iconBaseUrl,
+            style,
             ...rest
         },
         ref
@@ -64,6 +65,7 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                 ref={ref}
                 as={as}
                 className={classNames(className, { Open: hasListOpen })}
+                style={style}
                 {...rest}
             >
                 {(label || labelComment) && (

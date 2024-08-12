@@ -22,8 +22,6 @@ export const inputPinPreview: ComponentPreview<ILibInputPin> = {
             demo: (
                 <InputPinDemo
                     placeholders={["0", "0", "0", "0"]}
-                    container={{ justifyContent: "flex-start" }}
-                    inputBackground="dark"
                 />
             ),
         },

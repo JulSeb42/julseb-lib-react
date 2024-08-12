@@ -31,7 +31,9 @@ export function Homepage() {
         // "Hooks",
     ]
 
-    const tests = ["ProgressCircle"]
+    const tests: Array<string> = [
+        // "ProgressCircle"
+    ]
 
     return (
         <Page title="Homepage">

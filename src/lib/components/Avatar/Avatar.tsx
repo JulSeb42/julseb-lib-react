@@ -25,6 +25,7 @@ import type { ILibAvatar } from "./types"
  * @prop iconSize?: number => only if icon is defined
  * @prop backgroundColor?: Any color from the library => only if letter or icon are defined
  * @prop contentColor?: Any color from the library => only if letter or icon are defined
+ * @prop containerStyle?: CSSProperties => only if badge is defined
  */
 export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
     (
@@ -46,6 +47,7 @@ export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
                 ? "white"
                 : "background",
             className,
+            containerStyle,
             ...rest
         },
         ref
@@ -78,6 +80,7 @@ export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
                     ref={ref}
                     as={as}
                     className={className}
+                    style={containerStyle}
                     $backgroundColor={backgroundColor}
                     $border={border}
                     $borderRadius={borderRadius}

@@ -25,6 +25,7 @@ import type { ILibMarkdownEditor } from "./types"
  * @prop showButtons?: { bold?: boolean; italic?: boolean; strikethrough?: boolean; ul?: boolean; ol?: boolean; link?: boolean; quote?: boolean; hr?: boolean; code?: boolean; codeBlock?: boolean; comment?: boolean; image?: boolean; editorCode?: boolean; editorLive?: boolean; editorPreview?: boolean; titles?: boolean }
  * @prop icons?: { bold?: string | JSX.Element; italic?: string | JSX.Element; strikethrough?: string | JSX.Element; ul?: string | JSX.Element; ol?: string | JSX.Element; link?: string | JSX.Element; quote?: string | JSX.Element; hr?: string | JSX.Element; code?: string | JSX.Element; codeBlock?: string | JSX.Element; comment?: string | JSX.Element; image?: string | JSX.Element; editorCode?: string | JSX.Element; editorLive?: string | JSX.Element; editorPreview?: string | JSX.Element }
  * @prop iconsSizes?: { bold?: number; italic?: number; strikethrough?: number; ul?: number; ol?: number; link?: number; quote?: number; hr?: number; code?: number; codeBlock?: number; comment?: number; image?: number; editorCode?: number; editorLive?: number; editorPreview?: number }
+ * @prop containerStyle?: CSSProperties
  */
 export const MarkdownEditor = forwardRef<
     HTMLTextAreaElement,
@@ -50,6 +51,7 @@ export const MarkdownEditor = forwardRef<
             counter,
             maxLength,
             textButtonTitles = "Titles",
+            containerStyle,
             ...rest
         },
         ref
@@ -90,6 +92,7 @@ export const MarkdownEditor = forwardRef<
                 maxLength={maxLength}
                 id={id}
                 value={value}
+                style={containerStyle}
             >
                 <MdEditorHelmet height={height} editor={editor} />
 

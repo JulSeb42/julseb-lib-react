@@ -32,6 +32,7 @@ import type { ILibInputPin } from "./types"
  * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
  * @prop inputBackground?: LibInputBackground
+ * @prop containerStyle?: CSSProperties
  */
 export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
     (
@@ -53,6 +54,7 @@ export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
             disabled,
             inputSize = 48,
             inputFontSize = "body",
+            containerStyle,
             ...rest
         },
         ref
@@ -93,6 +95,7 @@ export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
                 value={values}
                 counter={false}
                 maxLength={undefined}
+                style={containerStyle}
             >
                 <Flexbox
                     data-testid={

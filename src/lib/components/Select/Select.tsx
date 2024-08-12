@@ -43,6 +43,7 @@ import type { ILibSelectButton } from "./subtypes"
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
  */
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     (
@@ -69,6 +70,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             iconBaseUrl,
             tabIndex,
             prefix,
+            containerStyle,
             ...rest
         },
         ref
@@ -138,6 +140,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                 value={undefined}
                 counter={false}
                 maxLength={undefined}
+                style={containerStyle}
             >
                 <SelectContainer
                     data-testid={

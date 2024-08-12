@@ -1,6 +1,6 @@
 /*=============================================== InputComponents types ===============================================*/
 
-import type { MouseEventHandler } from "react"
+import type { CSSProperties, MouseEventHandler } from "react"
 import type {
     ReactChildren,
     CssFontStyle,
@@ -107,6 +107,7 @@ export interface ILibInputBase
     > {
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
+    containerStyle?: CSSProperties
 }
 
 export interface ILibExtendedInputBase extends ILibInputBase {
@@ -141,6 +142,7 @@ export interface ILibInputContainer {
     maxLength: number | undefined
     hasListOpen?: boolean
     iconBaseUrl?: string
+    style?: CSSProperties
 }
 
 /*====================== InputIconContainer ======================*/

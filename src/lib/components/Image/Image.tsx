@@ -18,6 +18,7 @@ import type { ILibImage } from "./types"
  * @prop aspectRatio?: string
  * @prop fallback?: JSX.Element
  * @prop caption?: string | { text: string; textColor?: Any color from the library; background?: Any color or overlay from the library, except "gradient-black" | "gradient-white"; as?: ElementType }
+ * @prop containerStyle?: CSSProperties => only if caption is defined
  */
 export const Image = forwardRef<HTMLImageElement, ILibImage>(
     (
@@ -40,6 +41,7 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
                     $borderRadius={borderRadius}
                 />
             ),
+            containerStyle,
             ...rest
         },
         ref
@@ -68,6 +70,7 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
                     $width={width}
                     $height={height}
                     $borderRadius={borderRadius}
+                    style={containerStyle}
                 >
                     <ImageFunction {...imageProps} />
 

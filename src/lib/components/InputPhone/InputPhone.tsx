@@ -63,6 +63,7 @@ const DEFAULT_ICONS_SIZES = {
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
  * @prop validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }
+ * @prop containerStyle?: CSSProperties
  */
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
     (
@@ -91,6 +92,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             disabled,
             countryButtonAriaLabel = "Select country",
             textNoResult = "Your search did not return any result.",
+            containerStyle,
             ...rest
         },
         ref
@@ -196,6 +198,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                 maxLength={maxLength}
                 hasListOpen={isOpen}
                 iconBaseUrl={iconBaseUrl}
+                style={containerStyle}
             >
                 <InputAndListContainer
                     data-testid={testid}

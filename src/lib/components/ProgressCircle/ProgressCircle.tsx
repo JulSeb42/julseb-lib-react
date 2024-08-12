@@ -22,6 +22,7 @@ import type { ILibProgressCircle } from "./types"
  * @prop color?: Any color from the library
  * @prop showValue?: boolean => only if icon is not defined
  * @prop icon?: string | JSX.Element => only if showValue is not defined
+ * @prop containerStyle?: CSSProperties => only if showValue or icon is defined
  */
 export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
     (
@@ -34,6 +35,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
             iconBaseUrl,
             color = "primary",
             className,
+            containerStyle,
             ...rest
         },
         ref
@@ -51,7 +53,11 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
         }
 
         return showValue || icon ? (
-            <ProgressCircleContainer data-testid={testid} className={className}>
+            <ProgressCircleContainer
+                data-testid={testid}
+                className={className}
+                style={containerStyle}
+            >
                 <ProgressCircleFn {...progressFnProps} />
 
                 <Content

@@ -38,6 +38,7 @@ import type { ILibInputCounter } from "./types"
  * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
  */
 
 const BUTTON_SIZE = 32 as const
@@ -74,6 +75,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
             showButtonTooltip,
             inputNoEdit,
             disabled,
+            containerStyle,
             ...rest
         },
         ref
@@ -165,6 +167,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                 counter={undefined}
                 maxLength={undefined}
                 iconBaseUrl={iconBaseUrl}
+                style={containerStyle}
             >
                 <InputCounterWrapper
                     data-testid={

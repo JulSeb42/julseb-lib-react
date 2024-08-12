@@ -1,6 +1,6 @@
 /*=============================================== TextIcon types ===============================================*/
 
-import type { ElementType } from "react"
+import type { ElementType, CSSProperties } from "react"
 import type {
     LibAllColors,
     LibIcon,
@@ -17,4 +17,5 @@ export type ILibTextIcon = ILibText & {
     iconSize?: number
     iconBaseUrl?: string
     gap?: LibSpacers
+    containerStyle?: CSSProperties
 }

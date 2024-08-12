@@ -52,6 +52,7 @@ import type { ILibAutocomplete } from "./types"
  * @prop iconSizes?: { iconLeft?: number; clear?: number }
  * @prop focusKeys?: Array<string>
  * @prop showKeys?: boolean => only if focusKeys is defined
+ * @prop containerStyle?: CSSProperties
  */
 
 const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
@@ -80,6 +81,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
             focusKeys,
             showKeys,
             disabled,
+            containerStyle,
             ...rest
         },
         ref
@@ -160,6 +162,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                 value={value}
                 counter={false}
                 maxLength={undefined}
+                style={containerStyle}
             >
                 <InputAndListContainer
                     data-testid={testid}

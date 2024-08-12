@@ -27,6 +27,7 @@ import type { ILibButtonIcon } from "./types"
  * @prop isLoading?: boolean
  * @prop loaderVariant?: 1 | 2 | 3 | 4 => only if isLoading is defined
  * @prop loaderBorderWidth?: number => only if isLoading is defined and loaderVariant is set to 1 | 2 | 3
+ * @prop containerStyle?: CSSProperties => only if tooltip is defined
  */
 export const ButtonIcon = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,
@@ -58,7 +59,7 @@ export const ButtonIcon = forwardRef<
             "aria-disabled": ariaDisabled = isLoading || disabled,
             color = "primary",
             className,
-            style,
+            containerStyle,
             ...rest
         },
         ref
@@ -121,12 +122,12 @@ export const ButtonIcon = forwardRef<
                             ? showTooltip.textColor
                             : "white"
                     }
-                    style={style}
+                    style={containerStyle}
                 >
                     <ButtonIconFunction {...(props as any)} />
                 </Tooltip>
             )
 
-        return <ButtonIconFunction style={style} {...(props as any)} />
+        return <ButtonIconFunction {...(props as any)} />
     }
 )
