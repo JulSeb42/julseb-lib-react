@@ -432,3 +432,4 @@ export type LibInputPrefixAndSuffix = string | JSX.Element
 export type LibButtonGroupToggleSelect =
     keyof typeof typeValues.buttonGroupToggleSelects
 export type LibValueInputPin = { [n: number]: number | "" | undefined }
+export type LibDrawerPosition = keyof typeof typeValues.drawerPositions

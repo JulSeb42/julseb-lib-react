@@ -72,4 +72,5 @@ export * from "../components/Footer/types"
 export * from "../components/Helmet/types"
 export * from "../components/InputPin/types"
 export * from "../components/InputContainer/types"
+export * from "../components/Drawer/types"
 // prependHere

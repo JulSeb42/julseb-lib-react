@@ -3,7 +3,7 @@
 import { forwardRef, useState, useEffect, useRef, type RefObject } from "react"
 import classNames from "classnames"
 import { enableScroll, disableScroll } from "ts-utils-julseb"
-import { useMaxWidth } from "../../"
+import { useMaxWidth, useKeyPress } from "../../"
 import { HeaderBurger } from "./HeaderBurger"
 import { HeaderSearch } from "./HeaderSearch"
 import { HeaderNav } from "./HeaderNav"
@@ -100,6 +100,10 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
         }, [hidePosition])
 
         const burgerRef = useRef<HTMLButtonElement>(null)
+
+        useKeyPress("Escape", () => {
+            if (isOpen) handleClose()
+        })
 
         const burgerProps: ILibHeaderBurger & {
             ref: RefObject<HTMLButtonElement>

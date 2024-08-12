@@ -264,6 +264,8 @@ export const typeValues = {
 
     buttonGroupToggleSelects: { single: "single", multi: "multi" },
 
+    drawerPositions: { left: "left", right: "right" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",
