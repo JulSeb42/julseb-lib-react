@@ -88,6 +88,7 @@ import { headerPreview } from "../lib/components/Header/__preview__/Header.previ
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
 import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
+import { pageLayoutPreview } from "../lib/components/PageLayout/__preview__/PageLayout.preview"
 // prependImport
 
 /*====================== Helpers ======================*/
@@ -212,6 +213,7 @@ export const previews = [
     iconMenuPreview,
     footerPreview,
     helmetPreview,
+    pageLayoutPreview,
     // prependArr
 
     /*====================== Helpers ======================*/

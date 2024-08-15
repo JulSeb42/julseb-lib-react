@@ -25,6 +25,7 @@ const StyledMain = styled.main<{
 }>`
     position: relative;
     width: 100%;
+    height: auto;
     min-height: ${({ $minHeight }) => stringifyPx($minHeight)};
     max-width: ${({ $size }) => getMainSize($size || "default")};
     padding: ${SPACERS.XXL} 0;
@@ -51,7 +52,7 @@ const StyledMain = styled.main<{
         `}
 
     @media ${BREAKPOINTS.TABLET_SMALL} {
-        height: inherit;
+        height: unset;
     }
 `
 

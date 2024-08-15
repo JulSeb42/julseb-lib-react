@@ -266,6 +266,8 @@ export const typeValues = {
 
     drawerPositions: { left: "left", right: "right" },
 
+    pageLayoutTemplates: { single: "single", multi: "multi" },
+
     times: {
         "00:00": "00:00",
         "01:00": "01:00",

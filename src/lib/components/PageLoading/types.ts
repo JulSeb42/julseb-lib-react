@@ -11,4 +11,5 @@ export interface ILibPageLoading extends LibComponentBase<HTMLDivElement> {
     loaderColor?: LibAllColors
     loaderVariant?: LibLoaderVariant
     stopScrolling?: boolean
+    children?: never
 }

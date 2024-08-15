@@ -37,14 +37,14 @@ interface ILibFooterBase extends LibComponentBase<HTMLDivElement> {
 }
 
 interface FooterHorizontalWithItems extends ILibFooterBase {
-    items: Array<LibFooterLink>
-    logo: LibFooterLogo
+    links: Array<LibFooterLink>
+    logo: string | LibFooterLogo
     direction?: Extract<LibFooterDirection, "horizontal">
     children?: never
 }
 
 interface FooterHorizontalWithChildren extends ILibFooterBase {
-    items?: never
+    links?: never
     logo: LibFooterLogo
     direction?: Extract<LibFooterDirection, "horizontal">
     children: ReactChildren
@@ -55,14 +55,14 @@ type LibFooterHorizontal =
     | FooterHorizontalWithChildren
 
 interface FooterVerticalWithItems extends ILibFooterBase {
-    items?: Array<LibFooterLink>
+    links?: Array<LibFooterLink>
     logo?: LibFooterLogo
     direction?: Extract<LibFooterDirection, "vertical">
     children?: never
 }
 
 interface FooterVerticalWithChildren extends ILibFooterBase {
-    items?: never
+    links?: never
     logo?: LibFooterLogo
     direction?: Extract<LibFooterDirection, "vertical">
     children?: ReactChildren
@@ -70,7 +70,7 @@ interface FooterVerticalWithChildren extends ILibFooterBase {
 
 type LibFooterVertical = RequireAtLeastOne<
     FooterVerticalWithItems | FooterVerticalWithChildren,
-    "items" | "children" | "logo"
+    "links" | "children" | "logo"
 >
 
 export type ILibFooter = LibFooterHorizontal | LibFooterVertical

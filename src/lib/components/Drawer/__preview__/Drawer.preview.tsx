@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Drawer, Button, Text, Flexbox } from "../../../"
-import type {} from "../../../types"
 import type { ILibDrawer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -11,11 +10,11 @@ export const drawerPreview: ComponentPreview<ILibDrawer> = {
     name: "Drawer",
     component: Drawer,
     category: "components",
-    import: "Drawer", // import Component (ex: Skeleton)
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibDrawer", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    import: "Drawer",
+    additionalImports: [],
+    optionalImports: [],
+    propsImport: "ILibDrawer",
+    additionalTypeImports: [],
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", demo: <DrawerPreview /> },

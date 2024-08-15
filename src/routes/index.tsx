@@ -30,6 +30,7 @@ import { DemoCoverBottomOverlay } from "../pages/demos/DemoCoverBottomOverlay"
 import { DemoPageLoading } from "../pages/demos/DemoPageLoading"
 import { BackToTopDemo } from "../pages/demos/BackToTopDemo"
 import { DemoHeader } from "../pages/demos/DemoHeader"
+import { PageLayoutDemo } from "../pages/demos/PageLayoutDemo"
 
 export type Route = {
     path: string
@@ -64,6 +65,8 @@ const demos: Array<Route> = [
     { path: "/back-to-top/demo", element: <BackToTopDemo /> },
 
     { path: "/header/demo", element: <DemoHeader /> },
+
+    { path: "/page-layout/demo", element: <PageLayoutDemo /> },
 ]
 
 export const routes: Array<Route> = [

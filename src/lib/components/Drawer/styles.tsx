@@ -16,7 +16,6 @@ import type {
     LibDrawerPosition,
     ILibPadding,
 } from "../../types"
-import type {} from "./types"
 
 const StyledDrawer = styled.div<{
     $zIndex: number

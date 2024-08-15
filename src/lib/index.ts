@@ -142,4 +142,5 @@ export * from "./components/Footer"
 export * from "./components/Helmet"
 export * from "./components/ResetScroll"
 export * from "./components/Drawer"
+export * from "./components/PageLayout"
 // prependHere

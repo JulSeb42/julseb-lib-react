@@ -39,7 +39,7 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
             previewTitle: "Default",
             props: {
                 logo: { text: "Hello" },
-                items,
+                links: items,
                 "data-testid": "testid",
                 className: "className",
             },
@@ -47,7 +47,7 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
         {
             previewTitle: "Vertical with logo",
             props: {
-                items,
+                links: items,
                 logo: { img: "/images/logo-fajny-css.svg" },
                 linksSeparator: "dash",
                 direction: "vertical",
@@ -58,7 +58,7 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
         {
             previewTitle: "Vertical",
             props: {
-                items,
+                links: items,
                 withSeparator: true,
                 direction: "vertical",
                 "data-testid": "testid",

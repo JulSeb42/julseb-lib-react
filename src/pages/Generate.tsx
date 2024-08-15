@@ -7,14 +7,18 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        'values: { [n: number]: number | "" | undefined }',
-        'setValues: DispatchState<{ [n: number]: number | "" | undefined }>',
-        "placeholders?: Array<string>",
-        "container?: { justifyContent?: CssJustifyContent; columnGap?: LibSpacers }",
-        "inputSize?: number",
-        "inputFontSize?: LibFontSizes",
-        "hideValues?: boolean",
-        "disabled?: boolean",
+        "children?: ReactChildren",
+        "isLoading?: boolean",
+        "pageLoading?: ILibPageLoading => imported from PageLoading component",
+        "titleLoading?: string",
+        'helmet?: Omit<ILibHelmet, "children"> => imported from Helmet component',
+        'header?: Omit<ILibHeader, "children"> => imported from Header component',
+        'footer?: Omit<ILibFooter, "children"> => imported from Footer component',
+        "noWrapper?: boolean",
+        'wrapper?: Omit<ILibWrapper, "children"> => imported from Wrapper component, only if noWrapper is not set to true',
+        'template?: "single" | "multi"',
+        'main?: Omit<ILibMain, "children"> => imported from Main component, only if template is set to "single" or undefined',
+        'mainMinHeight?: string | number => only if template is set to "single" or undefined',
     ])
 
     // const pickProps = [

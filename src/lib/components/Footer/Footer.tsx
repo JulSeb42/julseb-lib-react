@@ -41,7 +41,7 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
             children,
             className,
             withSeparator,
-            items,
+            links,
             logo,
             direction = "horizontal",
             linksSeparator = "dot",
@@ -71,8 +71,8 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
                     data-testid={testid && `${testid}.FooterLinksContainer`}
                     className={className && "FooterLinksContainer"}
                 >
-                    {items
-                        ? items.map((item, i) => (
+                    {links
+                        ? links.map((link, i) => (
                               <Fragment key={uuid()}>
                                   <FooterLink
                                       data-testid={
@@ -80,10 +80,10 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
                                           `${testid}.FooterLinksContainer.FooterLink`
                                       }
                                       className={className && "FooterLink"}
-                                      item={item}
+                                      item={link}
                                   />
 
-                                  {i !== items.length - 1 && (
+                                  {i !== links.length - 1 && (
                                       <FooterLinkSeparatorContainer>
                                           {linksSeparator === "dash"
                                               ? "-"

@@ -13,6 +13,7 @@ import type { ILibWrapper } from "./types"
  * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  * @prop backgroundColor?: Any color from the library
+ * @prop minHeight?: string | number
  */
 export const Wrapper = forwardRef<HTMLDivElement, ILibWrapper>(
     (

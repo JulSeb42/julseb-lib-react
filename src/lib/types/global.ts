@@ -433,3 +433,4 @@ export type LibButtonGroupToggleSelect =
     keyof typeof typeValues.buttonGroupToggleSelects
 export type LibValueInputPin = { [n: number]: number | "" | undefined }
 export type LibDrawerPosition = keyof typeof typeValues.drawerPositions
+export type LibPageLayoutTemplate = keyof typeof typeValues.pageLayoutTemplates

@@ -14,27 +14,10 @@ import type {
     LibHeaderVariant,
     LibColorsHover,
 } from "../../types"
-
-type LogoWithText = LibLink & {
-    text: string
-    img?: never
-    imgOpen?: never
-    alt?: never
-    width?: never
-    height?: never
-}
-
-type LogoWithImg = LibLink & {
-    text?: never
-    img: string
-    imgOpen?: string
-    alt?: string
-    width?: number
-    height?: number
-}
+import type { LibHeaderLogo } from "./subtypes"
 
 interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
-    logo: string | LogoWithText | LogoWithImg
+    logo: LibHeaderLogo
     variant?: LibHeaderVariant
     burgerPosition?: LibNavBurgerPosition
     burgerColor?:
