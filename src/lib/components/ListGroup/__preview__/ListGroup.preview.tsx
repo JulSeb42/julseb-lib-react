@@ -14,7 +14,7 @@ const items: Array<LibListGroupItem> = [
     },
     {
         text: "With text",
-        subtext: "And subtext",
+        body: "And body",
     },
     {
         text: "With badge and number",
@@ -39,20 +39,20 @@ const items: Array<LibListGroupItem> = [
     {
         text: "Router link",
         date: convertDateShort("2022-09-07"),
-        subtext: "Subtext",
+        body: "Body",
         to: "/",
         blank: true,
     },
     {
         text: "Anchor link",
         date: convertDateShort("2022-09-07"),
-        subtext: "Subtext",
+        body: "Body",
         href: "#",
     },
     {
         text: "Button",
         date: convertDateShort("2022-09-07"),
-        subtext: "Subtext",
+        body: "Body",
         onClick: () => alert("Clicked!"),
     },
     {

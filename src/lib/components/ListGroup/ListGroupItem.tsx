@@ -20,7 +20,7 @@ import type { ILibListGroupItem } from "./types"
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop text: string
- * @prop subtext?: string
+ * @prop body?: string
  * @prop isInArray?: boolean
  * @prop noSeparator?: boolean
  * @prop number?: number
@@ -37,7 +37,7 @@ export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItem>(
             isInArray,
             noSeparator,
             text,
-            subtext,
+            body,
             badge,
             date,
             onClick,
@@ -144,13 +144,13 @@ export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItem>(
                     )}
                 </ListItemContent>
 
-                {subtext && (
+                {body && (
                     <Text
-                        data-testid={testid && `${testid}.Subtext`}
-                        className={className && "Subtext"}
+                        data-testid={testid && `${testid}.Body`}
+                        className={className && "Body"}
                         tag="small"
                     >
-                        {subtext}
+                        {body}
                     </Text>
                 )}
             </StyledListItem>

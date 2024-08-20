@@ -160,7 +160,7 @@ type ListGroupItemBadgeExtended =
 type ListGroupItemBase = LibButtonLinkBlank &
     LibComponentItemBase<HTMLDivElement> & {
         text: string
-        subtext?: string
+        body?: string
     }
 
 type ListGroupItemWithBadge = ListGroupItemBase & {

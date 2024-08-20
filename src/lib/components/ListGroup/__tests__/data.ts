@@ -8,7 +8,7 @@ export const listGroupData: Array<LibListGroupItem> = [
     },
     {
         text: "Text",
-        subtext: "Subtext",
+        body: "Subtext",
     },
     {
         text: "Item",
@@ -33,20 +33,20 @@ export const listGroupData: Array<LibListGroupItem> = [
     {
         text: "Router link",
         date: "2022-09-07",
-        subtext: "Subtext",
+        body: "Subtext",
         to: "/",
         blank: true,
     },
     {
         text: "Link",
         date: "2022-09-07",
-        subtext: "Subtext",
+        body: "Subtext",
         href: "#",
     },
     {
         text: "Button",
         date: "2022-09-07",
-        subtext: "Subtext",
+        body: "Subtext",
         onClick: () => alert("Clicked!"),
     },
     {

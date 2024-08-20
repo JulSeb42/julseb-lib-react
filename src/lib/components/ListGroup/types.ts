@@ -95,7 +95,7 @@ type ILibListGroupItemBase = LibComponentBase<
 > &
     LibButtonLinkBlank & {
         text: string
-        subtext?: string
+        body?: string
         isInArray?: boolean
         noSeparator?: boolean
         number?: number
