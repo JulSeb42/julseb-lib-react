@@ -128,6 +128,7 @@ export type LibButtonGroupToggle =
 type ListGroupItemBadgeColor = {
     backgroundColor?: LibAllColors
     contentColor?: LibAllColors
+    size?: number
 }
 
 type ListGroupItemBadgeIcon = ListGroupItemBadgeColor & {
@@ -142,6 +143,14 @@ type ListGroupItemBadgeNumber = ListGroupItemBadgeColor & {
     number?: number
 }
 
+/**
+ * @description Props for badge in ListGroupItem
+ * @prop backgroundColor?: LibAllColors
+ * @prop contentColor?: LibAllColors
+ * @prop icon?: LibIcon => only if number is not defined
+ * @prop iconSize?: number => only if icon is defined
+ * @prop number?: number => only if icon is not defined
+ */
 type ListGroupItemBadgeExtended =
     | ListGroupItemBadgeIcon
     | ListGroupItemBadgeNumber
@@ -429,3 +438,50 @@ export type LibFooterLink = LibButtonLinkBlankRequired &
     LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
         text: string | JSX.Element
     }
+
+/*====================== DragListItem ======================*/
+
+type LibDragListItemBase = LibComponentItemBase<HTMLDivElement> & {
+    id: string
+}
+
+interface DragListItemWithContentAndBadge extends LibDragListItemBase {
+    title: string
+    body?: string
+    badge?: boolean | ListGroupItemBadgeExtended
+    date?: never
+    element?: never
+}
+
+interface DragListItemWithContentAndDate extends LibDragListItemBase {
+    title: string
+    body?: string
+    badge?: never
+    date?: string | Date
+    element?: never
+}
+
+interface DragListItemWithElement extends LibDragListItemBase {
+    title?: never
+    body?: never
+    badge?: never
+    date?: never
+    element?: JSX.Element
+}
+
+/**
+ * @description Props for DragList item: https://documentation-components-react.vercel.app/components/drag-list
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop title: string => only if element is not defined
+ * @prop body?: string => only if element is not defined
+ * @prop badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined
+ * @prop date?: string | Date => only if element and badge are not defined
+ * @prop element?: JSX.ELement => only if title and other props are not defined
+ */
+export type LibDragListItem =
+    | DragListItemWithContentAndBadge
+    | DragListItemWithContentAndDate
+    | DragListItemWithElement

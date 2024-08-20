@@ -13,7 +13,7 @@ export const {{ camelCase name }}Preview: ComponentPreview<ILib{{ pascalCase nam
     additionalImports: [], // import OtherComponent (ex: SkeletonCard)
     optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
     propsImport: "ILib{{ pascalCase name }}", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
     extends: ["HTML{{ pascalCase attribute }}Element"],
     previews: [
         { previewTitle: "Default", props: {  } },

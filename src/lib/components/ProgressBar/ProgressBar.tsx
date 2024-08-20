@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { getPercentage, getRandomString } from "ts-utils-julseb"
-import { HelmetStyles } from "../../lib-utils"
+import { appendStyles } from "../../lib-utils"
 import { StyledProgressBar } from "./styles"
 import type { ILibProgressBar } from "./types"
 
@@ -37,39 +37,32 @@ export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
         const randomClass = getRandomString(10, true)
         const withClass = className?.split(" ")[0] || randomClass
 
-        return (
-            <>
-                <HelmetStyles>
-                    {`
-                        ${id ? `#${id}` : `.${withClass}`} {
-                            --progress-value: ${getPercentage(
-                                value,
-                                Number(max)
-                            )}%;
-                            --progress-speed: ${value};
-                        }
-                    `}
-                </HelmetStyles>
+        appendStyles(`
+            ${id ? `#${id}` : `.${withClass}`} {
+                --progress-value: ${getPercentage(value, Number(max))}%;
+                --progress-speed: ${value};
+            }
+        `)
 
-                <StyledProgressBar
-                    data-testid={testid}
-                    ref={ref}
-                    as={as}
-                    className={classNames(
-                        className,
-                        { Animated: !noAnimation },
-                        randomClass,
-                        { RadiusCircle: value < 3 }
-                    )}
-                    id={id}
-                    min={min}
-                    max={max}
-                    value={value}
-                    $color={color}
-                    $max={Number(max)}
-                    {...rest}
-                />
-            </>
+        return (
+            <StyledProgressBar
+                data-testid={testid}
+                ref={ref}
+                as={as}
+                className={classNames(
+                    className,
+                    { Animated: !noAnimation },
+                    randomClass,
+                    { RadiusCircle: value < 3 }
+                )}
+                id={id}
+                min={min}
+                max={max}
+                value={value}
+                $color={color}
+                $max={Number(max)}
+                {...rest}
+            />
         )
     }
 )

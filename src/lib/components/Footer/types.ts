@@ -47,7 +47,7 @@ interface FooterHorizontalWithChildren extends ILibFooterBase {
     links?: never
     logo: LibFooterLogo
     direction?: Extract<LibFooterDirection, "horizontal">
-    children: ReactChildren
+    children?: ReactChildren
 }
 
 type LibFooterHorizontal =

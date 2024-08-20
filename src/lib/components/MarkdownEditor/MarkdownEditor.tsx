@@ -2,7 +2,7 @@
 
 import { forwardRef, useState, useRef, useCallback } from "react"
 import { Flexbox, markdownEditorOptions } from "../../"
-import { MdEditorHelmet } from "./MdEditorHelmet"
+import { appendStyles } from "../../lib-utils"
 import { EditorButtons } from "./MdEditorButtons/EditorButtons"
 import { EditorButtonTitles } from "./MdEditorButtons/EditorButtonTitles"
 import { MarkdownButtons } from "./MdEditorButtons/MarkdownButtons"
@@ -79,6 +79,15 @@ export const MarkdownEditor = forwardRef<
             counter
         )
 
+        appendStyles(`
+            :root {
+                --markdown-editor-grid: ${
+                    editor === "editorLive" ? "1fr 2px 1fr" : 1
+                };
+                --markdown-input-height: ${height}px;
+            }
+        `)
+
         return (
             <InputContainer
                 data-testid={testid}
@@ -94,8 +103,6 @@ export const MarkdownEditor = forwardRef<
                 value={value}
                 style={containerStyle}
             >
-                <MdEditorHelmet height={height} editor={editor} />
-
                 <MdEditorContainer
                     data-testid={
                         testid && hasContainer

@@ -74,4 +74,5 @@ export * from "../components/InputPin/types"
 export * from "../components/InputContainer/types"
 export * from "../components/Drawer/types"
 export * from "../components/PageLayout/types"
+export * from "../components/DragList/types"
 // prependHere

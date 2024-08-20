@@ -7,18 +7,11 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "children?: ReactChildren",
-        "isLoading?: boolean",
-        "pageLoading?: ILibPageLoading => imported from PageLoading component",
-        "titleLoading?: string",
-        'helmet?: Omit<ILibHelmet, "children"> => imported from Helmet component',
-        'header?: Omit<ILibHeader, "children"> => imported from Header component',
-        'footer?: Omit<ILibFooter, "children"> => imported from Footer component',
-        "noWrapper?: boolean",
-        'wrapper?: Omit<ILibWrapper, "children"> => imported from Wrapper component, only if noWrapper is not set to true',
-        'template?: "single" | "multi"',
-        'main?: Omit<ILibMain, "children"> => imported from Main component, only if template is set to "single" or undefined',
-        'mainMinHeight?: string | number => only if template is set to "single" or undefined',
+        "title: string => only if element is not defined",
+        "body?: string => only if element is not defined",
+        "badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined",
+        "date?: never => only if element and badge are not defined",
+        "element?: never => only if title and other props are not defined",
     ])
 
     // const pickProps = [

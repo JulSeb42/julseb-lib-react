@@ -4,7 +4,7 @@ import { forwardRef } from "react"
 import classNames from "classnames"
 import { stringifyPx, getRandomString } from "ts-utils-julseb"
 import { Text } from "../../"
-import { HelmetStyles } from "../../lib-utils"
+import { appendStyles } from "../../lib-utils"
 import type { LibAllColors } from "../../types"
 import { StyledAlert } from "./styles"
 import type { ILibAlert } from "./types"
@@ -81,18 +81,14 @@ export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
         const randomClass = getRandomString(10, true)
         const withClass = className?.split(" ")[0] || randomClass
 
+        appendStyles(`
+            ${id ? `#${id}` : `.${withClass}`} {
+                --alert-max-width: ${stringifyPx(maxWidth || "100%")};
+            }
+        `)
+
         return (
             <>
-                <HelmetStyles>
-                    {`
-                        ${id ? `#${id}` : `.${withClass}`} {
-                            --alert-max-width: ${stringifyPx(
-                                maxWidth || "100%"
-                            )};
-                        }
-                    `}
-                </HelmetStyles>
-
                 <StyledAlert
                     data-testid={testid}
                     ref={ref}
