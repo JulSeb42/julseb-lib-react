@@ -7,11 +7,14 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "title: string => only if element is not defined",
-        "body?: string => only if element is not defined",
-        "badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined",
-        "date?: never => only if element and badge are not defined",
-        "element?: never => only if title and other props are not defined",
+        "index: number",
+        "item: LibDragListItem => only if children is not defined",
+        "children: ReactChildren => only if item is not defined",
+        "handleDragStart: (e: DragEvent<HTMLDivElement>, i: number) => void",
+        "handleDragOver: (e: DragEvent<HTMLDivElement>, i: number) => void",
+        "iconDrag?: LibIcon",
+        "iconDragSize?: number",
+        "iconDragBaseUrl?: string",
     ])
 
     // const pickProps = [

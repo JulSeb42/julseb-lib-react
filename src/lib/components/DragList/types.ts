@@ -26,18 +26,6 @@ interface ILibDragListBase extends LibComponentBase<HTMLDivElement> {
 }
 
 interface DragListWithItems extends ILibDragListBase {
-    /**
-     * @description Props for DragList item: https://documentation-components-react.vercel.app/components/drag-list
-     * @prop data-testid?: string
-     * @prop className?: string
-     * @prop id: string
-     * @prop ref?: ForwardedRef<HTMLDivElement>
-     * @prop title: string => only if element is not defined
-     * @prop body?: string => only if element is not defined
-     * @prop badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined
-     * @prop date?: string | Date => only if element and badge are not defined
-     * @prop element?: JSX.ELement => only if title and other props are not defined
-     */
     items: Array<LibDragListItem>
     setItems: DispatchState<Array<LibDragListItem>>
     hideSeparator?: boolean
@@ -65,18 +53,6 @@ interface ILibDragListItemBase extends LibComponentBase<HTMLDivElement> {
 }
 
 interface DragListItemWithItem extends ILibDragListItemBase {
-    /**
-     * @description Props for DragList item: https://documentation-components-react.vercel.app/components/drag-list
-     * @prop data-testid?: string
-     * @prop className?: string
-     * @prop id: string
-     * @prop ref?: ForwardedRef<HTMLDivElement>
-     * @prop title: string => only if element is not defined
-     * @prop body?: string => only if element is not defined
-     * @prop badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined
-     * @prop date?: string | Date => only if element and badge are not defined
-     * @prop element?: JSX.ELement => only if title and other props are not defined
-     */
     item: LibDragListItem
     children?: never
 }
