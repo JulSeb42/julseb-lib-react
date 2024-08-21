@@ -107,7 +107,7 @@ const StyledInputCheck = styled.label<{
 }>`
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
     ${Mixins.Flexbox({
-        $gap: "xs",
+        $gap: "xxs",
         $inline: true,
     })}
 

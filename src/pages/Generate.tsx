@@ -7,14 +7,19 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "index: number",
-        "item: LibDragListItem => only if children is not defined",
-        "children: ReactChildren => only if item is not defined",
-        "handleDragStart: (e: DragEvent<HTMLDivElement>, i: number) => void",
-        "handleDragOver: (e: DragEvent<HTMLDivElement>, i: number) => void",
-        "iconDrag?: LibIcon",
-        "iconDragSize?: number",
-        "iconDragBaseUrl?: string",
+        "legend: string",
+        "flexDirection?: CssFlexDirection",
+        "flexWrap?: CssFlexWrap",
+        "justifyContent?: CssJustifyContent",
+        "alignItems?: CssAlignItems",
+        "justifyItems?: CssJustifyItems",
+        "alignContent?: CssAlignContent",
+        "gap?: LibSpacers",
+        "columnGap?: LibSpacers",
+        "rowGap?: LibSpacers",
+        "padding?: ILibPadding",
+        "border?: ILibBorder",
+        "borderRadius?: ILibRadius",
     ])
 
     // const pickProps = [
