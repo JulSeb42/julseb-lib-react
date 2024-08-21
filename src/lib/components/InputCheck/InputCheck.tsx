@@ -23,6 +23,7 @@ import type { ILibInputCheck } from "./types"
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop id: string
+ * @prop label: string
  * @prop validation?: boolean | undefined
  * @prop variant?: "tile" | "toggle" | "selector"
  * @prop type?: "checkbox" | "radio"
@@ -34,12 +35,12 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
     (
         {
             "data-testid": testid,
-            children,
             type = "checkbox",
             className,
             validation,
             id,
             variant,
+            label,
             iconCheckSize = 14,
             iconCheck = (
                 <Check
@@ -128,7 +129,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                     data-testid={testid && `${testid}.Text`}
                     className={className && "Text"}
                 >
-                    {children}
+                    {label}
                 </StyledText>
             </StyledInputCheck>
         )

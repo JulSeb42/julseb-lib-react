@@ -34,21 +34,22 @@ export const fieldsetPreview: ComponentPreview<ILibFieldset> = {
 function ChildrenCheck() {
     return (
         <>
-            <InputCheck id="hello" name="inputs-check" type="radio">
-                Hello
-            </InputCheck>
+            <InputCheck
+                id="hello"
+                name="inputs-check"
+                type="radio"
+                label="Hello"
+            />
+            <InputCheck
+                id="world"
+                name="inputs-check"
+                type="radio"
+                label="World"
+            />
 
-            <InputCheck id="world" name="inputs-check" type="radio">
-                World
-            </InputCheck>
+            <InputCheck id="foo" name="inputs-check" type="radio" label="Foo" />
 
-            <InputCheck id="foo" name="inputs-check" type="radio">
-                Foo
-            </InputCheck>
-
-            <InputCheck id="baz" name="inputs-check" type="radio">
-                Baz
-            </InputCheck>
+            <InputCheck id="baz" name="inputs-check" type="radio" label="Baz" />
         </>
     )
 }

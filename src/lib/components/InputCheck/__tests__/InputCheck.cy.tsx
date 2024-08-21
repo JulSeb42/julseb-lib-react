@@ -5,9 +5,12 @@ import { InputCheck, LIB_TOKENS } from "../../.."
 describe("<InputCheck />", () => {
     it("renders <InputCheck /> component", () => {
         cy.mount(
-            <InputCheck id="input" data-testid="testid" className="className">
-                Hello
-            </InputCheck>
+            <InputCheck
+                id="input"
+                data-testid="testid"
+                className="className"
+                label="Hello"
+            />
         )
         cy.dataTest().should("exist").should("have.class", "className")
         cy.dataTest("testid.Input")
@@ -30,18 +33,24 @@ describe("<InputCheck />", () => {
 
     it("renders a radio input", () => {
         cy.mount(
-            <InputCheck id="input" data-testid="testid" type="radio">
-                Hello
-            </InputCheck>
+            <InputCheck
+                id="input"
+                data-testid="testid"
+                type="radio"
+                label="Hello"
+            />
         )
         cy.dataTest("testid.Input").should("have.attr", "type", "radio")
     })
 
     it("renders a toggle", () => {
         cy.mount(
-            <InputCheck id="input" data-testid="testid" variant="toggle">
-                Hello
-            </InputCheck>
+            <InputCheck
+                id="input"
+                data-testid="testid"
+                variant="toggle"
+                label="Hello"
+            />
         )
         cy.dataTest("testid.CheckContainer.Toggle").should("exist")
     })
@@ -53,9 +62,8 @@ describe("<InputCheck />", () => {
                 data-testid="testid"
                 type="radio"
                 variant="tile"
-            >
-                Hello
-            </InputCheck>
+                label="Hello"
+            />
         )
         cy.dataTest()
             .should(
@@ -74,9 +82,8 @@ describe("<InputCheck />", () => {
                 data-testid="testid"
                 variant="selector"
                 validation={false}
-            >
-                Hello
-            </InputCheck>
+                label="Hello"
+            />
         )
         cy.dataTest()
             .should(

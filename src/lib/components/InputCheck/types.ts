@@ -10,6 +10,8 @@ import type {
 interface ILibInputCheckBase extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid"?: string
     id: string
+    label: string
+    children?: never
     validation?: LibValidationStatus
     variant?: LibInputCheckVariant
     containerStyle?: CSSProperties
