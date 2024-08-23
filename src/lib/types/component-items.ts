@@ -39,9 +39,11 @@ type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
 
 type ButtonGroupItemText = ButtonGroupItemsBase & {
     text: string
-    iconLeft?: LibIcon
-    iconRight?: LibIcon
-    iconOnly?: never
+    icons?: {
+        left?: LibIcon
+        right?: LibIcon
+        only?: never
+    }
     iconSizes?: {
         left?: number
         right?: number
@@ -51,9 +53,11 @@ type ButtonGroupItemText = ButtonGroupItemsBase & {
 
 type ButtonGroupItemIcon = ButtonGroupItemsBase & {
     text?: never
-    iconLeft?: never
-    iconRight?: never
-    iconOnly: LibIcon
+    icons?: {
+        left?: never
+        right?: never
+        only?: LibIcon
+    }
     iconSizes?: {
         left?: never
         right?: never
@@ -256,6 +260,7 @@ export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
         close?: number
     }
     iconLeftColor?: LibAllColors
+    iconsBaseUrl?: string
     labelClose?: string
     withTimer?: boolean
     timerBackgroundColor?: LibAllColors

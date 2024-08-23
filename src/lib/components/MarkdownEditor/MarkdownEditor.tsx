@@ -33,6 +33,7 @@ export const MarkdownEditor = forwardRef<
             showButtons = markdownEditorOptions,
             icons,
             iconsSizes,
+            iconsBaseUrl,
             defaultEditor = "editorLive",
             className,
             label,
@@ -140,14 +141,20 @@ export const MarkdownEditor = forwardRef<
                                 showButtons={showButtons}
                                 icons={icons}
                                 iconsSizes={iconsSizes}
+                                iconsBaseUrl={iconsBaseUrl}
                                 addCode={addCode}
                             />
                         </Flexbox>
 
                         <EditorButtons
+                            data-testid={testid}
+                            className={className}
                             showButtons={showButtons}
                             editor={editor}
                             setEditor={setEditor}
+                            icons={icons}
+                            iconsSizes={iconsSizes}
+                            iconsBaseUrl={iconsBaseUrl}
                         />
                     </ButtonsContainer>
 

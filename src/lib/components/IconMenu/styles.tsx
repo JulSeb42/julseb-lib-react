@@ -32,7 +32,7 @@ const StyledIconMenu = styled.nav<{
 
 const OpenButton = styled(ButtonIcon).attrs({ size: DEFAULT_BUTTON_SIZE })`
     position: relative;
-    z-index: 1;
+    z-index: 100;
 `
 
 const OpenIcon = styled(Plus).attrs({ size: DEFAULT_BUTTON_SIZE })`

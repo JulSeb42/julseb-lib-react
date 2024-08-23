@@ -167,7 +167,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                         inputBackground={inputBackground}
                         validationStatus={validation?.status}
                     >
-                        {icons?.iconLeft && (
+                        {icons?.left && (
                             <InputLeftContainer
                                 data-testid={testid}
                                 className={className}
@@ -176,10 +176,9 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                 <InputIcon
                                     data-testid={testid}
                                     className={className}
-                                    icon={icons.iconLeft}
+                                    icon={icons.left}
                                     iconSize={
-                                        iconSizes?.iconLeft ||
-                                        defaultIconSizes.left
+                                        iconSizes?.left || defaultIconSizes.left
                                     }
                                     validationStatus={validation?.status}
                                     disabled={disabled}

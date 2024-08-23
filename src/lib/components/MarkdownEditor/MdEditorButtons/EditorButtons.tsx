@@ -14,6 +14,7 @@ export function EditorButtons({
     showButtons,
     icons,
     iconsSizes,
+    iconsBaseUrl,
     editor,
     setEditor,
 }: ILibMdEditorButtons) {
@@ -46,7 +47,6 @@ export function EditorButtons({
                         : 24
 
                 return (
-                    // @ts-ignore
                     <IconButton
                         key={uuid()}
                         data-testid={
@@ -59,6 +59,7 @@ export function EditorButtons({
                         )}
                         icon={icon}
                         iconSize={iconSize}
+                        iconBaseUrl={iconsBaseUrl}
                         onClick={() => {
                             setEditor(button.name as LibMdEditorEditor)
                         }}

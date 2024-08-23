@@ -14,6 +14,7 @@ export function MarkdownButtons({
     showButtons,
     icons,
     iconsSizes,
+    iconsBaseUrl,
     addCode,
 }: ILibMarkdownEditorMdButtons) {
     return mdButtons.map(button => {
@@ -34,7 +35,6 @@ export function MarkdownButtons({
                 : DEFAULT_ICON_SIZE
 
         return (
-            // @ts-ignore
             <IconButton
                 key={uuid()}
                 data-testid={
@@ -46,6 +46,7 @@ export function MarkdownButtons({
                 iconSize={iconSize}
                 onClick={() => addCode(button.code)}
                 tooltip={button.displayName || toSentenceCase(button.name)}
+                iconBaseUrl={iconsBaseUrl}
                 showTooltip
             />
         )

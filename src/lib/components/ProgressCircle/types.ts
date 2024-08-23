@@ -13,6 +13,7 @@ interface ILibProgressCircleBase
 interface ProgressCircleWithValue extends ILibProgressCircleBase {
     showValue?: true
     icon?: never
+    iconSize?: never
     iconBaseUrl?: never
     containerStyle?: CSSProperties
 }
@@ -20,6 +21,7 @@ interface ProgressCircleWithValue extends ILibProgressCircleBase {
 interface ProgressCircleWithIcon extends ILibProgressCircleBase {
     showValue?: never
     icon?: LibIcon
+    iconSize?: number
     iconBaseUrl?: string
     containerStyle?: CSSProperties
 }

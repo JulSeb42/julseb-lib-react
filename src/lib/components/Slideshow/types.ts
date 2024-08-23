@@ -31,13 +31,11 @@ type Controls = {
     size?: LibSlideshowButtonSize
     color?: LibColorsHover
     hideOnTouch?: boolean
-    iconPrev?: LibIcon
-    iconNext?: LibIcon
-    iconPrevSize?: number
-    iconNextSize?: number
+    icons?: { prev?: LibIcon; next?: LibIcon }
+    iconsSizes?: { prev?: number; next?: number }
+    iconBaseUrl?: string
     labelPrev?: string
     labelNext?: string
-    iconBaseUrl?: string
 }
 
 type Options = {

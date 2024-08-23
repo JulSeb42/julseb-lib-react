@@ -54,4 +54,5 @@ export interface ILibMarkdownEditor
         editorLive?: number
         editorPreview?: number
     }
+    iconsBaseUrl?: string
 }

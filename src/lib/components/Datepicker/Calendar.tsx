@@ -1,7 +1,7 @@
 /*=============================================== Calendar component ===============================================*/
 
 import { useState, type MouseEvent } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid, formatDate as formatDateUtil } from "ts-utils-julseb"
 import classNames from "classnames"
 import { Text } from "../../"
 import { LibIcon } from "../LibIcon"
@@ -121,10 +121,12 @@ export function Calendar({
 
         if (target.id.includes("day-")) {
             setValue(
-                new Date(
-                    currentYear,
-                    currentMonth,
-                    parseFloat(target.id.replace("day-", ""))
+                formatDateUtil(
+                    new Date(
+                        currentYear,
+                        currentMonth,
+                        parseFloat(target.id.replace("day-", ""))
+                    )
                 )
             )
         }

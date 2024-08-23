@@ -17,9 +17,9 @@ export function HeaderSearch({
     const {
         maxWidth,
         placeholder,
-        icon,
+        iconLeft,
+        iconLeftSize,
         iconClear,
-        iconSize,
         iconClearSize,
         iconBaseUrl,
         inputBackground,
@@ -68,8 +68,8 @@ export function HeaderSearch({
                 onChange={handleSearch}
                 value={searchValue}
                 placeholder={placeholder}
-                icon={icon}
-                iconSize={iconSize}
+                icon={iconLeft}
+                iconSize={iconLeftSize}
                 iconClear={iconClear}
                 iconClearSize={iconClearSize}
                 inputBackground={inputBackground}

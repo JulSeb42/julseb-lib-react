@@ -207,19 +207,27 @@ interface ILibCodeContainerBase extends LibComponentBase<HTMLDivElement> {
 
 interface CodeContainerWithCopyButton extends ILibCodeContainerBase {
     hideCopyButton?: undefined | false
-    copyButton?: {
-        iconCopy?: LibIcon
-        iconCopied?: LibIcon
-        iconSizeCopy?: number
-        iconSizeCopied?: number
-        tooltipCopy?: string
-        tooltipCopied?: string
+    tooltipTexts?: {
+        copy?: string
+        copied?: string
     }
+    icons?: {
+        copy?: LibIcon
+        copied?: LibIcon
+    }
+    iconsSizes?: {
+        copy?: number
+        copied?: number
+    }
+    iconsBaseUrl?: string
 }
 
 interface CodeContainerWithoutCopyButton extends ILibCodeContainerBase {
     hideCopyButton: true
-    copyButton?: never
+    tooltipTexts?: never
+    icons?: never
+    iconsSizes?: never
+    iconsBaseUrl?: never
 }
 
 export type ILibCodeContainer =

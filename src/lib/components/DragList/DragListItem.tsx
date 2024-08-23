@@ -36,12 +36,12 @@ export const DragListItem = forwardRef<HTMLDivElement, ILibDragListItem>(
                     size={iconDragSize}
                 />
             ),
+            iconDragBaseUrl,
             item,
             children,
             index,
             handleDragStart,
             handleDragOver,
-            iconDragBaseUrl,
             ...rest
         },
         ref

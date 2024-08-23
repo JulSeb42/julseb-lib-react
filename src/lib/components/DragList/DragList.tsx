@@ -24,13 +24,13 @@ export const DragList = forwardRef<HTMLDivElement, ILibDragList>(
             gap = "s",
             iconDrag,
             iconDragSize,
+            iconDragBaseUrl,
             items,
             setItems,
             border = { color: "gray-200" },
             padding = "s",
             borderRadius = "m",
             hideSeparator,
-            iconDragBaseUrl,
             ...rest
         },
         ref

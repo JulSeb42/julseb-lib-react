@@ -6,7 +6,6 @@ import type {
     LibIcon,
     LibInputBackground,
     LibInputVariant,
-    LibLink,
     LibNavBurgerPosition,
     LibNavMobileVariant,
     LibHeaderLink,
@@ -29,11 +28,11 @@ interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
     search?: {
         pathname: string
         queries?: Array<Array<string>>
-        icon?: LibIcon
+        iconLeft?: LibIcon
+        iconLeftSize?: number
         iconClear?: LibIcon
-        iconSize?: number
-        iconBaseUrl?: string
         iconClearSize?: number
+        iconBaseUrl?: string
         placeholder?: string
         keyboardShortcut?: Array<string>
         showKeys?: boolean

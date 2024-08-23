@@ -11,7 +11,7 @@ import type { ComponentPreview } from "../../../../data/components"
 
 const buttons: Array<LibButtonGroupButtonItem> = [
     {
-        iconOnly: "arrow-left",
+        icons: { only: "arrow-left" },
         disabled: true,
     },
     {
@@ -32,7 +32,7 @@ const buttons: Array<LibButtonGroupButtonItem> = [
         to: "/",
     },
     {
-        iconOnly: "arrow-right",
+        icons: { only: "arrow-right" },
         to: "/",
     },
 ]

@@ -8,7 +8,6 @@ import type {
     LibToasterPosition,
     LibToast,
     LibToastOptions,
-    LibIcon,
 } from "../../types"
 
 export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
@@ -21,7 +20,6 @@ export interface ILibToast extends LibComponentBase<HTMLDivElement>, LibToast {
         textColor?: LibAllColors
         shadow?: LibShadows
     }
-    iconBaseUrl?: string
     hideCloseButton?: boolean
 }
 
@@ -30,10 +28,13 @@ export interface ILibToaster extends LibComponentBase<HTMLDivElement> {
     toasts: Array<LibToast>
     toastsOptions?: Pick<
         LibToastOptions,
-        "duration" | "labelClose" | "withTimer"
+        | "duration"
+        | "labelClose"
+        | "withTimer"
+        | "icons"
+        | "iconSizes"
+        | "iconsBaseUrl"
     >
     isOpen: boolean
-    iconClose?: LibIcon
-    iconCloseSize?: number
     position?: LibToasterPosition
 }

@@ -19,11 +19,11 @@ interface ILibAutocompleteBase
     listDirection?: LibInputListDirection
     fuzzyOptions?: IFuseOptions<string> | undefined
     icons?: {
-        iconLeft?: LibIcon
+        left?: LibIcon
         clear?: LibIcon
     }
     iconSizes?: {
-        iconLeft?: number
+        left?: number
         clear?: number
     }
     counter?: never

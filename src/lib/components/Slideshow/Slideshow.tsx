@@ -168,7 +168,7 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
                         <SlideshowButton
                             data-testid={testid}
                             className={className}
-                            onClick={handlePrev}
+                            onClick={handleNext}
                             position="right"
                             controls={controls}
                         />

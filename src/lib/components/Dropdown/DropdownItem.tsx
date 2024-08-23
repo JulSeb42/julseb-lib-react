@@ -1,6 +1,6 @@
 /*=============================================== DropdownItem component ===============================================*/
 
-import { forwardRef, Fragment } from "react"
+import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { LibIcon } from "../LibIcon"
 import { StyledDropdownItem, IconContainer, TextContent } from "./styles"
@@ -55,7 +55,7 @@ export const DropdownItem = forwardRef<
                 {...rest}
             >
                 {icon ? (
-                    <Fragment>
+                    <>
                         <IconContainer
                             data-testid={testid && `${testid}.IconContainer`}
                             className={className && "DropdownItemIconContainer"}
@@ -77,7 +77,7 @@ export const DropdownItem = forwardRef<
                         >
                             {children}
                         </TextContent>
-                    </Fragment>
+                    </>
                 ) : (
                     children
                 )}

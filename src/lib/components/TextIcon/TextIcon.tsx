@@ -34,10 +34,10 @@ export const TextIcon = forwardRef<
             icon,
             iconColor,
             iconSize,
+            iconBaseUrl,
             tag = "p",
             display,
             gap,
-            iconBaseUrl,
             containerStyle,
             ...rest
         },

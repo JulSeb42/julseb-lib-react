@@ -22,36 +22,42 @@ export function SlideshowButton({
         color = "primary",
         hideOnTouch,
         "aria-label": label = position === "right" ? "Previous" : "Next",
-        iconPrevSize = size === "large"
-            ? DEFAULT_ICON_SIZE_LARGE
-            : DEFAULT_ICON_SIZE_SMALL,
-        iconNextSize = size === "large"
-            ? DEFAULT_ICON_SIZE_LARGE
-            : DEFAULT_ICON_SIZE_SMALL,
-        iconPrev = (
-            <ChevronLeft
-                data-testid={
-                    controlTestid ??
-                    (testid &&
-                        `${testid}.SlideshowButton.${
-                            position === "right" ? "Next" : "Prev"
-                        }.Icon`)
-                }
-                size={iconPrevSize}
-            />
-        ),
-        iconNext = (
-            <ChevronRight
-                data-testid={
-                    controlTestid ??
-                    (testid &&
-                        `${testid}.SlideshowButton.${
-                            position === "right" ? "Next" : "Prev"
-                        }.Icon`)
-                }
-                size={iconNextSize}
-            />
-        ),
+        iconsSizes = {
+            prev:
+                size === "large"
+                    ? DEFAULT_ICON_SIZE_LARGE
+                    : DEFAULT_ICON_SIZE_SMALL,
+            next:
+                size === "large"
+                    ? DEFAULT_ICON_SIZE_LARGE
+                    : DEFAULT_ICON_SIZE_SMALL,
+        },
+        icons = {
+            prev: (
+                <ChevronLeft
+                    data-testid={
+                        controlTestid ??
+                        (testid &&
+                            `${testid}.SlideshowButton.${
+                                position === "right" ? "Next" : "Prev"
+                            }.Icon`)
+                    }
+                    size={iconsSizes?.prev}
+                />
+            ),
+            next: (
+                <ChevronRight
+                    data-testid={
+                        controlTestid ??
+                        (testid &&
+                            `${testid}.SlideshowButton.${
+                                position === "right" ? "Next" : "Prev"
+                            }.Icon`)
+                    }
+                    size={iconsSizes?.next}
+                />
+            ),
+        },
         iconBaseUrl,
     } = controls as any
 
@@ -83,8 +89,8 @@ export function SlideshowButton({
                         }.Icon`)
                 }
                 className={(className || controlClassName) && "SlideshowIcon"}
-                icon={position === "right" ? iconNext : iconPrev}
-                size={position === "right" ? iconNextSize : iconPrevSize}
+                icon={position === "right" ? icons.next : icons.prev}
+                size={position === "right" ? iconsSizes.next : iconsSizes.prev}
                 color="currentColor"
                 baseUrl={iconBaseUrl}
             />

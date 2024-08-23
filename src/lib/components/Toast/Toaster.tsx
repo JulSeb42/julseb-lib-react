@@ -67,8 +67,6 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
             toasts,
             toastsOptions,
             isOpen,
-            iconClose,
-            iconCloseSize,
             position = "bottom-right",
             ...rest
         },
@@ -113,7 +111,7 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                                         styles?.iconLeft,
                                     close:
                                         toast.options?.icons?.close ||
-                                        iconClose,
+                                        toastsOptions?.icons?.close,
                                 },
                                 iconSizes: {
                                     left:
@@ -121,7 +119,7 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                                         styles?.iconLeftSize,
                                     close:
                                         toast.options?.iconSizes?.close ||
-                                        iconCloseSize,
+                                        toastsOptions?.iconSizes?.close,
                                 },
                                 iconLeftColor:
                                     toast.options?.iconLeftColor ||

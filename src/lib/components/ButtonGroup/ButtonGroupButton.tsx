@@ -44,18 +44,18 @@ export const ButtonGroupButton = forwardRef<
             ([n]) => n !== "iconOnly"
         )
 
-        if (button.iconOnly)
+        if (button.icons && button.icons.only)
             return (
                 <ButtonIcon
                     {...(commonProps as any)}
-                    icon={button.iconOnly}
+                    icon={button.icons.only}
                     borderRadius={0}
                     size={size === "small" ? 24 : (34 as any)}
                     aria-label={
                         button["aria-label"] ||
                         capitalize(
-                            typeof button.iconOnly === "string"
-                                ? button.iconOnly
+                            typeof button.icons.only === "string"
+                                ? button.icons.only
                                 : "button"
                         )
                     }
@@ -71,8 +71,8 @@ export const ButtonGroupButton = forwardRef<
                 borderRadius={0}
                 size={size as any}
                 icons={{
-                    left: button.iconLeft,
-                    right: button.iconRight,
+                    left: button.icons?.left,
+                    right: button.icons?.right,
                 }}
                 iconSizes={{
                     left: button?.iconSizes?.left,

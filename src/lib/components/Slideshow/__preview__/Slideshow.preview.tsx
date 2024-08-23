@@ -23,8 +23,7 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
             demo: (
                 <SlideshowDemo
                     controls={{
-                        iconPrev: "arrow-left",
-                        iconNext: "arrow-right",
+                        icons: { prev: "arrow-left", next: "arrow-right" },
                     }}
                     pagination={{
                         type: "dots-outline",

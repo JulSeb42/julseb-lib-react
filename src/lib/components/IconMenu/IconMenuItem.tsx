@@ -35,7 +35,7 @@ export const IconMenuItem = forwardRef<
                 variant={variant}
                 iconBaseUrl={iconBaseUrl}
                 $direction={direction}
-                style={{
+                containerStyle={{
                     ["--button-position" as any]: indexPosition,
                     ...style,
                 }}

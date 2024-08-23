@@ -26,6 +26,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
             noAnimation,
             showValue,
             icon,
+            iconSize,
             iconBaseUrl,
             color = "primary",
             className,
@@ -63,7 +64,7 @@ export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
                             data-testid={testid && `${testid}.Icon`}
                             className={className && "ProgressIcon"}
                             icon={icon}
-                            size={PROGRESS_CIRCLE_SIZE * 0.4}
+                            size={iconSize ?? PROGRESS_CIRCLE_SIZE * 0.4}
                             color="gray"
                             baseUrl={iconBaseUrl}
                         />

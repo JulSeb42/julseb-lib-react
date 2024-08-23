@@ -43,7 +43,6 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
             toastStyle,
             toasterPosition,
             role = "alert",
-            iconBaseUrl,
             hideCloseButton,
             ...rest
         },
@@ -107,7 +106,7 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                                 icon={options.icons.left}
                                 size={options.iconSizes?.left || 16}
                                 color={options?.iconLeftColor}
-                                baseUrl={iconBaseUrl}
+                                baseUrl={options?.iconsBaseUrl}
                             />
                         </IconContainer>
                     )}
@@ -165,7 +164,7 @@ export const Toast = forwardRef<HTMLDivElement, ILibToast>(
                                         CLOSE_ICON_SIZE
                                     }
                                     color="currentColor"
-                                    baseUrl={iconBaseUrl}
+                                    baseUrl={options?.iconsBaseUrl}
                                 />
                             </CloseButton>
                         </IconContainer>

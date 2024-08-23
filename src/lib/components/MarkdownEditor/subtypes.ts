@@ -15,7 +15,12 @@ export interface ILibMdEditorInput extends ILibMarkdownEditor {
 export interface ILibMdEditorButtons
     extends Pick<
         Partial<ILibMarkdownEditor>,
-        "showButtons" | "className" | "data-testid" | "icons" | "iconsSizes"
+        | "showButtons"
+        | "className"
+        | "data-testid"
+        | "icons"
+        | "iconsSizes"
+        | "iconsBaseUrl"
     > {
     editor: LibMdEditorEditor
     setEditor: DispatchState<LibMdEditorEditor>
@@ -33,7 +38,12 @@ export interface ILibMarkdownEditorTitles
 export interface ILibMarkdownEditorMdButtons
     extends Pick<
         ILibMarkdownEditor,
-        "showButtons" | "icons" | "iconsSizes" | "data-testid" | "className"
+        | "showButtons"
+        | "icons"
+        | "iconsSizes"
+        | "iconsBaseUrl"
+        | "data-testid"
+        | "className"
     > {
     addCode: (code: string) => void
 }

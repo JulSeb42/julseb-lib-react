@@ -32,7 +32,10 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
             highlighterStyle = atomOneDark,
             color,
             hideCopyButton,
-            copyButton,
+            tooltipTexts,
+            icons,
+            iconsSizes,
+            iconsBaseUrl,
             ...rest
         },
         ref
@@ -49,57 +52,27 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
         }
 
         const copyButtonCopy = {
-            icon:
-                copyButton &&
-                typeof copyButton === "object" &&
-                copyButton.iconCopied ? (
-                    copyButton.iconCopied
-                ) : (
-                    <Clipboard
-                        data-testid={testid && `${testid}.CopyButton.IconCopy`}
-                        className={className && "IconCopy"}
-                        size={
-                            typeof copyButton === "object" &&
-                            copyButton.iconSizeCopy
-                                ? copyButton.iconSizeCopy
-                                : roundIconSize(DEFAULT_ICON_SIZE)
-                        }
-                    />
-                ),
-            tooltip:
-                copyButton &&
-                typeof copyButton === "object" &&
-                copyButton.tooltipCopy
-                    ? copyButton.tooltipCopy
-                    : "Copy",
+            icon: icons?.copy ?? (
+                <Clipboard
+                    data-testid={testid && `${testid}.CopyButton.IconCopy`}
+                    className={className && "IconCopy"}
+                    size={iconsSizes?.copy ?? roundIconSize(DEFAULT_ICON_SIZE)}
+                />
+            ),
+            tooltip: tooltipTexts?.copy ?? "Copy",
         }
 
         const copyButtonCopied = {
-            icon:
-                copyButton &&
-                typeof copyButton === "object" &&
-                copyButton.iconCopied ? (
-                    copyButton.iconCopied
-                ) : (
-                    <Check
-                        data-testid={
-                            testid && `${testid}.CopyButton.IconCopied`
-                        }
-                        className={className && "IconCopied"}
-                        size={
-                            typeof copyButton === "object" &&
-                            copyButton.iconSizeCopy
-                                ? copyButton.iconSizeCopy
-                                : roundIconSize(DEFAULT_ICON_SIZE)
-                        }
-                    />
-                ),
-            tooltip:
-                copyButton &&
-                typeof copyButton === "object" &&
-                copyButton.tooltipCopied
-                    ? copyButton.tooltipCopied
-                    : "Copied!",
+            icon: icons?.copied ?? (
+                <Check
+                    data-testid={testid && `${testid}.CopyButton.IconCopied`}
+                    className={className && "IconCopied"}
+                    size={
+                        iconsSizes?.copied ?? roundIconSize(DEFAULT_ICON_SIZE)
+                    }
+                />
+            ),
+            tooltip: tooltipTexts?.copy ?? "Copied!",
         }
 
         return (
@@ -124,6 +97,7 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                     <StyledButtonIcon
                         data-testid={testid && `${testid}.CopyButton`}
                         className={className && "CopyButton"}
+                        onClick={copyToClipboard}
                         icon={
                             hasCopied
                                 ? copyButtonCopied.icon
@@ -136,8 +110,8 @@ export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
                                 ? copyButtonCopied.tooltip
                                 : copyButtonCopy.tooltip
                         }
+                        iconBaseUrl={iconsBaseUrl}
                         showTooltip
-                        onClick={copyToClipboard}
                     />
                 )}
             </StyledCodeContainer>
