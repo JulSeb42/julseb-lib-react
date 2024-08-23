@@ -43,7 +43,7 @@ export const Slider = forwardRef<
                 type="range"
                 $validation={validation?.status}
                 $inputBackground={inputBackground}
-                $value={value || 0}
+                $value={value ?? 0}
                 $max={max}
                 {...rest}
             />

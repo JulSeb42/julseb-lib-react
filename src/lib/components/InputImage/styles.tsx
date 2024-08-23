@@ -28,7 +28,7 @@ const StyledInputImage = styled.label<{
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
     color: ${({ $validation, $disabled, theme }) => {
         if ($disabled) return theme.GRAY_500
-        
+
         return Mixins.ColorsHoverDefault(
             $validation === false ? "danger" : "primary",
             theme
@@ -51,7 +51,7 @@ const ContainerCommon = css`
 `
 
 const StyledHoverContainer = styled.div<{
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $disabled: boolean
 }>`
     ${ContainerCommon}
@@ -76,7 +76,9 @@ const StyledHoverContainer = styled.div<{
         `}
 `
 
-const StyledEmptyContainer = styled.div<{ $validation: LibValidationStatus }>`
+const StyledEmptyContainer = styled.div<{
+    $validationStatus: LibValidationStatus
+}>`
     ${ContainerCommon}
     position: relative;
     z-index: 0;
@@ -90,7 +92,7 @@ const StyledImage = styled(Image).attrs({
     position: relative;
     z-index: 0;
     opacity: ${({ $disabled }) => $disabled && 0.5};
-`
+` as any
 
 const StyledInput = styled.input`
     display: none;

@@ -223,7 +223,7 @@ export const InputBaseMixin = ({
     $disabled,
     $inputBackground,
     $inputVariant,
-    $validation,
+    $validationStatus,
 }: ILibInputBaseMixin) => css`
     height: ${INPUT_HEIGHT}px;
     width: 100%;
@@ -386,7 +386,7 @@ export const InputBaseMixin = ({
         switch ($inputBackground) {
             case "light":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_LIGHT.DANGER_50
                         : $disabled
                         ? COLORS_LIGHT.GRAY_100
@@ -410,7 +410,7 @@ export const InputBaseMixin = ({
                 `
             case "dark":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_DARK.DANGER_50
                         : $disabled
                         ? COLORS_DARK.GRAY_100

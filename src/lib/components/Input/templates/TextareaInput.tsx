@@ -34,7 +34,7 @@ export const TextareaInput = forwardRef<HTMLTextAreaElement, ILibTextareaInput>(
                 $inputBackground={inputBackground}
                 $inputVariant={undefined}
                 $disabled={disabled}
-                $validation={validation?.status}
+                $validationStatus={validation?.status}
                 $isTextarea
                 {...rest}
             />

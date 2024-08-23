@@ -8,11 +8,11 @@ import type {
     LibIcon,
     ReactChildren,
 } from "../../types"
-import type { ILibInputValidationHelper } from "../InputComponents/types"
+import type { LibInputWithValidation } from "../InputComponents/types"
 
 export interface ILibInputContainer
     extends LibComponentBase<HTMLDivElement>,
-        Partial<Pick<ILibInputValidationHelper, "validation" | "iconBaseUrl">> {
+        LibInputWithValidation {
     label?: string
     labelComment?: string
     helper?: string
@@ -32,4 +32,5 @@ export interface ILibInputContainer
     maxLength?: number
     hasListOpen?: boolean
     style?: CSSProperties
+    iconBaseUrl?: string
 }

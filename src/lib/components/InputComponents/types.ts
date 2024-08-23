@@ -16,40 +16,31 @@ import type {
 
 /*====================== Validation ======================*/
 
-interface ValidationHelper {
+interface LibValidationHelper {
     status: LibValidationStatus
     message?: string
     iconNotPassed?: LibIcon
     iconNotPassedSize?: number
     iconPassed?: LibIcon
     iconPassedSize?: number
+    iconBaseUrl?: string
 }
 
-export interface ILibInputValidationIconComponent {
-    validationIcon?:
-        | {
-              iconValidationNotPassed?: LibIcon
-              iconValidationNotPassedSize?: number
-              iconValidationPassed?: LibIcon
-              iconValidationPassedSize?: number
-          }
-        | undefined
+export interface LibInputWithValidation {
+    validation?: LibValidationHelper
 }
 
 export interface ILibInputValidationHelper {
     "data-testid": string | undefined
     className: string | undefined
-    validation: ValidationHelper
-    iconBaseUrl?: string
+    validation: LibValidationHelper
 }
 
-export interface ILibInputValidationIcon
-    extends ILibInputValidationIconComponent {
+export interface ILibInputValidationIcon {
     "data-testid": string | undefined
     className: string | undefined
     inputBackground: LibInputBackground | undefined
-    validation: { status: LibValidationStatus }
-    iconBaseUrl: string | undefined
+    validation: LibValidationHelper
 }
 
 /*====================== No focus ======================*/
@@ -87,7 +78,7 @@ export interface ILibInputNoFocusKeys {
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
  */
@@ -135,7 +126,7 @@ export interface ILibInputContainer {
               iconSize?: number
           }
         | undefined
-    validation: ValidationHelper | undefined
+    validation: LibValidationHelper | undefined
     children?: ReactChildren
     value: any | undefined
     counter: boolean | undefined
@@ -177,7 +168,6 @@ export interface ILibInputLeftContainer {
     className: string | undefined
     children?: ReactChildren
     disabled: boolean | undefined
-    withPadding?: boolean
     noBorder?: boolean
 }
 
@@ -328,5 +318,7 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
 export interface ILibInputAndListContainer {
     "data-testid": string | undefined
     className: string | undefined
+    hasListOpen: boolean
+    isParent?: boolean
     children?: ReactChildren
 }

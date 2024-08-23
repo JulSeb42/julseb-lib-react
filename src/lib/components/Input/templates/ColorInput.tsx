@@ -32,7 +32,7 @@ export const ColorInput = forwardRef<HTMLInputElement, ILibColorInput>(
                 $inputBackground={inputBackground}
                 $inputVariant={inputVariant}
                 $disabled={disabled}
-                $validation={validation?.status}
+                $validationStatus={validation?.status}
                 {...rest}
             />
         )

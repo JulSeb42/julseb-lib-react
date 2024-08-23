@@ -16,7 +16,7 @@ import type {
     ILibExtendedInputBase,
     ILibInputIcon,
     ILibInputNoFocusKeys,
-    ILibInputValidationIconComponent,
+    LibInputWithValidation,
 } from "../InputComponents/types"
 import type { ILibInputBaseMixin } from "../ComponentsMixins"
 
@@ -37,7 +37,7 @@ export interface ILibColorInput
 export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
     ILibExtendedInputBase &
     ILibInputIcon &
-    ILibInputValidationIconComponent &
+    LibInputWithValidation &
     ILibInputNoFocusKeys & {
         type: "date" | "datetime-local" | "month" | "week"
         iconCalendar?: LibIcon
@@ -50,10 +50,9 @@ export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
 export interface ILibFileInput
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibExtendedInputBase,
-        ILibInputValidationIconComponent,
+        LibInputWithValidation,
         ILibInputNoFocusKeys {
     type: "file"
-    iconValidationBaseUrl?: string
     children?: never
 }
 
@@ -65,7 +64,7 @@ type ILibPasswordInputBase = Omit<
 > &
     ILibExtendedInputBase &
     ILibInputIcon &
-    ILibInputValidationIconComponent &
+    LibInputWithValidation &
     ILibInputNoFocusKeys & {
         type: "password"
         children?: never
@@ -166,7 +165,7 @@ export type ILibTextInput = Omit<
 > &
     ILibExtendedInputBase &
     ILibInputIcon &
-    ILibInputValidationIconComponent &
+    LibInputWithValidation &
     Partial<ILibInputNoFocusKeys> & {
         type?: "email" | "number" | "tel" | "text" | "url" | undefined
         children?: never
@@ -180,7 +179,7 @@ export type ILibTimeInput = Omit<
 > &
     ILibExtendedInputBase &
     ILibInputIcon &
-    ILibInputValidationIconComponent &
+    LibInputWithValidation &
     ILibInputNoFocusKeys & {
         type: "time"
         iconClock?: LibIcon

@@ -35,7 +35,7 @@ import type { ILibInputCounter } from "./types"
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
  * @prop containerStyle?: CSSProperties
@@ -234,7 +234,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                                 $inputBackground={inputBackground}
                                 $inputVariant={inputVariant}
                                 $disabled={disabled}
-                                $validation={validation?.status}
+                                $validationStatus={validation?.status}
                                 $length={value.toString().length}
                                 {...rest}
                             />

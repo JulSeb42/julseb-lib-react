@@ -4,6 +4,9 @@ export { ThemeProvider } from "styled-components"
 import {} from "styled-components/cssprop"
 export * from "./utils"
 export {
+    addDay,
+    addMonth,
+    addYear,
     calculateAverage,
     calculateTotalSum,
     capitalize,
@@ -145,4 +148,5 @@ export * from "./components/Drawer"
 export * from "./components/PageLayout"
 export * from "./components/DragList"
 export * from "./components/Fieldset"
+export * from "./components/Datepicker"
 // prependHere

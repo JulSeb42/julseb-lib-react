@@ -11,10 +11,10 @@ export const drawerPreview: ComponentPreview<ILibDrawer> = {
     component: Drawer,
     category: "components",
     import: "Drawer",
-    additionalImports: [],
-    optionalImports: [],
+    additionalImports: null,
+    optionalImports: null,
     propsImport: "ILibDrawer",
-    additionalTypeImports: [],
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         { previewTitle: "Default", demo: <DrawerPreview /> },

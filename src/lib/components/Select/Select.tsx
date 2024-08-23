@@ -33,14 +33,13 @@ import type { ILibSelectButton } from "./subtypes"
  * @prop disabled?: boolean
  * @prop listDirection?: "up" | "down"
  * @prop tabIndex?: number
- * @prop icons?: { iconLeft?: string | JSX.Element caret?: string | JSX.Element }
- * @prop iconSizes?: { iconLeft?: number caret?: number }
- * @prop validationIcon?: { iconValidationNotPassed?: string | JSX.Element; iconValidationNotPassedSize?: number; iconValidationPassed?: string | JSX.Element; iconValidationPassedSize?: number }
+ * @prop icons?: { left?: string | JSX.Element caret?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number caret?: number }
  * @prop label?: string
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
  * @prop containerStyle?: CSSProperties
@@ -57,7 +56,6 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             helper,
             helperBottom,
             validation,
-            validationIcon,
             inputVariant = "rounded",
             inputBackground,
             disabled,
@@ -83,7 +81,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             validation
         )
         const hasOptions: boolean = !!(options && options.length > 1)
-        const hasWrapper = !!(hasOptions || validation || icons?.iconLeft)
+        const hasWrapper = !!(hasOptions || validation || icons?.left)
 
         const defaultIconSizes = {
             left: 16,
@@ -164,12 +162,11 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                         inputBackground={inputBackground}
                         validationStatus={validation?.status}
                     >
-                        {(prefix || icons?.iconLeft) && (
+                        {(prefix || icons?.left) && (
                             <InputLeftContainer
                                 data-testid={testid}
                                 className={className}
                                 disabled={disabled}
-                                withPadding={!!(!prefix && icons?.iconLeft)}
                             >
                                 <InputPrefix
                                     data-testid={testid}
@@ -181,10 +178,9 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                 <InputIcon
                                     data-testid={testid}
                                     className={className}
-                                    icon={icons?.iconLeft}
+                                    icon={icons?.left}
                                     iconSize={
-                                        iconSizes?.iconLeft ||
-                                        defaultIconSizes.left
+                                        iconSizes?.left || defaultIconSizes.left
                                     }
                                     validationStatus={validation?.status}
                                     disabled={disabled}
@@ -210,9 +206,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                         data-testid={testid}
                                         className={className}
                                         validation={validation}
-                                        validationIcon={validationIcon}
                                         inputBackground={inputBackground}
-                                        iconBaseUrl={iconBaseUrl}
                                     />
                                 )}
 

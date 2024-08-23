@@ -1,5 +1,7 @@
 /*=============================================== InputAndListContainer component ===============================================*/
 
+import { forwardRef } from "react"
+import classNames from "classnames"
 import { StyledInputAndListContainer } from "../styles"
 import type { ILibInputAndListContainer } from "../types"
 
@@ -10,17 +12,29 @@ import type { ILibInputAndListContainer } from "../types"
  * @prop className: string | undefined
  * @prop children?: ReactChildren
  */
-export function InputAndListContainer({
-    "data-testid": testid,
-    className,
-    children,
-}: ILibInputAndListContainer) {
-    return (
-        <StyledInputAndListContainer
-            data-testid={testid && `${testid}.InputAndListContainer`}
-            className={className && "InputAndListContainer"}
-        >
-            {children}
-        </StyledInputAndListContainer>
-    )
-}
+export const InputAndListContainer = forwardRef<
+    HTMLDivElement,
+    ILibInputAndListContainer
+>(
+    (
+        { "data-testid": testid, className, children, hasListOpen, isParent },
+        ref
+    ) => {
+        return (
+            <StyledInputAndListContainer
+                data-testid={
+                    testid &&
+                    (isParent ? testid : `${testid}.InputAndListContainer`)
+                }
+                className={classNames(
+                    { InputAndListContainer: className && !isParent },
+                    { Open: hasListOpen },
+                    isParent && className
+                )}
+                ref={ref}
+            >
+                {children}
+            </StyledInputAndListContainer>
+        )
+    }
+)

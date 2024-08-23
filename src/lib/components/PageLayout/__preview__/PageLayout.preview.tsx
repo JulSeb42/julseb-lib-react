@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom"
 import { PageLayout, Text } from "../../../"
-import type {} from "../../../types"
 import type { ILibPageLayout } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -11,17 +10,23 @@ export const pageLayoutPreview: ComponentPreview<ILibPageLayout> = {
     component: PageLayout,
     category: "components",
     import: "PageLayout",
-    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: "ILibPageLayout", // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibPageLayout",
+    additionalTypeImports: null,
     extends: ["HTMLDivElement"],
     previews: [
         {
             previewTitle: "Default",
             demo: (
                 <Text>
-                    <Link to="/page-layout/demo" target="_blank" rel="noreferrer noopener">Demo here</Link>
+                    <Link
+                        to="/page-layout/demo"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        Demo here
+                    </Link>
                 </Text>
             ),
         },

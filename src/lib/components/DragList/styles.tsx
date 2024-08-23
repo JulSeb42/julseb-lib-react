@@ -9,7 +9,6 @@ import type {
     ILibRadius,
     LibSpacers,
 } from "../../types"
-import type {} from "./types"
 
 const StyledDragList = styled.div<{
     $gap: LibSpacers

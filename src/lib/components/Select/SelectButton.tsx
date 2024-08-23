@@ -29,13 +29,13 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
         return (
             <StyledSelectButton
                 data-testid={
-                    (hasContainer || hasWrapper || icons?.iconLeft) && testid
+                    (hasContainer || hasWrapper || icons?.left) && testid
                         ? `${testid}.SelectContainer.SelectButton`
                         : testid
                 }
                 ref={ref}
                 className={classNames(
-                    (hasContainer || hasWrapper || icons?.iconLeft) && className
+                    (hasContainer || hasWrapper || icons?.left) && className
                         ? "SelectButton"
                         : className,
                     { WithListOpen: isOpen }
@@ -48,7 +48,7 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
                 $disabled={disabled}
                 $inputBackground={inputBackground}
                 $inputVariant={inputVariant}
-                $validation={validation?.status}
+                $validationStatus={validation?.status}
                 $hasOptions={!!options}
             >
                 {selected}

@@ -10,13 +10,13 @@ import type {
 } from "../../types"
 import type {
     ILibInputBase,
-    ILibInputValidationIconComponent,
+    LibInputWithValidation,
 } from "../InputComponents/types"
 
 export interface ILibInputPhone
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibInputBase,
-        ILibInputValidationIconComponent {
+        LibInputWithValidation {
     selectedCountry: LibCountry | undefined
     setSelectedCountry: DispatchState<LibCountry | undefined>
     defaultCountry?: CountryCode

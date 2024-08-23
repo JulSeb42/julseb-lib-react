@@ -38,7 +38,6 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
             icon,
             iconSize,
             iconBaseUrl,
-            validationIcon,
             prefix,
             ...rest
         },
@@ -57,7 +56,6 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         <InputPrefix
                             data-testid={testid}
@@ -89,7 +87,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     {...rest}
                 />
 
@@ -118,9 +116,7 @@ export const TimeInput = forwardRef<HTMLInputElement, ILibTimeInput>(
                             data-testid={testid}
                             className={className}
                             validation={validation}
-                            validationIcon={validationIcon}
                             inputBackground={inputBackground}
-                            iconBaseUrl={iconBaseUrl}
                         />
                     )}
                 </InputRightContainer>

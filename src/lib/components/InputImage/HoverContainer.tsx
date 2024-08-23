@@ -23,7 +23,7 @@ export function HoverContainer({
                 { HoverContainer: className },
                 { Visible: isVisible }
             )}
-            $validation={validation?.status}
+            $validationStatus={validation?.status}
             $disabled={disabled}
         >
             <LibIcon

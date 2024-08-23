@@ -28,6 +28,7 @@ const StyledInputIconContainer = styled.span<{
     $inputVariant: LibInputVariant | undefined
 }>`
     height: ${INPUT_HEIGHT}px;
+    width: 32px;
     position: relative;
     z-index: 1;
     color: ${({ theme, $validationStatus, $disabled }) => {
@@ -69,11 +70,9 @@ const StyledInputIconContainer = styled.span<{
 
 const CommonLeftAndRight = ({
     $disabled,
-    $withPadding,
     $withBorder,
 }: {
     $disabled: boolean | undefined
-    $withPadding?: boolean
     $withBorder: boolean | undefined
 }) => css`
     height: ${INPUT_HEIGHT}px;
@@ -83,13 +82,7 @@ const CommonLeftAndRight = ({
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",
-        $gap: "xs",
     })};
-
-    ${$withPadding &&
-    css`
-        padding: 0 ${SPACERS.XS};
-    `}
 
     ${$withBorder &&
     css`
@@ -106,7 +99,6 @@ const CommonLeftAndRight = ({
 
 const StyledInputLeftContainer = styled.span<{
     $disabled: boolean | undefined
-    $withPadding?: boolean
     $withBorder: boolean | undefined
 }>`
     ${CommonLeftAndRight}
@@ -128,6 +120,12 @@ const StyledInputRightContainer = styled.span<{
     $withBorder: boolean | undefined
 }>`
     ${CommonLeftAndRight}
+
+    ${({ $withPadding }) =>
+        $withPadding &&
+        css`
+            padding: 0 ${SPACERS.XS};
+        `}
 
     ${({ $withBorder }) =>
         $withBorder &&
@@ -709,6 +707,10 @@ const StyledInputSuffix = styled.span<{
 
 const StyledInputAndListContainer = styled.div`
     position: relative;
+
+    &.Open {
+        z-index: 20;
+    }
 `
 
 setDefaultTheme([

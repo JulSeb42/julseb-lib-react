@@ -1,5 +1,8 @@
 import { useState, useEffect, type ReactNode } from "react"
 import {
+    addDay,
+    addMonth,
+    addYear,
     calculateAverage,
     calculateTotalSum,
     capitalize,
@@ -60,6 +63,27 @@ interface Util {
 }
 
 const utils: Array<Util> = [
+    {
+        name: "addDay",
+        effect: "Add a number of days to a set date",
+        arguments: ["numberOfDays: number", "dateFrom? string"],
+        example: `addDay(1, "${getToday()}")`,
+        result: addDay(1, getToday()).toString(),
+    },
+    {
+        name: "addMonth",
+        effect: "Add a number of months to a set date",
+        arguments: ["numberOfMonths: number", "dateFrom? string"],
+        example: `addMonth(1, "${getToday()}")`,
+        result: addMonth(1, getToday()).toString(),
+    },
+    {
+        name: "addYear",
+        effect: "Add a number of years to a set date",
+        arguments: ["numberOfYears: number", "dateFrom? string"],
+        example: `addYear(1, "${getToday()}")`,
+        result: addYear(1, getToday()).toString(),
+    },
     {
         name: "calculateAverage",
         effect: "Calculate an average number for an array of numbers",

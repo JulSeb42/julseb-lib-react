@@ -5,17 +5,17 @@ import type {
     LibIcon,
     LibInputListDirection,
     DispatchState,
-    LibInputPrefixAndSuffix
+    LibInputPrefixAndSuffix,
 } from "../../types"
 import type {
     ILibInputBase,
-    ILibInputValidationIconComponent,
+    LibInputWithValidation,
 } from "../InputComponents/types"
 
 export interface ILibSelect
     extends Omit<LibComponentBase<HTMLDivElement>, "prefix">,
         ILibInputBase,
-        ILibInputValidationIconComponent {
+        LibInputWithValidation {
     selected: string
     setSelected: DispatchState<string>
     options?: Array<string>
@@ -24,11 +24,11 @@ export interface ILibSelect
     tabIndex?: number
     prefix?: LibInputPrefixAndSuffix
     icons?: {
-        iconLeft?: LibIcon
+        left?: LibIcon
         caret?: LibIcon
     }
     iconSizes?: {
-        iconLeft?: number
+        left?: number
         caret?: number
     }
 }

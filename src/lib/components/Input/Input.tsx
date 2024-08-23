@@ -62,7 +62,7 @@ const InputFunction = forwardRef<
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: LibInputBackground
  * @prop inputVariant?: LibInputVariant
  * @prop counter?: boolean

@@ -62,7 +62,6 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         <InputPrefix
                             data-testid={testid}
@@ -96,7 +95,7 @@ export const SearchInput = forwardRef<HTMLInputElement, ILibSearchInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={undefined}
+                    $validationStatus={undefined}
                     {...rest}
                 />
 

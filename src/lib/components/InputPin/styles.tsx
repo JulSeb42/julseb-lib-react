@@ -23,38 +23,38 @@ const StyledInputPin = styled.input<IStyledInputPin>`
     text-align: center;
     transition: ${TRANSITIONS.SHORT};
     font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
-    background-color: ${({ $validation, theme }) =>
-        $validation === false ? theme.DANGER_50 : theme.BACKGROUND};
+    background-color: ${({ $validationStatus, theme }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.BACKGROUND};
 
     &:focus {
-        border-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        border-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $inputBackground, $validation }) => {
+    ${({ $inputBackground, $validationStatus }) => {
         switch ($inputBackground) {
             case "light":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_LIGHT.DANGER_50
                         : COLORS_LIGHT.BACKGROUND};
                     border-color: ${COLORS_LIGHT.GRAY_200};
 
                     &:focus {
-                        border-color: ${$validation === false
+                        border-color: ${$validationStatus === false
                             ? COLORS_LIGHT.DANGER_500
                             : COLORS_LIGHT.PRIMARY_500};
                     }
                 `
             case "dark":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_DARK.DANGER_50
                         : COLORS_DARK.BACKGROUND};
                     border-color: ${COLORS_DARK.GRAY_200};
 
                     &:focus {
-                        border-color: ${$validation === false
+                        border-color: ${$validationStatus === false
                             ? COLORS_DARK.DANGER_500
                             : COLORS_DARK.PRIMARY_500};
                     }

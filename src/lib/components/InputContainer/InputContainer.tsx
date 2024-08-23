@@ -32,7 +32,7 @@ import type { ILibInputContainer } from "./types"
  * @prop counter?: boolean
  * @prop maxLength?: number
  * @prop hasListOpen?: boolean
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop iconBaseUrl?: string
  */
 export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
@@ -52,8 +52,8 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
             value,
             className,
             hasListOpen,
-            iconBaseUrl,
             style,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -192,7 +192,6 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                         data-testid={testid}
                         className={className}
                         validation={validation}
-                        iconBaseUrl={iconBaseUrl}
                     />
                 )}
             </StyledInputContainer>

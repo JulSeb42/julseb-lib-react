@@ -30,7 +30,7 @@ import type { ILibInputPin } from "./types"
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: string | JSX.Element; iconNotPassedSize?: number; iconPassed?: string | JSX.Element; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: LibInputBackground
  * @prop containerStyle?: CSSProperties
  */
@@ -120,7 +120,7 @@ export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
                             type={hideValues ? "password" : "text"}
                             maxLength={1}
                             disabled={disabled}
-                            $validation={validation?.status}
+                            $validationStatus={validation?.status}
                             $disabled={disabled}
                             $inputBackground={inputBackground}
                             $inputVariant={undefined}

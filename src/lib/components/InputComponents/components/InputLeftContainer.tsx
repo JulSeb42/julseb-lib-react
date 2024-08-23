@@ -11,34 +11,20 @@ import type { ILibInputLeftContainer } from "../types"
  * @prop className: string | undefined
  * @prop children?: ReactChildren
  * @prop disabled: boolean | undefined
- * @prop withPadding?: boolean
  */
 export const InputLeftContainer = forwardRef<
     HTMLSpanElement,
     ILibInputLeftContainer
->(
-    (
-        {
-            "data-testid": testid,
-            className,
-            children,
-            disabled,
-            withPadding,
-            noBorder,
-        },
-        ref
-    ) => {
-        return (
-            <StyledInputLeftContainer
-                data-testid={testid && `${testid}.LeftContainer`}
-                ref={ref}
-                className={className && "LeftContainer"}
-                $disabled={disabled}
-                $withPadding={withPadding}
-                $withBorder={!noBorder}
-            >
-                {children}
-            </StyledInputLeftContainer>
-        )
-    }
-)
+>(({ "data-testid": testid, className, children, disabled, noBorder }, ref) => {
+    return (
+        <StyledInputLeftContainer
+            data-testid={testid && `${testid}.LeftContainer`}
+            ref={ref}
+            className={className && "LeftContainer"}
+            $disabled={disabled}
+            $withBorder={!noBorder}
+        >
+            {children}
+        </StyledInputLeftContainer>
+    )
+})

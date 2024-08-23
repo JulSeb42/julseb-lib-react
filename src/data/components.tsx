@@ -58,6 +58,7 @@ import { selectPreview } from "../lib/components/Select/__preview__/Select.previ
 import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/Autocomplete.preview"
 import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
 import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin.preview"
+import { datepickerPreview } from "../lib/components/Datepicker/__preview__/Datepicker.preview"
 import { fieldsetPreview } from "../lib/components/Fieldset/__preview__/Fieldset.preview"
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
@@ -185,6 +186,7 @@ export const previews = [
     autocompletePreview,
     ratingPreview,
     inputPinPreview,
+    datepickerPreview,
     fieldsetPreview,
     formPreview,
     listGroupPreview,
@@ -218,7 +220,6 @@ export const previews = [
     footerPreview,
     helmetPreview,
     pageLayoutPreview,
-
     // prependArr
 
     /*====================== Helpers ======================*/

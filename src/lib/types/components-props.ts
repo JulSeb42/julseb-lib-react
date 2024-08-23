@@ -76,4 +76,5 @@ export * from "../components/Drawer/types"
 export * from "../components/PageLayout/types"
 export * from "../components/DragList/types"
 export * from "../components/Fieldset/types"
+export * from "../components/Datepicker/types"
 // prependHere

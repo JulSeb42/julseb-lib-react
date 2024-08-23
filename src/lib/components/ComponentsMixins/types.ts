@@ -30,7 +30,7 @@ export interface ILibTextBaseMixin {
 }
 
 export interface ILibInputBaseMixin {
-    $validation: LibValidationStatus | undefined
+    $validationStatus: LibValidationStatus | undefined
     $inputBackground: LibInputBackground | undefined
     $disabled: boolean | undefined
     $inputVariant: LibInputVariant | undefined

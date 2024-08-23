@@ -15,12 +15,14 @@ import type { ILibInputValidationHelper } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
- * @prop validation: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number } | undefined
+ * @prop validation: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string } | undefined
  */
 export function InputValidationHelper({
     "data-testid": testid,
     className,
-    validation: {
+    validation,
+}: ILibInputValidationHelper) {
+    const {
         status,
         message,
         iconNotPassed = (
@@ -45,10 +47,10 @@ export function InputValidationHelper({
             />
         ),
         iconPassedSize = getIconSizeFromFont("small"),
-    },
-    iconBaseUrl,
-}: ILibInputValidationHelper) {
-    if (!message) return null
+        iconBaseUrl,
+    } = validation
+
+    if (!message || !validation) return null
 
     return (
         <HelperBottomContainer

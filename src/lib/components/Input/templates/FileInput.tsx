@@ -18,9 +18,7 @@ export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
             inputVariant = "rounded",
             className,
             disabled,
-            validationIcon,
             type = "file",
-            iconValidationBaseUrl,
             ...rest
         },
         ref
@@ -37,7 +35,7 @@ export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     {...rest}
                 />
 
@@ -54,8 +52,6 @@ export const FileInput = forwardRef<HTMLInputElement, ILibFileInput>(
                             className={className}
                             validation={validation}
                             inputBackground={inputBackground}
-                            validationIcon={validationIcon}
-                            iconBaseUrl={iconValidationBaseUrl}
                         />
                     </InputRightContainer>
                 )}

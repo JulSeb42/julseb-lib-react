@@ -52,7 +52,6 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         <InputPrefix
                             data-testid={testid}
@@ -85,7 +84,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     $isSelect
                     {...rest}
                 >
@@ -96,7 +95,6 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                     data-testid={testid}
                     className={className}
                     disabled={disabled}
-                    withPadding
                     withBorder={false}
                 >
                     <InputButton

@@ -18,7 +18,7 @@ export const autocompletePreview: ComponentPreview<ILibAutocomplete> = {
     extends: [
         "InputHTMLAttributes<HTMLInputElement>",
         "ILibInputBase",
-        "ILibInputValidationIconComponent",
+        "LibInputWithValidation",
     ],
     previews: [
         {

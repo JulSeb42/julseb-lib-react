@@ -2,10 +2,15 @@ import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import path from "node:path"
 import dts from "vite-plugin-dts"
+import pluginChecker from "vite-plugin-checker"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), dts({ insertTypesEntry: true })],
+    plugins: [
+        react(),
+        dts({ insertTypesEntry: true }),
+        pluginChecker({ typescript: true }),
+    ],
 
     build: {
         lib: {

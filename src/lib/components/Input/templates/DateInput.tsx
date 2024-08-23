@@ -39,7 +39,6 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                     size={iconCalendarSize}
                 />
             ),
-            validationIcon,
             prefix,
             ...rest
         },
@@ -58,7 +57,6 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         <InputPrefix
                             data-testid={testid}
@@ -91,7 +89,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     {...rest}
                 />
 
@@ -119,9 +117,7 @@ export const DateInput = forwardRef<HTMLInputElement, ILibDateInput>(
                             data-testid={testid}
                             className={className}
                             validation={validation}
-                            validationIcon={validationIcon}
                             inputBackground={inputBackground}
-                            iconBaseUrl={iconBaseUrl}
                         />
                     )}
                 </InputRightContainer>

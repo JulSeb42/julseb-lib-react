@@ -59,10 +59,9 @@ const DEFAULT_ICONS_SIZES = {
  * @prop labelComment?: string
  * @prop helper?: string
  * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop inputBackground?: "light" | "dark"
  * @prop inputVariant?: "rounded" | "pill"
- * @prop validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }
  * @prop containerStyle?: CSSProperties
  */
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
@@ -76,7 +75,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             helper,
             helperBottom,
             validation,
-            validationIcon,
             inputBackground,
             inputVariant = "rounded",
             selectedCountry,
@@ -203,6 +201,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                 <InputAndListContainer
                     data-testid={testid}
                     className={className}
+                    hasListOpen={isOpen}
                 >
                     <InputWrapper
                         data-testid={testid}
@@ -218,7 +217,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             data-testid={testid}
                             className={className}
                             disabled={disabled}
-                            withPadding
                             noBorder
                         >
                             <CountryButton
@@ -285,7 +283,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                             disabled={disabled}
                             $disabled={disabled}
                             $inputBackground={inputBackground}
-                            $validation={validation?.status}
+                            $validationStatus={validation?.status}
                             $inputVariant={inputVariant}
                             {...rest}
                         />
@@ -301,9 +299,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     data-testid={testid}
                                     className={className}
                                     validation={validation}
-                                    validationIcon={validationIcon}
                                     inputBackground={inputBackground}
-                                    iconBaseUrl={iconBaseUrl}
                                 />
                             </InputRightContainer>
                         )}

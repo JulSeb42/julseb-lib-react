@@ -33,7 +33,6 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
             icon,
             iconSize,
             iconBaseUrl,
-            validationIcon,
             prefix,
             suffix,
             ...rest
@@ -47,7 +46,6 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         <InputPrefix
                             data-testid={testid}
@@ -83,7 +81,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                     $inputBackground={inputBackground}
                     $inputVariant={inputVariant}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     {...rest}
                 />
 
@@ -100,9 +98,7 @@ export const TextInput = forwardRef<HTMLInputElement, ILibTextInput>(
                                 data-testid={testid}
                                 className={className}
                                 validation={validation}
-                                validationIcon={validationIcon}
                                 inputBackground={inputBackground}
-                                iconBaseUrl={iconBaseUrl}
                             />
                         )}
 

@@ -5,13 +5,13 @@ import type { IFuseOptions } from "fuse.js"
 import type { LibIcon, LibInputListDirection, DispatchState } from "../../types"
 import type {
     ILibInputBase,
-    ILibInputValidationIconComponent,
+    LibInputWithValidation,
 } from "../InputComponents/types"
 
 interface ILibAutocompleteBase
     extends InputHTMLAttributes<HTMLInputElement>,
         ILibInputBase,
-        ILibInputValidationIconComponent {
+        LibInputWithValidation {
     value: string
     setValue: DispatchState<string>
     listResults: Array<string>

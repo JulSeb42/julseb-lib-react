@@ -29,9 +29,10 @@ const CountryButton = styled.button<{
     padding: 0;
     border: none;
     color: ${({ theme }) => theme.FONT};
-    width: 32px;
+    width: calc(32px + ${SPACERS.XS} + ${SPACERS.XS});
     ${Mixins.Flexbox({
         $alignItems: "center",
+        $justifyContent: "center",
         $gap: "xxs",
     })}
 

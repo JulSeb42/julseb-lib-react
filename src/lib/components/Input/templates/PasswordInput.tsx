@@ -30,7 +30,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
             icon,
             iconSize,
             iconBaseUrl,
-            validationIcon,
             counter,
             hideButton,
             type = "password",
@@ -77,7 +76,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                         data-testid={testid}
                         className={className}
                         disabled={disabled}
-                        withPadding={!!(!prefix && icon)}
                     >
                         {prefix && (
                             <InputPrefix
@@ -117,7 +115,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                     $inputVariant={inputVariant}
                     $inputBackground={inputBackground}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     {...rest}
                 />
 
@@ -189,8 +187,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, ILibPasswordInput>(
                                 className={className}
                                 validation={validation}
                                 inputBackground={inputBackground}
-                                validationIcon={validationIcon}
-                                iconBaseUrl={iconBaseUrl}
                             />
                         )}
                     </InputRightContainer>

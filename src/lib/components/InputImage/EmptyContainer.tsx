@@ -17,7 +17,7 @@ export function EmptyContainer({
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}
             className={className && "EmptyContainer"}
-            $validation={validation?.status}
+            $validationStatus={validation?.status}
         >
             <LibIcon
                 data-testid={testid && `${testid}.EmptyContainer.Icon`}

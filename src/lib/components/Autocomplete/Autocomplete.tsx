@@ -66,7 +66,6 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
             helper,
             helperBottom,
             validation,
-            validationIcon,
             inputBackground,
             inputVariant = "rounded",
             value,
@@ -167,6 +166,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                 <InputAndListContainer
                     data-testid={testid}
                     className={className}
+                    hasListOpen={isOpen}
                 >
                     <InputWrapper
                         data-testid={testid}
@@ -183,7 +183,6 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                 data-testid={testid}
                                 className={className}
                                 disabled={disabled}
-                                withPadding
                             >
                                 <InputIcon
                                     data-testid={testid}
@@ -217,7 +216,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                             onFocus={handleOpen}
                             onBlur={handleClose}
                             $disabled={disabled}
-                            $validation={validation?.status}
+                            $validationStatus={validation?.status}
                             $inputBackground={inputBackground}
                             $inputVariant={inputVariant}
                             {...rest}
@@ -282,9 +281,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                         data-testid={testid}
                                         className={className}
                                         validation={validation}
-                                        validationIcon={validationIcon}
                                         inputBackground={inputBackground}
-                                        iconBaseUrl={iconBaseUrl}
                                     />
                                 )}
                             </InputRightContainer>
