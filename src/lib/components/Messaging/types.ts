@@ -126,15 +126,5 @@ type MessageWithoutDate = ILibMessageContent & {
  * @extends HTMLDivElement & ILibFlexbox
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop type: "sent" | "received"
- * @prop text: string => only if children is not defined
- * @prop children?: ReactChildren => only if text is not defined
- * @prop date?: Date | string
- * @prop time?: string
- * @prop textDateTime?: string
- * @prop textToday?: string
- * @prop textYesterday?: string
- * @prop dateFormat?: "short" | "long"
- * @prop className?: string
  */
 export type ILibMessage = MessageWithDate | MessageWithoutDate

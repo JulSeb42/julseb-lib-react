@@ -8,9 +8,6 @@ import type { ILibInputRightContainer } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
- * @prop inputVariant: LibInputVariant | undefined
- * @prop disabled: boolean | undefined
- * @prop withSuffix: boolean | undefined
  */
 export function InputRightContainer({
     "data-testid": testid,

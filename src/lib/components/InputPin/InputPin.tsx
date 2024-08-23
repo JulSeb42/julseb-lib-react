@@ -18,21 +18,6 @@ import type { ILibInputPin } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop values: { [n: number]: number | "" | undefined }
- * @prop setValues: Dispatch<SetStateAction<{ [n: number]: number | "" | undefined }>>
- * @prop placeholders?: Array<string>
- * @prop container?: { justifyContent?: CssJustifyContent; columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" }
- * @prop inputSize?: number
- * @prop inputFontSize?: "display-h1" | "display-h2" | "display-h3" | "display-h4" | "display-h5" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small"
- * @prop hideValues?: boolean
- * @prop disabled?: boolean
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: LibAllColors; fontStyle?: FontStyle; icon?: string | JSX.Element; iconColor?: LibAllColors; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop inputBackground?: LibInputBackground
- * @prop containerStyle?: CSSProperties
  */
 export const InputPin = forwardRef<HTMLDivElement, ILibInputPin>(
     (

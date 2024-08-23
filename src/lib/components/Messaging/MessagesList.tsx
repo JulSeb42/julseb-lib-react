@@ -15,11 +15,6 @@ import type { ILibMessagesList } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop children?: ReactChildren
- * @prop emptyText?: string
- * @prop iconButtonScroll?: string | JSX.Element
- * @prop iconButtonScrollSize?: number
- * @prop positionScrollButton?: number
  */
 export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
     (

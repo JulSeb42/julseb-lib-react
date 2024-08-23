@@ -24,11 +24,6 @@ import type { ILibText } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>
- * @prop color?: Any color from the library
- * @prop linkColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop textAlign?: CssTextAlign
- * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"
- * @prop display?: boolean => only if tag is "h1" | "h2" | "h3" | "h4" | "h5"
  */
 export const Text = forwardRef<
     HTMLHeadingElement &

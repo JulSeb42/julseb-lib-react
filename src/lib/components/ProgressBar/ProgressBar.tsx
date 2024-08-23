@@ -14,9 +14,6 @@ import type { ILibProgressBar } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLMeterElement>
- * @prop value: number
- * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop animated?: boolean
  */
 export const ProgressBar = forwardRef<HTMLMeterElement, ILibProgressBar>(
     (

@@ -8,11 +8,6 @@ import type { ILibInputSuffix } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
- * @prop validation: boolean | undefined
- * @prop inputBackground: "light" | "dark" | undefined
- * @prop disabled: boolean | undefined
- * @prop inputVariant: "rounded" | "pill" | undefined
- * @prop suffix: string | JSX.Element
  */
 export function InputSuffix({
     "data-testid": testid,

@@ -13,28 +13,6 @@ import type { ILibDragList } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop items: Array<LibDragListItem> => only if children is not defined
- * @prop setItems: Dispatch<SetStateAction<Array<LibDragListItem>>> => only if items is defined
- * @prop hideSeparator?: boolean => only if items is defined
- * @prop children: ReactChildren => only if items is not defined
- * @prop iconDrag?: string | JSX.Element
- * @prop iconDragSize?: number
- * @prop iconDragBaseUrl?: string
- * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
- * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }
- * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
- *
- * @type LibDragListItem
- * @prop data-testid?: string
- * @prop className?: string
- * @prop id: string
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop title: string => only if element is not defined
- * @prop body?: string => only if element is not defined
- * @prop badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined
- * @prop date?: string | Date => only if element and badge are not defined
- * @prop element?: JSX.ELement => only if title and other props are not defined
  */
 export const DragList = forwardRef<HTMLDivElement, ILibDragList>(
     (

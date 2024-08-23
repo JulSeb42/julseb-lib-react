@@ -11,10 +11,6 @@ import type { ILibKey } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
- * @prop keys: Array<string>
- * @prop size?: "large" | "small"
- * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "gray"
- * @prop withSeparator?: boolean
  */
 export const Key = forwardRef<HTMLSpanElement, ILibKey>(
     (

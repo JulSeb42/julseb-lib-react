@@ -15,7 +15,6 @@ const URL_REGEX =
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>
- * @prop blank?: boolean
  */
 export const Linkify = forwardRef<
     HTMLHeadingElement &

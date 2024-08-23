@@ -5,12 +5,13 @@ import type {
     LibIcon,
     LibValidationStatus,
     LibInputCheckVariant,
+    ReactChildren,
 } from "../../types"
 
 interface ILibInputCheckBase extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid"?: string
     id: string
-    label: string
+    label: ReactChildren
     children?: never
     validation?: LibValidationStatus
     variant?: LibInputCheckVariant

@@ -11,7 +11,7 @@ export interface ILibSelectButton
         ILibSelect,
         | "data-testid"
         | "className"
-        | "selected"
+        | "value"
         | "id"
         | "tabIndex"
         | "disabled"

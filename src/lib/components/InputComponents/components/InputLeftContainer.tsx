@@ -9,8 +9,6 @@ import type { ILibInputLeftContainer } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
- * @prop children?: ReactChildren
- * @prop disabled: boolean | undefined
  */
 export const InputLeftContainer = forwardRef<
     HTMLSpanElement,

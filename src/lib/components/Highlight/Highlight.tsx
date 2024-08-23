@@ -10,9 +10,6 @@ import type { ILibHighlight } from "./types"
  * @link https://documentation-components-react.vercel.app/components/highlight
  * @extends ILibText
  * @prop ref?: ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>
- * @prop highlightedText: string
- * @prop children?: string
- * @prop highlightStyle?: CSSProperties
  */
 export const Highlight = forwardRef<
     HTMLHeadingElement &

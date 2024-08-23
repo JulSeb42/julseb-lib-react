@@ -13,11 +13,7 @@ import type { ILibButtonGroup } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop as?: ElementType
- * @prop buttons: Array<LibButtonLinkBlank & { text: string => only if iconOnly is not defined; iconLeft?: string | JSX.Element; iconRight?: string | JSX.Element; iconOnly: number => only if text & iconLeft & iconRight are not defined; iconSizes?: { left?: number; right?: number; only?: number (only if iconOnly is defined) } }>
- * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop variant?: "plain" | "transparent" | "ghost"
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
- * @prop size?: "default" | "small"
+ * @prop ref?: ForwardedRef<HTMLDivElement>
  */
 export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
     (

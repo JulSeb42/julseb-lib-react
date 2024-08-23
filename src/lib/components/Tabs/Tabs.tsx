@@ -17,19 +17,11 @@ import type { ILibTabs } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop tabsItems: Array<LibTabItem>
- * @prop justify?: "start" | "stretch"
- * @prop active?: number
- * @prop variant?: "basic" | "rounded"
- * @prop showInUrl?: true
- * @prop queries?: Array<Array<string>> => only if showInUrl is set to true
  *
  * @type LibTabItem
  * @extends LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop className?: string
- * @prop title: string
- * @prop content: ReactNode
  */
 export const Tabs = forwardRef<HTMLDivElement, ILibTabs>(
     (

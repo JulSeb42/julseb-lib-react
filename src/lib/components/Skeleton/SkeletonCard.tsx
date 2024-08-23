@@ -12,17 +12,6 @@ import type { ILibSkeletonCard } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop width?: string | number
- * @prop maxWidth?: string | number
- * @prop height?: string | number
- * @prop backgroundColor?: Any color from the library
- * @prop aspectRatio?: string
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
- * @prop flex?: string | number
- * @prop flexGrow?: string | number
- * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }
- * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
- * @prop isShiny?: boolean
  */
 export const SkeletonCard = forwardRef<HTMLDivElement, ILibSkeletonCard>(
     (

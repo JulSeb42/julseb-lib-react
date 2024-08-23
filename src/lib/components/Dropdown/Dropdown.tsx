@@ -14,16 +14,6 @@ import type { ILibDropdown } from "./types"
  * @extends HTMLDivElement
  * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop isOpen: boolean
- * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
- * @prop items: Array<LibButtonLinkBlankRequired & { "data-testid"?: string; className?: string; text: string; icon?: string | JSX.Element; iconSize?: number; gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement> }> => only if children is not defined
- * @prop children?: ReactChildren => only if items is not defined
- * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop direction?: "up" | "down"
- * @prop maxHeightOpen?: number
- * @prop positionFromButton?: number
- * @prop shadow?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | null
  */
 export const Dropdown = forwardRef<HTMLDivElement, ILibDropdown>(
     (

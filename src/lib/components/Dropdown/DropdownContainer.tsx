@@ -12,7 +12,6 @@ import type { ILibDropdownContainer } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop isOpen: boolean
  */
 export const DropdownContainer = forwardRef<
     HTMLDivElement,

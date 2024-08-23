@@ -15,11 +15,6 @@ import { roundIconSize } from "../../lib-utils"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLButtonElement>
- * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
- * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
- * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
- * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "unset"
- * @prop zIndex?: number
  */
 export const BackToTop = forwardRef<HTMLButtonElement, ILibBackToTop>(
     (

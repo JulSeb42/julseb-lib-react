@@ -15,10 +15,6 @@ import type { ILibAccordionItem } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop title: string
- * @prop icon?: "plus" | "chevron" | JSX.Element
- * @prop variant?: "basic" | "rounded"
- * @prop defaultOpen?: boolean
  */
 export const AccordionItem = forwardRef<HTMLDivElement, ILibAccordionItem>(
     (

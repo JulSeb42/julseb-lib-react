@@ -17,14 +17,6 @@ const DEFAULT_ICON_SIZE = 32
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop totalPages: number
- * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop isInputEditable?: boolean
- * @prop texts?: { page?: string; of?: string }
- * @prop icons?: { prev?: string | JSX.Element; next?: string | JSX.Element }
- * @prop iconSizes?: { prev?: number; next?: number }
- * @prop labels?: { prev?: string; next?: string; show?: boolean }
- * @prop queries?: Array<Array<string>>
  */
 export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
     (

@@ -16,13 +16,6 @@ import type { ILibStep } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
- * @prop direction?: "column" | "row"
- * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop isActive?: boolean
- * @prop isDone?: boolean
- * @prop iconActive?: string | JSX.ElementType
- * @prop iconActiveSize?: number
- * @prop number?: number
  */
 export const Step = forwardRef<HTMLSpanElement, ILibStep>(
     (

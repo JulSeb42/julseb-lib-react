@@ -11,9 +11,6 @@ import type { ILibMain } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop minHeight?: string | number
- * @prop size?: "default" | "large" | "form" | "full" | number
- * @prop contentSize?: "default" | "large" | "form" | number => only if size is set to full
  */
 export const Main = forwardRef<HTMLDivElement, ILibMain>(
     (

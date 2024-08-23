@@ -15,14 +15,6 @@ import type { ILibBadge } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
- * @prop icon?: string | JSX.Element => only if number is not defined
- * @prop number?: number => only if icon is not defined
- * @prop size?: number
- * @prop backgroundColor?: Any color from the library
- * @prop contentColor?: Any color from the library
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
- * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
- * @prop iconSize?: number
  */
 export const Badge = forwardRef<HTMLSpanElement, ILibBadge>(
     (

@@ -16,8 +16,8 @@ export interface ILibSelect
     extends Omit<LibComponentBase<HTMLDivElement>, "prefix">,
         ILibInputBase,
         LibInputWithValidation {
-    selected: string
-    setSelected: DispatchState<string>
+    value: string
+    setValue: DispatchState<string>
     options?: Array<string>
     disabled?: boolean
     listDirection?: LibInputListDirection

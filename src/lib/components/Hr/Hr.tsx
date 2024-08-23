@@ -12,10 +12,6 @@ import type { ILibHr } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLHRElement>
- * @prop maxWidth?: string | number
- * @prop color?: Any color from the library
- * @prop margin?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
- * @prop isRounded?: boolean
  */
 export const Hr = forwardRef<HTMLHRElement, ILibHr>(
     (

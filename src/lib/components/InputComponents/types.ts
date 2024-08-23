@@ -73,14 +73,6 @@ export interface ILibInputNoFocusKeys {
 /**
  * @description Base props for inputs
  * @prop data-testid?: string
- * @prop id?: string
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop inputBackground?: "light" | "dark"
- * @prop inputVariant?: "rounded" | "pill"
  */
 export interface ILibInputBase
     extends Partial<
@@ -290,11 +282,6 @@ export interface ILibInputPrefix extends ILibPrefixAndSuffixBase {
      * @description Add prefix on inputs with text
      * @prop data-testid: string | undefined
      * @prop className: string | undefined
-     * @prop validation: boolean | undefined
-     * @prop inputBackground: "light" | "dark" | undefined
-     * @prop disabled: boolean | undefined
-     * @prop inputVariant: "rounded" | "pill" | undefined
-     * @prop prefix: string | JSX.Element
      */
     prefix?: LibInputPrefixAndSuffix
 }
@@ -304,11 +291,6 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
      * @description Add suffix on inputs with text
      * @prop data-testid: string | undefined
      * @prop className: string | undefined
-     * @prop validation: boolean | undefined
-     * @prop inputBackground: "light" | "dark" | undefined
-     * @prop disabled: boolean | undefined
-     * @prop inputVariant: "rounded" | "pill" | undefined
-     * @prop suffix: string | JSX.Element
      */
     suffix?: LibInputPrefixAndSuffix
 }

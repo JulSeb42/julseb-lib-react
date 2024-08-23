@@ -11,7 +11,6 @@ import type { ILibMarkdownContainer } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop options?: MarkdownToJSX.Options => imported from package markdown-to-jsx
  */
 export const MarkdownContainer = forwardRef<
     HTMLDivElement,

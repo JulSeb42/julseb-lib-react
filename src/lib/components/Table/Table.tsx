@@ -16,12 +16,6 @@ import type { ILibTable } from "./types"
  * @extends HTMLTableElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLTableElement>
- * @prop data: Array<Array<ReactChildren>> => only if children is not defined
- * @prop children?: ReactChildren => only if data is not defined
- * @prop headers?: Array<ReactChildren>
- * @prop variant?: LibTableVariant
- * @prop vAlign?: CssVerticalAlign
- * @prop linkify?: boolean
  */
 export const Table = forwardRef<HTMLTableElement, ILibTable>(
     (

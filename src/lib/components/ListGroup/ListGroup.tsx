@@ -16,17 +16,6 @@ import type { ILibListGroup } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop items: Array<LibListGroupItem> => only if children is not defined
- * @prop children?: ReactChildren => only if items is not defined
- * @prop showNumbers?: boolean
- * @prop maxHeight?: number | string
- *
- * @type LibListGroupItem
- * @prop text: string
- * @prop body?: string
- * @prop ref?: ForwardedRef<HTMLLIElement>
- * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
- * @prop date?: string | Date => only if `badge` is not defined
  */
 export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
     (

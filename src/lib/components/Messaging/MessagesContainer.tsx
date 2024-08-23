@@ -11,7 +11,6 @@ import type { ILibMessagesContainer } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop children?: ReactChildren
  */
 export const MessagesContainer = forwardRef<
     HTMLDivElement,

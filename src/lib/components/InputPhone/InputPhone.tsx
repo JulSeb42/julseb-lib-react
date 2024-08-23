@@ -46,23 +46,6 @@ const DEFAULT_ICONS_SIZES = {
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
- * @prop selectedCountry: name: string; dial_code: string; code: CountryCode; flag: string | undefined
- * @prop setSelectedCountry: Dispatch<SetStateAction<LibCountry | undefined>>
- * @prop defaultCountry?: Any Alpha-2 Code from https://www.iban.com/country-codes
- * @prop icons?: { search?: string | JSX.Element; caret?: string | JSX.Element }
- * @prop iconSizes?: { search?: number; caret?: number }
- * @prop searchPlaceholder?: string
- * @prop listDirection?: "up" | "down"
- * @prop countryButtonAriaLabel?: string
- * @prop textNoResult?: string
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop inputBackground?: "light" | "dark"
- * @prop inputVariant?: "rounded" | "pill"
- * @prop containerStyle?: CSSProperties
  */
 export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
     (

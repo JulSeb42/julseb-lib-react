@@ -14,13 +14,6 @@ import type { ILibTooltip } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop tooltip: string | JSX.Element
- * @prop position?: "top" | "bottom"
- * @prop withArrow?: boolean
- * @prop trigger?: "hover" | "click"
- * @prop backgroundColor?: Any color or overlay from the library
- * @prop textColor?: Any color from the library
- * @prop offset?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 export const Tooltip = forwardRef<HTMLDivElement, ILibTooltip>(
     (

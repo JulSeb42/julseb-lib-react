@@ -17,23 +17,6 @@ import type { ILibMessaging } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop data: Array<LibMessage>
- * @prop handleSubmit: () => void
- * @prop input: { message: string; setMessage: Dispatch<SetStateAction<string>>; placeholder?: string; autoFocus?: boolean }
- * @prop textDateTime?: string
- * @prop emptyText?: string
- * @prop iconScroll?: string | JSX.Element
- * @prop iconScrollSize?: number
- * @prop button?: { icon?: string | JSX.Element => only if text is not defined; text?: string => only if icon is not defined }
- *
- * @type LibMessage
- * @prop data-testid?: string
- * @prop type: "sent" | "received"
- * @prop text: string
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop className?: string
- * @prop date?: Date | string
- * @prop time?: string
  */
 export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
     (

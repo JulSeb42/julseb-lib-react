@@ -19,7 +19,7 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
             inputBackground,
             inputVariant,
             validation,
-            selected,
+            value,
             hasWrapper,
             hasContainer,
             onClick,
@@ -51,7 +51,7 @@ export const SelectButton = forwardRef<HTMLButtonElement, ILibSelectButton>(
                 $validationStatus={validation?.status}
                 $hasOptions={!!options}
             >
-                {selected}
+                {value}
             </StyledSelectButton>
         )
     }

@@ -8,15 +8,6 @@ import type { ILibInputButton } from "../types"
  * @description Returns a button used on the right of an input
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
- * @prop aria-label: string | undefined
- * @prop onClick?: () => void
- * @prop disabled: boolean | undefined
- * @prop inputBackground: LibInputBackground | undefined
- * @prop validationStatus: LibValidationStatus | undefined
- * @prop className: string | undefined
- * @prop icon: string | JSX.Element | undefined => only if text is not defined
- * @prop iconSize: number | undefined => only if icon is defined
- * @prop text: string | undefined => only if icon is not defined
  */
 export function InputButton({
     "data-testid": testid,

@@ -21,24 +21,6 @@ import type { ILibInputCounter } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
- * @prop value: number
- * @prop setValue: Dispatch<SetStateAction<number>>
- * @prop min?: number
- * @prop max?: number
- * @prop step?: number
- * @prop buttonVariant?: "plain" | "transparent" | "ghost"
- * @prop icons?: { plus?: string | JSX.Element; minus?: string | JSX.Element }
- * @prop iconSizes?: { plus?: number; minus?: number }
- * @prop labelButtons?: { plus?: string; minus?: string }
- * @prop showButtonTooltip?: boolean
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop inputBackground?: "light" | "dark"
- * @prop inputVariant?: "rounded" | "pill"
- * @prop containerStyle?: CSSProperties
  */
 
 const BUTTON_SIZE = 32 as const
@@ -202,7 +184,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                         onClick={handleMinus}
                         disabled={isMinDisabled}
                         aria-disabled={isMinDisabled}
-                        {...buttonProps}
+                        {...(buttonProps as any)}
                     />
 
                     {!inputNoEdit ? (
@@ -271,7 +253,7 @@ export const InputCounter = forwardRef<HTMLInputElement, ILibInputCounter>(
                         onClick={handlePlus}
                         disabled={isMaxDisabled}
                         aria-disabled={isMaxDisabled}
-                        {...buttonProps}
+                        {...(buttonProps as any)}
                     />
                 </InputCounterWrapper>
             </InputContainer>

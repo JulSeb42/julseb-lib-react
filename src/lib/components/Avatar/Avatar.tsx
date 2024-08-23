@@ -15,17 +15,6 @@ import type { ILibAvatar } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
- * @prop img: string | { src: string; alt: string } => only if letter or icon are not defined
- * @prop letter: string => only if img or icon are not defined
- * @prop icon: string | JSX.Element => only if letter or img are not defined
- * @prop size?: number,
- * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library },
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses },
- * @prop badge?: boolean | number | { content?: number; contentColor?: Any color from the library; backgroundColor?: Any color from the library; position?: LibAvatarBadgePosition; size?: number; padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }; outline?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library } }
- * @prop iconSize?: number => only if icon is defined
- * @prop backgroundColor?: Any color from the library => only if letter or icon are defined
- * @prop contentColor?: Any color from the library => only if letter or icon are defined
- * @prop containerStyle?: CSSProperties => only if badge is defined
  */
 export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
     (

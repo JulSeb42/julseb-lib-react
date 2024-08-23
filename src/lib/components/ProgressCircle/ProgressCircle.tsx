@@ -17,12 +17,6 @@ import type { ILibProgressCircle } from "./types"
  * @extends SVGElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<SVGElement>
- * @prop value: number
- * @prop animated?: boolean
- * @prop color?: Any color from the library
- * @prop showValue?: boolean => only if icon is not defined
- * @prop icon?: string | JSX.Element => only if showValue is not defined
- * @prop containerStyle?: CSSProperties => only if showValue or icon is defined
  */
 export const ProgressCircle = forwardRef<SVGElement, ILibProgressCircle>(
     (

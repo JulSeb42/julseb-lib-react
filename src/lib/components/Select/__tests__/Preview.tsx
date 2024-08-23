@@ -10,8 +10,8 @@ export function SelectPreview() {
         <Select
             data-testid="testid"
             className="className"
-            selected={selected}
-            setSelected={setSelected}
+            value={selected}
+            setValue={setSelected}
         />
     )
 }
@@ -24,8 +24,8 @@ export function SelectWithOptions() {
         <Select
             data-testid="testid"
             className="className"
-            selected={selected}
-            setSelected={setSelected}
+            value={selected}
+            setValue={setSelected}
             options={items}
         />
     )

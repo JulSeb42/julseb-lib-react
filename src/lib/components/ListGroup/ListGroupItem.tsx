@@ -19,13 +19,6 @@ import type { ILibListGroupItem } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop text: string
- * @prop body?: string
- * @prop isInArray?: boolean
- * @prop noSeparator?: boolean
- * @prop number?: number
- * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: Any color from the library; contentColor?: Any color from the library } => only if `date` is not defined
- * @prop date?: string | Date => only if badge is not defined
  */
 export const ListGroupItem = forwardRef<HTMLDivElement, ILibListGroupItem>(
     (

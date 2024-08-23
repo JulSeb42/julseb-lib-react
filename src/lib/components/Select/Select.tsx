@@ -27,22 +27,6 @@ import type { ILibSelectButton } from "./subtypes"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop selected: string
- * @prop setSelected: Dispatch<SetStateAction< string>>
- * @prop options?: Array<string>
- * @prop disabled?: boolean
- * @prop listDirection?: "up" | "down"
- * @prop tabIndex?: number
- * @prop icons?: { left?: string | JSX.Element caret?: string | JSX.Element }
- * @prop iconSizes?: { left?: number caret?: number }
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop inputBackground?: "light" | "dark"
- * @prop inputVariant?: "rounded" | "pill"
- * @prop containerStyle?: CSSProperties
  */
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     (
@@ -59,8 +43,8 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
             inputVariant = "rounded",
             inputBackground,
             disabled,
-            selected,
-            setSelected,
+            value,
+            setValue,
             options,
             listDirection,
             icons,
@@ -90,8 +74,8 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
 
         const { isOpen, setIsOpen, cursor, listRef } = useKeyboardNavigation({
             data: options || [],
-            value: selected,
-            setValue: setSelected,
+            value: value,
+            setValue: setValue,
         })
 
         useClickOutside(listRef, () => setIsOpen(false))
@@ -103,12 +87,12 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
 
         useEffect(() => {
             setIsOpen(false)
-        }, [selected])
+        }, [value])
 
         const buttonProps: ILibSelectButton = {
             "data-testid": testid,
             className,
-            selected,
+            value,
             id,
             tabIndex,
             disabled,
@@ -263,11 +247,9 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                     className={className}
                                     inputBackground={inputBackground}
                                     validation={validation?.status}
-                                    onClick={() => setSelected(option)}
-                                    isActive={selected === option}
-                                    isHovered={
-                                        cursor === i && selected !== option
-                                    }
+                                    onClick={() => setValue(option)}
+                                    isActive={value === option}
+                                    isHovered={cursor === i && value !== option}
                                     key={`${option}-${i}`}
                                 >
                                     {option}

@@ -13,10 +13,6 @@ import type { ILibDropdownItem } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
- * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop icon?: string | JSX.Element
- * @prop iconSize?: number
- * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 export const DropdownItem = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,

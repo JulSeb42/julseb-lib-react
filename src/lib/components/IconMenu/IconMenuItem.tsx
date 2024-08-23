@@ -11,11 +11,6 @@ import type { ILibIconMenuItem } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
- * @prop indexPosition: number
- * @prop isOpen: boolean
- * @prop direction?: "left" | "up" | "right" | "down"
- * @prop variant?: "plain" | "transparent" | "ghost"
- * @prop iconBaseUrl?: string
  */
 export const IconMenuItem = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,

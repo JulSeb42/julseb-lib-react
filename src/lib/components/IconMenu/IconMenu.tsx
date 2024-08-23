@@ -19,25 +19,6 @@ import type { ILibIconMenu } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop direction?: "left" | "up" | "right" | "down"
- * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop position?: "relative" | "absolute" | "fixed"
- * @prop hideTooltips?: boolean
- * @prop buttonsVariant?: "plain" | "transparent" | "ghost"
- * @prop iconBaseUrl?: string
- * @prop icon?: "plus" | "burger" | { open: string | JSX.Element; close: string | JSX.Element; openSize?: number; closeSize?: number }
- * @prop items: Array<LibIconMenuItem> => only if children is not defined
- * @prop children: ReactChildren => only if items is not defined
- *
- * @type IconMenuItem
- * @extends LibButtonLinkBlankRequired
- * @prop data-testid?: string
- * @prop className?: string
- * @prop id?: string
- * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
- * @prop label: string
- * @prop icon: string | JSX.Element
- * @prop iconSize?: number
  */
 export const IconMenu = forwardRef<HTMLDivElement, ILibIconMenu>(
     (
