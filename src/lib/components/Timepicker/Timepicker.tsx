@@ -1,67 +1,72 @@
-/*=============================================== Datepicker component ===============================================*/
+/*=============================================== Timepicker component ===============================================*/
 
-import { forwardRef, useRef, useState, type ChangeEvent } from "react"
-import { convertDateShort } from "ts-utils-julseb"
+import { forwardRef, useRef, type ChangeEvent } from "react"
 import { useClickOutside } from "../../"
-import { Calendar as CalendarIcon } from "../../icons"
 import {
     InputContainer,
+    InputAndListContainer,
+    InputWrapper,
     InputLeftContainer,
     InputPrefix,
+    InputIcon,
     InputRightContainer,
     InputButton,
     InputValidationIcon,
-    InputWrapper,
-    InputIcon,
-    InputAndListContainer,
+    ListInput,
+    ListInputItem,
 } from "../InputComponents"
-import { Calendar } from "./Calendar"
-import { InputDate } from "./styles"
-import type { ILibDatepicker } from "./types"
+import { Clock } from "../../icons"
+import { useKeyboardNavigation } from "../ComponentsMixins"
+import { typeValues } from "../../types"
+import { InputTime } from "./styles"
+import type { ILibTimepicker } from "./types"
 
 /**
- * @description Returns a Datepicker component
- * @link https://documentation-components-react.vercel.app/components/datepicker
+ * @description Returns a Timepicker component
+ * @link https://documentation-components-react.vercel.app/components/timepicker
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
  */
-export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
+export const Timepicker = forwardRef<HTMLInputElement, ILibTimepicker>(
     (
         {
             "data-testid": testid,
             className,
-            minDate,
-            maxDate,
-            texts,
-            value,
-            setValue,
-            icons,
-            iconsSizes,
+            icon,
+            iconSize,
             iconBaseUrl,
-            calendarDirection = "down",
-            inputVariant,
-            inputBackground,
-            disabled,
-            tabIndex,
+            iconClockSize = 16,
+            iconClock = (
+                <Clock
+                    data-testid={testid && `${testid}.RightContainer.IconClock`}
+                    className={className && "IconClock"}
+                    size={iconClockSize}
+                />
+            ),
             id,
             label,
             labelComment,
             helper,
             helperBottom,
             validation,
+            inputBackground,
+            inputVariant,
             containerStyle,
             inputAndListContainerStyle,
+            listDirection,
+            step = "1h",
+            minTime,
+            maxTime,
+            value,
+            setValue,
             prefix,
+            disabled,
+            tabIndex,
             ...rest
         },
         ref
     ) => {
-        const [isOpen, setIsOpen] = useState(false)
-        const el = useRef<HTMLDivElement>(null)
-        const handleClickOutside = () => setIsOpen(false)
-        useClickOutside(el, handleClickOutside)
-
         const hasContainer: boolean = !!(
             label ||
             labelComment ||
@@ -70,13 +75,54 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
             validation
         )
 
-        const handleOpen = () => {
-            if (!disabled) setIsOpen(true)
-            else return
+        const el = useRef<HTMLDivElement>(null)
+
+        let times: Array<string> =
+            step === "30min"
+                ? Object.keys(typeValues.halfHours)
+                : step === "15min"
+                ? Object.keys(typeValues.quarterHours)
+                : step === "1min"
+                ? Object.keys(typeValues.minutes)
+                : Object.keys(typeValues.hours)
+
+        if (minTime) {
+            times = times.splice(
+                times.indexOf(times.find(found => found === minTime)!),
+                times.length - 1
+            )
         }
 
+        if (maxTime) {
+            times = times.splice(0, times.indexOf(maxTime) + 1)
+        }
+
+        const { isOpen, setIsOpen, cursor, listRef } = useKeyboardNavigation<
+            typeof times
+        >({
+            data: times,
+            value,
+            // @ts-ignore
+            setValue,
+        })
+
+        const handleClick = () => {
+            if (isOpen) setIsOpen(false)
+            setIsOpen(true)
+        }
+
+        const handleOpen = () => setIsOpen(true)
+        const handleClose = () => setIsOpen(false)
+
         const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-            setValue(e.target.value)
+            setValue(e.target.value as any)
+
+        const handleSelectTime = (time: string) => {
+            setValue(time as any)
+            handleClose()
+        }
+
+        useClickOutside(listRef, handleClose)
 
         return (
             <InputContainer
@@ -111,7 +157,7 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                         hasListOpen={isOpen}
                         hasContainer
                     >
-                        {(icons?.left || prefix) && (
+                        {(icon || prefix) && (
                             <InputLeftContainer
                                 data-testid={testid}
                                 className={className}
@@ -126,12 +172,12 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                                     />
                                 )}
 
-                                {icons?.left && (
+                                {icon && (
                                     <InputIcon
                                         data-testid={testid}
                                         className={className}
-                                        icon={icons.left}
-                                        iconSize={iconsSizes?.left}
+                                        icon={icon}
+                                        iconSize={iconSize}
                                         validationStatus={validation?.status}
                                         disabled={disabled}
                                         inputBackground={inputBackground}
@@ -142,22 +188,22 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                             </InputLeftContainer>
                         )}
 
-                        <InputDate
+                        <InputTime
                             data-testid={
-                                testid && `${testid}.InputWrapper.InputDate`
+                                testid && `${testid}.InputWrapper.InputTime`
                             }
-                            className={className && "InputDate"}
+                            className={className && "InputTime"}
                             ref={ref}
-                            onClick={handleOpen}
+                            onClick={handleClick}
                             onFocus={handleOpen}
                             tabIndex={tabIndex}
-                            value={convertDateShort(value)}
+                            value={value}
                             onChange={handleChange}
                             disabled={disabled}
-                            $inputVariant={inputVariant}
+                            $disabled={disabled}
                             $validationStatus={validation?.status}
                             $inputBackground={inputBackground}
-                            $disabled={disabled}
+                            $inputVariant={inputVariant}
                             {...rest}
                         />
 
@@ -171,22 +217,9 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                             <InputButton
                                 data-testid={testid}
                                 className={className}
-                                icon={
-                                    icons?.calendar ?? (
-                                        <CalendarIcon
-                                            data-testid={
-                                                testid &&
-                                                `${testid}.InputWrapper.InputRightContainer.Button.CalendarIcon`
-                                            }
-                                            className={
-                                                className && "CalendarIcon"
-                                            }
-                                            size={iconsSizes?.calendar ?? 16}
-                                        />
-                                    )
-                                }
-                                iconSize={iconsSizes?.calendar}
-                                onClick={handleOpen}
+                                icon={iconClock}
+                                iconSize={iconClockSize}
+                                onClick={handleClick}
                                 aria-label="Calendar"
                                 disabled={disabled}
                                 inputBackground={inputBackground}
@@ -204,23 +237,31 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                         </InputRightContainer>
                     </InputWrapper>
 
-                    <Calendar
+                    <ListInput
                         data-testid={testid}
                         className={className}
-                        value={value}
-                        setValue={setValue}
-                        minDate={minDate}
-                        maxDate={maxDate}
-                        texts={texts}
-                        icons={icons}
-                        iconsSizes={iconsSizes}
-                        iconBaseUrl={iconBaseUrl}
-                        calendarDirection={calendarDirection}
-                        validation={validation}
+                        direction={listDirection}
                         inputBackground={inputBackground}
-                        isOpen={isOpen}
-                        setIsOpen={setIsOpen}
-                    />
+                        inputVariant={inputVariant}
+                        validationStatus={validation?.status}
+                        isOpen={!!(value && isOpen)}
+                        ref={listRef}
+                    >
+                        {times.map((time, i) => (
+                            <ListInputItem
+                                key={time}
+                                data-testid={testid}
+                                className={className}
+                                validationStatus={validation?.status}
+                                inputBackground={inputBackground}
+                                onClick={() => handleSelectTime(time)}
+                                isActive={i === cursor}
+                                isHovered={value === time}
+                            >
+                                {time}
+                            </ListInputItem>
+                        ))}
+                    </ListInput>
                 </InputAndListContainer>
             </InputContainer>
         )

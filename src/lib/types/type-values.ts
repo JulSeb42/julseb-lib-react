@@ -268,7 +268,14 @@ export const typeValues = {
 
     pageLayoutTemplates: { single: "single", multi: "multi" },
 
-    times: {
+    timepickerSteps: {
+        "1h": "1h",
+        "30min": "30min",
+        "15min": "15min",
+        "1min": "1min",
+    },
+
+    hours: {
         "00:00": "00:00",
         "01:00": "01:00",
         "02:00": "02:00",
@@ -295,7 +302,7 @@ export const typeValues = {
         "23:00": "23:00",
     },
 
-    halfTimes: {
+    halfHours: {
         "00:00": "00:00",
         "00:30": "00:30",
         "01:00": "01:00",
@@ -346,7 +353,7 @@ export const typeValues = {
         "23:30": "23:30",
     },
 
-    quarterTimes: {
+    quarterHours: {
         "00:00": "00:00",
         "00:15": "00:15",
         "00:30": "00:30",
@@ -445,7 +452,7 @@ export const typeValues = {
         "23:45": "23:45",
     },
 
-    allTimes: {
+    minutes: {
         "00:00": "00:00",
         "00:01": "00:01",
         "00:02": "00:02",

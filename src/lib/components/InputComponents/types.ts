@@ -250,25 +250,13 @@ export type ILibListInputItem = ListInputItemActive | ListInputItemReadOnly
 
 /*====================== Input with icon and prefix / suffix ======================*/
 
-interface ILibInputIconBase {
+export interface ILibInputIcon {
     suffix?: LibInputPrefixAndSuffix
-}
-
-interface InputWithIcon extends ILibInputIconBase {
     icon?: LibIcon
     iconSize?: number
     iconBaseUrl?: string
-    prefix?: never
+    prefix?: string
 }
-
-interface InputWithPrefixAndSuffix extends ILibInputIconBase {
-    icon?: never
-    iconSize?: never
-    iconBaseUrl?: never
-    prefix?: LibInputPrefixAndSuffix
-}
-
-export type ILibInputIcon = InputWithIcon | InputWithPrefixAndSuffix
 
 /*====================== Inputs with prefix and suffix ======================*/
 

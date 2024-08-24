@@ -443,11 +443,9 @@ setDefaultTheme([
     CalendarEmptyDate,
     DaysContainer,
     CalendarDay,
-    // TextDate,
 ])
 
 export {
-    // DatePickerContainer,
     InputDate,
     StyledCalendar,
     CalendarHeader,
@@ -455,5 +453,4 @@ export {
     CalendarEmptyDate,
     DaysContainer,
     CalendarDay,
-    // TextDate,
 }
