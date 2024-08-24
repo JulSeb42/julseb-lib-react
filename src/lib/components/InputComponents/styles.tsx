@@ -412,7 +412,7 @@ const StyledInputWrapper = styled.div<{
 const StyledListInput = styled.div<{
     $direction?: LibInputListDirection
     $inputBackground: LibInputBackground | undefined
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $inputVariant: LibInputVariant | undefined
 }>`
     position: absolute;
@@ -425,8 +425,8 @@ const StyledListInput = styled.div<{
     overflow: hidden;
     overflow-y: scroll;
     transition: ${TRANSITIONS.BEZIER};
-    background-color: ${({ theme, $validation }) =>
-        $validation === false ? theme.DANGER_50 : theme.BACKGROUND};
+    background-color: ${({ theme, $validationStatus }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.BACKGROUND};
     border-radius: ${({ $inputVariant }) =>
         $inputVariant === "pill"
             ? `${RADIUSES.XL} ${RADIUSES.XL} ${RADIUSES.M} ${RADIUSES.M}`
@@ -437,8 +437,8 @@ const StyledListInput = styled.div<{
     &.Open {
         opacity: 1;
         visibility: visible;
-        border-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        border-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
         max-height: 300px;
     }
 
@@ -465,17 +465,17 @@ const StyledListInput = styled.div<{
         }
     }}
 
-    ${({ $inputBackground, $validation }) => {
+    ${({ $inputBackground, $validationStatus }) => {
         switch ($inputBackground) {
             case "light":
                 return css`
                     border-color: transparent;
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_LIGHT.DANGER_50
                         : COLORS_LIGHT.BACKGROUND};
 
                     &.Open {
-                        border-color: ${$validation === false
+                        border-color: ${$validationStatus === false
                             ? COLORS_LIGHT.DANGER_500
                             : COLORS_LIGHT.PRIMARY_500};
                     }
@@ -483,7 +483,7 @@ const StyledListInput = styled.div<{
             case "dark":
                 return css`
                     border-color: transparent;
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_DARK.DANGER_50
                         : COLORS_DARK.BACKGROUND};
                 `
@@ -496,7 +496,7 @@ const StyledListInput = styled.div<{
 /*====================== ListInputItem ======================*/
 
 const StyledListInputItem = styled.span<{
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
     $readOnly: boolean | undefined
 }>`
@@ -510,13 +510,13 @@ const StyledListInputItem = styled.span<{
     })}
 
     &.Active {
-        background-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        background-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
     &.Hovered {
-        background-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_300 : theme.PRIMARY_300};
+        background-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_300 : theme.PRIMARY_300};
     }
 
     &.Active,
@@ -524,7 +524,7 @@ const StyledListInputItem = styled.span<{
         color: ${({ theme }) => theme.BACKGROUND};
     }
 
-    ${({ theme, $readOnly, $validation }) =>
+    ${({ theme, $readOnly, $validationStatus }) =>
         !$readOnly &&
         css`
             cursor: pointer;
@@ -532,7 +532,7 @@ const StyledListInputItem = styled.span<{
             @media ${BREAKPOINTS.HOVER} {
                 &:hover {
                     background-color: ${Mixins.ColorsHoverHover(
-                        $validation === false ? "danger" : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
                     color: ${theme.BACKGROUND};
@@ -540,21 +540,21 @@ const StyledListInputItem = styled.span<{
 
                 &:active {
                     background-color: ${Mixins.ColorsHoverActive(
-                        $validation === false ? "danger" : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
                 }
             }
         `}
 
-    ${({ $inputBackground, $validation, $readOnly }) => {
+    ${({ $inputBackground, $validationStatus, $readOnly }) => {
         switch ($inputBackground) {
             case "light":
                 return css`
                     color: ${COLORS_LIGHT.FONT};
 
                     &.Active {
-                        background-color: ${$validation === false
+                        background-color: ${$validationStatus === false
                             ? COLORS_LIGHT.DANGER_500
                             : COLORS_LIGHT.PRIMARY_500};
                         color: ${COLORS_LIGHT.BACKGROUND};
@@ -565,7 +565,7 @@ const StyledListInputItem = styled.span<{
                         @media ${BREAKPOINTS.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
-                                    $validation === false
+                                    $validationStatus === false
                                         ? "danger"
                                         : "primary",
                                     null,
@@ -576,7 +576,7 @@ const StyledListInputItem = styled.span<{
 
                             &:active {
                                 background-color: ${Mixins.ColorsHoverActive(
-                                    $validation === false
+                                    $validationStatus === false
                                         ? "danger"
                                         : "primary",
                                     null,
@@ -591,7 +591,7 @@ const StyledListInputItem = styled.span<{
                     color: ${COLORS_DARK.FONT};
 
                     &.Active {
-                        background-color: ${$validation === false
+                        background-color: ${$validationStatus === false
                             ? COLORS_DARK.DANGER_500
                             : COLORS_DARK.PRIMARY_500};
                         color: ${COLORS_DARK.BACKGROUND};
@@ -602,7 +602,7 @@ const StyledListInputItem = styled.span<{
                         @media ${BREAKPOINTS.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
-                                    $validation === false
+                                    $validationStatus === false
                                         ? "danger"
                                         : "primary",
                                     null,
@@ -613,7 +613,7 @@ const StyledListInputItem = styled.span<{
 
                             &:active {
                                 background-color: ${Mixins.ColorsHoverActive(
-                                    $validation === false
+                                    $validationStatus === false
                                         ? "danger"
                                         : "primary",
                                     null,

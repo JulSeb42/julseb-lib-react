@@ -17,20 +17,20 @@ const StyledInputImage = styled.label<{
     $height: string | number
     $borderRadius: ILibRadius
     $disabled: boolean | undefined
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
 }>`
     width: ${({ $width }) => stringifyPx($width)};
     height: ${({ $height }) => stringifyPx($height)};
     position: relative;
     overflow: hidden;
-    background-color: ${({ theme, $validation }) =>
-        $validation === false ? theme.DANGER_50 : theme.GRAY_100};
+    background-color: ${({ theme, $validationStatus }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.GRAY_100};
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
-    color: ${({ $validation, $disabled, theme }) => {
+    color: ${({ $validationStatus, $disabled, theme }) => {
         if ($disabled) return theme.GRAY_500
 
         return Mixins.ColorsHoverDefault(
-            $validation === false ? "danger" : "primary",
+            $validationStatus === false ? "danger" : "primary",
             theme
         )
     }};

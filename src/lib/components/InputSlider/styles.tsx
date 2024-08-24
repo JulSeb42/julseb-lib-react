@@ -24,7 +24,7 @@ const SliderContainer = styled.div`
 const DOT_SIZE = 16
 
 const StyledInputSlider = styled.input<{
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
     $value: number
     $max: number
@@ -34,8 +34,8 @@ const StyledInputSlider = styled.input<{
     appearance: none;
     width: 100%;
     height: 8px;
-    background-color: ${({ $validation, theme }) =>
-        $validation === false ? theme.DANGER_50 : theme.GRAY_200};
+    background-color: ${({ $validationStatus, theme }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.GRAY_200};
     border: none;
     border-radius: ${RADIUSES.ROUND};
     position: relative;
@@ -44,9 +44,9 @@ const StyledInputSlider = styled.input<{
         -webkit-appearance: none;
         -moz-appearance: initial;
         appearance: none;
-        background-color: ${({ theme, $validation }) =>
+        background-color: ${({ theme, $validationStatus }) =>
             Mixins.ColorsHoverDefault(
-                $validation === false ? "danger" : "primary",
+                $validationStatus === false ? "danger" : "primary",
                 theme
             )};
         width: ${DOT_SIZE}px;
@@ -60,17 +60,17 @@ const StyledInputSlider = styled.input<{
 
         @media ${BREAKPOINTS.HOVER} {
             &:not(:disabled):hover {
-                background-color: ${({ theme, $validation }) =>
+                background-color: ${({ theme, $validationStatus }) =>
                     Mixins.ColorsHoverHover(
-                        $validation === false ? "danger" : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
             }
 
             &:not(:disabled):active {
-                background-color: ${({ theme, $validation }) =>
+                background-color: ${({ theme, $validationStatus }) =>
                     Mixins.ColorsHoverActive(
-                        $validation === false ? "danger" : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
             }
@@ -79,9 +79,9 @@ const StyledInputSlider = styled.input<{
 
     &::-moz-range-thumb {
         border: none;
-        background-color: ${({ theme, $validation }) =>
+        background-color: ${({ theme, $validationStatus }) =>
             Mixins.ColorsHoverDefault(
-                $validation === false ? "danger" : "primary",
+                $validationStatus === false ? "danger" : "primary",
                 theme
             )};
     }
@@ -93,9 +93,9 @@ const StyledInputSlider = styled.input<{
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: ${({ theme, $validation }) =>
+        background-color: ${({ theme, $validationStatus }) =>
             Mixins.ColorsHoverDefault(
-                $validation === false ? "danger" : "primary",
+                $validationStatus === false ? "danger" : "primary",
                 theme
             )};
         height: 100%;
@@ -123,29 +123,33 @@ const StyledInputSlider = styled.input<{
         }
     }
 
-    ${({ $inputBackground, $validation }) => {
+    ${({ $inputBackground, $validationStatus }) => {
         switch ($inputBackground) {
             case "light":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_LIGHT.DANGER_50
                         : COLORS_LIGHT.GRAY_200};
 
                     &::-webkit-slider-thumb {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
 
                         @media ${BREAKPOINTS.HOVER} {
                             &:not(:disabled):hover {
                                 background-color: ${Mixins.ColorsHoverHover(
-                                    $validation === false ? "danger" : "primary"
+                                    $validationStatus === false
+                                        ? "danger"
+                                        : "primary"
                                 )};
                             }
 
                             &:not(:disabled):active {
                                 background-color: ${Mixins.ColorsHoverActive(
-                                    $validation === false ? "danger" : "primary"
+                                    $validationStatus === false
+                                        ? "danger"
+                                        : "primary"
                                 )};
                             }
                         }
@@ -153,14 +157,14 @@ const StyledInputSlider = styled.input<{
 
                     &::-moz-range-thumb {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
                     }
 
                     &:before,
                     &::before {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
                     }
 
@@ -183,25 +187,29 @@ const StyledInputSlider = styled.input<{
                 `
             case "dark":
                 return css`
-                    background-color: ${$validation === false
+                    background-color: ${$validationStatus === false
                         ? COLORS_DARK.DANGER_50
                         : COLORS_DARK.GRAY_200};
 
                     &::-webkit-slider-thumb {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
 
                         @media ${BREAKPOINTS.HOVER} {
                             &:not(:disabled):hover {
                                 background-color: ${Mixins.ColorsHoverHover(
-                                    $validation === false ? "danger" : "primary"
+                                    $validationStatus === false
+                                        ? "danger"
+                                        : "primary"
                                 )};
                             }
 
                             &:not(:disabled):active {
                                 background-color: ${Mixins.ColorsHoverActive(
-                                    $validation === false ? "danger" : "primary"
+                                    $validationStatus === false
+                                        ? "danger"
+                                        : "primary"
                                 )};
                             }
                         }
@@ -209,14 +217,14 @@ const StyledInputSlider = styled.input<{
 
                     &::-moz-range-thumb {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
                     }
 
                     &:before,
                     &::before {
                         background-color: ${Mixins.ColorsHoverDefault(
-                            $validation === false ? "danger" : "primary"
+                            $validationStatus === false ? "danger" : "primary"
                         )};
                     }
 

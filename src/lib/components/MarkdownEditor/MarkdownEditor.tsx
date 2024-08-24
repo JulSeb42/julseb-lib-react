@@ -108,7 +108,7 @@ export const MarkdownEditor = forwardRef<
                             : className
                     }
                     $backgroundColor={inputBackground}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                 >
                     <ButtonsContainer
                         data-testid={

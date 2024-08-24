@@ -61,7 +61,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                 style={containerStyle}
                 $variant={variant}
                 $disabled={disabled}
-                $validation={validation}
+                $validationStatus={validation}
             >
                 <StyledInput
                     data-testid={testid && `${testid}.Input`}
@@ -77,7 +77,7 @@ export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
                     <CheckContainer
                         data-testid={testid && `${testid}.CheckContainer`}
                         className={className && "CheckContainer"}
-                        $validation={validation}
+                        $validationStatus={validation}
                         $disabled={disabled}
                     >
                         {variant === "toggle" ? (

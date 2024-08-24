@@ -160,7 +160,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
         > = {
             "data-testid": testid,
             className,
-            validation: validation?.status,
+            validationStatus: validation?.status,
             inputBackground,
         }
 
@@ -213,7 +213,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                 aria-disabled={disabled}
                                 aria-label={countryButtonAriaLabel}
                                 onClick={handleClickCountry}
-                                $validation={validation?.status}
                                 $inputBackground={inputBackground}
                             >
                                 <Flag
@@ -295,7 +294,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                         isOpen={isOpen}
                         direction={listDirection}
                         inputBackground={inputBackground}
-                        validation={validation?.status}
+                        validationStatus={validation?.status}
                         inputVariant={inputVariant}
                     >
                         <ListInputItem readOnly {...listItemProps}>
@@ -305,7 +304,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     `${testid}.ListInput.SearchContainer`
                                 }
                                 className={className && "SearchContainer"}
-                                $validation={validation?.status}
+                                $validationStatus={validation?.status}
                                 $inputBackground={inputBackground}
                             >
                                 <LibIcon
@@ -332,7 +331,6 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                                     value={search}
                                     onChange={handleChange}
                                     $inputBackground={inputBackground}
-                                    $validation={validation?.status}
                                 />
                             </SearchContainer>
                         </ListInputItem>

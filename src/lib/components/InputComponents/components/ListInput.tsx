@@ -19,7 +19,7 @@ export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
             children,
             direction = "down",
             inputBackground,
-            validation,
+            validationStatus,
             isOpen,
             inputVariant,
         },
@@ -35,7 +35,7 @@ export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
                 ref={ref}
                 $direction={direction}
                 $inputBackground={inputBackground}
-                $validation={validation}
+                $validationStatus={validationStatus}
                 $inputVariant={inputVariant}
             >
                 {children}

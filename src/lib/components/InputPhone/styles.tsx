@@ -20,7 +20,6 @@ const StyledInputPhone = styled.input<ILibInputBaseMixin>`
 `
 
 const CountryButton = styled.button<{
-    $validation: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
 }>`
     height: 100%;
@@ -107,11 +106,11 @@ const CountryCode = styled.span<{
 `
 
 const SearchContainer = styled.div<{
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
 }>`
-    color: ${({ theme, $validation }) =>
-        $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+    color: ${({ theme, $validationStatus }) =>
+        $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
     border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
     width: 100%;
     padding-bottom: ${SPACERS.XS};
@@ -122,34 +121,34 @@ const SearchContainer = styled.div<{
     })}
 
     &:has(input:focus) {
-        border-bottom-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        border-bottom-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $inputBackground, $validation }) => {
+    ${({ $inputBackground, $validationStatus }) => {
         switch ($inputBackground) {
             case "light":
                 return css`
-                    color: ${$validation === false
+                    color: ${$validationStatus === false
                         ? COLORS_LIGHT.DANGER_500
                         : COLORS_LIGHT.PRIMARY_500};
                     border-color: ${COLORS_LIGHT.GRAY_200};
 
                     &:has(input:focus) {
-                        border-bottom-color: ${$validation === false
+                        border-bottom-color: ${$validationStatus === false
                             ? COLORS_LIGHT.DANGER_500
                             : COLORS_LIGHT.PRIMARY_500};
                     }
                 `
             case "dark":
                 return css`
-                    color: ${$validation === false
+                    color: ${$validationStatus === false
                         ? COLORS_DARK.DANGER_500
                         : COLORS_DARK.PRIMARY_500};
                     border-color: ${COLORS_DARK.GRAY_200};
 
                     &:has(input:focus) {
-                        border-bottom-color: ${$validation === false
+                        border-bottom-color: ${$validationStatus === false
                             ? COLORS_DARK.DANGER_500
                             : COLORS_DARK.PRIMARY_500};
                     }
@@ -161,7 +160,6 @@ const SearchContainer = styled.div<{
 `
 
 const SearchInput = styled.input<{
-    $validation: LibValidationStatus
     $inputBackground: LibInputBackground | undefined
 }>`
     border: none;

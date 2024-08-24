@@ -83,7 +83,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                     $height={height}
                     $borderRadius={borderRadius}
                     $disabled={disabled}
-                    $validation={validation?.status}
+                    $validationStatus={validation?.status}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >

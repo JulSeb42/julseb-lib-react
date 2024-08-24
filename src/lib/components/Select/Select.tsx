@@ -238,7 +238,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                             direction={listDirection}
                             inputBackground={inputBackground}
                             inputVariant={inputVariant}
-                            validation={validation?.status}
+                            validationStatus={validation?.status}
                             isOpen={isOpen}
                         >
                             {options.map((option, i) => (
@@ -246,7 +246,7 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                                     data-testid={testid}
                                     className={className}
                                     inputBackground={inputBackground}
-                                    validation={validation?.status}
+                                    validationStatus={validation?.status}
                                     onClick={() => setValue(option)}
                                     isActive={value === option}
                                     isHovered={cursor === i && value !== option}

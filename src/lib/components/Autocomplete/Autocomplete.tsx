@@ -282,7 +282,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                         direction={listDirection}
                         inputBackground={inputBackground}
                         inputVariant={inputVariant}
-                        validation={validation?.status}
+                        validationStatus={validation?.status}
                         isOpen={!!(value && isOpen)}
                         ref={listRef}
                     >
@@ -292,7 +292,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                                     <ListInputItem
                                         data-testid={testid}
                                         className={className}
-                                        validation={validation?.status}
+                                        validationStatus={validation?.status}
                                         inputBackground={inputBackground}
                                         onClick={() =>
                                             handleSelectValue(result)
@@ -311,7 +311,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                             <ListInputItem
                                 data-testid={testid}
                                 className={className}
-                                validation={validation?.status}
+                                validationStatus={validation?.status}
                                 inputBackground={inputBackground}
                                 readOnly
                             >

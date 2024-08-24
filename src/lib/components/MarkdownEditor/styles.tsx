@@ -24,13 +24,13 @@ import type {
 
 const MdEditorContainer = styled.div<{
     $backgroundColor?: LibInputBackground
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
 }>`
     border-radius: ${RADIUSES.M};
     height: fit-content;
     border: 1px solid ${({ theme }) => theme.GRAY_200};
-    background-color: ${({ theme, $validation }) =>
-        $validation === false ? theme.DANGER_50 : theme.BACKGROUND};
+    background-color: ${({ theme, $validationStatus }) =>
+        $validationStatus === false ? theme.DANGER_50 : theme.BACKGROUND};
     color: ${({ theme }) => theme.FONT};
     ${Mixins.Flexbox({
         $flexDirection: "column",
@@ -38,16 +38,16 @@ const MdEditorContainer = styled.div<{
     })}
 
     &:has(textarea:focus) {
-        border-color: ${({ theme, $validation }) =>
-            $validation === false ? theme.DANGER_500 : theme.PRIMARY_500};
+        border-color: ${({ theme, $validationStatus }) =>
+            $validationStatus === false ? theme.DANGER_500 : theme.PRIMARY_500};
     }
 
-    ${({ $backgroundColor, $validation, theme }) => {
+    ${({ $backgroundColor, $validationStatus, theme }) => {
         switch ($backgroundColor) {
             case "light":
                 return css`
                     background-color: ${Mixins.AllColors(
-                        $validation === false ? "danger-50" : "white",
+                        $validationStatus === false ? "danger-50" : "white",
                         theme,
                         "light"
                     )};
@@ -56,7 +56,9 @@ const MdEditorContainer = styled.div<{
             case "dark":
                 return css`
                     background-color: ${Mixins.AllColors(
-                        $validation === false ? "danger-50" : "background",
+                        $validationStatus === false
+                            ? "danger-50"
+                            : "background",
                         theme,
                         "dark"
                     )};

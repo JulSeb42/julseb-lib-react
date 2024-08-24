@@ -14,7 +14,7 @@ import {
 import type { LibValidationStatus, LibInputCheckVariant } from "../../types"
 
 const CheckContainer = styled.span<{
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
     $disabled: boolean | undefined
 }>`
     height: calc(${FONT_SIZES.BODY} * ${LINE_HEIGHTS.BODY});
@@ -22,9 +22,9 @@ const CheckContainer = styled.span<{
         $alignItems: "center",
         $justifyContent: "center",
     })}
-    color: ${({ theme, $disabled, $validation }) => {
+    color: ${({ theme, $disabled, $validationStatus }) => {
         if ($disabled) return theme.GRAY_500
-        if ($validation === false) return theme.DANGER_500
+        if ($validationStatus === false) return theme.DANGER_500
         return theme.PRIMARY_500
     }}
 `
@@ -103,7 +103,7 @@ const StyledInput = styled.input`
 const StyledInputCheck = styled.label<{
     $variant: LibInputCheckVariant | undefined
     $disabled: boolean | undefined
-    $validation: LibValidationStatus
+    $validationStatus: LibValidationStatus
 }>`
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
     ${Mixins.Flexbox({
@@ -111,7 +111,7 @@ const StyledInputCheck = styled.label<{
         $inline: true,
     })}
 
-    ${({ theme, $variant, $disabled, $validation }) =>
+    ${({ theme, $variant, $disabled, $validationStatus }) =>
         $variant === "tile"
             ? css`
                   width: 100%;
@@ -126,14 +126,18 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               border-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary",
+                                  $validationStatus === false
+                                      ? "danger"
+                                      : "primary",
                                   theme
                               )};
                           }
 
                           &:active {
                               border-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary",
+                                  $validationStatus === false
+                                      ? "danger"
+                                      : "primary",
                                   theme
                               )};
                           }
@@ -144,7 +148,7 @@ const StyledInputCheck = styled.label<{
               css`
                   background-color: ${$disabled
                       ? theme.GRAY_50
-                      : $validation === false
+                      : $validationStatus === false
                       ? theme.DANGER_50
                       : theme.GRAY_100};
                   padding: ${SPACERS.XXS} ${SPACERS.M};
@@ -157,14 +161,18 @@ const StyledInputCheck = styled.label<{
                       @media ${BREAKPOINTS.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
-                                  $validation === false ? "danger" : "primary",
+                                  $validationStatus === false
+                                      ? "danger"
+                                      : "primary",
                                   theme
                               )};
                           }
 
                           &:active {
                               background-color: ${Mixins.ColorsHoverActive(
-                                  $validation === false ? "danger" : "primary",
+                                  $validationStatus === false
+                                      ? "danger"
+                                      : "primary",
                                   theme
                               )};
                           }
@@ -178,10 +186,10 @@ const StyledInputCheck = styled.label<{
         }
 
         ${Checkbox} {
-            background-color: ${({ theme, $validation, $disabled }) =>
+            background-color: ${({ theme, $validationStatus, $disabled }) =>
                 $disabled
                     ? theme.GRAY_500
-                    : $validation === false
+                    : $validationStatus === false
                     ? theme.DANGER_500
                     : theme.PRIMARY_500};
 
@@ -191,16 +199,16 @@ const StyledInputCheck = styled.label<{
         }
 
         ${Toggle} {
-            border-color: ${({ $validation, $disabled, theme }) =>
+            border-color: ${({ $validationStatus, $disabled, theme }) =>
                 $disabled
                     ? theme.GRAY_100
-                    : $validation === false
+                    : $validationStatus === false
                     ? theme.DANGER_500
                     : theme.SUCCESS_500};
-            background-color: ${({ $validation, $disabled, theme }) =>
+            background-color: ${({ $validationStatus, $disabled, theme }) =>
                 $disabled
                     ? theme.GRAY_100
-                    : $validation === false
+                    : $validationStatus === false
                     ? theme.DANGER_500
                     : theme.SUCCESS_500};
 
@@ -211,12 +219,12 @@ const StyledInputCheck = styled.label<{
             }
         }
 
-        ${({ theme, $variant, $validation, $disabled }) =>
+        ${({ theme, $variant, $validationStatus, $disabled }) =>
             $variant === "tile"
                 ? css`
                       border-color: ${$disabled
                           ? theme.GRAY_500
-                          : $validation === false
+                          : $validationStatus === false
                           ? theme.DANGER_500
                           : theme.PRIMARY_500};
                   `
@@ -224,7 +232,7 @@ const StyledInputCheck = styled.label<{
                   css`
                       background-color: ${$disabled
                           ? theme.GRAY_100
-                          : $validation === false
+                          : $validationStatus === false
                           ? theme.DANGER_500
                           : theme.PRIMARY_500};
                       color: ${!$disabled && theme.BACKGROUND};
@@ -234,7 +242,7 @@ const StyledInputCheck = styled.label<{
                           @media ${BREAKPOINTS.HOVER} {
                               &:hover {
                                   background-color: ${Mixins.ColorsHoverHover(
-                                      $validation === false
+                                      $validationStatus === false
                                           ? "danger"
                                           : "primary",
                                       theme
@@ -243,7 +251,7 @@ const StyledInputCheck = styled.label<{
 
                               &:active {
                                   background-color: ${Mixins.ColorsHoverActive(
-                                      $validation === false
+                                      $validationStatus === false
                                           ? "danger"
                                           : "primary",
                                       theme

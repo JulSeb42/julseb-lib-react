@@ -16,7 +16,7 @@ export const ListInputItem = forwardRef<HTMLSpanElement, ILibListInputItem>(
         {
             "data-testid": testid,
             className,
-            validation,
+            validationStatus,
             inputBackground,
             children,
             isActive,
@@ -38,7 +38,7 @@ export const ListInputItem = forwardRef<HTMLSpanElement, ILibListInputItem>(
                 )}
                 onClick={onClick}
                 $readOnly={readOnly}
-                $validation={validation}
+                $validationStatus={validationStatus}
                 $inputBackground={inputBackground}
                 {...rest}
             >

@@ -216,7 +216,7 @@ export interface ILibListInput {
     direction: LibInputListDirection | undefined
     inputBackground: LibInputBackground | undefined
     inputVariant: LibInputVariant | undefined
-    validation: LibValidationStatus
+    validationStatus: LibValidationStatus
     isOpen: boolean
     children?: ReactChildren
 }
@@ -226,7 +226,7 @@ export interface ILibListInput {
 interface ILibListInputItemBase {
     "data-testid": string | undefined
     className: string | undefined
-    validation: LibValidationStatus
+    validationStatus: LibValidationStatus
     inputBackground: LibInputBackground | undefined
     children?: ReactChildren
 }
