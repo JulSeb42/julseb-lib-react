@@ -91,6 +91,7 @@ export interface ILibInputBase
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
     containerStyle?: CSSProperties
+    inputAndListContainerStyle?: CSSProperties
 }
 
 export interface ILibExtendedInputBase extends ILibInputBase {
@@ -303,4 +304,5 @@ export interface ILibInputAndListContainer {
     hasListOpen: boolean
     isParent?: boolean
     children?: ReactChildren
+    inputAndListContainerStyle?: CSSProperties
 }

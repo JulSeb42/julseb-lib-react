@@ -1,5 +1,6 @@
 /*=============================================== Datepicker types ===============================================*/
 
+import type { InputHTMLAttributes } from "react"
 import type {
     DispatchState,
     LibComponentBase,
@@ -14,6 +15,7 @@ import type {
 } from "../InputComponents/types"
 
 export type ILibDatepicker = Exclude<LibComponentBase<HTMLDivElement>, "as"> &
+    InputHTMLAttributes<HTMLInputElement> &
     ILibInputBase &
     LibInputWithValidation & {
         minDate?: string

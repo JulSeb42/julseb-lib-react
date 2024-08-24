@@ -1,7 +1,7 @@
 /*=============================================== Datepicker component ===============================================*/
 
-import { forwardRef, useRef, useState } from "react"
-import classNames from "classnames"
+import { forwardRef, useRef, useState, type ChangeEvent } from "react"
+// import classNames from "classnames"
 import { convertDateShort } from "ts-utils-julseb"
 import { useClickOutside } from "../../"
 import { Calendar as CalendarIcon } from "../../icons"
@@ -17,17 +17,20 @@ import {
     InputAndListContainer,
 } from "../InputComponents"
 import { Calendar } from "./Calendar"
-import { DatePickerContainer, SelectedDate, TextDate } from "./styles"
+import {
+    InputDate,
+    // DatePickerContainer,  TextDate
+} from "./styles"
 import type { ILibDatepicker } from "./types"
 
 /**
  * @description Returns a Datepicker component
  * @link https://documentation-components-react.vercel.app/components/datepicker
- * @extends HTMLDivElement
+ * @extends HTMLInputElement
  * @prop data-testid?: string
- * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  */
-export const Datepicker = forwardRef<HTMLDivElement, ILibDatepicker>(
+export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
     (
         {
             "data-testid": testid,
@@ -52,6 +55,7 @@ export const Datepicker = forwardRef<HTMLDivElement, ILibDatepicker>(
             helperBottom,
             validation,
             containerStyle,
+            inputAndListContainerStyle,
             prefix,
             ...rest
         },
@@ -75,6 +79,9 @@ export const Datepicker = forwardRef<HTMLDivElement, ILibDatepicker>(
             else return
         }
 
+        const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+            setValue(e.target.value)
+
         return (
             <InputContainer
                 data-testid={testid}
@@ -96,6 +103,7 @@ export const Datepicker = forwardRef<HTMLDivElement, ILibDatepicker>(
                     hasListOpen={isOpen}
                     isParent={!hasContainer}
                     ref={el}
+                    inputAndListContainerStyle={inputAndListContainerStyle}
                 >
                     <InputWrapper
                         data-testid={testid}
@@ -107,129 +115,97 @@ export const Datepicker = forwardRef<HTMLDivElement, ILibDatepicker>(
                         hasListOpen={isOpen}
                         hasContainer
                     >
-                        <DatePickerContainer
-                            data-testid={
-                                testid && `${testid}.DatePickerContainer`
-                            }
-                            className={classNames(
-                                { Open: isOpen },
-                                { DatePickerContainer: className },
-                                { Disabled: disabled }
-                            )}
-                            ref={ref}
-                            $inputBackground={inputBackground}
-                            {...rest}
-                        >
-                            <SelectedDate
-                                data-testid={
-                                    testid &&
-                                    `${testid}.DatePickerContainer.SelectedDate`
-                                }
-                                className={className && "SelectedDate"}
-                                onClick={handleOpen}
-                                onFocus={handleOpen}
-                                tabIndex={tabIndex}
-                                $inputVariant={inputVariant}
-                                $validationStatus={validation?.status}
-                                $inputBackground={inputBackground}
-                                $disabled={disabled}
-                                $withIconLeft={!!icons?.left || !!prefix}
+                        {(icons?.left || prefix) && (
+                            <InputLeftContainer
+                                data-testid={testid}
+                                className={className}
+                                disabled={disabled}
                             >
-                                {(icons?.left || prefix) && (
-                                    <InputLeftContainer
+                                {prefix && (
+                                    <InputPrefix
                                         data-testid={testid}
                                         className={className}
-                                        disabled={disabled}
-                                    >
-                                        {prefix && (
-                                            <InputPrefix
-                                                data-testid={testid}
-                                                className={className}
-                                                prefix={prefix}
-                                                inputBackground={
-                                                    inputBackground
-                                                }
-                                            />
-                                        )}
-
-                                        {icons?.left && (
-                                            <InputIcon
-                                                data-testid={testid}
-                                                className={className}
-                                                icon={icons.left}
-                                                iconSize={iconsSizes?.left}
-                                                validationStatus={
-                                                    validation?.status
-                                                }
-                                                disabled={disabled}
-                                                inputBackground={
-                                                    inputBackground
-                                                }
-                                                inputVariant={inputVariant}
-                                                iconBaseUrl={iconBaseUrl}
-                                            />
-                                        )}
-                                    </InputLeftContainer>
+                                        prefix={prefix}
+                                        inputBackground={inputBackground}
+                                    />
                                 )}
 
-                                <TextDate
-                                    data-testid={
-                                        testid &&
-                                        `${testid}.DatePickerContainer.SelectedDate.Text`
-                                    }
-                                    className={className && "TextDate"}
-                                    $withIconLeft={!!icons?.left || !!prefix}
-                                >
-                                    {convertDateShort(value)}
-                                </TextDate>
-
-                                <InputRightContainer
-                                    data-testid={testid}
-                                    className={className}
-                                    disabled={disabled}
-                                    withPadding={!!validation}
-                                    withBorder={false}
-                                >
-                                    <InputButton
+                                {icons?.left && (
+                                    <InputIcon
                                         data-testid={testid}
                                         className={className}
-                                        icon={
-                                            icons?.calendar ?? (
-                                                <CalendarIcon
-                                                    data-testid={
-                                                        testid &&
-                                                        `${testid}.DatePickerContainer.SelectedDate.InputRightContainer.Button.CalendarIcon`
-                                                    }
-                                                    className={
-                                                        className &&
-                                                        "CalendarIcon"
-                                                    }
-                                                    size={
-                                                        iconsSizes?.calendar ??
-                                                        16
-                                                    }
-                                                />
-                                            )
-                                        }
-                                        iconSize={iconsSizes?.calendar}
-                                        onClick={handleOpen}
-                                        aria-label="Calendar"
+                                        icon={icons.left}
+                                        iconSize={iconsSizes?.left}
+                                        validationStatus={validation?.status}
                                         disabled={disabled}
                                         inputBackground={inputBackground}
-                                        validationStatus={validation?.status}
+                                        inputVariant={inputVariant}
+                                        iconBaseUrl={iconBaseUrl}
                                     />
+                                )}
+                            </InputLeftContainer>
+                        )}
 
-                                    {validation && (
-                                        <InputValidationIcon
-                                            data-testid={testid}
-                                            className={className}
-                                            validation={validation}
-                                            inputBackground={inputBackground}
+                        <InputDate
+                            data-testid={
+                                testid && `${testid}.InputWrapper.InputDate`
+                            }
+                            className={className && "InputDate"}
+                            ref={ref}
+                            onClick={handleOpen}
+                            onFocus={handleOpen}
+                            tabIndex={tabIndex}
+                            value={convertDateShort(value)}
+                            onChange={handleChange}
+                            disabled={disabled}
+                            $inputVariant={inputVariant}
+                            $validationStatus={validation?.status}
+                            $inputBackground={inputBackground}
+                            $disabled={disabled}
+                            {...rest}
+                        />
+
+                        <InputRightContainer
+                            data-testid={testid}
+                            className={className}
+                            disabled={disabled}
+                            withBorder={false}
+                            withPadding
+                        >
+                            <InputButton
+                                data-testid={testid}
+                                className={className}
+                                icon={
+                                    icons?.calendar ?? (
+                                        <CalendarIcon
+                                            data-testid={
+                                                testid &&
+                                                `${testid}.InputWrapper.InputRightContainer.Button.CalendarIcon`
+                                            }
+                                            className={
+                                                className && "CalendarIcon"
+                                            }
+                                            size={iconsSizes?.calendar ?? 16}
                                         />
-                                    )}
-                                </InputRightContainer>
-                            </SelectedDate>
-                        </DatePickerContainer>
+                                    )
+                                }
+                                iconSize={iconsSizes?.calendar}
+                                onClick={handleOpen}
+                                aria-label="Calendar"
+                                disabled={disabled}
+                                inputBackground={inputBackground}
+                                validationStatus={validation?.status}
+                            />
+
+                            {validation && (
+                                <InputValidationIcon
+                                    data-testid={testid}
+                                    className={className}
+                                    validation={validation}
+                                    inputBackground={inputBackground}
+                                />
+                            )}
+                        </InputRightContainer>
                     </InputWrapper>
 
                     <Calendar

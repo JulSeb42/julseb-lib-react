@@ -70,6 +70,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
             showKeys,
             disabled,
             containerStyle,
+            inputAndListContainerStyle,
             ...rest
         },
         ref
@@ -156,6 +157,7 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                     data-testid={testid}
                     className={className}
                     hasListOpen={isOpen}
+                    inputAndListContainerStyle={inputAndListContainerStyle}
                 >
                     <InputWrapper
                         data-testid={testid}

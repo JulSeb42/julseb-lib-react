@@ -23,66 +23,23 @@ import { InputBaseMixin } from "../ComponentsMixins"
 const BUTTON_SIZE = 32
 const BUTTON_MOBILE = 24
 
-const DatePickerContainer = styled.div<{
-    $inputBackground: LibInputBackground | undefined
-}>`
-    position: relative;
-    width: 100%;
-    height: ${BUTTON_SIZE}px;
-    cursor: default;
-    z-index: 0;
-
-    &.Open {
-        z-index: 30;
-    }
-
-    &.Disabled {
-        cursor: not-allowed;
-        background-color: ${({ theme }) => theme.GRAY_100};
-    }
-
-    ${({ $inputBackground }) => {
-        switch ($inputBackground) {
-            case "light":
-                return css`
-                    &.Disabled {
-                        background-color: ${COLORS_LIGHT.GRAY_100};
-                    }
-                `
-            case "dark":
-                return css`
-                    &.Disabled {
-                        background-color: ${COLORS_LIGHT.GRAY_100};
-                    }
-                `
-            default:
-                return null
-        }
-    }}
-`
-
-const SelectedDate = styled.div<{
+const InputDate = styled.input<{
     $inputVariant: LibInputVariant | undefined
     $validationStatus: LibValidationStatus | undefined
     $inputBackground: LibInputBackground | undefined
     $disabled: boolean | undefined
-    $withIconLeft: boolean
 }>`
     font-weight: ${FONT_WEIGHTS.REGULAR};
-    cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "pointer")};
+    cursor: pointer;
     ${Mixins.Flexbox({
         $alignItems: "center",
         $justifyContent: "space-between",
     })};
     ${InputBaseMixin};
-    padding-left: ${({ $withIconLeft }) => $withIconLeft && 0};
-`
 
-const TextDate = styled.span<{ $withIconLeft: boolean }>`
-    flex-grow: 1;
-    text-align: left;
-    width: 100%;
-    padding-left: ${({ $withIconLeft }) => $withIconLeft && SPACERS.XS};
+    &:disabled {
+        cursor: not-allowed;
+    }
 `
 
 const StyledCalendar = styled.div<{
@@ -479,25 +436,24 @@ const CalendarDay = styled.button<{
 `
 
 setDefaultTheme([
-    DatePickerContainer,
-    SelectedDate,
+    InputDate,
     StyledCalendar,
     CalendarHeader,
     CalendarNavButton,
     CalendarEmptyDate,
     DaysContainer,
     CalendarDay,
-    TextDate,
+    // TextDate,
 ])
 
 export {
-    DatePickerContainer,
-    SelectedDate,
+    // DatePickerContainer,
+    InputDate,
     StyledCalendar,
     CalendarHeader,
     CalendarNavButton,
     CalendarEmptyDate,
     DaysContainer,
     CalendarDay,
-    TextDate,
+    // TextDate,
 }

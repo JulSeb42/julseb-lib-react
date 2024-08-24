@@ -120,6 +120,7 @@ const StyledInputRightContainer = styled.span<{
     $withBorder: boolean | undefined
 }>`
     ${CommonLeftAndRight}
+    gap: ${SPACERS.XS};
 
     ${({ $withPadding }) =>
         $withPadding &&

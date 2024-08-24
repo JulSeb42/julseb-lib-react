@@ -74,6 +74,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
             countryButtonAriaLabel = "Select country",
             textNoResult = "Your search did not return any result.",
             containerStyle,
+            inputAndListContainerStyle,
             ...rest
         },
         ref
@@ -185,6 +186,7 @@ export const InputPhone = forwardRef<HTMLInputElement, ILibInputPhone>(
                     data-testid={testid}
                     className={className}
                     hasListOpen={isOpen}
+                    inputAndListContainerStyle={inputAndListContainerStyle}
                 >
                     <InputWrapper
                         data-testid={testid}

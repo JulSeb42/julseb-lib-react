@@ -26,7 +26,7 @@ import type { ILibInputBaseMixin } from "../ComponentsMixins"
 
 export interface ILibColorInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
+        Omit<ILibExtendedInputBase, "inputAndListContainerStyle">,
         ILibInputNoFocusKeys {
     type: "color"
     children?: never
@@ -35,7 +35,7 @@ export interface ILibColorInput
 /*====================== DateInput ======================*/
 
 export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon &
     LibInputWithValidation &
     ILibInputNoFocusKeys & {
@@ -49,7 +49,7 @@ export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
 
 export interface ILibFileInput
     extends InputHTMLAttributes<HTMLInputElement>,
-        ILibExtendedInputBase,
+        Omit<ILibExtendedInputBase, "inputAndListContainerStyle">,
         LibInputWithValidation,
         ILibInputNoFocusKeys {
     type: "file"
@@ -62,7 +62,7 @@ type ILibPasswordInputBase = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     "prefix"
 > &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon &
     LibInputWithValidation &
     ILibInputNoFocusKeys & {
@@ -110,7 +110,7 @@ type ILibSearchInputBase = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     "prefix"
 > &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon & {
         type: "search"
         clearSearch?: MouseEventHandler<HTMLButtonElement>
@@ -137,7 +137,7 @@ export type ILibSelectInput = Omit<
     SelectHTMLAttributes<HTMLSelectElement>,
     "prefix"
 > &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon &
     ILibInputNoFocusKeys & {
         type: "select"
@@ -150,7 +150,7 @@ export type ILibSelectInput = Omit<
 
 export interface ILibTextareaInput
     extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-        ILibExtendedInputBase,
+        Omit<ILibExtendedInputBase, "inputAndListContainerStyle">,
         ILibInputNoFocusKeys {
     type: "textarea"
     inputVariant?: never
@@ -163,7 +163,7 @@ export type ILibTextInput = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     "prefix"
 > &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon &
     LibInputWithValidation &
     Partial<ILibInputNoFocusKeys> & {
@@ -177,7 +177,7 @@ export type ILibTimeInput = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     "prefix"
 > &
-    ILibExtendedInputBase &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputIcon &
     LibInputWithValidation &
     ILibInputNoFocusKeys & {

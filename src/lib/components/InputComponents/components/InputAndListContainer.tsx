@@ -15,7 +15,14 @@ export const InputAndListContainer = forwardRef<
     ILibInputAndListContainer
 >(
     (
-        { "data-testid": testid, className, children, hasListOpen, isParent },
+        {
+            "data-testid": testid,
+            className,
+            children,
+            hasListOpen,
+            isParent,
+            inputAndListContainerStyle,
+        },
         ref
     ) => {
         return (
@@ -30,6 +37,7 @@ export const InputAndListContainer = forwardRef<
                     isParent && className
                 )}
                 ref={ref}
+                style={inputAndListContainerStyle}
             >
                 {children}
             </StyledInputAndListContainer>
