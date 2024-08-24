@@ -1,6 +1,7 @@
 /*=============================================== Fieldset component ===============================================*/
 
 import { forwardRef } from "react"
+import { InputContainer } from "../InputComponents"
 import { StyledFieldset, Legend } from "./styles"
 import type { ILibFieldset } from "./types"
 
@@ -32,39 +33,46 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, ILibFieldset>(
             padding = "s",
             border = { color: "gray-200" },
             borderRadius = "m",
+            containerStyle,
+            validation,
             ...rest
         },
         ref
     ) => {
         return (
-            <StyledFieldset
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                className={className}
-                $alignContent={alignContent}
-                $alignItems={alignItems}
-                $columnGap={columnGap}
-                $flexDirection={flexDirection}
-                $flexWrap={flexWrap}
-                $gap={gap}
-                $justifyContent={justifyContent}
-                $justifyItems={justifyItems}
-                $padding={padding}
-                $rowGap={rowGap}
-                $border={border}
-                $borderRadius={borderRadius}
-                {...rest}
-            >
-                <Legend
-                    data-testid={testid && `${testid}.Legend`}
-                    className={className && "Legend"}
+            <InputContainer validation={validation}>
+                <StyledFieldset
+                    data-testid={
+                        validation && testid ? `${testid}.Fieldset` : testid
+                    }
+                    ref={ref}
+                    as={as}
+                    className={validation && className ? "Fieldset" : className}
+                    $alignContent={alignContent}
+                    $alignItems={alignItems}
+                    $columnGap={columnGap}
+                    $flexDirection={flexDirection}
+                    $flexWrap={flexWrap}
+                    $gap={gap}
+                    $justifyContent={justifyContent}
+                    $justifyItems={justifyItems}
+                    $padding={padding}
+                    $rowGap={rowGap}
+                    $border={border}
+                    $borderRadius={borderRadius}
+                    $validationStatus={validation?.status}
+                    {...rest}
                 >
-                    {legend}
-                </Legend>
+                    <Legend
+                        data-testid={testid && `${testid}.Legend`}
+                        className={className && "Legend"}
+                    >
+                        {legend}
+                    </Legend>
 
-                {children}
-            </StyledFieldset>
+                    {children}
+                </StyledFieldset>
+            </InputContainer>
         )
     }
 )

@@ -13,8 +13,11 @@ import type {
     LibComponentBase,
     LibSpacers,
 } from "../../types"
+import type { ILibInputBase } from "../InputComponents/types"
 
-export interface ILibFieldset extends LibComponentBase<HTMLFieldSetElement> {
+export interface ILibFieldset
+    extends LibComponentBase<HTMLFieldSetElement>,
+        Pick<ILibInputBase, "containerStyle" | "validation"> {
     legend: string
     flexDirection?: CssFlexDirection
     flexWrap?: CssFlexWrap

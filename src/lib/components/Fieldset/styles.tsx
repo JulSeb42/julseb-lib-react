@@ -13,6 +13,7 @@ import type {
     ILibPadding,
     ILibRadius,
     LibSpacers,
+    LibValidationStatus,
 } from "../../types"
 
 const StyledFieldset = styled.fieldset<{
@@ -28,10 +29,14 @@ const StyledFieldset = styled.fieldset<{
     $padding?: ILibPadding
     $border?: ILibBorder
     $borderRadius?: ILibRadius
+    $validationStatus: LibValidationStatus | undefined
 }>`
     border: 1px solid ${({ theme }) => theme.GRAY_200};
     ${Mixins.Flexbox}
-    ${({ $border }) => Mixins.Border($border)};
+    ${({ $border, $validationStatus }) =>
+        Mixins.Border(
+            $validationStatus === false ? { color: "danger" } : $border
+        )};
     ${({ $borderRadius }) => Mixins.BorderRadius($borderRadius)};
 `
 

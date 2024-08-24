@@ -28,6 +28,14 @@ export const fieldsetPreview: ComponentPreview<ILibFieldset> = {
                 alignItems: "stretch",
             },
         },
+        {
+            previewTitle: "With validation",
+            props: {
+                legend: "Favourite word?",
+                children: <ChildrenCheckValidate />,
+                validation: { status: false, message: "This is required." },
+            },
+        },
     ],
 }
 
@@ -59,6 +67,43 @@ function ChildrenText() {
         <>
             <Input label="Name" />
             <Input label="Email" type="email" />
+        </>
+    )
+}
+
+function ChildrenCheckValidate() {
+    return (
+        <>
+            <InputCheck
+                id="hello-validate"
+                name="inputs-check"
+                type="radio"
+                label="Hello"
+                validation={false}
+            />
+            <InputCheck
+                id="world-validate"
+                name="inputs-check"
+                type="radio"
+                label="World"
+                validation={false}
+            />
+
+            <InputCheck
+                id="foo-validate"
+                name="inputs-check"
+                type="radio"
+                label="Foo"
+                validation={false}
+            />
+
+            <InputCheck
+                id="baz-validate"
+                name="inputs-check"
+                type="radio"
+                label="Baz"
+                validation={false}
+            />
         </>
     )
 }
