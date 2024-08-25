@@ -9,4 +9,5 @@ export interface ILibIcon extends SVGProps {
     size?: number
     color?: LibAllColors
     baseUrl?: string
+    children?: never
 }

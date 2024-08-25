@@ -8,27 +8,26 @@ import type {
     LibInputWithValidation,
 } from "../InputComponents/types"
 
-interface ILibAutocompleteBase
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibInputBase,
-        LibInputWithValidation {
-    value: string
-    setValue: DispatchState<string>
-    listResults: Array<string>
-    emptyText?: string
-    listDirection?: LibInputListDirection
-    fuzzyOptions?: IFuseOptions<string> | undefined
-    icons?: {
-        left?: LibIcon
-        clear?: LibIcon
+type ILibAutocompleteBase = InputHTMLAttributes<HTMLInputElement> &
+    ILibInputBase &
+    LibInputWithValidation & {
+        value: string
+        setValue: DispatchState<string>
+        listResults: Array<string>
+        emptyText?: string
+        listDirection?: LibInputListDirection
+        fuzzyOptions?: IFuseOptions<string> | undefined
+        icons?: {
+            left?: LibIcon
+            clear?: LibIcon
+        }
+        iconSizes?: {
+            left?: number
+            clear?: number
+        }
+        counter?: never
+        maxLength?: never
     }
-    iconSizes?: {
-        left?: number
-        clear?: number
-    }
-    counter?: never
-    maxLength?: never
-}
 
 interface AutocompleteWithKeys extends ILibAutocompleteBase {
     focusKeys?: Array<string>

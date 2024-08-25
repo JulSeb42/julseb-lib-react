@@ -10,30 +10,29 @@ import type {
 } from "../../types"
 import type { ILibInputBase } from "../InputComponents/types"
 
-interface ILibInputCounterBase
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibInputBase {
-    value: number
-    setValue: DispatchState<number>
-    min?: number
-    max?: number
-    step?: number
-    type?: never
-    buttonVariant?: LibButtonIconVariant
-    icons?: {
-        plus?: LibIcon
-        minus?: LibIcon
+type ILibInputCounterBase = InputHTMLAttributes<HTMLInputElement> &
+    ILibInputBase & {
+        value: number
+        setValue: DispatchState<number>
+        min?: number
+        max?: number
+        step?: number
+        type?: never
+        buttonVariant?: LibButtonIconVariant
+        icons?: {
+            plus?: LibIcon
+            minus?: LibIcon
+        }
+        iconSizes?: {
+            plus?: number
+            minus?: number
+        }
+        labelButtons?: {
+            plus?: string
+            minus?: string
+        }
+        showButtonTooltip?: boolean
     }
-    iconSizes?: {
-        plus?: number
-        minus?: number
-    }
-    labelButtons?: {
-        plus?: string
-        minus?: string
-    }
-    showButtonTooltip?: boolean
-}
 
 interface InputCounterInputEditable extends ILibInputCounterBase {
     inputNoEdit?: true | undefined

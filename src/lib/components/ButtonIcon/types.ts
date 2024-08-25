@@ -27,6 +27,7 @@ type ILibButtonIconBase = LibComponentBase<
         shadow?: ILibBoxShadow
         borderRadius?: ILibRadius
         color?: LibColorsHover
+        children?: never
     }
 
 type ButtonIconVariantsBackground = ILibButtonIconBase & {

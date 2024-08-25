@@ -7,4 +7,5 @@ export interface ILibYoutube
     extends Exclude<LibComponentBase<HTMLIFrameElement>, "as">,
         IframeHTMLAttributes<HTMLIFrameElement> {
     aspectRatio?: string
+    children?: never
 }

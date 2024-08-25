@@ -65,5 +65,4 @@ export type ILibDatepicker = Exclude<LibComponentBase<HTMLDivElement>, "as"> &
         disabled?: boolean
         tabIndex?: number
         prefix?: LibInputPrefixAndSuffix
-        children?: never
     }

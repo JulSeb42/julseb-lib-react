@@ -8,6 +8,7 @@ interface ILibProgressCircleBase
     value: number
     noAnimation?: boolean
     color?: LibAllColors
+    children?: never
 }
 
 interface ProgressCircleWithValue extends ILibProgressCircleBase {

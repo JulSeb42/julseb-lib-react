@@ -8,4 +8,5 @@ export interface ILibHr extends LibComponentBase<HTMLHRElement> {
     color?: LibAllColors
     margin?: ILibMargin
     isRounded?: boolean
+    children?: never
 }

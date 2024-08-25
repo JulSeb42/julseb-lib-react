@@ -9,4 +9,5 @@ export interface ILibBurger extends LibComponentBase<HTMLButtonElement> {
     height?: number
     noHover?: boolean
     borderWidth?: number
+    children?: never
 }

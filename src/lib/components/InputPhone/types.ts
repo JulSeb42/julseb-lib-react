@@ -13,24 +13,23 @@ import type {
     LibInputWithValidation,
 } from "../InputComponents/types"
 
-export interface ILibInputPhone
-    extends InputHTMLAttributes<HTMLInputElement>,
-        ILibInputBase,
-        LibInputWithValidation {
-    selectedCountry: LibCountry | undefined
-    setSelectedCountry: DispatchState<LibCountry | undefined>
-    defaultCountry?: CountryCode
-    type?: never
-    icons?: {
-        search?: LibIcon
-        caret?: LibIcon
+export type ILibInputPhone = InputHTMLAttributes<HTMLInputElement> &
+    ILibInputBase &
+    LibInputWithValidation & {
+        selectedCountry: LibCountry | undefined
+        setSelectedCountry: DispatchState<LibCountry | undefined>
+        defaultCountry?: CountryCode
+        type?: never
+        icons?: {
+            search?: LibIcon
+            caret?: LibIcon
+        }
+        iconSizes?: {
+            search?: number
+            caret?: number
+        }
+        searchPlaceholder?: string
+        listDirection?: LibInputListDirection
+        countryButtonAriaLabel?: string
+        textNoResult?: string
     }
-    iconSizes?: {
-        search?: number
-        caret?: number
-    }
-    searchPlaceholder?: string
-    listDirection?: LibInputListDirection
-    countryButtonAriaLabel?: string
-    textNoResult?: string
-}

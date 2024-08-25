@@ -28,7 +28,6 @@ type ILibTimepickerBase = Exclude<LibComponentBase<HTMLInputElement>, "as"> &
         iconClockSize?: number
         listDirection?: LibInputListDirection
         prefix?: LibInputPrefixAndSuffix
-        children?: never
     }
 
 type TimepickerWithHourStep = ILibTimepickerBase & {

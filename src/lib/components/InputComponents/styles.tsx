@@ -32,7 +32,7 @@ const StyledInputIconContainer = styled.span<{
     position: relative;
     z-index: 1;
     color: ${({ theme, $validationStatus, $disabled }) => {
-        if ($validationStatus === false) return theme.DANGER_50
+        if ($validationStatus === false) return theme.DANGER_500
         if ($disabled) return theme.GRAY_500
         return theme.PRIMARY_500
     }};

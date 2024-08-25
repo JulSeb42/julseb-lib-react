@@ -16,6 +16,7 @@ interface ILibImageBase
     fit?: CssObjectFit
     aspectRatio?: string
     fallback?: JSX.Element
+    children?: never
 }
 
 interface ImageWithCaption extends ILibImageBase {

@@ -88,6 +88,7 @@ export interface ILibInputBase
             | "iconBaseUrl"
         >
     > {
+    children?: never
     inputBackground?: LibInputBackground
     inputVariant?: LibInputVariant
     containerStyle?: CSSProperties

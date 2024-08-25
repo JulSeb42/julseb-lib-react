@@ -9,4 +9,5 @@ export interface ILibProgressBar
     value: number
     color?: LibColorsHover
     noAnimation?: boolean
+    children?: never
 }
