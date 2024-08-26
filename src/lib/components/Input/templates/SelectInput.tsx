@@ -96,6 +96,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, ILibSelectInput>(
                     className={className}
                     disabled={disabled}
                     withBorder={false}
+                    withPadding
                 >
                     <InputButton
                         data-testid={testid}

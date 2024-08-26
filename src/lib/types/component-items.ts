@@ -113,7 +113,7 @@ interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
  * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
- * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop ref?: ForwardedRef<HTMLInputElement>
  * @prop text: string => only if icon is not defined
  * @prop icon: string | JSX.Element => only if text is not defined
  * @prop iconSize?: number => only if text is not defined
@@ -201,11 +201,11 @@ export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
  * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop title: string
  * @prop isOpen?: boolean
- * @prop content?: string | ReactChildren
+ * @prop content?: ReactChildren
  */
 export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
     title: string
-    content?: string | ReactChildren
+    content?: ReactChildren
     defaultOpen?: boolean
 }
 
@@ -272,6 +272,24 @@ export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop title: string
+ * @prop id?: string
+ * @prop status?: "success" | "error" | "warning" | "info" | "loading"
+ * @prop options?: LibToastOptions
+ *
+ * @type LibToastOptions
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop body?: string | ReactChildren
+ * @prop duration?: number
+ * @prop icons?: { left?: string | JSX.Element; close?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number close?: number }
+ * @prop iconLeftColor?: Any color from the library
+ * @prop labelClose?: string
+ * @prop withTimer?: boolean
+ * @prop timerBackgroundColor?: Any color from the library
  */
 export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
     title: string
@@ -290,6 +308,11 @@ export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
  * @prop text: string
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export type LibStep = LibButtonLinkBlank &
     LibComponentItemBase<HTMLDivElement> & {
@@ -316,7 +339,6 @@ export type LibBreadcrumbItem = LibButtonLinkBlank &
 
 /**
  * @description Props for Tabs component items: https://documentation-components-react.vercel.app/components/tabs
- * @extends LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string

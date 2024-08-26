@@ -21,9 +21,9 @@ interface FooterWithLogoImg {
 
 interface FooterWithLogoText {
     img?: never
-    alt?: string
-    width?: number
-    height?: number
+    alt?: never
+    width?: never
+    height?: never
     text: string
 }
 

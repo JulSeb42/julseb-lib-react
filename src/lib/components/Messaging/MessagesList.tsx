@@ -15,6 +15,10 @@ import type { ILibMessagesList } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop children?: Array<ReactNode>
+ * @prop emptyText?: string
+ * @prop hideScrollButton?: boolean
+ * @prop scrollButton?: { icon?: string | JSX.Element; iconSize?: number; positionFromBottom?: number; iconBaseUrl?: string } => only if hideScrollButton is false or undefined
  */
 export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
     (
@@ -123,6 +127,7 @@ export const MessagesList = forwardRef<HTMLDivElement, ILibMessagesList>(
                         onClick={scrollToBottom}
                         variant="ghost"
                         shadow="s"
+                        iconBaseUrl={scrollButton?.iconBaseUrl}
                     />
                 )}
             </StyledMessagesList>

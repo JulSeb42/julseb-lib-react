@@ -101,6 +101,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
                 type: "password",
                 "data-testid": "testid",
                 className: "className",
+                prefix: "Hello",
             },
         },
         {

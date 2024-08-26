@@ -53,7 +53,7 @@ function Preview({ allMessages }: { allMessages: Array<LibMessage> }) {
         <Messaging
             data-testid="testid"
             className="className"
-            data={messages}
+            items={messages}
             input={{ message, setMessage }}
             handleSubmit={handleSubmit}
         />

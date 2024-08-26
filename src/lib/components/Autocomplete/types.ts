@@ -16,7 +16,7 @@ type ILibAutocompleteBase = InputHTMLAttributes<HTMLInputElement> &
         listResults: Array<string>
         emptyText?: string
         listDirection?: LibInputListDirection
-        fuzzyOptions?: IFuseOptions<string> | undefined
+        fuzzyOptions?: IFuseOptions<string>
         icons?: {
             left?: LibIcon
             clear?: LibIcon

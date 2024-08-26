@@ -16,6 +16,18 @@ import type { ILibRating } from "./types"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop rating: number
+ * @prop setRating: Dispatch<SetStateAction<number>> => only if readOnly is not defined
+ * @prop readOnly: boolean => only if setRating is not defined
+ * @prop icons?: { default?: string | JSX.Element; checked?: string | JSX.Element }
+ * @prop iconSizes?: { default?: number; checked?: number }
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop containerStyle?: CSSProperties
  */
 export const Rating = forwardRef<HTMLDivElement, ILibRating>(
     (
@@ -97,6 +109,7 @@ export const Rating = forwardRef<HTMLDivElement, ILibRating>(
                 maxLength={undefined}
                 iconBaseUrl={iconBaseUrl}
                 style={containerStyle}
+                hasListOpen={undefined}
             >
                 <Flexbox
                     data-testid={

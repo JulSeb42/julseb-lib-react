@@ -35,7 +35,7 @@ type TimepickerWithHourStep = ILibTimepickerBase & {
     minTime?: LibTimepickerHours
     maxTime?: LibTimepickerHours
     value: LibTimepickerHours
-    setValue: (value: LibTimepickerHours) => void
+    setValue: DispatchState<LibTimepickerHours>
 }
 
 type TimepickerWithHalfHourStep = ILibTimepickerBase & {

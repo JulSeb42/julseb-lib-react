@@ -27,6 +27,29 @@ import type { ILibTimepicker } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop value: LibTimepickerHours | LibTimepickerHalfTimes | LibTimepickerQuarterTimes | LibTimepickerMinutes
+ * @prop setValue: Dispatch<SetStateAction< LibTimepickerHours | LibTimepickerHalfTimes | LibTimepickerQuarterTimes | LibTimepickerMinutes>>
+ * @prop iconClock?: string | JSX.Element
+ * @prop iconClockSize?: number
+ * @prop listDirection?: "up" | "down"
+ * @prop prefix?: string | JSX.Element
+ * @prop step?: LibTimepickerSteps
+ * @prop minTime?: LibTimepickerHours | LibTimepickerHalfTimes | LibTimepickerQuarterTimes | LibTimepickerMinutes
+ * @prop maxTime?: LibTimepickerHours | LibTimepickerHalfTimes | LibTimepickerQuarterTimes | LibTimepickerMinutes
+ * @prop data-testid?: string
+ * @prop id?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
+ * @prop icon?: string | JSX.Element
+ * @prop iconSize?: number
+ * @prop prefix?: string | JSX.Element
  */
 export const Timepicker = forwardRef<HTMLInputElement, ILibTimepicker>(
     (
@@ -115,7 +138,7 @@ export const Timepicker = forwardRef<HTMLInputElement, ILibTimepicker>(
         const handleClose = () => setIsOpen(false)
 
         const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-            setValue(e.target.value as any)
+            setValue(e.target.value as string)
 
         const handleSelectTime = (time: string) => {
             setValue(time as any)
@@ -138,6 +161,8 @@ export const Timepicker = forwardRef<HTMLInputElement, ILibTimepicker>(
                 iconBaseUrl={iconBaseUrl}
                 style={containerStyle}
                 hasListOpen={isOpen}
+                counter={undefined}
+                maxLength={undefined}
             >
                 <InputAndListContainer
                     data-testid={testid}

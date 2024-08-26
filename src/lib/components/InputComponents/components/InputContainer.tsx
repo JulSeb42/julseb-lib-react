@@ -8,6 +8,17 @@ import type { ILibInputContainer } from "../../InputContainer/types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
+ * @prop label: string | undefined
+ * @prop labelComment: string | undefined
+ * @prop helper: string | undefined
+ * @prop helperBottom: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number } | undefined
+ * @prop children?: ReactChildren
+ * @prop value: any | undefined
+ * @prop counter: boolean | undefined
+ * @prop maxLength: number | undefined
+ * @prop hasListOpen: boolean | undefined
+ * @prop style: CSSProperties | undefined
+ * @prop iconBaseUrl: string | undefined
  */
 export function InputContainer({
     "data-testid": testid,

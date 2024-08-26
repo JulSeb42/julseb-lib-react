@@ -57,6 +57,34 @@ const toastStatusStyles: {
  * @link https://documentation-components-react.vercel.app/components/toast
  * @prop data-testid?: string
  * @prop as?: ElementType
+ * @prop toasts: Array<LibToast>
+ * @prop isOpen: boolean
+ * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+ * @prop toastsOptions?: { duration?: number; labelClose?: string; withTimer?: boolean; icons?: { left?: string | JSX.Element; close?: string | JSX.Element }; iconSizes?: { left?: number; close?: number }; iconLeftColor?: Any color from the library; iconsBaseUrl?: string }
+ *
+ * @type LibToast
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop title: string
+ * @prop id?: string
+ * @prop status?: "success" | "error" | "warning" | "info" | "loading"
+ * @prop options?: LibToastOptions
+ *
+ * @type LibToastOptions
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop body?: string | ReactChildren
+ * @prop duration?: number
+ * @prop icons?: { left?: string | JSX.Element; close?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number close?: number }
+ * @prop iconLeftColor?: Any color from the library
+ * @prop labelClose?: string
+ * @prop withTimer?: boolean
+ * @prop timerBackgroundColor?: Any color from the library
  */
 export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
     (
@@ -123,6 +151,7 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                                 },
                                 iconLeftColor:
                                     toast.options?.iconLeftColor ||
+                                    toastsOptions?.iconLeftColor ||
                                     styles.iconLeftColor,
                                 ref: toast.options?.ref || toast.ref,
                                 labelClose:

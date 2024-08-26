@@ -109,7 +109,7 @@ export const messagingPreview: ComponentPreview<ILibMessaging> = {
             previewTitle: "With messages",
             demo: (
                 <MessagingDemo
-                    data={messages}
+                    items={messages}
                     data-testid="testid"
                     className="className"
                 />
@@ -119,7 +119,7 @@ export const messagingPreview: ComponentPreview<ILibMessaging> = {
             previewTitle: "Empty",
             demo: (
                 <MessagingDemo
-                    data={[]}
+                    items={[]}
                     button={{ text: "Send" }}
                     data-testid="testid"
                     className="className"

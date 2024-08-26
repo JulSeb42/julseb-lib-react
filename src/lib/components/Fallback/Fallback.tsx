@@ -10,6 +10,10 @@ import type { ILibRadius } from "../../types"
  * @extends HTMLDivElement
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop $width: string | number
+ * @prop $height: string | number
+ * @prop $borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop $aspectRatio?: string
  */
 
 const Fallback = styled.div<{

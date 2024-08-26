@@ -9,7 +9,9 @@ import type {
 } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 
-interface ILibModalBase extends LibComponentBase<HTMLDivElement>, ILibFlexbox {
+interface ILibModalBase
+    extends LibComponentBase<HTMLDivElement>,
+        Omit<ILibFlexbox, "inline"> {
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
     disableEsc?: boolean

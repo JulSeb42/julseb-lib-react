@@ -11,6 +11,10 @@ import type { ILibIcon } from "./types"
  * @tutorial To use this component, add the SVG file for the icon you want to render in `/public/icons` folder
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<SVGElement>
+ * @prop src: string
+ * @prop size?: number
+ * @prop color?: Any color from the library
+ * @prop baseUrl?: string
  */
 export const Icon = forwardRef<SVGElement, ILibIcon>(
     (

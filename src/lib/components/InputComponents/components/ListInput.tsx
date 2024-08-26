@@ -10,6 +10,12 @@ import type { ILibListInput } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
+ * @prop isOpen: boolean
+ * @prop direction: "up" | "down" | undefined
+ * @prop inputBackground: "light" | "dark" | undefined
+ * @prop inputVariant: "rounded" | "pill" | undefined
+ * @prop validationStatus: boolean | undefined
+ * @prop children?: ReactChildren
  */
 export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
     (

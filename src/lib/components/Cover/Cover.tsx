@@ -11,6 +11,11 @@ import type { ILibCover } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop img: string
+ * @prop alt?: string
+ * @prop overlay?: "black-50" | "black-80" | "white-50" | "white-80" | "gradient-black" | "gradient-white"
+ * @prop height?: number | string
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export const Cover = forwardRef<HTMLDivElement, ILibCover>(
     (

@@ -23,6 +23,17 @@ import type { ILibInputContainer } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop value?: any
+ * @prop counter?: boolean
+ * @prop maxLength?: number
+ * @prop hasListOpen?: boolean
+ * @prop style?: CSSProperties
+ * @prop iconBaseUrl?: string
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  */
 export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
     (

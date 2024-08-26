@@ -149,10 +149,10 @@ export interface ILibInputIconContainer {
 export interface ILibInputRightContainer {
     "data-testid": string | undefined
     className: string | undefined
-    children?: ReactChildren
     disabled: boolean | undefined
-    withPadding?: boolean
+    withPadding: boolean | undefined
     withBorder: boolean | undefined
+    children?: ReactChildren
 }
 
 /*====================== InputLeftContainer ======================*/
@@ -162,7 +162,6 @@ export interface ILibInputLeftContainer {
     className: string | undefined
     children?: ReactChildren
     disabled: boolean | undefined
-    noBorder?: boolean
 }
 
 /*====================== InputButton ======================*/
@@ -203,7 +202,7 @@ export interface ILibInputWrapper {
     className: string | undefined
     hasContainer: boolean | undefined
     children?: ReactChildren
-    hasListOpen?: boolean
+    hasListOpen: boolean | undefined
     isTextArea: boolean
     inputBackground: LibInputBackground | undefined
     inputVariant: LibInputVariant | undefined
@@ -272,8 +271,10 @@ export interface ILibInputPrefix extends ILibPrefixAndSuffixBase {
      * @description Add prefix on inputs with text
      * @prop data-testid: string | undefined
      * @prop className: string | undefined
+     * @prop inputBackground: "light" | "dark" | undefined
+     * @prop suffix: string | JSX.Element | undefined
      */
-    prefix?: LibInputPrefixAndSuffix
+    prefix: LibInputPrefixAndSuffix | undefined
 }
 
 export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
@@ -281,6 +282,8 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
      * @description Add suffix on inputs with text
      * @prop data-testid: string | undefined
      * @prop className: string | undefined
+     * @prop inputBackground: "light" | "dark" | undefined
+     * @prop prefix: string | JSX.Element | undefined
      */
     suffix?: LibInputPrefixAndSuffix
 }
@@ -291,7 +294,7 @@ export interface ILibInputAndListContainer {
     "data-testid": string | undefined
     className: string | undefined
     hasListOpen: boolean
-    isParent?: boolean
+    isParent: boolean | undefined
+    inputAndListContainerStyle: CSSProperties | undefined
     children?: ReactChildren
-    inputAndListContainerStyle?: CSSProperties
 }

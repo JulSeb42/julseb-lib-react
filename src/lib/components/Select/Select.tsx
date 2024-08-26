@@ -27,6 +27,24 @@ import type { ILibSelectButton } from "./subtypes"
  * @extends HTMLDivElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop value: string
+ * @prop setValue: Dispatch<SetStateAction< string>>
+ * @prop options?: Array<string>
+ * @prop disabled?: boolean
+ * @prop listDirection?: "up" | "down"
+ * @prop tabIndex?: number
+ * @prop prefix?: string | JSX.Element
+ * @prop icons?: { left?: string | JSX.Element; caret?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number; caret?: number }
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
  */
 export const Select = forwardRef<HTMLDivElement, ILibSelect>(
     (
@@ -123,6 +141,8 @@ export const Select = forwardRef<HTMLDivElement, ILibSelect>(
                 counter={false}
                 maxLength={undefined}
                 style={containerStyle}
+                hasListOpen={isOpen}
+                iconBaseUrl={iconBaseUrl}
             >
                 <SelectContainer
                     data-testid={

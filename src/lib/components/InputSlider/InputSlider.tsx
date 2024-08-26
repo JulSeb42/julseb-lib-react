@@ -15,6 +15,19 @@ import type { ILibInputSlider } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop showMinMax?: boolean
+ * @prop showValue?: "hover" | "always" | "never"
+ * @prop min?: number
+ * @prop max?: number
+ * @prop value?: number
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop containerStyle?: CSSProperties
  */
 export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
     (
@@ -96,6 +109,7 @@ export const InputSlider = forwardRef<HTMLInputElement, ILibInputSlider>(
                 maxLength={undefined}
                 iconBaseUrl={undefined}
                 style={containerStyle}
+                hasListOpen={undefined}
             >
                 {showMinMax || showValue !== "never" ? (
                     <Flexbox

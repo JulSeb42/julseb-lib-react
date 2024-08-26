@@ -42,6 +42,25 @@ import type { ILibAutocomplete } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop value: string
+ * @prop setValue: Dispatch<SetStateAction<string>>
+ * @prop listResults: Array<string>
+ * @prop emptyText?: string
+ * @prop listDirection?: "up" | "down"
+ * @prop fuzzyOptions?: IFuseOptions<string> => imported from fuse.js
+ * @prop icons?: { left?: string | JSX.Element; clear?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number; clear?: number }
+ * @prop id?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
+ * @prop inputAndListContainerStyle?: CSSProperties
  */
 
 const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
@@ -152,12 +171,15 @@ const AutocompleteFn = forwardRef<HTMLInputElement, ILibAutocomplete>(
                 counter={false}
                 maxLength={undefined}
                 style={containerStyle}
+                hasListOpen={isOpen}
+                iconBaseUrl={iconBaseUrl}
             >
                 <InputAndListContainer
                     data-testid={testid}
                     className={className}
                     hasListOpen={isOpen}
                     inputAndListContainerStyle={inputAndListContainerStyle}
+                    isParent={!hasContainer}
                 >
                     <InputWrapper
                         data-testid={testid}

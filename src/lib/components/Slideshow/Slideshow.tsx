@@ -20,14 +20,40 @@ import type { ILibSlideshow } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop images?: Array<string> => only if children is not defined
+ * @prop children?: Array<ReactNode> => only if images is not defined
+ * @prop height?: string | number
+ * @prop imgFit?: CssObjectFit
+ * @prop controls?: boolean | Controls
+ * @prop options?: Options
+ * @prop pagination?: boolean | PaginationWithThumbnails | PaginationWithOther
  *
  * @type Controls
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop size?: LibSlideshowButtonSize
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop hideOnTouch?: boolean
+ * @prop icons?: { prev?: string | JSX.Element; next?: string | JSX.Element }
+ * @prop iconsSizes?: { prev?: number; next?: number }
+ * @prop iconBaseUrl?: string
+ * @prop labelPrev?: string
+ * @prop labelNext?: string
  *
  * @type Options
+ * @prop autoPlay?: number
+ * @prop speed?: number
  *
  * @type PaginationWithThumbnails
+ * @prop type?: "thumbnails"
+ * @prop position?: "inside" | "outside"
+ * @prop hideOnTouch?: boolean
  *
  * @type PaginationWithOther
+ * @prop type?: "dots" | "dots-outline" | "bars"
+ * @prop position?: "inside" | "outside"
+ * @prop hideOnTouch?: boolean
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  */
 export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
     (

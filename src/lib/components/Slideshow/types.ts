@@ -12,7 +12,7 @@ import type {
 } from "../../types"
 
 type PaginationWithThumbnails = {
-    type?: LibSlideshowPagination
+    type?: Extract<LibSlideshowPagination, "thumbnails">
     position?: LibSlideshowPaginationPosition
     hideOnTouch?: boolean
     color?: never

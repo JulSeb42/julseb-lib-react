@@ -34,6 +34,7 @@ export interface ILibToaster extends LibComponentBase<HTMLDivElement> {
         | "icons"
         | "iconSizes"
         | "iconsBaseUrl"
+        | "iconLeftColor"
     >
     isOpen: boolean
     position?: LibToasterPosition

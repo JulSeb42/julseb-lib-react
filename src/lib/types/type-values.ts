@@ -275,6 +275,8 @@ export const typeValues = {
         "1min": "1min",
     },
 
+    messagingDateFormats: { short: "short", long: "long" },
+
     hours: {
         "00:00": "00:00",
         "01:00": "01:00",

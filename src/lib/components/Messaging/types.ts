@@ -7,6 +7,7 @@ import type {
     DispatchState,
     LibIcon,
     ReactChildren,
+    LibMessagingDateFormat,
 } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 
@@ -15,7 +16,7 @@ import type { ILibFlexbox } from "../Flexbox/types"
 export interface ILibMessaging
     extends LibComponentBase<HTMLDivElement>,
         MessageFormCommon {
-    data: Array<LibMessage>
+    items: Array<LibMessage>
     textDateTime?: string
     emptyText?: string
     iconScroll?: LibIcon
@@ -26,9 +27,7 @@ export interface ILibMessaging
 /*====================== MessagesContainer ======================*/
 
 export interface ILibMessagesContainer
-    extends LibComponentBase<HTMLDivElement> {
-    children?: ReactChildren
-}
+    extends LibComponentBase<HTMLDivElement> {}
 
 /*====================== MessagesList ======================*/
 
@@ -45,6 +44,7 @@ interface MessagesListWithScrollButton extends ILibMessagesListBase {
         icon?: LibIcon
         iconSize?: number
         positionFromBottom?: number
+        iconBaseUrl?: string
     }
 }
 
@@ -85,6 +85,7 @@ export interface ILibMessageForm
         MessageFormCommon {
     inputHeight: number
     setInputHeight: DispatchState<number>
+    iconBaseUrl?: string
 }
 
 /*====================== Message ======================*/
@@ -112,7 +113,7 @@ type MessageWithDate = ILibMessageContent & {
     date?: Date | string
     textToday?: string
     textYesterday?: string
-    dateFormat?: "short" | "long"
+    dateFormat?: LibMessagingDateFormat
 }
 
 type MessageWithoutDate = ILibMessageContent & {

@@ -13,7 +13,7 @@ interface ILibLoaderBase extends LibComponentBase<HTMLSpanElement> {
 }
 
 interface LoaderWithBorder extends ILibLoaderBase {
-    variant?: Extract<LibLoaderVariant, 1 | 2 | 3>
+    variant?: Exclude<LibLoaderVariant, 4>
     borderWidth?: number
 }
 

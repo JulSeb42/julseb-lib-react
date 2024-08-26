@@ -202,7 +202,7 @@ export function Calendar({
                             )
                         }
                         size={iconsSizes?.prev ?? 24}
-                        baseURL={iconBaseUrl}
+                        baseUrl={iconBaseUrl}
                     />
                 </CalendarNavButton>
 
@@ -253,7 +253,7 @@ export function Calendar({
                             )
                         }
                         size={iconsSizes?.next ?? 24}
-                        baseURL={iconBaseUrl}
+                        baseUrl={iconBaseUrl}
                     />
                 </CalendarNavButton>
             </CalendarHeader>

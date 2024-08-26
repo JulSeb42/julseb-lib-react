@@ -21,16 +21,16 @@ interface ILibButtonGroupBase extends LibComponentBase<HTMLDivElement> {
 
 interface ButtonGroupWithButtons extends ILibButtonGroupBase {
     buttons: Array<LibButtonGroupButtonItem>
+    name?: string
     toggles?: never
     toggleType?: never
-    name?: string
 }
 
 interface ButtonGroupWithToggles extends ILibButtonGroupBase {
     buttons?: never
+    name: string
     toggles: Array<LibButtonGroupToggle>
     toggleType?: LibButtonGroupToggleSelect
-    name: string
 }
 
 export type ILibButtonGroup = ButtonGroupWithButtons | ButtonGroupWithToggles

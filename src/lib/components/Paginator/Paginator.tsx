@@ -17,6 +17,15 @@ const DEFAULT_ICON_SIZE = 32
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop totalPages: number
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop inputNotEditable?: boolean
+ * @prop texts?: { page?: string; of?: string }
+ * @prop icons?: { prev?: string | JSX.Element; next?: string | JSX.Element }
+ * @prop iconSizes?: { prev?: number; next?: number }
+ * @prop iconsBaseUrl?: string
+ * @prop labels?: { prev?: string; next?: string; show?: boolean }
+ * @prop queries?: Array<Array<string>>
  */
 export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
     (
@@ -32,6 +41,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
                 next: roundIconSize(DEFAULT_ICON_SIZE),
             },
             icons,
+            iconsBaseUrl,
             labels = { prev: "Previous", next: "Next" },
             queries,
             gap = "xs",
@@ -118,6 +128,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
                     tooltip={labels?.prev}
                     aria-label={labels?.prev}
                     color={accentColor}
+                    iconBaseUrl={iconsBaseUrl}
                 />
 
                 <ButtonIcon
@@ -143,6 +154,7 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
                     tooltip={labels?.next}
                     aria-label={labels?.next}
                     color={accentColor}
+                    iconBaseUrl={iconsBaseUrl}
                 />
             </Flexbox>
         )

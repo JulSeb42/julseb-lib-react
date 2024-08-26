@@ -14,6 +14,18 @@ import type { ILibTextIcon } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>
+ * @prop icon: string | JSX.Element
+ * @prop iconColor?: Any color from the library
+ * @prop iconSize?: number
+ * @prop textAs?: ElementType
+ * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "blockquote"
+ * @prop iconBaseUrl?: string
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop containerStyle?: CSSProperties
+ * @prop color?: Any color from the library
+ * @prop linkColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop textAlign?: CssTextAlign
+ * @prop display?: boolean => only if tag is set to h1 to h5
  */
 export const TextIcon = forwardRef<
     HTMLHeadingElement &

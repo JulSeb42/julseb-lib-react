@@ -19,12 +19,12 @@ interface ILibBreadcrumbsBase extends LibComponentBase<HTMLDivElement> {
 }
 
 interface BreadcrumbsWithItems extends ILibBreadcrumbsBase {
-    breadcrumbsItems: Array<LibBreadcrumbItem>
+    items: Array<LibBreadcrumbItem>
     children?: never
 }
 
 interface BreadcrumbsWithChildren extends ILibBreadcrumbsBase {
-    breadcrumbsItems?: never
+    items?: never
     children?: Array<ReactNode>
 }
 

@@ -9,6 +9,7 @@ interface ILibProgressCircleBase
     noAnimation?: boolean
     color?: LibAllColors
     children?: never
+    containerStyle?: CSSProperties
 }
 
 interface ProgressCircleWithValue extends ILibProgressCircleBase {
@@ -16,7 +17,6 @@ interface ProgressCircleWithValue extends ILibProgressCircleBase {
     icon?: never
     iconSize?: never
     iconBaseUrl?: never
-    containerStyle?: CSSProperties
 }
 
 interface ProgressCircleWithIcon extends ILibProgressCircleBase {
@@ -24,7 +24,6 @@ interface ProgressCircleWithIcon extends ILibProgressCircleBase {
     icon?: LibIcon
     iconSize?: number
     iconBaseUrl?: string
-    containerStyle?: CSSProperties
 }
 
 export type ILibProgressCircle =

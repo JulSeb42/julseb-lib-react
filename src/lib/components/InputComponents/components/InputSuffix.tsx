@@ -8,6 +8,8 @@ import type { ILibInputSuffix } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
+ * @prop inputBackground: "light" | "dark" | undefined
+ * @prop prefix: string | JSX.Element | undefined
  */
 export function InputSuffix({
     "data-testid": testid,

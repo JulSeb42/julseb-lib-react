@@ -5,7 +5,7 @@ import type { LibBreadcrumbItem } from "../../../types"
 import type { ILibBreadcrumbs } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-const breadcrumbsItems: Array<LibBreadcrumbItem> = [
+const items: Array<LibBreadcrumbItem> = [
     {
         text: "Link",
         to: "/",
@@ -37,7 +37,7 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
         {
             previewTitle: "Default",
             props: {
-                breadcrumbsItems,
+                items,
                 "data-testid": "testid",
                 className: "className",
             },
@@ -45,7 +45,7 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
         {
             previewTitle: "With different colors",
             props: {
-                breadcrumbsItems,
+                items,
                 linksColor: "secondary",
                 activeColor: "success",
                 separatorColor: "danger",
@@ -56,7 +56,7 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
         {
             previewTitle: "With different separator",
             props: {
-                breadcrumbsItems,
+                items,
                 separator: "chevron",
                 "data-testid": "testid",
                 className: "className",

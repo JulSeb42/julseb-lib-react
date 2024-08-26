@@ -10,6 +10,7 @@ export interface ILibPaginator extends ILibFlexbox {
     texts?: { page?: string; of?: string }
     icons?: { prev?: LibIcon; next?: LibIcon }
     iconSizes?: { prev?: number; next?: number }
+    iconsBaseUrl?: string
     labels?: { prev?: string; next?: string; show?: boolean }
     queries?: Array<Array<string>>
 }

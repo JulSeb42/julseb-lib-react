@@ -18,6 +18,24 @@ import type { ILibFooter } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop links: Array<LibFooterLink> => required if direction is set to horizontal, only if children is not defined
+ * @prop logo: string | { img: string => only if text is not defined; text: string => only if img is not defined; alt?: string => only if img is defined; width?: number => only if img is defined; height?: number => only if img is defined } => required if direction is set to horizontal
+ * @prop children?: ReactChildren
+ * @prop withSeparator?: boolean
+ * @prop linksSeparator?: "dot" | "dash"
+ * @prop direction?: "horizontal" | "vertical"
+ *
+ * @type LibFooterLink
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
+ * @prop text: string
+ * @prop onClick: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to: string => only if onClick and href are not defined
+ * @prop href: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
     (

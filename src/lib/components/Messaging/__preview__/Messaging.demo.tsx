@@ -7,7 +7,7 @@ import type { ILibMessaging } from "../types"
 import type { LibMessage } from "../../../types"
 
 export function MessagingDemo({
-    data,
+    items: data,
     ...rest
 }: Omit<ILibMessaging, "handleSubmit" | "input">) {
     const [message, setMessage] = useState("")
@@ -28,7 +28,7 @@ export function MessagingDemo({
 
     return (
         <Messaging
-            data={messagesList}
+            items={messagesList}
             handleSubmit={handleSubmit}
             input={{ message, setMessage }}
             data-testid="testid"

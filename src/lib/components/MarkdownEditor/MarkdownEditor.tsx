@@ -18,6 +18,22 @@ import type { ILibMarkdownEditor } from "./types"
  * @extends HTMLTextAreaElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLTextAreaElement>
+ * @prop value: string
+ * @prop setValue: Dispatch<SetStateAction<string>>
+ * @prop defaultEditor?: "editorCode" | "editorLive" | "editorPreview"
+ * @prop textButtonTitles?: string
+ * @prop showButtons?: LibMarkdownEditorOptions
+ * @prop icons?: { bold?: string | JSX.Element; italic?: string | JSX.Element; strikethrough?: string | JSX.Element; ul?: string | JSX.Element; ol?: string | JSX.Element; link?: string | JSX.Element; quote?: string | JSX.Element; hr?: string | JSX.Element; code?: string | JSX.Element; codeBlock?: string | JSX.Element; comment?: string | JSX.Element; image?: string | JSX.Element; editorCode?: string | JSX.Element; editorLive?: string | JSX.Element; editorPreview?: string | JSX.Element }
+ * @prop iconsSizes?: { bold?: number; italic?: number; strikethrough?: number; ul?: number; ol?: number; link?: number; quote?: number; hr?: number; code?: number; codeBlock?: number; comment?: number; image?: number; editorCode?: number; editorLive?: number; editorPreview?: number }
+ * @prop id?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop containerStyle?: CSSProperties
  */
 export const MarkdownEditor = forwardRef<
     HTMLTextAreaElement,
@@ -33,7 +49,7 @@ export const MarkdownEditor = forwardRef<
             showButtons = markdownEditorOptions,
             icons,
             iconsSizes,
-            iconsBaseUrl,
+            iconBaseUrl,
             defaultEditor = "editorLive",
             className,
             label,
@@ -95,6 +111,8 @@ export const MarkdownEditor = forwardRef<
                 id={id}
                 value={value}
                 style={containerStyle}
+                hasListOpen={undefined}
+                iconBaseUrl={undefined}
             >
                 <MdEditorContainer
                     data-testid={
@@ -141,7 +159,7 @@ export const MarkdownEditor = forwardRef<
                                 showButtons={showButtons}
                                 icons={icons}
                                 iconsSizes={iconsSizes}
-                                iconsBaseUrl={iconsBaseUrl}
+                                iconsBaseUrl={iconBaseUrl}
                                 addCode={addCode}
                             />
                         </Flexbox>
@@ -154,7 +172,7 @@ export const MarkdownEditor = forwardRef<
                             setEditor={setEditor}
                             icons={icons}
                             iconsSizes={iconsSizes}
-                            iconsBaseUrl={iconsBaseUrl}
+                            iconsBaseUrl={iconBaseUrl}
                         />
                     </ButtonsContainer>
 

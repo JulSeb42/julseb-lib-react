@@ -12,6 +12,12 @@ import type { ILibForm } from "./types"
  * @extends HTMLFormElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLFormElement>
+ * @prop buttonPrimary?: string | { text: string; iconLeft?: string | JSX.Element; iconRight?: string | JSX.Element; iconLeftSize?: number; iconRightSize?: number }
+ * @prop buttonSecondary?: { onClick?: void => only if to or href are not defined; disabled?: boolean => only if onClick is defined; to?: string => only if onClick and href are not defined; href?: string => only if onClick and to are not defined; text: string; iconLeft?: string | JSX.Element; iconRight?: string | JSX.Element; iconLeftSize?: number; iconRightSize?: number }
+ * @prop isLoading?: boolean
+ * @prop disabled?: boolean
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop maxWidth?: string | number
  */
 export const Form = forwardRef<HTMLFormElement, ILibForm>(
     (

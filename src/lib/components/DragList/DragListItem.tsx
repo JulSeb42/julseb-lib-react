@@ -20,6 +20,25 @@ import type { ILibBadge } from "../Badge/types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop handleDragStart: (e: DragEvent<HTMLDivElement>, i: number) => void
+ * @prop handleDragOver: (e: DragEvent<HTMLDivElement>, i: number) => void
+ * @prop index: number
+ * @prop item: LibDragListItem => only if children is not defined
+ * @prop children?: ReactChildren => only if item is not defined
+ * @prop iconDrag?: string | JSX.Element
+ * @prop iconDragSize?: number
+ * @prop iconDragBaseUrl?: string
+ *
+ * @type LibDragListItem
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop title: string => only if element is not defined
+ * @prop body?: string => only if element is not defined
+ * @prop badge?: boolean | ListGroupItemBadgeExtended => only if element and date are not defined
+ * @prop date?: string | Date => only if element and badge are not defined
+ * @prop element?: JSX.ELement => only if title and other props are not defined
  */
 export const DragListItem = forwardRef<HTMLDivElement, ILibDragListItem>(
     (
@@ -94,7 +113,7 @@ export const DragListItem = forwardRef<HTMLDivElement, ILibDragListItem>(
                         className={className && "IconDrag"}
                         icon={iconDrag}
                         size={iconDragSize}
-                        baseURL={iconDragBaseUrl}
+                        baseUrl={iconDragBaseUrl}
                     />
                 </DragIconContainer>
 

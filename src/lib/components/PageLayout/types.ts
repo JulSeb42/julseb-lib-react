@@ -19,7 +19,7 @@ interface ILibPageLayoutBase {
 }
 
 interface PageLayoutWithWrapper extends ILibPageLayoutBase {
-    noWrapper?: false
+    noWrapper?: false | undefined
     wrapper?: Omit<ILibWrapper, "children">
 }
 

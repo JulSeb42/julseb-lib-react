@@ -20,6 +20,15 @@ const DEFAULT_ICON_SIZE = 24
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop language?: string => language name
+ * @prop highlighterProps?: SyntaxHighlighterProps => imported from react-syntax-highlighter
+ * @prop color?: Any color from the library
+ * @prop highlighterStyle?: CSSProperties
+ * @prop hideCopyButton?: boolean
+ * @prop tooltipTexts?: { copy?: string; copied?: string } => only if hideCopyButton is not set to true
+ * @prop icons?: { copy?: string | JSX.Element; copied?: string | JSX.Element }
+ * @prop iconsSizes?: { copy?: number; copied?: number }
+ * @prop iconsBaseUrl?: string
  */
 export const CodeContainer = forwardRef<HTMLDivElement, ILibCodeContainer>(
     (

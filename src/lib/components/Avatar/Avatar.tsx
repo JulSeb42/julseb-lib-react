@@ -15,6 +15,18 @@ import type { ILibAvatar } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
+ * @prop size?: number
+ * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop img: string | { src: string; alt: string } => only if letter and icon are not defined
+ * @prop letter?: string => only if img and icon are not defined
+ * @prop icon?: string | JSX.Element => only if img and letter are not defined
+ * @prop iconSize?: number => only if icon is defined
+ * @prop iconBaseUrl?: number => only if icon is defined
+ * @prop backgroundColor?: Any color from the library => only if icon or letter are defined
+ * @prop contentColor?: Any color from the library => only if icon or letter are defined
+ * @prop badge?: boolean | number | { content?: number; contentColor?: Any color from the library; backgroundColor?: Any color from the library; position?: LibAvatarBadgePosition; size?: number; padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }; outline?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library } }
+ * @prop containerStyle?: CSSProperties
  */
 export const Avatar = forwardRef<HTMLSpanElement, ILibAvatar>(
     (

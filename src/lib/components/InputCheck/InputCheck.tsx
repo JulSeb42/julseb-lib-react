@@ -22,6 +22,15 @@ import type { ILibInputCheck } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop id: string
+ * @prop label: ReactChildren
+ * @prop validation?: boolean | undefined
+ * @prop variant?: "tile" | "toggle" | "selector"
+ * @prop containerStyle?: CSSProperties
+ * @prop type?: "checkbox" | "radio"
+ * @prop iconCheck?: string | JSX.Element => only if type is set to checkbox
+ * @prop iconCheckSize?: number => only if type is set to checkbox
+ * @prop iconBaseUrl?: string => only if type is set to checkbox
  */
 export const InputCheck = forwardRef<HTMLInputElement, ILibInputCheck>(
     (

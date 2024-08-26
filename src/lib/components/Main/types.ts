@@ -7,13 +7,13 @@ interface ILibMainBase extends LibComponentBase<HTMLDivElement> {
 }
 
 interface MainWithSize extends ILibMainBase {
-    size?: Extract<LibMainSize, "default" | "large" | "form" | number>
+    size?: Exclude<LibMainSize, "full">
     contentSize?: never
 }
 
 interface MainWithFullPage extends ILibMainBase {
     size?: Extract<LibMainSize, "full">
-    contentSize?: Extract<LibMainSize, "default" | "large" | "form" | number>
+    contentSize?: Exclude<LibMainSize, "full">
 }
 
 export type ILibMain = MainWithSize | MainWithFullPage

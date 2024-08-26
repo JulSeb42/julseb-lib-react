@@ -6,7 +6,6 @@ import type {
     ILibBackgroundImage,
     ILibBorder,
     ILibRadius,
-    ILibPadding,
     CssCursor,
     ILibBoxShadow,
     LibAllColors,
@@ -19,7 +18,6 @@ export type ILibCard = LibComponentBase<HTMLDivElement> &
     ILibFlexbox & {
         border?: ILibBorder
         borderRadius?: ILibRadius
-        padding?: ILibPadding
         cursor?: CssCursor
         width?: string | number
         height?: string | number

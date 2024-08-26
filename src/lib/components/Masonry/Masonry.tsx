@@ -14,6 +14,9 @@ import type { ILibMasonry } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop children?: Array<ReactNode>
+ * @prop col?: number
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
  */
 export const Masonry = forwardRef<HTMLDivElement, ILibMasonry>(
     (

@@ -14,6 +14,44 @@ import type { ILibButtonGroup } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop buttons: Array<LibButtonGroupButtonItem> => only if toggles is not defined
+ * @prop name?: string => required when toggles is defined
+ * @prop toggles: Array<LibButtonGroupToggle> => only if buttons is not defined
+ * @prop toggleType?: "single" | "multi" => only if toogles is defined
+ * @prop color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop variant?: "plain" | "transparent" | "ghost"
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop size?: "default" | "small"
+ * @prop iconBaseUrl?: string
+ *
+ * @type LibButtonGroupButtonItem
+ * @prop onClick?: void => only if `to` or `href` are not defined
+ * @prop disabled?: boolean => only if `onClick` is defined
+ * @prop to?: string => only if `onClick` and `href` are not defined
+ * @prop href?: string => only if `onClick` and `to` are not defined
+ * @prop blank?: boolean => only if `to` or `href` are defined
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop text: string => only if `iconOnly` is not defined
+ * @prop iconLeft?: string | JSX.Element
+ * @prop iconRight?: string | JSX.Element
+ * @prop iconOnly: string | JSX.Element => only if `text` is not defined
+ * @prop iconSizes?: { left?: number; right?: number; only?: number }
+ * @prop "aria-label"?: string
+ *
+ * @type LibButtonGroupToggle
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop text: string => only if icon is not defined
+ * @prop icon: string | JSX.Element => only if text is not defined
+ * @prop iconSize?: number => only if text is not defined
+ * @prop label?: string => only if text is not defined
+ * @prop tooltip?: string => only if text is not defined
+ * @prop showTooltip?: boolean => only if text is not defined
  */
 export const ButtonGroup = forwardRef<HTMLDivElement, ILibButtonGroup>(
     (

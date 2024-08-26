@@ -23,6 +23,18 @@ import type {
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop logo: LibHeaderLogo
+ * @prop links: Array<LibHeaderLink> => only if children is not defined
+ * @prop children?: ReactChildren => only if links is not defined
+ * @prop variant?: LibHeaderVariant
+ * @prop burgerPosition?: LibNavBurgerPosition
+ * @prop burgerColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" { closed: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"; open: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" }
+ * @prop navDesktopVariant?: LibNavBurgerPosition
+ * @prop navMobileVariant?: LibNavMobileVariant
+ * @prop enableScrollingOpen?: boolean
+ * @prop search?: { pathname: string; queries?: Array<Array<string>>; iconLeft?: string | JSX.Element; iconLeftSize?: number; iconClear?: string | JSX.Element; iconClearSize?: number; iconBaseUrl?: string; placeholder?: string; keyboardShortcut?: Array<string>; showKeys?: boolean; inputBackground?: "light" | "dark"; maxWidth?: string | number; inputVariant?: "rounded" | "pill" }
+ * @prop position?: LibHeaderPosition
+ * @prop hideOnScroll?: boolean | number => only if position is set to fixed
  */
 export const Header = forwardRef<HTMLDivElement, ILibHeader>(
     (

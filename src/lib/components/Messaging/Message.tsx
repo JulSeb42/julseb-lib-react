@@ -19,6 +19,26 @@ import type { ILibMessage } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop type: "sent" | "received"
+ * @prop text: string => only if children is not defined
+ * @prop children?: ReactChildren => only if text is not defined
+ * @prop id?: string
+ * @prop date?: Date | string
+ * @prop textToday?: string => only if date is defined
+ * @prop textYesterday?: string => only if date is defined
+ * @prop dateFormat?: "short" | "long" => only if date is defined
+ * @prop time?: string
+ * @prop inline?: boolean
+ * @prop flexDirection?: CssFlexDirection
+ * @prop flexWrap?: CssFlexWrap
+ * @prop justifyContent?: CssJustifyContent
+ * @prop alignItems?: CssAlignItems
+ * @prop justifyItems?: CssJustifyItems
+ * @prop alignContent?: CssAlignContent
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export const Message = forwardRef<HTMLDivElement, ILibMessage>(
     (

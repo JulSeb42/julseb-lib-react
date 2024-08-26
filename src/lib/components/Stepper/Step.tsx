@@ -16,6 +16,19 @@ import type { ILibStep } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLSpanElement>
+ * @prop direction?: "column" | "row"
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop isActive?: boolean
+ * @prop isDone?: boolean
+ * @prop iconActive?: string | JSX.Element
+ * @prop iconActiveSize?: number
+ * @prop number?: number
+ * @prop iconBaseUrl?: string
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export const Step = forwardRef<HTMLSpanElement, ILibStep>(
     (

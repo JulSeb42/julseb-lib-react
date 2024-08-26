@@ -174,30 +174,30 @@ type LinkHref = { to?: never; href?: string }
 
 /**
  * @description Props for links
- * @prop to?: string => only if `href` is not defined
- * @prop href?: string => only if `to` is not defined
+ * @prop to?: string => only if href is not defined
+ * @prop href?: string => only if to is not defined
  */
 export type LibLink = LinkTo | LinkHref
 
 /**
- * @description Props for links, `to` or `href` are required
- * @prop to?: string => only if `href` is not defined
- * @prop href?: string => only if `to` is not defined
+ * @description Props for links, to or href are required
+ * @prop to?: string => only if href is not defined
+ * @prop href?: string => only if to is not defined
  */
 export type LibLinkRequired = RequireAtLeastOne<LibLink, "to" | "href">
 
 /**
  * @description Props for links
- * @prop to?: string => only if `href` is not defined
- * @prop href?: string => only if `to` is not defined
+ * @prop to?: string => only if href is not defined
+ * @prop href?: string => only if to is not defined
  * @prop blank?: boolean
  */
 export type LibLinkBlank = LibLink & { blank?: boolean }
 
 /**
- * @description Props for links, `to` or `href` are required
- * @prop to?: string => only if `href` is not defined
- * @prop href?: string => only if `to` is not defined
+ * @description Props for links, to or href are required
+ * @prop to?: string => only if href is not defined
+ * @prop href?: string => only if to is not defined
  * @prop blank?: boolean
  */
 export type LibLinkBlankRequired = LibLinkRequired & { blank?: boolean }
@@ -225,10 +225,10 @@ type LibButtonLinkHref = {
 
 /**
  * @description Props for buttons and links
- * @prop onClick?: void => only if `to` or `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` and `href` are not defined
- * @prop href?: string => only if `onClick` and `to` are not defined
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
  */
 export type LibButtonLink =
     | LibButtonLinkClick
@@ -236,11 +236,11 @@ export type LibButtonLink =
     | LibButtonLinkHref
 
 /**
- * @description Props for buttons and links, `onClick`, `to` or `href` are required
- * @prop onClick?: void => only if `to` or `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` and `href` are not defined
- * @prop href?: string => only if `onClick` and `to` are not defined
+ * @description Props for buttons and links, onClick, to or href are required
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
  */
 export type ButtonLinkRequired = RequireAtLeastOne<
     LibButtonLink,
@@ -249,11 +249,11 @@ export type ButtonLinkRequired = RequireAtLeastOne<
 
 /**
  * @description Props for buttons and links
- * @prop onClick?: void => only if `to` or `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` and `href` are not defined
- * @prop href?: string => only if `onClick` and `to` are not defined
- * @prop blank?: boolean => only if `to` or `href` are defined
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export type LibButtonLinkBlank =
     | (LibButtonLinkClick & { blank?: never })
@@ -261,12 +261,12 @@ export type LibButtonLinkBlank =
     | (LibButtonLinkHref & { blank?: boolean })
 
 /**
- * @description Props for buttons and links, `onClick`, `to` or `href` are required
- * @prop onClick?: void => only if `to` or `href` are not defined
- * @prop disabled?: boolean => only if `onClick` is defined
- * @prop to?: string => only if `onClick` and `href` are not defined
- * @prop href?: string => only if `onClick` and `to` are not defined
- * @prop blank?: boolean => only if `to` or `href` are defined
+ * @description Props for buttons and links, onClick, to or href are required
+ * @prop onClick: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to: string => only if onClick and href are not defined
+ * @prop href: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export type LibButtonLinkBlankRequired = RequireAtLeastOne<
     LibButtonLinkBlank,
@@ -439,3 +439,4 @@ export type LibTimepickerHours = keyof typeof typeValues.hours
 export type LibTimepickerHalfTimes = keyof typeof typeValues.halfHours
 export type LibTimepickerQuarterTimes = keyof typeof typeValues.quarterHours
 export type LibTimepickerMinutes = keyof typeof typeValues.minutes
+export type LibMessagingDateFormat = keyof typeof typeValues.messagingDateFormats

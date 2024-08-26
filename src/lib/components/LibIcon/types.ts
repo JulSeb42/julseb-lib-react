@@ -5,4 +5,5 @@ import type { LibIcon as LibIconType } from "../../types"
 
 export interface ILibLibIcon extends Omit<ILibIcon, "src"> {
     icon: LibIconType
+    baseUrl: string | undefined
 }

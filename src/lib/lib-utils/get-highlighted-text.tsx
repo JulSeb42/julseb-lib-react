@@ -3,16 +3,17 @@
 import { Fragment, type CSSProperties } from "react"
 import { uuid, slugify } from "ts-utils-julseb"
 import { Text } from ".."
+import type { ReactChildren } from "../types"
 
 export const getHighlightedText = (
-    text: string,
+    text: ReactChildren,
     value: string,
     className?: string,
     styles?: CSSProperties
 ) => {
-    const parts = text.split(new RegExp(`(${value})`, "gi"))
+    const parts = text?.toString().split(new RegExp(`(${value})`, "gi"))
 
-    return parts.map(part => (
+    return (parts as Array<string>).map(part => (
         <Fragment key={uuid()}>
             {slugify(part) === slugify(value) ? (
                 <Text

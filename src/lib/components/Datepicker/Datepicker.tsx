@@ -25,6 +25,30 @@ import type { ILibDatepicker } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop value: string
+ * @prop setValue: Dispatch<SetStateAction<string>>
+ * @prop minDate?: string
+ * @prop maxDate?: string
+ * @prop texts?: { weekDays?: { mon?: string; tue?: string; wed?: string; etc. }; months?: { jan?: string; feb?: string; mar?: string; etc. } }
+ * @prop icons?: { prev?: string | JSX.Element; next?: string | JSX.Element; calendar?: string | JSX.Element; left?: string | JSX.Element }
+ * @prop iconsSizes?: { prev?: number; next?: number; calendar?: number; left?: number }
+ * @prop iconsBaseUrl?: string
+ * @prop calendarDirection?: "up" | "down"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop disabled?: boolean
+ * @prop tabIndex?: number
+ * @prop prefix?: string | JSX.Element
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
+ * @prop inputAndListContainerStyle?: CSSProperties
+ * @prop id?: string
  */
 export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
     (
@@ -92,6 +116,8 @@ export const Datepicker = forwardRef<HTMLInputElement, ILibDatepicker>(
                 iconBaseUrl={iconBaseUrl}
                 style={containerStyle}
                 hasListOpen={isOpen}
+                counter={undefined}
+                maxLength={undefined}
             >
                 <InputAndListContainer
                     data-testid={testid}

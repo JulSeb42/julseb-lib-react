@@ -5,7 +5,7 @@ type BreadcrumbItem = {
     to?: string
 }
 
-export const breadcrumbsItems: Array<BreadcrumbItem> = [
+export const items: Array<BreadcrumbItem> = [
     {
         text: "Link",
         to: "/",

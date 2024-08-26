@@ -9,6 +9,13 @@ import type { ILibInputIconContainer } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
+ * @prop icon: string | JSX.Element | undefined
+ * @prop iconSize: number | undefined
+ * @prop iconBaseUrl: string | undefined
+ * @prop validationStatus: boolean | undefined
+ * @prop disabled: boolean | undefined
+ * @prop inputBackground: "light" | "dark" | undefined
+ * @prop inputVariant: "rounded" | "pill" | undefined
  */
 export function InputIcon({
     "data-testid": testid,

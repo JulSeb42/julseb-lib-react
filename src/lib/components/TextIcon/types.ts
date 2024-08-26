@@ -9,12 +9,12 @@ import type {
 } from "../../types"
 import type { ILibText } from "../Text/types"
 
-export type ILibTextIcon = ILibText & {
-    textAs?: ElementType
-    tag?: LibTextIconTag
+export type ILibTextIcon = Omit<ILibText, "tag"> & {
     icon: LibIcon
     iconColor?: LibAllColors
     iconSize?: number
+    textAs?: ElementType
+    tag?: LibTextIconTag
     iconBaseUrl?: string
     gap?: LibSpacers
     containerStyle?: CSSProperties

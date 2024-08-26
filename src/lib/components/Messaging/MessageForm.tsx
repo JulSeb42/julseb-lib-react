@@ -20,6 +20,12 @@ import { roundIconSize } from "../../lib-utils"
  * @extends HTMLFormElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLFormElement>
+ * @prop inputHeight: number
+ * @prop setInputHeight: Dispatch<SetStateAction<number>>
+ * @prop handleSubmit: () => void
+ * @prop input: { message: string; setMessage: Dispatch<SetStateAction<string>>; placeholder?: string; autoFocus?: boolean }
+ * @prop button?: { icon?: string | JSX.Element => only if text is not defined; text?: string => only if icon is not defined }
+ * @prop iconBaseUrl?: string
  */
 export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
     (
@@ -31,6 +37,7 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
             button,
             inputHeight,
             setInputHeight,
+            iconBaseUrl,
             ...rest
         },
         ref
@@ -104,6 +111,7 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
                         variant="transparent"
                         disabled={!input.message.length}
                         noPadding
+                        iconBaseUrl={iconBaseUrl}
                     >
                         {button.text}
                     </Button>
@@ -126,6 +134,7 @@ export const MessageForm = forwardRef<HTMLFormElement, ILibMessageForm>(
                         disabled={!input.message.length}
                         size={32}
                         variant="transparent"
+                        iconBaseUrl={iconBaseUrl}
                         showBackgroundHover
                     />
                 )}

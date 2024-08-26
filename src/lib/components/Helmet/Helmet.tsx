@@ -9,6 +9,16 @@ const helmetData = new HelmetData({})
  * @description Returns a Helmet component
  * @link https://documentation-components-react.vercel.app/components/helmet
  * @extends HelmetProps => imported from react-helmet-async
+ * @prop title: string
+ * @prop favicon?: string
+ * @prop description?: string
+ * @prop keywords?: string | Array<string>
+ * @prop author?: string
+ * @prop type?: string
+ * @prop cover?: string
+ * @prop siteName?: string
+ * @prop language?: string
+ * @prop children?: ReactChildren
  */
 export function Helmet({
     title,

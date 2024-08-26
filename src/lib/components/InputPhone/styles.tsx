@@ -25,9 +25,9 @@ const CountryButton = styled.button<{
     height: 100%;
     background-color: transparent;
     border-radius: 0;
-    padding: 0;
     border: none;
     color: ${({ theme }) => theme.FONT};
+    ${"" /* padding: 0 ${SPACERS.XS}; */}
     width: calc(32px + ${SPACERS.XS} + ${SPACERS.XS});
     ${Mixins.Flexbox({
         $alignItems: "center",
@@ -75,6 +75,7 @@ const CountryCode = styled.span<{
     height: 100%;
     cursor: ${({ $disabled }) => ($disabled ? "not-allowed" : "default")};
     color: ${({ theme }) => theme.FONT};
+    padding-right: ${SPACERS.XS};
     ${Mixins.Flexbox({
         $alignItems: "center",
     })}

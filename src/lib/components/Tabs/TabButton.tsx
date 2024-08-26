@@ -12,6 +12,10 @@ import type { ILibTabButton } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLButtonElement>
+ * @prop isActive: boolean
+ * @prop onClick: () => void
+ * @prop justify?: "start" | "stretch"
+ * @prop variant?: "basic" | "rounded"
  */
 export const TabButton = forwardRef<HTMLButtonElement, ILibTabButton>(
     (

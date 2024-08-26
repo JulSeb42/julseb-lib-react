@@ -7,19 +7,7 @@ import { typeValues } from "../lib/types"
 
 export function Generate() {
     const propsDoc = replaceTypes([
-        "legend: string",
-        "flexDirection?: CssFlexDirection",
-        "flexWrap?: CssFlexWrap",
-        "justifyContent?: CssJustifyContent",
-        "alignItems?: CssAlignItems",
-        "justifyItems?: CssJustifyItems",
-        "alignContent?: CssAlignContent",
-        "gap?: LibSpacers",
-        "columnGap?: LibSpacers",
-        "rowGap?: LibSpacers",
-        "padding?: ILibPadding",
-        "border?: ILibBorder",
-        "borderRadius?: ILibRadius",
+        "aspectRatio?: string",
     ])
 
     // const pickProps = [
@@ -289,152 +277,179 @@ function replaceTypes(arr: Array<string>) {
 
         //
 
-        return str
-            .replaceAll("LibSpacers", mappedSpacers)
-            .replaceAll(
-                "LibIconMenuDirection",
-                mapValues(typeValues.iconMenuDirections)
-            )
-            .replaceAll("ILibPosition", '"relative" | "absolute" | "fixed"')
-            .replaceAll(
-                "LibButtonIconVariant",
-                '"plain" | "transparent" | "ghost"'
-            )
-            .replaceAll("LibIconMenuIcon", mapValues(typeValues.iconMenuIcon))
-            .replaceAll("LibColorsShort", mappedColorsShort)
-            .replaceAll("LibAllColorsAndOverlays", allColorsAndOverlaysDesc)
-            .replaceAll("LibAllColors", allColorsDesc)
-            .replaceAll("LibIcon", "string | JSX.Element")
-            .replaceAll(
-                "ILibPadding",
-                `${mappedSpacers} | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
-            )
-            .replaceAll(
-                "ILibRadius",
-                `${mappedRadiuses} | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }`
-            )
-            .replaceAll(
-                "ILibBorder",
-                `{ style?: CssBorderStyle; width?: ${mappedSpacers}; color?: ${allColorsDesc} }`
-            )
-            .replaceAll(
-                "LibAccordionIcon",
-                `${mappedAccordionIcons} | JSX.Element`
-            )
-            .replaceAll("LibAccordionVariant", mappedAccordionVariants)
-            .replaceAll("LibAsideSize", `${mappedAsideSizes}`)
-            .replaceAll(
-                "LibAccordionItem",
-                '{ "data-testid"?: string; className?: string; title: string; content?: string | ReactChildren; defaultOpen?: boolean; ref?: ForwardedRef<HTMLDivElement> }'
-            )
-            .replaceAll("LibInputListDirection", mappedListDirection)
-            .replaceAll("LibBreadcrumbSeparator", mappedBreadcrumbsSeparators)
-            .replaceAll(
-                "LibColorsHoverAndCurrent",
-                ` ${mappedColorsHoverAndCurrent} | "currentColor"`
-            )
-            .replaceAll("LibColorsHover", mappedColorsHover)
-            .replaceAll(
-                "ILibBoxShadow",
-                `${mappedShadows} | { default: LibShadows; hover: LibShadows; active: LibShadows }`
-            )
-            .replaceAll("LibButtonSize", mappedButtonSizes)
-            .replaceAll("LibButtonVariant", mappedButtonVariants)
-            .replaceAll(
-                "LibLoaderVariant",
-                mappedLoaderVariants.replaceAll('"', "")
-            )
-            .replaceAll(
-                "LibBreadcrumbItem",
-                "LibButtonLinkBlank & { text: string | JSX.Element }"
-            )
-            .replaceAll("LibButtonIconVariant", mappedButtonIconVariants)
-            .replaceAll(
-                "ILibBackgroundImage",
-                "{ img: string; clip?: CssBackgroundClip; origin?: CssBackgroundOrigin; position?: CssBackgroundPosition; repeat?: CssBackgroundRepeat; size?: CssBackgroundSize }"
-            )
-            .replaceAll("Property.", "Css")
-            .replaceAll("ILibMargin", mappedInterfaceMargin)
-            .replaceAll(
-                "LibImageBackgroundOverlay",
-                'Any color or overlay from the library, except "gradient-black" | "gradient-white"'
-            )
-            .replaceAll("LibValidationStatus", "boolean | undefined")
-            .replaceAll("LibInputCheckVariant", mappedInputCheckVariants)
-            .replaceAll("LibInputBackground", mappedInputBackgrounds)
-            .replaceAll("LibInputVariant", mappedInputVariants)
-            .replaceAll(
-                "ValidationHelper",
-                "{ status: boolean | undefined; message: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number }"
-            )
-            .replaceAll(
-                "CountryCode",
-                "Any Alpha-2 Code from https://www.iban.com/country-codes"
-            )
-            .replaceAll(
-                "LibCountry",
-                "name: string; dial_code: string; code: CountryCode; flag: string"
-            )
-            .replaceAll("LibKeySize", mappedKeySizes)
-            .replaceAll("LibMainSize", mappedMainSizes)
-            .replaceAll("LibSkeletonAnimation", mappedSkeletonAnimations)
-            .replaceAll("LibStepperDirection", mappedStepperDirections)
-            .replaceAll("LibFontSizes", mappedLibFontSizes)
-            .replaceAll(
-                "LibTextTag",
-                `${mappedTextDisplayTags} | ${mappedTextTag}`
-            )
-            .replaceAll(
-                "LibTextIconTag",
-                ["h1", "h2", "h3", "h4", "h5", "h6", "p", "small", "blockquote"]
-                    .map(v => `"${v}"`)
-                    .join(" | ")
-            )
-            .replaceAll("LibToastStatus", mappedToastStatus)
-            .replaceAll(
-                "LibToasterPosition",
-                mapValues(typeValues.toasterPositions)
-            )
-            .replaceAll(
-                "LibTooltipTrigger",
-                mapValues(typeValues.tooltipTriggers)
-            )
-            .replaceAll(
-                "LibTooltipPosition",
-                mapValues(typeValues.tooltipPositions)
-            )
-            .replaceAll("LibShadows", mapValues(typeValues.shadows))
-            .replaceAll("LibOverlays", mapValues(typeValues.overlays))
-            .replaceAll("LibTransitions", mapValues(typeValues.transitions))
-            .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
-            .replaceAll("LibTabJustify", mapValues(typeValues.tabsJustify))
-            .replaceAll("LibTabVariant", mapValues(typeValues.tabsVariants))
-            .replaceAll(
-                "LibSlideshowPaginationPosition",
-                mapValues(typeValues.slideshowPaginationPosition)
-            )
-            .replaceAll(
-                "LibSlideshowPagination",
-                mapValues(typeValues.slideshowPagination)
-            )
-            .replaceAll("LibMessageType", mapValues(typeValues.messageType))
-            .replaceAll(
-                "LibMdEditorEditor",
-                mapValues(typeValues.markdownEditorEditor)
-            )
-            .replaceAll(
-                "LibPositionExtract",
-                '"relative" | "absolute" | "fixed"'
-            )
-            .replaceAll(
-                "LibFooterLinksSeparator",
-                mapValues(typeValues.footerSeparators)
-            )
-            .replaceAll(
-                "LibFooterDirection",
-                mapValues(typeValues.footerDirections)
-            )
-            .replaceAll(`"data-testid"`, "data-testid")
-            .replaceAll("string | JSX.ElementMenuItem", "LibIconMenuItem")
+        return (
+            str
+                .replaceAll("LibSpacers", mappedSpacers)
+                .replaceAll(
+                    "LibIconMenuDirection",
+                    mapValues(typeValues.iconMenuDirections)
+                )
+                .replaceAll("ILibPosition", '"relative" | "absolute" | "fixed"')
+                .replaceAll(
+                    "LibButtonIconVariant",
+                    '"plain" | "transparent" | "ghost"'
+                )
+                .replaceAll(
+                    "LibIconMenuIcon",
+                    mapValues(typeValues.iconMenuIcon)
+                )
+                .replaceAll("LibColorsShort", mappedColorsShort)
+                .replaceAll("LibAllColorsAndOverlays", allColorsAndOverlaysDesc)
+                .replaceAll("LibAllColors", allColorsDesc)
+                .replaceAll("LibIcon", "string | JSX.Element")
+                .replaceAll(
+                    "ILibPadding",
+                    `${mappedSpacers} | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
+                )
+                .replaceAll(
+                    "ILibRadius",
+                    `${mappedRadiuses} | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }`
+                )
+                .replaceAll(
+                    "ILibBorder",
+                    `{ style?: CssBorderStyle; width?: ${mappedSpacers}; color?: ${allColorsDesc} }`
+                )
+                .replaceAll(
+                    "LibAccordionIcon",
+                    `${mappedAccordionIcons} | JSX.Element`
+                )
+                .replaceAll("LibAccordionVariant", mappedAccordionVariants)
+                .replaceAll("LibAsideSize", `${mappedAsideSizes}`)
+                // .replaceAll(
+                //     "LibAccordionItem",
+                //     '{ "data-testid"?: string; className?: string; title: string; content?: string | ReactChildren; defaultOpen?: boolean; ref?: ForwardedRef<HTMLDivElement> }'
+                // )
+                .replaceAll("LibInputListDirection", mappedListDirection)
+                .replaceAll(
+                    "LibBreadcrumbSeparator",
+                    mappedBreadcrumbsSeparators
+                )
+                .replaceAll(
+                    "LibColorsHoverAndCurrent",
+                    ` ${mappedColorsHoverAndCurrent} | "currentColor"`
+                )
+                .replaceAll("LibColorsHover", mappedColorsHover)
+                .replaceAll(
+                    "ILibBoxShadow",
+                    `${mappedShadows} | { default: LibShadows; hover: LibShadows; active: LibShadows }`
+                )
+                .replaceAll("LibButtonSize", mappedButtonSizes)
+                .replaceAll("LibButtonVariant", mappedButtonVariants)
+                .replaceAll(
+                    "LibLoaderVariant",
+                    mappedLoaderVariants.replaceAll('"', "")
+                )
+                // .replaceAll(
+                //     "LibBreadcrumbItem",
+                //     "LibButtonLinkBlank & { text: string | JSX.Element }"
+                // )
+                .replaceAll("LibButtonIconVariant", mappedButtonIconVariants)
+                .replaceAll(
+                    "ILibBackgroundImage",
+                    "{ img: string; clip?: CssBackgroundClip; origin?: CssBackgroundOrigin; position?: CssBackgroundPosition; repeat?: CssBackgroundRepeat; size?: CssBackgroundSize }"
+                )
+                .replaceAll("Property.", "Css")
+                .replaceAll("ILibMargin", mappedInterfaceMargin)
+                .replaceAll(
+                    "LibImageBackgroundOverlay",
+                    'Any color or overlay from the library, except "gradient-black" | "gradient-white"'
+                )
+                .replaceAll("LibValidationStatus", "boolean | undefined")
+                .replaceAll("LibInputCheckVariant", mappedInputCheckVariants)
+                .replaceAll("LibInputBackground", mappedInputBackgrounds)
+                .replaceAll("LibInputVariant", mappedInputVariants)
+                .replaceAll(
+                    "LibValidationHelper",
+                    "{ status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }"
+                )
+                .replaceAll(
+                    "CountryCode",
+                    "Any Alpha-2 Code from https://www.iban.com/country-codes"
+                )
+                .replaceAll(
+                    "LibCountry",
+                    "name: string; dial_code: string; code: CountryCode; flag: string"
+                )
+                .replaceAll("LibKeySize", mappedKeySizes)
+                .replaceAll("LibMainSize", mappedMainSizes)
+                .replaceAll("LibSkeletonAnimation", mappedSkeletonAnimations)
+                .replaceAll("LibStepperDirection", mappedStepperDirections)
+                .replaceAll("LibFontSizes", mappedLibFontSizes)
+                .replaceAll(
+                    "LibTextTag",
+                    `${mappedTextDisplayTags} | ${mappedTextTag}`
+                )
+                .replaceAll(
+                    "LibTextIconTag",
+                    [
+                        "h1",
+                        "h2",
+                        "h3",
+                        "h4",
+                        "h5",
+                        "h6",
+                        "p",
+                        "small",
+                        "blockquote",
+                    ]
+                        .map(v => `"${v}"`)
+                        .join(" | ")
+                )
+                .replaceAll("LibToastStatus", mappedToastStatus)
+                .replaceAll(
+                    "LibToasterPosition",
+                    mapValues(typeValues.toasterPositions)
+                )
+                .replaceAll(
+                    "LibTooltipTrigger",
+                    mapValues(typeValues.tooltipTriggers)
+                )
+                .replaceAll(
+                    "LibTooltipPosition",
+                    mapValues(typeValues.tooltipPositions)
+                )
+                .replaceAll("LibShadows", mapValues(typeValues.shadows))
+                .replaceAll("LibOverlays", mapValues(typeValues.overlays))
+                .replaceAll("LibTransitions", mapValues(typeValues.transitions))
+                .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
+                .replaceAll("LibTabJustify", mapValues(typeValues.tabsJustify))
+                .replaceAll("LibTabVariant", mapValues(typeValues.tabsVariants))
+                .replaceAll(
+                    "LibSlideshowPaginationPosition",
+                    mapValues(typeValues.slideshowPaginationPosition)
+                )
+                .replaceAll(
+                    "LibSlideshowPagination",
+                    mapValues(typeValues.slideshowPagination)
+                )
+                .replaceAll("LibMessageType", mapValues(typeValues.messageType))
+                .replaceAll(
+                    "LibMdEditorEditor",
+                    mapValues(typeValues.markdownEditorEditor)
+                )
+                .replaceAll(
+                    "LibPositionExtract",
+                    '"relative" | "absolute" | "fixed"'
+                )
+                .replaceAll(
+                    "LibFooterLinksSeparator",
+                    mapValues(typeValues.footerSeparators)
+                )
+                .replaceAll(
+                    "LibFooterDirection",
+                    mapValues(typeValues.footerDirections)
+                )
+                .replaceAll(`"data-testid"`, "data-testid")
+                .replaceAll("string | JSX.ElementMenuItem", "LibIconMenuItem")
+                .replaceAll("LibInputPrefixAndSuffix", "string | JSX.Element")
+                .replaceAll(
+                    "LibDrawerPosition",
+                    mapValues(typeValues.drawerPositions)
+                )
+                .replaceAll(
+                    "LibValueInputPin",
+                    '{ [n: number]: number | "" | undefined }'
+                )
+        )
     })
 }

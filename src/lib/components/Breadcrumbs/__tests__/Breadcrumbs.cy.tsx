@@ -1,7 +1,7 @@
 /*=============================================== Breadcrumbs tests ===============================================*/
 
 import { Breadcrumbs, LIB_TOKENS } from "../../.."
-import { breadcrumbsItems } from "./data"
+import { items } from "./data"
 
 describe("<Breadcrumbs />", () => {
     it("renders <Breadcrumbs /> component", () => {
@@ -9,7 +9,7 @@ describe("<Breadcrumbs />", () => {
             <Breadcrumbs
                 data-testid="testid"
                 className="className"
-                breadcrumbsItems={breadcrumbsItems}
+                items={items}
             />
         )
         cy.dataTest().should("exist").should("have.class", "className")
@@ -26,7 +26,7 @@ describe("<Breadcrumbs />", () => {
             <Breadcrumbs
                 data-testid="testid"
                 separator="chevron"
-                breadcrumbsItems={breadcrumbsItems}
+                items={items}
             />
         )
 
@@ -44,7 +44,7 @@ describe("<Breadcrumbs />", () => {
                 activeColor="success"
                 separatorColor="warning"
                 gap="xl"
-                breadcrumbsItems={breadcrumbsItems}
+                items={items}
             />
         )
         cy.dataTest("testid.Link.0").should(

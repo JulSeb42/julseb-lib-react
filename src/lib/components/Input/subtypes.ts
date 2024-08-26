@@ -130,7 +130,7 @@ export type ILibSelectInput = Omit<
     SelectHTMLAttributes<HTMLSelectElement>,
     "prefix"
 > &
-    Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
+    Omit<ILibExtendedInputBase, "inputAndListContainerStyle" | "children"> &
     ILibInputIcon &
     ILibInputNoFocusKeys & {
         type: "select"

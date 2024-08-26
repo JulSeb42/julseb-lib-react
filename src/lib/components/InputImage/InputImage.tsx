@@ -13,6 +13,21 @@ import type { ILibInputImage } from "./types"
  * @extends HTMLInputElement
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement>
+ * @prop id: string
+ * @prop value: string
+ * @prop width?: string | number
+ * @prop height?: string | number
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop icons?: { empty?: string | JSX.Element; hover?: string | JSX.Element }
+ * @prop iconSizes?: { empty?: number; hover?: number }
+ * @prop iconBaseUrl?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop containerStyle?: CSSProperties
  */
 export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
     (
@@ -70,6 +85,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                 value={undefined}
                 iconBaseUrl={iconBaseUrl}
                 style={containerStyle}
+                hasListOpen={undefined}
             >
                 <StyledInputImage
                     data-testid={

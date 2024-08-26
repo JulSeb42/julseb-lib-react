@@ -13,6 +13,16 @@ import type { ILibDropdownItem } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLButtonElement & HTMLAnchorElement>
+ * @prop onClick: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to: string => only if onClick and href are not defined
+ * @prop href: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop icon?: string | JSX.Element
+ * @prop iconSize?: number => only if icon is defined
+ * @prop iconBaseUrl?: string => only if icon is defined
  */
 export const DropdownItem = forwardRef<
     HTMLButtonElement & HTMLAnchorElement,

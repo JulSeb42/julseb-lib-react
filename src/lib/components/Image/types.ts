@@ -29,11 +29,13 @@ interface ImageWithCaption extends ILibImageBase {
               as?: ElementType
           }
     containerStyle?: CSSProperties
+    containerAs?: ElementType
 }
 
 interface ImageWithoutCaption extends ILibImageBase {
     caption?: undefined
     containerStyle?: never
+    containerAs?: never
 }
 
 export type ILibImage = ImageWithCaption | ImageWithoutCaption

@@ -14,6 +14,19 @@ import type { ILibDrawer } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop isOpen: boolean
+ * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
+ * @prop position?: "left" | "right"
+ * @prop enableScrollingOpen?: boolean
+ * @prop disableEsc?: boolean
+ * @prop backgroundColor?: Any color from the library
+ * @prop contentColor?: Any color from the library
+ * @prop linksColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop width?: string | number
+ * @prop zIndex?: number
+ * @prop overlayColor?: Any color or overlay from the library
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export const Drawer = forwardRef<HTMLDivElement, ILibDrawer>(
     (

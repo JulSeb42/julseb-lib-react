@@ -9,6 +9,13 @@ import type { ILibInputWrapper } from "../types"
  * @access Only for building library, do not export
  * @prop data-testid: string | undefined
  * @prop className: string | undefined
+ * @prop hasContainer: boolean | undefined
+ * @prop hasListOpen: boolean | undefined
+ * @prop isTextArea: boolean
+ * @prop inputBackground: "light" | "dark" | undefined
+ * @prop inputVariant: "rounded" | "pill" | undefined
+ * @prop validationStatus: boolean | undefined
+ * @prop children?: ReactChildren
  */
 export function InputWrapper({
     "data-testid": testid,

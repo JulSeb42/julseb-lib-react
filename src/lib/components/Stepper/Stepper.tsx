@@ -13,11 +13,27 @@ import type { ILibStepper } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop steps: Array<LibStep> => only if children is not defined
+ * @prop children?: ReactChildren => only if steps is not defined
+ * @prop direction?: "column" | "row"
+ * @prop activeStep?: number
+ * @prop iconActive?: string | JSX.Element
+ * @prop iconActiveSize?: number
+ * @prop iconBaseUrl?: string
+ * @prop accentColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
  *
  * @type LibStep
  * @extends LibButtonLinkBlank
  * @prop data-testid?: string
  * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop text: string
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export const Stepper = forwardRef<HTMLDivElement, ILibStepper>(
     (

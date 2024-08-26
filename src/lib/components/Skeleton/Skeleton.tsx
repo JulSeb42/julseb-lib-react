@@ -11,6 +11,15 @@ import type { ILibSkeleton } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop width?: string | number
+ * @prop maxWidth?: string | number
+ * @prop height?: string | number
+ * @prop backgroundColor?: Any color from the library
+ * @prop aspectRatio?: string
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop flex?: string | number
+ * @prop flexGrow?: string | number
+ * @prop animation?: "pulse" | "shine"
  */
 export const Skeleton = forwardRef<HTMLDivElement, ILibSkeleton>(
     (

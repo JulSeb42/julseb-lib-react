@@ -19,6 +19,23 @@ const BUTTON_LABEL = "Close modal"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop isOpen: boolean
+ * @prop setIsOpen: Dispatch<SetStateAction<boolean>>
+ * @prop disableEsc?: boolean
+ * @prop contentWidth?: string | number
+ * @prop contentId?: string
+ * @prop hideCloseButton?: boolean
+ * @prop buttonClose?: { icon?: string | JSX.Element; color?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"; size?: number; variant?: "plain" | "ghost" | "transparent"; label?: string } => only if hideCloseButton is not set to true
+ * @prop flexDirection?: CssFlexDirection
+ * @prop flexWrap?: CssFlexWrap
+ * @prop justifyContent?: CssJustifyContent
+ * @prop alignItems?: CssAlignItems
+ * @prop justifyItems?: CssJustifyItems
+ * @prop alignContent?: CssAlignContent
+ * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop columnGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop rowGap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export const Modal = forwardRef<HTMLDivElement, ILibModal>(
     (

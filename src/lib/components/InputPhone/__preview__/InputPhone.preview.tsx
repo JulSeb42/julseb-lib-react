@@ -20,10 +20,17 @@ export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
         "ILibInputBase",
         "ILibInputValidationIconComponent",
     ],
-    previews: [{ previewTitle: "Default", demo: <InputPhoneDemo /> }],
+    previews: [
+        {
+            previewTitle: "Default",
+            demo: <InputPhoneDemo />,
+        },
+    ],
 }
 
-function InputPhoneDemo() {
+function InputPhoneDemo(
+    props: Omit<ILibInputPhone, "selectedCountry" | "setSelectedCountry">
+) {
     const [selectedCountry, setSelectedCountry] = useState<
         LibCountry | undefined
     >(undefined)
@@ -51,6 +58,7 @@ function InputPhoneDemo() {
                 }}
             >
                 <InputPhone
+                    {...props}
                     id="phone"
                     selectedCountry={selectedCountry}
                     setSelectedCountry={setSelectedCountry}

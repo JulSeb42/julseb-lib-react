@@ -16,6 +16,27 @@ import type { ILibListGroup } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop items: Array<LibListGroupItem> => only if children is not defined
+ * @prop children?: ReactChildren => only if items is not defined
+ * @prop title?: string | { text: string; backgroundColor?: Any color from the library; contentColor?: Any color from the library; isFixed?: boolean; id?: string; className?: string; ref?: ForwardedRef<HTMLDivElement>; shadowOnScroll?: "xxl" | "xl" | "l" | "m" | "s" | "xs" }
+ * @prop noSeparator?: boolean
+ * @prop showNumbers?: boolean
+ * @prop maxHeight?: number | string
+ *
+ * @type LibListGroupItem
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLLIElement>
+ * @prop text: string
+ * @prop subtext?: string
+ * @prop badge?: boolean | { icon?: string | JSX.Element => only if `number` is not defined; number?: number => only if `icon` is not defined; backgroundColor?: LibAllColors; contentColor?: LibAllColors } => only if `date` is not defined
+ * @prop date?: string | Date => only if `badge` is not defined
+ * @prop onClick?: void => only if to or href are not defined
+ * @prop disabled?: boolean => only if onClick is defined
+ * @prop to?: string => only if onClick and href are not defined
+ * @prop href?: string => only if onClick and to are not defined
+ * @prop blank?: boolean => only if to or href are defined
  */
 export const ListGroup = forwardRef<HTMLDivElement, ILibListGroup>(
     (

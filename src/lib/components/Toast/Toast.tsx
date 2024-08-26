@@ -24,11 +24,26 @@ const CLOSE_ICON_SIZE = 24
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop title: string
+ * @prop toasterPosition?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+ * @prop toastStyle?: { maxWidth?: string | number; border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library }; backgroundColor?: Any color from the library; textColor?: Any color from the library; shadow?: "xxl" | "xl" | "l" | "m" | "s" | "xs" }
+ * @prop hideCloseButton?: boolean
+ * @prop status?: "success" | "error" | "warning" | "info" | "loading"
+ * @prop options?: LibToastOptions
  *
  * @type LibToastOptions
  * @prop data-testid?: string
  * @prop className?: string
  * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop body?: string | ReactChildren
+ * @prop duration?: number
+ * @prop icons?: { left?: string | JSX.Element; close?: string | JSX.Element }
+ * @prop iconSizes?: { left?: number close?: number }
+ * @prop iconLeftColor?: Any color from the library
+ * @prop labelClose?: string
+ * @prop withTimer?: boolean
+ * @prop timerBackgroundColor?: Any color from the library
  */
 export const Toast = forwardRef<HTMLDivElement, ILibToast>(
     (

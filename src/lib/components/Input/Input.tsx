@@ -58,20 +58,49 @@ const InputFunction = forwardRef<
  * @constant => for all inputs
  * @prop data-testid?: string
  * @prop ref?: ForwardedRef<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+ * @prop type?: "color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "select" | "textarea" | "email" | "number" | "tel" | "text" | "url" | "time"
+ * @prop id?: string
+ * @prop label?: string
+ * @prop labelComment?: string
+ * @prop helper?: string
+ * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
+ * @prop iconBaseUrl?: string
+ * @prop inputBackground?: "light" | "dark"
+ * @prop inputVariant?: "rounded" | "pill"
+ * @prop containerStyle?: CSSProperties
  *
- * @type for type `date` | `datetime-local` | `month` | `week` | `password` | `search` | `email` | `number` | `tel` | `text` | `url` | `time`
+ * @type for type date | datetime-local | month | week | password | search | email | number | tel | text | url | time
+ * @prop icon?: string | JSX.Element
+ * @prop iconSize?: number
+ * @prop prefix?: string | JSX.Element
  *
- * @type for type `date` | `datetime-local` | `month` | `week`
+ * @type for type date | datetime-local | month | week
+ * @prop iconCalendar?: string | JSX.Element
+ * @prop iconCalendarSize?: number
  *
- * @type for type `password`
+ * @type for type password
+ * @prop hideButton?: boolean
+ * @prop button?: { iconShow: string | JSX.Element; iconShowSize?: number; iconHide: string | JSX.Element; iconHideSize?: number; textShow?: string; textHide?: string }
  *
- * @type for type `search`
+ * @type for type search
+ * @prop clearSearch?: MouseEventHandler<HTMLButtonElement>
+ * @prop iconClear?: string | JSX.Element
+ * @prop iconClearSize?: number
+ * @prop focusKeys?: Array<string>
+ * @prop showKeys?: boolean => only if focusKeys is defined
  *
- * @type for type `select`
+ * @type for type select
+ * @prop iconSelect?: string | JSX.Element
+ * @prop iconSelectSize?: number
+ * @prop children?: ReactChildren
  *
- * @type for type `time`
+ * @type for type time
+ * @prop iconClock?: string | JSX.Element
+ * @prop iconClockSize?: number
  *
- * @type for type `email` | `number` | `tel` | `text` | `url`
+ * @type for type email | number | tel | text | url
+ * @prop suffix?: string | JSX.Element
  */
 export const Input = forwardRef<
     HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
@@ -123,6 +152,7 @@ export const Input = forwardRef<
                 className={className}
                 iconBaseUrl={iconBaseUrl}
                 style={containerStyle}
+                hasListOpen={undefined}
             >
                 <InputWrapper
                     data-testid={testid}
@@ -132,6 +162,7 @@ export const Input = forwardRef<
                     inputBackground={inputBackground}
                     inputVariant={inputVariant}
                     validationStatus={validation?.status}
+                    hasListOpen={false}
                 >
                     <InputFunction
                         data-testid={testid}

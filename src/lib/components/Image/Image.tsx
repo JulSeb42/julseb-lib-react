@@ -13,6 +13,13 @@ import type { ILibImage } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLImageElement>
+ * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @prop fit?: CssObjectFit
+ * @prop aspectRatio?: string
+ * @prop fallback?: JSX.Element
+ * @prop caption?: string | { text: string; textColor?: Any color from the library; background?: Any color or overlay from the library, except "gradient-black" | "gradient-white"; as?: ElementType }
+ * @prop containerStyle?: CSSProperties => only if caption is defined
+ * @prop containerAs?: ElementType => only if caption is defined
  */
 export const Image = forwardRef<HTMLImageElement, ILibImage>(
     (
@@ -36,6 +43,7 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
                 />
             ),
             containerStyle,
+            containerAs,
             ...rest
         },
         ref
@@ -61,16 +69,22 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
                 <ImgContainer
                     data-testid={testid}
                     className={className}
+                    style={containerStyle}
+                    as={containerAs}
                     $width={width}
                     $height={height}
                     $borderRadius={borderRadius}
-                    style={containerStyle}
                 >
                     <ImageFunction {...imageProps} />
 
                     <Caption
                         data-testid={testid && `${testid}.Caption`}
                         className={className && "Caption"}
+                        as={
+                            typeof caption === "object" && caption.as
+                                ? caption.as
+                                : "figcaption"
+                        }
                         $backgroundColor={
                             typeof caption === "object" && caption.background
                                 ? caption?.background
@@ -80,11 +94,6 @@ export const Image = forwardRef<HTMLImageElement, ILibImage>(
                             typeof caption === "object" && caption.textColor
                                 ? caption.textColor
                                 : "white"
-                        }
-                        as={
-                            typeof caption === "object" && caption.as
-                                ? caption.as
-                                : "figcaption"
                         }
                     >
                         {typeof caption === "object" ? caption.text : caption}

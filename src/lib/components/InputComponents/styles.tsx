@@ -99,17 +99,12 @@ const CommonLeftAndRight = ({
 
 const StyledInputLeftContainer = styled.span<{
     $disabled: boolean | undefined
-    $withBorder: boolean | undefined
 }>`
-    ${CommonLeftAndRight}
+    ${({ $disabled }) => CommonLeftAndRight({ $disabled, $withBorder: true })}
 
-    ${({ $withBorder }) =>
-        $withBorder &&
-        css`
-            &:after {
-                right: 0;
-            }
-        `}
+    &:after {
+        right: 0;
+    }
 `
 
 /*====================== RightContainer ======================*/

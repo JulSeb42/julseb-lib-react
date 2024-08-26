@@ -17,6 +17,21 @@ import type { ILibMessaging } from "./types"
  * @prop data-testid?: string
  * @prop as?: ElementType
  * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop items: Array<LibMessage>
+ * @prop textDateTime?: string
+ * @prop emptyText?: string
+ * @prop iconScroll?: string | JSX.Element
+ * @prop iconScrollSize?: number
+ *
+ * @type LibMessage
+ * @prop data-testid?: string
+ * @prop className?: string
+ * @prop id?: string
+ * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop type: "sent" | "received"
+ * @prop text: string
+ * @prop date?: Date | string
+ * @prop time?: string
  */
 export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
     (
@@ -24,7 +39,7 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
             "data-testid": testid,
             as,
             className,
-            data,
+            items,
             textDateTime,
             emptyText,
             handleSubmit,
@@ -59,7 +74,7 @@ export const Messaging = forwardRef<HTMLDivElement, ILibMessaging>(
                     className={className && "MessagesList"}
                     emptyText={emptyText}
                 >
-                    {data
+                    {items
                         ?.sort(
                             (a, b) =>
                                 new Date(
