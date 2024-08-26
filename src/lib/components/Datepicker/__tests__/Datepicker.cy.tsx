@@ -9,8 +9,8 @@ describe("<Datepicker />", () => {
         cy.dataTest().click()
         cy.dataTest().should("have.class", "Open")
         cy.dataTest("testid.Calendar.DaysContainer.CalendarDay").eq(0).click()
-        cy.dataTest("testid.DatePickerContainer.SelectedDate.Text").should(
-            "have.text",
+        cy.dataTest("testid.InputWrapper.InputDate").should(
+            "have.value",
             "1 Aug 2024"
         )
         cy.dataTest().should("not.have.class", "Open")

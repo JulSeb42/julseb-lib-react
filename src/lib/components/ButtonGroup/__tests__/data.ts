@@ -7,7 +7,7 @@ import type {
 
 export const buttons: Array<LibButtonGroupButtonItem> = [
     {
-        iconOnly: "arrow-left",
+        icons: { only: "arrow-left" },
         onClick: () => alert("Clicked"),
     },
     {

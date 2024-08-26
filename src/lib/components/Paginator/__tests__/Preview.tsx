@@ -66,8 +66,8 @@ export function PreviewNotEditable() {
                 totalPages={totalPages}
                 data-testid="testid"
                 className="className"
-                isInputEditable={false}
                 texts={{ page: "A", of: "b" }}
+                inputNotEditable
             />
         </>
     )

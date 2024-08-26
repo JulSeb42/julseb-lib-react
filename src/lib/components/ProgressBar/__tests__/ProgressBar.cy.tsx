@@ -50,7 +50,7 @@ describe("<ProgressBar />", () => {
                 data-testid="testid"
                 className="className"
                 value={PROGRESS_VALUE}
-                animated={false}
+                noAnimation
             />
         )
 
