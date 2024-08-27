@@ -1,16 +1,23 @@
 {
     "compilerOptions": {
         "composite": true,
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+        // "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "target": "ES2020",
         "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable", "ES2021"],
+        "lib": [
+            "ES2020",
+            "DOM",
+            "DOM.Iterable",
+            "ES2021",
+            "ESNext",
+            "ES2021.String"
+        ],
         "module": "ESNext",
-        "skipLibCheck": true,
-        "outDir": "./build",
+        "skipLibCheck": false,
+        "outDir": "dist",
 
         /* Bundler mode */
-        "moduleResolution": "bundler",
+        "moduleResolution": "Node",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
@@ -26,7 +33,16 @@
         "types": ["cypress"],
 
         "strictNullChecks": true,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+
+        "allowJs": false,
+
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
+
+        "forceConsistentCasingInFileNames": true,
+
+        "declaration": true
     },
-    "include": ["src", "cypress", "./node_modules/cypress", "cypress/**/*.ts"]
+    "include": ["src/lib"]
 }

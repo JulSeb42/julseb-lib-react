@@ -1,14 +1,17 @@
 {
-    "name": "tsx-lib-v9",
-    "private": true,
-    "version": "0.0.0",
+    "name": "julseb-lib-react",
+    "version": "0.0.3",
     "type": "module",
     "license": "MIT",
     "scripts": {
         "dev": "vite --open",
-        "build": "tsc -b && vite build",
+        "build": "tsc && vite build",
         "lint": "./node_modules/.bin/eslint",
         "preview": "vite preview",
+        "copy": "cp ./src/lib/index.css ./dist",
+        "copy-lib": "cp -a ./src/lib ./dist && rm -rf ./dist/lib/components/*/__tests__ ./dist/lib/components/*/__preview__",
+        "clean": "rm -rf ./dist/icons ./dist/images ./dist/vite.svg ./dist/favicon.svg ./dist/icons-alt",
+        "build-lib": "rm -rf ./dist && mkdir ./dist && tsc && vite build && yarn copy && yarn copy-lib && yarn clean",
         "cy": "cypress",
         "cy:open": "cypress open",
         "cy:ct:run": "cypress run --component --browser electron",
@@ -23,56 +26,53 @@
     "dependencies": {
         "classnames": "^2.5.1",
         "fuse.js": "^7.0.0",
-        "markdown-to-jsx": "^7.4.7",
+        "markdown-to-jsx": "^7.5.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-helmet-async": "^2.0.5",
         "react-inlinesvg": "^4.1.3",
-        "react-router-dom": "^6.24.1",
+        "react-router-dom": "^6.26.1",
         "react-syntax-highlighter": "^15.5.0",
-        "styled-components": "^6.1.11",
+        "styled-components": "^6.1.12",
         "ts-utils-julseb": "2.4.5"
     },
     "devDependencies": {
-        "@eslint/compat": "^1.1.0",
-        "@eslint/js": "^9.6.0",
+        "@eslint/compat": "^1.1.1",
+        "@eslint/js": "^9.9.1",
         "@react-docgen/cli": "^2.0.3",
         "@types/jest": "^29.5.12",
         "@types/mocha": "^10.0.7",
-        "@types/react": "^18.3.3",
+        "@types/react": "^18.3.4",
         "@types/react-dom": "^18.3.0",
         "@types/react-inlinesvg": "^1.0.0",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-syntax-highlighter": "^15.5.13",
         "@types/styled-components": "^5.1.34",
         "@vitejs/plugin-react": "^4.3.1",
-        "axios": "^1.7.2",
-        "cypress": "^13.13.0",
-        "eslint": "^9.6.0",
-        "eslint-plugin-react": "^7.34.3",
-        "globals": "^15.8.0",
+        "axios": "^1.7.5",
+        "cypress": "^13.13.3",
+        "eslint": "^9.9.1",
+        "eslint-plugin-react": "^7.35.0",
+        "globals": "^15.9.0",
         "plop": "^4.0.1",
-        "typescript": "^5.5.3",
-        "typescript-eslint": "^7.16.0",
-        "vite": "^5.3.3",
+        "typescript": "^5.5.4",
+        "typescript-eslint": "^8.3.0",
+        "vite": "^5.4.2",
         "vite-plugin-checker": "^0.7.2",
-        "vite-plugin-dts": "^3.9.1"
-    },
-    "resolutions": {
-        "inquirer": "9.3.5"
+        "vite-plugin-dts": "^4.0.3"
     },
     "files": [
         "dist"
     ],
-    "main": "./dist/tsx-library-julseb.umd.js",
-    "module": "./dist/tsx-library-julseb.es.js",
+    "main": "./dist/julseb-lib-react.umd.js",
+    "module": "./dist/julseb-lib-react.es.js",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/tsx-library-julseb.es.js",
-            "require": "./dist/tsx-library-julseb.umd.js",
-            "types": "./dist/index.d.ts",
-            "default": "./dist/tsx-library-julseb.cjs.js"
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js",
+            "types": "./dist/lib/index.ts",
+            "default": "./dist/index.cjs.js"
         },
         "./index.css": {
             "import": "./dist/index.css",
@@ -80,16 +80,16 @@
             "default": "./dist/index.css"
         },
         "./types": {
-            "import": "./dist/types/index.d.ts",
-            "require": "./dist/types/index.d.ts",
-            "types": "./dist/types/index.d.ts",
-            "default": "./dist/types/index.d.ts"
+            "import": "./dist/lib/types/index.ts",
+            "require": "./dist/lib/types/index.ts",
+            "types": "./dist/lib/types/index.ts",
+            "default": "./dist/lib/types/index.ts"
         },
         "./component-props": {
-            "import": "./dist/types/components-props.d.ts",
-            "require": "./dist/types/components-props.d.ts",
-            "types": "./dist/types/components-props.d.ts",
-            "default": "./dist/types/components-props.d.ts"
+            "import": "./dist/lib/types/components-props.ts",
+            "require": "./dist/lib/types/components-props.ts",
+            "types": "./dist/lib/types/components-props.ts",
+            "default": "./dist/lib/types/components-props.ts"
         }
     },
     "typesVersions": {
