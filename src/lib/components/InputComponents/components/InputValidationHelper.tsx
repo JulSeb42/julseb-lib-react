@@ -84,6 +84,12 @@ export function InputValidationHelper({
             <HelperBottom
                 data-testid={testid && `${testid}.ValidationHelper.Text`}
                 className={className && "ValidationTextBottom"}
+                $hasIcon
+                $iconSize={
+                    (status === false
+                        ? iconNotPassedSize
+                        : iconPassedSize) as number
+                }
             >
                 {message}
             </HelperBottom>

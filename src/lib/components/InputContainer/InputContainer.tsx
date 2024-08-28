@@ -119,6 +119,7 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                                     ? helperBottom.fontStyle
                                     : undefined
                             }
+                            $hasIcon={false}
                         >
                             {typeof helperBottom === "string"
                                 ? helperBottom
@@ -137,6 +138,10 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                                     `${testid}.HelperBottom.IconContainer`
                                 }
                                 className={className && "BottomIconContainer"}
+                                $iconSize={
+                                    (helperBottom.iconSize ||
+                                        getIconSizeFromFont("small")) as number
+                                }
                             >
                                 <LibIcon
                                     data-testid={
@@ -168,6 +173,11 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                                     helperBottom.fontStyle
                                         ? helperBottom.fontStyle
                                         : undefined
+                                }
+                                $hasIcon
+                                $iconSize={
+                                    (helperBottom.iconSize ||
+                                        getIconSizeFromFont("small")) as number
                                 }
                             >
                                 {helperBottom.text}

@@ -10,6 +10,7 @@ import {
     FONT_SIZES,
     FONT_WEIGHTS,
     LINE_HEIGHTS,
+    SPACERS,
 } from "../../"
 import type { CssFontStyle } from "../../types"
 
@@ -59,8 +60,14 @@ const HelperBottomIconContainer = styled.span<{ $iconSize: number }>`
 
 const HelperBottom = styled(Text).attrs({ tag: "small" })<{
     $fontStyle?: CssFontStyle
+    $hasIcon?: boolean
+    $iconSize?: number
 }>`
     font-style: ${({ $fontStyle }) => $fontStyle};
+    width: ${({ $hasIcon, $iconSize }) =>
+        $hasIcon &&
+        $iconSize &&
+        `calc(100% - ${stringifyPx($iconSize)} - ${SPACERS.XXS})`};
 ` as FC<any>
 
 setDefaultTheme([
