@@ -1,7 +1,7 @@
 /*=============================================== Form types ===============================================*/
 
 import type {
-    ButtonLinkRequired,
+    LibButtonLinkRequired,
     LibComponentBase,
     LibIcon,
     LibSpacers,
@@ -18,7 +18,7 @@ export interface ILibForm
               iconLeftSize?: number
               iconRightSize?: number
           }
-    buttonSecondary?: ButtonLinkRequired & {
+    buttonSecondary?: LibButtonLinkRequired & {
         text: string
         iconLeft?: LibIcon
         iconRight?: LibIcon

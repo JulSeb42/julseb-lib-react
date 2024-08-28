@@ -19,7 +19,7 @@ import type { ILibPageLayout } from "./types"
  * @prop titleLoading?: string
  * @prop pageLoading?: ILibPageLoading => imported from PageLoading component
  * @prop helmet?: ILibHelmet => imported from Helmet component
- * @prop header?: ILibHeader => imported from Header component
+ * @prop header?: ILibHeader & { nav?: JSX.Element } => imported from Header component
  * @prop footer?: ILibFooter => imported from Footer component
  * @prop wrapper?: ILibWrapper => imported from Wrapper component, only if noWrapper is not set to true
  * @prop noWrapper?: false
@@ -56,7 +56,11 @@ export function PageLayout({
                 <PageLoading {...pageLoading} />
             ) : (
                 <>
-                    {header && <Header {...(header as any)} />}
+                    {header && (
+                        <Header {...(header as any)}>
+                            {header?.nav && header?.nav}
+                        </Header>
+                    )}
 
                     {!noWrapper ? (
                         <Wrapper className="wrapper" {...wrapper}>

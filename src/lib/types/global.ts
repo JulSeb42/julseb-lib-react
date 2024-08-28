@@ -242,7 +242,7 @@ export type LibButtonLink =
  * @prop to?: string => only if onClick and href are not defined
  * @prop href?: string => only if onClick and to are not defined
  */
-export type ButtonLinkRequired = RequireAtLeastOne<
+export type LibButtonLinkRequired = RequireAtLeastOne<
     LibButtonLink,
     "onClick" | "to" | "href"
 >
@@ -439,4 +439,5 @@ export type LibTimepickerHours = keyof typeof typeValues.hours
 export type LibTimepickerHalfTimes = keyof typeof typeValues.halfHours
 export type LibTimepickerQuarterTimes = keyof typeof typeValues.quarterHours
 export type LibTimepickerMinutes = keyof typeof typeValues.minutes
-export type LibMessagingDateFormat = keyof typeof typeValues.messagingDateFormats
+export type LibMessagingDateFormat =
+    keyof typeof typeValues.messagingDateFormats

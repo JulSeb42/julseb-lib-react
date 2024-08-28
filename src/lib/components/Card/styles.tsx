@@ -3,7 +3,7 @@
 import styled from "styled-components"
 import type { Property } from "csstype"
 import { stringifyPx } from "ts-utils-julseb"
-import { setDefaultTheme, Flexbox, Mixins } from "../../"
+import { setDefaultTheme, Mixins } from "../../"
 import type {
     CssCursor,
     LibAllColors,
@@ -12,9 +12,16 @@ import type {
     ILibPadding,
     ILibRadius,
     CssTextAlign,
+    CssAlignContent,
+    CssAlignItems,
+    CssFlexDirection,
+    CssFlexWrap,
+    CssJustifyContent,
+    CssJustifyItems,
+    LibSpacers,
 } from "../../types"
 
-const StyledCard = styled(Flexbox)<{
+const StyledCard = styled.div<{
     $border?: ILibBorder
     $borderRadius?: ILibRadius
     $padding?: ILibPadding
@@ -33,7 +40,18 @@ const StyledCard = styled(Flexbox)<{
         $size?: Property.BackgroundSize
     }
     $textAlign?: CssTextAlign
+    $inline?: boolean
+    $flexDirection?: CssFlexDirection
+    $flexWrap?: CssFlexWrap
+    $justifyContent?: CssJustifyContent
+    $alignItems?: CssAlignItems
+    $justifyItems?: CssJustifyItems
+    $alignContent?: CssAlignContent
+    $gap?: LibSpacers
+    $columnGap?: LibSpacers
+    $rowGap?: LibSpacers
 }>`
+    ${Mixins.Flexbox};
     text-decoration: none;
     overflow: hidden;
     position: relative;

@@ -1,6 +1,7 @@
 /*=============================================== CardPreview ===============================================*/
 
-import { Card, Text, Button, Image } from "../../../"
+import { getRandomAvatar } from "ts-utils-julseb"
+import { Card, Text, Button, Image, Avatar } from "../../../"
 import type { ILibCard } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -15,6 +16,32 @@ export const cardPreview: ComponentPreview<ILibCard> = {
     additionalTypeImports: null,
     extends: ["HTMLDivElement", "LibButtonLinkBlank", "ILibFlexbox"],
     previews: [
+        {
+            previewTitle: "User card",
+            props: {
+                // border={{ width: 1 }}
+                // gap="xs"
+                // alignItems="center"
+                // justifyContent="center"
+                // flexDirection="column"
+                // padding="xs"
+                // borderRadius="m"
+                border: { width: 1 },
+                gap: "xs",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                padding: "xs",
+                borderRadius: "m",
+                to: "/",
+                children: (
+                    <>
+                        <Avatar img={getRandomAvatar("male")} size={48} />
+                        <Text tag="strong">Julien</Text>
+                    </>
+                ),
+            },
+        },
         {
             previewTitle: "Basic",
             props: {

@@ -2,6 +2,7 @@
 
 import type { FC } from "react"
 import styled from "styled-components"
+import { stringifyPx } from "ts-utils-julseb"
 import {
     setDefaultTheme,
     Mixins,
@@ -46,8 +47,9 @@ const HelperBottomContainer = styled.div`
     })}
 `
 
-const HelperBottomIconContainer = styled.span`
+const HelperBottomIconContainer = styled.span<{ $iconSize: number }>`
     height: calc(${FONT_SIZES.SMALL} * ${LINE_HEIGHTS.BODY});
+    width: ${({ $iconSize }) => stringifyPx($iconSize)};
     ${Mixins.Flexbox({
         $inline: true,
         $alignItems: "center",

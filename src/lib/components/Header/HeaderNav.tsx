@@ -36,8 +36,9 @@ export function HeaderNav({
 
     const searchHeight = isMobile && !!search ? 32 : 0
 
-    const linksHeight =
-        valueArr.length * 24 + ([...valueArr, searchHeight].length - 1) * 12
+    const linksHeight = links
+        ? links.length * 24 + ([...valueArr, searchHeight].length - 1) * 12
+        : 56
 
     const navHeight = searchHeight + linksHeight
 
@@ -61,15 +62,16 @@ export function HeaderNav({
                 />
             )}
 
-            {links &&
-                links.map(link => (
-                    <HeaderNavLink
-                        data-testid={testid}
-                        className={className}
-                        link={link}
-                        key={uuid()}
-                    />
-                ))}
+            {links
+                ? links.map(link => (
+                      <HeaderNavLink
+                          data-testid={testid}
+                          className={className}
+                          link={link}
+                          key={uuid()}
+                      />
+                  ))
+                : null}
 
             {children && children}
         </Nav>

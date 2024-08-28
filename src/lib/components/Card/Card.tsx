@@ -2,7 +2,6 @@
 
 import { forwardRef } from "react"
 import { Link } from "react-router-dom"
-import { Flexbox } from "../../"
 import { StyledCard } from "./styles"
 import type { ILibCard } from "./types"
 
@@ -61,6 +60,16 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
             to,
             blank,
             onClick,
+            inline,
+            flexDirection,
+            flexWrap,
+            justifyContent,
+            alignItems,
+            justifyItems,
+            alignContent,
+            gap,
+            columnGap,
+            rowGap,
             ...rest
         },
         ref
@@ -78,7 +87,7 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
                         ? "a"
                         : onClick
                         ? "button"
-                        : Flexbox
+                        : "div"
                 }
                 to={to}
                 href={href}
@@ -105,6 +114,16 @@ export const Card = forwardRef<HTMLDivElement, ILibCard>(
                     }
                 }
                 $textAlign={textAlign}
+                $inline={inline}
+                $flexDirection={flexDirection}
+                $flexWrap={flexWrap}
+                $justifyContent={justifyContent}
+                $alignItems={alignItems}
+                $justifyItems={justifyItems}
+                $alignContent={alignContent}
+                $gap={gap}
+                $columnGap={columnGap}
+                $rowGap={rowGap}
                 {...rest}
             >
                 {children}

@@ -50,7 +50,7 @@ export function InputValidationHelper({
         iconBaseUrl,
     } = validation
 
-    if (!message || !validation) return null
+    if (!message || !validation || status === undefined) return null
 
     return (
         <HelperBottomContainer
@@ -62,6 +62,11 @@ export function InputValidationHelper({
                     testid && `${testid}.ValidationHelper.IconContainer`
                 }
                 className={className && "ValidationIconContainerBottom"}
+                $iconSize={
+                    (status === false
+                        ? iconNotPassedSize
+                        : iconPassedSize) as number
+                }
             >
                 <LibIcon
                     data-testid={

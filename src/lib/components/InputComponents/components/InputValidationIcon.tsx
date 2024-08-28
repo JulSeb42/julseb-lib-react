@@ -45,6 +45,8 @@ export function InputValidationIcon({
         iconBaseUrl,
     } = validation
 
+    if (status === undefined) return null
+
     return (
         <StyledInputValidationIcon
             data-testid={testid && `${testid}.ValidationIconContainer`}

@@ -14,7 +14,7 @@ interface ILibPageLayoutBase {
     pageLoading?: ILibPageLoading
     titleLoading?: string
     helmet?: Omit<ILibHelmet, "children">
-    header?: Omit<ILibHeader, "children">
+    header?: Omit<ILibHeader, "children"> & { nav?: JSX.Element }
     footer?: Omit<ILibFooter, "children">
 }
 

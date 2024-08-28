@@ -6,9 +6,21 @@ import { previews } from "../data/components"
 import { typeValues } from "../lib/types"
 
 export function Generate() {
-    const propsDoc = replaceTypes([
-        "aspectRatio?: string",
-    ])
+    const propsDoc = replaceTypes(["aspectRatio?: string"])
+
+    const props = [
+        "inline?: boolean",
+        "flexDirection?: CssFlexDirection",
+        "flexWrap?: CssFlexWrap",
+        "justifyContent?: CssJustifyContent",
+        "alignItems?: CssAlignItems",
+        "justifyItems?: CssJustifyItems",
+        "alignContent?: CssAlignContent",
+        "gap?: LibSpacers",
+        "columnGap?: LibSpacers",
+        "rowGap?: LibSpacers",
+        "padding",
+    ]
 
     // const pickProps = [
     //     "showTooltip",
@@ -148,6 +160,11 @@ export function Generate() {
     return (
         <Page title="Generate">
             <ul>
+                {props.map(p => (
+                    <li key={p}>{`$${p.split(":")[0].replaceAll("?", "")}={${p.split(":")[0].replaceAll("?", "")}}`}</li>
+                ))}
+            </ul>
+            <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
                 ))}
@@ -224,7 +241,7 @@ export function Generate() {
 }
 
 function replaceTypes(arr: Array<string>) {
-    const mapValues = (obj: Object) =>
+    const mapValues = (obj: object) =>
         Object.keys(obj)
             .map(v => `"${v}"`)
             .join(" | ")

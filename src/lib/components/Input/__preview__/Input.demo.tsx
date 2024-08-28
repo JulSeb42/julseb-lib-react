@@ -6,7 +6,7 @@ import type { LibValidationStatus } from "../../../types"
 
 export function InputDemoValidation() {
     const [input, setInput] = useState("")
-    const [validation, setValidation] = useState<LibValidationStatus>(false)
+    const [validation, setValidation] = useState<LibValidationStatus>(undefined)
 
     const handleValidate = (e: ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value)
