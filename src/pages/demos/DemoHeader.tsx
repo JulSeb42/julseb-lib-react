@@ -4,7 +4,7 @@ import { CoverLayout } from "../../components"
 import { Header, Cover, Text } from "../../lib"
 import type { LibHeaderLink } from "../../lib/types"
 
-export function DemoHeader() {
+export const DemoHeader = () => {
     const links: Array<LibHeaderLink> = [
         {
             text: "Link",

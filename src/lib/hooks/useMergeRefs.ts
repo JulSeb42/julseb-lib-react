@@ -12,9 +12,9 @@ import {
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMergeRefs
  * @argument refs: Array<Ref<Instance> | undefined>
  */
-export function useMergeRefs<Instance>(
+export const useMergeRefs = <Instance>(
     refs: Array<Ref<Instance> | undefined>
-): RefCallback<Instance> | null {
+): RefCallback<Instance> | null => {
     return useMemo(() => {
         if (refs.every(ref => ref == null)) {
             return null

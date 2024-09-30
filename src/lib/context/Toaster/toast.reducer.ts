@@ -4,13 +4,13 @@ import type { LibToast } from "../../types"
 
 type ToastAction = "ADD_TOAST" | "DELETE_TOAST"
 
-export function toastReducer(
+export const toastReducer = (
     state: { toasts: Array<LibToast> },
     action: {
         type: ToastAction
         payload: any
     }
-) {
+) => {
     switch (action.type) {
         case "ADD_TOAST":
             return {

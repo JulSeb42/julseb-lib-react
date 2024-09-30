@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMaxWidth
  * @argument width: number
  */
-export function useMaxWidth(width: number): boolean {
+export const useMaxWidth = (width: number): boolean => {
     const [isMax, setIsMax] = useState<boolean>(false)
 
     useEffect(() => {

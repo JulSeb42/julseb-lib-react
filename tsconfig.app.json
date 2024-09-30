@@ -44,5 +44,5 @@
 
         "declaration": true
     },
-    "include": ["src"]
+    "include": ["src", "cypress", "./node_modules/cypress", "cypress/**/*.ts"],
 }

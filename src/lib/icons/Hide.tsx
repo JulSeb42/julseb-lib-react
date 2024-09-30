@@ -3,13 +3,13 @@
 import { StyledIcon } from "./styles"
 import type { ILibIcon } from "./types"
 
-export function Hide({
+export const Hide = ({
     "data-testid": testid,
     className,
     size = 64,
     color = "currentColor",
     ...rest
-}: ILibIcon) {
+}: ILibIcon) => {
     return (
         <StyledIcon
             data-testid={testid}

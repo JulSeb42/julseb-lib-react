@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useMinWidth
  * @argument width: number
  */
-export function useMinWidth(width: number): boolean {
+export const useMinWidth = (width: number): boolean => {
     const [isMin, setIsMin] = useState<boolean>(false)
 
     useEffect(() => {

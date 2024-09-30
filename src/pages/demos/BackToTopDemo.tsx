@@ -3,7 +3,7 @@
 import { BasePage } from "../../components"
 import { Text, Wrapper, Main, BackToTop } from "../../lib"
 
-export function BackToTopDemo() {
+export const BackToTopDemo = () => {
     return (
         <BasePage title="Back to top demo">
             <Wrapper>

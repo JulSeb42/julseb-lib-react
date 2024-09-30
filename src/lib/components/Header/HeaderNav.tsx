@@ -1,6 +1,6 @@
 /*=============================================== HeaderNav ===============================================*/
 
-import { useRef, type ReactNode } from "react"
+import { useRef, isValidElement, type ReactNode, Fragment } from "react"
 import classNames from "classnames"
 import { uuid } from "ts-utils-julseb"
 import { useMaxWidth, useClickOutside } from "../../"
@@ -8,6 +8,7 @@ import { HeaderNavLink } from "./HeaderNavLink"
 import { HeaderSearch } from "./HeaderSearch"
 import { Nav } from "./styles"
 import type { ILibHeaderNav } from "./subtypes"
+import { LibHeaderLink } from "../../types"
 
 export function HeaderNav({
     "data-testid": testid,
@@ -22,6 +23,7 @@ export function HeaderNav({
     burgerPosition,
     burgerRef,
     handleClose,
+    nav,
 }: ILibHeaderNav) {
     const isMobile = useMaxWidth(600)
 
@@ -63,17 +65,23 @@ export function HeaderNav({
             )}
 
             {links
-                ? links.map(link => (
-                      <HeaderNavLink
-                          data-testid={testid}
-                          className={className}
-                          link={link}
-                          key={uuid()}
-                      />
-                  ))
+                ? links.map(link =>
+                      isValidElement(link) ? (
+                          <Fragment>{link}</Fragment>
+                      ) : (
+                          <HeaderNavLink
+                              data-testid={testid}
+                              className={className}
+                              link={link as LibHeaderLink | JSX.Element}
+                              key={uuid()}
+                          />
+                      )
+                  )
                 : null}
 
             {children && children}
+
+            {nav && nav}
         </Nav>
     )
 }

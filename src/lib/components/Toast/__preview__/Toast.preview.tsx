@@ -1,8 +1,9 @@
 /*=============================================== ToastPreview ===============================================*/
 
-import { Button, Toast, useToast } from "../../../"
+import { Toast } from "../../../"
 import type { ILibToast } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
+import { ToasterDemo } from "./Toaster.demo"
 
 export const toastPreview: ComponentPreview<ILibToast> = {
     name: "Toast",
@@ -27,20 +28,4 @@ export const toastPreview: ComponentPreview<ILibToast> = {
         },
         { previewTitle: "With toaster", demo: <ToasterDemo /> },
     ],
-}
-
-function ToasterDemo() {
-    const toast = useToast()
-
-    const handleClick = () =>
-        toast.success("Success", {
-            icons: { left: "check" },
-            body: "Hello World",
-            withTimer: true,
-            "data-testid": "testid",
-            className: "className",
-            duration: 10000,
-        })
-
-    return <Button onClick={handleClick}>Render toast</Button>
 }

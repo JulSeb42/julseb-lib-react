@@ -5,7 +5,7 @@ import { Page } from "../components"
 import { previews } from "../data/components"
 import { typeValues } from "../lib/types"
 
-export function Generate() {
+export const Generate = () => {
     const propsDoc = replaceTypes(["aspectRatio?: string"])
 
     const props = [
@@ -20,6 +20,26 @@ export function Generate() {
         "columnGap?: LibSpacers",
         "rowGap?: LibSpacers",
         "padding",
+    ]
+
+    const renames = [
+        "clone-folder.ts",
+        "constants.ts",
+        "copy-env.ts",
+        "remove-cypress.ts",
+        "replace-in-file.ts",
+        "replace-project-name-fullstack.ts",
+        "replace-repo-name.ts",
+        "types.ts",
+    ]
+
+    const generators = [
+        "component.js",
+        "index.js ",
+        "model.js ",
+        "page.js ",
+        "route.js ",
+        "single-component.js",
     ]
 
     // const pickProps = [
@@ -161,13 +181,27 @@ export function Generate() {
         <Page title="Generate">
             <ul>
                 {props.map(p => (
-                    <li key={p}>{`$${p.split(":")[0].replaceAll("?", "")}={${p.split(":")[0].replaceAll("?", "")}}`}</li>
+                    <li key={p}>{`$${p.split(":")[0].replaceAll("?", "")}={${p
+                        .split(":")[0]
+                        .replaceAll("?", "")}}`}</li>
                 ))}
             </ul>
             <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
                 ))}
+            </ul>
+
+            <ul>
+                {renames.map(r => (
+                    <li key={r}> {`mv ${r} ${r.replaceAll(".ts", ".mts")}`}</li>
+                ))}
+            </ul>
+
+            <ul>
+                {generators.map(g => <li key={g}>
+                    {`mv ${g} ${g.replaceAll(".js", ".mts")}`}
+                </li>)}
             </ul>
 
             {/* <ul>

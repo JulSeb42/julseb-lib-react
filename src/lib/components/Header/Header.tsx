@@ -52,6 +52,7 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
             position = "relative",
             hideOnScroll,
             links,
+            nav,
             enableScrollingOpen,
             ...rest
         },

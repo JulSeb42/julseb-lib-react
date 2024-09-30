@@ -1,9 +1,10 @@
 /*=============================================== DemoMainNumber ===============================================*/
 
+import type { FC } from "react"
 import { Text } from "../../lib"
 import { BasePage, StyledWrapper, StyledMain } from "../../components"
 
-export function DemoMainNumber() {
+export const DemoMainNumber: FC = () => {
     return (
         <BasePage title="Demo Main Number">
             <StyledWrapper data-testid="testid" className="className">

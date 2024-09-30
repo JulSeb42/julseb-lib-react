@@ -1,6 +1,6 @@
 /*=============================================== Header sub components types ===============================================*/
 
-import type { RefObject } from "react"
+import type { FC, RefObject } from "react"
 import type { LibHeaderLink, LibLink } from "../../types"
 import type { ILibHeader } from "./types"
 
@@ -18,6 +18,7 @@ export interface ILibHeaderNav
         | "variant"
         | "navMobileVariant"
         | "burgerPosition"
+        | "nav"
     > {
     burgerRef: RefObject<HTMLButtonElement>
     isOpen: boolean
@@ -53,7 +54,7 @@ export interface ILibHeaderLogo
 export interface ILibHeaderNavLink {
     "data-testid": string | undefined
     className: string | undefined
-    link: LibHeaderLink
+    link: LibHeaderLink | JSX.Element | FC
 }
 
 /*====================== HeaderSearch ======================*/

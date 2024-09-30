@@ -1,5 +1,6 @@
 /*=============================================== Header types ===============================================*/
 
+import type { FC } from "react"
 import type {
     LibComponentBase,
     LibHeaderPosition,
@@ -55,13 +56,21 @@ interface HeaderFixed extends ILibHeaderBase {
 type HeaderPosition = HeaderNotFixed | HeaderFixed
 
 type HeaderWithLinks = HeaderPosition & {
-    links: Array<LibHeaderLink>
+    links: Array<LibHeaderLink | JSX.Element>
+    nav?: never
+    children?: never
+}
+
+type HeaderWithNav = HeaderPosition & {
+    links: Array<LibHeaderLink | JSX.Element>
+    nav?: ReactChildren
     children?: never
 }
 
 type HeaderWithChildren = HeaderPosition & {
     links?: never
+    nav?: never
     children?: ReactChildren
 }
 
-export type ILibHeader = HeaderWithLinks | HeaderWithChildren
+export type ILibHeader = HeaderWithLinks | HeaderWithNav | HeaderWithChildren

@@ -8,10 +8,10 @@ import { useState, type ChangeEvent } from "react"
  * @argument initialState = {} as T => type to define
  * @argument onSubmit?: (formData: T) => void
  */
-export function useForm<T>(
+export const useForm = <T,>(
     initialState = {} as T,
     onSubmit?: (formData: T) => void
-) {
+) => {
     const [formData, setFormData] = useState(initialState)
 
     const handleInputs = (e: ChangeEvent<HTMLInputElement>) =>

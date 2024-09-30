@@ -1,16 +1,18 @@
-/*=============================================== Timepicker tests preview ===============================================*/
+/*=============================================== Tiepicker demo ===============================================*/
 
 import { useState } from "react"
 import { Timepicker } from "../../../"
-import type { ILibTimepicker } from "../../../types/components-props"
 import type {
     LibTimepickerHours,
     LibTimepickerHalfTimes,
     LibTimepickerQuarterTimes,
     LibTimepickerMinutes,
 } from "../../../types"
+import type { ILibTimepicker } from "../types"
 
-export const TimepickerDemo = (props: Partial<ILibTimepicker>) => {
+export const TimepickerPreview = (
+    props: Partial<Exclude<ILibTimepicker, "value" | "setValue">>
+) => {
     const [valueHour, setValueHour] = useState<LibTimepickerHours>("06:00")
     const [valueHalfHour, setValueHalfHour] =
         useState<LibTimepickerHalfTimes>("06:30")

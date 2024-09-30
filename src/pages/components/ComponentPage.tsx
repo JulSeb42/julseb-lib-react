@@ -6,7 +6,7 @@ import { Page, ComponentPreview } from "../../components"
 import { NotFoundPage } from "../404"
 import { previews } from "../../data/components"
 
-export function ComponentPage() {
+export const ComponentPage = () => {
     const { componentName } = useParams<{ componentName: string }>()
 
     const componentPreview = previews.find(

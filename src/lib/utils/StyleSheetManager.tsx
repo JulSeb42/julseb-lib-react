@@ -1,5 +1,6 @@
 /*=============================================== StyleSheetManager ===============================================*/
 
+import type { FC } from "react"
 import {
     StyleSheetManager as Manager,
     type IStyleSheetManager,
@@ -7,7 +8,7 @@ import {
 } from "styled-components"
 import isPropValid from "@emotion/is-prop-valid"
 
-export function shouldForwardProp(propName: string, target: WebTarget) {
+export const shouldForwardProp = (propName: string, target: WebTarget) => {
     if (typeof target === "string") {
         // For HTML elements, forward the prop if it is a valid HTML attribute
         return isPropValid(propName)
@@ -16,11 +17,11 @@ export function shouldForwardProp(propName: string, target: WebTarget) {
     return true
 }
 
-export function StyleSheetManager({
+export const StyleSheetManager: FC<IStyleSheetManager> = ({
     shouldForwardProp: shouldForwardPropFn = shouldForwardProp,
     enableVendorPrefixes = true,
     ...rest
-}: IStyleSheetManager) {
+}) => {
     return (
         <Manager
             shouldForwardProp={shouldForwardPropFn}

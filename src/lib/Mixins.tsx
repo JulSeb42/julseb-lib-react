@@ -51,10 +51,10 @@ type ILibIconMixin = {
     $isLibIcon?: boolean
 }
 
-function getColorMixinFromTheme(
+const getColorMixinFromTheme = (
     theme: DefaultTheme | null = COLORS_LIGHT,
     themeName?: LibThemeNames
-) {
+) => {
     let THEME: DefaultTheme
 
     if (themeName) {

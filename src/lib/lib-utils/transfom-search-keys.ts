@@ -1,6 +1,6 @@
 /*=============================================== Transform search keys ===============================================*/
 
-export function transformSearchKeys(keys: Array<string>) {
+export const transformSearchKeys = (keys: Array<string>) => {
     return keys.map(key =>
         key.includes("Key")
             ? key.replace("Key", "")

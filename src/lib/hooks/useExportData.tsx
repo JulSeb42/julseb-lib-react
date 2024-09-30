@@ -1,6 +1,11 @@
 /*=============================================== useTableSorting ===============================================*/
 
-function downloadFile({ blob, fileName }: { blob: Blob; fileName: string }) {
+interface IDownloadFile {
+    blob: Blob
+    fileName: string
+}
+
+const downloadFile = ({ blob, fileName }: IDownloadFile) => {
     const a = document.createElement("a")
     a.download = fileName
     a.href = window.URL.createObjectURL(blob)
@@ -17,7 +22,7 @@ function downloadFile({ blob, fileName }: { blob: Blob; fileName: string }) {
  * @description Hook to export data to JSON or CSV
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useExportData
  */
-export function useExportData<T>() {
+export const useExportData = <T,>() => {
     const exportToJson = (data: Array<T>, fileName: string) =>
         downloadFile({
             blob: new Blob([JSON.stringify(data)], {

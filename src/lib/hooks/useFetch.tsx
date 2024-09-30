@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
  * @argument fetchFunction: Promise<T> => to define
  * @argument dependencies?: any
  */
-export function useFetch<T>(fetchFunction: Promise<T>, dependencies?: any) {
+export const useFetch = <T,>(fetchFunction: Promise<T>, dependencies?: any) => {
     const [response, setResponse] = useState<T | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<any>(undefined)

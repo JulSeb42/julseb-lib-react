@@ -7,13 +7,13 @@
 import { StyledIcon } from "./styles"
 import type { ILibIcon } from "./types"
 
-export function Underline({
+export const Underline = ({
     "data-testid": testid,
     className,
     size = 64,
     color = "currentColor",
     ...rest
-}: ILibIcon) {
+}: ILibIcon) => {
     return (
         <StyledIcon
             data-testid={testid}

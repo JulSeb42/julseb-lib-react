@@ -8,7 +8,7 @@ import {
     StyledAside,
 } from "../../components"
 
-export function DemoAsideDefault() {
+export const DemoAsideDefault = () => {
     return (
         <BasePage title="Demo Aside Default">
             <StyledWrapper data-testid="testid" className="className">

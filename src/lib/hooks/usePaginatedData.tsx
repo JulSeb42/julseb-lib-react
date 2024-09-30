@@ -2,16 +2,21 @@
 
 import { useSearchParams } from "react-router-dom"
 
+interface IUsePaginatedData<T> {
+    paginatedData: Array<T>
+    totalPages: number
+}
+
 /**
  * @description Hook to use with Pagination or Paginator components
  * @link https://documentation-components-react.vercel.app/helpers/hooks#usePaginatedData
  * @argument data: Array<T> => to define
  * @argument defaultLimit?: number
  */
-export function usePaginatedData<T>(
+export const usePaginatedData = <T,>(
     data: Array<T>,
     defaultLimit = 20
-): { paginatedData: Array<T>; totalPages: number } {
+): IUsePaginatedData<T> => {
     const [query] = useSearchParams()
     const page = query.get("page") || 1
     const currentPage: number =

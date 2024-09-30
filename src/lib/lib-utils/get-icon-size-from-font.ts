@@ -3,7 +3,7 @@
 import { LIB_TOKENS } from ".."
 import type { LibFontSizes } from "../types"
 
-export function getIconSizeFromFont(fontSize: LibFontSizes = "body") {
+export const getIconSizeFromFont = (fontSize: LibFontSizes = "body") => {
     const getSize = (size: LibFontSizes) =>
         Number(LIB_TOKENS["font-sizes"][size].px.replace("px", ""))
 

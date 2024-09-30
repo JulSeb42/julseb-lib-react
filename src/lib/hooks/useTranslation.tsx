@@ -11,7 +11,7 @@ let currentLanguage = detectLanguage() || "en"
  * @link https://documentation-components-react.vercel.app/helpers/hooks#useTranslation
  * @argument translations: [language: string]: { [key: string]: string }
  */
-export function useTranslation(translations: TranslateLang) {
+export const useTranslation = (translations: TranslateLang) => {
     const [language, setLanguage] = useState<string>(currentLanguage)
     const languages = Object.keys(translations)
 

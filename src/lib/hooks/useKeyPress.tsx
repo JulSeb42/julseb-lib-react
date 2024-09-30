@@ -8,11 +8,11 @@ import { useEffect } from "react"
  * @argument keyCodes: string | Array<string>
  * @argument callback: () => void
  */
-export function useKeyPress(
+export const useKeyPress = (
     keyCodes: string | Array<string>,
     callback: () => void,
     excludeKeys?: Array<string>
-): void {
+): void => {
     useEffect(() => {
         const singleHandler = ({ code }: KeyboardEvent) => {
             if (keyCodes.includes(code)) {

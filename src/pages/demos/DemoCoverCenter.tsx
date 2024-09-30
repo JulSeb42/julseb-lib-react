@@ -4,7 +4,7 @@ import React from "react"
 import { CoverLayout } from "../../components"
 import { Cover, Text } from "../../lib"
 
-export function DemoCoverCenter() {
+export const DemoCoverCenter = () => {
     return (
         <CoverLayout title="Cover Center">
             <Cover

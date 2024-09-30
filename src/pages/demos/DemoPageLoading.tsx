@@ -1,9 +1,10 @@
 /*=============================================== DemoPageLoading ===============================================*/
 
+import type { FC } from "react"
 import { BasePage } from "../../components"
 import { PageLoading } from "../../lib"
 
-export function DemoPageLoading() {
+export const DemoPageLoading: FC = () => {
     return (
         <BasePage title="Demo page loading">
             <PageLoading

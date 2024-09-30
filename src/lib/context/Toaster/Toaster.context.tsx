@@ -1,7 +1,7 @@
 /*=============================================== Toaster context ===============================================*/
 
 import { createContext, useReducer, useContext } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Toaster } from "../../components/Toast/Toaster"
 import { toastReducer } from "./toast.reducer"
 import type {
@@ -47,13 +47,13 @@ const initialState = {
  * @prop toastOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
  * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
  */
-export function ToasterProviderWrapper({
+export const ToasterProviderWrapper = ({
     "data-testid": testid,
     className,
     children,
     toastOptions,
     position,
-}: ILibToasterProvider) {
+}: ILibToasterProvider) => {
     const [state, dispatch] = useReducer(toastReducer, initialState)
 
     const addToast = (
@@ -127,6 +127,4 @@ export function ToasterProviderWrapper({
  * @function loading
  * @function remove
  */
-export function useToast() {
-    return useContext(ToastContext) as ILibToasterContext
-}
+export const useToast = () => useContext(ToastContext) as ILibToasterContext

@@ -3,7 +3,7 @@
 import { Text } from "../../lib"
 import { BasePage, StyledWrapper, StyledMain } from "../../components"
 
-export function DemoMainDefault() {
+export const DemoMainDefault = () => {
     return (
         <BasePage title="Demo Main Default">
             <StyledWrapper data-testid="testid" className="className">

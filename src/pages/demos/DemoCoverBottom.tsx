@@ -3,7 +3,7 @@
 import { CoverLayout } from "../../components"
 import { Cover, Text } from "../../lib"
 
-export function DemoCoverBottom() {
+export const DemoCoverBottom = () => {
     return (
         <CoverLayout title="Cover Bottom">
             <Cover

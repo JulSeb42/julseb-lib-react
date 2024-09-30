@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.9",
+    "version": "0.0.12",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -24,6 +24,7 @@
         "check-errors": "tsc --noEmit"
     },
     "dependencies": {
+        "@julseb-lib/utils": "^0.0.1",
         "classnames": "^2.5.1",
         "fuse.js": "^7.0.0",
         "markdown-to-jsx": "^7.5.0",

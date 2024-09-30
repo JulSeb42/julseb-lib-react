@@ -3,7 +3,7 @@
 import { Text, Section, Image, FullBleed } from "../../lib"
 import { BasePage, StyledMain } from "../../components"
 
-export function DemoMainFull() {
+export const DemoMainFull = () => {
     return (
         <BasePage title="Demo Main Full">
             <StyledMain size="full" data-testid="testid" className="className">

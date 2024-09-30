@@ -1,11 +1,11 @@
 /*=============================================== Generate ===============================================*/
 
-// import { deleteDuplicates } from "ts-utils-julseb"
+import type { FC } from "react"
 import { Page } from "../components"
 import {} from "../lib"
 import { typeValues } from "../lib/types"
 
-export function Generate() {
+export const Generate: FC = () => {
     const propsDoc = replaceTypes([
         "title: string",
         "icon?: LibAccordionIcon",
@@ -126,7 +126,7 @@ export function Generate() {
     )
 }
 
-function replaceTypes(arr: Array<string>) {
+const replaceTypes = (arr: Array<string>) => {
     const mappedRadiuses = Object.keys(typeValues.radiuses)
         .map(r => `"${r}"`)
         .join(" | ")

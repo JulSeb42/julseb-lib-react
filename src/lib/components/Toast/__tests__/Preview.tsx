@@ -2,7 +2,7 @@
 
 import { useToast, Button } from "../../../"
 
-export function PreviewSuccess() {
+export const PreviewSuccess = () => {
     const toast = useToast()
 
     return (
@@ -20,7 +20,7 @@ export function PreviewSuccess() {
     )
 }
 
-export function PreviewError() {
+export const PreviewError = () => {
     const toast = useToast()
 
     return (
@@ -40,7 +40,7 @@ export function PreviewError() {
     )
 }
 
-export function PreviewWarning() {
+export const PreviewWarning = () => {
     const toast = useToast()
 
     return (
@@ -59,7 +59,7 @@ export function PreviewWarning() {
     )
 }
 
-export function PreviewInfo() {
+export const PreviewInfo = () => {
     const toast = useToast()
 
     return (

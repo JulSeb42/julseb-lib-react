@@ -19,10 +19,10 @@ interface ILibThemeProvider {
  * @prop stylesheetManager?: boolean | IStyleSheetManager => import IStyleSheetManager from "styled-components"
  * @prop children?: ReactChildren
  */
-export function ThemeProviderWrapper({
+export const ThemeProviderWrapper = ({
     children,
     stylesheetManager,
-}: ILibThemeProvider) {
+}: ILibThemeProvider) => {
     const [selectedTheme, setSelectedTheme] = useState<
         LibThemeNames | undefined
     >(undefined)
@@ -91,6 +91,4 @@ export function ThemeProviderWrapper({
  * @prop selectedTheme: "light" | "dark" | undefined
  * @prop toggleTheme: () => void
  */
-export function useLibTheme() {
-    return useContext(ThemeContext) as ILibThemeContext
-}
+export const useLibTheme = () => useContext(ThemeContext) as ILibThemeContext

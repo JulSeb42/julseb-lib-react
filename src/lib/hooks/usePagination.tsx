@@ -20,12 +20,12 @@ interface ILibUsePaginationNavigation {
  * @prop queries?: Array<Array<string>>
  * @prop totalPages?: number
  */
-export function usePagination({
+export const usePagination = ({
     currentPage,
     setCurrentPage,
     queries,
     totalPages,
-}: ILibUsePaginationNavigation) {
+}: ILibUsePaginationNavigation) => {
     const [_, setSearchParams] = useSearchParams()
 
     const handlePrev = useCallback(() => {
