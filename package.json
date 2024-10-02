@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.14",
+    "version": "0.0.16",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -11,7 +11,7 @@
         "copy": "cp ./src/lib/index.css ./dist",
         "copy-lib": "cp -a ./src/lib ./dist && rm -rf ./dist/lib/components/*/__tests__ ./dist/lib/components/*/__preview__",
         "clean": "rm -rf ./dist/icons ./dist/images ./dist/vite.svg ./dist/favicon.svg ./dist/icons-alt",
-        "build-lib": "rm -rf ./dist && mkdir ./dist && tsc && vite build && yarn copy && yarn copy-lib && yarn clean",
+        "build:lib": "rm -rf ./dist && mkdir ./dist && tsc && vite build && yarn copy && yarn copy-lib && yarn clean",
         "cy": "cypress",
         "cy:open": "cypress open",
         "cy:ct:run": "cypress run --component --browser electron",

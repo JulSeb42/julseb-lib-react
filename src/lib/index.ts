@@ -24,6 +24,7 @@ export {
     formatHour,
     generateNumbers,
     getFirstName,
+    getInitials,
     getLastName,
     getPercentage,
     getRandom,
