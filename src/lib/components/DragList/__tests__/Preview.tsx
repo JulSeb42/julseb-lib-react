@@ -1,7 +1,7 @@
 /*=============================================== DragListPreview ===============================================*/
 
 import { useState } from "react"
-import { convertDateShort } from "ts-utils-julseb"
+import { convertDateShort } from "@julseb-lib/utils"
 import { DragList } from "../../../"
 import type { LibDragListItem } from "../../../types"
 import type { ILibDragList } from "../types"

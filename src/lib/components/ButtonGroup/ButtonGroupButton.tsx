@@ -1,7 +1,7 @@
 /*=============================================== ButtonGroupButtons ===============================================*/
 
 import { forwardRef } from "react"
-import { capitalize, filterObject } from "ts-utils-julseb"
+import { capitalize, filterObject } from "@julseb-lib/utils"
 import { Button, ButtonIcon } from "../.."
 import type { ILibButton } from "../Button/types"
 import type { ILibButtonIcon } from "../ButtonIcon/types"

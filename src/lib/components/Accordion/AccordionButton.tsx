@@ -2,7 +2,7 @@
 
 import { useCallback } from "react"
 import classNames from "classnames"
-import { capitalize } from "ts-utils-julseb"
+import { capitalize } from "@julseb-lib/utils"
 import { LibIcon } from "../LibIcon"
 import { Plus, ChevronDown } from "../../icons"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"

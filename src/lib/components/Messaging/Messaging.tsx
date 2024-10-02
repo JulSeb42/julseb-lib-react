@@ -1,7 +1,7 @@
 /*=============================================== Messaging component ===============================================*/
 
 import { forwardRef, useState } from "react"
-import { getToday, uuid, stringifyPx } from "ts-utils-julseb"
+import { getToday, uuid, stringifyPx } from "@julseb-lib/utils"
 import { Hr } from "../../"
 import { appendStyles } from "../../lib-utils"
 import { MessagesContainer } from "./MessagesContainer"

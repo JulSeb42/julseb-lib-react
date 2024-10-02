@@ -1,7 +1,7 @@
 /*=============================================== Routes ===============================================*/
 
 import { createBrowserRouter } from "react-router-dom"
-import { slugify, toKebabCase } from "ts-utils-julseb"
+import { slugify, toKebabCase } from "@julseb-lib/utils"
 
 /*====================== Root ======================*/
 

@@ -1,6 +1,6 @@
 /*=============================================== Slideshow tests ===============================================*/
 
-import { generateNumbers } from "ts-utils-julseb"
+import { generateNumbers } from "@julseb-lib/utils"
 import { Slideshow } from "../../.."
 
 const images = generateNumbers(1, 4).map(n => `images/slideshow-${n}.avif`)

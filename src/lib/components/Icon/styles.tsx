@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import SVG from "react-inlinesvg"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins } from "../../"
 import type { LibAllColors } from "../../types"
 

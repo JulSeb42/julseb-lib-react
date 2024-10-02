@@ -1,6 +1,6 @@
 /*=============================================== Pagination tests preview ===============================================*/
 
-import { generateNumbers } from "ts-utils-julseb"
+import { generateNumbers } from "@julseb-lib/utils"
 import { Card, Grid, Pagination, usePaginatedData } from "../../../"
 
 const arr: Array<{ name: string }> = generateNumbers(1, 100).map(n => ({

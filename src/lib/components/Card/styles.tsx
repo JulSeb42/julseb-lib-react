@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import type { Property } from "csstype"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins } from "../../"
 import type {
     CssCursor,

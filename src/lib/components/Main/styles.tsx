@@ -1,7 +1,7 @@
 /*=============================================== Main styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins, BREAKPOINTS, SPACERS, LAYOUTS } from "../../"
 import type { LibMainSize } from "../../types"
 

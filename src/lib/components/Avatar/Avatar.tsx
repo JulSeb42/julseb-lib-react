@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import { capitalize } from "ts-utils-julseb"
+import { capitalize } from "@julseb-lib/utils"
 import { roundIconSize } from "../../lib-utils"
 import { AvatarFunction } from "./AvatarFunction"
 import { StyledAvatarContainer, StyledBadge } from "./styles"

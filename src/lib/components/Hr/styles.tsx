@@ -1,7 +1,7 @@
 /*=============================================== Hr styles ===============================================*/
 
 import styled from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins, RADIUSES } from "../../"
 import type { LibAllColors, ILibMargin } from "../../types"
 

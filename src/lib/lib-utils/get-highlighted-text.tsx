@@ -1,7 +1,7 @@
 /*=============================================== GetHighlightedText ===============================================*/
 
 import { Fragment, type CSSProperties } from "react"
-import { uuid, slugify } from "ts-utils-julseb"
+import { uuid, slugify } from "@julseb-lib/utils"
 import { Text } from ".."
 import type { ReactChildren } from "../types"
 

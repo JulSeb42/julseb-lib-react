@@ -1,7 +1,7 @@
 /*=============================================== Rating component ===============================================*/
 
 import { forwardRef, useCallback } from "react"
-import { generateNumbers } from "ts-utils-julseb"
+import { generateNumbers } from "@julseb-lib/utils"
 import { Flexbox } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { InputContainer } from "../InputComponents"

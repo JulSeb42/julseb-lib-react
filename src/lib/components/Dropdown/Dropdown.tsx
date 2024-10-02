@@ -2,7 +2,7 @@
 
 import { forwardRef, useRef, useCallback } from "react"
 import classNames from "classnames"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { useMergeRefs, useClickOutside } from "../../"
 import { DropdownItem } from "./DropdownItem"
 import { StyledDropdown } from "./styles"

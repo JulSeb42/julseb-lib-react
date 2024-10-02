@@ -1,7 +1,7 @@
 /*=============================================== Preview components ===============================================*/
 
 import type { FC, ForwardRefExoticComponent, RefAttributes } from "react"
-import { toKebabCase } from "ts-utils-julseb"
+import { toKebabCase } from "@julseb-lib/utils"
 import type { ComponentPaths } from "../routes"
 
 /*====================== Styles ======================*/

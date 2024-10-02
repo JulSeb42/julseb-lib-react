@@ -1,7 +1,7 @@
 /*=============================================== Calendar component ===============================================*/
 
 import { useState, type MouseEvent } from "react"
-import { uuid, formatDate as formatDateUtil } from "ts-utils-julseb"
+import { uuid, formatDate as formatDateUtil } from "@julseb-lib/utils"
 import classNames from "classnames"
 import { Text } from "../../"
 import { LibIcon } from "../LibIcon"

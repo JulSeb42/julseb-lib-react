@@ -2,7 +2,7 @@
 
 import { useCallback } from "react"
 import { useSearchParams } from "react-router-dom"
-import { scrollToTop } from "ts-utils-julseb"
+import { scrollToTop } from "@julseb-lib/utils"
 import type { DispatchState } from "../types"
 
 interface ILibUsePaginationNavigation {

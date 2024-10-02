@@ -1,7 +1,7 @@
 /*=============================================== InputSlider styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { getPercentage } from "ts-utils-julseb"
+import { getPercentage } from "@julseb-lib/utils"
 import {
     BREAKPOINTS,
     OVERLAYS,

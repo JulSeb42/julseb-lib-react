@@ -1,6 +1,6 @@
 /*=============================================== ListGroupPreview ===============================================*/
 
-import { convertDateShort } from "ts-utils-julseb"
+import { convertDateShort } from "@julseb-lib/utils"
 import { ListGroup } from "../../../"
 import type { LibListGroupItem } from "../../../types"
 import type { ILibListGroup } from "../../../types/components-props"

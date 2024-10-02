@@ -2,7 +2,7 @@
 
 import { useRef, isValidElement, type ReactNode, Fragment } from "react"
 import classNames from "classnames"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { useMaxWidth, useClickOutside } from "../../"
 import { HeaderNavLink } from "./HeaderNavLink"
 import { HeaderSearch } from "./HeaderSearch"

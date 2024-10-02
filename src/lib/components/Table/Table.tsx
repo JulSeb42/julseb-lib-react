@@ -1,7 +1,7 @@
 /*=============================================== Table component ===============================================*/
 
 import { forwardRef } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Linkify } from "../../"
 import { THead } from "./THead"
 import { TBody } from "./TBody"

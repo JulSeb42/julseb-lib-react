@@ -1,7 +1,7 @@
 /*=============================================== ContainerPreview ===============================================*/
 
 import { Link } from "react-router-dom"
-import { unslugify } from "ts-utils-julseb"
+import { unslugify } from "@julseb-lib/utils"
 import { Flexbox, Text } from "../../../lib"
 
 export function ContainerPreview({ demos }: { demos: Array<string> }) {

@@ -1,7 +1,7 @@
 /*=============================================== Linkify text ===============================================*/
 
 import { Fragment } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 
 export const URL_REGEX =
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm

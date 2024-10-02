@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import { getPercentage, getRandomString } from "ts-utils-julseb"
+import { getPercentage, getRandomString } from "@julseb-lib/utils"
 import { appendStyles } from "../../lib-utils"
 import { StyledProgressBar } from "./styles"
 import type { ILibProgressBar } from "./types"

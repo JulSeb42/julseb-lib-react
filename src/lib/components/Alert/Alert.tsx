@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import { stringifyPx, getRandomString } from "ts-utils-julseb"
+import { stringifyPx, getRandomString } from "@julseb-lib/utils"
 import { Text } from "../../"
 import { appendStyles } from "../../lib-utils"
 import type { LibAllColors } from "../../types"

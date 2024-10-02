@@ -2,7 +2,7 @@
 
 import styled, { css } from "styled-components"
 import { Link } from "react-router-dom"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import {
     setDefaultTheme,
     Image,

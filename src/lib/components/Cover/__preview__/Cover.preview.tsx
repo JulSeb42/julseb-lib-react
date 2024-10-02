@@ -1,7 +1,7 @@
 /*=============================================== CoverPreview ===============================================*/
 
 import { Link } from "react-router-dom"
-import { toSentenceCase } from "ts-utils-julseb"
+import { toSentenceCase } from "@julseb-lib/utils"
 import { Cover, Text } from "../../../"
 import type { ILibCover } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

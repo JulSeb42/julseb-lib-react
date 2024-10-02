@@ -20,6 +20,7 @@ import {
     formatHour,
     generateNumbers,
     getFirstName,
+    getInitials,
     getLastName,
     getPercentage,
     getRandom,
@@ -51,7 +52,7 @@ import {
     toTitleCase,
     unslugify,
     uuid,
-} from "ts-utils-julseb"
+} from "@julseb-lib/utils"
 import { Button, Avatar } from "../../lib"
 
 interface Util {
@@ -220,6 +221,13 @@ const utils: Array<Util> = [
         arguments: ["fullName"],
         example: 'getFirstName("John Doe")',
         result: getFirstName("John Doe"),
+    },
+    {
+        name: "getInitials",
+        effect: "Get initials of a full name",
+        arguments: ["fullName"],
+        example: 'getInitials("John Doe")',
+        result: getInitials("John Doe"),
     },
     {
         name: "getLastName",

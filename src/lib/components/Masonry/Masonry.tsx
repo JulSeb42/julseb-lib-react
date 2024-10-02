@@ -1,7 +1,7 @@
 /*=============================================== Masonry component ===============================================*/
 
 import { forwardRef, useEffect, useRef, useState, useCallback } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { useMergeRefs } from "../../"
 import { useEventListener, fillCols } from "./utils"
 import { StyledMasonry, Col } from "./styles"

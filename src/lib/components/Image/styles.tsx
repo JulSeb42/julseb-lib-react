@@ -2,7 +2,7 @@
 
 import type { FC } from "react"
 import styled from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Text, Mixins, SPACERS } from "../../"
 import type {
     LibAllColors,

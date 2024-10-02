@@ -1,7 +1,7 @@
 /*=============================================== Loader styles ===============================================*/
 
 import styled, { css, keyframes } from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { Mixins, RADIUSES, setDefaultTheme } from "../../"
 import type { LibAllColors } from "../../types"
 

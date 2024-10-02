@@ -1,7 +1,7 @@
 /*=============================================== Datepicker component ===============================================*/
 
 import { forwardRef, useRef, useState, type ChangeEvent } from "react"
-import { convertDateShort } from "ts-utils-julseb"
+import { convertDateShort } from "@julseb-lib/utils"
 import { useClickOutside } from "../../"
 import { Calendar as CalendarIcon } from "../../icons"
 import {

@@ -1,7 +1,7 @@
 /*=============================================== ComponentPage ===============================================*/
 
 import { useParams } from "react-router-dom"
-import { toKebabCase, toTitleCase } from "ts-utils-julseb"
+import { toKebabCase, toTitleCase } from "@julseb-lib/utils"
 import { Page, ComponentPreview } from "../../components"
 import { NotFoundPage } from "../404"
 import { previews } from "../../data/components"

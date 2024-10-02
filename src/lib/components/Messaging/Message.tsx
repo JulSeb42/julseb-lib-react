@@ -7,7 +7,7 @@ import {
     convertDate,
     getYesterday,
     capitalize,
-} from "ts-utils-julseb"
+} from "@julseb-lib/utils"
 import { Flexbox, Text, linkifyText } from "../../"
 import { StyledMessage } from "./styles"
 import type { ILibMessage } from "./types"

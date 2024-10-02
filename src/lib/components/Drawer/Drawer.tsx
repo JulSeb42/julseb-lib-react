@@ -2,7 +2,10 @@
 
 import { forwardRef, useEffect } from "react"
 import classNames from "classnames"
-import { enableScroll, disableScroll as disableScrollFn } from "ts-utils-julseb"
+import {
+    enableScroll,
+    disableScroll as disableScrollFn,
+} from "@julseb-lib/utils"
 import { useKeyPress } from "../../"
 import { StyledDrawer, Overlay, DrawerContent } from "./styles"
 import type { ILibDrawer } from "./types"

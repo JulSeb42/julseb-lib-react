@@ -1,6 +1,6 @@
 /*=============================================== Generate ===============================================*/
 
-import { toCamelCase, toPascalCase } from "ts-utils-julseb"
+import { toCamelCase, toPascalCase } from "@julseb-lib/utils"
 import { Page } from "../components"
 import { previews } from "../data/components"
 import { typeValues } from "../lib/types"
@@ -199,9 +199,9 @@ export const Generate = () => {
             </ul>
 
             <ul>
-                {generators.map(g => <li key={g}>
-                    {`mv ${g} ${g.replaceAll(".js", ".mts")}`}
-                </li>)}
+                {generators.map(g => (
+                    <li key={g}>{`mv ${g} ${g.replaceAll(".js", ".mts")}`}</li>
+                ))}
             </ul>
 
             {/* <ul>

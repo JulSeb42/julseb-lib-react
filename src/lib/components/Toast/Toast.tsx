@@ -2,7 +2,7 @@
 
 import { forwardRef, useEffect, useCallback, useRef, useState } from "react"
 import classNames from "classnames"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Text, useToast, useMergeRefs } from "../.."
 import { LibIcon } from "../LibIcon"
 import { Close } from "../../icons"

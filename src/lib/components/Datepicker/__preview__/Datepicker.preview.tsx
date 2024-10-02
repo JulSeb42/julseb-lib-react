@@ -1,7 +1,7 @@
 /*=============================================== DatepickerPreview ===============================================*/
 
 import { useState } from "react"
-import { getToday, addMonth, formatDate } from "ts-utils-julseb"
+import { getToday, addMonth, formatDate } from "@julseb-lib/utils"
 import { Datepicker } from "../../../"
 import type { ILibDatepicker } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

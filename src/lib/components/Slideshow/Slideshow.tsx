@@ -1,7 +1,7 @@
 /*=============================================== Slideshow component ===============================================*/
 
 import { forwardRef, useState, useCallback, useEffect } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Image } from "../../"
 import { SlideshowButton } from "./SlideshowButton"
 import { SlideshowPagination } from "./SlideshowPagination"

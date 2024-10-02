@@ -1,7 +1,7 @@
 /*=============================================== Toaster component ===============================================*/
 
 import { forwardRef } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Loader } from "../Loader"
 import { Toast } from "./Toast"
 import type { LibAllColors } from "../../types"

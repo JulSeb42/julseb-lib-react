@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import { uuid, capitalize } from "ts-utils-julseb"
+import { uuid, capitalize } from "@julseb-lib/utils"
 import { Text } from "../../"
 import { AccordionItem } from "./AccordionItem"
 import { StyledAccordion } from "./styles"

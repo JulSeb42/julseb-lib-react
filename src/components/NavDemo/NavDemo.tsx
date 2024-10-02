@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
-import { toTitleCase } from "ts-utils-julseb"
+import { toTitleCase } from "@julseb-lib/utils"
 import { useLibTheme, useKeyPress, Button, Input } from "../../lib"
 import { routesPaths } from "../../routes"
 import { componentPaths } from "../../data/components"

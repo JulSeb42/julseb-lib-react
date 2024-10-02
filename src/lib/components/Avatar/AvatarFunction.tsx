@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import classNames from "classnames"
-import { getRandomString } from "ts-utils-julseb"
+import { getRandomString } from "@julseb-lib/utils"
 import { Image } from "../../"
 import { appendStyles } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"

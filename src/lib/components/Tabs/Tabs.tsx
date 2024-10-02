@@ -2,7 +2,7 @@
 
 import { forwardRef, useState } from "react"
 import { useSearchParams } from "react-router-dom"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Text } from "../../"
 import { TabsContainer } from "./TabsContainer"
 import { TabsButtonsContainer } from "./TabsButtonsContainer"

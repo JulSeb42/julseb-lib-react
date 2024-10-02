@@ -1,6 +1,6 @@
 /*=============================================== StylesCard ===============================================*/
 
-import { capitalize } from "ts-utils-julseb"
+import { capitalize } from "@julseb-lib/utils"
 import { Text } from "../../lib"
 import { StyledStylesCard, Square, Content } from "./styles"
 import type { StylesCardProps } from "./types"
@@ -25,7 +25,7 @@ export function StylesCard({
         },
         {
             name: "Value",
-            value: value,
+            value: value.toString(),
         },
     ]
 

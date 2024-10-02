@@ -55,7 +55,7 @@ export {
     toTitleCase,
     unslugify,
     uuid,
-} from "ts-utils-julseb"
+} from "@julseb-lib/utils"
 
 export * from "./Variables"
 export * from "./Mixins"

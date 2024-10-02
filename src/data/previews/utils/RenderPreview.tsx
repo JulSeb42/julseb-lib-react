@@ -1,4 +1,4 @@
-import { capitalize, uuid } from "ts-utils-julseb"
+import { capitalize, uuid } from "@julseb-lib/utils"
 import { Table, CodeContainer } from "../../../lib"
 import type { ReactChildren } from "../../../lib/types"
 
@@ -20,7 +20,7 @@ export function RenderPreview({ data, withCode }: IRenderPreview) {
                     <CodeContainer
                         key={uuid()}
                         highlighterProps={{ language: "typescript" }}
-                        copyButton={false}
+                        hideCopyButton
                         color="white"
                         highlighterStyle={{ height: "100%" }}
                     >

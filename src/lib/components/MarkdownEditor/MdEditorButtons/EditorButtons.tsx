@@ -1,7 +1,7 @@
 /*=============================================== EditorButtons component ===============================================*/
 
 import classNames from "classnames"
-import { uuid, toSentenceCase } from "ts-utils-julseb"
+import { uuid, toSentenceCase } from "@julseb-lib/utils"
 import { Flexbox } from "../../../"
 import type { LibMdEditorEditor } from "../../../types"
 import { mdEditorButtons } from "../markdown-buttons"

@@ -1,6 +1,6 @@
 /*=============================================== SlideshowPreview ===============================================*/
 
-import { generateNumbers } from "ts-utils-julseb"
+import { generateNumbers } from "@julseb-lib/utils"
 import { Slideshow } from "../../../"
 import type { ILibSlideshow } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

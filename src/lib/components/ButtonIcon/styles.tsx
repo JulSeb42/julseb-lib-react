@@ -1,7 +1,7 @@
 /*=============================================== ButtonIcon styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { BREAKPOINTS, setDefaultTheme } from "../../"
 import { ButtonMixin } from "../ComponentsMixins"
 import type { ILibButtonIconStyles } from "./subtypes"

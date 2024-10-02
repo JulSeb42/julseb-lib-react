@@ -1,7 +1,7 @@
 /*=============================================== MessagingDemo ===============================================*/
 
 import { useState } from "react"
-import { convertDateShort } from "ts-utils-julseb"
+import { convertDateShort } from "@julseb-lib/utils"
 import { Messaging } from "../../../"
 import type { ILibMessaging } from "../types"
 import type { LibMessage } from "../../../types"

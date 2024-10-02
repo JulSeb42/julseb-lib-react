@@ -1,6 +1,6 @@
 /*=============================================== MasonryPreview ===============================================*/
 
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Image, Masonry } from "../../../"
 import type { ILibMasonry } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

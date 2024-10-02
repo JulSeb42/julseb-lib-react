@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.12",
+    "version": "0.0.14",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -24,7 +24,7 @@
         "check-errors": "tsc --noEmit"
     },
     "dependencies": {
-        "@julseb-lib/utils": "^0.0.1",
+        "@julseb-lib/utils": "^0.0.2",
         "classnames": "^2.5.1",
         "fuse.js": "^7.0.0",
         "markdown-to-jsx": "^7.5.0",
@@ -34,8 +34,7 @@
         "react-inlinesvg": "^4.1.3",
         "react-router-dom": "^6.26.1",
         "react-syntax-highlighter": "^15.5.0",
-        "styled-components": "^6.1.12",
-        "ts-utils-julseb": "2.4.5"
+        "styled-components": "^6.1.12"
     },
     "devDependencies": {
         "@eslint/compat": "^1.1.1",

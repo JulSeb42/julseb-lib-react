@@ -1,7 +1,7 @@
 /*=============================================== TextIcon styles ===============================================*/
 
 import styled from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { Mixins, setDefaultTheme } from "../../"
 import { getIconHeight } from "./utils"
 import type { LibSpacers, LibTextIconTag } from "../../types"

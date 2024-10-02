@@ -2,7 +2,7 @@
 
 import { forwardRef, useCallback, useRef } from "react"
 import classNames from "classnames"
-import { enableScroll, getRandomString, stringifyPx } from "ts-utils-julseb"
+import { enableScroll, getRandomString, stringifyPx } from "@julseb-lib/utils"
 import { useKeyPress, useClickOutside } from "../../"
 import { roundIconSize, appendStyles } from "../../lib-utils"
 import { Close } from "../../icons"

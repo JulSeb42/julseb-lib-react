@@ -38,14 +38,14 @@ export default defineConfig({
                 "react-router-dom",
                 "react-syntax-highlighter",
                 "styled-components",
-                "ts-utils-julseb",
+                "@julseb-lib/utils",
             ],
             output: {
                 globals: {
                     react: "React",
                     "react-dom": "ReactDOM",
                     "styled-components": "styled",
-                    "ts-utils-julseb": "ts-utils-julseb",
+                    "@julseb-lib/utils": "@julseb-lib/utils",
                     "react-router-dom": "react-router-dom",
                     "react-inlinesvg": "react-inlinesvg",
                     "fuse.js": "fuse.js",

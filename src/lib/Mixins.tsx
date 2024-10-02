@@ -2,7 +2,7 @@
 
 import { css, type DefaultTheme } from "styled-components"
 import type { Property } from "csstype"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { overlaysMap } from "./lib-utils"
 import {
     COLORS_LIGHT,

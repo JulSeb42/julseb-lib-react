@@ -1,7 +1,7 @@
 /*=============================================== FullBleed styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 import { Mixins, setDefaultTheme } from "../../"
 import type { ILibPadding } from "../../types"
 

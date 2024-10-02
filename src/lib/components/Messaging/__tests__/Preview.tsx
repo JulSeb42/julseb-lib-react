@@ -1,7 +1,7 @@
 /*=============================================== Messaging Tests preview ===============================================*/
 
 import { useState } from "react"
-import { getYesterday } from "ts-utils-julseb"
+import { getYesterday } from "@julseb-lib/utils"
 import { Messaging } from "../../../"
 import type { LibMessage } from "../../../types"
 

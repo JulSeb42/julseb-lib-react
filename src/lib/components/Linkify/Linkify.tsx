@@ -1,7 +1,7 @@
 /*=============================================== Linkify component ===============================================*/
 
 import { forwardRef, Fragment } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Text } from "../../"
 import type { ILibLinkify } from "./types"
 

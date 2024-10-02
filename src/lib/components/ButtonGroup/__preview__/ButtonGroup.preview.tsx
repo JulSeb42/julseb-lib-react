@@ -1,6 +1,6 @@
 /*=============================================== ButtonGroupPreview ===============================================*/
 
-import { capitalize } from "ts-utils-julseb"
+import { capitalize } from "@julseb-lib/utils"
 import { ButtonGroup } from "../../../"
 import type {
     LibButtonGroupButtonItem,

@@ -1,7 +1,7 @@
 /*=============================================== ButtonGroup component ===============================================*/
 
 import { forwardRef, useState, Fragment } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { ButtonGroupButton } from "./ButtonGroupButton"
 import { ButtonGroupToggle } from "./ButtonGroupToggle"
 import { StyledButtonGroup, Separator } from "./styles"

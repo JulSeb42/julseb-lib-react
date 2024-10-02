@@ -1,6 +1,6 @@
 /*=============================================== CardPreview ===============================================*/
 
-import { getRandomAvatar } from "ts-utils-julseb"
+import { getRandomAvatar } from "@julseb-lib/utils"
 import { Card, Text, Button, Image, Avatar } from "../../../"
 import type { ILibCard } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

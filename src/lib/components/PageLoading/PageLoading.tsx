@@ -1,7 +1,7 @@
 /*=============================================== PageLoading component ===============================================*/
 
 import { forwardRef, useEffect } from "react"
-import { disableScroll } from "ts-utils-julseb"
+import { disableScroll } from "@julseb-lib/utils"
 import { Loader } from "../../"
 import { StyledPageLoading } from "./styles"
 import type { ILibPageLoading } from "./types"

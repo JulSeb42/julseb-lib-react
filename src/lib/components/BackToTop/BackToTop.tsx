@@ -2,7 +2,7 @@
 
 import { forwardRef, useState, useEffect } from "react"
 import classNames from "classnames"
-import { scrollToTop } from "ts-utils-julseb"
+import { scrollToTop } from "@julseb-lib/utils"
 import { ArrowUp } from "../../icons"
 import { StyledBackToTop } from "./styles"
 import type { ILibBackToTop } from "./types"

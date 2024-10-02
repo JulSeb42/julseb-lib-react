@@ -1,7 +1,7 @@
 /*=============================================== TablePreview ===============================================*/
 
 import { Table } from "../../../"
-import { toTitleCase } from "ts-utils-julseb"
+import { toTitleCase } from "@julseb-lib/utils"
 import type { ILibTable } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 import type { ReactChildren } from "../../../types"

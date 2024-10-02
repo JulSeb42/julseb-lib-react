@@ -1,7 +1,7 @@
 /*=============================================== Stepper component ===============================================*/
 
 import { forwardRef } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { Step } from "./Step"
 import { StyledStepper } from "./styles"
 import type { ILibStepper } from "./types"

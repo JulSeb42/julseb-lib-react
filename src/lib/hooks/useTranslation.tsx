@@ -1,7 +1,7 @@
 /*=============================================== useTranslation ===============================================*/
 
 import { useState, useEffect } from "react"
-import { detectLanguage } from "ts-utils-julseb"
+import { detectLanguage } from "@julseb-lib/utils"
 import type { TranslateLang } from "../types"
 
 let currentLanguage = detectLanguage() || "en"

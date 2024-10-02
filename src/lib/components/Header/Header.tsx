@@ -2,7 +2,7 @@
 
 import { forwardRef, useState, useEffect, useRef, type RefObject } from "react"
 import classNames from "classnames"
-import { enableScroll, disableScroll } from "ts-utils-julseb"
+import { enableScroll, disableScroll } from "@julseb-lib/utils"
 import { useMaxWidth, useKeyPress } from "../../"
 import { HeaderBurger } from "./HeaderBurger"
 import { HeaderSearch } from "./HeaderSearch"

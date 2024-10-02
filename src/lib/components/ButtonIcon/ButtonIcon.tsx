@@ -1,7 +1,7 @@
 /*=============================================== ButtonIcon component ===============================================*/
 
 import { forwardRef } from "react"
-import { capitalize } from "ts-utils-julseb"
+import { capitalize } from "@julseb-lib/utils"
 import { Tooltip } from "../../"
 import { roundIconSize } from "../../lib-utils"
 import { ButtonIconFunction } from "./ButtonFunction"

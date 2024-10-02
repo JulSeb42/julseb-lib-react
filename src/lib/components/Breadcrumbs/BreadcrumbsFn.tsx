@@ -1,7 +1,7 @@
 /*=============================================== BreadcrumbsFn ===============================================*/
 
 import { forwardRef, Fragment } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { LibIcon } from "../LibIcon"
 import { ChevronRight } from "../../icons"
 import { StyledBreadcrumbs, SeparatorContainer } from "./styles"

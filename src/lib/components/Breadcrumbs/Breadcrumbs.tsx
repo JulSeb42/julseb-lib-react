@@ -1,7 +1,7 @@
 /*=============================================== Breadcrumbs component ===============================================*/
 
 import { forwardRef } from "react"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { BreadcrumbsFn } from "./BreadcrumbsFn"
 import { BreadcrumbItem } from "./BreadcrumbItem"
 import type { ILibBreadcrumbs } from "./types"

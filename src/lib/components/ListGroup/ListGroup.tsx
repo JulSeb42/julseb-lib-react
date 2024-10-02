@@ -2,7 +2,7 @@
 
 import { forwardRef, useRef } from "react"
 import classNames from "classnames"
-import { uuid } from "ts-utils-julseb"
+import { uuid } from "@julseb-lib/utils"
 import { useMergeRefs } from "../../hooks"
 import { ListGroupTitle } from "./ListGroupTitle"
 import { ListGroupItem } from "./ListGroupItem"

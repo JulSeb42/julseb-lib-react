@@ -1,7 +1,7 @@
 /*=============================================== Hr tests ===============================================*/
 
 import { Hr, LIB_TOKENS } from "../../.."
-import { stringifyPx } from "ts-utils-julseb"
+import { stringifyPx } from "@julseb-lib/utils"
 
 describe("<Hr />", () => {
     it("renders <Hr /> component", () => {
