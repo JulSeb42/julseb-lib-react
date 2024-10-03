@@ -11,6 +11,7 @@ import type {
     ReactChildren,
     LibMessageType,
     CssFontStyle,
+    LibColorsHover,
 } from "./"
 
 /*====================== Base ======================*/
@@ -524,6 +525,7 @@ interface HelperBottomWithText {
     iconColor?: LibAllColors
     iconSize?: number
     element?: never
+    linkColor?: LibColorsHover
 }
 
 interface HelperBottomWithElement {
@@ -534,6 +536,7 @@ interface HelperBottomWithElement {
     iconColor?: never
     iconSize?: never
     element: ReactChildren
+    linkColor?: LibColorsHover
 }
 
 export type LibHelperBottom =

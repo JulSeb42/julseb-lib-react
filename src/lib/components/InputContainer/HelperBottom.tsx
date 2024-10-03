@@ -29,9 +29,15 @@ export const HelperBottom: FC<ILibHelperBottom> = ({
             icon,
             iconColor = "primary",
             iconSize = getIconSizeFromFont("small") as number,
+            linkColor,
         } = helperBottom
 
-        if (element) return <StyledHelperBottom>{element}</StyledHelperBottom>
+        if (element)
+            return (
+                <StyledHelperBottom linkColor={linkColor}>
+                    {element}
+                </StyledHelperBottom>
+            )
 
         if (icon)
             return (
@@ -63,6 +69,7 @@ export const HelperBottom: FC<ILibHelperBottom> = ({
                         data-testid={testid && `${testid}.HelperBottom.Text`}
                         className={className && "HelperBottomText"}
                         color={textColor}
+                        linkColor={linkColor}
                         $fontStyle={fontStyle}
                         $iconSize={iconSize}
                         $hasIcon

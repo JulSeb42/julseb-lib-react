@@ -203,15 +203,17 @@ export const TextBaseMixin = ({
         transition: ${TRANSITIONS.SHORT};
         color: ${({ theme }) => Mixins.ColorsHoverDefault($linkColor, theme)};
 
-        @media ${BREAKPOINTS.HOVER} {
-            &:hover {
-                color: ${({ theme }) =>
-                    Mixins.ColorsHoverHover($linkColor, theme)};
-            }
+        &:not(:disabled) {
+            @media ${BREAKPOINTS.HOVER} {
+                &:hover {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverHover($linkColor, theme)};
+                }
 
-            &:active {
-                color: ${({ theme }) =>
-                    Mixins.ColorsHoverActive($linkColor, theme)};
+                &:active {
+                    color: ${({ theme }) =>
+                        Mixins.ColorsHoverActive($linkColor, theme)};
+                }
             }
         }
     }
