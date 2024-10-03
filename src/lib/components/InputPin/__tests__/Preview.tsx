@@ -5,12 +5,10 @@ import { InputPin } from "../"
 import type { ILibInputPin } from "../types"
 import type { LibValueInputPin } from "../../../types"
 
-export function InputPinPreview(
-    props: Omit<
+export const InputPinPreview = (props: Omit<
         ILibInputPin,
         "values" | "setValues" | "data-testid" | "className"
-    >
-) {
+    >) => {
     const [values, setValues] = useState<LibValueInputPin>({
         0: "",
         1: "",

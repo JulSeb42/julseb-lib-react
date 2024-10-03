@@ -6,49 +6,7 @@ import type { LibValueInputPin } from "../../../types"
 import type { ILibInputPin } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const inputPinPreview: ComponentPreview<ILibInputPin> = {
-    name: "InputPin",
-    component: InputPin,
-    category: "components",
-    import: "InputPin",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibInputPin",
-    additionalTypeImports: ["LibValueInputPin"],
-    extends: ["HTMLDivElement"],
-    previews: [
-        {
-            previewTitle: "Default",
-            demo: (
-                <InputPinDemo
-                    placeholders={["0", "0", "0", "0"]}
-                />
-            ),
-        },
-        {
-            previewTitle: "With hidden values",
-            demo: (
-                <InputPinDemo
-                    placeholders={["0", "0", "0", "0"]}
-                    container={{ justifyContent: "flex-start" }}
-                    hideValues
-                />
-            ),
-        },
-        {
-            previewTitle: "Disabled",
-            demo: (
-                <InputPinDemo
-                    placeholders={["0", "0", "0", "0"]}
-                    container={{ justifyContent: "flex-start" }}
-                    disabled
-                />
-            ),
-        },
-    ],
-}
-
-function InputPinDemo(props: Omit<ILibInputPin, "values" | "setValues">) {
+const InputPinDemo = (props: Omit<ILibInputPin, "values" | "setValues">) => {
     const [values, setValues] = useState<LibValueInputPin>({
         0: "",
         1: "",
@@ -88,4 +46,42 @@ function InputPinDemo(props: Omit<ILibInputPin, "values" | "setValues">) {
             />
         </Form>
     )
+}
+
+export const inputPinPreview: ComponentPreview<ILibInputPin> = {
+    name: "InputPin",
+    component: InputPin,
+    category: "components",
+    import: "InputPin",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibInputPin",
+    additionalTypeImports: ["LibValueInputPin"],
+    extends: ["HTMLDivElement"],
+    previews: [
+        {
+            previewTitle: "Default",
+            demo: <InputPinDemo placeholders={["0", "0", "0", "0"]} />,
+        },
+        {
+            previewTitle: "With hidden values",
+            demo: (
+                <InputPinDemo
+                    placeholders={["0", "0", "0", "0"]}
+                    container={{ justifyContent: "flex-start" }}
+                    hideValues
+                />
+            ),
+        },
+        {
+            previewTitle: "Disabled",
+            demo: (
+                <InputPinDemo
+                    placeholders={["0", "0", "0", "0"]}
+                    container={{ justifyContent: "flex-start" }}
+                    disabled
+                />
+            ),
+        },
+    ],
 }

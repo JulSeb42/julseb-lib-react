@@ -1,6 +1,5 @@
 /*=============================================== Header types ===============================================*/
 
-import type { FC } from "react"
 import type {
     LibComponentBase,
     LibHeaderPosition,

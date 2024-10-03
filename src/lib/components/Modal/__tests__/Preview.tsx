@@ -4,7 +4,7 @@ import { useState } from "react"
 import { enableScroll, disableScroll } from "@julseb-lib/utils"
 import { Modal, Button, Image, Alert } from "../../../"
 
-export function Preview() {
+export const Preview = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -31,7 +31,7 @@ export function Preview() {
     )
 }
 
-export function PreviewWithAlert() {
+export const PreviewWithAlert = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (

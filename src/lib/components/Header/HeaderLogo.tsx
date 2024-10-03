@@ -4,13 +4,13 @@ import { Link } from "react-router-dom"
 import { Logo, LogoImg } from "./styles"
 import type { ILibHeaderLogo } from "./subtypes"
 
-export function HeaderLogo({
+export const HeaderLogo = ({
     "data-testid": testid,
     className,
     logo,
     children,
     isOpen,
-}: ILibHeaderLogo) {
+}: ILibHeaderLogo) => {
     const {
         to = "/",
         href,

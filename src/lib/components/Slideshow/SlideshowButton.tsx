@@ -8,13 +8,13 @@ import type { ILibSlideshowButton } from "./subtypes"
 const DEFAULT_ICON_SIZE_SMALL = 24
 const DEFAULT_ICON_SIZE_LARGE = 32
 
-export function SlideshowButton({
+export const SlideshowButton = ({
     "data-testid": testid,
     className,
     onClick,
     position,
     controls,
-}: ILibSlideshowButton) {
+}: ILibSlideshowButton) => {
     const {
         "data-testid": controlTestid,
         className: controlClassName,

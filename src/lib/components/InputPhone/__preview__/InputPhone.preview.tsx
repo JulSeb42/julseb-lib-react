@@ -6,31 +6,9 @@ import type { LibCountry } from "../../../types"
 import type { ILibInputPhone } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
-    name: "InputPhone",
-    component: InputPhone,
-    category: "components",
-    import: "InputPhone",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibInputPhone",
-    additionalTypeImports: null,
-    extends: [
-        "HTMLInputElement",
-        "ILibInputBase",
-        "ILibInputValidationIconComponent",
-    ],
-    previews: [
-        {
-            previewTitle: "Default",
-            demo: <InputPhoneDemo />,
-        },
-    ],
-}
-
-function InputPhoneDemo(
+const InputPhoneDemo = (
     props: Omit<ILibInputPhone, "selectedCountry" | "setSelectedCountry">
-) {
+) => {
     const [selectedCountry, setSelectedCountry] = useState<
         LibCountry | undefined
     >(undefined)
@@ -73,4 +51,26 @@ function InputPhoneDemo(
             {result && <p>{result}</p>}
         </>
     )
+}
+
+export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
+    name: "InputPhone",
+    component: InputPhone,
+    category: "components",
+    import: "InputPhone",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibInputPhone",
+    additionalTypeImports: null,
+    extends: [
+        "HTMLInputElement",
+        "ILibInputBase",
+        "ILibInputValidationIconComponent",
+    ],
+    previews: [
+        {
+            previewTitle: "Default",
+            demo: <InputPhoneDemo />,
+        },
+    ],
 }

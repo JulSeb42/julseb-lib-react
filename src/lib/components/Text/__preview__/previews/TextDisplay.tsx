@@ -3,7 +3,7 @@
 import { Text } from "../.."
 import { Flexbox } from "../../../Flexbox"
 
-export function TextDisplay() {
+export const TextDisplay = () => {
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
             <Text tag="h1" display data-testid="testid" className="className">

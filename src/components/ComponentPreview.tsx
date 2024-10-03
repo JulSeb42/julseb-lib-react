@@ -9,11 +9,11 @@ interface IComponentPreviewContent {
     demo?: JSX.Element
 }
 
-function ComponentPreviewContent({
+const ComponentPreviewContent = ({
     component,
     props,
     demo,
-}: IComponentPreviewContent) {
+}: IComponentPreviewContent) => {
     const Component = component as any
 
     if (demo) return demo
@@ -27,11 +27,11 @@ interface IComponentPreview extends IComponentPreviewContent {
     noStretch?: boolean
 }
 
-export function ComponentPreview({
+export const ComponentPreview = ({
     previewTitle,
     noStretch,
     ...rest
-}: IComponentPreview) {
+}: IComponentPreview) => {
     return previewTitle ? (
         <Flexbox
             flexDirection="column"

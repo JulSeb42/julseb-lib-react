@@ -8,7 +8,7 @@ import { Plus, ChevronDown } from "../../icons"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"
 import type { ILibAccordionButton } from "./subtypes"
 
-export function AccordionButton({
+export const AccordionButton = ({
     "data-testid": testid,
     className,
     variant = "basic",
@@ -16,7 +16,7 @@ export function AccordionButton({
     isOpen,
     setIsOpen,
     title,
-}: ILibAccordionButton) {
+}: ILibAccordionButton) => {
     const iconProps = {
         "data-testid":
             testid &&

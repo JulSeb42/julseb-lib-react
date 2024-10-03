@@ -5,7 +5,7 @@ import { ColorCard } from "../../../components"
 import { Flexbox } from "../../../lib"
 import { allOverlays } from "../.."
 
-function ColorsPreview() {
+const ColorsPreview = () => {
     return (
         <Flexbox gap="xs" flexDirection="column" alignItems="stretch">
             {allOverlays.map(o => (

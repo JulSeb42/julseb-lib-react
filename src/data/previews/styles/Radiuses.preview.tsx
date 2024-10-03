@@ -5,7 +5,7 @@ import { StylesCard } from "../../../components"
 import { Grid } from "../../../lib"
 import { allRadiuses } from "../.."
 
-function RadiusesPreview() {
+const RadiusesPreview = () => {
     return (
         <Grid col={2} gap="m">
             {allRadiuses.map(s => (

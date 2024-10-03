@@ -6,20 +6,7 @@ import type { LibColorsHover } from "../../../types"
 import type { ILibBurger } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const burgerPreview: ComponentPreview<ILibBurger> = {
-    name: "Burger",
-    component: Burger,
-    category: "components",
-    import: "Burger",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibBurger",
-    additionalTypeImports: null,
-    extends: ["HTMLButtonElement"],
-    previews: [{ demo: <BurgerPreview /> }],
-}
-
-function BurgerPreview() {
+const BurgerPreview = () => {
     type MappedColors = Exclude<
         LibColorsHover,
         "white" | "background" | "font" | "gray"
@@ -57,4 +44,17 @@ function BurgerPreview() {
             ))}
         </Flexbox>
     )
+}
+
+export const burgerPreview: ComponentPreview<ILibBurger> = {
+    name: "Burger",
+    component: Burger,
+    category: "components",
+    import: "Burger",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibBurger",
+    additionalTypeImports: null,
+    extends: ["HTMLButtonElement"],
+    previews: [{ demo: <BurgerPreview /> }],
 }

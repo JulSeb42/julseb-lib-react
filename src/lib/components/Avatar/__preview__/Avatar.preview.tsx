@@ -7,6 +7,27 @@ import type { ComponentPreview } from "../../../../data/components"
 
 const IMG_URL = "/images/pic-avatar.jpg"
 
+const AvatarPreview = (props: Omit<ILibAvatar, "img">) => {
+    const arr = Object.values(typeValues.colorsShort) as Array<LibColorsShort>
+
+    return (
+        <Flexbox gap="s">
+            {arr.map((c, i) => (
+                <Avatar
+                    key={i}
+                    backgroundColor={c}
+                    data-testid="testid"
+                    className="className"
+                    id={`avatar-${i}-${
+                        props?.letter || props?.icon?.toString()
+                    }`}
+                    {...(props as any)}
+                />
+            ))}
+        </Flexbox>
+    )
+}
+
 export const avatarPreview: ComponentPreview<ILibAvatar> = {
     name: "Avatar",
     component: Avatar,
@@ -52,25 +73,4 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
             demo: <AvatarPreview icon="user" size={64} />,
         },
     ],
-}
-
-function AvatarPreview(props: Omit<ILibAvatar, "img">) {
-    const arr = Object.values(typeValues.colorsShort) as Array<LibColorsShort>
-
-    return (
-        <Flexbox gap="s">
-            {arr.map((c, i) => (
-                <Avatar
-                    key={i}
-                    backgroundColor={c}
-                    data-testid="testid"
-                    className="className"
-                    id={`avatar-${i}-${
-                        props?.letter || props?.icon?.toString()
-                    }`}
-                    {...(props as any)}
-                />
-            ))}
-        </Flexbox>
-    )
 }

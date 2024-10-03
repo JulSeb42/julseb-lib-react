@@ -3,7 +3,7 @@
 import type { ComponentPreview } from "../../components"
 import { useLibTheme, Button, Text } from "../../../lib"
 
-function ThemeProviderPreview() {
+const ThemeProviderPreview = () => {
     const { selectedTheme, toggleTheme } = useLibTheme()
 
     return (

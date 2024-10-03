@@ -12,14 +12,14 @@ import type { ILibLibIcon } from "./types"
  * @prop color?: Any color from the library
  * @prop className?: string
  */
-export function LibIcon({
+export const LibIcon = ({
     "data-testid": testid,
     icon,
     size,
     color,
     className,
     baseUrl,
-}: ILibLibIcon) {
+}: ILibLibIcon) => {
     if (typeof icon !== "string") return icon
 
     return (

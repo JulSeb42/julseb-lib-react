@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Burger } from "../../../"
 import type { ILibBurger } from "../types"
 
-export function BurgerPreview(props: Omit<ILibBurger, "isOpen" | "onClick">) {
+export const BurgerPreview = (props: Omit<ILibBurger, "isOpen" | "onClick">) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (

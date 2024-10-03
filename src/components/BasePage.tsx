@@ -10,7 +10,7 @@ export interface BasePageProps {
     children?: ReactChildren
 }
 
-export function BasePage({ title, children }: BasePageProps) {
+export const BasePage = ({ title, children }: BasePageProps) => {
     return (
         <>
             <Helmet

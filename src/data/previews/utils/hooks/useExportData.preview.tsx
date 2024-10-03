@@ -1,6 +1,6 @@
 import { useExportData, Flexbox, Button } from "../../../../lib"
 
-export function PreviewUseExportData() {
+export const PreviewUseExportData = () => {
     const headers: Array<string> = [
         ...new Set(users.map(user => Object.keys(user)).flat()),
     ]

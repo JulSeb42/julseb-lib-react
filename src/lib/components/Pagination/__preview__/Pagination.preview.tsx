@@ -10,24 +10,11 @@ import {
 import type { ILibPagination } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const paginationPreview: ComponentPreview<ILibPagination> = {
-    name: "Pagination",
-    component: Pagination,
-    category: "components",
-    import: "Pagination",
-    additionalImports: ["usePaginatedData"],
-    optionalImports: ["PaginationButton"],
-    propsImport: "ILibPagination",
-    additionalTypeImports: null,
-    extends: ["HTMLDivElement", "ILibFlexbox"],
-    previews: [{ demo: <PaginationDemo /> }],
-}
-
 const arr: Array<{ name: string }> = generateNumbers(1, 200).map(n => ({
     name: `Hello ${n}`,
 }))
 
-function PaginationDemo() {
+const PaginationDemo = () => {
     const { paginatedData, totalPages } = usePaginatedData<{ name: string }>(
         arr
     )
@@ -58,4 +45,17 @@ function PaginationDemo() {
             />
         </>
     )
+}
+
+export const paginationPreview: ComponentPreview<ILibPagination> = {
+    name: "Pagination",
+    component: Pagination,
+    category: "components",
+    import: "Pagination",
+    additionalImports: ["usePaginatedData"],
+    optionalImports: ["PaginationButton"],
+    propsImport: "ILibPagination",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement", "ILibFlexbox"],
+    previews: [{ demo: <PaginationDemo /> }],
 }

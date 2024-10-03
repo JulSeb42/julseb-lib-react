@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 
-export function ResetScroll() {
+export const ResetScroll = () => {
     const { pathname, search } = useLocation()
 
     useEffect(() => {

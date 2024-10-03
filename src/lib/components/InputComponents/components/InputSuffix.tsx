@@ -11,12 +11,12 @@ import type { ILibInputSuffix } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop prefix: string | JSX.Element | undefined
  */
-export function InputSuffix({
+export const InputSuffix = ({
     "data-testid": testid,
     className,
     suffix,
     inputBackground,
-}: ILibInputSuffix) {
+}: ILibInputSuffix) => {
     if (!suffix) return null
 
     return (

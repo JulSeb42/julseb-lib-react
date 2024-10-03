@@ -6,12 +6,12 @@ import { Input } from "../../"
 import { SearchForm } from "./styles"
 import type { ILibHeaderSearch } from "./subtypes"
 
-export function HeaderSearch({
+export const HeaderSearch = ({
     "data-testid": testid,
     className,
     search,
     handleClose,
-}: ILibHeaderSearch) {
+}: ILibHeaderSearch) => {
     if (!search) return null
 
     const {

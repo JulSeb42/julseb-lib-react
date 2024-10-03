@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useKeyPress, Flexbox, Text } from "../../../../lib"
 
-export function PreviewUseKeyPress() {
+export const PreviewUseKeyPress = () => {
     const [isVisible, setIsVisible] = useState(false)
     const keys = ["Command", "KeyJ"]
     useKeyPress(keys, () => setIsVisible(!isVisible))

@@ -11,12 +11,12 @@ import type { ILibInputPrefix } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop prefix: string | JSX.Element | undefined
  */
-export function InputPrefix({
+export const InputPrefix = ({
     "data-testid": testid,
     className,
     prefix,
     inputBackground,
-}: ILibInputPrefix) {
+}: ILibInputPrefix) => {
     if (!prefix) return null
 
     return (

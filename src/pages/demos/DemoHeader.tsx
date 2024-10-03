@@ -5,7 +5,7 @@ import { Header, Cover, Text } from "../../lib"
 import type { LibHeaderLink } from "../../lib/types"
 
 export const DemoHeader = () => {
-    const links: Array<LibHeaderLink> = [
+    const links: Array<LibHeaderLink | JSX.Element> = [
         {
             text: "Link",
             to: "#",
@@ -22,6 +22,9 @@ export const DemoHeader = () => {
             text: "Button",
             onClick: () => alert("Clicked"),
         },
+        <button key={42} onClick={() => alert("Clicked element")}>
+            Click me
+        </button>,
     ]
 
     return (
@@ -41,7 +44,7 @@ export const DemoHeader = () => {
                 hideOnScroll
                 search={{
                     pathname: "",
-                    icon: "search",
+                    iconLeft: "search",
                     placeholder: "Search here",
                     keyboardShortcut: ["Command", "KeyK"],
                     maxWidth: 300,

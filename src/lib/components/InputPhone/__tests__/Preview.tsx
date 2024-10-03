@@ -4,7 +4,7 @@ import { useState } from "react"
 import { InputPhone } from "../InputPhone"
 import type { LibCountry } from "../../../types"
 
-export function Preview() {
+export const Preview = () => {
     const [selectedCountry, setSelectedCountry] = useState<
         LibCountry | undefined
     >(undefined)

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Autocomplete } from "../"
 import { frenchCities } from "../../../../data"
 
-export function Preview() {
+export const Preview = () => {
     const [location, setLocation] = useState("")
 
     return (

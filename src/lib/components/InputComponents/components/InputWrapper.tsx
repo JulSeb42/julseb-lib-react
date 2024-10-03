@@ -17,7 +17,7 @@ import type { ILibInputWrapper } from "../types"
  * @prop validationStatus: boolean | undefined
  * @prop children?: ReactChildren
  */
-export function InputWrapper({
+export const InputWrapper = ({
     "data-testid": testid,
     className,
     hasContainer,
@@ -27,7 +27,7 @@ export function InputWrapper({
     inputBackground,
     inputVariant,
     validationStatus,
-}: ILibInputWrapper) {
+}: ILibInputWrapper) => {
     return (
         <StyledInputWrapper
             data-testid={hasContainer && testid ? `${testid}.Wrapper` : testid}

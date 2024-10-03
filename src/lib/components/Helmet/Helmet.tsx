@@ -20,7 +20,7 @@ const helmetData = new HelmetData({})
  * @prop language?: string
  * @prop children?: ReactChildren
  */
-export function Helmet({
+export const Helmet = ({
     title,
     favicon,
     description,
@@ -32,7 +32,7 @@ export function Helmet({
     language = "en",
     children,
     ...rest
-}: ILibHelmet) {
+}: ILibHelmet) => {
     return (
         <Meta helmetData={helmetData} {...rest}>
             <title>{title}</title>

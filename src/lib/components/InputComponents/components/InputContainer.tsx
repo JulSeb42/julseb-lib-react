@@ -20,7 +20,7 @@ import type { ILibInputContainer } from "../../InputContainer/types"
  * @prop style: CSSProperties | undefined
  * @prop iconBaseUrl: string | undefined
  */
-export function InputContainer({
+export const InputContainer = ({
     "data-testid": testid,
     id,
     label,
@@ -36,7 +36,7 @@ export function InputContainer({
     hasListOpen,
     iconBaseUrl,
     style,
-}: ILibInputContainer) {
+}: ILibInputContainer) => {
     if (
         !label &&
         !labelComment &&

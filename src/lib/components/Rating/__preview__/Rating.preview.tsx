@@ -5,6 +5,20 @@ import { Rating } from "../../../"
 import type { ILibRating } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const RatingDemo = ({ ...rest }: Partial<Omit<ILibRating, "readOnly">>) => {
+    const [rating, setRating] = useState(3)
+
+    return (
+        <Rating
+            {...rest}
+            rating={rating}
+            setRating={setRating}
+            data-testid="testid"
+            className="className"
+        />
+    )
+}
+
 export const ratingPreview: ComponentPreview<ILibRating> = {
     name: "Rating",
     component: Rating,
@@ -39,18 +53,4 @@ export const ratingPreview: ComponentPreview<ILibRating> = {
             },
         },
     ],
-}
-
-function RatingDemo({ ...rest }: Partial<Omit<ILibRating, "readOnly">>) {
-    const [rating, setRating] = useState(3)
-
-    return (
-        <Rating
-            {...rest}
-            rating={rating}
-            setRating={setRating}
-            data-testid="testid"
-            className="className"
-        />
-    )
 }

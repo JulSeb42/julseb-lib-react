@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { useClickOutside, Button } from "../../../../lib"
 
-export function PreviewUseClickOutside() {
+export const PreviewUseClickOutside = () => {
     const [click, setClick] = useState<"nowhere" | "inside" | "outside">(
         "nowhere"
     )

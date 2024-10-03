@@ -5,6 +5,26 @@ import { typeValues, type LibColorsShort } from "../../../types"
 import type { ILibTag } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const TagDemo = ({ ...rest }: ILibTag) => {
+    const colors = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
+
+    return (
+        <Flexbox gap="xs" alignItems="flex-start">
+            {colors.map(c => (
+                <Tag
+                    key={c}
+                    backgroundColor={c}
+                    {...rest}
+                    data-testid="testid"
+                    className="className"
+                >
+                    Tag
+                </Tag>
+            ))}
+        </Flexbox>
+    )
+}
+
 export const tagPreview: ComponentPreview<ILibTag> = {
     name: "Tag",
     component: Tag,
@@ -40,24 +60,4 @@ export const tagPreview: ComponentPreview<ILibTag> = {
             },
         },
     ],
-}
-
-function TagDemo({ ...rest }: ILibTag) {
-    const colors = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
-
-    return (
-        <Flexbox gap="xs" alignItems="flex-start">
-            {colors.map(c => (
-                <Tag
-                    key={c}
-                    backgroundColor={c}
-                    {...rest}
-                    data-testid="testid"
-                    className="className"
-                >
-                    Tag
-                </Tag>
-            ))}
-        </Flexbox>
-    )
 }

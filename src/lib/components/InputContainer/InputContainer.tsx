@@ -4,15 +4,12 @@ import { forwardRef } from "react"
 import classNames from "classnames"
 import { Text } from "../../"
 import { InputValidationHelper } from "../InputComponents"
-import { LibIcon } from "../LibIcon"
-import { getIconSizeFromFont } from "../../lib-utils"
+import { HelperBottom } from "./HelperBottom"
 import {
     StyledInputContainer,
     Label,
     LabelComment,
-    HelperBottomContainer,
-    HelperBottomIconContainer,
-    HelperBottom,
+    StyledHelperBottom,
 } from "./styles"
 import type { ILibInputContainer } from "./types"
 
@@ -26,7 +23,7 @@ import type { ILibInputContainer } from "./types"
  * @prop label?: string
  * @prop labelComment?: string
  * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop helperBottom?: string | { text: string => only if element is not defined; element: ReactChildren => only if text is not defined; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
  * @prop value?: any
  * @prop counter?: boolean
  * @prop maxLength?: number
@@ -102,91 +99,16 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
 
                 {children}
 
-                {helperBottom &&
-                    (typeof helperBottom === "string" || !helperBottom.icon ? (
-                        <HelperBottom
-                            data-testid={testid && `${testid}.HelperBottom`}
-                            className={className && "HelperBottom"}
-                            color={
-                                typeof helperBottom === "object" &&
-                                helperBottom.textColor
-                                    ? helperBottom.textColor
-                                    : undefined
-                            }
-                            $fontStyle={
-                                typeof helperBottom === "object" &&
-                                helperBottom.fontStyle
-                                    ? helperBottom.fontStyle
-                                    : undefined
-                            }
-                            $hasIcon={false}
-                        >
-                            {typeof helperBottom === "string"
-                                ? helperBottom
-                                : helperBottom.text}
-                        </HelperBottom>
-                    ) : (
-                        <HelperBottomContainer
-                            data-testid={
-                                testid && `${testid}.HelperBottomContainer`
-                            }
-                            className={className && "HelperBottomContainer"}
-                        >
-                            <HelperBottomIconContainer
-                                data-testid={
-                                    testid &&
-                                    `${testid}.HelperBottom.IconContainer`
-                                }
-                                className={className && "BottomIconContainer"}
-                                $iconSize={
-                                    (helperBottom.iconSize ||
-                                        getIconSizeFromFont("small")) as number
-                                }
-                            >
-                                <LibIcon
-                                    data-testid={
-                                        testid &&
-                                        `${testid}.HelperBottom.IconContainer.Icon`
-                                    }
-                                    className={className && "HelperBottomIcon"}
-                                    icon={helperBottom.icon}
-                                    color={helperBottom.iconColor || "primary"}
-                                    size={
-                                        helperBottom.iconSize ||
-                                        getIconSizeFromFont("small")
-                                    }
-                                    baseUrl={iconBaseUrl}
-                                />
-                            </HelperBottomIconContainer>
-
-                            <HelperBottom
-                                data-testid={
-                                    testid && `${testid}.HelperBottom.Text`
-                                }
-                                className={className && "HelperBottomText"}
-                                color={
-                                    helperBottom.textColor
-                                        ? helperBottom.textColor
-                                        : undefined
-                                }
-                                $fontStyle={
-                                    helperBottom.fontStyle
-                                        ? helperBottom.fontStyle
-                                        : undefined
-                                }
-                                $hasIcon
-                                $iconSize={
-                                    (helperBottom.iconSize ||
-                                        getIconSizeFromFont("small")) as number
-                                }
-                            >
-                                {helperBottom.text}
-                            </HelperBottom>
-                        </HelperBottomContainer>
-                    ))}
+                {helperBottom && (
+                    <HelperBottom
+                        data-testid={testid}
+                        className={className}
+                        helperBottom={helperBottom}
+                    />
+                )}
 
                 {counter && (
-                    <HelperBottom
+                    <StyledHelperBottom
                         data-testid={testid && `${testid}.Counter`}
                         className={className && "Counter"}
                         color="gray"
@@ -194,7 +116,7 @@ export const InputContainer = forwardRef<HTMLDivElement, ILibInputContainer>(
                     >
                         {value.toString().length}
                         {maxLength && `/${maxLength}`}
-                    </HelperBottom>
+                    </StyledHelperBottom>
                 )}
 
                 {validation && (

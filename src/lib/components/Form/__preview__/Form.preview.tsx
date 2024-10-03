@@ -5,20 +5,7 @@ import { Form, Input } from "../../../"
 import type { ILibForm } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const formPreview: ComponentPreview<ILibForm> = {
-    name: "Form",
-    component: Form,
-    category: "components",
-    import: "Form",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibForm",
-    additionalTypeImports: null,
-    extends: ["HTMLFormElement"],
-    previews: [{ previewTitle: "Default", demo: <FormDemo /> }],
-}
-
-function FormDemo() {
+const FormDemo = () => {
     const [inputs, setInputs] = useState({
         name: "Jul",
         email: "a@b.com",
@@ -73,4 +60,17 @@ function FormDemo() {
             />
         </Form>
     )
+}
+
+export const formPreview: ComponentPreview<ILibForm> = {
+    name: "Form",
+    component: Form,
+    category: "components",
+    import: "Form",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibForm",
+    additionalTypeImports: null,
+    extends: ["HTMLFormElement"],
+    previews: [{ previewTitle: "Default", demo: <FormDemo /> }],
 }

@@ -15,6 +15,32 @@ const buttonVariants: Array<LibButtonIconVariant> = [
     "ghost",
 ]
 
+const FlexPreview = ({ children }: { children?: ReactChildren }) => {
+    return (
+        <Flexbox gap="s" flexWrap="wrap">
+            {children}
+        </Flexbox>
+    )
+}
+
+const ButtonsMap = (props: ILibButtonIcon) => {
+    const colors = Object.values(typeValues.colorsHover)
+
+    return (
+        <FlexPreview>
+            {colors.map((c, i) => (
+                <ButtonIcon
+                    key={i}
+                    color={c}
+                    {...props}
+                    data-testid="testid"
+                    className="className"
+                />
+            ))}
+        </FlexPreview>
+    )
+}
+
 export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
     name: "ButtonIcon",
     component: ButtonIcon,
@@ -100,30 +126,4 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
             },
         },
     ],
-}
-
-function FlexPreview({ children }: { children?: ReactChildren }) {
-    return (
-        <Flexbox gap="s" flexWrap="wrap">
-            {children}
-        </Flexbox>
-    )
-}
-
-function ButtonsMap(props: ILibButtonIcon) {
-    const colors = Object.values(typeValues.colorsHover)
-
-    return (
-        <FlexPreview>
-            {colors.map((c, i) => (
-                <ButtonIcon
-                    key={i}
-                    color={c}
-                    {...props}
-                    data-testid="testid"
-                    className="className"
-                />
-            ))}
-        </FlexPreview>
-    )
 }

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { InputSlider } from "../InputSlider"
 
-export function Preview() {
+export const Preview = () => {
     const [value, setValue] = useState(50)
 
     return (

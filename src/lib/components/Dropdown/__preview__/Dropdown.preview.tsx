@@ -22,20 +22,7 @@ const items: Array<LibDropdownItem> = [
     },
 ]
 
-export const dropdownPreview: ComponentPreview<ILibDropdown> = {
-    name: "Dropdown",
-    component: Dropdown,
-    category: "components",
-    import: "Dropdown",
-    additionalImports: null,
-    optionalImports: ["DropdownContainer"],
-    propsImport: "ILibDropdown",
-    additionalTypeImports: ["LibDropdownItem"],
-    extends: ["HTMLDivElement"],
-    previews: [{ demo: <DropdownDemo /> }],
-}
-
-function DropdownDemo() {
+const DropdownDemo = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -54,4 +41,17 @@ function DropdownDemo() {
             />
         </DropdownContainer>
     )
+}
+
+export const dropdownPreview: ComponentPreview<ILibDropdown> = {
+    name: "Dropdown",
+    component: Dropdown,
+    category: "components",
+    import: "Dropdown",
+    additionalImports: null,
+    optionalImports: ["DropdownContainer"],
+    propsImport: "ILibDropdown",
+    additionalTypeImports: ["LibDropdownItem"],
+    extends: ["HTMLDivElement"],
+    previews: [{ demo: <DropdownDemo /> }],
 }

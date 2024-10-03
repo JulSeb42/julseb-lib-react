@@ -6,10 +6,10 @@ import { Messaging } from "../../../"
 import type { ILibMessaging } from "../types"
 import type { LibMessage } from "../../../types"
 
-export function MessagingDemo({
+export const MessagingDemo = ({
     items: data,
     ...rest
-}: Omit<ILibMessaging, "handleSubmit" | "input">) {
+}: Omit<ILibMessaging, "handleSubmit" | "input">) => {
     const [message, setMessage] = useState("")
     const [messagesList, setMessagesList] = useState<Array<LibMessage>>(data)
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { unslugify } from "@julseb-lib/utils"
 import { Flexbox, Text } from "../../../lib"
 
-export function ContainerPreview({ demos }: { demos: Array<string> }) {
+export const ContainerPreview = ({ demos }: { demos: Array<string> }) => {
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
             {demos.map(d => (

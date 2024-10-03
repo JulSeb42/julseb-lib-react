@@ -10,6 +10,7 @@ import type {
     LibToastStatus,
     ReactChildren,
     LibMessageType,
+    CssFontStyle,
 } from "./"
 
 /*====================== Base ======================*/
@@ -512,3 +513,30 @@ export type LibDragListItem =
     | DragListItemWithContentAndBadge
     | DragListItemWithContentAndDate
     | DragListItemWithElement
+
+/*====================== HelperBottom ======================*/
+
+interface HelperBottomWithText {
+    text: string
+    textColor?: LibAllColors
+    fontStyle?: CssFontStyle
+    icon?: LibIcon
+    iconColor?: LibAllColors
+    iconSize?: number
+    element?: never
+}
+
+interface HelperBottomWithElement {
+    text?: never
+    textColor?: never
+    fontStyle?: never
+    icon?: never
+    iconColor?: never
+    iconSize?: never
+    element: ReactChildren
+}
+
+export type LibHelperBottom =
+    | string
+    | HelperBottomWithText
+    | HelperBottomWithElement

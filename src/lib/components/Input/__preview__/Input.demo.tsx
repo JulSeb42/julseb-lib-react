@@ -4,7 +4,7 @@ import { useState, type ChangeEvent } from "react"
 import { Input } from "../../../"
 import type { LibValidationStatus } from "../../../types"
 
-export function InputDemoValidation() {
+export const InputDemoValidation = () => {
     const [input, setInput] = useState("")
     const [validation, setValidation] = useState<LibValidationStatus>(undefined)
 
@@ -35,7 +35,7 @@ export function InputDemoValidation() {
     )
 }
 
-export function InputDemoCounter() {
+export const InputDemoCounter = () => {
     const [input, setInput] = useState("")
 
     return (
@@ -53,7 +53,7 @@ export function InputDemoCounter() {
     )
 }
 
-export function InputSearch() {
+export const InputSearch = () => {
     const [value, setValue] = useState("")
 
     return (

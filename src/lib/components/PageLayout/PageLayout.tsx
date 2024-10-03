@@ -27,7 +27,7 @@ import type { ILibPageLayout } from "./types"
  * @prop main?: ILibMain => imported from Main component, only if template is set to single
  * @prop mainMinHeight?: string | number => only if template is set to single
  */
-export function PageLayout({
+export const PageLayout = ({
     children,
     isLoading,
     pageLoading,
@@ -40,7 +40,7 @@ export function PageLayout({
     template = "single",
     main,
     mainMinHeight = "85vh",
-}: ILibPageLayout) {
+}: ILibPageLayout) => {
     return (
         <>
             {helmet && (

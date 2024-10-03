@@ -17,6 +17,7 @@ import type { ILibInputImage } from "./types"
  * @prop value: string
  * @prop width?: string | number
  * @prop height?: string | number
+ * @prop size?: string | number
  * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
  * @prop icons?: { empty?: string | JSX.Element; hover?: string | JSX.Element }
  * @prop iconSizes?: { empty?: number; hover?: number }
@@ -24,7 +25,7 @@ import type { ILibInputImage } from "./types"
  * @prop label?: string
  * @prop labelComment?: string
  * @prop helper?: string
- * @prop helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
+ * @prop helperBottom?: string | { text: string => only if element is not defined; element: ReactChildren => only if text is not defined; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
  * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  * @prop iconBaseUrl?: string
  * @prop containerStyle?: CSSProperties
@@ -44,6 +45,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
             icons,
             iconSizes,
             iconBaseUrl,
+            size,
             width = 64,
             height = 64,
             borderRadius = "m",
@@ -95,8 +97,8 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                         hasContainer && className ? "InputLabel" : className
                     }
                     htmlFor={id}
-                    $width={width}
-                    $height={height}
+                    $width={size ?? width}
+                    $height={size ?? height}
                     $borderRadius={borderRadius}
                     $disabled={disabled}
                     $validationStatus={validation?.status}

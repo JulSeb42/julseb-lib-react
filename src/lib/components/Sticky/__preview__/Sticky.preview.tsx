@@ -4,20 +4,7 @@ import { Sticky, Text, Button } from "../../../"
 import type { ILibSticky } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const stickyPreview: ComponentPreview<ILibSticky> = {
-    name: "Sticky",
-    component: Sticky,
-    category: "components",
-    import: "Sticky",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibSticky",
-    additionalTypeImports: null,
-    extends: ["HTMLDivElement"],
-    previews: [{ demo: <StickyDemo /> }],
-}
-
-function StickyDemo() {
+const StickyDemo = () => {
     return (
         <>
             <Text>
@@ -177,4 +164,17 @@ function StickyDemo() {
             </Text>
         </>
     )
+}
+
+export const stickyPreview: ComponentPreview<ILibSticky> = {
+    name: "Sticky",
+    component: Sticky,
+    category: "components",
+    import: "Sticky",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibSticky",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement"],
+    previews: [{ demo: <StickyDemo /> }],
 }

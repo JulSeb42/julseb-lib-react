@@ -5,7 +5,7 @@ import { StylesCard } from "../../../components"
 import { Grid } from "../../../lib"
 import { allSpacers } from "../.."
 
-function SpacersPreview() {
+const SpacersPreview = () => {
     return (
         <Grid col={2} gap="m">
             {allSpacers.map(s => (

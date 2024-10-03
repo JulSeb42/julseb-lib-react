@@ -2,7 +2,7 @@
 
 import { Text } from "../.."
 
-export function BlockQuote() {
+export const BlockQuote = () => {
     return (
         <Text tag="blockquote" data-testid="testid" className="className">
             Blockquote

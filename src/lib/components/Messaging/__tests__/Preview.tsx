@@ -32,7 +32,7 @@ const messagesList: Array<LibMessage> = [
     },
 ]
 
-function Preview({ allMessages }: { allMessages: Array<LibMessage> }) {
+const Preview = ({ allMessages }: { allMessages: Array<LibMessage> }) => {
     const [messages, setMessages] = useState(allMessages)
     const [message, setMessage] = useState("")
 
@@ -60,10 +60,10 @@ function Preview({ allMessages }: { allMessages: Array<LibMessage> }) {
     )
 }
 
-export function MessagingPreview() {
+export const MessagingPreview = () => {
     return <Preview allMessages={messagesList} />
 }
 
-export function MessagingEmptyPreview() {
+export const MessagingEmptyPreview = () => {
     return <Preview allMessages={[]} />
 }

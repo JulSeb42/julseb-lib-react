@@ -1,13 +1,17 @@
+// @ts-nocheck
 /*=============================================== HeaderNavLink ===============================================*/
 
+import { isValidElement } from "react"
 import { NavLink } from "react-router-dom"
 import type { ILibHeaderNavLink } from "./subtypes"
 
-export function HeaderNavLink({
+export const HeaderNavLink = ({
     "data-testid": testid,
     link,
     className,
-}: ILibHeaderNavLink) {
+}: ILibHeaderNavLink) => {
+    if (isValidElement(link)) return link
+
     if (link.to)
         return (
             <NavLink

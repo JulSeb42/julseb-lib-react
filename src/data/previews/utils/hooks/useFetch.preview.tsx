@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime"
 import axios, { type AxiosResponse } from "axios"
 import { useFetch, Flexbox, Loader, Text, Image } from "../../../../lib"
 
-export function PreviewUseFetch() {
+export const PreviewUseFetch = () => {
     const { response, error, loading } = useFetch<AxiosResponse>(
         axios.get("https://dog.ceo/api/breeds/image/random")
     )

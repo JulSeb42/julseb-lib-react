@@ -12,7 +12,7 @@ const translations = {
     },
 }
 
-export function PreviewUseTranslation() {
+export const PreviewUseTranslation = () => {
     const { translate, setLanguage, language } = useTranslation(translations)
 
     return (

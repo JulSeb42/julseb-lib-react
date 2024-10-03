@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { Text } from "../.."
 import { Flexbox } from "../../../Flexbox"
 
-export function Paragraphs() {
+export const Paragraphs = () => {
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
             <Text tag="p" data-testid="testid" className="className">

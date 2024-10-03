@@ -4,12 +4,12 @@ import { SrOnly } from "../../"
 import { Value as StyledValue } from "./styles"
 import type { ILibProgressCircleValue } from "./subtypes"
 
-export function Value({
+export const Value = ({
     "data-testid": testid,
     className,
     showValue,
     value,
-}: ILibProgressCircleValue) {
+}: ILibProgressCircleValue) => {
     if (!showValue)
         return (
             <SrOnly

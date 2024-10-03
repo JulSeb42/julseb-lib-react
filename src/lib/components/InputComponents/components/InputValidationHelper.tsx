@@ -6,7 +6,7 @@ import { CloseCircle, CheckCircle } from "../../../icons"
 import {
     HelperBottomContainer,
     HelperBottomIconContainer,
-    HelperBottom,
+    StyledHelperBottom,
 } from "../../InputContainer/styles"
 import type { ILibInputValidationHelper } from "../types"
 
@@ -17,11 +17,11 @@ import type { ILibInputValidationHelper } from "../types"
  * @prop className: string | undefined
  * @prop validation: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  */
-export function InputValidationHelper({
+export const InputValidationHelper = ({
     "data-testid": testid,
     className,
     validation,
-}: ILibInputValidationHelper) {
+}: ILibInputValidationHelper) => {
     const {
         status,
         message,
@@ -81,7 +81,7 @@ export function InputValidationHelper({
                 />
             </HelperBottomIconContainer>
 
-            <HelperBottom
+            <StyledHelperBottom
                 data-testid={testid && `${testid}.ValidationHelper.Text`}
                 className={className && "ValidationTextBottom"}
                 $hasIcon
@@ -92,7 +92,7 @@ export function InputValidationHelper({
                 }
             >
                 {message}
-            </HelperBottom>
+            </StyledHelperBottom>
         </HelperBottomContainer>
     )
 }

@@ -17,7 +17,7 @@ import type { ILibInputIconContainer } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop inputVariant: "rounded" | "pill" | undefined
  */
-export function InputIcon({
+export const InputIcon = ({
     "data-testid": testid,
     className,
     icon,
@@ -27,7 +27,7 @@ export function InputIcon({
     inputBackground,
     disabled,
     inputVariant,
-}: ILibInputIconContainer) {
+}: ILibInputIconContainer) => {
     if (!icon) return null
 
     return (

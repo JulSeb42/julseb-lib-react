@@ -6,14 +6,14 @@ import { mdTitlesButtons } from "../markdown-buttons"
 import { TitlesDropdown, TitleDropdownItem } from "../styles"
 import type { ILibMarkdownEditorTitles } from "../subtypes"
 
-export function EditorButtonTitles({
+export const EditorButtonTitles = ({
     "data-testid": testid,
     showButtons,
     className,
     textButtonTitles,
     inputRef,
     addCode,
-}: ILibMarkdownEditorTitles) {
+}: ILibMarkdownEditorTitles) => {
     const [isTextOpen, setIsTextOpen] = useState(false)
 
     if (showButtons?.titles === false) return null

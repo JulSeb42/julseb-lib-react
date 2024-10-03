@@ -9,6 +9,11 @@ import type { ComponentPreview } from "../../../../data/components"
 const today = getToday()
 const nextMonth = formatDate(addMonth(1))
 
+const DatepickerDemo = (props: Omit<ILibDatepicker, "value" | "setValue">) => {
+    const [value, setValue] = useState<string>(getToday())
+    return <Datepicker value={value} setValue={setValue} {...props} />
+}
+
 export const datepickerPreview: ComponentPreview<ILibDatepicker> = {
     name: "Datepicker",
     component: Datepicker,
@@ -99,9 +104,4 @@ export const datepickerPreview: ComponentPreview<ILibDatepicker> = {
             ),
         },
     ],
-}
-
-function DatepickerDemo(props: Omit<ILibDatepicker, "value" | "setValue">) {
-    const [value, setValue] = useState<string>(getToday())
-    return <Datepicker value={value} setValue={setValue} {...props} />
 }

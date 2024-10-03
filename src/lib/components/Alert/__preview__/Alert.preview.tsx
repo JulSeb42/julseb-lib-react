@@ -9,6 +9,25 @@ const colors: Array<Exclude<LibColorsShort, "black" | "white">> = Object.values(
     typeValues.colorsShort
 ).filter(color => color !== "black" && color !== "white")
 
+const DemoAlertButtons = () => {
+    return (
+        <Alert
+            alertColor="danger"
+            data-testid="testid"
+            className="className"
+            id="alert"
+            maxWidth={400}
+        >
+            <Text>Alert with button</Text>
+
+            <Flexbox alignItems="center" gap="xs">
+                <Button color="danger">Button</Button>
+                <Button variant="transparent">Button</Button>
+            </Flexbox>
+        </Alert>
+    )
+}
+
 export const alertPreview: ComponentPreview<ILibAlert> = {
     name: "Alert",
     component: Alert,
@@ -30,23 +49,4 @@ export const alertPreview: ComponentPreview<ILibAlert> = {
         })),
         { previewTitle: "With buttons", demo: <DemoAlertButtons /> },
     ],
-}
-
-function DemoAlertButtons() {
-    return (
-        <Alert
-            alertColor="danger"
-            data-testid="testid"
-            className="className"
-            id="alert"
-            maxWidth={400}
-        >
-            <Text>Alert with button</Text>
-
-            <Flexbox alignItems="center" gap="xs">
-                <Button color="danger">Button</Button>
-                <Button variant="transparent">Button</Button>
-            </Flexbox>
-        </Alert>
-    )
 }

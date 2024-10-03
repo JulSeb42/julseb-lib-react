@@ -20,7 +20,7 @@ const items: Array<LibDropdownItem> = [
     },
 ]
 
-export function Preview() {
+export const Preview = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -44,7 +44,7 @@ export function Preview() {
     )
 }
 
-export function PreviewDirection() {
+export const PreviewDirection = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -72,7 +72,7 @@ export function PreviewDirection() {
     )
 }
 
-export function PreviewColor() {
+export const PreviewColor = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (

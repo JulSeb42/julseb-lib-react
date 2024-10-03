@@ -7,7 +7,7 @@ interface GridItemProps {
     children?: string
 }
 
-export function GridItem({ children = "Grid item" }: GridItemProps) {
+export const GridItem = ({ children = "Grid item" }: GridItemProps) => {
     return <StyledText>{children}</StyledText>
 }
 

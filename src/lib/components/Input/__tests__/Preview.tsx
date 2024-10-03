@@ -4,7 +4,7 @@ import { useState, type ChangeEvent } from "react"
 import { Input } from "../../.."
 import { SITE_DATA } from "../../../../data"
 
-export function InputPropsPreview() {
+export const InputPropsPreview = () => {
     const [input, setInput] = useState("")
 
     return (
@@ -37,7 +37,7 @@ export function InputPropsPreview() {
     )
 }
 
-export function InputSearchPreview() {
+export const InputSearchPreview = () => {
     const [search, setSearch] = useState("")
 
     return (

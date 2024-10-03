@@ -9,6 +9,32 @@ import {
 import type { ILibButton } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const PreviewFlex = ({ children }: { children?: ReactChildren }) => {
+    return (
+        <Flexbox gap="s" alignItems="flex-start" flexWrap="wrap">
+            {children}
+        </Flexbox>
+    )
+}
+
+const ButtonPreview = (props: ILibButton) => {
+    const colors: Array<LibColorsHover> = Object.values(typeValues.colorsHover)
+
+    return (
+        <PreviewFlex>
+            {colors.map((c, i) => (
+                <Button
+                    key={i}
+                    color={c}
+                    {...props}
+                    data-testid="testid"
+                    className="className"
+                />
+            ))}
+        </PreviewFlex>
+    )
+}
+
 export const buttonPreview: ComponentPreview<ILibButton> = {
     name: "Button",
     component: Button,
@@ -154,30 +180,4 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
             ),
         },
     ],
-}
-
-function ButtonPreview(props: ILibButton) {
-    const colors: Array<LibColorsHover> = Object.values(typeValues.colorsHover)
-
-    return (
-        <PreviewFlex>
-            {colors.map((c, i) => (
-                <Button
-                    key={i}
-                    color={c}
-                    {...props}
-                    data-testid="testid"
-                    className="className"
-                />
-            ))}
-        </PreviewFlex>
-    )
-}
-
-function PreviewFlex({ children }: { children?: ReactChildren }) {
-    return (
-        <Flexbox gap="s" alignItems="flex-start" flexWrap="wrap">
-            {children}
-        </Flexbox>
-    )
 }

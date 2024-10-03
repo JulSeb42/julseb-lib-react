@@ -10,7 +10,7 @@ import {
 } from "./styles"
 import type { ILibSlideshowPagination } from "./subtypes"
 
-export function SlideshowPagination({
+export const SlideshowPagination = ({
     "data-testid": testid,
     className,
     pagination,
@@ -18,7 +18,7 @@ export function SlideshowPagination({
     setActive,
     contentLength,
     activeSlide,
-}: ILibSlideshowPagination) {
+}: ILibSlideshowPagination) => {
     const {
         position = "outside",
         hideOnTouch,

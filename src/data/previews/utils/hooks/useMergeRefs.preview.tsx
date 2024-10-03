@@ -1,5 +1,5 @@
 import { Text } from "../../../../lib"
 
-export function PreviewUseMergeRefs() {
+export const PreviewUseMergeRefs = () => {
     return <Text>No demo possible here</Text>
 }

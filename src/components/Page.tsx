@@ -6,7 +6,7 @@ import { WrapperDemo } from "./layouts/WrapperDemo"
 import { MainDemo } from "./layouts/MainDemo"
 import { Text } from "../lib"
 
-export function Page({ title, children }: BasePageProps) {
+export const Page = ({ title, children }: BasePageProps) => {
     return (
         <BasePage title={title}>
             <NavDemo />

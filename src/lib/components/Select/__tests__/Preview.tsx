@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Select } from "../Select"
 
-export function SelectPreview() {
+export const SelectPreview = () => {
     const [selected, setSelected] = useState("selected")
 
     return (
@@ -16,7 +16,7 @@ export function SelectPreview() {
     )
 }
 
-export function SelectWithOptions() {
+export const SelectWithOptions = () => {
     const items = ["react", "javascript", "scss", "css", "html"]
     const [selected, setSelected] = useState(items[0])
 

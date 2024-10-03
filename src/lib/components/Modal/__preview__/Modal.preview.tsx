@@ -1,16 +1,7 @@
 /*=============================================== ModalPreview ===============================================*/
 
-import { useState } from "react"
-import {
-    Modal,
-    Image,
-    Button,
-    disableScroll,
-    Alert,
-    Flexbox,
-    Text,
-    enableScroll,
-} from "../../../"
+import { Modal, Image } from "../../../"
+import { ModalDemo, ModalDemoAlert } from "./Previews"
 import type { ILibModal } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -43,63 +34,4 @@ export const modalPreview: ComponentPreview<ILibModal> = {
             ),
         },
     ],
-}
-
-function ModalDemo(rest: Partial<ILibModal>) {
-    const [isOpen, setIsOpen] = useState(false)
-
-    return (
-        <>
-            <Button onClick={() => setIsOpen(true)}>Open modal</Button>
-            <Modal
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-                data-testid="testid"
-                className="className"
-                {...rest}
-            />
-        </>
-    )
-}
-
-function ModalDemoAlert() {
-    const [isOpen, setIsOpen] = useState(false)
-
-    return (
-        <>
-            <Button
-                onClick={() => {
-                    setIsOpen(true)
-                    disableScroll()
-                }}
-            >
-                Open modal
-            </Button>
-
-            <Modal
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-                contentWidth="100%"
-                data-testid="testid"
-                className="className"
-            >
-                <Alert maxWidth={400} alertColor="danger">
-                    <Text>Modal content</Text>
-
-                    <Flexbox alignItems="center" gap="xs">
-                        <Button color="danger">Button</Button>
-                        <Button
-                            variant="transparent"
-                            onClick={() => {
-                                setIsOpen(false)
-                                enableScroll()
-                            }}
-                        >
-                            Close
-                        </Button>
-                    </Flexbox>
-                </Alert>
-            </Modal>
-        </>
-    )
 }

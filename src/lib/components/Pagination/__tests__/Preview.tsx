@@ -7,7 +7,7 @@ const arr: Array<{ name: string }> = generateNumbers(1, 100).map(n => ({
     name: `Hello ${n}`,
 }))
 
-export function PaginationPreview() {
+export const PaginationPreview = () => {
     const { paginatedData, totalPages } = usePaginatedData<{ name: string }>(
         arr
     )
@@ -38,7 +38,7 @@ export function PaginationPreview() {
     )
 }
 
-export function PaginationColor() {
+export const PaginationColor = () => {
     const { paginatedData, totalPages } = usePaginatedData<{ name: string }>(
         arr
     )

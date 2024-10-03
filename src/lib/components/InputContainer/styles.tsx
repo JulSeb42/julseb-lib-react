@@ -58,7 +58,7 @@ const HelperBottomIconContainer = styled.span<{ $iconSize: number }>`
     })}
 `
 
-const HelperBottom = styled(Text).attrs({ tag: "small" })<{
+const StyledHelperBottom = styled(Text).attrs({ tag: "small" })<{
     $fontStyle?: CssFontStyle
     $hasIcon?: boolean
     $iconSize?: number
@@ -76,7 +76,7 @@ setDefaultTheme([
     LabelComment,
     HelperBottomContainer,
     HelperBottomIconContainer,
-    HelperBottom,
+    StyledHelperBottom,
 ])
 
 export {
@@ -85,5 +85,5 @@ export {
     LabelComment,
     HelperBottomContainer,
     HelperBottomIconContainer,
-    HelperBottom,
+    StyledHelperBottom,
 }

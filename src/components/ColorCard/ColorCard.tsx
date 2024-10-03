@@ -4,7 +4,7 @@ import { Text } from "../../lib"
 import { StyledColorCard, Square, CardContent } from "./styles"
 import type { ColorCardProps } from "./types"
 
-export function ColorCard({ color, overlay }: ColorCardProps) {
+export const ColorCard = ({ color, overlay }: ColorCardProps) => {
     const name = color?.name || overlay?.name
     const variable = color?.variable || overlay?.name
     const css = color?.css || overlay?.css

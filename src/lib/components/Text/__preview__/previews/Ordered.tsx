@@ -2,7 +2,7 @@
 
 import { Text } from "../.."
 
-export function Ordered() {
+export const Ordered = () => {
     return (
         <Text tag="ol" data-testid="testid" className="className">
             <li>Ordered list</li>

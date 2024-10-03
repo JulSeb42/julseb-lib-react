@@ -9,7 +9,7 @@ interface SbDemoLayoutProps {
     children?: ReactChildren
 }
 
-export function SbDemoLayout({ title, children }: SbDemoLayoutProps) {
+export const SbDemoLayout = ({ title, children }: SbDemoLayoutProps) => {
     return (
         <Wrapper>
             <Main>

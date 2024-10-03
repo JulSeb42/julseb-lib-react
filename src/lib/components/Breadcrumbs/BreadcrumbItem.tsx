@@ -4,12 +4,12 @@ import { Link } from "react-router-dom"
 import { uuid } from "@julseb-lib/utils"
 import type { ILibBreadcrumbItem } from "./subtypes"
 
-export function BreadcrumbItem({
+export const BreadcrumbItem = ({
     "data-testid": testid,
     className,
     item,
     index,
-}: ILibBreadcrumbItem) {
+}: ILibBreadcrumbItem) => {
     if (item.to)
         return (
             <Link

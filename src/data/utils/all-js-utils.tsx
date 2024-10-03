@@ -63,6 +63,20 @@ interface Util {
     result: void | ReactNode | null | Partial<any>
 }
 
+const TimeWithSeconds = () => {
+    const [time, setTime] = useState(getTimeNow({ withSeconds: true }))
+
+    useEffect(() => {
+        setInterval(() => setTime(getTimeNow({ withSeconds: true })), 1000)
+    }, [getTimeNow])
+
+    return (
+        <span style={{ padding: "var(--spacer-xxs) var(--spacer-xs)" }}>
+            {time.toString()}
+        </span>
+    )
+}
+
 const utils: Array<Util> = [
     {
         name: "addDay",
@@ -468,17 +482,3 @@ export const allJsUtils = utils.map(u => ({
     ...u,
     arguments: u.arguments?.join(", "),
 }))
-
-function TimeWithSeconds() {
-    const [time, setTime] = useState(getTimeNow({ withSeconds: true }))
-
-    useEffect(() => {
-        setInterval(() => setTime(getTimeNow({ withSeconds: true })), 1000)
-    }, [getTimeNow])
-
-    return (
-        <span style={{ padding: "var(--spacer-xxs) var(--spacer-xs)" }}>
-            {time.toString()}
-        </span>
-    )
-}

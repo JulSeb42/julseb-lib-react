@@ -1,6 +1,6 @@
 /*=============================================== HeaderNav ===============================================*/
 
-import { useRef, isValidElement, type ReactNode, Fragment } from "react"
+import { useRef, type ReactNode } from "react"
 import classNames from "classnames"
 import { uuid } from "@julseb-lib/utils"
 import { useMaxWidth, useClickOutside } from "../../"
@@ -8,9 +8,9 @@ import { HeaderNavLink } from "./HeaderNavLink"
 import { HeaderSearch } from "./HeaderSearch"
 import { Nav } from "./styles"
 import type { ILibHeaderNav } from "./subtypes"
-import { LibHeaderLink } from "../../types"
+import type { LibHeaderLink } from "../../types"
 
-export function HeaderNav({
+export const HeaderNav = ({
     "data-testid": testid,
     className,
     search,
@@ -24,7 +24,7 @@ export function HeaderNav({
     burgerRef,
     handleClose,
     nav,
-}: ILibHeaderNav) {
+}: ILibHeaderNav) => {
     const isMobile = useMaxWidth(600)
 
     const el = useRef<HTMLDivElement>(null)
@@ -64,20 +64,15 @@ export function HeaderNav({
                 />
             )}
 
-            {links
-                ? links.map(link =>
-                      isValidElement(link) ? (
-                          <Fragment>{link}</Fragment>
-                      ) : (
-                          <HeaderNavLink
-                              data-testid={testid}
-                              className={className}
-                              link={link as LibHeaderLink | JSX.Element}
-                              key={uuid()}
-                          />
-                      )
-                  )
-                : null}
+            {links &&
+                links.map(link => (
+                    <HeaderNavLink
+                        data-testid={testid}
+                        className={className}
+                        link={link as LibHeaderLink | JSX.Element}
+                        key={uuid()}
+                    />
+                ))}
 
             {children && children}
 

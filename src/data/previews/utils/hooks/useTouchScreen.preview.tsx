@@ -1,6 +1,6 @@
 import { useTouchScreen, Text } from "../../../../lib"
 
-export function PreviewUseTouchScreen() {
+export const PreviewUseTouchScreen = () => {
     const isTouchScreen = useTouchScreen()
 
     return <Text>Is touch screen: {isTouchScreen.toString()}</Text>

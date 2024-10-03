@@ -8,7 +8,7 @@ import { routesPaths } from "../../routes"
 import { componentPaths } from "../../data/components"
 import { StyledNavDemo } from "./styles"
 
-export function NavDemo() {
+export const NavDemo = () => {
     const { toggleTheme, selectedTheme } = useLibTheme()
 
     const [search, setSearch] = useState("")

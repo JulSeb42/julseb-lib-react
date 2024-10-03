@@ -5,7 +5,7 @@ import { StylesCard } from "../../../components"
 import { Grid } from "../../../lib"
 import { allShadows } from "../.."
 
-function ShadowsPreview() {
+const ShadowsPreview = () => {
     return (
         <Grid col={2} gap="m">
             {allShadows.map(shadow => (

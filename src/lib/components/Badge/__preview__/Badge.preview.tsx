@@ -7,6 +7,25 @@ import { StarFull } from "../../../icons"
 import type { ILibBadge } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const BadgePreview = (props: ILibBadge & { title: string }) => {
+    const arr = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
+
+    return (
+        <Flexbox gap="s" flexWrap="wrap">
+            {arr.map((c, i) => (
+                <Badge
+                    key={i}
+                    data-testid="testid"
+                    className={getRandomString(10, true)}
+                    {...props}
+                    backgroundColor={c}
+                    id={`badge-${c}-${i}-${props?.title}`}
+                />
+            ))}
+        </Flexbox>
+    )
+}
+
 export const badgePreview: ComponentPreview<ILibBadge> = {
     name: "Badge",
     component: Badge,
@@ -52,23 +71,4 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
             ),
         },
     ],
-}
-
-function BadgePreview(props: ILibBadge & { title: string }) {
-    const arr = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
-
-    return (
-        <Flexbox gap="s" flexWrap="wrap">
-            {arr.map((c, i) => (
-                <Badge
-                    key={i}
-                    data-testid="testid"
-                    className={getRandomString(10, true)}
-                    {...props}
-                    backgroundColor={c}
-                    id={`badge-${c}-${i}-${props?.title}`}
-                />
-            ))}
-        </Flexbox>
-    )
 }

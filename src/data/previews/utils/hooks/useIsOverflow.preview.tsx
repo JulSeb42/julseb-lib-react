@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { useIsOverflow } from "../../../../lib"
 
-export function PreviewUseIsOverflow() {
+export const PreviewUseIsOverflow = () => {
     const ref = useRef<HTMLDivElement>(null)
     const isOverflow = useIsOverflow(ref, {
         callback: c => console.log({ c }),

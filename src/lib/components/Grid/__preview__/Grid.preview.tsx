@@ -1,7 +1,7 @@
 /*=============================================== GridPreview ===============================================*/
 
 import { Grid } from "../"
-import { GridItem } from "../../../../components"
+import { GridItem } from "../../../../components/GridItem"
 import type { ILibGrid } from "../types"
 import type { ComponentPreview } from "../../../../data/components"
 

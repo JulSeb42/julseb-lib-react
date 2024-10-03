@@ -5,13 +5,13 @@ import { capitalize } from "@julseb-lib/utils"
 import { StyledAccordionContent } from "./styles"
 import type { ILibAccordionContent } from "./subtypes"
 
-export function AccordionContent({
+export const AccordionContent = ({
     "data-testid": testid,
     className,
     children,
     isOpen,
     variant = "basic",
-}: ILibAccordionContent) {
+}: ILibAccordionContent) => {
     return (
         <StyledAccordionContent
             data-testid={testid && `${testid}.AccordionContent`}

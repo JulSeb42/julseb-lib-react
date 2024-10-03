@@ -3,11 +3,11 @@
 import { LogoText, LogoImg } from "./styles"
 import type { ILibFooterLogo } from "./subtypes"
 
-export function FooterLogo({
+export const FooterLogo = ({
     "data-testid": testid,
     className,
     logo,
-}: ILibFooterLogo) {
+}: ILibFooterLogo) => {
     const { text, img, alt = "Logo", width = 100, height = 30 } = logo as any
 
     if (text || typeof logo === "string")

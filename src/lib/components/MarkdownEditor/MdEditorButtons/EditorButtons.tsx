@@ -8,7 +8,7 @@ import { mdEditorButtons } from "../markdown-buttons"
 import { IconButton } from "../styles"
 import type { ILibMdEditorButtons } from "../subtypes"
 
-export function EditorButtons({
+export const EditorButtons = ({
     "data-testid": testid,
     className,
     showButtons,
@@ -17,7 +17,7 @@ export function EditorButtons({
     iconsBaseUrl,
     editor,
     setEditor,
-}: ILibMdEditorButtons) {
+}: ILibMdEditorButtons) => {
     return (
         <Flexbox
             data-testid={

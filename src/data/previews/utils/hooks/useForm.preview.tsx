@@ -1,6 +1,6 @@
 import { useForm, Form, Input } from "../../../../lib"
 
-export function PreviewUseForm() {
+export const PreviewUseForm = () => {
     const { formData, handleInputs, handleSubmit, resetForm } = useForm<User>(
         { name: "", email: "", password: "" },
         formData => alert(JSON.stringify(formData))

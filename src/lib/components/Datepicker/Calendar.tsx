@@ -18,7 +18,7 @@ import {
 } from "./styles"
 import type { ILibDatepicker } from "./types"
 
-export function Calendar({
+export const Calendar = ({
     "data-testid": testid,
     className,
     minDate,
@@ -52,7 +52,7 @@ export function Calendar({
 > & {
     isOpen: boolean
     setIsOpen: DispatchState<boolean>
-}) {
+}) => {
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 

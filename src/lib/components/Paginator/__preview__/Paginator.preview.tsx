@@ -10,24 +10,11 @@ import {
 import type { ILibPaginator } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const paginatorPreview: ComponentPreview<ILibPaginator> = {
-    name: "Paginator",
-    component: Paginator,
-    category: "components",
-    import: "Paginator",
-    additionalImports: null,
-    optionalImports: null,
-    propsImport: "ILibPaginator",
-    additionalTypeImports: null,
-    extends: ["HTMLDivElement", "ILibFlexbox"],
-    previews: [{ demo: <PaginatorDemo /> }],
-}
-
 const arr: Array<{ name: string }> = generateNumbers(1, 100).map(n => ({
     name: `Hello ${n}`,
 }))
 
-function PaginatorDemo() {
+const PaginatorDemo = () => {
     const { paginatedData, totalPages } = usePaginatedData<{ name: string }>(
         arr
     )
@@ -57,4 +44,17 @@ function PaginatorDemo() {
             />
         </>
     )
+}
+
+export const paginatorPreview: ComponentPreview<ILibPaginator> = {
+    name: "Paginator",
+    component: Paginator,
+    category: "components",
+    import: "Paginator",
+    additionalImports: null,
+    optionalImports: null,
+    propsImport: "ILibPaginator",
+    additionalTypeImports: null,
+    extends: ["HTMLDivElement", "ILibFlexbox"],
+    previews: [{ demo: <PaginatorDemo /> }],
 }

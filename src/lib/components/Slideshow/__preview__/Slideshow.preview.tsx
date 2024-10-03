@@ -7,6 +7,17 @@ import type { ComponentPreview } from "../../../../data/components"
 
 const images = generateNumbers(1, 4).map(n => `/images/slideshow-${n}.avif`)
 
+const SlideshowDemo = (props: Partial<ILibSlideshow>) => {
+    return (
+        <Slideshow
+            images={images}
+            {...(props as any)}
+            data-testid="testid"
+            className="className"
+        />
+    )
+}
+
 export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
     name: "Slideshow",
     component: Slideshow,
@@ -39,15 +50,4 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
             demo: <SlideshowDemo options={{ autoPlay: 4000, speed: 3000 }} />,
         },
     ],
-}
-
-function SlideshowDemo(props: Partial<ILibSlideshow>) {
-    return (
-        <Slideshow
-            images={images}
-            {...(props as any)}
-            data-testid="testid"
-            className="className"
-        />
-    )
 }

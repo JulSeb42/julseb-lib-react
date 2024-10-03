@@ -5,7 +5,7 @@ import { ColorCard } from "../../../components"
 import { Flexbox } from "../../../lib"
 import { colorsLight, colorsDark } from "../.."
 
-function ColorsPreview() {
+const ColorsPreview = () => {
     return (
         <Flexbox gap="xs" flexDirection="column" alignItems="stretch">
             {[...colorsLight, ...colorsDark].map((c, i) => (

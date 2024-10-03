@@ -13,7 +13,7 @@ const links: Array<{ id: number; to: string; text: string }> = [
     { id: 4, text: "Link", to: "#" },
 ]
 
-export function DrawerPreview(props: Omit<ILibDrawer, "isOpen" | "setIsOpen">) {
+export const DrawerPreview = (props: Omit<ILibDrawer, "isOpen" | "setIsOpen">) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (

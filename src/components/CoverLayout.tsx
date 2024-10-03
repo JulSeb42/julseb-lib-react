@@ -3,7 +3,7 @@
 import { BasePage } from "./"
 import { Text, Wrapper, Main } from "../lib"
 
-export function CoverLayout({ title, children }: ICoverLayout) {
+export const CoverLayout = ({ title, children }: ICoverLayout) => {
     return (
         <BasePage title={title}>
             {children}

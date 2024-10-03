@@ -3,15 +3,14 @@
 import type { CSSProperties, MouseEventHandler } from "react"
 import type {
     ReactChildren,
-    CssFontStyle,
     LibInputListDirection,
-    LibAllColors,
     LibIcon,
     LibInputBackground,
     LibInputVariant,
     LibValidationStatus,
     RequireAtLeastOne,
     LibInputPrefixAndSuffix,
+    LibHelperBottom,
 } from "../../types"
 
 /*====================== Validation ======================*/
@@ -109,17 +108,7 @@ export interface ILibInputContainer {
     label: string | undefined
     labelComment: string | undefined
     helper: string | undefined
-    helperBottom:
-        | string
-        | {
-              text: string
-              textColor?: LibAllColors
-              fontStyle?: CssFontStyle
-              icon?: LibIcon
-              iconColor?: LibAllColors
-              iconSize?: number
-          }
-        | undefined
+    helperBottom: LibHelperBottom | undefined
     validation: LibValidationHelper | undefined
     children?: ReactChildren
     value: any | undefined

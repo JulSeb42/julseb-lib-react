@@ -4,7 +4,7 @@ import type { ReactNode } from "react"
 import type { CssFlexDirection, LibSpacers } from "../../../types"
 import { InputCheck, Flexbox } from "../../../"
 
-function FlexDemo({
+const FlexDemo = ({
     children,
     flexDirection = "row",
     gap = "m",
@@ -12,7 +12,7 @@ function FlexDemo({
     children?: ReactNode
     flexDirection?: CssFlexDirection
     gap?: LibSpacers
-}) {
+}) => {
     return (
         <Flexbox
             gap={gap}
@@ -25,7 +25,7 @@ function FlexDemo({
     )
 }
 
-export function InputCheckDemoCheckbox() {
+export const InputCheckDemoCheckbox = () => {
     return (
         <FlexDemo>
             <InputCheck
@@ -87,7 +87,7 @@ export function InputCheckDemoCheckbox() {
     )
 }
 
-export function InputCheckDemoRadio() {
+export const InputCheckDemoRadio = () => {
     return (
         <FlexDemo>
             <InputCheck
@@ -149,7 +149,7 @@ export function InputCheckDemoRadio() {
     )
 }
 
-export function InputCheckDemoCheckboxTile() {
+export const InputCheckDemoCheckboxTile = () => {
     return (
         <FlexDemo flexDirection="column" gap="xs">
             <InputCheck
@@ -217,7 +217,7 @@ export function InputCheckDemoCheckboxTile() {
     )
 }
 
-export function InputCheckDemoRadioTile() {
+export const InputCheckDemoRadioTile = () => {
     return (
         <FlexDemo flexDirection="column" gap="xs">
             <InputCheck
@@ -285,7 +285,7 @@ export function InputCheckDemoRadioTile() {
     )
 }
 
-export function InputCheckDemoCheckboxToggle() {
+export const InputCheckDemoCheckboxToggle = () => {
     return (
         <FlexDemo>
             <InputCheck
@@ -353,7 +353,7 @@ export function InputCheckDemoCheckboxToggle() {
     )
 }
 
-export function InputCheckDemoCheckboxSelector() {
+export const InputCheckDemoCheckboxSelector = () => {
     return (
         <FlexDemo>
             <InputCheck

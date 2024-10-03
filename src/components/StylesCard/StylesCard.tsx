@@ -10,10 +10,10 @@ type Item = {
     value: string
 }
 
-export function StylesCard({
+export const StylesCard = ({
     variable: { name, variable, css, value },
     type,
-}: StylesCardProps) {
+}: StylesCardProps) => {
     const items: Array<Item> = [
         {
             name: "Variable",

@@ -2,7 +2,7 @@
 
 import { Text } from "../.."
 
-export function Description() {
+export const Description = () => {
     return (
         <Text tag="dl" data-testid="testid" className="className">
             <dt>Description list title</dt>

@@ -7,6 +7,27 @@ import type { LibDragListItem } from "../../../types"
 import type { ILibDragList } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const DragListDemo = (
+    props: Omit<ILibDragList, "items" | "setItems" | "children">
+) => {
+    const [items, setItems] = useState<Array<LibDragListItem>>([
+        { id: "0", title: "First", body: "Body" },
+        {
+            id: "1",
+            title: "Second",
+            badge: { backgroundColor: "success" },
+        },
+        {
+            id: "2",
+            title: "Third",
+            body: "Item",
+            date: convertDateShort(new Date()),
+        },
+    ])
+
+    return <DragList items={items} setItems={setItems} {...props} />
+}
+
 export const dragListPreview: ComponentPreview<ILibDragList> = {
     name: "DragList",
     component: DragList,
@@ -33,25 +54,4 @@ export const dragListPreview: ComponentPreview<ILibDragList> = {
             ),
         },
     ],
-}
-
-function DragListDemo(
-    props: Omit<ILibDragList, "items" | "setItems" | "children">
-) {
-    const [items, setItems] = useState<Array<LibDragListItem>>([
-        { id: "0", title: "First", body: "Body" },
-        {
-            id: "1",
-            title: "Second",
-            badge: { backgroundColor: "success" },
-        },
-        {
-            id: "2",
-            title: "Third",
-            body: "Item",
-            date: convertDateShort(new Date()),
-        },
-    ])
-
-    return <DragList items={items} setItems={setItems} {...props} />
 }

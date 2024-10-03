@@ -5,14 +5,14 @@ import { LibIcon } from "../LibIcon"
 import { StyledEmptyContainer } from "./styles"
 import type { ILibEmptyContainer } from "./subtypes"
 
-export function EmptyContainer({
+export const EmptyContainer = ({
     "data-testid": testid,
     className,
     validation,
     iconSizes,
     icons,
     iconBaseUrl,
-}: ILibEmptyContainer) {
+}: ILibEmptyContainer) => {
     return (
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}

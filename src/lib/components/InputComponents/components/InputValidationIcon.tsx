@@ -15,12 +15,12 @@ const DEFAULT_ICON_SIZE = 16
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop validation: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  */
-export function InputValidationIcon({
+export const InputValidationIcon = ({
     "data-testid": testid,
     className,
     validation,
     inputBackground,
-}: ILibInputValidationIcon) {
+}: ILibInputValidationIcon) => {
     const commonIconProps = {
         className: className && "ValidationIcon",
         size: DEFAULT_ICON_SIZE,

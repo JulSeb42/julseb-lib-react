@@ -2,7 +2,7 @@ import { useState, useEffect, type ChangeEvent } from "react"
 import axios from "axios"
 import { Flexbox, Input, useDebounce, uuid, Text, Image } from "../../../../lib"
 
-export function PreviewUseDebounce() {
+export const PreviewUseDebounce = () => {
     const [search, setSearch] = useState<string>("")
     const [result, setResult] = useState<Array<any> | string | undefined>(
         undefined

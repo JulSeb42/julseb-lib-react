@@ -7,7 +7,7 @@ interface IRenderPreview {
     withCode?: boolean
 }
 
-export function RenderPreview({ data, withCode }: IRenderPreview) {
+export const RenderPreview = ({ data, withCode }: IRenderPreview) => {
     if (!data?.length) return null
 
     const headers = Object.keys(data[0]).map(v => capitalize(v))

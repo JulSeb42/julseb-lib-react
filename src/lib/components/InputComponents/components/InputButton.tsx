@@ -19,7 +19,7 @@ import type { ILibInputButton } from "../types"
  * @prop validationStatus: boolean | undefined | undefined
  * @prop className: string | undefined
  */
-export function InputButton({
+export const InputButton = ({
     "data-testid": testid,
     "aria-label": ariaLabel,
     onClick,
@@ -31,7 +31,7 @@ export function InputButton({
     inputBackground,
     validationStatus,
     className,
-}: ILibInputButton) {
+}: ILibInputButton) => {
     return (
         <StyledInputButton
             aria-label={ariaLabel}

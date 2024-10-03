@@ -5,6 +5,20 @@ import { InputSlider } from "../../../"
 import type { ILibInputSlider } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
+const InputSliderDemo = ({ value = 50, ...rest }: ILibInputSlider) => {
+    const [inputValue, setInputValue] = useState(value)
+
+    return (
+        <div style={{ width: "100%" }}>
+            <InputSlider
+                {...rest}
+                value={inputValue}
+                onChange={e => setInputValue(Number(e.target.value))}
+            />
+        </div>
+    )
+}
+
 export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
     name: "InputSlider",
     component: InputSlider,
@@ -40,18 +54,4 @@ export const inputSliderPreview: ComponentPreview<ILibInputSlider> = {
             ),
         },
     ],
-}
-
-function InputSliderDemo({ value = 50, ...rest }: ILibInputSlider) {
-    const [inputValue, setInputValue] = useState(value)
-
-    return (
-        <div style={{ width: "100%" }}>
-            <InputSlider
-                {...rest}
-                value={inputValue}
-                onChange={e => setInputValue(Number(e.target.value))}
-            />
-        </div>
-    )
 }

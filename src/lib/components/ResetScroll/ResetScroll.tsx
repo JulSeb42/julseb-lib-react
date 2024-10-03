@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom"
  * @description Scrolls to the top of the page every time the path changes, add it in your PageLayout
  * @link https://documentation-components-react.vercel.app/helpers/reset-scroll
  */
-export function ResetScroll() {
+export const ResetScroll = () => {
     const { pathname, search } = useLocation()
 
     useEffect(() => {

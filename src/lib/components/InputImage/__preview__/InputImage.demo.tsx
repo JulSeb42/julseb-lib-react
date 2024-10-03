@@ -3,7 +3,7 @@
 import { useState, type ChangeEvent } from "react"
 import { InputImage } from "../../../"
 
-export function InputImageDemo() {
+export const InputImageDemo = () => {
     const [image, setImage] = useState("")
 
     const handleImage = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,7 @@ export function InputImageDemo() {
     )
 }
 
-export function InputImageDemoWithValidation() {
+export const InputImageDemoWithValidation = () => {
     const [image, setImage] = useState("")
 
     const handleImage = (e: ChangeEvent<HTMLInputElement>) => {
@@ -77,7 +77,7 @@ export function InputImageDemoWithValidation() {
     )
 }
 
-export function InputImageDemoDisabled() {
+export const InputImageDemoDisabled = () => {
     return (
         <InputImage
             id="image-disabled"

@@ -1,6 +1,6 @@
 import { useCopyToClipboard, Flexbox, Button, Text } from "../../../../lib"
 
-export function PreviewUseCopyToClipboard() {
+export const PreviewUseCopyToClipboard = () => {
     const [value, copy] = useCopyToClipboard()
 
     return (

@@ -6,7 +6,7 @@ import { Edit } from "../../icons"
 import { StyledHoverContainer } from "./styles"
 import type { ILibHoverContainer } from "./subtypes"
 
-export function HoverContainer({
+export const HoverContainer = ({
     "data-testid": testid,
     className,
     validation,
@@ -15,7 +15,7 @@ export function HoverContainer({
     iconBaseUrl,
     isVisible,
     disabled = false,
-}: ILibHoverContainer) {
+}: ILibHoverContainer) => {
     return (
         <StyledHoverContainer
             data-testid={testid && `${testid}.HoverContainer`}

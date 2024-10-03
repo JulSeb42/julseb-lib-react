@@ -4,12 +4,12 @@ import classNames from "classnames"
 import { StyledCircle } from "./styles"
 import type { ILibProgressCircle } from "./types"
 
-export function Circle({
+export const Circle = ({
     className,
     value,
     color = "primary",
     noAnimation,
-}: ILibProgressCircle) {
+}: ILibProgressCircle) => {
     const r = 70
     const circ = 2 * Math.PI * r
     const strokePct = ((100 - value) * circ) / 100

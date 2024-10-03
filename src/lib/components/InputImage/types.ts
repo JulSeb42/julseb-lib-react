@@ -10,6 +10,7 @@ export type ILibInputImage = InputHTMLAttributes<HTMLInputElement> &
         value: string
         width?: string | number
         height?: string | number
+        size?: string | number
         borderRadius?: ILibRadius
         icons?: {
             empty?: LibIcon

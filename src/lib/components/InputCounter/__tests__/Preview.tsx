@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { InputCounter } from "../InputCounter"
 
-export function Preview() {
+export const Preview = () => {
     const [counter, setCounter] = useState(0)
 
     return (
@@ -16,7 +16,7 @@ export function Preview() {
     )
 }
 
-export function PreviewNotEditable() {
+export const PreviewNotEditable = () => {
     const [counter, setCounter] = useState(0)
 
     return (
@@ -29,7 +29,7 @@ export function PreviewNotEditable() {
     )
 }
 
-export function PreviewMinMax() {
+export const PreviewMinMax = () => {
     const [counter, setCounter] = useState(1)
 
     return (
@@ -44,7 +44,7 @@ export function PreviewMinMax() {
     )
 }
 
-export function PreviewTooltip() {
+export const PreviewTooltip = () => {
     const [counter, setCounter] = useState(1)
 
     return (
