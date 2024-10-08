@@ -25,6 +25,9 @@ interface AvatarWithImage extends ILibAvatarBase {
               src: string
               alt: string
               fallback?: string
+              fallbackFontSize?: LibFontSizes
+              fallbackFontColor?: LibAllColors
+              fallbackBackgroundColor?: LibAllColors
           }
     letter?: never
     fontSize?: never

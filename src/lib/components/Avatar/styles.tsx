@@ -2,7 +2,14 @@
 
 import type { FC } from "react"
 import styled, { css } from "styled-components"
-import { setDefaultTheme, Badge, Mixins, FONT_WEIGHTS, SPACERS } from "../../"
+import {
+    setDefaultTheme,
+    Badge,
+    Mixins,
+    FONT_WEIGHTS,
+    SPACERS,
+    stringifyPx,
+} from "../../"
 import type {
     LibAllColors,
     ILibBorder,
@@ -85,6 +92,26 @@ const StyledBadge = styled(Badge)<{
     }
 ` as FC<any>
 
-setDefaultTheme([StyledAvatarContainer, StyledAvatar, StyledBadge])
+const StyledFallback = styled.span<{
+    $size: number
+    $backgroundColor: LibAllColors
+    $fontColor: LibAllColors
+    $fontSize: LibFontSizes
+}>`
+    width: ${({ $size }) => stringifyPx($size)};
+    height: ${({ $size }) => stringifyPx($size)};
+    font-weight: ${FONT_WEIGHTS.BLACK};
+    background-color: ${({ $backgroundColor, theme }) =>
+        Mixins.AllColors($backgroundColor, theme)};
+    color: ${({ $fontColor, theme }) => Mixins.AllColors($fontColor, theme)};
+    font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
+`
 
-export { StyledAvatarContainer, StyledAvatar, StyledBadge }
+setDefaultTheme([
+    StyledAvatarContainer,
+    StyledAvatar,
+    StyledBadge,
+    StyledFallback,
+])
+
+export { StyledAvatarContainer, StyledAvatar, StyledBadge, StyledFallback }

@@ -7,7 +7,7 @@ import { Image } from "../../"
 import { appendStyles } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"
 import type { LibComponentBase } from "../../types"
-import { StyledAvatar } from "./styles"
+import { StyledAvatar, StyledFallback } from "./styles"
 import type { ILibAvatar } from "./types"
 
 export const AvatarFunction = forwardRef<
@@ -98,7 +98,22 @@ export const AvatarFunction = forwardRef<
                                 : undefined
                         }
                         fallback={
-                            typeof img === "object" ? img.fallback : undefined
+                            typeof img === "object" ? (
+                                // @ts-ignore
+                                <StyledFallback
+                                    $backgroundColor={
+                                        img.fallbackBackgroundColor ??
+                                        backgroundColor
+                                    }
+                                    $fontColor={
+                                        img.fallbackFontColor ?? contentColor
+                                    }
+                                    $size={size}
+                                    $fontSize={img.fallbackFontSize ?? fontSize}
+                                >
+                                    {img.fallback}
+                                </StyledFallback>
+                            ) : undefined
                         }
                     />
                 )}
