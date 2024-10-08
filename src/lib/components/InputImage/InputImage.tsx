@@ -105,7 +105,7 @@ export const InputImage = forwardRef<HTMLInputElement, ILibInputImage>(
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
-                    {value === "" ? (
+                    {value === "" || !value ? (
                         <EmptyContainer
                             data-testid={testid}
                             className={className}

@@ -28,6 +28,7 @@ export const AvatarFunction = forwardRef<
         | "icon"
         | "iconSize"
         | "iconBaseUrl"
+        | "fontSize"
     > &
         LibComponentBase<HTMLSpanElement> & {
             hasBadge?: boolean
@@ -50,6 +51,7 @@ export const AvatarFunction = forwardRef<
             icon,
             iconSize,
             iconBaseUrl,
+            fontSize = "body",
             ...rest
         },
         ref
@@ -78,6 +80,7 @@ export const AvatarFunction = forwardRef<
                 $borderRadius={borderRadius}
                 $size={size}
                 $contentColor={contentColor}
+                $fontSize={fontSize}
                 {...rest}
             >
                 {img && (
@@ -89,6 +92,14 @@ export const AvatarFunction = forwardRef<
                         width="100%"
                         height="100%"
                         fit="cover"
+                        imgFallback={
+                            typeof img === "object"
+                                ? { text: img.fallback || "", fontSize }
+                                : undefined
+                        }
+                        fallback={
+                            typeof img === "object" ? img.fallback : undefined
+                        }
                     />
                 )}
 

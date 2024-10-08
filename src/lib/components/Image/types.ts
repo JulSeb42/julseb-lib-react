@@ -7,6 +7,7 @@ import type {
     CssObjectFit,
     LibAllColors,
     LibImageBackgroundOverlay,
+    LibFontSizes,
 } from "../../types"
 
 interface ILibImageBase
@@ -15,7 +16,13 @@ interface ILibImageBase
     borderRadius?: ILibRadius
     fit?: CssObjectFit
     aspectRatio?: string
-    fallback?: JSX.Element
+    fallback?: JSX.Element | string
+    imgFallback?: {
+        text: string
+        background?: LibAllColors
+        textColor?: LibAllColors
+        fontSize?: LibFontSizes
+    }
     children?: never
 }
 

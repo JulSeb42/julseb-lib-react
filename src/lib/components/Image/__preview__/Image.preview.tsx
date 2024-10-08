@@ -75,5 +75,14 @@ export const imagePreview: ComponentPreview<ILibImage> = {
                 className: "className",
             },
         },
+        {
+            previewTitle: "With fallback text",
+            props: {
+                src: "/",
+                height: 300,
+                alt: "Hello",
+                imgFallback: { text: "Hello", fontSize: "display-h3" },
+            },
+        },
     ],
 }

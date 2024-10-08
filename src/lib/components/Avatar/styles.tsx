@@ -9,6 +9,7 @@ import type {
     ILibRadius,
     LibSpacers,
     ILibOutline,
+    LibFontSizes,
 } from "../../types"
 
 const Common = ({
@@ -52,6 +53,7 @@ const StyledAvatar = styled.span<{
     $borderRadius?: ILibRadius
     $backgroundColor: LibAllColors
     $contentColor: LibAllColors
+    $fontSize: LibFontSizes
 }>`
     ${Common}
     ${({ $border }) => Mixins.Border($border)};
@@ -61,6 +63,7 @@ const StyledAvatar = styled.span<{
     font-weight: ${FONT_WEIGHTS.BLACK};
     line-height: var(--avatar-size);
     text-transform: uppercase;
+    font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
 `
 
 const StyledBadge = styled(Badge)<{

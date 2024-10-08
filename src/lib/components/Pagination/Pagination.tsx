@@ -81,6 +81,8 @@ export const Pagination = forwardRef<HTMLDivElement, ILibPagination>(
         const isMobile = useMaxWidth(600)
         const defaultGap = gap || isMobile ? "xxs" : "xs"
 
+        if (totalPages && totalPages <= 1) return null
+
         return (
             <Flexbox
                 data-testid={testid}

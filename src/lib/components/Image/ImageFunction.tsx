@@ -19,6 +19,8 @@ export const ImageFunction = forwardRef<HTMLImageElement, ILibImage>(
             height = "auto",
             borderRadius,
             fit,
+            loading = "lazy",
+            imgFallback,
             ...rest
         },
         ref
@@ -33,11 +35,16 @@ export const ImageFunction = forwardRef<HTMLImageElement, ILibImage>(
                     ref={ref}
                     src={src}
                     alt={alt}
+                    loading={loading}
+                    data-fallback={imgFallback?.text}
                     $aspectRatio={aspectRatio}
                     $width={width}
                     $height={height}
                     $borderRadius={borderRadius}
                     $fit={fit}
+                    $fallbackBackground={imgFallback?.background ?? "primary"}
+                    $fallbackTextColor={imgFallback?.textColor ?? "background"}
+                    $fallbackFontSize={imgFallback?.fontSize ?? "body"}
                     {...rest}
                 />
             </Suspense>

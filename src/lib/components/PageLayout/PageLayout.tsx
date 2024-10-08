@@ -1,14 +1,6 @@
 /*=============================================== PageLayout component ===============================================*/
 
-import {
-    Helmet,
-    Header,
-    Wrapper,
-    Main,
-    Footer,
-    PageLoading,
-    ResetScroll,
-} from "../../"
+import { Helmet, Header, Wrapper, Main, Footer, PageLoading } from "../../"
 import type { ILibPageLayout } from "./types"
 
 /**
@@ -83,8 +75,6 @@ export const PageLayout = ({
                     {footer && <Footer {...(footer as any)} />}
                 </>
             )}
-
-            <ResetScroll />
         </>
     )
 }

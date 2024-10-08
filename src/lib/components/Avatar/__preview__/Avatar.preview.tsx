@@ -72,5 +72,12 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
             previewTitle: "With icon",
             demo: <AvatarPreview icon="user" size={64} />,
         },
+        {
+            previewTitle: "On error",
+            props: {
+                img: "./abc.png",
+                onError: () => <>JS</>,
+            },
+        },
     ],
 }

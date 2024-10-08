@@ -9,6 +9,7 @@ import type {
     ILibPadding,
     LibIcon,
     LibAvatarBadgePosition,
+    LibFontSizes,
 } from "../../types"
 
 interface ILibAvatarBase extends LibComponentBase<HTMLSpanElement> {
@@ -18,8 +19,15 @@ interface ILibAvatarBase extends LibComponentBase<HTMLSpanElement> {
 }
 
 interface AvatarWithImage extends ILibAvatarBase {
-    img: string | { src: string; alt: string }
+    img:
+        | string
+        | {
+              src: string
+              alt: string
+              fallback?: string
+          }
     letter?: never
+    fontSize?: never
     icon?: never
     iconSize?: never
     iconBaseUrl?: never
@@ -30,6 +38,7 @@ interface AvatarWithImage extends ILibAvatarBase {
 interface AvatarWithLetter extends ILibAvatarBase {
     img?: never
     letter: string
+    fontSize?: LibFontSizes
     icon?: never
     iconSize?: never
     iconBaseUrl?: never
@@ -40,6 +49,7 @@ interface AvatarWithLetter extends ILibAvatarBase {
 interface AvatarWithIcon extends ILibAvatarBase {
     img?: never
     letter?: never
+    fontSize?: never
     icon: LibIcon
     iconSize?: number
     iconBaseUrl?: string
