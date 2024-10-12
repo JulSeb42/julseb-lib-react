@@ -17,6 +17,8 @@ import {
     LINE_HEIGHTS,
 } from "../../"
 import type {
+    LibAllColors,
+    LibColorsHover,
     LibHeaderPosition,
     LibHeaderVariant,
     LibNavBurgerPosition,
@@ -27,7 +29,7 @@ const LogoImg = styled(Image).attrs({ fit: "contain" })`
     object-position: left center;
     position: relative;
     z-index: 999;
-`
+` as any
 
 const Logo = styled(Link)`
     position: relative;
@@ -49,6 +51,9 @@ const StyledHeader = styled.header<{
     $burgerPosition: LibNavBurgerPosition
     $position: LibHeaderPosition
     $headerHeight: number
+    $backgroundColor: LibAllColors
+    $textColor: LibAllColors
+    $linkColor: LibColorsHover
 }>`
     position: ${({ $position }) => $position};
     left: 0;
@@ -62,6 +67,9 @@ const StyledHeader = styled.header<{
     })};
     padding: ${SPACERS.M} 5vw;
     transition: ${TRANSITIONS.SHORT};
+    background-color: ${({ $backgroundColor }) =>
+        Mixins.AllColors($backgroundColor)};
+    color: ${({ $textColor }) => Mixins.AllColors($textColor)};
 
     @media ${BREAKPOINTS.MOBILE} {
         height: ${({ $headerHeight }) => $headerHeight}px;
@@ -103,7 +111,7 @@ const StyledHeader = styled.header<{
             }
         `}
 
-    ${({ $variant }) =>
+    ${({ $variant, $linkColor }) =>
         ($variant === "white" || $variant === "transparent") &&
         css`
             & > a,
@@ -111,28 +119,28 @@ const StyledHeader = styled.header<{
             & > nav > a,
             & > nav > button {
                 color: ${({ theme }) =>
-                    Mixins.ColorsHoverDefault("primary", theme)};
+                    Mixins.ColorsHoverDefault($linkColor, theme)};
 
                 @media ${BREAKPOINTS.HOVER} {
                     &:hover {
                         color: ${({ theme }) =>
-                            Mixins.ColorsHoverHover("primary", theme)};
+                            Mixins.ColorsHoverHover($linkColor, theme)};
                     }
 
                     &:active {
                         color: ${({ theme }) =>
-                            Mixins.ColorsHoverActive("primary", theme)};
+                            Mixins.ColorsHoverActive($linkColor, theme)};
                     }
                 }
             }
 
             & > ${Logo} {
                 color: ${({ theme }) =>
-                    Mixins.ColorsHoverDefault("primary", theme)};
+                    Mixins.ColorsHoverDefault($linkColor, theme)};
             }
         `}
     
-    ${({ $variant, theme }) => {
+    ${({ $variant, theme, $backgroundColor, $textColor, $linkColor }) => {
         switch ($variant) {
             case "white":
                 return css`
@@ -181,30 +189,29 @@ const StyledHeader = styled.header<{
                 `
             case "primary":
                 return css`
-                    background-color: ${theme.PRIMARY_500};
-                    color: ${Mixins.ColorsHoverDefault("white", theme)};
+                    background-color: ${Mixins.AllColors(
+                        $backgroundColor,
+                        theme
+                    )};
+                    color: ${Mixins.AllColors($textColor, theme)};
 
                     & > a,
                     & > button:not(${StyledHeaderBurger}),
                     & > nav > a,
                     & > nav > button,
                     & > ${Logo} {
-                        color: ${({ theme }) =>
-                            Mixins.ColorsHoverDefault("background", theme)};
+                        color: ${Mixins.ColorsHoverDefault($linkColor, theme)};
 
                         @media ${BREAKPOINTS.HOVER} {
                             &:hover {
                                 color: ${({ theme }) =>
-                                    Mixins.ColorsHoverHover(
-                                        "background",
-                                        theme
-                                    )};
+                                    Mixins.ColorsHoverHover($linkColor, theme)};
                             }
 
                             &:active {
                                 color: ${({ theme }) =>
                                     Mixins.ColorsHoverActive(
-                                        "background",
+                                        $linkColor,
                                         theme
                                     )};
                             }

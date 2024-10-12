@@ -26,7 +26,6 @@ import type {
  * @prop logo: LibHeaderLogo
  * @prop links: Array<LibHeaderLink> => only if children is not defined
  * @prop children?: ReactChildren => only if links is not defined
- * @prop variant?: LibHeaderVariant
  * @prop burgerPosition?: LibNavBurgerPosition
  * @prop burgerColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" { closed: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"; open: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background" }
  * @prop navDesktopVariant?: LibNavBurgerPosition
@@ -35,6 +34,10 @@ import type {
  * @prop search?: { pathname: string; queries?: Array<Array<string>>; iconLeft?: string | JSX.Element; iconLeftSize?: number; iconClear?: string | JSX.Element; iconClearSize?: number; iconBaseUrl?: string; placeholder?: string; keyboardShortcut?: Array<string>; showKeys?: boolean; inputBackground?: "light" | "dark"; maxWidth?: string | number; inputVariant?: "rounded" | "pill" }
  * @prop position?: LibHeaderPosition
  * @prop hideOnScroll?: boolean | number => only if position is set to fixed
+ * @prop variant?: "primary" | "white" | "transparent"
+ * @prop backgroundColor?: Any color from the library => only if variant is set to primary
+ * @prop textColor?: Any color from the library => only if variant is set to primary
+ * @prop linkColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font"
  */
 export const Header = forwardRef<HTMLDivElement, ILibHeader>(
     (
@@ -54,6 +57,9 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
             links,
             nav,
             enableScrollingOpen,
+            backgroundColor = "primary",
+            textColor = "background",
+            linkColor = "white",
             ...rest
         },
         ref
@@ -159,6 +165,9 @@ export const Header = forwardRef<HTMLDivElement, ILibHeader>(
                 $headerHeight={headerHeight}
                 $position={position}
                 $variant={variant}
+                $backgroundColor={backgroundColor}
+                $linkColor={linkColor}
+                $textColor={textColor}
                 {...rest}
             >
                 {burgerPosition === "left" && <HeaderBurger {...burgerProps} />}

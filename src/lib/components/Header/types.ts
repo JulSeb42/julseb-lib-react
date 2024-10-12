@@ -12,12 +12,12 @@ import type {
     ReactChildren,
     LibHeaderVariant,
     LibColorsHover,
+    LibAllColors,
 } from "../../types"
 import type { LibHeaderLogo } from "./subtypes"
 
 interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
     logo: LibHeaderLogo
-    variant?: LibHeaderVariant
     burgerPosition?: LibNavBurgerPosition
     burgerColor?:
         | LibColorsHover
@@ -72,4 +72,20 @@ type HeaderWithChildren = HeaderPosition & {
     children?: ReactChildren
 }
 
-export type ILibHeader = HeaderWithLinks | HeaderWithNav | HeaderWithChildren
+type LibHeaderChildren = HeaderWithLinks | HeaderWithNav | HeaderWithChildren
+
+type HeaderWithBackground = LibHeaderChildren & {
+    variant?: Extract<LibHeaderVariant, "primary">
+    backgroundColor?: LibAllColors
+    textColor?: LibAllColors
+    linkColor?: LibColorsHover
+}
+
+type HeaderWithoutBackground = LibHeaderChildren & {
+    variant?: Exclude<LibHeaderVariant, "primary">
+    backgroundColor?: never
+    textColor?: never
+    linkColor?: never
+}
+
+export type ILibHeader = HeaderWithBackground | HeaderWithoutBackground

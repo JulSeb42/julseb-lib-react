@@ -6,20 +6,18 @@ import { previews } from "../data/components"
 import { typeValues } from "../lib/types"
 
 export const Generate = () => {
-    const propsDoc = replaceTypes(["aspectRatio?: string"])
+    const propsDoc = replaceTypes([
+        "variant?: LibHeaderVariant",
+        "backgroundColor?: LibAllColors => only if variant is set to primary",
+        "textColor?: LibAllColors => only if variant is set to primary",
+        "linkColor?: LibColorsHover => only if variant is set to primary",
+    ])
 
     const props = [
-        "inline?: boolean",
-        "flexDirection?: CssFlexDirection",
-        "flexWrap?: CssFlexWrap",
-        "justifyContent?: CssJustifyContent",
-        "alignItems?: CssAlignItems",
-        "justifyItems?: CssJustifyItems",
-        "alignContent?: CssAlignContent",
-        "gap?: LibSpacers",
-        "columnGap?: LibSpacers",
-        "rowGap?: LibSpacers",
-        "padding",
+        "variant?: LibHeaderVariant",
+        "backgroundColor?: LibAllColors => only if variant is set to primary",
+        "textColor?: LibAllColors => only if variant is set to primary",
+        "linkColor?: LibColorsHover => only if variant is set to primary",
     ]
 
     const renames = [
@@ -179,13 +177,13 @@ export const Generate = () => {
 
     return (
         <Page title="Generate">
-            <ul>
+            {/* <ul>
                 {props.map(p => (
                     <li key={p}>{`$${p.split(":")[0].replaceAll("?", "")}={${p
                         .split(":")[0]
                         .replaceAll("?", "")}}`}</li>
                 ))}
-            </ul>
+            </ul> */}
             <ul>
                 {propsDoc.map(p => (
                     <li key={p}>{` * @prop ${p}`}</li>
@@ -501,6 +499,7 @@ function replaceTypes(arr: Array<string>) {
                     "LibValueInputPin",
                     '{ [n: number]: number | "" | undefined }'
                 )
+                .replaceAll("LibHeaderVariant", mapValues(typeValues.headerVariants))
         )
     })
 }

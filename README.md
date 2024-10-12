@@ -16,4 +16,4 @@ yarn add julseb-lib-react
 
 ## Full documentation
 
-Find the full documentation here: [https://documentation-julseb-lib.vercel.app/](https://documentation-julseb-lib.vercel.app/).
+Find the full documentation here: [https://julseb-lib-documentation.vercel.app/](https://julseb-lib-documentation.vercel.app/).
