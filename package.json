@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.31",
+    "version": "0.0.36",
     "type": "module",
     "license": "MIT",
     "scripts": {

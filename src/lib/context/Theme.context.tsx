@@ -5,6 +5,7 @@ import type { IStyleSheetManager, DefaultTheme } from "styled-components"
 import { StyleSheetManager } from "../utils"
 import { Themes } from "../types/theme"
 import type { ILibThemeContext, LibThemeNames, ReactChildren } from "../types"
+import { COLORS_LIGHT } from "../Variables"
 
 const ThemeContext = createContext<ILibThemeContext | null>(null)
 
@@ -57,20 +58,28 @@ export const ThemeProviderWrapper = ({
                 setSelectedTheme("dark")
                 setTheme(Themes.dark)
                 body.classList.add("dark")
-            } else if (localStorage.getItem("theme") === "dark") {
-                setSelectedTheme("dark")
-                setTheme(Themes.dark)
-                body.classList.add("dark")
+            } else if (
+                !localStorage.getItem("theme") ||
+                localStorage.getItem("theme") === null ||
+                localStorage.getItem("theme") === undefined
+            ) {
+                window.localStorage.setItem("theme", "light")
             } else if (localStorage.getItem("theme") === "light") {
                 setSelectedTheme("light")
                 setTheme(Themes.light)
                 body.classList.remove("dark")
+            } else if (localStorage.getItem("theme") === "dark") {
+                setSelectedTheme("dark")
+                setTheme(Themes.dark)
+                body.classList.add("dark")
             }
         }
     }, [selectedTheme, body])
 
     return (
-        <ThemeContext.Provider value={{ theme, selectedTheme, toggleTheme }}>
+        <ThemeContext.Provider
+            value={{ theme: theme ?? COLORS_LIGHT, selectedTheme, toggleTheme }}
+        >
             {stylesheetManager ? (
                 <StyleSheetManager
                     {...(stylesheetManager as IStyleSheetManager)}

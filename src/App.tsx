@@ -2,7 +2,11 @@
 
 import type { FC } from "react"
 import { RouterProvider } from "react-router-dom"
-import { ThemeProvider, ToasterProviderWrapper, useLibTheme } from "./lib"
+import {
+    ThemeProvider,
+    ToasterProviderWrapper,
+    useLibTheme,
+} from "./lib"
 import { router } from "./routes"
 
 export const App: FC = () => {

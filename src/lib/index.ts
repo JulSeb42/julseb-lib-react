@@ -68,6 +68,8 @@ export {
 
 export * from "./hooks"
 
+export { Themes as LibThemeColors } from "./types/theme"
+
 export * from "./context/Theme.context"
 export * from "./context/Toaster"
 
