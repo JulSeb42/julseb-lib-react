@@ -2,7 +2,7 @@
 
 import { css } from "styled-components"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_FAMILIES,
     INPUT_HEIGHT,
     LINE_HEIGHTS,
@@ -57,7 +57,7 @@ export const ButtonMixin = ({
                         ? theme.FONT
                         : theme.BACKGROUND};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $color,
@@ -82,7 +82,7 @@ export const ButtonMixin = ({
                 return css`
                     color: ${Mixins.ColorsHoverDefault($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             color: ${Mixins.ColorsHoverHover($color, theme)};
                         }
@@ -108,7 +108,7 @@ export const ButtonMixin = ({
                         ? theme.BACKGROUND
                         : Mixins.ColorsHoverDefault($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsGhostHover(
                                 $color,
@@ -134,7 +134,7 @@ export const ButtonMixin = ({
                     border-color: ${Mixins.ColorsHoverDefault($color, theme)};
                     color: ${Mixins.ColorsHoverDefault($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             border-color: ${Mixins.ColorsHoverHover(
                                 $color,
@@ -204,7 +204,7 @@ export const TextBaseMixin = ({
         color: ${({ theme }) => Mixins.ColorsHoverDefault($linkColor, theme)};
 
         &:not(:disabled) {
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:hover {
                     color: ${({ theme }) =>
                         Mixins.ColorsHoverHover($linkColor, theme)};
@@ -273,7 +273,7 @@ export const InputBaseMixin = ({
             transform: translateY(-1px);
         }
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:not(:disabled):hover::file-selector-button {
                 background-color: ${({ theme }) => theme.GRAY_300};
             }
@@ -301,7 +301,7 @@ export const InputBaseMixin = ({
                             color: ${COLORS_LIGHT.FONT};
                         }
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:not(:disabled):hover::file-selector-button {
                                 background-color: ${COLORS_LIGHT.GRAY_300};
                             }
@@ -324,7 +324,7 @@ export const InputBaseMixin = ({
                             color: ${COLORS_DARK.FONT};
                         }
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:not(:disabled):hover::file-selector-button {
                                 background-color: ${COLORS_DARK.GRAY_300};
                             }

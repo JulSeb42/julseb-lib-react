@@ -2,7 +2,7 @@
 
 import styled, { keyframes, css } from "styled-components"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_SIZES,
     LINE_HEIGHTS,
     Mixins,
@@ -124,7 +124,7 @@ const CloseButton = styled.button`
         $justifyContent: "center",
     })}
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:hover {
             color: ${({ theme }) => Mixins.ColorsHoverHover("gray", theme)};
         }

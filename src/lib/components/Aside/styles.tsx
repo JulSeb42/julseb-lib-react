@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
-import { setDefaultTheme, LAYOUTS, Mixins, SPACERS, BREAKPOINTS } from "../../"
+import { setDefaultTheme, LAYOUTS, Mixins, SPACERS, MEDIA } from "../../"
 import type { LibAsideSize } from "../../types"
 
 const getAsideSize = (size: LibAsideSize) => {
@@ -36,7 +36,7 @@ const StyledAside = styled.aside<{
         flex-shrink: 0;
     }
 
-    @media ${BREAKPOINTS.TABLET_SMALL} {
+    @media ${MEDIA.BREAKPOINT_TABLET_SMALL} {
         height: inherit;
     }
 `

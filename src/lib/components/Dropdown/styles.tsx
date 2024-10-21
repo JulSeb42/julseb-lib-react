@@ -3,7 +3,7 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_FAMILIES,
     FONT_SIZES,
     FONT_WEIGHTS,
@@ -107,7 +107,7 @@ const StyledDropdownItem = styled.button<{
             $gap,
         })}
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:hover {
             background-color: ${({ theme, $accentColor }) =>
                 Mixins.ColorsHoverHover($accentColor, theme)};

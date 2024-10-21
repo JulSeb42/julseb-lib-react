@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_SIZES,
     FONT_WEIGHTS,
     LINE_HEIGHTS,
@@ -35,7 +35,7 @@ const StyledBreadcrumbs = styled.nav<{
         transition: ${TRANSITIONS.SHORT};
         font-weight: ${FONT_WEIGHTS.BLACK};
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ theme, $linkColor }) =>
                     Mixins.ColorsHoverHover($linkColor, theme)};

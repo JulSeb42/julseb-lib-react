@@ -2,7 +2,7 @@
 
 import styled, { css } from "styled-components"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_SIZES,
     LINE_HEIGHTS,
     Mixins,
@@ -123,7 +123,7 @@ const StyledInputCheck = styled.label<{
 
                   ${!$disabled &&
                   css`
-                      @media ${BREAKPOINTS.HOVER} {
+                      @media ${MEDIA.HOVER} {
                           &:hover {
                               border-color: ${Mixins.ColorsHoverHover(
                                   $validationStatus === false
@@ -158,7 +158,7 @@ const StyledInputCheck = styled.label<{
 
                   ${!$disabled &&
                   css`
-                      @media ${BREAKPOINTS.HOVER} {
+                      @media ${MEDIA.HOVER} {
                           &:hover {
                               background-color: ${Mixins.ColorsHoverHover(
                                   $validationStatus === false
@@ -239,7 +239,7 @@ const StyledInputCheck = styled.label<{
 
                       ${!$disabled &&
                       css`
-                          @media ${BREAKPOINTS.HOVER} {
+                          @media ${MEDIA.HOVER} {
                               &:hover {
                                   background-color: ${Mixins.ColorsHoverHover(
                                       $validationStatus === false

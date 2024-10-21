@@ -6,7 +6,7 @@ import {
     setDefaultTheme,
     Flexbox,
     SPACERS,
-    BREAKPOINTS,
+    MEDIA,
     RADIUSES,
     Mixins,
     FONT_FAMILIES,
@@ -101,7 +101,7 @@ const ButtonsContainer = styled(Flexbox).attrs({
     border-radius: ${RADIUSES.M} ${RADIUSES.M} 0 0;
     padding: ${SPACERS.XS};
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         gap: 0;
         align-items: flex-start;
         justify-content: flex-start;

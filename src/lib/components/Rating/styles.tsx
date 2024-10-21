@@ -1,7 +1,7 @@
 /*=============================================== Rating styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import { BREAKPOINTS, Mixins, setDefaultTheme } from "../../"
+import { MEDIA, Mixins, setDefaultTheme } from "../../"
 import type { LibValidationStatus } from "../../types"
 
 export const BUTTON_SIZE = 32
@@ -29,21 +29,17 @@ const RatingButton = styled.button<{
     ${({ $isReadOnly, theme, $validationStatus }) =>
         !$isReadOnly &&
         css`
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:hover {
                     color: ${Mixins.ColorsHoverHover(
-                        $validationStatus === false
-                            ? "danger"
-                            : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
                 }
 
                 &:active {
                     color: ${Mixins.ColorsHoverActive(
-                        $validationStatus === false
-                            ? "danger"
-                            : "primary",
+                        $validationStatus === false ? "danger" : "primary",
                         theme
                     )};
                 }

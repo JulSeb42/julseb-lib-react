@@ -5,7 +5,7 @@ import {
     setDefaultTheme,
     Mixins,
     SPACERS,
-    BREAKPOINTS,
+    MEDIA,
     Image,
     Text,
     Flexbox,
@@ -43,7 +43,7 @@ const StyledFooter = styled.footer<{
         padding: 0;
         background-color: transparent;
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ theme }) =>
                     Mixins.ColorsHoverHover("primary", theme)};
@@ -56,7 +56,7 @@ const StyledFooter = styled.footer<{
         }
     }
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         flex-direction: column;
         gap: ${SPACERS.XS};
     }
@@ -92,7 +92,7 @@ const FooterLinksContainer = styled(Flexbox).attrs({
     gap: "xs",
     flexWrap: "wrap",
 })`
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         justify-content: center;
         align-items: center;
     }

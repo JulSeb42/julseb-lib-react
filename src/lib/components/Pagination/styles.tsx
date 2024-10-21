@@ -1,13 +1,7 @@
 /*=============================================== Pagination styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import {
-    setDefaultTheme,
-    BREAKPOINTS,
-    Mixins,
-    RADIUSES,
-    TRANSITIONS,
-} from "../../"
+import { setDefaultTheme, MEDIA, Mixins, RADIUSES, TRANSITIONS } from "../../"
 import type { LibColorsHover } from "../../types"
 
 const BUTTON_SIZE = 32
@@ -50,7 +44,7 @@ const StyledPaginationButton = styled.button<{
             case false:
             case undefined:
                 return css`
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $accentColor,

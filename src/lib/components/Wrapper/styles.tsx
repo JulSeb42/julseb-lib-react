@@ -1,7 +1,7 @@
 /*=============================================== Wrapper styles ===============================================*/
 
 import styled from "styled-components"
-import { BREAKPOINTS, Mixins, setDefaultTheme } from "../../"
+import { MEDIA, Mixins, setDefaultTheme } from "../../"
 import type { LibAllColors, LibSpacers } from "../../types"
 
 const StyledWrapper = styled.div<{
@@ -17,7 +17,7 @@ const StyledWrapper = styled.div<{
             $justifyContent: "center",
         })}
 
-    @media ${BREAKPOINTS.TABLET_LARGE} {
+    @media ${MEDIA.BREAKPOINT_TABLET_LARGE} {
         flex-direction: column;
         align-items: center;
         min-height: inherit;

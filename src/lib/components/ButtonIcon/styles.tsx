@@ -2,7 +2,7 @@
 
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
-import { BREAKPOINTS, setDefaultTheme } from "../../"
+import { MEDIA, setDefaultTheme } from "../../"
 import { ButtonMixin } from "../ComponentsMixins"
 import type { ILibButtonIconStyles } from "./subtypes"
 
@@ -18,7 +18,7 @@ const StyledButtonIcon = styled.button<ILibButtonIconStyles>`
         $variant === "transparent" &&
         $showBackgroundHover &&
         css`
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:not(:disabled):hover {
                     background-color: ${theme.GRAY_50};
                 }

@@ -6,7 +6,7 @@ import {
     Mixins,
     TRANSITIONS,
     stringifyPx,
-    BREAKPOINTS,
+    MEDIA,
 } from "../../"
 import type {
     LibAllColors,
@@ -94,7 +94,7 @@ const DrawerContent = styled.div<{
         text-align: left;
         transition: ${TRANSITIONS.SHORT};
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ $linksColor, theme }) =>
                     Mixins.ColorsHoverHover($linksColor, theme)};

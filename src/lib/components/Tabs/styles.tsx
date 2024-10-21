@@ -5,7 +5,7 @@ import {
     setDefaultTheme,
     Mixins,
     RADIUSES,
-    BREAKPOINTS,
+    MEDIA,
     SPACERS,
     TRANSITIONS,
 } from "../../"
@@ -65,7 +65,7 @@ const StyledTabsButtonsContainer = styled.div<{
                         $inline: true,
                     })};
 
-                    @media ${BREAKPOINTS.MOBILE} {
+                    @media ${MEDIA.BREAKPOINT_MOBILE} {
                         flex-direction: column;
                     }
                 `
@@ -76,7 +76,7 @@ const StyledTabsButtonsContainer = styled.div<{
                         $col: $cols,
                     })};
 
-                    @media ${BREAKPOINTS.MOBILE} {
+                    @media ${MEDIA.BREAKPOINT_MOBILE} {
                         grid-template-columns: repeat(1, 1fr);
                     }
                 `
@@ -105,7 +105,7 @@ const StyledTabButton = styled.button<{
                     z-index: 2;
                     color: ${theme.FONT};
 
-                    @media ${BREAKPOINTS.MOBILE} {
+                    @media ${MEDIA.BREAKPOINT_MOBILE} {
                         width: 100%;
                     }
 
@@ -121,7 +121,7 @@ const StyledTabButton = styled.button<{
                     min-width: ${$justify === "start" && "100px"};
                     color: ${theme.FONT};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 "primary",

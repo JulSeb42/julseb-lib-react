@@ -2,7 +2,7 @@
 
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
-import { setDefaultTheme, Mixins, BREAKPOINTS, SPACERS, LAYOUTS } from "../../"
+import { setDefaultTheme, Mixins, MEDIA, SPACERS, LAYOUTS } from "../../"
 import type { LibMainSize } from "../../types"
 
 const getMainSize = (size: LibMainSize) => {
@@ -51,7 +51,7 @@ const StyledMain = styled.main<{
             }
         `}
 
-    @media ${BREAKPOINTS.TABLET_SMALL} {
+    @media ${MEDIA.BREAKPOINT_TABLET_SMALL} {
         height: unset;
     }
 `

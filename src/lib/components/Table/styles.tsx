@@ -1,13 +1,7 @@
 /*=============================================== Table styles ===============================================*/
 
 import styled, { css } from "styled-components"
-import {
-    setDefaultTheme,
-    SPACERS,
-    Mixins,
-    FONT_SIZES,
-    BREAKPOINTS,
-} from "../../"
+import { setDefaultTheme, SPACERS, Mixins, FONT_SIZES, MEDIA } from "../../"
 import { TextBaseMixin } from "../ComponentsMixins"
 import type { CssVerticalAlign, LibTableVariant } from "../../types"
 
@@ -47,7 +41,7 @@ const StyledTable = styled.table<{
             font-size: ${FONT_SIZES.SMALL};
         }
 
-        @media ${BREAKPOINTS.MOBILE} {
+        @media ${MEDIA.BREAKPOINT_MOBILE} {
             display: block;
         }
     }

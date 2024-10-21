@@ -9,7 +9,7 @@ import {
     SPACERS,
     COLORS_LIGHT,
     COLORS_DARK,
-    BREAKPOINTS,
+    MEDIA,
     FONT_SIZES,
 } from "../../"
 import type {
@@ -152,7 +152,7 @@ const CalendarNavButton = styled.button<{
     background-color: transparent;
     color: currentColor;
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:not(:disabled):hover {
             background-color: ${({ theme, $validationStatus }) =>
                 Mixins.ColorsHoverHover(
@@ -178,7 +178,7 @@ const CalendarNavButton = styled.button<{
         switch ($inputBackground) {
             case "light":
                 return css`
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $validationStatus === false
@@ -206,7 +206,7 @@ const CalendarNavButton = styled.button<{
                 `
             case "dark":
                 return css`
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $validationStatus === false
@@ -303,7 +303,7 @@ const CalendarDay = styled.button<{
         color: ${({ theme }) => theme.BACKGROUND};
     }
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:not(:disabled):hover {
             background-color: ${({ theme, $validationStatus }) =>
                 Mixins.ColorsHoverHover(
@@ -326,7 +326,7 @@ const CalendarDay = styled.button<{
         color: ${({ theme }) => theme.GRAY_500};
     }
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         width: ${BUTTON_MOBILE}px;
         height: ${BUTTON_MOBILE}px;
     }
@@ -354,7 +354,7 @@ const CalendarDay = styled.button<{
                         color: ${COLORS_LIGHT.BACKGROUND};
                     }
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $validationStatus === false
@@ -402,7 +402,7 @@ const CalendarDay = styled.button<{
                         color: ${COLORS_DARK.BACKGROUND};
                     }
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             background-color: ${Mixins.ColorsHoverHover(
                                 $validationStatus === false

@@ -3,7 +3,7 @@
 import styled, { css } from "styled-components"
 import { getPercentage } from "@julseb-lib/utils"
 import {
-    BREAKPOINTS,
+    MEDIA,
     OVERLAYS,
     RADIUSES,
     SHADOWS,
@@ -58,7 +58,7 @@ const StyledInputSlider = styled.input<{
         position: relative;
         z-index: 2;
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:not(:disabled):hover {
                 background-color: ${({ theme, $validationStatus }) =>
                     Mixins.ColorsHoverHover(
@@ -136,7 +136,7 @@ const StyledInputSlider = styled.input<{
                             $validationStatus === false ? "danger" : "primary"
                         )};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:not(:disabled):hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $validationStatus === false
@@ -196,7 +196,7 @@ const StyledInputSlider = styled.input<{
                             $validationStatus === false ? "danger" : "primary"
                         )};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:not(:disabled):hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $validationStatus === false

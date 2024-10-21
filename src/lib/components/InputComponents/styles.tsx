@@ -8,7 +8,7 @@ import {
     COLORS_LIGHT,
     COLORS_DARK,
     TRANSITIONS,
-    BREAKPOINTS,
+    MEDIA,
     SPACERS,
     RADIUSES,
 } from "../.."
@@ -194,7 +194,7 @@ const StyledInputButton = styled.button<{
         $justifyContent: "center",
     })};
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:not(:disabled):hover {
             color: ${({ theme, $validationStatus, $isSpan }) =>
                 !$isSpan &&
@@ -236,7 +236,7 @@ const StyledInputButton = styled.button<{
                         "light"
                     )};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             color: ${!$isSpan &&
                             Mixins.ColorsHoverHover(
@@ -272,7 +272,7 @@ const StyledInputButton = styled.button<{
                         "dark"
                     )};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:not(:disabled):hover {
                             color: ${!$isSpan &&
                             Mixins.ColorsHoverHover(
@@ -525,7 +525,7 @@ const StyledListInputItem = styled.span<{
         css`
             cursor: pointer;
 
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:hover {
                     background-color: ${Mixins.ColorsHoverHover(
                         $validationStatus === false ? "danger" : "primary",
@@ -558,7 +558,7 @@ const StyledListInputItem = styled.span<{
 
                     ${!$readOnly &&
                     css`
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $validationStatus === false
@@ -595,7 +595,7 @@ const StyledListInputItem = styled.span<{
 
                     ${!$readOnly &&
                     css`
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $validationStatus === false

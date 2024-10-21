@@ -2,13 +2,7 @@
 
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
-import {
-    BREAKPOINTS,
-    RADIUSES,
-    TRANSITIONS,
-    setDefaultTheme,
-    Mixins,
-} from "../../"
+import { MEDIA, RADIUSES, TRANSITIONS, setDefaultTheme, Mixins } from "../../"
 import type { LibColorsHoverAndCurrent } from "../../types"
 
 const StyledBurger = styled.button<{
@@ -34,7 +28,7 @@ const StyledBurger = styled.button<{
             case false:
             case undefined:
                 return css`
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:hover {
                             color: ${Mixins.ColorsHoverHover($color, theme)};
                         }

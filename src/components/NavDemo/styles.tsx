@@ -1,13 +1,7 @@
 /*=============================================== NavDemo styles ===============================================*/
 
 import styled from "styled-components"
-import {
-    Mixins,
-    SPACERS,
-    TRANSITIONS,
-    BREAKPOINTS,
-    setDefaultTheme,
-} from "../../lib"
+import { Mixins, SPACERS, TRANSITIONS, MEDIA, setDefaultTheme } from "../../lib"
 
 export const NAV_WIDTH = 200 as const
 
@@ -32,7 +26,7 @@ const StyledNavDemo = styled.nav`
         text-decoration: none;
         transition: ${TRANSITIONS.SHORT};
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ theme }) =>
                     Mixins.ColorsHoverHover("background", theme)};

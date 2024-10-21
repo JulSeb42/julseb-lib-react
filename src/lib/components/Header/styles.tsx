@@ -12,7 +12,7 @@ import {
     TRANSITIONS,
     FONT_SIZES,
     FONT_WEIGHTS,
-    BREAKPOINTS,
+    MEDIA,
     OVERLAYS,
     LINE_HEIGHTS,
 } from "../../"
@@ -41,7 +41,7 @@ const StyledHeaderBurger = styled(Burger)`
     display: none;
     z-index: 999;
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         display: inherit;
     }
 `
@@ -71,7 +71,7 @@ const StyledHeader = styled.header<{
         Mixins.AllColors($backgroundColor)};
     color: ${({ $textColor }) => Mixins.AllColors($textColor)};
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         height: ${({ $headerHeight }) => $headerHeight}px;
     }
 
@@ -95,7 +95,7 @@ const StyledHeader = styled.header<{
     ${({ $burgerPosition }) =>
         $burgerPosition === "left" &&
         css`
-            @media ${BREAKPOINTS.MOBILE} {
+            @media ${MEDIA.BREAKPOINT_MOBILE} {
                 justify-content: flex-start;
                 gap: ${SPACERS.XS};
             }
@@ -121,7 +121,7 @@ const StyledHeader = styled.header<{
                 color: ${({ theme }) =>
                     Mixins.ColorsHoverDefault($linkColor, theme)};
 
-                @media ${BREAKPOINTS.HOVER} {
+                @media ${MEDIA.HOVER} {
                     &:hover {
                         color: ${({ theme }) =>
                             Mixins.ColorsHoverHover($linkColor, theme)};
@@ -150,7 +150,7 @@ const StyledHeader = styled.header<{
                 return css`
                     background-color: transparent;
 
-                    @media ${BREAKPOINTS.MOBILE} {
+                    @media ${MEDIA.BREAKPOINT_MOBILE} {
                         &.Open {
                             background-color: ${theme.PRIMARY_500};
 
@@ -161,7 +161,7 @@ const StyledHeader = styled.header<{
                                 color: ${({ theme }) =>
                                     Mixins.ColorsHoverDefault("white", theme)};
 
-                                @media ${BREAKPOINTS.HOVER} {
+                                @media ${MEDIA.HOVER} {
                                     &:hover {
                                         color: ${({ theme }) =>
                                             Mixins.ColorsHoverHover(
@@ -202,7 +202,7 @@ const StyledHeader = styled.header<{
                     & > ${Logo} {
                         color: ${Mixins.ColorsHoverDefault($linkColor, theme)};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 color: ${({ theme }) =>
                                     Mixins.ColorsHoverHover($linkColor, theme)};
@@ -240,7 +240,7 @@ const Nav = styled.nav<{
             flex-grow: 1;
         `}
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         position: absolute;
         background-color: ${({ theme, $variant }) =>
             $variant === "white" ? theme.WHITE : theme.PRIMARY_500};
@@ -326,7 +326,7 @@ const SearchForm = styled.form<{ $maxWidth?: string | number }>`
     width: 100%;
     max-width: ${({ $maxWidth }) => $maxWidth && stringifyPx($maxWidth)};
 
-    @media ${BREAKPOINTS.MOBILE} {
+    @media ${MEDIA.BREAKPOINT_MOBILE} {
         max-width: 100%;
     }
 `

@@ -3,7 +3,7 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_SIZES,
     FONT_WEIGHTS,
     LINE_HEIGHTS,
@@ -73,7 +73,7 @@ const StyledListItem = styled.div<{
             transition: ${TRANSITIONS.SHORT};
             color: ${Mixins.ColorsHoverDefault("primary", theme)};
 
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:not(:disabled):hover {
                     background-color: ${Mixins.ColorsHoverHover(
                         "primary",

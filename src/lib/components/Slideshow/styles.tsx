@@ -6,7 +6,7 @@ import {
     setDefaultTheme,
     Mixins,
     RADIUSES,
-    BREAKPOINTS,
+    MEDIA,
     SPACERS,
     Flexbox,
     TRANSITIONS,
@@ -124,7 +124,7 @@ const StyledSlideshowButton = styled.button<{
         return null
     }};
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:hover {
             background-color: ${({ theme, $color }) =>
                 Mixins.ColorsHoverHover($color, theme)};
@@ -139,7 +139,7 @@ const StyledSlideshowButton = styled.button<{
     ${({ $hideOnTouch }) =>
         $hideOnTouch &&
         css`
-            @media ${BREAKPOINTS.TOUCH} {
+            @media ${MEDIA.TOUCH} {
                 display: none;
             }
         `}
@@ -163,7 +163,7 @@ const StyledSlideshowPagination = styled(Flexbox).attrs({
     ${({ $hideOnTouch }) =>
         $hideOnTouch &&
         css`
-            @media ${BREAKPOINTS.TOUCH} {
+            @media ${MEDIA.TOUCH} {
                 display: none;
             }
         `}
@@ -188,7 +188,7 @@ const SlideshowPaginationItem = styled.button<{
                     border-radius: ${RADIUSES.ROUND};
                     background-color: ${Mixins.ColorsHoverHover($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:hover {
                             background-color: ${Mixins.ColorsHoverDefault(
                                 $color,
@@ -210,7 +210,7 @@ const SlideshowPaginationItem = styled.button<{
                             theme
                         )};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $color,
@@ -227,7 +227,7 @@ const SlideshowPaginationItem = styled.button<{
                     border-radius: 50%;
                     background-color: ${Mixins.ColorsHoverHover($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:hover {
                             background-color: ${Mixins.ColorsHoverDefault(
                                 $color,
@@ -249,7 +249,7 @@ const SlideshowPaginationItem = styled.button<{
                             theme
                         )};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $color,
@@ -268,7 +268,7 @@ const SlideshowPaginationItem = styled.button<{
                     border: 1px solid
                         ${Mixins.ColorsHoverDefault($color, theme)};
 
-                    @media ${BREAKPOINTS.HOVER} {
+                    @media ${MEDIA.HOVER} {
                         &:hover {
                             border-color: ${Mixins.ColorsHoverHover(
                                 $color,
@@ -290,7 +290,7 @@ const SlideshowPaginationItem = styled.button<{
                             theme
                         )};
 
-                        @media ${BREAKPOINTS.HOVER} {
+                        @media ${MEDIA.HOVER} {
                             &:hover {
                                 background-color: ${Mixins.ColorsHoverHover(
                                     $color,
@@ -323,7 +323,7 @@ const SlideshowThumbnail = styled.button`
     opacity: 0.5;
     transition: ${TRANSITIONS.SHORT};
 
-    @media ${BREAKPOINTS.HOVER} {
+    @media ${MEDIA.HOVER} {
         &:hover {
             opacity: 0.8;
         }

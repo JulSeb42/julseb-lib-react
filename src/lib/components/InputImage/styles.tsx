@@ -3,7 +3,7 @@
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import {
-    BREAKPOINTS,
+    MEDIA,
     Image,
     Mixins,
     setDefaultTheme,
@@ -66,7 +66,7 @@ const StyledHoverContainer = styled.div<{
     ${({ $disabled }) =>
         !$disabled &&
         css`
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 opacity: 0;
 
                 &.Visible {

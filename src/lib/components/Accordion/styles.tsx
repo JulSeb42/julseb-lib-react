@@ -2,7 +2,7 @@
 
 import styled from "styled-components"
 import {
-    BREAKPOINTS,
+    MEDIA,
     FONT_FAMILIES,
     FONT_SIZES,
     FONT_WEIGHTS,
@@ -51,7 +51,7 @@ const StyledAccordionButton = styled.button`
         border-bottom: 1px solid ${({ theme }) => theme.GRAY_200};
         color: ${({ theme }) => Mixins.ColorsHoverDefault("primary", theme)};
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ theme }) =>
                     Mixins.ColorsHoverHover("primary", theme)};
@@ -70,7 +70,7 @@ const StyledAccordionButton = styled.button`
         color: ${({ theme }) => theme.BACKGROUND};
         padding: ${SPACERS.S};
 
-        @media ${BREAKPOINTS.HOVER} {
+        @media ${MEDIA.HOVER} {
             &:hover {
                 background-color: ${({ theme }) =>
                     Mixins.ColorsHoverHover("primary", theme)};

@@ -11,7 +11,7 @@ import {
     RADIUSES,
     ButtonIcon,
     TRANSITIONS,
-    BREAKPOINTS,
+    MEDIA,
     Flexbox,
 } from "../../"
 
@@ -115,7 +115,7 @@ const StyledMessage = styled.p`
             color: ${({ theme }) =>
                 Mixins.ColorsHoverDefault("background", theme)};
 
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:hover {
                     color: ${({ theme }) =>
                         Mixins.ColorsHoverHover("background", theme)};
@@ -141,7 +141,7 @@ const StyledMessage = styled.p`
             color: ${({ theme }) =>
                 Mixins.ColorsHoverDefault("primary", theme)};
 
-            @media ${BREAKPOINTS.HOVER} {
+            @media ${MEDIA.HOVER} {
                 &:hover {
                     color: ${({ theme }) =>
                         Mixins.ColorsHoverHover("primary", theme)};
