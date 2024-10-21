@@ -1,0 +1,38 @@
+{
+    "Base React": {
+        "prefix": "react",
+        "body": "/*=============================================== $1 ===============================================*/\n\ninterface $1Props {\n\n}\n\nexport function $1({ }: $1Props) {\n    return (\n        <div>\n            \n        </div>\n    )\n}\n"
+    },
+    "Page React": {
+        "prefix": "page",
+        "body": "/*=============================================== $1 ===============================================*/\n\nexport function $1() {\n    return (\n        <div>\n\n        </div>\n    )\n}\n"
+    },
+    "Styled Component": {
+        "prefix": "styled",
+        "body": "const ${1} = styled.${2}`\n    ${3}\n`"
+    },
+    "Ignore next line": {
+        "prefix": "ignore",
+        "body": "// eslint-disable-next-line"
+    },
+    "TS expect error": {
+        "prefix": "expect",
+        "body": "// @ts-expect-error"
+    },
+    "Console log": {
+        "prefix": "cl",
+        "body": "console.log(${1})"
+    },
+    "target blank": {
+        "prefix": "blank",
+        "body": "target=\"_blank\" rel=\"noreferrer noopener\"",
+    },
+    "Comment title": {
+        "prefix": "comment",
+        "body": "/*=============================================== $1 ===============================================*/"
+    },
+    "Comment small": {
+        "prefix": "comment-small",
+        "body": "/*====================== $1 ======================*/"
+    }
+}
