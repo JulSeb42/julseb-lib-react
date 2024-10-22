@@ -1,3 +1,5 @@
+"use client"
+
 /*=============================================== Exports ===============================================*/
 
 export { ThemeProvider } from "styled-components"
