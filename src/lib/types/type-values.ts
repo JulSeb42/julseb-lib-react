@@ -260,7 +260,7 @@ export const typeValues = {
 
     footerDirections: { horizontal: "horizontal", vertical: "vertical" },
 
-    footerSeparators: { dot: "dot", dash: "dash" },
+    footerSeparators: { dot: "dot", dash: "dash", none: "none" },
 
     buttonGroupToggleSelects: { single: "single", multi: "multi" },
 

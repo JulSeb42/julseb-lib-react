@@ -423,12 +423,12 @@ export interface LibMarkdownEditorOptions {
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
- * @prop text: string
+ * @prop text: ReactChildren
  * @prop end?: boolean => prop from react-router, to render the active class only if path is not further
  */
 export type LibHeaderLink = LibButtonLinkBlankRequired &
     LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
-        text: string
+        text: ReactChildren
         end?: boolean
     }
 
@@ -461,11 +461,11 @@ export type LibIconMenuItem = LibButtonLinkBlankRequired &
  * @prop className?: string
  * @prop id?: string
  * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
- * @prop text: string
+ * @prop text: ReactChildren
  */
 export type LibFooterLink = LibButtonLinkBlankRequired &
     LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
-        text: string | JSX.Element
+        text: ReactChildren
     }
 
 /*====================== DragListItem ======================*/

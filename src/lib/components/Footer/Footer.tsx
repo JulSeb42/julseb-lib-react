@@ -91,7 +91,9 @@ export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
                                       <FooterLinkSeparatorContainer>
                                           {linksSeparator === "dash"
                                               ? "-"
-                                              : "•"}
+                                              : linksSeparator === "dot"
+                                              ? "•"
+                                              : ""}
                                       </FooterLinkSeparatorContainer>
                                   )}
                               </Fragment>
