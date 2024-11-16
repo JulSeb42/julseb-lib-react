@@ -1,0 +1,7 @@
+/*=============================================== {{ pascalCase name }} types ===============================================*/
+
+import type { LibComponentBase{{#if common}}, {{common}}{{/if}} } from "../../types"
+
+export interface ILib{{ pascalCase name }} extends {{#if as}}LibComponentBase<HTML{{ pascalCase attribute }}Element>{{else}}Exclude<LibComponentBase<HTML{{ pascalCase attribute }}Element>, "as">{{/if}} {
+    
+}

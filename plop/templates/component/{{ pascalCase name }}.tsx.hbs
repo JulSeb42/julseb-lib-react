@@ -1,0 +1,28 @@
+/*=============================================== {{ pascalCase name }} component ===============================================*/
+
+import { forwardRef } from "react"
+import {  } from "@julseb-lib/utils"
+import { {{ pascalCase other }} } from "../../"
+import { Styled{{ pascalCase name }} } from "./styles"
+import type { ILib{{ pascalCase name }} } from "./types"
+
+/** 
+ * @description Returns a {{ pascalCase name }} component
+ * @link https://documentation-components-react.vercel.app/{{ category }}/{{ kebabCase name }}
+ * @extends HTML{{ pascalCase attribute }}Element
+ * @prop data-testid?: string
+{{#if as}} * @prop as?: ElementType{{/if}}
+ * @prop ref?: ForwardedRef<HTML{{ pascalCase attribute }}Element>
+ */
+export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, ILib{{ pascalCase name }}>(
+    (
+        { "data-testid": testid,{{#if as}} as,{{/if}}{{#if children}} children,{{/if}} ...rest },
+        ref
+    ) => {
+        return (
+            <Styled{{ pascalCase name }} data-testid={testid} ref={ref} {{#if as}}as={as} {{/if}}{...rest}{{#if children}}>
+                {children}
+            </Styled{{ pascalCase name }}>{{ else }} />{{/if}}
+        )
+    }
+)
