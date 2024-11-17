@@ -1,7 +1,6 @@
 /*=============================================== Component ===============================================*/
 
 import { NodePlopAPI } from "plop"
-import { allComponents } from "./all-components"
 
 export default (plop: NodePlopAPI) => {
     const { setGenerator } = plop
@@ -13,18 +12,6 @@ export default (plop: NodePlopAPI) => {
                 type: "input",
                 name: "name",
                 message: "Enter component's name",
-                validate: data => {
-                    const component = allComponents.find(
-                        component => data?.name === component
-                    )
-
-                    if (component) {
-                        console.log({ component })
-                        return false
-                    }
-
-                    return true
-                },
             },
             {
                 type: "list",

@@ -21,12 +21,6 @@ export default (plop: NodePlopAPI) => {
                 default: "components",
             },
             {
-                type: "confirm",
-                name: "demo",
-                message: "Generate only demo array",
-                default: true,
-            },
-            {
                 type: "input",
                 name: "attribute",
                 message: "Enter HTML attribute",
