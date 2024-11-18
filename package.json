@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.70",
+    "version": "0.0.71",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -11,7 +11,7 @@
         "copy-lib": "cp -a ./src/lib ./dist && rm -rf ./dist/lib/components/*/__tests__ ./dist/lib/components/*/__preview__",
         "clean": "rm -rf ./dist/icons ./dist/images ./dist/vite.svg ./dist/favicon.svg ./dist/icons-alt",
         "plop": "cross-env NODE_OPTIONS='--import tsx' plop --plopfile=./plop/plopfile.ts",
-        "build": "",
+        "build": "vite build && yarn copy && yarn copy-lib && yarn clean",
         "plop:c": "yarn plop component",
         "plop:p": "yarn plop preview",
         "plop:st": "yarn plop subtype",
