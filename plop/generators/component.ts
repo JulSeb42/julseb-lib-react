@@ -62,6 +62,7 @@ export default (plop: NodePlopAPI) => {
                 destination: "../src/lib/components/{{ pascalCase name }}",
                 templateFiles: "./templates/component/*.hbs",
                 base: "./templates/component",
+                verbose: false,
             },
             "Creating tests file",
             {
@@ -81,13 +82,13 @@ export default (plop: NodePlopAPI) => {
                 path: "../src/data/components.tsx",
                 template:
                     'import { {{ camelCase name }}Preview } from "../lib/components/{{ pascalCase name }}/__preview__/{{ pascalCase name }}.preview"\n$1',
-                pattern: /(\/\/ prependImport)/g,
+                pattern: /(\/\* Prepend import - DO NOT REMOVE \*\/)/g,
             },
             {
                 type: "modify",
                 path: "../src/data/components.tsx",
                 template: "{{ camelCase name }}Preview,\n$1",
-                pattern: /(\/\/ prependArr)/g,
+                pattern: /(\/\* Prepend array - DO NOT REMOVE \*\/)/g,
             },
             "Exporting your new component from the library",
             {
@@ -95,7 +96,7 @@ export default (plop: NodePlopAPI) => {
                 path: "../src/lib/index.ts",
                 template:
                     'export * from "./components/{{ pascalCase name }}"\n$1',
-                pattern: /(\/\/ prependHere)/g,
+                pattern: /(\/\* Prepend here - DO NOT REMOVE \*\/)/g,
             },
             "Exporting your component's type from the library",
             {
@@ -103,7 +104,7 @@ export default (plop: NodePlopAPI) => {
                 path: "../src/lib/types/components-props.ts",
                 template:
                     'export * from "../components/{{ pascalCase name }}/types"\n$1',
-                pattern: /(\/\/ prependHere)/g,
+                pattern: /(\/\* Prepend here - DO NOT REMOVE \*\/)/g,
             },
         ],
     })

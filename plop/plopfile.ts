@@ -16,7 +16,7 @@ export default (plop: NodePlopAPI) => {
         )
     )
 
-    previewGenerator(plop)
-    componentGenerator(plop)
-    subtypeGenerator(plop)
+    previewGenerator(plop) // yarn plop:p
+    componentGenerator(plop) // yarn plop:c
+    subtypeGenerator(plop) // yarn plop:st
 }

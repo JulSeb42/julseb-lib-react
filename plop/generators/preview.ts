@@ -43,14 +43,14 @@ export default (plop: NodePlopAPI) => {
                     path: "../src/data/components.tsx",
                     template:
                         'import { {{ camelCase name }}Preview } from "../lib/components/{{ pascalCase name }}/__preview__/{{ pascalCase name }}.preview"\n$1',
-                    pattern: /(\/\/ prependImport)/g,
+                    pattern: /(\/\* Prepend import - DO NOT REMOVE \*\/)/g,
                 },
                 "Exporting from the component from the data folder",
                 {
                     type: "modify",
                     path: "../src/data/components.tsx",
                     template: "{{ camelCase name }}Preview,\n$1",
-                    pattern: /(\/\/ prependArr)/g,
+                    pattern: /(\/\* Prepend array - DO NOT REMOVE \*\/)/g,
                 },
             ]
 

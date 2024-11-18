@@ -75,8 +75,7 @@ export const routes: Array<Route> = [
     { path: "/generate", element: <Generate /> },
     { path: "/:componentName", element: <ComponentPage /> },
 
-    // prependRoute
-    // { path: "/reset-scroll", element: <></> },
+    /* Prepend here - DO NOT REMOVE */
 ]
 
 export const routesPaths: ComponentPaths = routes

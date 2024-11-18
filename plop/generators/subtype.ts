@@ -2,7 +2,6 @@
 
 import type { NodePlopAPI } from "plop"
 import { allComponents } from "../utils"
-import { search } from "@inquirer/prompts"
 
 export default (plop: NodePlopAPI) => {
     const { setGenerator } = plop
