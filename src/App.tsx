@@ -1,6 +1,5 @@
 /*=============================================== App ===============================================*/
 
-import type { FC } from "react"
 import { RouterProvider } from "react-router-dom"
 import {
     ThemeProvider,
@@ -9,7 +8,7 @@ import {
 } from "./lib"
 import { router } from "./routes"
 
-export const App: FC = () => {
+export const App = () => {
     const { theme } = useLibTheme()
 
     return (

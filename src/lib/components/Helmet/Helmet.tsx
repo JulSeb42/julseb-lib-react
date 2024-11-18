@@ -1,14 +1,12 @@
 /*=============================================== Helmet component ===============================================*/
 
-import { Helmet as Meta, HelmetData } from "react-helmet-async"
+import { Helmet as Meta } from "react-helmet"
 import type { ILibHelmet } from "./types"
-
-const helmetData = new HelmetData({})
 
 /**
  * @description Returns a Helmet component
  * @link https://documentation-components-react.vercel.app/components/helmet
- * @extends HelmetProps => imported from react-helmet-async
+ * @extends HelmetProps => imported from react-helmet
  * @prop title: string
  * @prop favicon?: string
  * @prop description?: string
@@ -34,7 +32,7 @@ export const Helmet = ({
     ...rest
 }: ILibHelmet) => {
     return (
-        <Meta helmetData={helmetData} {...rest}>
+        <Meta {...rest}>
             <title>{title}</title>
             <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
             <meta
