@@ -61,7 +61,7 @@ type HeaderWithLinks = HeaderPosition & {
 }
 
 type HeaderWithNav = HeaderPosition & {
-    links: Array<LibHeaderLink | JSX.Element>
+    links?: never
     nav?: ReactChildren
     children?: never
 }
