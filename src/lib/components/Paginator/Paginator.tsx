@@ -69,6 +69,8 @@ export const Paginator = forwardRef<HTMLDivElement, ILibPaginator>(
             [handlePage]
         )
 
+        if (totalPages && totalPages <= 1) return null
+
         return (
             <Flexbox
                 data-testid={testid}
