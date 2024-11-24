@@ -25,8 +25,30 @@ const StyledProgressBar = styled.meter<{
     display: block;
     overflow: hidden;
     border: none;
+    background: none;
     appearance: none;
     flex-grow: 1;
+    -webkit-appearance: none;
+
+    &::-moz-meter-bar {
+        -moz-appearance: none;
+    }
+
+    &:-moz-meter-optimum::-moz-meter-bar,
+    &:-moz-meter-sub-optimum::-moz-meter-bar,
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+        background: none;
+    }
+
+    &::-webkit-meter-bar,
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value,
+    &::-webkit-meter-even-less-good-value,
+    &::-webkit-meter-inner-element {
+        background: none;
+        background-color: ${({ theme }) => theme.GRAY_200};
+        z-index: 0;
+    }
 
     &:before {
         content: "";
@@ -39,6 +61,7 @@ const StyledProgressBar = styled.meter<{
         background-color: ${({ theme, $color }) =>
             Mixins.AllColors($color, theme)};
         border-radius: ${RADIUSES.ROUND};
+        z-index: 1;
     }
 
     &.RadiusCircle:before {

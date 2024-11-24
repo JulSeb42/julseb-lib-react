@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.74",
+    "version": "0.0.75",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -29,13 +29,13 @@
         "classnames": "^2.5.1",
         "figlet": "^1.8.0",
         "fuse.js": "^7.0.0",
-        "markdown-to-jsx": "^7.6.2",
+        "markdown-to-jsx": "^7.7.0",
         "plop": "^4.0.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-helmet": "^6.1.0",
         "react-inlinesvg": "^4.1.5",
-        "react-router-dom": "^6.28.0",
+        "react-router-dom": "^7.0.1",
         "react-syntax-highlighter": "^15.6.1",
         "styled-components": "^6.1.13"
     },
@@ -45,7 +45,7 @@
         "@react-docgen/cli": "^2.0.4",
         "@types/figlet": "^1.7.0",
         "@types/jest": "^29.5.14",
-        "@types/mocha": "^10.0.9",
+        "@types/mocha": "^10.0.10",
         "@types/react": "^18.3.12",
         "@types/react-dom": "^18.3.1",
         "@types/react-helmet": "^6.1.11",
@@ -57,16 +57,19 @@
         "axios": "^1.7.7",
         "cross-env": "^7.0.3",
         "cssjson-cli": "^1.0.1",
-        "cypress": "^13.15.2",
+        "cypress": "^13.16.0",
         "eslint": "^9.15.0",
         "eslint-plugin-react": "^7.37.2",
         "globals": "^15.12.0",
         "tsx": "^4.19.2",
-        "typescript": "^5.6.3",
-        "typescript-eslint": "^8.14.0",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.15.0",
         "vite": "^5.4.11",
         "vite-plugin-checker": "^0.8.0",
         "vite-plugin-dts": "^4.3.0"
+    },
+    "peerDependencies": {
+        "react-router-dom": "^7.0.1"
     },
     "files": [
         "dist"
