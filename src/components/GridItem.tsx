@@ -14,6 +14,6 @@ export const GridItem = ({ children = "Grid item" }: GridItemProps) => {
 const StyledText = styled(Text)`
     background-color: ${({ theme }) => theme.PRIMARY_500};
     border-radius: ${RADIUSES.M};
-    color: ${({ theme }) => theme.WHITE};
+    color: ${({ theme }) => theme.BACKGROUND};
     padding: ${SPACERS.S};
 `

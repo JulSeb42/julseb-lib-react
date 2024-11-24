@@ -4,8 +4,7 @@ import { Video } from "../../../"
 import type { ILibVideo } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-export const VIDEO_SRC =
-    "https://assets.mixkit.co/videos/preview/mixkit-animation-of-futuristic-devices-99786-large.mp4"
+export const VIDEO_SRC = "https://assets.mixkit.co/videos/99786/99786-720.mp4"
 
 export const videoPreview: ComponentPreview<ILibVideo> = {
     name: "Video",
