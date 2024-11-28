@@ -12,6 +12,169 @@ export const Generate: FC = () => {
         "variant?: LibAccordionVariant",
         "defaultOpen?: boolean",
     ])
+
+    const props = [
+        "variant?: LibHeaderVariant",
+        "backgroundColor?: LibAllColors => only if variant is set to primary",
+        "textColor?: LibAllColors => only if variant is set to primary",
+        "linkColor?: LibColorsHover => only if variant is set to primary",
+    ]
+
+    const renames = [
+        "clone-folder.ts",
+        "constants.ts",
+        "copy-env.ts",
+        "remove-cypress.ts",
+        "replace-in-file.ts",
+        "replace-project-name-fullstack.ts",
+        "replace-repo-name.ts",
+        "types.ts",
+    ]
+
+    const generators = [
+        "component.js",
+        "index.js ",
+        "model.js ",
+        "page.js ",
+        "route.js ",
+        "single-component.js",
+    ]
+
+    // const pickProps = [
+    //     "showTooltip",
+    //     "to",
+    //     "href",
+    //     "isLoading",
+    //     "disabled",
+    //     "aria-disabled",
+    //     "aria-label",
+    //     "blank",
+    //     "variant",
+    //     "showBackgroundHover",
+    //     "borderRadius",
+    //     "color",
+    //     "shadow",
+    //     "size",
+    //     "loaderVariant",
+    //     "icon",
+    //     "iconSize",
+    //     "loaderBorderWidth",
+    // ]
+
+    // const propsInput = [
+    //     "id",
+    //     "label",
+    //     "helper",
+    //     "helperBottom",
+    //     "validation",
+    //     "counter",
+    //     "maxLength",
+    //     "value",
+    //     "className",
+    //     "ref",
+    //     "type",
+    //     "inputBackground",
+    //     "inputVariant",
+    // ]
+
+    // const allPreviews = previews.map(p => p.name)
+
+    // const utils = [
+    //     "calculate-average",
+    //     "calculate-total-sum",
+    //     "capitalize",
+    //     "convert-date-short",
+    //     "convert-date",
+    //     "convert-price",
+    //     "convert-youtube",
+    //     "delete-duplicates",
+    //     "detect-language",
+    //     "disable-scroll",
+    //     "enable-scroll",
+    //     "filter-object",
+    //     "format-date",
+    //     "format-hour",
+    //     "generate-numbers",
+    //     "get-first-name",
+    //     "get-last-name",
+    //     "get-percentage",
+    //     "get-random-avatar",
+    //     "get-random-date",
+    //     "get-random-number",
+    //     "get-random-string",
+    //     "get-random-time",
+    //     "get-random",
+    //     "get-time-now",
+    //     "get-today",
+    //     "get-tomorrow",
+    //     "get-yesterday",
+    //     "hex-to-rgb",
+    //     "regex",
+    //     "rgb-to-hex",
+    //     "scroll-to-top",
+    //     "slugify",
+    //     "sort-by-frequency",
+    //     "stringify-px",
+    //     "to-camel-case",
+    //     "to-constant-case",
+    //     "to-dot-case",
+    //     "to-kebab-case",
+    //     "to-pascal-case",
+    //     "to-path-case",
+    //     "to-sentence-case",
+    //     "to-snake-case",
+    //     "to-title-case",
+    //     "uuid",
+    //     "convert-to-email",
+    //     "unslugify",
+    // ]
+
+    // const buttons = [
+    //     "bold",
+    //     "italic",
+    //     "strikethrough",
+    //     "ul",
+    //     "ol",
+    //     "link",
+    //     "quote",
+    //     "hr",
+    //     "code",
+    //     "codeBlock",
+    //     "comment",
+    //     "image",
+    // ]
+
+    // const propsInputs = replaceTypes([
+    //     "label?: string",
+    //     "labelComment?: string",
+    //     "helper?: string",
+    //     "helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }",
+    //     "validation?: ValidationHelper",
+    //     'inputBackground?: "light" | "dark"',
+    //     'inputVariant?: "rounded" | "pill"',
+    // ])
+
+    // const propValidationIcon =
+    //     "validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }"
+
+    const hooks = [
+        "useClickOutside",
+        "useCopyToClipboard",
+        "useDebounce",
+        "useExportData",
+        "useFetch",
+        "useForm",
+        "useIsOverflow",
+        "useKeyPress",
+        "useMaxWidth",
+        "useMergeRefs",
+        "useMinWidth",
+        "usePaginatedData",
+        "usePagination",
+        "useTouchScreen",
+        "useTranslation",
+    ]
+
     // const typeValuesArr = Object.keys(typeValues.spacers)
 
     // const tests = [

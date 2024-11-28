@@ -2,16 +2,36 @@
 
 import type { ComponentPreview } from "../../components"
 import { ColorCard } from "../../../components"
-import { Flexbox } from "../../../lib"
+import { Flexbox, Tabs } from "../../../lib"
 import { colorsLight, colorsDark } from "../.."
+import type { LibTabItem } from "../../../lib/types"
+
+const tabs: Array<LibTabItem> = [
+    {
+        title: "Light",
+        content: (
+            <Flexbox gap="xs" flexDirection="column" alignItems="stretch">
+                {colorsLight.map((color, i) => (
+                    <ColorCard key={i} color={color} />
+                ))}
+            </Flexbox>
+        ),
+    },
+    {
+        title: "Dark",
+        content: (
+            <Flexbox gap="xs" flexDirection="column" alignItems="stretch">
+                {colorsDark.map((color, i) => (
+                    <ColorCard key={i} color={color} />
+                ))}
+            </Flexbox>
+        ),
+    },
+]
 
 const ColorsPreview = () => {
     return (
-        <Flexbox gap="xs" flexDirection="column" alignItems="stretch">
-            {[...colorsLight, ...colorsDark].map((c, i) => (
-                <ColorCard color={c} key={i} />
-            ))}
-        </Flexbox>
+        <Tabs tabsItems={tabs} variant="rounded" justify="stretch" showInUrl />
     )
 }
 

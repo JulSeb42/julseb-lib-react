@@ -14,6 +14,7 @@ export const ColorCard = ({ color, overlay }: ColorCardProps) => {
 
     const value = overlay?.value
 
+    // @ts-ignore
     const items: Array<{ title: string; content: string }> = [
         { title: "Variable", content: variable! },
         { title: "CSS", content: css! },

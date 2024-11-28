@@ -22,19 +22,19 @@ const StyledNavDemo = styled.nav`
     })}
 
     a {
-        color: ${({ theme }) => Mixins.ColorsHoverDefault("background", theme)};
+        color: ${({ theme }) => Mixins.ColorsHoverDefault("white", theme)};
         text-decoration: none;
         transition: ${TRANSITIONS.SHORT};
 
         @media ${MEDIA.HOVER} {
             &:hover {
                 color: ${({ theme }) =>
-                    Mixins.ColorsHoverHover("background", theme)};
+                    Mixins.ColorsHoverHover("white", theme)};
             }
 
             &:active {
                 color: ${({ theme }) =>
-                    Mixins.ColorsHoverActive("background", theme)};
+                    Mixins.ColorsHoverActive("white", theme)};
             }
         }
 

@@ -30,9 +30,12 @@ export const NavDemo = () => {
                 placeholder="Search"
                 ref={el}
                 clearSearch={() => setSearch("")}
+                inputBackground="light"
             />
 
-            <Button onClick={toggleTheme}>Theme: {selectedTheme}</Button>
+            <Button onClick={toggleTheme} color="white" variant="transparent">
+                Theme: {selectedTheme}
+            </Button>
 
             {filteredRoutes?.map(r => (
                 <NavLink to={r.path} key={r.path}>

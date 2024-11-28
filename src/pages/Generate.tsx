@@ -1,273 +1,99 @@
 /*=============================================== Generate ===============================================*/
 
-import { toCamelCase, toPascalCase } from "@julseb-lib/utils"
+import { toCamelCase, toPascalCase, uuid } from "@julseb-lib/utils"
 import { Page } from "../components"
 import { previews } from "../data/components"
+import { LIB_TOKENS } from "../lib"
+import { generateColorTokens } from "../lib/lib-utils/generate-lib-tokens"
 import { typeValues } from "../lib/types"
 
 export const Generate = () => {
-    const propsDoc = replaceTypes([
-        "variant?: LibHeaderVariant",
-        "backgroundColor?: LibAllColors => only if variant is set to primary",
-        "textColor?: LibAllColors => only if variant is set to primary",
-        "linkColor?: LibColorsHover => only if variant is set to primary",
-    ])
-
-    const props = [
-        "variant?: LibHeaderVariant",
-        "backgroundColor?: LibAllColors => only if variant is set to primary",
-        "textColor?: LibAllColors => only if variant is set to primary",
-        "linkColor?: LibColorsHover => only if variant is set to primary",
-    ]
-
-    const renames = [
-        "clone-folder.ts",
-        "constants.ts",
-        "copy-env.ts",
-        "remove-cypress.ts",
-        "replace-in-file.ts",
-        "replace-project-name-fullstack.ts",
-        "replace-repo-name.ts",
-        "types.ts",
-    ]
-
-    const generators = [
-        "component.js",
-        "index.js ",
-        "model.js ",
-        "page.js ",
-        "route.js ",
-        "single-component.js",
-    ]
-
-    // const pickProps = [
-    //     "showTooltip",
-    //     "to",
-    //     "href",
-    //     "isLoading",
-    //     "disabled",
-    //     "aria-disabled",
-    //     "aria-label",
-    //     "blank",
-    //     "variant",
-    //     "showBackgroundHover",
-    //     "borderRadius",
-    //     "color",
-    //     "shadow",
-    //     "size",
-    //     "loaderVariant",
-    //     "icon",
-    //     "iconSize",
-    //     "loaderBorderWidth",
-    // ]
-
-    // const propsInput = [
-    //     "id",
-    //     "label",
-    //     "helper",
-    //     "helperBottom",
-    //     "validation",
-    //     "counter",
-    //     "maxLength",
-    //     "value",
-    //     "className",
-    //     "ref",
-    //     "type",
-    //     "inputBackground",
-    //     "inputVariant",
-    // ]
-
-    // const allPreviews = previews.map(p => p.name)
-
-    // const utils = [
-    //     "calculate-average",
-    //     "calculate-total-sum",
-    //     "capitalize",
-    //     "convert-date-short",
-    //     "convert-date",
-    //     "convert-price",
-    //     "convert-youtube",
-    //     "delete-duplicates",
-    //     "detect-language",
-    //     "disable-scroll",
-    //     "enable-scroll",
-    //     "filter-object",
-    //     "format-date",
-    //     "format-hour",
-    //     "generate-numbers",
-    //     "get-first-name",
-    //     "get-last-name",
-    //     "get-percentage",
-    //     "get-random-avatar",
-    //     "get-random-date",
-    //     "get-random-number",
-    //     "get-random-string",
-    //     "get-random-time",
-    //     "get-random",
-    //     "get-time-now",
-    //     "get-today",
-    //     "get-tomorrow",
-    //     "get-yesterday",
-    //     "hex-to-rgb",
-    //     "regex",
-    //     "rgb-to-hex",
-    //     "scroll-to-top",
-    //     "slugify",
-    //     "sort-by-frequency",
-    //     "stringify-px",
-    //     "to-camel-case",
-    //     "to-constant-case",
-    //     "to-dot-case",
-    //     "to-kebab-case",
-    //     "to-pascal-case",
-    //     "to-path-case",
-    //     "to-sentence-case",
-    //     "to-snake-case",
-    //     "to-title-case",
-    //     "uuid",
-    //     "convert-to-email",
-    //     "unslugify",
-    // ]
-
-    // const buttons = [
-    //     "bold",
-    //     "italic",
-    //     "strikethrough",
-    //     "ul",
-    //     "ol",
-    //     "link",
-    //     "quote",
-    //     "hr",
-    //     "code",
-    //     "codeBlock",
-    //     "comment",
-    //     "image",
-    // ]
-
-    // const propsInputs = replaceTypes([
-    //     "label?: string",
-    //     "labelComment?: string",
-    //     "helper?: string",
-    //     "helperBottom?: string | { text: string; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }",
-    //     "validation?: ValidationHelper",
-    //     'inputBackground?: "light" | "dark"',
-    //     'inputVariant?: "rounded" | "pill"',
-    // ])
-
-    // const propValidationIcon =
-    //     "validationIcon?: { iconValidationNotPassed?: LibIcon; iconValidationNotPassedSize?: number; iconValidationPassed?: LibIcon; iconValidationPassedSize?: number }"
-
-    const hooks = [
-        "useClickOutside",
-        "useCopyToClipboard",
-        "useDebounce",
-        "useExportData",
-        "useFetch",
-        "useForm",
-        "useIsOverflow",
-        "useKeyPress",
-        "useMaxWidth",
-        "useMergeRefs",
-        "useMinWidth",
-        "usePaginatedData",
-        "usePagination",
-        "useTouchScreen",
-        "useTranslation",
+    const tokens = [
+        "--color-dark-primary-50: rgb(0, 0, 0)",
+        "--color-dark-primary-100: rgb(4, 5, 6)",
+        "--color-dark-primary-200: rgb(13, 14, 18)",
+        "--color-dark-primary-300: rgb(21, 24, 30)",
+        "--color-dark-primary-400: rgb(29, 34, 42)",
+        "--color-dark-primary-500: rgb(38, 44, 54)",
+        "--color-dark-primary-600: rgb(46, 54, 66)",
+        "--color-dark-primary-700: rgb(54, 64, 78)",
+        "--color-dark-primary-800: rgb(63, 74, 90)",
+        "--color-dark-primary-900: rgb(71, 84, 102)",
+        "--color-dark-secondary-50: rgb(16, 17, 19)",
+        "--color-dark-secondary-100: rgb(21, 22, 25)",
+        "--color-dark-secondary-200: rgb(30, 32, 37)",
+        "--color-dark-secondary-300: rgb(39, 42, 48)",
+        "--color-dark-secondary-400: rgb(48, 52, 59)",
+        "--color-dark-secondary-500: rgb(57, 62, 70)",
+        "--color-dark-secondary-600: rgb(66, 72, 82)",
+        "--color-dark-secondary-700: rgb(75, 82, 93)",
+        "--color-dark-secondary-800: rgb(84, 92, 104)",
+        "--color-dark-secondary-900: rgb(93, 102, 116)",
+        "--color-dark-success-50: rgb(1, 45, 34)",
+        "--color-dark-success-100: rgb(2, 69, 52)",
+        "--color-dark-success-200: rgb(3, 94, 70)",
+        "--color-dark-success-300: rgb(4, 118, 88)",
+        "--color-dark-success-400: rgb(5, 143, 107)",
+        "--color-dark-success-500: rgb(6, 167, 125)",
+        "--color-dark-success-600: rgb(7, 192, 144)",
+        "--color-dark-success-700: rgb(8, 217, 162)",
+        "--color-dark-success-800: rgb(9, 241, 181)",
+        "--color-dark-success-900: rgb(29, 247, 190)",
+        "--color-dark-danger-50: rgb(95, 33, 33)",
+        "--color-dark-danger-100: rgb(114, 39, 39)",
+        "--color-dark-danger-200: rgb(133, 46, 45)",
+        "--color-dark-danger-300: rgb(152, 53, 52)",
+        "--color-dark-danger-400: rgb(171, 59, 58)",
+        "--color-dark-danger-500: rgb(191, 67, 66)",
+        "--color-dark-danger-600: rgb(197, 84, 84)",
+        "--color-dark-danger-700: rgb(203, 103, 103)",
+        "--color-dark-danger-800: rgb(209, 122, 122)",
+        "--color-dark-danger-900: rgb(216, 141, 141)",
+        "--color-dark-warning-50: rgb(64, 47, 2)",
+        "--color-dark-warning-100: rgb(114, 84, 4)",
+        "--color-dark-warning-200: rgb(163, 120, 5)",
+        "--color-dark-warning-300: rgb(212, 156, 7)",
+        "--color-dark-warning-400: rgb(247, 186, 23)",
+        "--color-dark-warning-500: rgb(249, 200, 70)",
+        "--color-dark-warning-600: rgb(250, 208, 97)",
+        "--color-dark-warning-700: rgb(251, 215, 122)",
+        "--color-dark-warning-800: rgb(252, 222, 146)",
+        "--color-dark-warning-900: rgb(253, 229, 171)",
+        "--color-dark-gray-50: rgb(24, 24, 24)",
+        "--color-dark-gray-100: rgb(47, 47, 47)",
+        "--color-dark-gray-200: rgb(71, 71, 71)",
+        "--color-dark-gray-300: rgb(94, 94, 94)",
+        "--color-dark-gray-400: rgb(118, 118, 118)",
+        "--color-dark-gray-500: rgb(145, 145, 145)",
+        "--color-dark-gray-600: rgb(173, 173, 173)",
+        "--color-dark-gray-700: rgb(200, 200, 200)",
+        "--color-dark-gray-800: rgb(228, 228, 228)",
+        "--color-dark-gray-900: rgb(248, 248, 248)",
+        "--color-dark-background: rgb(18, 18, 18)",
+        "--color-dark-font: rgb(255, 255, 255)",
     ]
 
     return (
         <Page title="Generate">
-            {/* <ul>
-                {props.map(p => (
-                    <li key={p}>{`$${p.split(":")[0].replaceAll("?", "")}={${p
-                        .split(":")[0]
-                        .replaceAll("?", "")}}`}</li>
-                ))}
-            </ul> */}
             <ul>
-                {propsDoc.map(p => (
-                    <li key={p}>{` * @prop ${p}`}</li>
+                {generateColorTokens(tokens).map(token => (
+                    <li key={uuid()}>
+                        {`${JSON.stringify(token)
+                            .replaceAll('\\"', "")
+                            .replaceAll(`{"primary`, `"primary`)
+                            .replaceAll(`{"secondary`, `"secondary`)
+                            .replaceAll(`{"success`, `"success`)
+                            .replaceAll(`{"danger`, `"danger`)
+                            .replaceAll(`{"warning`, `"warning`)
+                            .replaceAll(`{"gray`, `"gray`)
+                            .replaceAll(`{"background`, `"background`)
+                            .replaceAll("}}", "}")},`}
+                    </li>
                 ))}
+                {/* {generateColorTokens(tokens).map(token => (
+                    <li key={uuid()}>{JSON.parse(token as any)}</li>
+                ))} */}
             </ul>
-
-            <ul>
-                {renames.map(r => (
-                    <li key={r}> {`mv ${r} ${r.replaceAll(".ts", ".mts")}`}</li>
-                ))}
-            </ul>
-
-            <ul>
-                {generators.map(g => (
-                    <li key={g}>{`mv ${g} ${g.replaceAll(".js", ".mts")}`}</li>
-                ))}
-            </ul>
-
-            {/* <ul>
-                {allPreviews.map(p => (
-                    <li key={p}>{`"${p}",`}</li>
-                ))}
-            </ul>
-            <ul>
-                {pickProps.map(p => (
-                    <li key={p}>{`"${p}" | `}</li>
-                ))}
-            </ul>
-            <ul>
-                {propsInput.map(p => (
-                    <li key={p}>{`${p}={${p}}`}</li>
-                ))}
-            </ul>
-            <ul>
-                {hooks.map(hook => (
-                    <li key={hook}>{`"${hook}",`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {utils.sort().map(u => (
-                    <li key={u}>{`// { name: "${toCamelCase(
-                        u
-                    )}", effect: \`Transforms a string \${${toCamelCase(
-                        u
-                    )}("${u}")}\`, arguments: ["string: string"], example: '${toCamelCase(
-                        u
-                    )}("hello world")', result: ${toCamelCase(
-                        u
-                    )}("hello world"), },`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {buttons.map(b => (
-                    <li key={b}>{`${b}: "${b}",`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {Object.keys({
-                    ...typeValues.markdownEditorButtons,
-                    ...typeValues.markdownEditorEditor,
-                    ...typeValues.markdownEditorTitles,
-                }).map(b => (
-                    <li key={b}>{`${b}: mdButtons.${b}.defaultIcon,`}</li>
-                ))}
-            </ul>
-
-            <ul>
-                {Object.keys(typeValues.markdownEditorTitles).map(t => (
-                    <li key={t}>{`case "${t}":\nreturn ${
-                        18 - Number(t.replace("h", ""))
-                    }`}</li>
-                ))}
-            </ul> */}
-
-            {/* <ul>
-                {propsInputs.map(p => (
-                    <li key={p}>{` * @prop ${p}`}</li>
-                ))}
-            </ul> */}
-
-            {/* <p>{` * @prop ${propValidationIcon}`}</p> */}
         </Page>
     )
 }
@@ -499,7 +325,10 @@ function replaceTypes(arr: Array<string>) {
                     "LibValueInputPin",
                     '{ [n: number]: number | "" | undefined }'
                 )
-                .replaceAll("LibHeaderVariant", mapValues(typeValues.headerVariants))
+                .replaceAll(
+                    "LibHeaderVariant",
+                    mapValues(typeValues.headerVariants)
+                )
         )
     })
 }
