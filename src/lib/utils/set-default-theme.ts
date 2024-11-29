@@ -9,6 +9,6 @@ import { COLORS_LIGHT } from "../Variables"
  */
 export const setDefaultTheme = (arr: Array<FC>) => {
     return arr.forEach(
-        component => (component.prototype = { theme: COLORS_LIGHT })
+        component => (component.defaultProps = { theme: COLORS_LIGHT })
     )
 }
