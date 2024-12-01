@@ -43,6 +43,13 @@ export const InputIcon = ({
                 data-testid={testid && `${testid}.IconContainer.Icon`}
                 className={className && "IconLeft"}
                 icon={icon}
+                color={
+                    validationStatus === false
+                        ? "danger"
+                        : disabled
+                        ? "gray"
+                        : "primary"
+                }
                 size={iconSize}
                 baseUrl={iconBaseUrl}
             />
