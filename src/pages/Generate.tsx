@@ -70,7 +70,7 @@ export const Generate = () => {
         "--color-dark-gray-800: rgb(228, 228, 228)",
         "--color-dark-gray-900: rgb(248, 248, 248)",
         "--color-dark-background: rgb(18, 18, 18)",
-        "--color-dark-font: rgb(255, 255, 255)",
+        "--color-dark-font: var(--color-white)",
     ]
 
     return (

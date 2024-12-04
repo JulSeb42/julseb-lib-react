@@ -1,10 +1,13 @@
 /*=============================================== TextDisplay preview ===============================================*/
 
 import { Link } from "react-router-dom"
+import { useLibTheme } from "../../../../context/Theme.context"
 import { Text } from "../.."
 import { Flexbox } from "../../../Flexbox"
 
 export const Paragraphs = () => {
+    const { selectedTheme } = useLibTheme()
+
     return (
         <Flexbox flexDirection="column" alignItems="stretch">
             <Text tag="p" data-testid="testid" className="className">
@@ -23,10 +26,20 @@ export const Paragraphs = () => {
                     italic
                 </Text>
             </Text>
-            <Text tag="p" data-testid="testid" className="className">
+            <Text
+                tag="p"
+                data-testid="testid"
+                className="className"
+                linkColor={selectedTheme === "dark" ? "white" : undefined}
+            >
                 Paragraph with <Link to="#">link</Link>
             </Text>
-            <Text tag="p" data-testid="testid" className="className">
+            <Text
+                tag="p"
+                data-testid="testid"
+                className="className"
+                linkColor={selectedTheme === "dark" ? "white" : undefined}
+            >
                 Paragraph with <button>button</button>
             </Text>
             <Text tag="p" data-testid="testid" className="className">

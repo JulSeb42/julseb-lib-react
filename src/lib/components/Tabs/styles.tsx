@@ -127,7 +127,7 @@ const StyledTabButton = styled.button<{
                                 "primary",
                                 theme
                             )};
-                            color: ${theme.BACKGROUND};
+                            color: ${theme.WHITE};
                         }
 
                         &:active {
@@ -135,11 +135,11 @@ const StyledTabButton = styled.button<{
                                 "primary",
                                 theme
                             )};
-                        }
+                        }()
                     }
 
                     &.Active {
-                        color: ${theme.BACKGROUND};
+                        color: ${theme.WHITE};
                         background-color: ${Mixins.ColorsHoverDefault(
                             "primary",
                             theme

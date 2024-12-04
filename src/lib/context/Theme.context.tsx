@@ -54,10 +54,12 @@ export const ThemeProviderWrapper = ({
             if (
                 window.matchMedia &&
                 window.matchMedia("(prefers-color-scheme: dark)").matches &&
-                !selectedTheme
+                !selectedTheme &&
+                !localStorage.getItem("theme")
             ) {
                 setSelectedTheme("dark")
                 setTheme(Themes.dark)
+                localStorage.setItem("theme", "dark")
                 body.classList.add("dark")
             } else if (
                 !localStorage.getItem("theme") ||
