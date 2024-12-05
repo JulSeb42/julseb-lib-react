@@ -22,6 +22,7 @@ import {
     getFirstName,
     getInitials,
     getLastName,
+    getNextDay,
     getPercentage,
     getRandom,
     getRandomAvatar,
@@ -249,6 +250,13 @@ const utils: Array<Util> = [
         arguments: ["fullName"],
         example: 'getLastName("John Doe")',
         result: getLastName("John Doe"),
+    },
+    {
+        name: "getNextDay",
+        effect: "Get the next day of a given date",
+        arguments: ["currentDay"],
+        example: 'getNextDay("2023-09-17")',
+        result: getNextDay("2023-09-17"),
     },
     {
         name: "getPercentage",

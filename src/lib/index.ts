@@ -28,6 +28,7 @@ export {
     getFirstName,
     getInitials,
     getLastName,
+    getNextDay,
     getPercentage,
     getRandom,
     getRandomAvatar,
