@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { MEDIA, Mixins, setDefaultTheme } from "../../"
 import type { LibAllColors, LibSpacers } from "../../types"
 
-const StyledWrapper = styled.div<{
+const StyledWrapper = styled.section<{
     $gap: LibSpacers
     $backgroundColor: LibAllColors
 }>`
