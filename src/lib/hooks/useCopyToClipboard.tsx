@@ -1,5 +1,3 @@
-/*=============================================== useCopyToClipboard ===============================================*/
-
 import { useState } from "react"
 
 type CopiedValue = string | null

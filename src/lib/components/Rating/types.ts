@@ -1,5 +1,3 @@
-/*=============================================== Rating types ===============================================*/
-
 import type { LibComponentBase, LibIcon, DispatchState } from "../../types"
 import type { ILibInputBase } from "../InputComponents/types"
 

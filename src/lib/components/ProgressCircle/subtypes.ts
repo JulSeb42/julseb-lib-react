@@ -1,5 +1,3 @@
-/*=============================================== ProgressCircle sub components types ===============================================*/
-
 import type { ILibProgressCircle } from "./types"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN PROGRESS_CIRCLE COMPONENTS

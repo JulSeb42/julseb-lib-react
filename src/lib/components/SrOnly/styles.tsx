@@ -1,5 +1,3 @@
-/*=============================================== SrOnly styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme } from "../../"
 

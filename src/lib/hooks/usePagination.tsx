@@ -1,5 +1,3 @@
-/*=============================================== usePaginationNavigation ===============================================*/
-
 import { useCallback } from "react"
 import { useSearchParams } from "react-router-dom"
 import { scrollToTop } from "@julseb-lib/utils"

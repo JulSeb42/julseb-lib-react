@@ -1,5 +1,3 @@
-/*=============================================== useTranslation ===============================================*/
-
 import { useState, useEffect } from "react"
 import { detectLanguage } from "@julseb-lib/utils"
 import type { TranslateLang } from "../types"

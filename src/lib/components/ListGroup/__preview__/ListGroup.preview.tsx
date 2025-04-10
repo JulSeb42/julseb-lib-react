@@ -1,5 +1,3 @@
-/*=============================================== ListGroupPreview ===============================================*/
-
 import { convertDateShort } from "@julseb-lib/utils"
 import { ListGroup } from "../../../"
 import type { LibListGroupItem } from "../../../types"

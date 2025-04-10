@@ -1,5 +1,3 @@
-/*=============================================== Cover component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledCover, CoverImg, CoverContent } from "./styles"
 import type { ILibCover } from "./types"

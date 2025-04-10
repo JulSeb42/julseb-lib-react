@@ -1,5 +1,3 @@
-/*=============================================== BackToTop component ===============================================*/
-
 import { forwardRef, useState, useEffect } from "react"
 import classNames from "classnames"
 import { scrollToTop } from "@julseb-lib/utils"

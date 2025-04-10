@@ -1,5 +1,3 @@
-/*=============================================== Toast tests ===============================================*/
-
 import { LIB_TOKENS, ToasterProviderWrapper } from "../../.."
 import {
     PreviewError,

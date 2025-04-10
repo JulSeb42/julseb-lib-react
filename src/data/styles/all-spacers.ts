@@ -1,5 +1,3 @@
-/*=============================================== All spacers ===============================================*/
-
 import { LIB_TOKENS, SPACERS } from "../../lib"
 import type { Variable } from "../types"
 

@@ -1,5 +1,3 @@
-/*=============================================== AccordionButton component ===============================================*/
-
 import { useCallback } from "react"
 import classNames from "classnames"
 import { capitalize } from "@julseb-lib/utils"

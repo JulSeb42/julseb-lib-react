@@ -1,5 +1,3 @@
-/*=============================================== AccordionContent component ===============================================*/
-
 import classNames from "classnames"
 import { capitalize } from "@julseb-lib/utils"
 import { StyledAccordionContent } from "./styles"

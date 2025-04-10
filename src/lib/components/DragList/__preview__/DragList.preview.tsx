@@ -1,5 +1,3 @@
-/*=============================================== DragListPreview ===============================================*/
-
 import { useState } from "react"
 import { convertDateShort } from "@julseb-lib/utils"
 import { DragList } from "../../../"

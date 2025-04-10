@@ -1,13 +1,9 @@
-/*=============================================== Table types ===============================================*/
-
 import type {
     LibComponentBase,
     LibTableVariant,
     ReactChildren,
     CssVerticalAlign,
 } from "../../types"
-
-/*====================== Table ======================*/
 
 interface ILibTableBase
     extends Exclude<LibComponentBase<HTMLTableElement>, "as"> {
@@ -29,22 +25,14 @@ interface TableWithChildren extends ILibTableBase {
 
 export type ILibTable = TableWithData | TableWithChildren
 
-/*====================== TBody ======================*/
-
 export interface ILibTBody
     extends Exclude<LibComponentBase<HTMLTableSectionElement>, "as"> {}
-
-/*====================== THead ======================*/
 
 export interface ILibTHead
     extends Exclude<LibComponentBase<HTMLTableSectionElement>, "as"> {}
 
-/*====================== Tr ======================*/
-
 export interface ILibTr
     extends Exclude<LibComponentBase<HTMLTableRowElement>, "as"> {}
-
-/*====================== Td ======================*/
 
 export interface ILibTd
     extends Exclude<LibComponentBase<HTMLTableCellElement>, "as"> {

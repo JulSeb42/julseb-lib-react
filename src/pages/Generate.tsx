@@ -1,5 +1,3 @@
-/*=============================================== Generate ===============================================*/
-
 import { toCamelCase, toPascalCase, uuid } from "@julseb-lib/utils"
 import { Page } from "../components"
 import { previews } from "../data/components"

@@ -1,5 +1,3 @@
-/*=============================================== Dl ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledDl } from "../styles"
 import type { ILibText } from "../types"

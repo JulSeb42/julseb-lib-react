@@ -1,5 +1,3 @@
-/*=============================================== DragList tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { DragListPreview } from "./Preview"
 

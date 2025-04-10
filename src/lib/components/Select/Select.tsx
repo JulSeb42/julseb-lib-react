@@ -1,5 +1,3 @@
-/*=============================================== Select component ===============================================*/
-
 import { forwardRef, useEffect, type MouseEvent } from "react"
 import { useClickOutside } from "../../"
 import {

@@ -1,5 +1,3 @@
-/*=============================================== Lib icons styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, Mixins } from "../"
 import type { LibAllColors } from "../types"

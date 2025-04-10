@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroupButtons ===============================================*/
-
 import { forwardRef } from "react"
 import { capitalize, filterObject } from "@julseb-lib/utils"
 import { Button, ButtonIcon } from "../.."

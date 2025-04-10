@@ -1,5 +1,3 @@
-/*=============================================== Alert component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { stringifyPx, getRandomString } from "@julseb-lib/utils"

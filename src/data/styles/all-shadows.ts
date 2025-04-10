@@ -1,5 +1,3 @@
-/*=============================================== All shadows ===============================================*/
-
 import { SHADOWS, LIB_TOKENS } from "../../lib"
 import type { Variable } from "../types"
 

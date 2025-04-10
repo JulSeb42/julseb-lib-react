@@ -1,5 +1,3 @@
-/*=============================================== FieldsetPreview ===============================================*/
-
 import { Fieldset } from "../../../"
 import { ChildrenCheck, ChildrenCheckValidate, ChildrenText } from "./Previews"
 import type { ILibFieldset } from "../../../types/components-props"

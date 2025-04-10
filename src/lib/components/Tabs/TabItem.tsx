@@ -1,5 +1,3 @@
-/*=============================================== TabItem component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { StyledTabItem } from "./styles"

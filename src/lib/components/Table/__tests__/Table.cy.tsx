@@ -1,5 +1,3 @@
-/*=============================================== Table tests ===============================================*/
-
 import { Table, Text, uuid } from "../../.."
 
 const HEADERS = ["Header", "Header", "Header"]

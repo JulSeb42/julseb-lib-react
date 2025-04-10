@@ -1,5 +1,3 @@
-/*=============================================== Append styles ===============================================*/
-
 // Append styles to HTML head
 
 export const appendStyles = (styles: string) => {

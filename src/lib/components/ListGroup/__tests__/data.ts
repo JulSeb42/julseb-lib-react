@@ -1,5 +1,3 @@
-/*=============================================== ListGroup data ===============================================*/
-
 import type { LibListGroupItem } from "../../../types"
 
 export const listGroupData: Array<LibListGroupItem> = [

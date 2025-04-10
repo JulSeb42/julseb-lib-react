@@ -1,5 +1,3 @@
-/*=============================================== Timepicker tests preview ===============================================*/
-
 import { useState } from "react"
 import { Timepicker } from "../../../"
 import type { ILibTimepicker } from "../../../types/components-props"

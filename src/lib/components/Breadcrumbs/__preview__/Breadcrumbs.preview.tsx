@@ -1,5 +1,3 @@
-/*=============================================== BreadcrumbsPreview ===============================================*/
-
 import { Breadcrumbs } from "../../../"
 import type { LibBreadcrumbItem } from "../../../types"
 import type { ILibBreadcrumbs } from "../../../types/components-props"

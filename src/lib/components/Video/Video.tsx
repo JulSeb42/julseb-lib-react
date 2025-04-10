@@ -1,5 +1,3 @@
-/*=============================================== Video component ===============================================*/
-
 import { forwardRef, Suspense, lazy } from "react"
 import { Fallback } from "../../"
 import type { ILibVideo } from "./types"

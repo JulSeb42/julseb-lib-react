@@ -1,5 +1,3 @@
-/*=============================================== Helmet types ===============================================*/
-
 // import type { HelmetProps } from "react-helmet-async"
 import type { HelmetProps } from "react-helmet"
 import type { ReactChildren } from "../../types"

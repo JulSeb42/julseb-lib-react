@@ -1,5 +1,3 @@
-/*=============================================== Select tests ===============================================*/
-
 import { SelectPreview, SelectWithOptions } from "./Preview"
 
 describe("<Select />", () => {

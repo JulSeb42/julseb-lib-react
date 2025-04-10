@@ -1,5 +1,3 @@
-/*=============================================== HeaderLogo ===============================================*/
-
 import { Link } from "react-router-dom"
 import { Logo, LogoImg } from "./styles"
 import type { ILibHeaderLogo } from "./subtypes"

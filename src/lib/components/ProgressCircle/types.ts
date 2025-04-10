@@ -1,5 +1,3 @@
-/*=============================================== ProgressCircle types ===============================================*/
-
 import type { CSSProperties } from "react"
 import type { LibComponentBase, LibAllColors, LibIcon } from "../../types"
 

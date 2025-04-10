@@ -1,5 +1,3 @@
-/*=============================================== LoaderOne ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledLoaderOne } from "../styles"
 import type { ILibLoader } from "../types"

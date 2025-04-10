@@ -1,7 +1,3 @@
-/*=============================================== Variables ===============================================*/
-
-/*====================== Colors ======================*/
-
 export enum COLORS_LIGHT {
     /** #000000 */ BLACK = "var(--color-black)",
     /** #FFFFFF */ WHITE = "var(--color-white)",
@@ -168,8 +164,6 @@ export enum COLORS_DARK {
     CURRENT_COLOR = "currentColor",
 }
 
-/*====================== Overlays ======================*/
-
 export enum OVERLAYS {
     /** rgba(0, 0, 0, 0.5) */ BLACK_50 = "var(--overlay-black-50)",
     /** rgba(0, 0, 0, 0.8) */ BLACK_80 = "var(--overlay-black-80)",
@@ -179,14 +173,10 @@ export enum OVERLAYS {
     /** linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%) */ GRADIENT_WHITE = "var(--overlay-gradient-white)",
 }
 
-/*====================== Font families ======================*/
-
 export enum FONT_FAMILIES {
     /** "Lato", sans-serif */ BODY = "var(--font-family-body)",
     /** monospace */ CODE = "var(--font-family-code)",
 }
-
-/*====================== Font sizes ======================*/
 
 export enum FONT_SIZES {
     /** 5rem */ DISPLAY_H1 = "var(--font-size-display-h1)",
@@ -204,22 +194,16 @@ export enum FONT_SIZES {
     /** 0.875rem */ SMALL = "var(--font-size-small)",
 }
 
-/*====================== Font weights ======================*/
-
 export enum FONT_WEIGHTS {
     /** 400 */ REGULAR = "var(--font-weight-regular)",
     /** 700 */ BOLD = "var(--font-weight-bold)",
     /** 900 */ BLACK = "var(--font-weight-black)",
 }
 
-/*====================== Line heights ======================*/
-
 export enum LINE_HEIGHTS {
     /** 1.5 */ BODY = "var(--line-height-body)",
     /** 1.8 */ CODE = "var(--line-height-code)",
 }
-
-/*====================== Shadows ======================*/
 
 export enum SHADOWS {
     /** 0px 10px 14px 8px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.3) */ XXL = "var(--shadow-xxl)",
@@ -230,8 +214,6 @@ export enum SHADOWS {
     /** 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15) */ XS = "var(--shadow-xs)",
 }
 
-/*====================== Spacers ======================*/
-
 export enum SPACERS {
     /** 48px */ XXL = "var(--spacer-xxl)",
     /** 32px */ XL = "var(--spacer-xl)",
@@ -241,8 +223,6 @@ export enum SPACERS {
     /** 8px */ XS = "var(--spacer-xs)",
     /** 4px */ XXS = "var(--spacer-xxs)",
 }
-
-/*====================== Radiuses ======================*/
 
 export enum RADIUSES {
     /** 24px */ XXL = "var(--radius-xxl)",
@@ -255,8 +235,6 @@ export enum RADIUSES {
     /** 50% */ CIRCLE = "var(--radius-circle)",
 }
 
-/*====================== Layouts ======================*/
-
 export enum LAYOUTS {
     /** 600px */ MAIN_DEFAULT = "var(--main-default)",
     /** 800px */ MAIN_LARGE = "var(--main-large)",
@@ -266,16 +244,12 @@ export enum LAYOUTS {
     /** 200px */ ASIDE_SMALL = "var(--aside-small)",
 }
 
-/*====================== Transitions ======================*/
-
 export enum TRANSITIONS {
     /** all 200ms ease */ SHORT = "var(--transition-short)",
     /** all 500ms ease */ LONG = "var(--transition-long)",
     /** all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66) */ BEZIER = "var(--transition-bezier)",
     /** all 1000ms ease */ PROGRESS_CIRCLE = "var(--transition-progress-circle)",
 }
-
-/*====================== Breakpoints ======================*/
 
 export enum MEDIA {
     BREAKPOINT_TABLET_LARGE = "(max-width: 1024px)",
@@ -287,10 +261,6 @@ export enum MEDIA {
     PREFERS_DARK = "(prefers-color-scheme: dark)",
 }
 
-/*====================== Icon multiplier ======================*/
-
 export const ICON_MULTIPLIER = 0.6 as const
-
-/*====================== Input constants ======================*/
 
 export const INPUT_HEIGHT = 32 as const

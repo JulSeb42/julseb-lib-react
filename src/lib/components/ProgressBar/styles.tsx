@@ -1,5 +1,3 @@
-/*=============================================== ProgressBar styles ===============================================*/
-
 import styled, { keyframes } from "styled-components"
 import { setDefaultTheme, RADIUSES, TRANSITIONS, Mixins } from "../../"
 import type { LibColorsHover } from "../../types"

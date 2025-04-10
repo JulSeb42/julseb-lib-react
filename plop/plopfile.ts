@@ -1,5 +1,3 @@
-/*=============================================== Plopfile ===============================================*/
-
 import { NodePlopAPI } from "plop"
 import {
     previewGenerator,

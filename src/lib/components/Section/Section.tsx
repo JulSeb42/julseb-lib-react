@@ -1,5 +1,3 @@
-/*=============================================== Section component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSection } from "./styles"
 import type { ILibSection } from "./types"

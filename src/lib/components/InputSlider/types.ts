@@ -1,5 +1,3 @@
-/*=============================================== InputSlider types ===============================================*/
-
 import type { InputHTMLAttributes } from "react"
 import type { ILibInputBase } from "../InputComponents/types"
 

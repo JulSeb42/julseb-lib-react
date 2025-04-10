@@ -1,5 +1,3 @@
-/*=============================================== Grid component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledGrid } from "./styles"
 import type { ILibGrid } from "./types"

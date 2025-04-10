@@ -1,5 +1,3 @@
-/*=============================================== DatepickerPreview ===============================================*/
-
 import { useState } from "react"
 import { getToday, addMonth, formatDate } from "@julseb-lib/utils"
 import { Datepicker } from "../../../"

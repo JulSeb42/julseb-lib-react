@@ -1,5 +1,3 @@
-/*=============================================== Select preview ===============================================*/
-
 import { useState } from "react"
 import { Select } from "../Select"
 

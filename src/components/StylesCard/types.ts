@@ -1,5 +1,3 @@
-/*=============================================== StylesCard types ===============================================*/
-
 import type { Variable } from "../../data/types"
 
 // eslint-disable-next-line

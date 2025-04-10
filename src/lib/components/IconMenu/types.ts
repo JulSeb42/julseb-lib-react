@@ -1,5 +1,3 @@
-/*=============================================== IconMenu types ===============================================*/
-
 import type {
     LibComponentBase,
     LibIconMenuItem,
@@ -12,8 +10,6 @@ import type {
     LibButtonIconVariant,
 } from "../../types"
 import type { ILibButtonIcon } from "../ButtonIcon/types"
-
-/*====================== IconMenu ======================*/
 
 interface ILibIconMenuBase extends LibComponentBase<HTMLDivElement> {
     direction?: LibIconMenuDirection
@@ -43,8 +39,6 @@ interface IconMenuWithChildren extends ILibIconMenuBase {
 }
 
 export type ILibIconMenu = IconMenuWithItems | IconMenuWithChildren
-
-/*====================== IconMenu ======================*/
 
 export type ILibIconMenuItem = ILibButtonIcon &
     Omit<LibIconMenuItem, "ref"> & {

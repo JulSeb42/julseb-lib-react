@@ -1,5 +1,3 @@
-/*=============================================== Fieldset styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, Mixins, SPACERS, FONT_WEIGHTS } from "../../"
 import type {

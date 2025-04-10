@@ -1,5 +1,3 @@
-/*=============================================== MarkdownContainer types ===============================================*/
-
 import type { MarkdownToJSX } from "markdown-to-jsx"
 import type { LibComponentBase } from "../../types"
 

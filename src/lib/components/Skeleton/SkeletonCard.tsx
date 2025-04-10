@@ -1,5 +1,3 @@
-/*=============================================== SkeletonCard component ===============================================*/
-
 import { forwardRef } from "react"
 import { SkeletonShine } from "./SkeletonShine"
 import { StyledSkeletonCard } from "./styles"

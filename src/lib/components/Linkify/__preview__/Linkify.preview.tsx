@@ -1,5 +1,3 @@
-/*=============================================== LinkifyPreview ===============================================*/
-
 import { Linkify } from "../../../"
 import type { ILibLinkify } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

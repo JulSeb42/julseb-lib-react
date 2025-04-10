@@ -1,5 +1,3 @@
-/*=============================================== Generate Lib tokens ===============================================*/
-
 import { rgbToHex, toConstantCase } from "@julseb-lib/utils"
 
 interface Token {

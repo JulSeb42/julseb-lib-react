@@ -1,5 +1,3 @@
-/*=============================================== Timepicker styles ===============================================*/
-
 import styled from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme } from "../../"
 import type {

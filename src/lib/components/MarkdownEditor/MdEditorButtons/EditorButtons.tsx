@@ -1,5 +1,3 @@
-/*=============================================== EditorButtons component ===============================================*/
-
 import classNames from "classnames"
 import { uuid, toSentenceCase } from "@julseb-lib/utils"
 import { Flexbox } from "../../../"

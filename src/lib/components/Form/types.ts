@@ -1,5 +1,3 @@
-/*=============================================== Form types ===============================================*/
-
 import type {
     LibButtonLinkRequired,
     LibComponentBase,

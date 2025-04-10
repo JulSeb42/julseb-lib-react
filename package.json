@@ -1,6 +1,6 @@
 {
     "name": "@julseb-lib/react",
-    "version": "0.0.82",
+    "version": "0.0.85",
     "type": "module",
     "license": "MIT",
     "scripts": {
@@ -24,7 +24,7 @@
         "check-errors": "tsc --noEmit"
     },
     "dependencies": {
-        "@julseb-lib/utils": "^0.0.11",
+        "@julseb-lib/utils": "^0.0.12",
         "classnames": "^2.5.1",
         "fuse.js": "^7.0.0",
         "markdown-to-jsx": "^7.7.1",
@@ -87,15 +87,15 @@
             "default": "./dist/index.css"
         },
         "./types": {
+            "types": "./dist/lib/types/index.ts",
             "import": "./dist/lib/types/index.ts",
             "require": "./dist/lib/types/index.ts",
-            "types": "./dist/lib/types/index.ts",
             "default": "./dist/lib/types/index.ts"
         },
         "./component-props": {
+            "types": "./dist/lib/types/components-props.ts",
             "import": "./dist/lib/types/components-props.ts",
             "require": "./dist/lib/types/components-props.ts",
-            "types": "./dist/lib/types/components-props.ts",
             "default": "./dist/lib/types/components-props.ts"
         }
     },

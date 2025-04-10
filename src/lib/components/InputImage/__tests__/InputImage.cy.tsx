@@ -1,5 +1,3 @@
-/*=============================================== InputImage tests ===============================================*/
-
 import { InputImage, LIB_TOKENS } from "../../.."
 
 describe("<InputImage />", () => {

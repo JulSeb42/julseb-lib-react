@@ -1,5 +1,3 @@
-/*=============================================== Header tests ===============================================*/
-
 import { Header, LIB_TOKENS } from "../../.."
 import type { LibHeaderLink } from "../../../types"
 

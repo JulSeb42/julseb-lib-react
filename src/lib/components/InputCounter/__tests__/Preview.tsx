@@ -1,5 +1,3 @@
-/*=============================================== InputCounter preview ===============================================*/
-
 import { useState } from "react"
 import { InputCounter } from "../InputCounter"
 

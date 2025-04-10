@@ -1,5 +1,3 @@
-/*=============================================== Timepicker tests ===============================================*/
-
 import { TimepickerDemo } from "./Preview"
 
 describe("<Timepicker />", () => {

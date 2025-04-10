@@ -1,5 +1,3 @@
-/*=============================================== Aside component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledAside } from "./styles"
 import type { ILibAside } from "./types"

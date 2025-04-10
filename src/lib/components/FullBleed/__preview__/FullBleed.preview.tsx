@@ -1,5 +1,3 @@
-/*=============================================== FullBleedPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { FullBleed, Text } from "../../../"
 import type { ILibFullBleed } from "../../../types/components-props"

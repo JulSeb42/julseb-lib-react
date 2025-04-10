@@ -1,5 +1,3 @@
-/*=============================================== Table component ===============================================*/
-
 import { forwardRef } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { Linkify } from "../../"

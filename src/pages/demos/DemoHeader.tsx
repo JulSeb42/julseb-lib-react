@@ -1,5 +1,3 @@
-/*=============================================== DemoHeader ===============================================*/
-
 import { CoverLayout } from "../../components"
 import { Header, Cover, Text } from "../../lib"
 import type { LibHeaderLink } from "../../lib/types"

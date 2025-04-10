@@ -1,5 +1,3 @@
-/*=============================================== Step ===============================================*/
-
 import { forwardRef, type ElementType } from "react"
 import { Link } from "react-router-dom"
 import classNames from "classnames"

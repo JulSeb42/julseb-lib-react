@@ -1,5 +1,3 @@
-/*=============================================== InputCheckPreview ===============================================*/
-
 import { InputCheck } from "../../../"
 import {
     InputCheckDemoCheckbox,

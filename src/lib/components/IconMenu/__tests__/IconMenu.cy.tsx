@@ -1,5 +1,3 @@
-/*=============================================== IconMenu tests ===============================================*/
-
 import { IconMenu } from "../../.."
 import { SITE_DATA } from "../../../../data"
 import { Check } from "../../../icons"

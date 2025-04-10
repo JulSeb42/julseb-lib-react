@@ -1,5 +1,3 @@
-/*=============================================== Options markdown container ===============================================*/
-
 import type { MarkdownToJSX } from "markdown-to-jsx"
 import { Text } from "../components/Text"
 import { Table } from "../components/Table"
@@ -117,6 +115,7 @@ export const markdownEditorOptions: LibMarkdownEditorOptions = {
     bold: true,
     italic: true,
     strikethrough: true,
+    underline: true,
     ul: true,
     ol: true,
     link: true,

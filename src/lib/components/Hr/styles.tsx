@@ -1,5 +1,3 @@
-/*=============================================== Hr styles ===============================================*/
-
 import styled from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins, RADIUSES } from "../../"

@@ -1,5 +1,3 @@
-/*=============================================== BackToTop types ===============================================*/
-
 import type { ILibButtonIcon } from "../ButtonIcon/types"
 import type { LibBackToTopPosition } from "../../types"
 

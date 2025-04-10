@@ -1,5 +1,3 @@
-/*=============================================== TabButton component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { StyledTabButton } from "./styles"

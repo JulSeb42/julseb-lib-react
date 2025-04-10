@@ -1,5 +1,3 @@
-/*=============================================== Truncate component ===============================================*/
-
 import { forwardRef, useLayoutEffect, useState, useRef } from "react"
 import { useMergeRefs } from "../../"
 import { StyledTruncate, StyledTag } from "./styles"

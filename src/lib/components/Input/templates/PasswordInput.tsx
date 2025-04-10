@@ -1,5 +1,3 @@
-/*=============================================== PasswordInput component ===============================================*/
-
 import { forwardRef, useState } from "react"
 import { Hide, Show } from "../../../icons"
 import {

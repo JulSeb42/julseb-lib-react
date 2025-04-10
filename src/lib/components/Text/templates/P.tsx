@@ -1,5 +1,3 @@
-/*=============================================== P ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledP } from "../styles"
 import type { ILibText } from "../types"

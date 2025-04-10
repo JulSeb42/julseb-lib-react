@@ -1,5 +1,3 @@
-/*=============================================== HelmetPreview ===============================================*/
-
 import { Helmet } from "../../../"
 import type { ILibHelmet } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

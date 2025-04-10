@@ -1,5 +1,3 @@
-/*=============================================== CodeContainer types ===============================================*/
-
 import type { CSSProperties } from "react"
 import type { SyntaxHighlighterProps } from "react-syntax-highlighter"
 import type { LibAllColors, LibComponentBase, LibIcon } from "../../types"

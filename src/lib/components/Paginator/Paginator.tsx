@@ -1,5 +1,3 @@
-/*=============================================== Paginator component ===============================================*/
-
 import { forwardRef, useCallback, useState, type ChangeEvent } from "react"
 import { useSearchParams } from "react-router-dom"
 import { Text, ButtonIcon, usePagination, Flexbox } from "../../"

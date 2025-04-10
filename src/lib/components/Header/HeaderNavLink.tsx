@@ -1,5 +1,4 @@
 // @ts-nocheck
-/*=============================================== HeaderNavLink ===============================================*/
 
 import { isValidElement } from "react"
 import { Link } from "../../"

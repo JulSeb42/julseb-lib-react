@@ -1,5 +1,3 @@
-/*=============================================== SelectPreview ===============================================*/
-
 import { useState } from "react"
 import { Select } from "../../../"
 import type { ILibSelect } from "../../../types/components-props"

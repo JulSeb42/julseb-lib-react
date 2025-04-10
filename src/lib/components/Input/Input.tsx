@@ -1,5 +1,3 @@
-/*=============================================== Input component ===============================================*/
-
 import { forwardRef, type ForwardedRef } from "react"
 import { ColorInput } from "./templates/ColorInput"
 import { DateInput } from "./templates/DateInput"

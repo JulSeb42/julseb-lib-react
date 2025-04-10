@@ -1,5 +1,3 @@
-/*=============================================== InputPrefix component ===============================================*/
-
 import { StyledInputPrefix } from "../styles"
 import type { ILibInputPrefix } from "../types"
 

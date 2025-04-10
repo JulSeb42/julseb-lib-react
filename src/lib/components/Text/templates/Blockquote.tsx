@@ -1,5 +1,3 @@
-/*=============================================== Blockquote ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledBlockquote } from "../styles"
 import type { ILibText } from "../types"

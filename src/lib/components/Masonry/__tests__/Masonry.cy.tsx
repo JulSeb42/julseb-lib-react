@@ -1,5 +1,3 @@
-/*=============================================== Masonry tests ===============================================*/
-
 import { uuid } from "@julseb-lib/utils"
 import { Masonry, Image } from "../../.."
 import { images } from "../__preview__/Masonry.preview"

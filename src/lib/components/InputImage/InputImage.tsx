@@ -1,5 +1,3 @@
-/*=============================================== InputImage component ===============================================*/
-
 import { forwardRef, useCallback, useState } from "react"
 import { InputContainer } from "../InputComponents"
 import { EmptyContainer } from "./EmptyContainer"

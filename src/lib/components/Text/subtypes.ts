@@ -1,5 +1,3 @@
-/*=============================================== Text sub components types ===============================================*/
-
 import type { LibAllColors, CssTextAlign, LibColorsHover } from "../../types"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN TEXT COMPONENTS

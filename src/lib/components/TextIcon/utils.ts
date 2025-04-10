@@ -1,5 +1,4 @@
 // @ts-nocheck
-/*=============================================== Utils ===============================================*/
 
 import { LIB_TOKENS } from "../.."
 import type { LibTextIconTag } from "../../types"

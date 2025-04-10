@@ -1,5 +1,3 @@
-/*=============================================== Data ===============================================*/
-
 import type {
     LibButtonGroupButtonItem,
     LibButtonGroupToggle,

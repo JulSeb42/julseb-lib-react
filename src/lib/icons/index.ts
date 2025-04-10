@@ -1,5 +1,3 @@
-/*=============================================== Exports ===============================================*/
-
 export * from "./ArrowUp"
 export * from "./Calendar"
 export * from "./CaretDown"

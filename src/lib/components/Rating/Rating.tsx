@@ -1,5 +1,3 @@
-/*=============================================== Rating component ===============================================*/
-
 import { forwardRef, useCallback } from "react"
 import { generateNumbers } from "@julseb-lib/utils"
 import { Flexbox } from "../../"

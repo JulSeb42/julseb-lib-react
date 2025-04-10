@@ -1,5 +1,3 @@
-/*=============================================== Header styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { Link } from "react-router-dom"
 import { stringifyPx } from "@julseb-lib/utils"

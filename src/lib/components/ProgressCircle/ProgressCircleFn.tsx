@@ -1,5 +1,3 @@
-/*=============================================== ProgressFn ===============================================*/
-
 import { forwardRef, useEffect, useState } from "react"
 import { cleanPercentage } from "./clean-percentage"
 import { Circle } from "./Circle"

@@ -1,5 +1,3 @@
-/*=============================================== Icon styles ===============================================*/
-
 import styled from "styled-components"
 import SVG from "react-inlinesvg"
 import { stringifyPx } from "@julseb-lib/utils"

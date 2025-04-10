@@ -1,5 +1,3 @@
-/*=============================================== useTableSorting ===============================================*/
-
 interface IDownloadFile {
     blob: Blob
     fileName: string

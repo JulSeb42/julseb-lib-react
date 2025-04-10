@@ -1,5 +1,3 @@
-/*=============================================== TimepickerPreview ===============================================*/
-
 import { Timepicker } from "../../../"
 import type { ILibTimepicker } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

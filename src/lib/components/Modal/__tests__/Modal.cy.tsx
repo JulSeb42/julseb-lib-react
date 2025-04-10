@@ -1,5 +1,3 @@
-/*=============================================== Modal tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { Preview, PreviewWithAlert } from "./Preview"
 

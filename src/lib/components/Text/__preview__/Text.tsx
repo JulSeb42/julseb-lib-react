@@ -1,5 +1,3 @@
-/*=============================================== TextPreviews ===============================================*/
-
 import type { ComponentPreview } from "../../../../data/components"
 import { Text } from "../../../"
 import type { ILibText } from "../types"

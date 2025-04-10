@@ -1,5 +1,3 @@
-/*=============================================== H4 ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledH4 } from "../styles"
 import type { ILibText } from "../types"

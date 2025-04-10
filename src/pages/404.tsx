@@ -1,9 +1,7 @@
-/*=============================================== Homepage ===============================================*/
-
 import type { FC } from "react"
 import { useParams } from "react-router-dom"
 import { Page } from "../components"
-import { Text, toPascalCase } from "../lib"
+import { Text, toPascalCase, useTranslation } from "../lib"
 
 export const NotFoundPage: FC = () => {
     const { componentName } = useParams<{ componentName: string }>()

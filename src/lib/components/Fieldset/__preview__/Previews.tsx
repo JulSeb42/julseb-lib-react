@@ -1,5 +1,3 @@
-/*=============================================== Fieldset previews ===============================================*/
-
 import { InputCheck, Input } from "../../../"
 
 export const ChildrenCheck = () => {

@@ -1,5 +1,3 @@
-/*=============================================== NavDemo styles ===============================================*/
-
 import styled from "styled-components"
 import { Mixins, SPACERS, TRANSITIONS, MEDIA, setDefaultTheme } from "../../lib"
 

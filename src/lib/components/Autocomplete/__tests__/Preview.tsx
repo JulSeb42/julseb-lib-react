@@ -1,5 +1,3 @@
-/*=============================================== Autocomplete preview ===============================================*/
-
 import { useState } from "react"
 import { Autocomplete } from "../"
 import { frenchCities } from "../../../../data"

@@ -1,5 +1,3 @@
-/*=============================================== AccordionItem component ===============================================*/
-
 import { forwardRef, useState } from "react"
 import classNames from "classnames"
 import { capitalize } from "@julseb-lib/utils"

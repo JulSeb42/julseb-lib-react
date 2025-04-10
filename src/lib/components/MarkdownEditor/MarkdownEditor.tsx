@@ -1,5 +1,3 @@
-/*=============================================== MarkdownEditor component ===============================================*/
-
 import { forwardRef, useState, useRef, useCallback } from "react"
 import { Flexbox, markdownEditorOptions } from "../../"
 import { appendStyles } from "../../lib-utils"

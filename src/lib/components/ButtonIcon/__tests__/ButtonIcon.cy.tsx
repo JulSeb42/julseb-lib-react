@@ -1,5 +1,3 @@
-/*=============================================== ButtonIcon tests ===============================================*/
-
 import { ButtonIcon, LIB_TOKENS } from "../../.."
 import { SITE_DATA } from "../../../../data"
 

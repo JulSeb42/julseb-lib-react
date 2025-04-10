@@ -1,5 +1,3 @@
-/*=============================================== InputCheck tests ===============================================*/
-
 import { InputCheck, LIB_TOKENS } from "../../.."
 
 describe("<InputCheck />", () => {

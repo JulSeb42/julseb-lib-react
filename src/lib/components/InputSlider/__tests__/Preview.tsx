@@ -1,5 +1,3 @@
-/*=============================================== InputSlider preview ===============================================*/
-
 import { useState } from "react"
 import { InputSlider } from "../InputSlider"
 

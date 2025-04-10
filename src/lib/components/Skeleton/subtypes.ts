@@ -1,5 +1,3 @@
-/*=============================================== Skeleton sub components types ===============================================*/
-
 import type { LibAllColors, ILibRadius } from "../../types"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN SKELETON COMPONENTS

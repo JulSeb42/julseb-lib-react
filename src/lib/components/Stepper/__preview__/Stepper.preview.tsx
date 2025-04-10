@@ -1,5 +1,3 @@
-/*=============================================== StepperPreview ===============================================*/
-
 import { Stepper } from "../../../"
 import type { LibStep } from "../../../types"
 import type { ILibStepper } from "../../../types/components-props"

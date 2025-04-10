@@ -1,5 +1,3 @@
-/*=============================================== StyleSheetManager ===============================================*/
-
 import type { FC } from "react"
 import {
     StyleSheetManager as Manager,

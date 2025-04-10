@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs styles ===============================================*/
-
 import styled from "styled-components"
 import {
     MEDIA,

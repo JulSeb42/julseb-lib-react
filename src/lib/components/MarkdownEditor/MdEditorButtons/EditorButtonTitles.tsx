@@ -1,5 +1,3 @@
-/*=============================================== EditorButtonTitles component ===============================================*/
-
 import { useState } from "react"
 import { Button, DropdownContainer } from "../../../"
 import { mdTitlesButtons } from "../markdown-buttons"

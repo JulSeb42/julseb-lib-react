@@ -1,5 +1,3 @@
-/*=============================================== ProgressBar types ===============================================*/
-
 import type { MeterHTMLAttributes } from "react"
 import type { LibComponentBase, LibColorsHover } from "../../types"
 

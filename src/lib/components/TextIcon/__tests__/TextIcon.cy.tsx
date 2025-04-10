@@ -1,5 +1,3 @@
-/*=============================================== TextIcon tests ===============================================*/
-
 import { stringifyPx } from "@julseb-lib/utils"
 import { TextIcon, LIB_TOKENS } from "../../.."
 import { SITE_DATA } from "../../../../data"

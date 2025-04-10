@@ -1,5 +1,3 @@
-/*=============================================== BackToTopDemo ===============================================*/
-
 import { BasePage } from "../../components"
 import { Text, Wrapper, Main, BackToTop } from "../../lib"
 

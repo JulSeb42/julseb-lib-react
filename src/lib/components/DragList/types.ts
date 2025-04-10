@@ -1,5 +1,3 @@
-/*=============================================== DragList types ===============================================*/
-
 import type { DragEvent } from "react"
 import type {
     LibComponentBase,
@@ -12,8 +10,6 @@ import type {
     ILibRadius,
     DispatchState,
 } from "../../types"
-
-/*====================== DragList ======================*/
 
 interface ILibDragListBase extends LibComponentBase<HTMLDivElement> {
     iconDrag?: LibIcon
@@ -40,8 +36,6 @@ interface DragListWithChildren extends ILibDragListBase {
 }
 
 export type ILibDragList = DragListWithItems | DragListWithChildren
-
-/*====================== DragListItem ======================*/
 
 interface ILibDragListItemBase extends LibComponentBase<HTMLDivElement> {
     index: number

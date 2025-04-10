@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs data ===============================================*/
-
 type BreadcrumbItem = {
     text: string
     to?: string

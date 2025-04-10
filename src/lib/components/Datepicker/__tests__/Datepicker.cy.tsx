@@ -1,5 +1,3 @@
-/*=============================================== Datepicker tests ===============================================*/
-
 import { DatepickerDemo } from "./Preview"
 
 describe("<Datepicker />", () => {

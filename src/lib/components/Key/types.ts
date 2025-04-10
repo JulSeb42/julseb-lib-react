@@ -1,5 +1,3 @@
-/*=============================================== Key types ===============================================*/
-
 import type { LibComponentBase, LibKeySize, LibColorsShort } from "../../types"
 
 export interface ILibKey extends LibComponentBase<HTMLSpanElement> {

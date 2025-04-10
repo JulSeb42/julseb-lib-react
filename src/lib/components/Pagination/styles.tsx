@@ -1,5 +1,3 @@
-/*=============================================== Pagination styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { setDefaultTheme, MEDIA, Mixins, RADIUSES, TRANSITIONS } from "../../"
 import type { LibColorsHover } from "../../types"

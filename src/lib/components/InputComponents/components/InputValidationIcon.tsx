@@ -1,5 +1,3 @@
-/*=============================================== InputValidation component ===============================================*/
-
 import { CheckCircle, CloseCircle } from "../../../icons"
 import { LibIcon } from "../../LibIcon"
 import { StyledInputValidationIcon } from "../styles"

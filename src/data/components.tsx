@@ -1,10 +1,6 @@
-/*=============================================== Preview components ===============================================*/
-
 import type { FC, ForwardRefExoticComponent, RefAttributes } from "react"
 import { toKebabCase } from "@julseb-lib/utils"
 import type { ComponentPaths } from "../routes"
-
-/*====================== Styles ======================*/
 
 import { colorsPreview } from "./previews/styles/Colors.preview"
 import { overlaysPreview } from "./previews/styles/Overlays.preview"
@@ -14,16 +10,12 @@ import { spacersPreview } from "./previews/styles/Spacers.preview"
 import { radiusesPreview } from "./previews/styles/Radiuses.preview"
 import { themeProviderPreview } from "./previews/styles/ThemeProvider.preview"
 
-/*====================== Layouts ======================*/
-
 import { wrapperPreview } from "../lib/components/Wrapper/__preview__/Wrapper.preview"
 import { mainPreview } from "../lib/components/Main/__preview__/Main.preview"
 import { asidePreview } from "../lib/components/Aside/__preview__/Aside.preview"
 import { sectionPreview } from "../lib/components/Section/__preview__/Section.preview"
 import { gridPreview } from "../lib/components/Grid/__preview__/Grid.preview"
 import { flexboxPreview } from "../lib/components/Flexbox/__preview__/Flexbox.preview"
-
-/*====================== Components ======================*/
 
 import { iconPreview } from "../lib/components/Icon/__preview__/Icon.preview"
 import { linkPreview } from "../lib/components/Link/__preview__/Link.preview"
@@ -96,8 +88,6 @@ import { pageLayoutPreview } from "../lib/components/PageLayout/__preview__/Page
 import { timepickerPreview } from "../lib/components/Timepicker/__preview__/Timepicker.preview"
 /* Prepend import - DO NOT REMOVE */
 
-/*====================== Helpers ======================*/
-
 import { helpersPreview } from "./previews/utils/Helpers.preview"
 import { srOnlyPreview } from "../lib/components/SrOnly/__preview__/SrOnly.preview"
 import { variablesPreview } from "./previews/utils/Variables.preview"
@@ -136,7 +126,6 @@ export interface ComponentPreview<T> {
 }
 
 export const previews = [
-    /*====================== Styles ======================*/
     colorsPreview,
     overlaysPreview,
     textPreviews,
@@ -145,8 +134,6 @@ export const previews = [
     radiusesPreview,
     themeProviderPreview,
 
-    /*====================== Layouts ======================*/
-
     wrapperPreview,
     mainPreview,
     asidePreview,
@@ -154,7 +141,6 @@ export const previews = [
     gridPreview,
     flexboxPreview,
 
-    /*====================== Components ======================*/
     iconPreview,
     linkPreview,
     keyPreview,
@@ -226,7 +212,6 @@ export const previews = [
     timepickerPreview,
     /* Prepend array - DO NOT REMOVE */
 
-    /*====================== Helpers ======================*/
     helpersPreview,
     srOnlyPreview,
     variablesPreview,

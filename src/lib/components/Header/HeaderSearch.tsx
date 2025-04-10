@@ -1,5 +1,3 @@
-/*=============================================== HeaderSearch ===============================================*/
-
 import { useState, type FormEvent, type ChangeEvent } from "react"
 import { useNavigate, createSearchParams } from "react-router-dom"
 import { Input } from "../../"

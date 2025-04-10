@@ -1,5 +1,3 @@
-/*=============================================== useClickOutside ===============================================*/
-
 import { useEffect, type RefObject } from "react"
 
 type Event = MouseEvent | TouchEvent

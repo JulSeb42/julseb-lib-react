@@ -1,5 +1,3 @@
-/*=============================================== BadgePreview ===============================================*/
-
 import { Badge, Flexbox, getRandomString } from "../../../"
 import { type LibColorsShort, typeValues } from "../../../types"
 import { roundIconSize } from "../../../lib-utils"

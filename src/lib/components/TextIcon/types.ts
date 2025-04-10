@@ -1,5 +1,3 @@
-/*=============================================== TextIcon types ===============================================*/
-
 import type { ElementType, CSSProperties } from "react"
 import type {
     LibAllColors,

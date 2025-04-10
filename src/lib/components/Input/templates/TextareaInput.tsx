@@ -1,5 +1,3 @@
-/*=============================================== TextareaInput component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledInput } from "../styles"
 import type { ILibTextareaInput } from "../subtypes"

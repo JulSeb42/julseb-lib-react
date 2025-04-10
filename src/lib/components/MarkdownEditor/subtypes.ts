@@ -1,5 +1,4 @@
 // @ts-nocheck
-/*=============================================== MarkdownEditor sub components types ===============================================*/
 
 import type { RefObject } from "react"
 import type { LibMdEditorEditor, DispatchState } from "../../types"

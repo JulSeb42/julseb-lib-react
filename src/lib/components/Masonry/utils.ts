@@ -1,5 +1,3 @@
-/*=============================================== Masonry utils ===============================================*/
-
 import { useEffect, useRef, type ReactNode } from "react"
 
 export function useEventListener(

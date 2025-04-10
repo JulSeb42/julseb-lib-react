@@ -1,5 +1,3 @@
-/*=============================================== InputContainer styles ===============================================*/
-
 import type { FC } from "react"
 import styled from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"

@@ -1,6 +1,3 @@
-/*=============================================== DemoMainLarge ===============================================*/
-
-
 import { Text } from "../../lib"
 import { BasePage, StyledWrapper, StyledMain } from "../../components"
 

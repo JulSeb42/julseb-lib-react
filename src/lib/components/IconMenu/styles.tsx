@@ -1,5 +1,3 @@
-/*=============================================== IconMenu styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     setDefaultTheme,

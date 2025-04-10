@@ -1,5 +1,3 @@
-/*=============================================== Toaster component ===============================================*/
-
 import { forwardRef } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { Toast } from "./Toast"
@@ -152,7 +150,7 @@ export const Toaster = forwardRef<HTMLDivElement, ILibToaster>(
                                 body: toast.options?.body,
                                 id: toast.options?.id || toast.id,
                                 timerBackgroundColor:
-                                    toast.options?.timerBackgroundColor || 
+                                    toast.options?.timerBackgroundColor ||
                                     styles.timerColor,
                                 ...toastsOptions,
                                 ...toast.options,

@@ -1,5 +1,3 @@
-/*=============================================== TabsContainer component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledTabs } from "./styles"
 import type { ILibTabsContainer } from "./types"

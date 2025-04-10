@@ -1,5 +1,3 @@
-/*=============================================== Link component ===============================================*/
-
 import { forwardRef, type RefObject } from "react"
 import { Link as RouterLink, NavLink } from "react-router-dom"
 import type { ILibLink } from "./types"
@@ -13,7 +11,16 @@ import type { ILibLink } from "./types"
  */
 export const Link = forwardRef<HTMLAnchorElement | HTMLButtonElement, ILibLink>(
     (
-        { "data-testid": testid, isNavLink, to, href, onClick, blank, end, ...rest },
+        {
+            "data-testid": testid,
+            isNavLink,
+            to,
+            href,
+            onClick,
+            blank,
+            end,
+            ...rest
+        },
         ref
     ) => {
         if (onClick)

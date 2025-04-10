@@ -1,5 +1,3 @@
-/*=============================================== ButtonIcon component ===============================================*/
-
 import { forwardRef } from "react"
 import { capitalize } from "@julseb-lib/utils"
 import { Tooltip } from "../../"

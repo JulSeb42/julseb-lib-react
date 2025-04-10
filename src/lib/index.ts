@@ -1,7 +1,5 @@
 "use client"
 
-/*=============================================== Exports ===============================================*/
-
 export { ThemeProvider } from "styled-components"
 import {} from "styled-components/cssprop"
 export * from "./utils"

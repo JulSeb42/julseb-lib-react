@@ -1,5 +1,3 @@
-/*=============================================== ColorCard ===============================================*/
-
 import { Text } from "../../lib"
 import { StyledColorCard, Square, CardContent } from "./styles"
 import type { ColorCardProps } from "./types"

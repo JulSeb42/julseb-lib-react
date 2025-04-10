@@ -1,5 +1,3 @@
-/*=============================================== Main component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledMain } from "./styles"
 import type { ILibMain } from "./types"

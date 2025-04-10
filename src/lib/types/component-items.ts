@@ -1,5 +1,3 @@
-/*=============================================== Components items types ===============================================*/
-
 import type { ForwardedRef, ReactNode } from "react"
 import type {
     LibButtonLinkBlank,
@@ -13,8 +11,6 @@ import type {
     CssFontStyle,
     LibColorsHover,
 } from "./"
-
-/*====================== Base ======================*/
 
 /**
  * @description Base props for any ComponentItem
@@ -30,8 +26,6 @@ interface LibComponentItemBase<T> {
     id?: string
     ref?: ForwardedRef<T>
 }
-
-/*====================== ButtonGroupButtons ======================*/
 
 type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
     LibButtonLinkBlank & {
@@ -83,8 +77,6 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
  */
 export type LibButtonGroupButtonItem = ButtonGroupItemText | ButtonGroupItemIcon
 
-/*====================== ButtonGroupToggles ======================*/
-
 interface LibButtonGroupToggleBase
     extends LibComponentItemBase<HTMLInputElement> {
     id: string
@@ -126,8 +118,6 @@ interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
 export type LibButtonGroupToggle =
     | ButtonGroupToggleWithIcon
     | ButtonGroupToggleWithText
-
-/*====================== ListGroup ======================*/
 
 // ! DO NOT EXPORT
 
@@ -193,8 +183,6 @@ type ListGroupItemWithDate = ListGroupItemBase & {
  */
 export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
 
-/*====================== AccordionItem ======================*/
-
 /**
  * @description Props for Accordion component items: https://documentation-components-react.vercel.app/components/accordion
  * @prop data-testid?: string
@@ -210,8 +198,6 @@ export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
     content?: ReactChildren
     defaultOpen?: boolean
 }
-
-/*====================== DropdownItem ======================*/
 
 /**
  * @description Props for Dropdown component items: https://documentation-components-react.vercel.app/components/dropdown
@@ -232,8 +218,6 @@ export type LibDropdownItem = LibButtonLinkBlankRequired &
         iconSize?: number
         gap?: LibSpacers
     }
-
-/*====================== Toast ======================*/
 
 /**
  * @description Props for Toaster component items: https://documentation-components-react.vercel.app/components/toast
@@ -300,8 +284,6 @@ export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
     options?: LibToastOptions
 }
 
-/*====================== Step ======================*/
-
 /**
  * @description Props for Step component items: https://documentation-components-react.vercel.app/components/stepper
  * @extends LibButtonLinkBlank
@@ -321,8 +303,6 @@ export type LibStep = LibButtonLinkBlank &
         text: string
     }
 
-/*====================== BreadcrumbItem ======================*/
-
 /**
  * @description Props for Breadcrumbs component items: https://documentation-components-react.vercel.app/components/breadcrumbs
  * @extends LibButtonLinkBlank
@@ -336,8 +316,6 @@ export type LibBreadcrumbItem = LibButtonLinkBlank &
     LibComponentItemBase<HTMLAnchorElement & HTMLSpanElement> & {
         text: string | JSX.Element
     }
-
-/*====================== TabsItem ======================*/
 
 /**
  * @description Props for Tabs component items: https://documentation-components-react.vercel.app/components/tabs
@@ -353,8 +331,6 @@ export interface LibTabItem
     title: string
     content: ReactNode
 }
-
-/*====================== Message ======================*/
 
 /**
  * @description Props for Message component: https://documentation-components-react.vercel.app/components/messaging
@@ -374,14 +350,13 @@ export interface LibMessage extends LibComponentItemBase<HTMLDivElement> {
     time?: string
 }
 
-/*====================== MarkdownEditorOptions ======================*/
-
 /**
  * @description Buttons showing in MarkdownEditor
  * @prop titles?: boolean
  * @prop bold?: boolean
  * @prop italic?: boolean
  * @prop strikethrough?: boolean
+ * @prop underline?: boolean
  * @prop ul?: boolean
  * @prop ol?: boolean
  * @prop link?: boolean
@@ -400,6 +375,7 @@ export interface LibMarkdownEditorOptions {
     bold?: boolean
     italic?: boolean
     strikethrough?: boolean
+    underline?: boolean
     ul?: boolean
     ol?: boolean
     link?: boolean
@@ -413,8 +389,6 @@ export interface LibMarkdownEditorOptions {
     editorLive?: boolean
     editorPreview?: boolean
 }
-
-/*====================== HeaderLinks ======================*/
 
 /**
  * @description Props for links in Header component items: https://documentation-components-react.vercel.app/components/header
@@ -431,8 +405,6 @@ export type LibHeaderLink = LibButtonLinkBlankRequired &
         text: ReactChildren
         end?: boolean
     }
-
-/*====================== IconMenuItem ======================*/
 
 /**
  * @description Props for Items in IconMenu component items: https://documentation-components-react.vercel.app/icon-menu
@@ -452,8 +424,6 @@ export type LibIconMenuItem = LibButtonLinkBlankRequired &
         iconSize?: number
     }
 
-/*====================== FooterLink ======================*/
-
 /**
  * @description Props for links in Footer component items: https://documentation-components-react.vercel.app/components/footer
  * @extends LibButtonLinkBlankRequired
@@ -467,8 +437,6 @@ export type LibFooterLink = LibButtonLinkBlankRequired &
     LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
         text: ReactChildren
     }
-
-/*====================== DragListItem ======================*/
 
 type LibDragListItemBase = LibComponentItemBase<HTMLDivElement> & {
     id: string
@@ -514,8 +482,6 @@ export type LibDragListItem =
     | DragListItemWithContentAndBadge
     | DragListItemWithContentAndDate
     | DragListItemWithElement
-
-/*====================== HelperBottom ======================*/
 
 interface HelperBottomWithText {
     text: string

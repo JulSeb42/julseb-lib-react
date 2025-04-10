@@ -1,5 +1,3 @@
-/*=============================================== Youtube types ===============================================*/
-
 import type { IframeHTMLAttributes } from "react"
 import type { LibComponentBase } from "../../types"
 

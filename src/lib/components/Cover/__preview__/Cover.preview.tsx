@@ -1,5 +1,3 @@
-/*=============================================== CoverPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { toSentenceCase } from "@julseb-lib/utils"
 import { Cover, Text } from "../../../"

@@ -1,5 +1,3 @@
-/*=============================================== Main types ===============================================*/
-
 import type { LibComponentBase, LibMainSize } from "../../types"
 
 interface ILibMainBase extends LibComponentBase<HTMLDivElement> {

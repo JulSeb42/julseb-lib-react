@@ -1,5 +1,3 @@
-/*=============================================== Autocomplete tests ===============================================*/
-
 import { Preview } from "./Preview"
 
 describe("<Autocomplete />", () => {

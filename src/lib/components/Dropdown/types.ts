@@ -1,5 +1,3 @@
-/*=============================================== Dropdown types ===============================================*/
-
 import type { ButtonHTMLAttributes } from "react"
 import type {
     LibDropdownItem,
@@ -14,8 +12,6 @@ import type {
     LibSpacers,
 } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
-
-/*====================== Dropdown ======================*/
 
 interface ILibDropdownBase extends LibComponentBase<HTMLDivElement> {
     isOpen: boolean
@@ -39,13 +35,9 @@ interface DropdownWithChildren extends ILibDropdownBase {
 
 export type ILibDropdown = DropdownWithItems | DropdownWithChildren
 
-/*====================== DropdownContainer ======================*/
-
 export interface ILibDropdownContainer extends ILibFlexbox {
     isOpen: boolean
 }
-
-/*====================== DropdownItem ======================*/
 
 type ILibDropdownItemBase = LibComponentBase<
     HTMLButtonElement & HTMLAnchorElement

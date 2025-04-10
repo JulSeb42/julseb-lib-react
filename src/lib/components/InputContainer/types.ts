@@ -1,5 +1,3 @@
-/*=============================================== InputContainer types ===============================================*/
-
 import type { CSSProperties } from "react"
 import type {
     LibComponentBase,

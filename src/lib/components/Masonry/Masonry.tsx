@@ -1,5 +1,3 @@
-/*=============================================== Masonry component ===============================================*/
-
 import { forwardRef, useEffect, useRef, useState, useCallback } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { useMergeRefs } from "../../"

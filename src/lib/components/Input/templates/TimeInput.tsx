@@ -1,5 +1,3 @@
-/*=============================================== TimeInput component ===============================================*/
-
 import { forwardRef, useCallback, useRef } from "react"
 import { useMergeRefs } from "../../.."
 import {

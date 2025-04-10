@@ -1,5 +1,3 @@
-/*=============================================== Tag component ===============================================*/
-
 import { forwardRef } from "react"
 import { getIconSizeFromFont } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"

@@ -1,5 +1,3 @@
-/*=============================================== OptionsMarkdownPreview ===============================================*/
-
 import { CodeContainer } from "../../../lib"
 import type { ComponentPreview } from "../../components"
 

@@ -1,5 +1,3 @@
-/*=============================================== CoverLayout ===============================================*/
-
 import { BasePage } from "./"
 import { Text, Wrapper, Main } from "../lib"
 

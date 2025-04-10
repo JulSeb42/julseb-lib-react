@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroup sub components types ===============================================*/
-
 import type {
     DispatchState,
     LibButtonGroupButtonItem,

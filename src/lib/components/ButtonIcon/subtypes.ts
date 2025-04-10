@@ -1,5 +1,3 @@
-/*=============================================== ButtonIcon sub components types ===============================================*/
-
 import type { LibButtonVariant } from "../../types"
 import type { ILibButtonMixin } from "../ComponentsMixins"
 

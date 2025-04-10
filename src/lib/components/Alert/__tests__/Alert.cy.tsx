@@ -1,5 +1,3 @@
-/*=============================================== Alert tests ===============================================*/
-
 import { Alert, LIB_TOKENS } from "../../.."
 import type { LibColorsShort } from "../../../types"
 

@@ -1,5 +1,3 @@
-/*=============================================== Exports ===============================================*/
-
 export * from "./ColorCard"
 export * from "./BasePage"
 export * from "./Page"

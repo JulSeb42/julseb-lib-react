@@ -1,5 +1,3 @@
-/*=============================================== HeaderPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { Header, Text } from "../../../"
 import type { ILibHeader } from "../../../types/components-props"

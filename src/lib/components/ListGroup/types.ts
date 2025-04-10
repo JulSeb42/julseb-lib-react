@@ -1,5 +1,3 @@
-/*=============================================== ListGroup types ===============================================*/
-
 import type { ForwardedRef, RefObject } from "react"
 import type {
     LibAllColors,
@@ -10,8 +8,6 @@ import type {
     LibButtonLinkBlank,
     LibIcon,
 } from "../../types"
-
-/*====================== ListGroup ======================*/
 
 interface ILibListGroupBase
     extends Omit<LibComponentBase<HTMLDivElement>, "title"> {
@@ -44,8 +40,6 @@ interface ListGroupWithChildren extends ILibListGroupBase {
 
 export type ILibListGroup = ListGroupWithItems | ListGroupWithChildren
 
-/*====================== ListGroupTitle ======================*/
-
 interface ILibListGroupTitleBase extends LibComponentBase<HTMLDivElement> {
     backgroundColor?: LibAllColors
     contentColor?: LibAllColors
@@ -66,8 +60,6 @@ interface ListGroupItemTitleWithoutShadow extends ILibListGroupTitleBase {
 export type ILibListGroupTitle =
     | ListGroupItemTitleWithShadow
     | ListGroupItemTitleWithoutShadow
-
-/*====================== ListGroupItem ======================*/
 
 type ListGroupItemBadgeBase = {
     backgroundColor?: LibAllColors

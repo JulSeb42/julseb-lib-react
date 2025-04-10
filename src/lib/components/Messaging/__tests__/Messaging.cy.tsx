@@ -1,5 +1,3 @@
-/*=============================================== Messaging tests ===============================================*/
-
 import { MessagingPreview, MessagingEmptyPreview } from "./Preview"
 
 describe("<Messaging />", () => {

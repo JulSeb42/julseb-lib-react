@@ -1,5 +1,3 @@
-/*=============================================== DropdownPreview ===============================================*/
-
 import { useState } from "react"
 import { Dropdown, DropdownContainer, Button } from "../../../"
 import type { LibDropdownItem } from "../../../types"

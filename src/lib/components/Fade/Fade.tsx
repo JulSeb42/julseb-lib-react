@@ -1,5 +1,3 @@
-/*=============================================== Fade component ===============================================*/
-
 import { forwardRef, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import { useMergeRefs } from "../../"

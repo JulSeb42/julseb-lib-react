@@ -1,5 +1,3 @@
-/*=============================================== FlexboxPreview ===============================================*/
-
 import { Flexbox } from "../"
 import { GridItem } from "../../../../components"
 import type { ILibFlexbox } from "../types"

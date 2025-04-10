@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroup types ===============================================*/
-
 import type {
     LibComponentBase,
     LibButtonGroupButtonItem,

@@ -1,5 +1,3 @@
-/*=============================================== DateInput component ===============================================*/
-
 import { forwardRef, useCallback, useRef } from "react"
 import { useMergeRefs } from "../../.."
 import { Calendar } from "../../../icons"

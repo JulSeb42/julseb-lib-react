@@ -1,5 +1,3 @@
-/*=============================================== Burger types ===============================================*/
-
 import type { LibComponentBase, LibColorsHoverAndCurrent } from "../../types"
 
 export interface ILibBurger extends LibComponentBase<HTMLButtonElement> {

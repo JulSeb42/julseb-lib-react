@@ -1,5 +1,3 @@
-/*=============================================== Wrapper styles ===============================================*/
-
 import styled from "styled-components"
 import { MEDIA, Mixins, setDefaultTheme } from "../../"
 import type { LibAllColors, LibSpacers } from "../../types"

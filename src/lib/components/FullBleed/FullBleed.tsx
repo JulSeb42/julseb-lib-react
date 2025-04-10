@@ -1,5 +1,3 @@
-/*=============================================== FullBleed component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledFullBleed } from "./styles"
 import type { ILibFullBleed } from "./types"

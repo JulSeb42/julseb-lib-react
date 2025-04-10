@@ -1,5 +1,3 @@
-/*=============================================== InputCheck component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { capitalize } from "@julseb-lib/utils"

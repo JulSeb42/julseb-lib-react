@@ -1,5 +1,3 @@
-/*=============================================== All radiuses ===============================================*/
-
 import { RADIUSES, LIB_TOKENS } from "../../lib"
 import type { Variable } from "../types"
 

@@ -1,5 +1,3 @@
-/*=============================================== EmptyContainer ===============================================*/
-
 import { Image } from "../../icons"
 import { LibIcon } from "../LibIcon"
 import { StyledEmptyContainer } from "./styles"

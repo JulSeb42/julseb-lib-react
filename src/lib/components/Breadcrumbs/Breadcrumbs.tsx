@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs component ===============================================*/
-
 import { forwardRef } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { BreadcrumbsFn } from "./BreadcrumbsFn"

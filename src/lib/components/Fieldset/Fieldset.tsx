@@ -1,5 +1,3 @@
-/*=============================================== Fieldset component ===============================================*/
-
 import { forwardRef } from "react"
 import { InputContainer } from "../InputComponents"
 import { StyledFieldset, Legend } from "./styles"

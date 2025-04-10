@@ -1,5 +1,3 @@
-/*=============================================== Image component ===============================================*/
-
 import { forwardRef } from "react"
 import { Fallback } from "../../"
 import { ImageFunction } from "./ImageFunction"

@@ -1,5 +1,3 @@
-/*=============================================== HooksPreview ===============================================*/
-
 import {
     PreviewUseClickOutside,
     PreviewUseCopyToClipboard,

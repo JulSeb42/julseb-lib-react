@@ -1,5 +1,3 @@
-/*=============================================== FadePreview ===============================================*/
-
 import { Fade, generateNumbers, Text } from "../../../"
 import type { ILibFade } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

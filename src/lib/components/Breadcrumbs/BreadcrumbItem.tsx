@@ -1,5 +1,3 @@
-/*=============================================== BreadcrumbItem ===============================================*/
-
 import { Link } from "react-router-dom"
 import { uuid } from "@julseb-lib/utils"
 import type { ILibBreadcrumbItem } from "./subtypes"

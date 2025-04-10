@@ -1,5 +1,3 @@
-/*=============================================== IconMenu component ===============================================*/
-
 import { forwardRef, useState, useRef } from "react"
 import classNames from "classnames"
 import { Burger, useClickOutside, useMergeRefs } from "../../"

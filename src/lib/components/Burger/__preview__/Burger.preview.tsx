@@ -1,5 +1,3 @@
-/*=============================================== BurgerPreview ===============================================*/
-
 import { useState } from "react"
 import { Burger, Flexbox } from "../../../"
 import type { LibColorsHover } from "../../../types"

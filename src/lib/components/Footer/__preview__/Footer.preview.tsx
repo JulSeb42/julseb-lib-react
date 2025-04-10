@@ -1,5 +1,3 @@
-/*=============================================== FooterPreview ===============================================*/
-
 import { Footer } from "../../../"
 import type { LibFooterLink } from "../../../types"
 import type { ILibFooter } from "../../../types/components-props"

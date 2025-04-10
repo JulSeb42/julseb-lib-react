@@ -1,5 +1,3 @@
-/*=============================================== ProgressCircle tests ===============================================*/
-
 import { ProgressCircle, LIB_TOKENS } from "../../.."
 import { SITE_DATA } from "../../../../data"
 

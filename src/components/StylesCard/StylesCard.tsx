@@ -1,5 +1,3 @@
-/*=============================================== StylesCard ===============================================*/
-
 import { capitalize } from "@julseb-lib/utils"
 import { Text } from "../../lib"
 import { StyledStylesCard, Square, Content } from "./styles"

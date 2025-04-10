@@ -1,5 +1,3 @@
-/*=============================================== InputImage sub components types ===============================================*/
-
 import type { ILibInputImage } from "./types"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN INPUT IMAGE COMPONENTS

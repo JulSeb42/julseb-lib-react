@@ -1,5 +1,3 @@
-/*=============================================== ListInput component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { StyledListInput } from "../styles"

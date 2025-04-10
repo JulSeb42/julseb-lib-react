@@ -1,5 +1,3 @@
-/*=============================================== ModalPreview ===============================================*/
-
 import { Modal, Image } from "../../../"
 import { ModalDemo, ModalDemoAlert } from "./Previews"
 import type { ILibModal } from "../../../types/components-props"

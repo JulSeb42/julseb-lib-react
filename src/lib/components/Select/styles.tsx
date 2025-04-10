@@ -1,5 +1,3 @@
-/*=============================================== Select styles ===============================================*/
-
 import styled from "styled-components"
 import { FONT_WEIGHTS, setDefaultTheme } from "../../"
 import { InputBaseMixin } from "../ComponentsMixins"

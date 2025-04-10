@@ -1,5 +1,3 @@
-/*=============================================== HelperBottom ===============================================*/
-
 import type { FC } from "react"
 import { LibIcon } from "../LibIcon"
 import { getIconSizeFromFont } from "../../lib-utils"

@@ -1,5 +1,3 @@
-/*=============================================== ComponentsMixins ===============================================*/
-
 import { css } from "styled-components"
 import {
     MEDIA,
@@ -20,8 +18,6 @@ import type {
     ILibInputBaseMixin,
     ILibTextBaseMixin,
 } from "./types"
-
-/*====================== Button ======================*/
 
 export const ButtonMixin = ({
     $color,
@@ -162,7 +158,6 @@ export const ButtonMixin = ({
         }
     }}
 `
-/*====================== Text ======================*/
 
 export const TextBaseMixin = ({
     $fontSize,
@@ -218,8 +213,6 @@ export const TextBaseMixin = ({
         }
     }
 `
-
-/*====================== Input ======================*/
 
 export const InputBaseMixin = ({
     $disabled,

@@ -1,5 +1,3 @@
-/*=============================================== Image tests ===============================================*/
-
 import { Input, LIB_TOKENS } from "../../.."
 import { InputPropsPreview, InputSearchPreview } from "./Preview"
 

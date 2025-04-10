@@ -1,5 +1,3 @@
-/*=============================================== Paginator tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { Preview, PreviewNotEditable, PreviewColor } from "./Preview"
 

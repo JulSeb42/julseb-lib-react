@@ -1,5 +1,3 @@
-/*=============================================== Tabs types ===============================================*/
-
 import type { ButtonHTMLAttributes } from "react"
 import type {
     LibComponentBase,
@@ -8,19 +6,13 @@ import type {
     LibTabItem,
 } from "../../types"
 
-/*====================== TabsContainer ======================*/
-
 export interface ILibTabsContainer extends LibComponentBase<HTMLDivElement> {}
-
-/*====================== TabsButtonsContainer ======================*/
 
 export interface ILibTabsButtonsContainer
     extends LibComponentBase<HTMLDivElement> {
     justify?: LibTabJustify
     variant?: LibTabVariant
 }
-
-/*====================== TabsButton ======================*/
 
 export interface ILibTabButton
     extends LibComponentBase<HTMLButtonElement>,
@@ -31,13 +23,9 @@ export interface ILibTabButton
     variant?: LibTabVariant
 }
 
-/*====================== TabItem ======================*/
-
 export interface ILibTabItem extends LibComponentBase<HTMLDivElement> {
     isActive: boolean
 }
-
-/*====================== Tabs ======================*/
 
 interface ILibTabsBase extends LibComponentBase<HTMLDivElement> {
     tabsItems: Array<LibTabItem>

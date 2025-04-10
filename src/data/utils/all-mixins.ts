@@ -6,7 +6,6 @@ type Mixin = {
 }
 
 export const allMixins: Array<Mixin> = [
-    /*====================== Colors ======================*/
     {
         name: "AllColors",
         effect: "Returns any color from the library",
@@ -77,7 +76,7 @@ export const allMixins: Array<Mixin> = [
         example:
             "background-color: ${({ theme, $backgroundColor }) =>\n    Mixins.Colors50($backgroundColor, theme)}",
     },
-    /*====================== Other mixins ======================*/
+
     {
         name: "Icon",
         effect: "Adds an icon",

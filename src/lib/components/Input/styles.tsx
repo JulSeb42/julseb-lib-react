@@ -1,5 +1,3 @@
-/*=============================================== Input styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { SPACERS, setDefaultTheme, FONT_SIZES, LINE_HEIGHTS } from "../.."
 import { InputBaseMixin } from "../ComponentsMixins"

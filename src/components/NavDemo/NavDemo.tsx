@@ -1,5 +1,3 @@
-/*=============================================== NavDemo ===============================================*/
-
 import { useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { toTitleCase } from "@julseb-lib/utils"

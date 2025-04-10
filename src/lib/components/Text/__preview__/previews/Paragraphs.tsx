@@ -1,5 +1,3 @@
-/*=============================================== TextDisplay preview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { useLibTheme } from "../../../../context/Theme.context"
 import { Text } from "../.."

@@ -1,5 +1,3 @@
-/*=============================================== InputSlider component ===============================================*/
-
 import { forwardRef, type ForwardedRef, useState, useCallback } from "react"
 import classNames from "classnames"
 import { Flexbox, Text } from "../../"

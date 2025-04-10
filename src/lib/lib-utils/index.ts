@@ -1,5 +1,3 @@
-/*=============================================== LibUtils ===============================================*/
-
 // ! Those utils will not be exported in the library, they're here only for building components
 
 export * from "./get-highlighted-text"

@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroupPreview ===============================================*/
-
 import { capitalize } from "@julseb-lib/utils"
 import { ButtonGroup } from "../../../"
 import type {

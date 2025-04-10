@@ -1,5 +1,3 @@
-/*=============================================== TBody component ===============================================*/
-
 import { forwardRef } from "react"
 import type { ILibTBody } from "./types"
 

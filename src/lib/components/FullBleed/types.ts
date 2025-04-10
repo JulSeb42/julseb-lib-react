@@ -1,5 +1,3 @@
-/*=============================================== FullBleed types ===============================================*/
-
 import type { LibComponentBase, ILibPadding } from "../../types"
 
 export interface ILibFullBleed extends LibComponentBase<HTMLDivElement> {

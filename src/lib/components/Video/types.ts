@@ -1,5 +1,3 @@
-/*=============================================== Video types ===============================================*/
-
 import type { VideoHTMLAttributes, SourceHTMLAttributes } from "react"
 import type { LibComponentBase, CssObjectFit } from "../../types"
 

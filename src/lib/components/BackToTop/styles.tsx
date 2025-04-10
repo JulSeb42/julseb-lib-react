@@ -1,5 +1,3 @@
-/*=============================================== BackToTop styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, ButtonIcon, TRANSITIONS, Mixins } from "../../"
 import type { LibSpacers } from "../../types"

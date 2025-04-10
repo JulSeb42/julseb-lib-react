@@ -1,5 +1,3 @@
-/*=============================================== LinkPreview ===============================================*/
-
 import { Link, Text } from "../../../"
 import type { ILibLink } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

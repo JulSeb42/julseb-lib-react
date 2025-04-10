@@ -1,5 +1,3 @@
-/*=============================================== Drawer tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { DrawerPreview } from "./Preview"
 

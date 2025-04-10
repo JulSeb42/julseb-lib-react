@@ -1,5 +1,3 @@
-/*=============================================== Slideshow sub types ===============================================*/
-
 import type { LibSlideshowButtonPosition, DispatchState } from "../../types"
 import type { ILibSlideshow } from "./types"
 

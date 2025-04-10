@@ -1,5 +1,3 @@
-/*=============================================== Linkify text ===============================================*/
-
 import { Fragment } from "react"
 import { uuid } from "@julseb-lib/utils"
 

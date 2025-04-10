@@ -1,5 +1,3 @@
-/*=============================================== Calendar component ===============================================*/
-
 import { useState, type MouseEvent } from "react"
 import { uuid, formatDate as formatDateUtil } from "@julseb-lib/utils"
 import classNames from "classnames"

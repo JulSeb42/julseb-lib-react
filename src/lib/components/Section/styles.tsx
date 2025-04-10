@@ -1,5 +1,3 @@
-/*=============================================== Section styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, Mixins } from "../../"
 import type { LibSpacers } from "../../types"

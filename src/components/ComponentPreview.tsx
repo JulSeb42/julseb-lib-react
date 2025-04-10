@@ -1,5 +1,3 @@
-/*=============================================== ComponentPreview ===============================================*/
-
 import type { FC, ForwardRefExoticComponent, RefAttributes } from "react"
 import { Flexbox, Text } from "../lib"
 

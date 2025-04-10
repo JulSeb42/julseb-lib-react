@@ -1,5 +1,3 @@
-/*=============================================== MarkdownEditor buttons ===============================================*/
-
 import { roundIconSize } from "../../lib-utils"
 import {
     Bold,

@@ -1,5 +1,3 @@
-/*=============================================== Modal types ===============================================*/
-
 import type {
     LibButtonVariant,
     LibColorsHover,

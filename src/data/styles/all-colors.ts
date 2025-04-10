@@ -1,5 +1,3 @@
-/*=============================================== All colors ===============================================*/
-
 import type { Color } from "../types"
 import { COLORS_LIGHT, COLORS_DARK, LIB_TOKENS } from "../../lib"
 

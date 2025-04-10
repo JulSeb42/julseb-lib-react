@@ -1,5 +1,3 @@
-/*=============================================== DemoContainerStyles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, Wrapper, Main, Aside } from "../lib"
 

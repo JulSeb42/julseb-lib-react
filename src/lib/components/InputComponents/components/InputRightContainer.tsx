@@ -1,5 +1,3 @@
-/*=============================================== InputRightContainer component ===============================================*/
-
 import { StyledInputRightContainer } from "../styles"
 import type { ILibInputRightContainer } from "../types"
 

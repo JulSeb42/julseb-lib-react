@@ -1,5 +1,3 @@
-/*=============================================== DemoMainFull ===============================================*/
-
 import { Text, Section, Image, FullBleed } from "../../lib"
 import { BasePage, StyledMain } from "../../components"
 

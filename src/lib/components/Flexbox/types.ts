@@ -1,5 +1,3 @@
-/*=============================================== Flexbox types ===============================================*/
-
 import type {
     LibComponentBase,
     CssAlignContent,

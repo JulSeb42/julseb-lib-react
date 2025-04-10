@@ -1,5 +1,3 @@
-/*=============================================== Rating tests ===============================================*/
-
 import { Preview, PreviewReadOnly } from "./Preview"
 
 describe("<Rating />", () => {

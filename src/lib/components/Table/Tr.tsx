@@ -1,5 +1,3 @@
-/*=============================================== Tr component ===============================================*/
-
 import { forwardRef } from "react"
 import type { ILibTr } from "./types"
 

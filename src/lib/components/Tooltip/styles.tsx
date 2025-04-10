@@ -1,5 +1,3 @@
-/*=============================================== Tooltip styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     FONT_SIZES,

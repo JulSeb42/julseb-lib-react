@@ -1,5 +1,3 @@
-/*=============================================== Avatar tests ===============================================*/
-
 import { Avatar, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { StarFull } from "../../../icons"

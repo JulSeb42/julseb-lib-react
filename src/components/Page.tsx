@@ -1,5 +1,3 @@
-/*=============================================== Page ===============================================*/
-
 import { BasePage, type BasePageProps } from "./BasePage"
 import { NavDemo } from "./NavDemo"
 import { WrapperDemo } from "./layouts/WrapperDemo"

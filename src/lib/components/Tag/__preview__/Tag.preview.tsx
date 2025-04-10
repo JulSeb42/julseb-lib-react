@@ -1,5 +1,3 @@
-/*=============================================== TagPreview ===============================================*/
-
 import { Tag, Flexbox } from "../../../"
 import { typeValues, type LibColorsShort } from "../../../types"
 import type { ILibTag } from "../../../types/components-props"

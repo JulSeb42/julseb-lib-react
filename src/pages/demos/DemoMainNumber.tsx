@@ -1,5 +1,3 @@
-/*=============================================== DemoMainNumber ===============================================*/
-
 import type { FC } from "react"
 import { Text } from "../../lib"
 import { BasePage, StyledWrapper, StyledMain } from "../../components"

@@ -1,5 +1,3 @@
-/*=============================================== SkeletonShine component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSkeletonShine } from "./styles"
 import type { ILibSkeletonShine } from "./types"

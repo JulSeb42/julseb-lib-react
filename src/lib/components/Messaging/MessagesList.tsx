@@ -1,5 +1,3 @@
-/*=============================================== MessagesList ===============================================*/
-
 import { forwardRef, useRef, useState, useEffect } from "react"
 import classNames from "classnames"
 import { Text, useMergeRefs } from "../../"

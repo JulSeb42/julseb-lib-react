@@ -1,5 +1,3 @@
-/*=============================================== ProgressBar component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { getPercentage, getRandomString } from "@julseb-lib/utils"

@@ -1,5 +1,3 @@
-/*=============================================== SbDemoLayout ===============================================*/
-
 import styled from "styled-components"
 import { Text } from "../lib"
 import type { ReactChildren } from "../lib/types"

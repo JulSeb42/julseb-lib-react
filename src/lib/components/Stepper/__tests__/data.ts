@@ -1,5 +1,3 @@
-/*=============================================== Stepper tests data ===============================================*/
-
 import type { LibStep } from "../../../types"
 
 export const stepperTestsData: Array<LibStep> = [

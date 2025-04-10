@@ -1,5 +1,3 @@
-/*=============================================== Td component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledTd } from "./styles"
 import type { ILibTd } from "./types"

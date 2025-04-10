@@ -1,5 +1,3 @@
-/*=============================================== Text styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     FONT_SIZES,
@@ -157,6 +155,17 @@ const StyledUl = styled.ul<ILibTextStyle>`
             $color,
             $linkColor,
         })}
+
+    li {
+        ${({ $textAlign, $color, $linkColor }) =>
+            TextBaseMixin({
+                $fontSize: "body",
+                $fontWeight: "regular",
+                $textAlign,
+                $color,
+                $linkColor,
+            })}
+    }
 `
 
 const StyledOl = styled.ol<ILibTextStyle>`
@@ -169,6 +178,17 @@ const StyledOl = styled.ol<ILibTextStyle>`
             $color,
             $linkColor,
         })}
+
+    li {
+        ${({ $textAlign, $color, $linkColor }) =>
+            TextBaseMixin({
+                $fontSize: "body",
+                $fontWeight: "regular",
+                $textAlign,
+                $color,
+                $linkColor,
+            })}
+    }
 `
 
 const StyledDl = styled.dl<ILibTextStyle>`

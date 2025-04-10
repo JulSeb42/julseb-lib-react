@@ -1,5 +1,3 @@
-/*=============================================== InputImagePreview ===============================================*/
-
 import { InputImage } from "../../../"
 import {
     InputImageDemo,

@@ -1,5 +1,3 @@
-/*=============================================== InputImage styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import {

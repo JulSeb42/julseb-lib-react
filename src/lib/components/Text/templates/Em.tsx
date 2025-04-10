@@ -1,5 +1,3 @@
-/*=============================================== Em ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledEm } from "../styles"
 import type { ILibText } from "../types"

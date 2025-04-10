@@ -1,5 +1,3 @@
-/*=============================================== Modal styles ===============================================*/
-
 import styled from "styled-components"
 import {
     Flexbox,

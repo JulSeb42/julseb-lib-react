@@ -1,5 +1,3 @@
-/*=============================================== MixinsPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { allMixins } from "../../utils/all-mixins"
 import { RenderPreview } from "./RenderPreview"

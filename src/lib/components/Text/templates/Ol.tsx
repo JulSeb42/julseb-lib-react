@@ -1,5 +1,3 @@
-/*=============================================== Ol ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledOl } from "../styles"
 import type { ILibText } from "../types"

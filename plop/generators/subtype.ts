@@ -1,5 +1,3 @@
-/*=============================================== Subtype ===============================================*/
-
 import type { NodePlopAPI } from "plop"
 import { allComponents } from "../utils"
 

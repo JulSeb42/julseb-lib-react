@@ -1,5 +1,3 @@
-/*=============================================== FileInput component ===============================================*/
-
 import { forwardRef } from "react"
 import { InputRightContainer, InputValidationIcon } from "../../InputComponents"
 import { StyledInput } from "../styles"

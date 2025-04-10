@@ -1,5 +1,3 @@
-/*=============================================== Export all components types & props ===============================================*/
-
 export type { IStyleSheetManager } from "styled-components"
 export * from "../components/Text/types"
 export * from "../components/Wrapper/types"

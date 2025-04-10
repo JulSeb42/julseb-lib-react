@@ -1,5 +1,3 @@
-/*=============================================== MasonryPreview ===============================================*/
-
 import { uuid } from "@julseb-lib/utils"
 import { Image, Masonry } from "../../../"
 import type { ILibMasonry } from "../../../types/components-props"

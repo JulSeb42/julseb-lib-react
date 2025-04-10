@@ -1,5 +1,3 @@
-/*=============================================== Header component ===============================================*/
-
 import { forwardRef, useState, useEffect, useRef, type RefObject } from "react"
 import classNames from "classnames"
 import { enableScroll, disableScroll } from "@julseb-lib/utils"

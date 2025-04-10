@@ -1,5 +1,3 @@
-/*=============================================== ListGroup tests ===============================================*/
-
 import { ListGroup, LIB_TOKENS } from "../../.."
 import { listGroupData } from "./data"
 

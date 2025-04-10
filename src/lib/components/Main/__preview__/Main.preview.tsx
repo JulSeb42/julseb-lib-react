@@ -1,5 +1,3 @@
-/*=============================================== MainPreview ===============================================*/
-
 import { Main } from "../../../"
 import { ContainerPreview } from "../../../../data/previews/layouts/Container.preview"
 import type { ILibMain } from "../../../types/components-props"

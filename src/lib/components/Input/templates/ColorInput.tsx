@@ -1,5 +1,3 @@
-/*=============================================== ColorInput component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledInput } from "../styles"
 import type { ILibColorInput } from "../subtypes"

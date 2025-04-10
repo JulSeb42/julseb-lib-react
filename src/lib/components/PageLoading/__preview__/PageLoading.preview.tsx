@@ -1,5 +1,3 @@
-/*=============================================== PageLoadingPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { PageLoading, Text } from "../../../"
 import type { ILibPageLoading } from "../../../types/components-props"

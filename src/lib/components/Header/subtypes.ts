@@ -1,12 +1,9 @@
-/*=============================================== Header sub components types ===============================================*/
-
 import type { FC, RefObject } from "react"
 import type { LibHeaderLink, LibLink } from "../../types"
 import type { ILibHeader } from "./types"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN THOSE COMPONENTS
 
-/*====================== HeaderNav ======================*/
 export interface ILibHeaderNav
     extends Pick<
         ILibHeader,
@@ -26,7 +23,6 @@ export interface ILibHeaderNav
     handleClose: () => void
 }
 
-/*====================== HeaderBurger ======================*/
 export interface ILibHeaderBurger
     extends Pick<
         ILibHeader,
@@ -41,7 +37,6 @@ export interface ILibHeaderBurger
     handleClose: () => void
 }
 
-/*====================== HeaderLogo ======================*/
 export interface ILibHeaderLogo
     extends Pick<
         ILibHeader,
@@ -50,20 +45,16 @@ export interface ILibHeaderLogo
     isOpen: boolean
 }
 
-/*====================== HeaderNavLink ======================*/
 export interface ILibHeaderNavLink {
     "data-testid": string | undefined
     className: string | undefined
     link: LibHeaderLink | JSX.Element | FC
 }
 
-/*====================== HeaderSearch ======================*/
 export interface ILibHeaderSearch
     extends Pick<ILibHeader, "data-testid" | "className" | "search"> {
     handleClose: () => void
 }
-
-/*====================== HeaderNav ======================*/
 
 type HeaderLogoWithText = LibLink & {
     text: string

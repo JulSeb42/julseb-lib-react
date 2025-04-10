@@ -1,5 +1,3 @@
-/*=============================================== MarkdownEditor tests ===============================================*/
-
 import { MarkdownEditorPreview } from "./Preview"
 
 describe("<MarkdownEditor />", () => {

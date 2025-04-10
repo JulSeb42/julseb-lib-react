@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroup tests ===============================================*/
-
 import { ButtonGroup, LIB_TOKENS } from "../../.."
 import { buttons, toggles } from "./data"
 import { SITE_DATA } from "../../../../data"

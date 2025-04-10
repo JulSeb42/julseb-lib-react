@@ -1,7 +1,5 @@
 "use client"
 
-/*=============================================== Theme context ===============================================*/
-
 import { useState, useEffect, createContext, useContext } from "react"
 import type { IStyleSheetManager, DefaultTheme } from "styled-components"
 import { StyleSheetManager } from "../utils"

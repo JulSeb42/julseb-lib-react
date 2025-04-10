@@ -1,5 +1,3 @@
-/*=============================================== DragListItem component ===============================================*/
-
 import { forwardRef, type DragEvent } from "react"
 import { Text, Badge } from "../../"
 import { Drag } from "../../icons"

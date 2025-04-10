@@ -1,5 +1,3 @@
-/*=============================================== Paginator styles ===============================================*/
-
 import type { FC } from "react"
 import styled from "styled-components"
 import { setDefaultTheme, Input, Mixins } from "../../"

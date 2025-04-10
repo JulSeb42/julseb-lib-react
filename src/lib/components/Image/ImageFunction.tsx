@@ -1,5 +1,3 @@
-/*=============================================== ImageFunction ===============================================*/
-
 import { forwardRef, lazy, Suspense } from "react"
 import type { ILibImage } from "./types"
 

@@ -1,5 +1,3 @@
-/*=============================================== MarkdownEditor types ===============================================*/
-
 import type { TextareaHTMLAttributes } from "react"
 import type {
     LibComponentBase,

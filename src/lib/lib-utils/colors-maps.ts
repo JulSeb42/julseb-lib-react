@@ -1,5 +1,3 @@
-/*=============================================== Colors maps ===============================================*/
-
 import { COLORS_LIGHT, COLORS_DARK, OVERLAYS } from "../Variables"
 import type { LibAllColors, LibColorsShort, LibOverlays } from "../types"
 

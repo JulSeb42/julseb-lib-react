@@ -1,5 +1,3 @@
-/*=============================================== Global types ===============================================*/
-
 import type {
     HTMLAttributes,
     ElementType,
@@ -12,8 +10,6 @@ import type { Property } from "csstype"
 import type { DefaultTheme } from "styled-components"
 import type { typeValues } from "./type-values"
 import type { RequireAtLeastOne } from "./require-at-least-one"
-
-/*====================== Common types ======================*/
 
 export type LibColors = keyof typeof typeValues.libColors
 export type LibColorsShort = keyof typeof typeValues.colorsShort
@@ -42,8 +38,6 @@ export type LibPositionExtract = Extract<
     Property.Position,
     "relative" | "absolute" | "fixed"
 >
-
-/*====================== Common component props ======================*/
 
 /* Component base */
 /**
@@ -327,8 +321,6 @@ export interface LibBackToTopPosition {
     zIndex?: number
 }
 
-/*====================== Theme ======================*/
-
 /**
  * @description Props for ThemeContext
  * @prop theme: DefaultTheme => import from "styled-components"
@@ -341,12 +333,8 @@ export interface ILibThemeContext {
     toggleTheme: () => void
 }
 
-/*====================== React global ======================*/
-
 export type ReactChildren = ReactNode | Array<ReactNode>
 export type DispatchState<T> = Dispatch<SetStateAction<T>>
-
-/*====================== CSS values ======================*/
 
 export type CssTextAlign = Property.TextAlign
 export type CssVerticalAlign = Property.VerticalAlign
@@ -363,8 +351,6 @@ export type CssCursor = Property.Cursor
 export type CssBorderStyle = Property.BorderStyle
 export type CssOutlineStyle = Property.OutlineStyle
 export type CssFontStyle = Property.FontStyle
-
-/*====================== Components ======================*/
 
 export type LibMainSize = keyof typeof typeValues.mainSizes | number
 export type LibAsideSize = keyof typeof typeValues.asideSizes | number

@@ -1,5 +1,3 @@
-/*=============================================== MessagesContainer ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledMessagesContainer } from "./styles"
 import type { ILibMessagesContainer } from "./types"

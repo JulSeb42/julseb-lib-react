@@ -1,5 +1,3 @@
-/*=============================================== Slideshow tests ===============================================*/
-
 import { generateNumbers } from "@julseb-lib/utils"
 import { Slideshow } from "../../.."
 

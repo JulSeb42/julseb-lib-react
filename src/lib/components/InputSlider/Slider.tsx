@@ -1,5 +1,3 @@
-/*=============================================== Slider component ===============================================*/
-
 import { forwardRef } from "react"
 import type { ILibInputSlider } from "./types"
 import { StyledInputSlider } from "./styles"

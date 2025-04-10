@@ -1,5 +1,3 @@
-/*=============================================== InputImage types ===============================================*/
-
 import type { InputHTMLAttributes } from "react"
 import type { LibIcon, ILibRadius } from "../../types"
 import type { ILibInputBase } from "../InputComponents/types"

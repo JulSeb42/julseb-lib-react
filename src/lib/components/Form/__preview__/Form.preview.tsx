@@ -1,5 +1,3 @@
-/*=============================================== FormPreview ===============================================*/
-
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { Form, Input } from "../../../"
 import type { ILibForm } from "../../../types/components-props"

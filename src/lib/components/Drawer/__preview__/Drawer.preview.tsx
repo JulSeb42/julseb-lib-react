@@ -1,5 +1,3 @@
-/*=============================================== DrawerPreview ===============================================*/
-
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Drawer, Button, Text, Flexbox } from "../../../"

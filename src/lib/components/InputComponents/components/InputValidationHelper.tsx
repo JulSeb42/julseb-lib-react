@@ -1,5 +1,3 @@
-/*=============================================== InputValidationHelper component ===============================================*/
-
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { LibIcon } from "../../LibIcon"
 import { CloseCircle, CheckCircle } from "../../../icons"

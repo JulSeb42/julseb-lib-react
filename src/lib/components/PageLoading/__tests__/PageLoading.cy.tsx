@@ -1,5 +1,3 @@
-/*=============================================== PageLoading tests ===============================================*/
-
 import { PageLoading, LIB_TOKENS } from "../../.."
 
 describe("<PageLoading />", () => {

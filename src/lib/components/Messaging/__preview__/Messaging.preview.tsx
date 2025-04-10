@@ -1,5 +1,3 @@
-/*=============================================== MessagingPreview ===============================================*/
-
 import { getToday, getYesterday } from "@julseb-lib/utils"
 import { Messaging } from "../../../"
 import type { ILibMessaging } from "../../../types/components-props"

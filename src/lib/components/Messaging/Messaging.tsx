@@ -1,5 +1,3 @@
-/*=============================================== Messaging component ===============================================*/
-
 import { forwardRef, useState } from "react"
 import { getToday, uuid, stringifyPx } from "@julseb-lib/utils"
 import { Hr } from "../../"

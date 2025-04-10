@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs types ===============================================*/
-
 import type { ReactNode } from "react"
 import type {
     LibAllColors,

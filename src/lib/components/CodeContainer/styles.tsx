@@ -1,5 +1,3 @@
-/*=============================================== CodeContainer styles ===============================================*/
-
 import styled from "styled-components"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import {

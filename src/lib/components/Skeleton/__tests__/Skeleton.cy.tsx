@@ -1,5 +1,3 @@
-/*=============================================== Skeleton tests ===============================================*/
-
 import { SkeletonCard, Skeleton, LIB_TOKENS } from "../../.."
 
 describe("<Skeleton />", () => {

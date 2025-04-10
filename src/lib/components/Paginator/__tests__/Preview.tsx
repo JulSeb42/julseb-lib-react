@@ -1,5 +1,3 @@
-/*=============================================== Paginator tests preview ===============================================*/
-
 import { generateNumbers } from "@julseb-lib/utils"
 import { Paginator, usePaginatedData, Grid, Card } from "../../../"
 

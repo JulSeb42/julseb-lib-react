@@ -1,5 +1,3 @@
-/*=============================================== Button sub components types ===============================================*/
-
 import type { LibButtonSize, LibSpacers } from "../../types"
 import type { ILibButtonMixin } from "../ComponentsMixins"
 

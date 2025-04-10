@@ -1,5 +1,3 @@
-/*=============================================== Image tests ===============================================*/
-
 import { Image, LIB_TOKENS } from "../../.."
 
 const IMG_URL = "/images/pic-avatar.jpg"

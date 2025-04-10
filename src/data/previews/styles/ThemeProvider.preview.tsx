@@ -1,5 +1,3 @@
-/*=============================================== ThemeProviderPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { useLibTheme, Button, Text } from "../../../lib"
 

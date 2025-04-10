@@ -1,5 +1,3 @@
-/*=============================================== Toaster tests preview ===============================================*/
-
 import { useToast, Button } from "../../../"
 
 export const PreviewSuccess = () => {

@@ -1,5 +1,3 @@
-/*=============================================== TruncatePreview ===============================================*/
-
 import { Truncate } from "../../../"
 import type { ILibTruncate } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

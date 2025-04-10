@@ -1,5 +1,3 @@
-/*=============================================== Truncate demo ===============================================*/
-
 import styled from "styled-components"
 import { Text, Tag, Truncate, SPACERS, RADIUSES } from "../../../"
 

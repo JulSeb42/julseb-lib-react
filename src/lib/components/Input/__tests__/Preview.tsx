@@ -1,5 +1,3 @@
-/*=============================================== Input tests previews ===============================================*/
-
 import { useState, type ChangeEvent } from "react"
 import { Input } from "../../.."
 import { SITE_DATA } from "../../../../data"

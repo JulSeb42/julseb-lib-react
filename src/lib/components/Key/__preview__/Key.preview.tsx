@@ -1,5 +1,3 @@
-/*=============================================== KeyPreview ===============================================*/
-
 import { Key, capitalize } from "../../../"
 import { typeValues, type LibKeySize } from "../../../types"
 import type { ComponentPreview } from "../../../../data/components"

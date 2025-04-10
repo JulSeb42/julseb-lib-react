@@ -1,5 +1,3 @@
-/*=============================================== MessagingDemo ===============================================*/
-
 import { useState } from "react"
 import { convertDateShort } from "@julseb-lib/utils"
 import { Messaging } from "../../../"

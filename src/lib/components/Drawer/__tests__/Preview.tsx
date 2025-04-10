@@ -1,5 +1,3 @@
-/*=============================================== Drawer tests preview ===============================================*/
-
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Button, Flexbox, Text, Drawer } from "../../.."
@@ -13,7 +11,9 @@ const links: Array<{ id: number; to: string; text: string }> = [
     { id: 4, text: "Link", to: "#" },
 ]
 
-export const DrawerPreview = (props: Omit<ILibDrawer, "isOpen" | "setIsOpen">) => {
+export const DrawerPreview = (
+    props: Omit<ILibDrawer, "isOpen" | "setIsOpen">
+) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (

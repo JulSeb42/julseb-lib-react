@@ -1,5 +1,3 @@
-/*=============================================== Sticky component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSticky } from "./styles"
 import type { ILibSticky } from "./types"

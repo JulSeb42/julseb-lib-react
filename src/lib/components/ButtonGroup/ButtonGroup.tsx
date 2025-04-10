@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroup component ===============================================*/
-
 import { forwardRef, useState, Fragment } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { ButtonGroupButton } from "./ButtonGroupButton"

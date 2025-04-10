@@ -1,5 +1,3 @@
-/*=============================================== Small ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSmall } from "../styles"
 import type { ILibText } from "../types"

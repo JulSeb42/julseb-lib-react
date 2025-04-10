@@ -1,5 +1,3 @@
-/*=============================================== InputPin sub components types ===============================================*/
-
 import type { LibFontSizes } from "../../types"
 import type { ILibInputBaseMixin } from "../ComponentsMixins"
 

@@ -1,5 +1,3 @@
-/*=============================================== Circle ===============================================*/
-
 import classNames from "classnames"
 import { StyledCircle } from "./styles"
 import type { ILibProgressCircle } from "./types"

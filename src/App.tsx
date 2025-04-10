@@ -1,11 +1,5 @@
-/*=============================================== App ===============================================*/
-
 import { RouterProvider } from "react-router-dom"
-import {
-    ThemeProvider,
-    ToasterProviderWrapper,
-    useLibTheme,
-} from "./lib"
+import { ThemeProvider, ToasterProviderWrapper, useLibTheme } from "./lib"
 import { router } from "./routes"
 
 export const App = () => {

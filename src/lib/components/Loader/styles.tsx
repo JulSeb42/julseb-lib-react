@@ -1,5 +1,3 @@
-/*=============================================== Loader styles ===============================================*/
-
 import styled, { css, keyframes } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import { Mixins, RADIUSES, setDefaultTheme } from "../../"

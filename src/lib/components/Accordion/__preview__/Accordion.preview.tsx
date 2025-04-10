@@ -1,5 +1,3 @@
-/*=============================================== AccordionPreview ===============================================*/
-
 import { Accordion } from "../Accordion"
 import type { ILibAccordion } from "../types"
 import type { ComponentPreview } from "../../../../data/components"

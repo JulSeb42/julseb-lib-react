@@ -1,5 +1,3 @@
-/*=============================================== DemoCoverCenterOverlay ===============================================*/
-
 import { CoverLayout } from "../../components"
 import { Cover, Text } from "../../lib"
 

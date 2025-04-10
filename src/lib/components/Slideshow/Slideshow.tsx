@@ -1,5 +1,3 @@
-/*=============================================== Slideshow component ===============================================*/
-
 import { forwardRef, useState, useCallback, useEffect } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { Image } from "../../"
@@ -72,15 +70,11 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
         },
         ref
     ) => {
-        /*====================== Slideshow with buttons ======================*/
-
         const [active, setActive] = useState(0)
         const length = children?.length || images?.length || 0
 
         const handleNext = () => setActive(active < length - 1 ? active + 1 : 0)
         const handlePrev = () => setActive(active > 0 ? active - 1 : length - 1)
-
-        /*====================== Automatic slideshow ======================*/
 
         const autoSlideshow = useCallback(() => {
             setActive(active < length - 1 ? active + 1 : 0)
@@ -93,8 +87,6 @@ export const Slideshow = forwardRef<HTMLDivElement, ILibSlideshow>(
                 setInterval(() => autoSlideshow(), options.autoPlay)
             }
         }, [options?.autoPlay, autoSlideshow, controls, pagination])
-
-        /*====================== Swipe ======================*/
 
         const [touchPosition, setTouchPosition] = useState(null)
 

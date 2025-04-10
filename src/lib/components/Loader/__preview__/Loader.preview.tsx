@@ -1,5 +1,3 @@
-/*=============================================== LoaderPreview ===============================================*/
-
 import { Loader } from "../../../"
 import { typeValues } from "../../../types"
 import type { ILibLoader } from "../../../types/components-props"

@@ -1,5 +1,3 @@
-/*=============================================== Get icon size from font-size ===============================================*/
-
 import { LIB_TOKENS } from ".."
 import type { LibFontSizes } from "../types"
 

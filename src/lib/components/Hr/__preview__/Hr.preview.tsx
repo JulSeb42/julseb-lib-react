@@ -1,5 +1,3 @@
-/*=============================================== HrPreview ===============================================*/
-
 import { Hr } from "../../../"
 import type { ILibHr } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

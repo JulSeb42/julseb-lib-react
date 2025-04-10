@@ -1,5 +1,3 @@
-/*=============================================== ArrowUp ===============================================*/
-
 import { StyledIcon } from "./styles"
 import type { ILibIcon } from "./types"
 

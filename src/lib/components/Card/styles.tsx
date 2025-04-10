@@ -1,5 +1,3 @@
-/*=============================================== Card styles ===============================================*/
-
 import styled from "styled-components"
 import type { Property } from "csstype"
 import { stringifyPx } from "@julseb-lib/utils"

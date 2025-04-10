@@ -1,5 +1,3 @@
-/*=============================================== Truncate tests ===============================================*/
-
 import { Truncate, LIB_TOKENS, Tag } from "../../.."
 import { names } from "./utils"
 

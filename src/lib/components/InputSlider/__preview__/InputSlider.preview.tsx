@@ -1,5 +1,3 @@
-/*=============================================== InputSliderPreview ===============================================*/
-
 import { useState } from "react"
 import { InputSlider } from "../../../"
 import type { ILibInputSlider } from "../../../types/components-props"

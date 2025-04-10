@@ -1,5 +1,3 @@
-/*=============================================== Loader component ===============================================*/
-
 import { forwardRef } from "react"
 import { LoaderOne } from "./templates/LoaderOne"
 import { LoaderTwo } from "./templates/LoaderTwo"

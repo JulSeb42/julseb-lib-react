@@ -1,5 +1,3 @@
-/*=============================================== ResetScrollPreview ===============================================*/
-
 import { ResetScroll, Text } from "../../../"
 import type { ComponentPreview } from "../../../../data/components"
 

@@ -1,5 +1,3 @@
-/*=============================================== InputPhone styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     FONT_FAMILIES,

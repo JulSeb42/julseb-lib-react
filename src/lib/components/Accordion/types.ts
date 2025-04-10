@@ -1,5 +1,3 @@
-/*=============================================== Accordion types ===============================================*/
-
 import type {
     LibComponentBase,
     LibAccordionItem,

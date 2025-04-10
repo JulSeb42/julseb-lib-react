@@ -1,5 +1,3 @@
-/*=============================================== ListGroupTitle component ===============================================*/
-
 import { forwardRef, useState, useEffect } from "react"
 import classNames from "classnames"
 import { StyledListGroupTitle } from "./styles"

@@ -1,5 +1,3 @@
-/*=============================================== ComponentsMixins types ===============================================*/
-
 import type {
     CssTextAlign,
     ILibBoxShadow,

@@ -1,5 +1,3 @@
-/*=============================================== Flexbox component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledFlexbox } from "./styles"
 import type { ILibFlexbox } from "./types"

@@ -1,5 +1,3 @@
-/*=============================================== TextIcon component ===============================================*/
-
 import { forwardRef } from "react"
 import { Text } from "../../"
 import { LibIcon } from "../LibIcon"

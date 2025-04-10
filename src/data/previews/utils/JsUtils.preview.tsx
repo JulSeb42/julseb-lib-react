@@ -1,5 +1,3 @@
-/*=============================================== UtilsPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { allJsUtils } from "../../utils/all-js-utils"
 import { RenderPreview } from "./RenderPreview"

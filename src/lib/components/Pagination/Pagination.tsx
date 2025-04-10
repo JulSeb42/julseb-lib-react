@@ -1,5 +1,3 @@
-/*=============================================== Pagination component ===============================================*/
-
 import { forwardRef, useCallback, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import classNames from "classnames"

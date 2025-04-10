@@ -1,5 +1,3 @@
-/*=============================================== InputLeftContainer component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledInputLeftContainer } from "../styles"
 import type { ILibInputLeftContainer } from "../types"

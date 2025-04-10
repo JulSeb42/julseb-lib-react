@@ -1,5 +1,3 @@
-/*=============================================== IconMenuItem ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledButtonIcon } from "./styles"
 import type { ILibIconMenuItem } from "./types"

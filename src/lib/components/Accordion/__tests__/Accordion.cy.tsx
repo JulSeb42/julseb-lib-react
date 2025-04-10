@@ -1,5 +1,3 @@
-/*=============================================== Accordion tests ===============================================*/
-
 import { Accordion, LIB_TOKENS } from "../../.."
 import { items } from "./data"
 

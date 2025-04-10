@@ -1,5 +1,3 @@
-/*=============================================== TextInput component ===============================================*/
-
 import { forwardRef } from "react"
 import {
     InputIcon,

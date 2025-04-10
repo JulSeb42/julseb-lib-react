@@ -1,5 +1,3 @@
-/*=============================================== MainDemo ===============================================*/
-
 import styled from "styled-components"
 import { LAYOUTS, Mixins, SPACERS } from "../../lib"
 

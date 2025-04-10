@@ -1,5 +1,3 @@
-/*=============================================== FooterLogo ===============================================*/
-
 import { LogoText, LogoImg } from "./styles"
 import type { ILibFooterLogo } from "./subtypes"
 

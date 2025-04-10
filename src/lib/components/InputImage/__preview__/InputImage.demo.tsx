@@ -1,5 +1,3 @@
-/*=============================================== InputImageDemo ===============================================*/
-
 import { useState, type ChangeEvent } from "react"
 import { InputImage } from "../../../"
 

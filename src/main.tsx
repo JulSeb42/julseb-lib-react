@@ -1,5 +1,3 @@
-/*=============================================== Main ===============================================*/
-
 import ReactDOM from "react-dom/client"
 import { App } from "./App"
 import { ThemeProviderWrapper } from "./lib"

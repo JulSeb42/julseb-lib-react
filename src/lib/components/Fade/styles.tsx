@@ -1,5 +1,3 @@
-/*=============================================== Fade styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, SPACERS } from "../../"
 

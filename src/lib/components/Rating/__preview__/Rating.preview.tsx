@@ -1,5 +1,3 @@
-/*=============================================== RatingPreview ===============================================*/
-
 import { useState } from "react"
 import { Rating } from "../../../"
 import type { ILibRating } from "../../../types/components-props"

@@ -1,5 +1,3 @@
-/*=============================================== Accordion sub components types ===============================================*/
-
 import type { DispatchState, ReactChildren } from "../../types"
 import type { ILibAccordion } from "./types"
 

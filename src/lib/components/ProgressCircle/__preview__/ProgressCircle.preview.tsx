@@ -1,5 +1,3 @@
-/*=============================================== ProgressCirclePreview ===============================================*/
-
 import { ProgressCircle, getRandomNumber } from "../../../"
 import type { ILibProgressCircle } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

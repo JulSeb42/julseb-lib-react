@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs sub components types ===============================================*/
-
 import type { LibBreadcrumbItem } from "../../types"
 import type { ILibBreadcrumbs } from "./types"
 

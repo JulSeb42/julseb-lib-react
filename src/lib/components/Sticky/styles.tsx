@@ -1,5 +1,3 @@
-/*=============================================== Sticky styles ===============================================*/
-
 import styled from "styled-components"
 import { Mixins, setDefaultTheme } from "../../"
 import type { LibSpacers } from "../../types"

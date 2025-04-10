@@ -1,5 +1,3 @@
-/*=============================================== Rating styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { MEDIA, Mixins, setDefaultTheme } from "../../"
 import type { LibValidationStatus } from "../../types"

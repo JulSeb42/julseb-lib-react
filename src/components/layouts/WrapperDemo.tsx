@@ -1,5 +1,3 @@
-/*=============================================== WrapperDemo ===============================================*/
-
 import styled from "styled-components"
 import { NAV_WIDTH } from "../NavDemo/styles"
 import { Mixins } from "../../lib"

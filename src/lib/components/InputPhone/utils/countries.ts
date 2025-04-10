@@ -1,5 +1,3 @@
-/*=============================================== Countries ===============================================*/
-
 import AF from "./flags/af.svg"
 import AX from "./flags/ax.svg"
 import AL from "./flags/al.svg"

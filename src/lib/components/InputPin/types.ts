@@ -1,5 +1,3 @@
-/*=============================================== InputPin types ===============================================*/
-
 import type {
     CssJustifyContent,
     LibSpacers,

@@ -1,5 +1,3 @@
-/*=============================================== ButtonGroupToggles ===============================================*/
-
 import { forwardRef, type ChangeEvent } from "react"
 import { roundIconSize } from "../../lib-utils"
 import { LibIcon } from "../LibIcon"

@@ -1,5 +1,3 @@
-/*=============================================== Key component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledKey } from "./styles"
 import type { ILibKey } from "./types"

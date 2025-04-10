@@ -1,5 +1,3 @@
-/*=============================================== Form component ===============================================*/
-
 import { forwardRef } from "react"
 import { Flexbox, Button } from "../../"
 import type { ILibButton } from "../Button/types"

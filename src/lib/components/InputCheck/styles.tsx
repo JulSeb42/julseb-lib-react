@@ -1,5 +1,3 @@
-/*=============================================== InputCheck styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     MEDIA,

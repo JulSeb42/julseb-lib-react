@@ -1,5 +1,3 @@
-/*=============================================== Tag tests ===============================================*/
-
 import { Tag, LIB_TOKENS } from "../../.."
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { Close } from "../../../icons"

@@ -1,5 +1,3 @@
-/*=============================================== Set default theme ===============================================*/
-
 import type { FC } from "react"
 import { COLORS_LIGHT } from "../Variables"
 

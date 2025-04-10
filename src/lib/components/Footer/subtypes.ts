@@ -1,5 +1,3 @@
-/*=============================================== Footer sub components types ===============================================*/
-
 import type { LibFooterLink } from "../../types"
 import type { ILibFooter } from "./types"
 

@@ -1,5 +1,3 @@
-/*=============================================== Toast reducer ===============================================*/
-
 import type { LibToast } from "../../types"
 
 type ToastAction = "ADD_TOAST" | "DELETE_TOAST"

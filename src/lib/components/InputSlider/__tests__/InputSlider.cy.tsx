@@ -1,5 +1,3 @@
-/*=============================================== InputSlider tests ===============================================*/
-
 import { InputSlider } from "../../.."
 import { Preview } from "./Preview"
 

@@ -1,5 +1,3 @@
-/*=============================================== ContainerPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { unslugify } from "@julseb-lib/utils"
 import { Flexbox, Text } from "../../../lib"

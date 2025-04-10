@@ -1,5 +1,3 @@
-/*=============================================== ProgressBar tests ===============================================*/
-
 import { ProgressBar, LIB_TOKENS } from "../../.."
 
 const PROGRESS_VALUE = 42

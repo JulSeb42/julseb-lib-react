@@ -1,5 +1,3 @@
-/*=============================================== Exports ===============================================*/
-
 export * from "./all-colors"
 export * from "./all-font-families"
 export * from "./all-font-sizes"

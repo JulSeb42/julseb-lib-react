@@ -1,5 +1,3 @@
-/*=============================================== Breadcrumbs tests ===============================================*/
-
 import { Breadcrumbs, LIB_TOKENS } from "../../.."
 import { items } from "./data"
 

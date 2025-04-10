@@ -1,5 +1,3 @@
-/*=============================================== Header types ===============================================*/
-
 import type {
     LibComponentBase,
     LibHeaderPosition,

@@ -1,5 +1,3 @@
-/*=============================================== InputPhonePreview ===============================================*/
-
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { InputPhone } from "../../../"
 import type { LibCountry } from "../../../types"

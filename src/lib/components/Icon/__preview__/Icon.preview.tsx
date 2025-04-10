@@ -1,5 +1,3 @@
-/*=============================================== AccordionPreview ===============================================*/
-
 import styled from "styled-components"
 import { Icon, Text, Mixins } from "../../../"
 import type { ILibIcon } from "../../../types/components-props"

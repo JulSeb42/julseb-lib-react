@@ -1,5 +1,3 @@
-/*=============================================== PageLayout demo ===============================================*/
-
 import { useState, useEffect, type FC } from "react"
 import { PageLayout, Text } from "../../lib"
 import type { LibHeaderLink, LibFooterLink, LibMainSize } from "../../lib/types"

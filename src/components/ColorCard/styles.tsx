@@ -1,5 +1,3 @@
-/*=============================================== ColorCard styles ===============================================*/
-
 import styled from "styled-components"
 import { Mixins, SPACERS, setDefaultTheme } from "../../lib"
 import { BaseCard } from "../BaseCard"

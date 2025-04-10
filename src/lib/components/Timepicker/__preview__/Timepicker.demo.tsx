@@ -1,5 +1,3 @@
-/*=============================================== Tiepicker demo ===============================================*/
-
 import { useState } from "react"
 import { Timepicker } from "../../../"
 import type {

@@ -1,5 +1,3 @@
-/*=============================================== Footer types ===============================================*/
-
 import type {
     LibComponentBase,
     LibFooterDirection,
@@ -8,8 +6,6 @@ import type {
     RequireAtLeastOne,
     LibFooterLinksSeparator,
 } from "../../types"
-
-/*====================== Footer Content ======================*/
 
 interface FooterWithLogoImg {
     img: string
@@ -28,8 +24,6 @@ interface FooterWithLogoText {
 }
 
 type LibFooterLogo = FooterWithLogoImg | FooterWithLogoText
-
-/*====================== Footer component ======================*/
 
 interface ILibFooterBase extends LibComponentBase<HTMLDivElement> {
     withSeparator?: boolean

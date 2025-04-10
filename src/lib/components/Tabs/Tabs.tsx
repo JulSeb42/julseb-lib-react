@@ -1,5 +1,3 @@
-/*=============================================== Tabs component ===============================================*/
-
 import { forwardRef, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import { uuid } from "@julseb-lib/utils"

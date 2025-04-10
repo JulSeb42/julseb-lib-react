@@ -1,5 +1,3 @@
-/*=============================================== InputComponents styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import {
     Mixins,
@@ -18,8 +16,6 @@ import type {
     LibValidationStatus,
     LibInputListDirection,
 } from "../../types"
-
-/*====================== IconContainer ======================*/
 
 const StyledInputIconContainer = styled.span<{
     $validationStatus: LibValidationStatus | undefined
@@ -66,8 +62,6 @@ const StyledInputIconContainer = styled.span<{
     }}
 `
 
-/*====================== LeftContainer ======================*/
-
 const CommonLeftAndRight = ({
     $disabled,
     $withBorder,
@@ -107,8 +101,6 @@ const StyledInputLeftContainer = styled.span<{
     }
 `
 
-/*====================== RightContainer ======================*/
-
 const StyledInputRightContainer = styled.span<{
     $disabled: boolean | undefined
     $withPadding?: boolean
@@ -131,8 +123,6 @@ const StyledInputRightContainer = styled.span<{
             }
         `}
 `
-
-/*====================== InputValidationIcon ======================*/
 
 const StyledInputValidationIcon = styled.span<{
     $inputBackground: LibInputBackground | undefined
@@ -167,8 +157,6 @@ const StyledInputValidationIcon = styled.span<{
         }
     }}
 `
-
-/*====================== InputButton ======================*/
 
 const StyledInputButton = styled.button<{
     $inputBackground: LibInputBackground | undefined
@@ -306,8 +294,6 @@ const StyledInputButton = styled.button<{
     }}
 `
 
-/*====================== InputWrapper ======================*/
-
 const StyledInputWrapper = styled.div<{
     $inputBackground: LibInputBackground | undefined
     $inputVariant: LibInputVariant | undefined
@@ -403,8 +389,6 @@ const StyledInputWrapper = styled.div<{
     }}
 `
 
-/*====================== ListInput ======================*/
-
 const StyledListInput = styled.div<{
     $direction?: LibInputListDirection
     $inputBackground: LibInputBackground | undefined
@@ -488,8 +472,6 @@ const StyledListInput = styled.div<{
         }
     }}
 `
-
-/*====================== ListInputItem ======================*/
 
 const StyledListInputItem = styled.span<{
     $validationStatus: LibValidationStatus
@@ -625,8 +607,6 @@ const StyledListInputItem = styled.span<{
     }}
 `
 
-/*====================== InputPrefix and InputSuffix ======================*/
-
 const InputPrefixAndSuffixCommon = ({
     $inputBackground,
 }: {
@@ -698,8 +678,6 @@ const StyledInputSuffix = styled.span<{
         left: 0;
     }
 `
-
-/*====================== InputAndListContainer ======================*/
 
 const StyledInputAndListContainer = styled.div`
     position: relative;

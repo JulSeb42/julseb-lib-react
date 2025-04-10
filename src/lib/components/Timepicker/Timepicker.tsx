@@ -1,5 +1,4 @@
 // @ts-nocheck
-/*=============================================== Timepicker component ===============================================*/
 
 import { forwardRef, useRef, type ChangeEvent } from "react"
 import { useClickOutside } from "../../"

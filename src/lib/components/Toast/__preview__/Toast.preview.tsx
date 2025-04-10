@@ -1,5 +1,3 @@
-/*=============================================== ToastPreview ===============================================*/
-
 import { Toast } from "../../../"
 import type { ILibToast } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
@@ -24,7 +22,7 @@ export const toastPreview: ComponentPreview<ILibToast> = {
                 "data-testid": "testid",
                 className: "className",
                 hideCloseButton: true,
-                status: "error"
+                status: "error",
             },
         },
         { previewTitle: "With toaster", demo: <ToasterDemo /> },

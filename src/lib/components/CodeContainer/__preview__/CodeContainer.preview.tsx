@@ -1,10 +1,9 @@
-/*=============================================== CodeContainerPreview ===============================================*/
-
 import { CodeContainer } from "../../../"
 import type { ILibCodeContainer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-const code = 'const Modal = styled.div`\n\topacity: 0;\n\tvisibility: hidden;\n\n\t&.Open {\n\t\topacity: 0;\n\t\tvisibility: visible;\n\t}\n`\n\nconst [isOpen, setIsOpen] = useState(false)\n\nreturn (\n\t<>\n\t\t<Button onClick={() => setIsOpen(!isOpen)}>Open modal</Button>\n\t\t<Modal className={classNames({ Open: isOpen })}>\n\t\t\t...\n\t\t</Modal>\n\t</>\n)'
+const code =
+    "const Modal = styled.div`\n\topacity: 0;\n\tvisibility: hidden;\n\n\t&.Open {\n\t\topacity: 0;\n\t\tvisibility: visible;\n\t}\n`\n\nconst [isOpen, setIsOpen] = useState(false)\n\nreturn (\n\t<>\n\t\t<Button onClick={() => setIsOpen(!isOpen)}>Open modal</Button>\n\t\t<Modal className={classNames({ Open: isOpen })}>\n\t\t\t...\n\t\t</Modal>\n\t</>\n)"
 
 export const codeContainerPreview: ComponentPreview<ILibCodeContainer> = {
     name: "CodeContainer",

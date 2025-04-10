@@ -1,5 +1,3 @@
-/*=============================================== Toast component ===============================================*/
-
 import { forwardRef, useEffect, useCallback, useRef, useState } from "react"
 import classNames from "classnames"
 import { uuid } from "@julseb-lib/utils"

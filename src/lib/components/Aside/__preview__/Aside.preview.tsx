@@ -1,5 +1,3 @@
-/*=============================================== AsidePreview ===============================================*/
-
 import { Aside } from "../../../"
 import { ContainerPreview } from "../../../../data/previews/layouts/Container.preview"
 import type { ILibAside } from "../../../types/components-props"

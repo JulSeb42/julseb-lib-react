@@ -1,5 +1,3 @@
-/*=============================================== InputCheck types ===============================================*/
-
 import type { CSSProperties, InputHTMLAttributes } from "react"
 import type {
     LibIcon,

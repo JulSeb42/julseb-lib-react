@@ -1,5 +1,3 @@
-/*=============================================== Stepper types ===============================================*/
-
 import type {
     LibColorsHover,
     LibComponentBase,
@@ -9,8 +7,6 @@ import type {
     LibStepperDirection,
     LibButtonLinkBlank,
 } from "../../types"
-
-/*====================== Stepper ======================*/
 
 interface ILibStepperBase extends LibComponentBase<HTMLDivElement> {
     direction?: LibStepperDirection
@@ -32,8 +28,6 @@ interface StepperWithChildren extends ILibStepperBase {
 }
 
 export type ILibStepper = StepperWithSteps | StepperWithChildren
-
-/*====================== Step ======================*/
 
 export type ILibStep = LibComponentBase<HTMLSpanElement> &
     LibButtonLinkBlank & {

@@ -1,5 +1,3 @@
-/*=============================================== Slideshow types ===============================================*/
-
 import type { ReactNode } from "react"
 import type {
     LibColorsHover,

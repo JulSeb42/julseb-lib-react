@@ -1,5 +1,3 @@
-/*=============================================== SelectInput component ===============================================*/
-
 import { forwardRef, useRef } from "react"
 import { useMergeRefs } from "../../../hooks"
 import { CaretDown } from "../../../icons"

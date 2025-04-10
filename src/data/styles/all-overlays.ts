@@ -1,5 +1,3 @@
-/*=============================================== All overlays ===============================================*/
-
 import { OVERLAYS, LIB_TOKENS } from "../../lib"
 import type { Variable } from "../types"
 

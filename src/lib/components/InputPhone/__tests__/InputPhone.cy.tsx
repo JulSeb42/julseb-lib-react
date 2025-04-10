@@ -1,5 +1,3 @@
-/*=============================================== InputPhone tests ===============================================*/
-
 import { Preview } from "./Preview"
 
 describe("<InputPhone />", () => {

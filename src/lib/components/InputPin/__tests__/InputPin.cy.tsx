@@ -1,5 +1,3 @@
-/*=============================================== InputPin tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { InputPinPreview } from "./Preview"
 

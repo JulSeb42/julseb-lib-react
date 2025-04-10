@@ -1,5 +1,3 @@
-/*=============================================== PageLayout component ===============================================*/
-
 import { Helmet, Header, Wrapper, Main, Footer, PageLoading } from "../../"
 import type { ILibPageLayout } from "./types"
 

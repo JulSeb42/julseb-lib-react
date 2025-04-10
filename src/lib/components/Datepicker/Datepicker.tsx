@@ -1,5 +1,3 @@
-/*=============================================== Datepicker component ===============================================*/
-
 import { forwardRef, useRef, useState, type ChangeEvent } from "react"
 import { convertDateShort } from "@julseb-lib/utils"
 import { useClickOutside } from "../../"

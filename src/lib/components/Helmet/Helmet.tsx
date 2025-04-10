@@ -1,5 +1,3 @@
-/*=============================================== Helmet component ===============================================*/
-
 import { Helmet as Meta } from "react-helmet"
 import type { ILibHelmet } from "./types"
 

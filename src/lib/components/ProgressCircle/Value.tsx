@@ -1,5 +1,3 @@
-/*=============================================== Value ===============================================*/
-
 import { SrOnly } from "../../"
 import { Value as StyledValue } from "./styles"
 import type { ILibProgressCircleValue } from "./subtypes"

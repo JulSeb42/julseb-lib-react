@@ -1,5 +1,3 @@
-/*=============================================== Integer range ===============================================*/
-
 type Enumerate<
     N extends number,
     Acc extends Array<number> = []

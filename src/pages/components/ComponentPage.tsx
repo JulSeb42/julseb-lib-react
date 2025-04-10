@@ -1,5 +1,3 @@
-/*=============================================== ComponentPage ===============================================*/
-
 import { useParams } from "react-router-dom"
 import { toKebabCase, toTitleCase } from "@julseb-lib/utils"
 import { Page, ComponentPreview } from "../../components"

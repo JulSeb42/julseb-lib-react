@@ -1,16 +1,8 @@
 @charset "UTF-8";
 
-/*=============================================== TSX Lib base CSS ===============================================*/
-
-/*====================== Fonts ======================*/
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
 
-/*==================== Variables ====================*/
-
 :root {
-    /*===== Colors =====*/
-
     --color-black: rgb(0, 0, 0);
     --color-white: rgb(255, 255, 255);
 
@@ -172,8 +164,6 @@
     --color-dark-background-ghost-hover: var(--color-dark-gray-200);
     --color-dark-background-ghost-active: var(--color-dark-gray-100);
 
-    /*===== Overlays =====*/
-
     --overlay-black-50: rgba(0, 0, 0, 0.5);
     --overlay-black-80: rgba(0, 0, 0, 0.8);
     --overlay-white-50: rgba(255, 255, 255, 0.5);
@@ -188,8 +178,6 @@
         rgba(0, 0, 0, 0) 0%,
         rgba(255, 255, 255, 0.35) 100%
     );
-
-    /*===== Fonts =====*/
 
     /* Font families */
 
@@ -223,8 +211,6 @@
     --line-height-body: 1.5;
     --line-height-code: 1.8;
 
-    /*===== Shadows =====*/
-
     --shadow-xxl: 0px 10px 14px 8px rgba(0, 0, 0, 0.2),
         0px 4px 4px rgba(0, 0, 0, 0.3);
     --shadow-xl: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
@@ -238,8 +224,6 @@
     --shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.3),
         0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 
-    /*===== Spacers =====*/
-
     --spacer-xxl: 48px;
     --spacer-xl: 32px;
     --spacer-l: 24px;
@@ -247,8 +231,6 @@
     --spacer-s: 12px;
     --spacer-xs: 8px;
     --spacer-xxs: 4px;
-
-    /*===== Radiuses =====*/
 
     --radius-xxl: 24px;
     --radius-xl: 16px;
@@ -258,8 +240,6 @@
     --radius-xs: 2px;
     --radius-round: 99em;
     --radius-circle: 50%;
-
-    /*===== Layouts =====*/
 
     /* Main */
 
@@ -272,8 +252,6 @@
 
     --aside-default: 250px;
     --aside-small: 200px;
-
-    /*===== Transitions =====*/
 
     --transition-short: all 200ms ease;
     --transition-long: all 500ms ease;
@@ -290,8 +268,6 @@
         --aside-small: 90%;
     }
 }
-
-/*==================== Reset ====================*/
 
 *,
 *:before,
@@ -452,15 +428,11 @@ u {
     text-decoration: underline;
     color: currentColor;
 }
-    
-/*==================== Base styles ====================*/
 
 .stop-scrolling {
     height: 100vh;
     overflow: hidden;
 }
-
-/*==================== Helpers ====================*/
 
 .text-left {
     text-align: left !important;
@@ -570,8 +542,6 @@ u {
 .smooth {
     scroll-behavior: smooth;
 }
-
-/*==================== Background colors ====================*/
 
 .bg-black {
     background-color: var(--color-black) !important;
@@ -821,8 +791,6 @@ u {
     background-color: var(--color-warning-900) !important;
 }
 
-/*==================== Overlays ====================*/
-
 .bg-overlay-black-50 {
     background: var(--overlay-black-50) !important;
 }
@@ -846,8 +814,6 @@ u {
 .bg-overlay-gradient-white {
     background: var(--overlay-gradient-white) !important;
 }
-
-/*==================== Font colors ====================*/
 
 .font-black {
     color: var(--color-black) !important;
@@ -1097,8 +1063,6 @@ u {
     color: var(--color-warning-900) !important;
 }
 
-/*==================== Border colors ====================*/
-
 .border-black {
     border-color: var(--color-black) !important;
 }
@@ -1347,8 +1311,6 @@ u {
     border-color: var(--color-warning-900) !important;
 }
 
-/*==================== Radiuses ====================*/
-
 .radius-xxl {
     -webkit-border-radius: var(--radius-xxl) !important;
     border-radius: var(--radius-xxl) !important;
@@ -1388,8 +1350,6 @@ u {
     -webkit-border-radius: var(--radius-circle) !important;
     border-radius: var(--radius-circle) !important;
 }
-
-/*==================== Shadows ====================*/
 
 .shadow-xxl {
     -webkit-box-shadow: var(--shadow-xxl) !important;

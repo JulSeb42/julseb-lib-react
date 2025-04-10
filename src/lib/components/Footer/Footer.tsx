@@ -1,5 +1,3 @@
-/*=============================================== Footer component ===============================================*/
-
 import { forwardRef, Fragment } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { FooterLogo } from "./FooterLogo"

@@ -1,5 +1,3 @@
-/*=============================================== InputCounterPreview ===============================================*/
-
 import { useState } from "react"
 import { InputCounter } from "../../../"
 import type { ILibInputCounter } from "../../../types/components-props"

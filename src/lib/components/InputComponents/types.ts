@@ -1,5 +1,3 @@
-/*=============================================== InputComponents types ===============================================*/
-
 import type { CSSProperties, MouseEventHandler } from "react"
 import type {
     ReactChildren,
@@ -12,8 +10,6 @@ import type {
     LibInputPrefixAndSuffix,
     LibHelperBottom,
 } from "../../types"
-
-/*====================== Validation ======================*/
 
 interface LibValidationHelper {
     status: LibValidationStatus
@@ -42,8 +38,6 @@ export interface ILibInputValidationIcon {
     validation: LibValidationHelper
 }
 
-/*====================== No focus ======================*/
-
 export interface ILibInputNoFocusKeys {
     type:
         | undefined
@@ -66,8 +60,6 @@ export interface ILibInputNoFocusKeys {
     focusKeys?: never
     showKeys?: never
 }
-
-/*====================== InputBase ======================*/
 
 /**
  * @description Base props for inputs
@@ -99,8 +91,6 @@ export interface ILibExtendedInputBase extends ILibInputBase {
     maxLength?: number
 }
 
-/*====================== InputContainer ======================*/
-
 export interface ILibInputContainer {
     "data-testid": string | undefined
     className: string | undefined
@@ -119,8 +109,6 @@ export interface ILibInputContainer {
     style?: CSSProperties
 }
 
-/*====================== InputIconContainer ======================*/
-
 export interface ILibInputIconContainer {
     "data-testid": string | undefined
     className: string | undefined
@@ -133,8 +121,6 @@ export interface ILibInputIconContainer {
     inputVariant: LibInputVariant | undefined
 }
 
-/*====================== InputRightContainer ======================*/
-
 export interface ILibInputRightContainer {
     "data-testid": string | undefined
     className: string | undefined
@@ -144,16 +130,12 @@ export interface ILibInputRightContainer {
     children?: ReactChildren
 }
 
-/*====================== InputLeftContainer ======================*/
-
 export interface ILibInputLeftContainer {
     "data-testid": string | undefined
     className: string | undefined
     children?: ReactChildren
     disabled: boolean | undefined
 }
-
-/*====================== InputButton ======================*/
 
 interface ILibInputButtonBase {
     "data-testid": string | undefined
@@ -184,8 +166,6 @@ export type ILibInputButton = RequireAtLeastOne<
     "icon" | "text"
 >
 
-/*====================== InputWrapper ======================*/
-
 export interface ILibInputWrapper {
     "data-testid": string | undefined
     className: string | undefined
@@ -198,8 +178,6 @@ export interface ILibInputWrapper {
     validationStatus: LibValidationStatus
 }
 
-/*====================== List input ======================*/
-
 export interface ILibListInput {
     "data-testid": string | undefined
     className: string | undefined
@@ -210,8 +188,6 @@ export interface ILibListInput {
     isOpen: boolean
     children?: ReactChildren
 }
-
-/*====================== List input item ======================*/
 
 interface ILibListInputItemBase {
     "data-testid": string | undefined
@@ -237,8 +213,6 @@ interface ListInputItemReadOnly extends ILibListInputItemBase {
 
 export type ILibListInputItem = ListInputItemActive | ListInputItemReadOnly
 
-/*====================== Input with icon and prefix / suffix ======================*/
-
 export interface ILibInputIcon {
     suffix?: LibInputPrefixAndSuffix
     icon?: LibIcon
@@ -246,8 +220,6 @@ export interface ILibInputIcon {
     iconBaseUrl?: string
     prefix?: string
 }
-
-/*====================== Inputs with prefix and suffix ======================*/
 
 interface ILibPrefixAndSuffixBase {
     "data-testid": string | undefined
@@ -276,8 +248,6 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
      */
     suffix?: LibInputPrefixAndSuffix
 }
-
-/*====================== InputAndListContainer ======================*/
 
 export interface ILibInputAndListContainer {
     "data-testid": string | undefined

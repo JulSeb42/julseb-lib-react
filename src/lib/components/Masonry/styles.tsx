@@ -1,5 +1,3 @@
-/*=============================================== Masonry styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { Mixins, setDefaultTheme } from "../../"
 import type { LibSpacers } from "../../types"

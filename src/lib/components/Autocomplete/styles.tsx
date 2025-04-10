@@ -1,5 +1,3 @@
-/*=============================================== Autocomplete styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme } from "../../"
 import { InputBaseMixin, type ILibInputBaseMixin } from "../ComponentsMixins"

@@ -1,5 +1,3 @@
-/*=============================================== Button types ===============================================*/
-
 import type { ButtonHTMLAttributes } from "react"
 import type {
     LibComponentBase,

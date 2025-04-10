@@ -1,5 +1,3 @@
-/*=============================================== BackToTopPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { BackToTop, Text } from "../../../"
 import type { ILibBackToTop } from "../../../types/components-props"

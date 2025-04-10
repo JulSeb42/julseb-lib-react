@@ -1,5 +1,3 @@
-/*=============================================== AvatarPreview ===============================================*/
-
 import { Avatar, Flexbox } from "../../../"
 import { typeValues, type LibColorsShort } from "../../../types"
 import type { ILibAvatar } from "../../../types/components-props"

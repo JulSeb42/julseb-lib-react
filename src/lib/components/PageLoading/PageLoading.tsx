@@ -1,5 +1,3 @@
-/*=============================================== PageLoading component ===============================================*/
-
 import { forwardRef, useEffect } from "react"
 import { disableScroll } from "@julseb-lib/utils"
 import { Loader } from "../../"

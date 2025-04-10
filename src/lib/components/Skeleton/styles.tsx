@@ -1,12 +1,8 @@
-/*=============================================== Skeleton styles ===============================================*/
-
 import styled, { css, keyframes } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Flexbox, Mixins } from "../../"
 import type { ILibBorder, ILibPadding, LibSkeletonAnimation } from "../../types"
 import type { ILibSkeletonCommonStyles } from "./subtypes"
-
-/*====================== Keyframes ======================*/
 
 const ShineLoad = keyframes`
     from {
@@ -27,8 +23,6 @@ const Pulse = keyframes`
         opacity: 1;
     }
 `
-
-/*====================== Mixins ======================*/
 
 const Common = ({
     $width = "100%",
@@ -64,8 +58,6 @@ const Shine = css`
     animation: ${ShineLoad} 2000ms infinite;
     opacity: 0.7;
 `
-
-/*====================== Components ======================*/
 
 const StyledSkeletonCard = styled(Flexbox)<
     ILibSkeletonCommonStyles & { $border?: ILibBorder; $padding?: ILibPadding }

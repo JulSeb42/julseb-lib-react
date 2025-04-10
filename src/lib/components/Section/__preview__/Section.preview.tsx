@@ -1,5 +1,3 @@
-/*=============================================== SectionPreview ===============================================*/
-
 import { Section } from "../"
 import { Text } from "../../../"
 import type { ILibSection } from "../types"

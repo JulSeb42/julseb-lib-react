@@ -1,5 +1,3 @@
-/*=============================================== TabsPreview ===============================================*/
-
 import { Tabs, Text } from "../../../"
 import type { LibTabItem } from "../../../types"
 import type { ILibTabs } from "../../../types/components-props"

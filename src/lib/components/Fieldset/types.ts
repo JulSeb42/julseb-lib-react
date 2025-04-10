@@ -1,5 +1,3 @@
-/*=============================================== Fieldset types ===============================================*/
-
 import type {
     CssAlignContent,
     CssAlignItems,

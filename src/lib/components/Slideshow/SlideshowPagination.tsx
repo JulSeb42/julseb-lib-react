@@ -1,5 +1,3 @@
-/*=============================================== SlideshowNav ===============================================*/
-
 import classNames from "classnames"
 import { uuid, generateNumbers } from "@julseb-lib/utils"
 import { Image } from "../.."

@@ -1,5 +1,3 @@
-/*=============================================== HoverContainer ===============================================*/
-
 import classNames from "classnames"
 import { LibIcon } from "../LibIcon"
 import { Edit } from "../../icons"

@@ -1,5 +1,3 @@
-/*=============================================== Messaging types ===============================================*/
-
 import type { ReactNode } from "react"
 import type {
     LibComponentBase,
@@ -10,8 +8,6 @@ import type {
     LibMessagingDateFormat,
 } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
-
-/*====================== Messaging ======================*/
 
 export interface ILibMessaging
     extends LibComponentBase<HTMLDivElement>,
@@ -24,12 +20,8 @@ export interface ILibMessaging
     children?: never
 }
 
-/*====================== MessagesContainer ======================*/
-
 export interface ILibMessagesContainer
     extends LibComponentBase<HTMLDivElement> {}
-
-/*====================== MessagesList ======================*/
 
 interface ILibMessagesListBase
     extends LibComponentBase<HTMLDivElement>,
@@ -56,8 +48,6 @@ interface MessagesListWithoutScrollButton extends ILibMessagesListBase {
 export type ILibMessagesList =
     | MessagesListWithScrollButton
     | MessagesListWithoutScrollButton
-
-/*====================== MessageForm ======================*/
 
 type MessageFormButtonWithIcon = {
     icon?: LibIcon
@@ -87,8 +77,6 @@ export interface ILibMessageForm
     setInputHeight: DispatchState<number>
     iconBaseUrl?: string
 }
-
-/*====================== Message ======================*/
 
 interface ILibMessageBase
     extends LibComponentBase<HTMLDivElement>,

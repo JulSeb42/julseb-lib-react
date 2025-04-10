@@ -1,5 +1,3 @@
-/*=============================================== SrOnly component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSrOnly } from "./styles"
 import type { ILibSrOnly } from "./types"

@@ -1,5 +1,3 @@
-/*=============================================== InputDemo ===============================================*/
-
 import { useState, type ChangeEvent } from "react"
 import { Input } from "../../../"
 import type { LibValidationStatus } from "../../../types"

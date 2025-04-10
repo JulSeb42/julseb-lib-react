@@ -1,5 +1,3 @@
-/*=============================================== Main styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
 import { setDefaultTheme, Mixins, MEDIA, SPACERS, LAYOUTS } from "../../"

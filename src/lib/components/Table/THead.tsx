@@ -1,5 +1,3 @@
-/*=============================================== THead component ===============================================*/
-
 import { forwardRef } from "react"
 import type { ILibTHead } from "./types"
 

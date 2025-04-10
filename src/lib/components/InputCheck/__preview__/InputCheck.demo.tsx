@@ -1,5 +1,3 @@
-/*=============================================== InputCheck demo ===============================================*/
-
 import type { ReactNode } from "react"
 import type { CssFlexDirection, LibSpacers } from "../../../types"
 import { InputCheck, Flexbox } from "../../../"

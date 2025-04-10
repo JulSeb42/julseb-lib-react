@@ -1,5 +1,3 @@
-/*=============================================== Preview ===============================================*/
-
 import { NodePlopAPI } from "plop"
 
 export default (plop: NodePlopAPI) => {

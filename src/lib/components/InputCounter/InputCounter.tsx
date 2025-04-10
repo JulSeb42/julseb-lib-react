@@ -1,5 +1,3 @@
-/*=============================================== InputCounter component ===============================================*/
-
 import { forwardRef, type ChangeEvent, useCallback } from "react"
 import classNames from "classnames"
 import { ButtonIcon } from "../../"

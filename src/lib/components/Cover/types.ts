@@ -1,5 +1,3 @@
-/*=============================================== Cover types ===============================================*/
-
 import type { LibComponentBase, LibOverlays, ILibPadding } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 

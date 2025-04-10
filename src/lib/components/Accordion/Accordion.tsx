@@ -1,5 +1,3 @@
-/*=============================================== Accordion component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { uuid, capitalize } from "@julseb-lib/utils"

@@ -1,5 +1,3 @@
-/*=============================================== DemoPageLoading ===============================================*/
-
 import type { FC } from "react"
 import { BasePage } from "../../components"
 import { PageLoading } from "../../lib"

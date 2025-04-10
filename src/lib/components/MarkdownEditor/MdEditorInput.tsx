@@ -1,5 +1,3 @@
-/*=============================================== MdEditorInput ===============================================*/
-
 import { forwardRef, useCallback, type ChangeEvent } from "react"
 import classNames from "classnames"
 import { useMergeRefs, optionsMarkdown } from "../../"

@@ -1,5 +1,3 @@
-/*=============================================== MarkdownEditor styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import Markdown from "markdown-to-jsx"
 import {

@@ -1,5 +1,3 @@
-/*=============================================== SearchInput component ===============================================*/
-
 import { forwardRef, useRef, useCallback } from "react"
 import { Key, useKeyPress, useMergeRefs, useTouchScreen } from "../../.."
 import {

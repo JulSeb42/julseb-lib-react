@@ -1,5 +1,3 @@
-/*=============================================== Tabs tests demo ===============================================*/
-
 import { Text } from "../../Text"
 import type { LibTabItem } from "../../../types"
 

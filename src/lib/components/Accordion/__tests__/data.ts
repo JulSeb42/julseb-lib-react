@@ -1,5 +1,3 @@
-/*=============================================== Accordion data ===============================================*/
-
 import type { LibAccordionItem } from "../../../types"
 
 export const items: Array<LibAccordionItem> = [

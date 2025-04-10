@@ -1,5 +1,3 @@
-/*=============================================== MarkdownButtons component ===============================================*/
-
 import { uuid, toSentenceCase } from "@julseb-lib/utils"
 import { roundIconSize } from "../../../lib-utils"
 import { mdButtons } from "../markdown-buttons"

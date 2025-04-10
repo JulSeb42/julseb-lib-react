@@ -1,5 +1,3 @@
-/*=============================================== ProgressCircle component ===============================================*/
-
 import { forwardRef } from "react"
 import { LibIcon } from "../LibIcon"
 import { ProgressCircleFn } from "./ProgressCircleFn"

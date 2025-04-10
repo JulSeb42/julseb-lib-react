@@ -1,5 +1,3 @@
-/*=============================================== StickyPreview ===============================================*/
-
 import { Sticky, Text, Button } from "../../../"
 import type { ILibSticky } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

@@ -1,5 +1,3 @@
-/*=============================================== IconMenuPreview ===============================================*/
-
 import { IconMenu } from "../../../"
 import { Check } from "../../../icons"
 import type { LibIconMenuItem } from "../../../types"

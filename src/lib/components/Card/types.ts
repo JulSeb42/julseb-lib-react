@@ -1,5 +1,3 @@
-/*=============================================== Card types ===============================================*/
-
 import type {
     LibComponentBase,
     LibButtonLinkBlank,

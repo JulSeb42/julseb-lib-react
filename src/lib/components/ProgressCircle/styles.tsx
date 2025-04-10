@@ -1,5 +1,3 @@
-/*=============================================== ProgressCircle styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, Mixins, Text, TRANSITIONS } from "../../"
 import type { LibAllColors } from "../../types"

@@ -1,5 +1,3 @@
-/*=============================================== Paginator types ===============================================*/
-
 import type { LibColorsHover, LibIcon } from "../../types"
 import type { ILibFlexbox } from "../Flexbox/types"
 

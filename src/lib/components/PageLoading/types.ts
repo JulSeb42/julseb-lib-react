@@ -1,5 +1,3 @@
-/*=============================================== PageLoading types ===============================================*/
-
 import type {
     LibComponentBase,
     LibAllColors,

@@ -1,5 +1,3 @@
-/*=============================================== Wrapper component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledWrapper } from "./styles"
 import type { ILibWrapper } from "./types"

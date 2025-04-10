@@ -1,5 +1,3 @@
-/*=============================================== ColorCard types ===============================================*/
-
 import type { RequireAtLeastOne } from "../../lib/types"
 import type { Color, Variable } from "../../data/types"
 

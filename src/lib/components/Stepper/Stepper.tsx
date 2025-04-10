@@ -1,5 +1,3 @@
-/*=============================================== Stepper component ===============================================*/
-
 import { forwardRef } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { Step } from "./Step"

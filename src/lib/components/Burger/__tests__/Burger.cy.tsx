@@ -1,5 +1,3 @@
-/*=============================================== Burger tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { BurgerPreview } from "./Preview"
 

@@ -1,5 +1,3 @@
-/*=============================================== Icon types ===============================================*/
-
 import type { Props as SVGProps } from "react-inlinesvg"
 import type { LibAllColors } from "../../types"
 

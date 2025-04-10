@@ -1,5 +1,3 @@
-/*=============================================== Lib icons types ===============================================*/
-
 import type { HTMLAttributes } from "react"
 import type { LibAllColors } from "../types"
 

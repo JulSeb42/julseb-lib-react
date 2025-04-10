@@ -1,5 +1,3 @@
-/*=============================================== GridItem ===============================================*/
-
 import styled from "styled-components"
 import { Text, RADIUSES, SPACERS } from "../lib"
 

@@ -1,5 +1,3 @@
-/*=============================================== Theme type ===============================================*/
-
 import { COLORS_LIGHT, COLORS_DARK } from "../Variables"
 import type { LibThemeNames } from "./global"
 

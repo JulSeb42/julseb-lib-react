@@ -1,5 +1,3 @@
-/*=============================================== Modal tests preview ===============================================*/
-
 import { useState } from "react"
 import { enableScroll, disableScroll } from "@julseb-lib/utils"
 import { Modal, Button, Image, Alert } from "../../../"

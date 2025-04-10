@@ -1,5 +1,3 @@
-/*=============================================== Video tests ===============================================*/
-
 import { Video } from "../../.."
 import { VIDEO_SRC } from "../__preview__/Video.preview"
 

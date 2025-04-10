@@ -1,5 +1,3 @@
-/*=============================================== InputCounter types ===============================================*/
-
 import type { InputHTMLAttributes } from "react"
 import type {
     LibIcon,

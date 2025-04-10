@@ -1,5 +1,3 @@
-/*=============================================== Badge tests ===============================================*/
-
 import { Badge, LIB_TOKENS } from "../../.."
 import { roundIconSize } from "../../../lib-utils"
 import { Plus } from "../../../icons"

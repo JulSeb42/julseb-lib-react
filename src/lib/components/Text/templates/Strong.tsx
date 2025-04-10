@@ -1,5 +1,3 @@
-/*=============================================== Strong ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledStrong } from "../styles"
 import type { ILibText } from "../types"

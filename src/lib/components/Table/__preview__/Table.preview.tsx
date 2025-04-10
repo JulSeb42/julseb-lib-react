@@ -1,5 +1,3 @@
-/*=============================================== TablePreview ===============================================*/
-
 import { Table } from "../../../"
 import { toTitleCase } from "@julseb-lib/utils"
 import type { ILibTable } from "../../../types/components-props"

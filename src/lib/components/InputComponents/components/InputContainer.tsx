@@ -1,5 +1,3 @@
-/*=============================================== InputContainer component ===============================================*/
-
 import { InputContainer as Container } from "../../InputContainer"
 import type { ILibInputContainer } from "../../InputContainer/types"
 

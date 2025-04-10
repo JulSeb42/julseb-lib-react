@@ -1,5 +1,3 @@
-/*=============================================== HeaderNav ===============================================*/
-
 import { useRef, type ReactNode } from "react"
 import classNames from "classnames"
 import { uuid } from "@julseb-lib/utils"

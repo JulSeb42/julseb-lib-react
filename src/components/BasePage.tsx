@@ -1,5 +1,3 @@
-/*=============================================== BasePage ===============================================*/
-
 import { Helmet } from "../lib"
 import { ResetScroll } from "./ResetScroll"
 import { SITE_DATA } from "../data"

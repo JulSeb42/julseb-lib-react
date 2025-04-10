@@ -1,5 +1,3 @@
-/*=============================================== Select sub components types ===============================================*/
-
 import type { MouseEventHandler } from "react"
 import type { ILibSelect } from "./types"
 import type { ILibInputBaseMixin } from "../ComponentsMixins"

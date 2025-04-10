@@ -1,5 +1,3 @@
-/*=============================================== MarkdownContainer styles ===============================================*/
-
 import styled from "styled-components"
 import Markdown from "markdown-to-jsx"
 import { setDefaultTheme, Mixins } from "../../"

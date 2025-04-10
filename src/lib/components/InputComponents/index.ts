@@ -1,5 +1,3 @@
-/*=============================================== InputComponents exports ===============================================*/
-
 export * from "./components/InputContainer"
 export * from "./components/InputIcon"
 export * from "./components/InputRightContainer"

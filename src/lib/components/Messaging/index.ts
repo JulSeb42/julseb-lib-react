@@ -1,5 +1,3 @@
-/*=============================================== Messaging exports ===============================================*/
-
 export * from "./Messaging"
 export * from "./MessagesContainer"
 export * from "./MessagesList"

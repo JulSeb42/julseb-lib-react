@@ -1,5 +1,3 @@
-/*=============================================== DragList component ===============================================*/
-
 import { forwardRef, Fragment, useState, useRef, type DragEvent } from "react"
 import { Hr } from "../../"
 import { DragListItem } from "./DragListItem"

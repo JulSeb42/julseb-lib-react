@@ -1,5 +1,3 @@
-/*=============================================== Youtube component ===============================================*/
-
 import { forwardRef } from "react"
 import { convertYoutube } from "@julseb-lib/utils"
 import { StyledYoutube } from "./styles"

@@ -1,5 +1,3 @@
-/*=============================================== Key styles ===============================================*/
-
 import styled from "styled-components"
 import { setDefaultTheme, RADIUSES, FONT_SIZES, SPACERS, Mixins } from "../../"
 import type { LibKeySize, LibColorsShort } from "../../types"

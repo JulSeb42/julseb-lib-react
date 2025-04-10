@@ -1,5 +1,3 @@
-/*=============================================== Toast types ===============================================*/
-
 import type {
     LibComponentBase,
     LibToasterPosition,

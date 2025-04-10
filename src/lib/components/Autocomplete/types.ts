@@ -1,5 +1,3 @@
-/*=============================================== Autocomplete types ===============================================*/
-
 import type { InputHTMLAttributes } from "react"
 import type { IFuseOptions } from "fuse.js"
 import type { LibIcon, LibInputListDirection, DispatchState } from "../../types"

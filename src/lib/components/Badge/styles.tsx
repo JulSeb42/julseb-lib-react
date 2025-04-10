@@ -1,5 +1,3 @@
-/*=============================================== Badge styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme } from "../../"
 import type { LibAllColors, ILibPadding, ILibRadius } from "../../types"

@@ -1,5 +1,3 @@
-/*=============================================== InputIconComponent ===============================================*/
-
 import { LibIcon } from "../../LibIcon"
 import { StyledInputIconContainer } from "../styles"
 import type { ILibInputIconContainer } from "../types"

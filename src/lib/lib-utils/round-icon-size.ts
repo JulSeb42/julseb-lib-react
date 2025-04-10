@@ -1,5 +1,3 @@
-/*=============================================== Round icon size ===============================================*/
-
 import { ICON_MULTIPLIER } from "../Variables"
 
 export const roundIconSize = (size: number) => {

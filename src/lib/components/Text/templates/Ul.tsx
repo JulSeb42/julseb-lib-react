@@ -1,5 +1,3 @@
-/*=============================================== Ul ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledUl } from "../styles"
 import type { ILibText } from "../types"

@@ -1,5 +1,3 @@
-/*=============================================== SlideshowButton ===============================================*/
-
 import { LibIcon } from "../LibIcon"
 import { ChevronLeft, ChevronRight } from "../../icons"
 import { StyledSlideshowButton } from "./styles"

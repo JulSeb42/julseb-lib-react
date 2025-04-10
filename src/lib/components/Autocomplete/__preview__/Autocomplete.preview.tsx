@@ -1,5 +1,3 @@
-/*=============================================== AutocompletePreview ===============================================*/
-
 import { useState } from "react"
 import { Autocomplete } from "../../../"
 import type { ILibAutocomplete } from "../../../types/components-props"

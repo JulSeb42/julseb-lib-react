@@ -1,5 +1,3 @@
-/*=============================================== MarkdownContainer component ===============================================*/
-
 import { forwardRef } from "react"
 import { optionsMarkdown } from "../../"
 import { StyledMarkdownContainer } from "./styles"

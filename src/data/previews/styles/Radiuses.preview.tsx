@@ -1,5 +1,3 @@
-/*=============================================== RadiusesPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { StylesCard } from "../../../components"
 import { Grid } from "../../../lib"

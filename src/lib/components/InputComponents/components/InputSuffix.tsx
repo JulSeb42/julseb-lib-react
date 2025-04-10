@@ -1,5 +1,3 @@
-/*=============================================== InputSuffix component ===============================================*/
-
 import { StyledInputSuffix } from "../styles"
 import type { ILibInputSuffix } from "../types"
 

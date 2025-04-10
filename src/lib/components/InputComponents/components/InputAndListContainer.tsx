@@ -1,5 +1,3 @@
-/*=============================================== InputAndListContainer component ===============================================*/
-
 import { forwardRef } from "react"
 import classNames from "classnames"
 import { StyledInputAndListContainer } from "../styles"

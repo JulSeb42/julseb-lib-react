@@ -1,5 +1,3 @@
-/*=============================================== Drawer component ===============================================*/
-
 import { forwardRef, useEffect } from "react"
 import classNames from "classnames"
 import {

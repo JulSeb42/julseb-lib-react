@@ -1,5 +1,3 @@
-/*=============================================== PageLayout types ===============================================*/
-
 import type { ReactChildren, LibPageLayoutTemplate } from "../../types"
 import type { ILibHelmet } from "../Helmet/types"
 import type { ILibHeader } from "../Header/types"

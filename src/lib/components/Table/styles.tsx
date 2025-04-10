@@ -1,5 +1,3 @@
-/*=============================================== Table styles ===============================================*/
-
 import styled, { css } from "styled-components"
 import { setDefaultTheme, SPACERS, Mixins, FONT_SIZES, MEDIA } from "../../"
 import { TextBaseMixin } from "../ComponentsMixins"

@@ -1,5 +1,3 @@
-/*=============================================== MarkdownContainerPreview ===============================================*/
-
 import { MarkdownContainer } from "../../../"
 import type { ILibMarkdownContainer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

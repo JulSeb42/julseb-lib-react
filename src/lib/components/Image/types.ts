@@ -1,5 +1,3 @@
-/*=============================================== Image types ===============================================*/
-
 import type { CSSProperties, ElementType, ImgHTMLAttributes } from "react"
 import type {
     LibComponentBase,

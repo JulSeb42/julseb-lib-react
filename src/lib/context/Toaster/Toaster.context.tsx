@@ -1,5 +1,4 @@
 // @ts-nocheck
-/*=============================================== Toaster context ===============================================*/
 
 import { createContext, useReducer, useContext } from "react"
 import { uuid } from "@julseb-lib/utils"

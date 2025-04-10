@@ -1,5 +1,3 @@
-/*=============================================== Tooltip component ===============================================*/
-
 import { forwardRef, useState, useRef, useCallback } from "react"
 import classNames from "classnames"
 import { useTouchScreen, useClickOutside } from "../../"

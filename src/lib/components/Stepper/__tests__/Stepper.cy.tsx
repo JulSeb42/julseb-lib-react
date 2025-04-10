@@ -1,5 +1,3 @@
-/*=============================================== Stepper tests ===============================================*/
-
 import { Stepper, LIB_TOKENS } from "../../.."
 import { stepperTestsData, ACTIVE_STEP } from "./data"
 

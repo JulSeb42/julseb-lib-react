@@ -1,5 +1,3 @@
-/*=============================================== Truncate styles ===============================================*/
-
 import type { FC } from "react"
 import styled from "styled-components"
 import { FONT_WEIGHTS, Mixins, setDefaultTheme, Tag } from "../../"

@@ -1,5 +1,3 @@
-/*=============================================== InputPinPreview ===============================================*/
-
 import { useState, type FormEvent } from "react"
 import { InputPin, Form } from "../../../"
 import type { LibValueInputPin } from "../../../types"

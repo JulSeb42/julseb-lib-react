@@ -1,5 +1,3 @@
-/*=============================================== Dropdown tests ===============================================*/
-
 import { LIB_TOKENS } from "../../.."
 import { Preview, PreviewDirection, PreviewColor } from "./Preview"
 

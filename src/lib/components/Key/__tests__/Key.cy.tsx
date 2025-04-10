@@ -1,5 +1,3 @@
-/*=============================================== Key tests ===============================================*/
-
 import { Key, LIB_TOKENS } from "../../.."
 import { typeValues, type LibColorsHover } from "../../../types"
 

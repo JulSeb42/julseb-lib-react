@@ -1,5 +1,3 @@
-/*=============================================== Generate ===============================================*/
-
 import type { FC } from "react"
 import { Page } from "../components"
 import {} from "../lib"

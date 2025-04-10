@@ -1,5 +1,3 @@
-/*=============================================== ColorsPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { ColorCard } from "../../../components"
 import { Flexbox, Tabs } from "../../../lib"

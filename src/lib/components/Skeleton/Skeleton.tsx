@@ -1,5 +1,3 @@
-/*=============================================== Skeleton component ===============================================*/
-
 import { forwardRef } from "react"
 import { StyledSkeleton } from "./styles"
 import type { ILibSkeleton } from "./types"

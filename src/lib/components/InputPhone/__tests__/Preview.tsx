@@ -1,5 +1,3 @@
-/*=============================================== InputPhonePreview ===============================================*/
-
 import { useState } from "react"
 import { InputPhone } from "../InputPhone"
 import type { LibCountry } from "../../../types"

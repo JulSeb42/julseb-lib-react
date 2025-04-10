@@ -1,5 +1,3 @@
-/*=============================================== ButtonIcon types ===============================================*/
-
 import type { ButtonHTMLAttributes, CSSProperties } from "react"
 import type {
     LibComponentBase,

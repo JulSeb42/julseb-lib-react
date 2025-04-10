@@ -1,5 +1,3 @@
-/*=============================================== LibIcon component ===============================================*/
-
 import { Icon } from "../../"
 import type { ILibLibIcon } from "./types"
 

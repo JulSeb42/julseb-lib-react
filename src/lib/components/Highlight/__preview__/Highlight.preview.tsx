@@ -1,5 +1,3 @@
-/*=============================================== HighlightPreview ===============================================*/
-
 import { Highlight } from "../../../"
 import type { ILibHighlight } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

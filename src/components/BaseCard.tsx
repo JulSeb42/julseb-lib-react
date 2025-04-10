@@ -1,5 +1,3 @@
-/*=============================================== BaseCard ===============================================*/
-
 import styled from "styled-components"
 import { Mixins, RADIUSES, SPACERS, setDefaultTheme } from "../lib"
 

@@ -1,5 +1,3 @@
-/*=============================================== InputWrapper component ===============================================*/
-
 import classNames from "classnames"
 import { StyledInputWrapper } from "../styles"
 import type { ILibInputWrapper } from "../types"

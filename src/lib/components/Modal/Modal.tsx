@@ -1,5 +1,3 @@
-/*=============================================== Modal component ===============================================*/
-
 import { forwardRef, useCallback, useRef } from "react"
 import classNames from "classnames"
 import { enableScroll, getRandomString, stringifyPx } from "@julseb-lib/utils"

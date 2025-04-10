@@ -1,5 +1,3 @@
-/*=============================================== Input sub components types ===============================================*/
-
 import type {
     InputHTMLAttributes,
     MouseEventHandler,
@@ -22,15 +20,11 @@ import type { ILibInputBaseMixin } from "../ComponentsMixins"
 
 // ! DO NOT EXPORT THOSE TYPES, ONLY USE THEM IN INPUT COMPONENTS
 
-/*====================== ColorInput ======================*/
-
 export type ILibColorInput = InputHTMLAttributes<HTMLInputElement> &
     Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputNoFocusKeys & {
         type: "color"
     }
-
-/*====================== DateInput ======================*/
 
 export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
     Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
@@ -42,16 +36,12 @@ export type ILibDateInput = InputHTMLAttributes<HTMLInputElement> &
         iconCalendarSize?: number
     }
 
-/*====================== FileInput ======================*/
-
 export type ILibFileInput = InputHTMLAttributes<HTMLInputElement> &
     Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     LibInputWithValidation &
     ILibInputNoFocusKeys & {
         type: "file"
     }
-
-/*====================== PasswordInput ======================*/
 
 type ILibPasswordInputBase = Omit<
     InputHTMLAttributes<HTMLInputElement>,
@@ -98,8 +88,6 @@ export type ILibPasswordInput =
     | PasswordWithButtonText
     | PasswordWithoutButton
 
-/*====================== SearchInput ======================*/
-
 type ILibSearchInputBase = Omit<
     InputHTMLAttributes<HTMLInputElement>,
     "prefix"
@@ -124,8 +112,6 @@ type SearchInputHideKeys = ILibSearchInputBase & {
 
 export type ILibSearchInput = SearchInputShowKeys | SearchInputHideKeys
 
-/*====================== SelectInput ======================*/
-
 export type ILibSelectInput = Omit<
     SelectHTMLAttributes<HTMLSelectElement>,
     "prefix"
@@ -139,16 +125,12 @@ export type ILibSelectInput = Omit<
         children?: ReactChildren
     }
 
-/*====================== TextareaInput ======================*/
-
 export type ILibTextareaInput = TextareaHTMLAttributes<HTMLTextAreaElement> &
     Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputNoFocusKeys & {
         type: "textarea"
         inputVariant?: never
     }
-
-/*====================== TextInput ======================*/
 
 export type ILibTextInput = Omit<
     InputHTMLAttributes<HTMLInputElement>,
@@ -160,8 +142,6 @@ export type ILibTextInput = Omit<
     Partial<ILibInputNoFocusKeys> & {
         type?: "email" | "number" | "tel" | "text" | "url" | undefined
     }
-
-/*====================== TimeInput ======================*/
 
 export type ILibTimeInput = Omit<
     InputHTMLAttributes<HTMLInputElement>,
@@ -175,8 +155,6 @@ export type ILibTimeInput = Omit<
         iconClock?: LibIcon
         iconClockSize?: number
     }
-
-/*====================== Styles ======================*/
 
 export interface ILibInputStyle extends ILibInputBaseMixin {
     $inputVariant: LibInputVariant | undefined

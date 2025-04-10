@@ -1,5 +1,3 @@
-/*=============================================== Avatar styles ===============================================*/
-
 import type { FC } from "react"
 import styled, { css } from "styled-components"
 import {

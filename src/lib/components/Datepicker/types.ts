@@ -1,5 +1,3 @@
-/*=============================================== Datepicker types ===============================================*/
-
 import type { InputHTMLAttributes } from "react"
 import type {
     DispatchState,

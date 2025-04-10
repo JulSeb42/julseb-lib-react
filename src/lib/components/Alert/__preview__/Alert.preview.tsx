@@ -1,5 +1,3 @@
-/*=============================================== AlertPreview ===============================================*/
-
 import { Alert, Text, Button, Flexbox } from "../../../"
 import { type LibColorsShort, typeValues } from "../../../types"
 import type { ILibAlert } from "../../../types/components-props"

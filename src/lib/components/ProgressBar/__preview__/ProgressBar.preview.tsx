@@ -1,5 +1,3 @@
-/*=============================================== ProgressBarPreview ===============================================*/
-
 import { ProgressBar, getRandomNumber } from "../../../"
 import { typeValues } from "../../../types"
 import type { ILibProgressBar } from "../../../types/components-props"

@@ -1,5 +1,3 @@
-/*=============================================== ButtonIconPreview ===============================================*/
-
 import { ButtonIcon, Flexbox } from "../../../"
 import {
     type LibButtonIconVariant,

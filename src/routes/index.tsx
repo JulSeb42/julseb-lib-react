@@ -1,19 +1,11 @@
-/*=============================================== Routes ===============================================*/
-
 import { createBrowserRouter } from "react-router-dom"
 import { slugify, toKebabCase } from "@julseb-lib/utils"
-
-/*====================== Root ======================*/
 
 import { Homepage } from "../pages/Homepage"
 import { Generate } from "../pages/Generate"
 import { NotFoundPage } from "../pages/404"
 
-/*====================== Components ======================*/
-
 import { ComponentPage } from "../pages/components/ComponentPage"
-
-/*====================== Demos ======================*/
 
 import { DemoMainDefault } from "../pages/demos/DemoMainDefault"
 import { DemoMainLarge } from "../pages/demos/DemoMainLarge"

@@ -1,5 +1,3 @@
-/*=============================================== PageLayoutPreview ===============================================*/
-
 import { Link } from "react-router-dom"
 import { PageLayout, Text } from "../../../"
 import type { ILibPageLayout } from "../../../types/components-props"

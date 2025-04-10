@@ -1,5 +1,3 @@
-/*=============================================== VariablesPreview ===============================================*/
-
 import type { ComponentPreview } from "../../components"
 import { allColors } from "../../styles/all-colors"
 import { allOverlays } from "../../styles/all-overlays"

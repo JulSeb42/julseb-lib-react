@@ -1,5 +1,3 @@
-/*=============================================== HeaderBurger ===============================================*/
-
 import { forwardRef } from "react"
 import type { LibColorsHover } from "../../types"
 import { StyledHeaderBurger } from "./styles"

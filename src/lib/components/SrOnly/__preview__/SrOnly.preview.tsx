@@ -1,5 +1,3 @@
-/*=============================================== SrOnlyPreview ===============================================*/
-
 import { SrOnly } from "../../../"
 import type { ILibSrOnly } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"

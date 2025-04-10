@@ -1,5 +1,3 @@
-/*=============================================== ListGroupItem component ===============================================*/
-
 import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import { Text, Badge } from "../../"

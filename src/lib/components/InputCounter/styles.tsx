@@ -1,5 +1,3 @@
-/*=============================================== InputCounter styles ===============================================*/
-
 import styled from "styled-components"
 import {
     FONT_SIZES,

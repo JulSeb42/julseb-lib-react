@@ -1,5 +1,3 @@
-/*=============================================== Hr tests ===============================================*/
-
 import { Hr, LIB_TOKENS } from "../../.."
 import { stringifyPx } from "@julseb-lib/utils"
 
