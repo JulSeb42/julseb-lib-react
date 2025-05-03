@@ -1,0 +1,105 @@
+@import "tailwindcss";
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+:root {
+	--font-family-body: var(--font-sans);
+	--font-family-code: monospace;
+
+	--overlay-black-50: rgba(0, 0, 0, 0.5);
+	--overlay-black-80: rgba(0, 0, 0, 0.8);
+	--overlay-white-50: rgba(255, 255, 255, 0.5);
+	--overlay-white-80: rgba(255, 255, 255, 0.8);
+	--overlay-gradient-black: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(0, 0, 0, 0.56) 100%
+	);
+	--overlay-gradient-white: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(255, 255, 255, 0.35) 100%
+	);
+
+	--main-default: 600px;
+	--main-large: 800px;
+	--main-form: 400px;
+	--main-full: 100%;
+	--aside-default: 250px;
+	--aside-small: 200px;
+}
+
+/*====================== Common styles ======================*/
+
+html,
+body {
+	font-family: var(--font-family-body);
+	width: 100%;
+	min-height: 100vh;
+
+	&.light {
+		background-color: var(--color-white);
+		color: var(--color-black);
+	}
+
+	&.dark {
+		background-color: var(--color-black);
+		color: var(--color-white);
+	}
+}
+
+a,
+button {
+	cursor: pointer;
+	transition: all 200ms ease;
+}
+
+@theme {
+	--font-family-body: var(--font-sans);
+	--font-family-code: monospace;
+
+	--overlay-black-50: rgba(0, 0, 0, 0.5);
+	--overlay-black-80: rgba(0, 0, 0, 0.8);
+	--overlay-white-50: rgba(255, 255, 255, 0.5);
+	--overlay-white-80: rgba(255, 255, 255, 0.8);
+	--overlay-gradient-black: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(0, 0, 0, 0.56) 100%
+	);
+	--overlay-gradient-white: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(255, 255, 255, 0.35) 100%
+	);
+
+	--main-default: 600px;
+	--main-large: 800px;
+	--main-form: 400px;
+	--main-full: 100%;
+	--aside-default: 250px;
+	--aside-small: 200px;
+}
+
+.overlay-black-50 {
+	background: var(--overlay-black-50);
+}
+
+.overlay-black-80 {
+	background: var(--overlay-black-80);
+}
+
+.overlay-white-50 {
+	background: var(--overlay-white-50);
+}
+
+.overlay-white-80 {
+	background: var(--overlay-white-80);
+}
+
+.overlay-gradient-black {
+	background: var(--overlay-gradient-black);
+}
+
+.overlay-gradient-white {
+	background: var(--overlay-gradient-white);
+}
