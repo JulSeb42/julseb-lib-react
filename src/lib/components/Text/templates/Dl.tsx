@@ -25,6 +25,8 @@ export const Dl = forwardRef<HTMLDListElement, ILibText>(
 				className={clsx(
 					BASE_CLASSES,
 					"text-[16px]",
+					"[&>dt]:font-bold",
+					"[&>dd]:font-normal [&>dd]:ps-4",
 					(genTextAlign as any)[textAlign],
 					(genTextColor as any)[color],
 					genLinkColor[linkColor],

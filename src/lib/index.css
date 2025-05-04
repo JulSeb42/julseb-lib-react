@@ -80,6 +80,17 @@ button {
 	--aside-small: 200px;
 }
 
+@layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+
 .overlay-black-50 {
 	background: var(--overlay-black-50);
 }

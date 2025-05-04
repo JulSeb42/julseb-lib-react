@@ -25,6 +25,7 @@ export const Ul = forwardRef<HTMLUListElement, ILibText>(
 				className={clsx(
 					BASE_CLASSES,
 					"text-[16px]",
+					"list-disc ps-8",
 					(genTextAlign as any)[textAlign],
 					(genTextColor as any)[color],
 					genLinkColor[linkColor],

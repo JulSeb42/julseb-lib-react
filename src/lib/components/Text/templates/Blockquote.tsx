@@ -25,6 +25,7 @@ export const Blockquote = forwardRef<HTMLQuoteElement, ILibText>(
 				className={clsx(
 					BASE_CLASSES,
 					"text-[18px]",
+					"italic ps-4",
 					(genTextAlign as any)[textAlign],
 					(genTextColor as any)[color],
 					genLinkColor[linkColor],

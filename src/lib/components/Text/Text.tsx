@@ -18,7 +18,7 @@ import type { ILibText } from "./types"
 
 export const BASE_CLASSES = clsx(
 	"font-family-body",
-	"[&>code]:font-family-code [&>code]:leading-8 [&>code]:p-1 [&>code]:text-blue-500 [&>code]:bg-gray-50 [&>code]:rounded-xl",
+	"[&>code]:font-family-code [&>code]:leading-8 [&>code]:p-1 [&>code]:text-blue-500 [&>code]:bg-gray-50 [&>code]:rounded-xs",
 )
 
 /**
