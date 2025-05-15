@@ -5,13 +5,11 @@ export const Homepage = () => {
 	const { theme, switchTheme } = useLibTheme()
 
 	return (
-		<Page title="Homepage">
-			<Text tag="h1">Hello World</Text>
-
+		<Page title="Hello World">
 			<Text>Theme is {theme}</Text>
 			<button
 				onClick={switchTheme}
-				className="self-start bg-blue-500 hover:bg-blue-300 active:bg-blue-600 rounded-md px-4 py-2 text-white font-black"
+				className="self-start px-4 py-2 font-black text-white bg-blue-500 rounded-md hover:bg-blue-300 active:bg-blue-600"
 			>
 				Switch to {theme === "light" ? "dark" : "light"} theme
 			</button>

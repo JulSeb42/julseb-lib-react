@@ -33,25 +33,22 @@ const ColorsPreview = () => {
 	return (
 		<>
 			<div className="flex gap-2">
-				<div className="flex flex-col mt-12 gap-2">
+				<div className="flex flex-col gap-2 mt-12">
 					{names.map((name, i) => (
 						<span
 							key={i}
-							className={clsx(
-								"inline-flex items-center",
-								`w-18 h-10`,
-							)}
+							className="inline-flex items-center w-18 h-10"
 						>
 							{capitalize(name)}
 						</span>
 					))}
 				</div>
 
-				<div className="grid grid-cols-11 gap-2 w-fit">
+				<div className="gap-2 grid grid-cols-11 w-fit">
 					{numbers.map(number => (
 						<span
 							key={number}
-							className="inline-flex text-center w-full h-10 items-center justify-center"
+							className="inline-flex justify-center items-center w-full h-10 text-center"
 						>
 							{number}
 						</span>
@@ -62,8 +59,10 @@ const ColorsPreview = () => {
 						.map((color, i) => (
 							<div
 								key={i}
-								style={{ backgroundColor: color.css }}
-								className={clsx("rounded-md", `size-10`)}
+								className={clsx(
+									"rounded-md size-10",
+									color.twClass,
+								)}
 							/>
 						))}
 				</div>
@@ -72,9 +71,9 @@ const ColorsPreview = () => {
 			<div>
 				<p>+ black and white:</p>
 
-				<div className="grid grid-cols-11 gap-2 w-fit">
-					<div className="rounded-md size-10 bg-black" />
-					<div className="rounded-md size-10 bg-white	" />
+				<div className="gap-2 grid grid-cols-11 w-fit">
+					<div className="bg-black rounded-md size-10" />
+					<div className="bg-white rounded-md size-10" />
 				</div>
 			</div>
 		</>

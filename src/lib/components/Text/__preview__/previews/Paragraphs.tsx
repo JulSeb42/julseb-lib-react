@@ -23,7 +23,12 @@ export const Paragraphs = () => {
 			<Text tag="p" data-testid="testid" linkColor="red">
 				Paragraph with <Link to="#">link</Link>
 			</Text>
-			<Text tag="p" data-testid="testid" className="className">
+			<Text
+				tag="p"
+				data-testid="testid"
+				className="className"
+				linkColor="amber"
+			>
 				Paragraph with <button>button</button>
 			</Text>
 			<Text tag="p" data-testid="testid" className="className">

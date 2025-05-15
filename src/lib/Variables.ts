@@ -316,6 +316,12 @@ export enum SHADOWS {
 	/** none */ NONE = "var(--shadow-none)",
 }
 
+export enum INSET_SHADOWS {}
+
+export enum DROP_SHADOWS {}
+
+export enum TEXT_SHADOWS {}
+
 export enum SPACERS {
 	/** 0rem (0px) */ _0 = "var(--spacer-0)",
 	/** 0.125rem (2px) */ _0_5 = "var(--spacer-0.5)",
@@ -352,6 +358,7 @@ export enum SPACERS {
 
 export enum RADIUS {
 	/** 0px */ NONE = "var(--radius-none)",
+	/**  */ XS = "var(--radius-xs)",
 	/** 0.125rem (2px) */ SM = "var(--radius-sm)",
 	/** 0.25rem (4px) */ DEFAULT = "var(--radius)",
 	/** 0.375rem (6px) */ MD = "var(--radius-md)",
@@ -359,7 +366,8 @@ export enum RADIUS {
 	/** 0.75rem (12px) */ XL = "var(--radius-xl)",
 	/** 1rem (16px) */ "2XL" = "var(--radius-2xl)",
 	/** 1.5rem (24px) */ "3XL" = "var(--radius-3xl)",
-	/** 9999px */ FULL = "var(--radius-full)",
+	/**  */ "4XL" = "var(--radius-4xl)",
+	/** 9999px */ FULL = "var(--rounded-full)",
 }
 
 export enum LAYOUTS {

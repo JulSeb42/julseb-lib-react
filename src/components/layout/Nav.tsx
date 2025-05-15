@@ -19,11 +19,11 @@ export const Nav = () => {
 	useKeyPress(["Command", "KeyK"], () => el?.current?.focus())
 
 	return (
-		<nav className="bg-blue-800 w-[250px] h-[100vh] overflow-y-scroll p-4 fixed flex flex-col items-stretch gap-4 no-scrollbar">
+		<nav className="fixed flex flex-col items-stretch gap-4 bg-blue-500 p-4 w-[250px] h-[100vh] overflow-y-scroll no-scrollbar">
 			<input
 				type="text"
 				placeholder="Search component"
-				className="bg-white border-solid border-gray-200 focus:border-blue-200 w-full rounded-sm p-1 outline-none border-1"
+				className="bg-white p-1 border-1 border-gray-200 focus:border-blue-200 border-solid rounded-sm outline-none w-full"
 				value={search}
 				onChange={e => setSearch(e.target.value)}
 				ref={el}
@@ -31,7 +31,7 @@ export const Nav = () => {
 
 			<button
 				onClick={switchTheme}
-				className="text-white font-black bg-blue-500 hover:bg-blue-300 active:bg-blue-600 py-2 px-4 rounded-md"
+				className="bg-blue-500 hover:bg-blue-300 active:bg-blue-600 px-4 py-2 rounded-md font-black text-white"
 			>
 				Switch theme
 			</button>
@@ -40,7 +40,7 @@ export const Nav = () => {
 				<NavLink
 					to={r.path}
 					key={r.path}
-					className="text-white [&.active]:font-black"
+					className="[&.active]:font-black text-white"
 					end={!!(r.path === "/")}
 				>
 					{r.path === "/"

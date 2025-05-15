@@ -1,6 +1,7 @@
 import { Helmet, HelmetData } from "react-helmet-async"
 import { SITE_DATA } from "../../data"
 import { Nav } from "./Nav"
+import { Text } from "../../lib"
 
 const helmetData = new HelmetData({})
 
@@ -21,6 +22,8 @@ export const Page: FC<IPage> = ({ title, children }) => {
 
 			<div className="w-[calc(100%-250px)] relative left-[250px] flex justify-center">
 				<main className="w-full max-w-[800px] flex flex-col items-stretch gap-6 py-12">
+					<Text tag="h1">{title}</Text>
+
 					{children}
 				</main>
 			</div>

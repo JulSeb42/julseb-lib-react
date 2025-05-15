@@ -14,19 +14,12 @@ export const ComponentPage = () => {
 
 	if (!componentPreview) return <NotFound />
 
-	const {
-		name,
-		component,
-		previews: componentPreviews,
-		noStretch,
-	} = componentPreview
-
 	return (
-		<Page title={toPascalCase(name) ?? ""}>
-			{componentPreviews?.map((preview, i) => (
+		<Page title={toPascalCase(componentPreview.name)!}>
+			{componentPreview.previews?.map((preview, i) => (
 				<ComponentPreview
-					component={component}
-					noStretch={noStretch}
+					component={componentPreview.component}
+					noStretch={componentPreview.noStretch}
 					{...preview}
 					key={i}
 				/>
