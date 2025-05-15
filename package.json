@@ -15,6 +15,8 @@
 		"plop:c": "yarn plop component",
 		"plop:p": "yarn plop preview",
 		"plop:st": "yarn plop subtype",
+		"plop:g": "yarn plop generator",
+		"plop:d": "yarn plop demo",
 		"cy": "cypress",
 		"cy:open": "cypress open",
 		"cy:ct:run": "cypress run --component --browser electron",
@@ -40,6 +42,7 @@
 		"react-router-dom": "^7.6.0",
 		"react-syntax-highlighter": "^15.6.1",
 		"react-toastify": "^11.0.5",
+		"tailwind-merge": "^3.3.0",
 		"tailwindcss": "^4.1.6"
 	},
 	"devDependencies": {

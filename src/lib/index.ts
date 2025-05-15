@@ -62,4 +62,7 @@ export * from "./Variables"
 export * from "./context"
 
 export * from "./components/Text"
+export * from "./components/Wrapper"
+export * from "./components/Main"
+export * from "./components/Aside"
 /* Prepend here - DO NOT REMOVE */

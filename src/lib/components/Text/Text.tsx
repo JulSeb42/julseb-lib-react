@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import { type FC } from "react"
 import clsx from "clsx"
 import { H1 } from "./templates/H1"
 import { H2 } from "./templates/H2"
@@ -24,31 +24,23 @@ export const BASE_CLASSES = clsx(
 /**
  * @description Returns a Text component
  * @link https://documentation-components-react.vercel.app/styles/text
- * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement,
+ * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement
  * @prop element?: ElementType
- * @prop ref?: ForwardedRef<HTMLDivElement>
+ * @prop ref?: RefObject<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement>
  */
-export const Text = forwardRef<
-	HTMLHeadingElement &
-		HTMLParagraphElement &
-		HTMLQuoteElement &
-		HTMLDListElement &
-		HTMLOListElement &
-		HTMLUListElement,
-	ILibText
->(({ tag = "p", ...rest }, ref) => {
-	if (tag === "h1") return <H1 ref={ref} {...rest} />
-	if (tag === "h2") return <H2 ref={ref} {...rest} />
-	if (tag === "h3") return <H3 ref={ref} {...rest} />
-	if (tag === "h4") return <H4 ref={ref} {...rest} />
-	if (tag === "h5") return <H5 ref={ref} {...rest} />
-	if (tag === "h6") return <H6 ref={ref} {...rest} />
-	if (tag === "small") return <Small ref={ref} {...rest} />
-	if (tag === "strong") return <Strong ref={ref} {...rest} />
-	if (tag === "em") return <Em ref={ref} {...rest} />
-	if (tag === "blockquote") return <Blockquote ref={ref} {...rest} />
-	if (tag === "ul") return <Ul ref={ref} {...rest} />
-	if (tag === "ol") return <Ol ref={ref} {...rest} />
-	if (tag === "dl") return <Dl ref={ref} {...rest} />
-	return <P ref={ref} {...rest} />
-})
+export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
+	if (tag === "h1") return <H1 {...rest} />
+	if (tag === "h2") return <H2 {...rest} />
+	if (tag === "h3") return <H3 {...rest} />
+	if (tag === "h4") return <H4 {...rest} />
+	if (tag === "h5") return <H5 {...rest} />
+	if (tag === "h6") return <H6 {...rest} />
+	if (tag === "small") return <Small {...rest} />
+	if (tag === "strong") return <Strong {...rest} />
+	if (tag === "em") return <Em {...rest} />
+	if (tag === "blockquote") return <Blockquote {...rest} />
+	if (tag === "ul") return <Ul {...rest} />
+	if (tag === "ol") return <Ol {...rest} />
+	if (tag === "dl") return <Dl {...rest} />
+	return <P {...rest} />
+}

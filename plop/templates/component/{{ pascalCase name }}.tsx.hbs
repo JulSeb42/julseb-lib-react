@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import { type FC } from "react"
 import clsx from "clsx"
 import {  } from "@julseb-lib/utils"
 import type { ILib{{ pascalCase name }} } from "./types"
@@ -8,19 +8,14 @@ import type { ILib{{ pascalCase name }} } from "./types"
  * @link https://documentation-components-react.vercel.app/{{ category }}/{{ kebabCase name }}
  * @extends HTML{{ pascalCase attribute }}Element
  * @prop element?: ElementType
- * @prop ref?: ForwardedRef<HTML{{ pascalCase attribute }}Element>
+ * @prop ref?: RefObject<HTML{{ pascalCase attribute }}Element>
  */
-export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, ILib{{ pascalCase name }}>(
-    (
-        { className, element = "{{ lowerCase tag }}", {{#if children}} children,{{/if}} ...rest },
-        ref
-    ) => {
-		const Element = element
+export const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className, element = "{{ lowerCase tag }}", ref, {{#if children}} children,{{/if}} ...rest }) => {
+	const Element = element
 
-        return (
-            <Element ref={ref} className={clsx(className)} {...rest}{{#if children}}>
-                {children}
-            </Element>{{ else }} />{{/if}}
-        )
-    }
-)
+	return (
+		<Element ref={ref} className={clsx(className)} {...rest}{{#if children}}>
+			{children}
+		</Element>{{ else }} />{{/if}}
+	)
+}

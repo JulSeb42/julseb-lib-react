@@ -20,3 +20,26 @@ export const genLinkColor = {
 	rose: "[&>a]:font-black [&>button]:font-black [&>a]:text-rose-500 [&>a]:hover:text-rose-300 [&>a]:active:text-rose-600 [&>button]:text-rose-500 [&>button]:hover:text-rose-300 [&>button]:active:text-rose-600",
 	slate: "[&>a]:font-black [&>button]:font-black [&>a]:text-slate-500 [&>a]:hover:text-slate-300 [&>a]:active:text-slate-600 [&>button]:text-slate-500 [&>button]:hover:text-slate-300 [&>button]:active:text-slate-600",
 }
+
+export const genButtonColor = {
+	red: "[&>button]:font-black [&>button]:font-black [&>button]:text-red-500 [&>button]:hover:text-red-300 [&>button]:active:text-red-600 [&>button]:text-red-500 [&>button]:hover:text-red-300 [&>button]:active:text-red-600",
+	orange: "[&>button]:font-black [&>button]:font-black [&>button]:text-orange-500 [&>button]:hover:text-orange-300 [&>button]:active:text-orange-600 [&>button]:text-orange-500 [&>button]:hover:text-orange-300 [&>button]:active:text-orange-600",
+	amber: "[&>button]:font-black [&>button]:font-black [&>button]:text-amber-500 [&>button]:hover:text-amber-300 [&>button]:active:text-amber-600 [&>button]:text-amber-500 [&>button]:hover:text-amber-300 [&>button]:active:text-amber-600",
+	yellow: "[&>button]:font-black [&>button]:font-black [&>button]:text-yellow-500 [&>button]:hover:text-yellow-300 [&>button]:active:text-yellow-600 [&>button]:text-yellow-500 [&>button]:hover:text-yellow-300 [&>button]:active:text-yellow-600",
+	lime: "[&>button]:font-black [&>button]:font-black [&>button]:text-lime-500 [&>button]:hover:text-lime-300 [&>button]:active:text-lime-600 [&>button]:text-lime-500 [&>button]:hover:text-lime-300 [&>button]:active:text-lime-600",
+	green: "[&>button]:font-black [&>button]:font-black [&>button]:text-green-500 [&>button]:hover:text-green-300 [&>button]:active:text-green-600 [&>button]:text-green-500 [&>button]:hover:text-green-300 [&>button]:active:text-green-600",
+	emerald:
+		"[&>button]:font-black [&>button]:font-black [&>button]:text-emerald-500 [&>button]:hover:text-emerald-300 [&>button]:active:text-emerald-600 [&>button]:text-emerald-500 [&>button]:hover:text-emerald-300 [&>button]:active:text-emerald-600",
+	teal: "[&>button]:font-black [&>button]:font-black [&>button]:text-teal-500 [&>button]:hover:text-teal-300 [&>button]:active:text-teal-600 [&>button]:text-teal-500 [&>button]:hover:text-teal-300 [&>button]:active:text-teal-600",
+	cyan: "[&>button]:font-black [&>button]:font-black [&>button]:text-cyan-500 [&>button]:hover:text-cyan-300 [&>button]:active:text-cyan-600 [&>button]:text-cyan-500 [&>button]:hover:text-cyan-300 [&>button]:active:text-cyan-600",
+	sky: "[&>button]:font-black [&>button]:font-black [&>button]:text-sky-500 [&>button]:hover:text-sky-300 [&>button]:active:text-sky-600 [&>button]:text-sky-500 [&>button]:hover:text-sky-300 [&>button]:active:text-sky-600",
+	blue: "[&>button]:font-black [&>button]:font-black [&>button]:text-blue-500 [&>button]:hover:text-blue-300 [&>button]:active:text-blue-600 [&>button]:text-blue-500 [&>button]:hover:text-blue-300 [&>button]:active:text-blue-600",
+	indigo: "[&>button]:font-black [&>button]:font-black [&>button]:text-indigo-500 [&>button]:hover:text-indigo-300 [&>button]:active:text-indigo-600 [&>button]:text-indigo-500 [&>button]:hover:text-indigo-300 [&>button]:active:text-indigo-600",
+	violet: "[&>button]:font-black [&>button]:font-black [&>button]:text-violet-500 [&>button]:hover:text-violet-300 [&>button]:active:text-violet-600 [&>button]:text-violet-500 [&>button]:hover:text-violet-300 [&>button]:active:text-violet-600",
+	purple: "[&>button]:font-black [&>button]:font-black [&>button]:text-purple-500 [&>button]:hover:text-purple-300 [&>button]:active:text-purple-600 [&>button]:text-purple-500 [&>button]:hover:text-purple-300 [&>button]:active:text-purple-600",
+	fuchsia:
+		"[&>button]:font-black [&>button]:font-black [&>button]:text-fuchsia-500 [&>button]:hover:text-fuchsia-300 [&>button]:active:text-fuchsia-600 [&>button]:text-fuchsia-500 [&>button]:hover:text-fuchsia-300 [&>button]:active:text-fuchsia-600",
+	pink: "[&>button]:font-black [&>button]:font-black [&>button]:text-pink-500 [&>button]:hover:text-pink-300 [&>button]:active:text-pink-600 [&>button]:text-pink-500 [&>button]:hover:text-pink-300 [&>button]:active:text-pink-600",
+	rose: "[&>button]:font-black [&>button]:font-black [&>button]:text-rose-500 [&>button]:hover:text-rose-300 [&>button]:active:text-rose-600 [&>button]:text-rose-500 [&>button]:hover:text-rose-300 [&>button]:active:text-rose-600",
+	slate: "[&>button]:font-black [&>button]:font-black [&>button]:text-slate-500 [&>button]:hover:text-slate-300 [&>button]:active:text-slate-600 [&>button]:text-slate-500 [&>button]:hover:text-slate-300 [&>button]:active:text-slate-600",
+}

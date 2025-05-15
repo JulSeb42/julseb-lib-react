@@ -8,15 +8,12 @@ body {
 	font-family: var(--font-family-body);
 	width: 100%;
 	min-height: 100vh;
-
-	&.light {
-		background-color: var(--color-white);
-		color: var(--color-black);
-	}
+	background-color: var(--color-background);
+	color: var(--color-font);
 
 	&.dark {
-		background-color: var(--color-black);
-		color: var(--color-white);
+		--color-background: var(--color-black);
+		--color-font: var(--color-white);
 	}
 }
 
@@ -29,6 +26,9 @@ button {
 @theme {
 	--font-family-body: var(--font-sans);
 	--font-family-code: monospace;
+
+	--color-background: var(--color-white);
+	--color-font: var(--color-black);
 
 	--overlay-black-50: rgba(0, 0, 0, 0.5);
 	--overlay-black-80: rgba(0, 0, 0, 0.8);
@@ -65,6 +65,14 @@ button {
 	--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 	--shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.06);
 	--shadow-none: none;
+
+	--spacer-2xl: 48px;
+	--spacer-xl: 32px;
+	--spacer-lg: 24px;
+	--spacer-md: 16px;
+	--spacer-sm: 12px;
+	--spacer-xs: 8px;
+	--spacer-2xs: 4px;
 }
 
 @layer utilities {
@@ -75,6 +83,18 @@ button {
 	.no-scrollbar {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+	}
+
+	.z-997 {
+		z-index: 997;
+	}
+
+	.z-998 {
+		z-index: 998;
+	}
+
+	.z-999 {
+		z-index: 999;
 	}
 }
 

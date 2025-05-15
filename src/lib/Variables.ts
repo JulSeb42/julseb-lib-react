@@ -307,6 +307,7 @@ export enum LINE_HEIGHTS {
 }
 
 export enum SHADOWS {
+	/** 0 1px 2px 0 rgba(0, 0, 0, 0.05) */ "2XS" = "var(--shadow-2xs)",
 	/** 0 1px 2px 0 rgba(0, 0, 0, 0.05) */ XS = "var(--shadow-xs)",
 	/** 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) */ SM = "var(--shadow-sm)",
 	/** 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) */ MD = "var(--shadow-md)",
@@ -323,37 +324,13 @@ export enum DROP_SHADOWS {}
 export enum TEXT_SHADOWS {}
 
 export enum SPACERS {
-	/** 0rem (0px) */ _0 = "var(--spacer-0)",
-	/** 0.125rem (2px) */ _0_5 = "var(--spacer-0.5)",
-	/** 0.25rem (4px) */ _1 = "var(--spacer-1)",
-	/** 0.375rem (6px) */ _1_5 = "var(--spacer-1.5)",
-	/** 0.5rem (8px) */ _2 = "var(--spacer-2)",
-	/** 0.625rem (10px) */ _2_5 = "var(--spacer-2.5)",
-	/** 0.75rem (12px) */ _3 = "var(--spacer-3)",
-	/** 0.875rem (14px) */ _3_5 = "var(--spacer-3.5)",
-	/** 1rem (16px) */ _4 = "var(--spacer-4)",
-	/** 1.25rem (20px) */ _5 = "var(--spacer-5)",
-	/** 1.5rem (24px) */ _6 = "var(--spacer-6)",
-	/** 1.75rem (28px) */ _7 = "var(--spacer-7)",
-	/** 2rem (32px) */ _8 = "var(--spacer-8)",
-	/** 2.25rem (36px) */ _9 = "var(--spacer-9)",
-	/** 2.5rem (40px) */ _10 = "var(--spacer-10)",
-	/** 2.75rem (44px) */ _11 = "var(--spacer-11)",
-	/** 3rem (48px) */ _12 = "var(--spacer-12)",
-	/** 3.5rem (56px) */ _14 = "var(--spacer-14)",
-	/** 4rem (64px) */ _16 = "var(--spacer-16)",
-	/** 5rem (80px) */ _20 = "var(--spacer-20)",
-	/** 6rem (96px) */ _24 = "var(--spacer-24)",
-	/** 7rem (112px) */ _28 = "var(--spacer-28)",
-	/** 8rem (128px) */ _32 = "var(--spacer-32)",
-	/** 9rem (144px) */ _36 = "var(--spacer-36)",
-	/** 10rem (160px) */ _40 = "var(--spacer-40)",
-	/** 11rem (176px) */ _44 = "var(--spacer-44)",
-	/** 12rem (192px) */ _48 = "var(--spacer-48)",
-	/** 14rem (224px) */ _56 = "var(--spacer-56)",
-	/** 16rem (256px) */ _64 = "var(--spacer-64)",
-	/** 20rem (320px) */ _80 = "var(--spacer-80)",
-	/** 24rem (384px) */ _96 = "var(--spacer-96)",
+	/** 48px */ "2XL" = "var(--spacer-2xl)",
+	/** 32px */ XL = "var(--spacer-xl)",
+	/** 24px */ LG = "var(--spacer-lg)",
+	/** 16px */ MD = "var(--spacer-md)",
+	/** 12px */ SM = "var(--spacer-sm)",
+	/** 8px */ XS = "var(--spacer-xs)",
+	/** 4px */ "2XS" = "var(--spacer-2xs)",
 }
 
 export enum RADIUS {

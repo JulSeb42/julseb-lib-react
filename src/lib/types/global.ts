@@ -7,6 +7,7 @@ import type {
 	MouseEventHandler,
 	ReactElement,
 	FunctionComponent,
+	RefObject,
 } from "react"
 import type { Property } from "csstype"
 import type { designTokens } from "../utils/design-tokens"
@@ -21,11 +22,11 @@ export type LibAllColorsAndOverlays =
 	| keyof typeof designTokens.libOverlays
 export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
 export type LibFontSizes = keyof typeof designTokens.libFontSizes
-export type LibFontWeights = keyof typeof designTokens.libFontWeights | number
-export type LibLineHeights = keyof typeof designTokens.libLineHeights | number
+export type LibFontWeights = keyof typeof designTokens.libFontWeights
+export type LibLineHeights = keyof typeof designTokens.libLineHeights
 export type LibShadows = keyof typeof designTokens.libShadows
-export type LibSpacers = keyof typeof designTokens.libSpacers | number | "0px"
-export type LibRadiuses = keyof typeof designTokens.libRadius | number
+export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
+export type LibRadiuses = keyof typeof designTokens.libRadius
 export type LibTransitions = keyof typeof designTokens.libTransitions
 export type LibValidationStatus = boolean | undefined
 export type LibThemeNames = keyof typeof designTokens.libThemes
@@ -39,6 +40,7 @@ export type LibPositionExtract = Extract<
 	Property.Position,
 	"relative" | "absolute" | "fixed"
 >
+export type LibZIndex = keyof typeof designTokens.libZIndex
 
 /* Component base */
 /**
@@ -48,6 +50,7 @@ export type LibPositionExtract = Extract<
  */
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
 	element?: ElementType
+	ref?: RefObject<T>
 }
 
 /* Box shadow */
@@ -67,24 +70,23 @@ export type ILibBoxShadow =
 /* Border radius */
 /**
  * @description Props for components with border radius
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle"
  * @type { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
  */
 export type ILibRadius =
 	| LibRadiuses
-	| number
 	| null
 	| {
-			topLeft?: LibRadiuses | number | null
-			topRight?: LibRadiuses | number | null
-			bottomLeft?: LibRadiuses | number | null
-			bottomRight?: LibRadiuses | number | null
+			topLeft?: LibRadiuses | null
+			topRight?: LibRadiuses | null
+			bottomLeft?: LibRadiuses | null
+			bottomRight?: LibRadiuses | null
 	  }
 
 /* Padding */
 /**
  * @description Props for components with paddings
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
  * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export type ILibPadding =
@@ -101,7 +103,7 @@ export type ILibPadding =
 /* Margins */
 /**
  * @description Props for components with margins
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | "auto" | "0 auto"
+ * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px" | "auto" | "0 auto"
  * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
  */
 export type ILibMargin =
@@ -122,12 +124,12 @@ export type ILibMargin =
 /**
  * @description Props for components with borders
  * @prop style?: CssBorderStyle
- * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
  * @prop color?: Any color from the library
  */
 export type ILibBorder = {
 	style?: CssBorderStyle
-	width?: LibSpacers
+	width?: Exclude<LibSpacers, "0px">
 	color?: LibColors
 }
 
@@ -135,12 +137,12 @@ export type ILibBorder = {
 /**
  * @description Props for components with outlines
  * @prop style?: CssOutlineStyle
- * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
  * @prop color?: Any color from the library
  */
 export type ILibOutline = {
 	style?: CssOutlineStyle
-	width?: LibSpacers
+	width?: Exclude<LibSpacers, "0px">
 	color?: LibColors
 }
 
@@ -148,10 +150,10 @@ export type ILibOutline = {
 /**
  * @description Props for components with CSS position
  * @prop position?: "relative" | "absolute" | "fixed"
- * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
- * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
- * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
- * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
+ * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
+ * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
+ * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
+ * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
  */
 export interface ILibPosition {
 	position?: LibPositionExtract
@@ -159,7 +161,7 @@ export interface ILibPosition {
 	top?: LibSpacers
 	right?: LibSpacers
 	bottom?: LibSpacers
-	zIndex?: number
+	zIndex?: LibZIndex
 }
 
 /* Links & buttons */
@@ -318,7 +320,7 @@ export interface LibBackToTopPosition {
 	top?: LibSpacers | "unset"
 	right?: LibSpacers | "unset"
 	bottom?: LibSpacers | "unset"
-	zIndex?: number
+	zIndex?: LibZIndex
 }
 
 /**
@@ -353,6 +355,6 @@ export type CssBorderStyle = Property.BorderStyle
 export type CssOutlineStyle = Property.OutlineStyle
 export type CssFontStyle = Property.FontStyle
 
-export type LibMainSize = keyof typeof designTokens.libMainSizes | number
-export type LibAsideSize = keyof typeof designTokens.libAsideSizes | number
+export type LibMainSize = keyof typeof designTokens.libMainSizes
+export type LibAsideSize = keyof typeof designTokens.libAsideSizes
 export type CountryCode = keyof typeof designTokens.libCountryCodes

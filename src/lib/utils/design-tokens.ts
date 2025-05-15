@@ -491,15 +491,13 @@ export const designTokens = {
 	 * Common spacing sizes
 	 */
 	libSpacers: {
+		"2xs": "2xs",
 		xs: "xs",
 		sm: "sm",
 		md: "md",
 		lg: "lg",
 		xl: "xl",
-		"2xl": "2xl",
-		"3xl": "3xl",
-		"4xl": "4xl",
-		"5xl": "5xl",
+		"2XL": "2xl",
 	},
 	/**
 	 * Breakpoints
@@ -796,7 +794,6 @@ export const designTokens = {
 		default: "default",
 		large: "large",
 		form: "form",
-		full: "full",
 	},
 	/**
 	 * Aside sizes
@@ -805,6 +802,23 @@ export const designTokens = {
 	libAsideSizes: {
 		default: "default",
 		small: "small",
+	},
+	libZIndex: {
+		"0": "0",
+		"10": "10",
+		"20": "20",
+		"30": "30",
+		"40": "40",
+		"50": "50",
+		"-0": "-0",
+		"-10": "-10",
+		"-20": "-20",
+		"-30": "-30",
+		"-40": "-40",
+		"-50": "-50",
+		"997": "997",
+		"998": "998",
+		"999": "999",
 	},
 
 	/**

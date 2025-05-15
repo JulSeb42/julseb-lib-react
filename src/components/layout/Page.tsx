@@ -1,33 +1,20 @@
-import { Helmet, HelmetData } from "react-helmet-async"
-import { SITE_DATA } from "../../data"
+import { BasePage } from "./BasePage"
 import { Nav } from "./Nav"
 import { Text } from "../../lib"
 
-const helmetData = new HelmetData({})
-
 export const Page: FC<IPage> = ({ title, children }) => {
 	return (
-		<>
-			<Helmet helmetData={helmetData}>
-				<title>{`${title} | ${SITE_DATA.NAME}`}</title>
-				<meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-				<meta
-					content="width=device-width, initial-scale=1"
-					name="viewport"
-				/>
-				<link rel="icon" href={SITE_DATA.FAVICON} />
-			</Helmet>
-
+		<BasePage title={title}>
 			<Nav />
 
-			<div className="w-[calc(100%-250px)] relative left-[250px] flex justify-center">
-				<main className="w-full max-w-[800px] flex flex-col items-stretch gap-6 py-12">
+			<div className="left-[250px] relative flex justify-center w-[calc(100%-250px)]">
+				<main className="flex flex-col items-stretch gap-6 py-12 w-full max-w-[800px]">
 					<Text tag="h1">{title}</Text>
 
 					{children}
 				</main>
 			</div>
-		</>
+		</BasePage>
 	)
 }
 

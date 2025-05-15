@@ -63,7 +63,7 @@ export default (plop: NodePlopAPI) => {
 			{
 				type: "modify",
 				path: "../src/data/components.tsx",
-				template: "{{ camelCase name }}Preview,\n$1\t",
+				template: "{{ camelCase name }}Preview,\n\t$1",
 				pattern: /(\/\* Prepend array - DO NOT REMOVE \*\/)/g,
 			},
 			"Exporting your new component from the library",

@@ -6,8 +6,12 @@ import { colorsPreview } from "./previews/styles/Colors.preview"
 import { overlaysPreview } from "./previews/styles/Overlays.preview"
 import { textPreview } from "../lib/components/Text/__preview__/Text.preview"
 import { shadowsPreview } from "./previews/styles/Shadows.preview"
+import { spacersPreview } from "./previews/styles/Spacers.preview"
 import { radiusesPreview } from "./previews/styles/Radiuses.preview"
 import { themeProviderPreview } from "./previews/styles/Theme.preview"
+import { wrapperPreview } from "../lib/components/Wrapper/__preview__/Wrapper.preview"
+import { mainPreview } from "../lib/components/Main/__preview__/Main.preview"
+import { asidePreview } from "../lib/components/Aside/__preview__/Aside.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -46,8 +50,12 @@ export const previews: Array<ComponentPreview<any>> = [
 	overlaysPreview,
 	textPreview,
 	shadowsPreview,
+	spacersPreview,
 	radiusesPreview,
 	themeProviderPreview,
+	wrapperPreview,
+	mainPreview,
+	asidePreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

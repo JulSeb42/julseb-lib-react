@@ -1,7 +1,10 @@
+import { Page } from "../components"
+import { Text } from "../lib"
+
 export const NotFound = () => {
 	return (
-		<div>
-			<h1>Page not found</h1>
-		</div>
+		<Page title="404">
+			<Text>Page not found</Text>
+		</Page>
 	)
 }

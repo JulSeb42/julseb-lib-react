@@ -3,10 +3,10 @@ import type { ComponentPreview } from "../../components"
 
 const ShadowsPreview = () => {
 	return (
-		<div className="flex flex-col items-stretch gap-4">
+		<div className="gap-4 grid grid-cols-2">
 			{allShadows.map((shadow, i) => (
 				<div
-					className="flex items-center gap-2 p-2 border-gray-200 rounded-md border-1"
+					className="flex flex-col items-center gap-2 p-2 border-1 border-gray-200 rounded-md"
 					key={i}
 				>
 					<div
