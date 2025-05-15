@@ -7,6 +7,7 @@ import { overlaysPreview } from "./previews/styles/Overlays.preview"
 import { textPreview } from "../lib/components/Text/__preview__/Text.preview"
 import { shadowsPreview } from "./previews/styles/Shadows.preview"
 import { radiusesPreview } from "./previews/styles/Radiuses.preview"
+import { themeProviderPreview } from "./previews/styles/Theme.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -46,6 +47,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	textPreview,
 	shadowsPreview,
 	radiusesPreview,
+	themeProviderPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 
