@@ -1,5 +1,6 @@
 import { type FC } from "react"
 import clsx from "clsx"
+import { twMerge } from "tailwind-merge"
 import { H1 } from "./templates/H1"
 import { H2 } from "./templates/H2"
 import { H3 } from "./templates/H3"
@@ -17,8 +18,10 @@ import { Dl } from "./templates/Dl"
 import type { ILibText } from "./types"
 
 export const BASE_CLASSES = clsx(
-	"font-family-body",
-	"[&>code]:font-family-code [&>code]:leading-8 [&>code]:p-1 [&>code]:text-blue-500 [&>code]:bg-gray-50 [&>code]:rounded-xs",
+	twMerge(
+		"font-family-body",
+		"[&>code]:font-family-code [&>code]:leading-8 [&>code]:p-1 [&>code]:text-blue-500 [&>code]:bg-gray-50 [&>code]:rounded-xs",
+	),
 )
 
 /**

@@ -491,13 +491,13 @@ export const designTokens = {
 	 * Common spacing sizes
 	 */
 	libSpacers: {
-		"2xs": "2xs",
-		xs: "xs",
-		sm: "sm",
-		md: "md",
-		lg: "lg",
-		xl: "xl",
-		"2XL": "2xl",
+		/** 4px */ "2xs": "2xs",
+		/** 8px */ xs: "xs",
+		/** 12px */ sm: "sm",
+		/** 16px */ md: "md",
+		/** 24px */ lg: "lg",
+		/** 32px */ xl: "xl",
+		/** 48px */ "2xl": "2xl",
 	},
 	/**
 	 * Breakpoints

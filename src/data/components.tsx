@@ -12,6 +12,7 @@ import { themeProviderPreview } from "./previews/styles/Theme.preview"
 import { wrapperPreview } from "../lib/components/Wrapper/__preview__/Wrapper.preview"
 import { mainPreview } from "../lib/components/Main/__preview__/Main.preview"
 import { asidePreview } from "../lib/components/Aside/__preview__/Aside.preview"
+import { sectionPreview } from "../lib/components/Section/__preview__/Section.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -56,6 +57,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	wrapperPreview,
 	mainPreview,
 	asidePreview,
+	sectionPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

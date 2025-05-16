@@ -1,8 +1,5 @@
 import { type FC } from "react"
-import clsx from "clsx"
-import { twMerge } from "tailwind-merge"
-import {} from "@julseb-lib/utils"
-import { genBgColor } from "../../utils"
+import { clsx, genBgColor } from "../../utils"
 import type { ILibAside } from "./types"
 
 /**
@@ -27,12 +24,10 @@ export const Aside: FC<ILibAside> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				twMerge(
-					"py-4 sm:py-8 md:py-12 w-full",
-					(genBgColor as any)[backgroundColor],
-					(asideSize as any)[size],
-					className,
-				),
+				"py-4 sm:py-8 md:py-12 w-full",
+				(genBgColor as any)[backgroundColor],
+				(asideSize as any)[size],
+				className,
 			)}
 			{...rest}
 		>

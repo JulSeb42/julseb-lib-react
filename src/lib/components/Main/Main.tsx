@@ -1,8 +1,5 @@
 import { type FC } from "react"
-import clsx from "clsx"
-import { twMerge } from "tailwind-merge"
-import {} from "@julseb-lib/utils"
-import { genBgColor } from "../../utils"
+import { clsx, genBgColor, genGap } from "../../utils"
 import type { ILibMain } from "./types"
 
 /**
@@ -28,13 +25,11 @@ export const Main: FC<ILibMain> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				twMerge(
-					"flex flex-col py-4 sm:py-8 md:py-12 w-full",
-					(genBgColor as any)[backgroundColor],
-					(rowGaps as any)[gap],
-					(maxWidth as any)[size],
-					className,
-				),
+				"flex flex-col py-4 sm:py-8 md:py-12 w-full",
+				(genBgColor as any)[backgroundColor],
+				(genGap as any)[gap],
+				(maxWidth as any)[size],
+				className,
 			)}
 			{...rest}
 		>
@@ -48,14 +43,4 @@ const maxWidth = {
 	large: "sm:max-w-(--main-large)",
 	form: "sm:max-w-(--main-form)",
 	full: "sm:max-w-(--main-full)",
-}
-
-const rowGaps = {
-	"2xl": "gap-(--spacer-2xl)",
-	xl: "gap-(--spacer-xl)",
-	lg: "gap-(--spacer-lg)",
-	md: "gap-(--spacer-md)",
-	sm: "gap-(--spacer-sm)",
-	xs: "gap-(--spacer-xs)",
-	"2xs": "gap-(--spacer-2xs)",
 }

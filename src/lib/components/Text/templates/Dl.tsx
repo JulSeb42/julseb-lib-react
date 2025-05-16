@@ -1,7 +1,7 @@
 import type { FC } from "react"
-import clsx from "clsx"
 import { BASE_CLASSES } from "../Text"
 import {
+	clsx,
 	genLinkColor,
 	genTextAlign,
 	genTextColor,

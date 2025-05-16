@@ -1,6 +1,5 @@
 import { type FC } from "react"
-import clsx from "clsx"
-import {} from "@julseb-lib/utils"
+import { clsx } from "../../utils"
 import type { ILibWrapper } from "./types"
 
 /**
