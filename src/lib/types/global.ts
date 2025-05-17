@@ -13,51 +13,241 @@ import type { Property } from "csstype"
 import type { designTokens } from "../utils/design-tokens"
 import type { RequireAtLeastOne } from "./require-at-least-one"
 
+/**
+ * @description All color tokens available in the design system.
+ * @type {keyof typeof designTokens.libColors}
+ * @example
+ * // Usage
+ * color="primary"
+ * color="gray-100"
+ */
 export type LibColors = keyof typeof designTokens.libColors
+/**
+ * @description All hover color tokens available in the design system.
+ * @type {keyof typeof designTokens.libColorsHover}
+ * @example
+ * // Usage
+ * color="primary-hover"
+ * color="gray-100-hover"
+ */
 export type LibColorsHover = keyof typeof designTokens.libColorsHover
+/**
+ * @description All hover color tokens plus "current" for currentColor support.
+ * @type {LibColorsHover | "current"}
+ * @example
+ * // Usage
+ * color="primary-hover"
+ * color="gray-100-hover"
+ * color="current"
+ */
 export type LibColorsHoverAndCurrent = LibColorsHover | "current"
+/**
+ * @description All overlay tokens available in the design system.
+ * @type {keyof typeof designTokens.libOverlays}
+ * @example
+ * // Usage
+ * overlay="overlay-100"
+ * overlay="overlay-dark"
+ */
 export type LibOverlays = keyof typeof designTokens.libOverlays
+/**
+ * @description All color and overlay tokens available in the design system.
+ * @type {keyof typeof designTokens.libColors | keyof typeof designTokens.libOverlays}
+ * @example
+ * // Usage
+ * color="primary"
+ * color="gray-100"
+ * overlay="overlay-100"
+ * overlay="overlay-dark"
+ */
 export type LibAllColorsAndOverlays =
 	| keyof typeof designTokens.libColors
 	| keyof typeof designTokens.libOverlays
+/**
+ * @description All font family tokens available in the design system.
+ * @type {keyof typeof designTokens.libFontFamilies}
+ * @example
+ * // Usage
+ * fontFamily="body"
+ * fontFamily="code"
+ */
 export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
+/**
+ * @description All font size tokens available in the design system.
+ * @type {keyof typeof designTokens.libFontSizes}
+ * @example
+ * // Usage
+ * fontSize="md"
+ * fontSize="xl"
+ */
 export type LibFontSizes = keyof typeof designTokens.libFontSizes
+/**
+ * @description All font weight tokens available in the design system.
+ * @type {keyof typeof designTokens.libFontWeights}
+ * @example
+ * // Usage
+ * fontWeight="regular"
+ * fontWeight="bold"
+ */
 export type LibFontWeights = keyof typeof designTokens.libFontWeights
+/**
+ * @description All line height tokens available in the design system.
+ * @type {keyof typeof designTokens.libLineHeights}
+ * @example
+ * // Usage
+ * lineHeight="normal"
+ * lineHeight="tight"
+ */
 export type LibLineHeights = keyof typeof designTokens.libLineHeights
+/**
+ * @description All box shadow tokens available in the design system.
+ * @type {keyof typeof designTokens.libShadows}
+ * @example
+ * // Usage
+ * boxShadow="md"
+ * boxShadow="xl"
+ */
 export type LibShadows = keyof typeof designTokens.libShadows
+/**
+ * @description All spacer tokens available in the design system, plus "0px".
+ * @type {keyof typeof designTokens.libSpacers | "0px"}
+ * @example
+ * // Usage
+ * padding="md"
+ * margin="xl"
+ * gap="xs"
+ * padding="0px"
+ */
 export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
+/**
+ * @description All border radius tokens available in the design system.
+ * @type {keyof typeof designTokens.libRadius}
+ * @example
+ * // Usage
+ * radius="m"
+ * radius="xl"
+ */
 export type LibRadiuses = keyof typeof designTokens.libRadius
+/**
+ * @description All transition tokens available in the design system.
+ * @type {keyof typeof designTokens.libTransitions}
+ * @example
+ * // Usage
+ * transition="fast"
+ * transition="slow"
+ */
 export type LibTransitions = keyof typeof designTokens.libTransitions
+/**
+ * @description Validation status for form components.
+ * @type {boolean | undefined}
+ * @example
+ * // Usage
+ * validation={true}   // valid
+ * validation={false}  // invalid
+ * validation={undefined} // not validated
+ */
 export type LibValidationStatus = boolean | undefined
+/**
+ * @description All theme names available in the design system.
+ * @type {keyof typeof designTokens.libThemes}
+ * @example
+ * // Usage
+ * theme="light"
+ * theme="dark"
+ */
 export type LibThemeNames = keyof typeof designTokens.libThemes
-export type LibIcon = string | ReactElement
+/**
+ * @description All input variant tokens available in the design system.
+ * @type {keyof typeof designTokens.libInputVariants}
+ * @example
+ * // Usage
+ * variant="rounded"
+ * variant="rounded-lg"
+ * variant="pill"
+ */
 export type LibInputVariant = keyof typeof designTokens.libInputVariants
+/**
+ * @description All input background tokens available in the design system.
+ * @type {keyof typeof designTokens.libInputBackgrounds}
+ * @example
+ * // Usage
+ * inputBackground="light"
+ * inputBackground="dark"
+ */
 export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
+/**
+ * @description All display text tag tokens available in the design system (headings from 1 to 5).
+ * @type {keyof typeof designTokens.libTextDisplayTags}
+ * @example
+ * // Usage
+ * tag="h1"
+ * tag="h2"
+ */
 export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
+/**
+ * @description All text tags without the display prop tokens available in the design system (paragraphs, lists, etc.).
+ * @type {keyof typeof designTokens.libTextTags}
+ * @example
+ * // Usage
+ * tag="p"
+ * tag="ul"
+ * tag="blockquote"
+ */
 export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
+/**
+ * @description All text tag tokens available in the design system (display and non-display).
+ * @type {LibTextDisplay | LibTextNoDisplay}
+ * @example
+ * // Usage
+ * tag="h1"
+ * tag="p"
+ * tag="ul"
+ */
 export type LibText = LibTextDisplay | LibTextNoDisplay
-export type LibPositionExtract = Extract<
-	Property.Position,
-	"relative" | "absolute" | "fixed"
->
+/**
+ * @description All CSS position tokens available in the design system.
+ * @type {keyof typeof designTokens.libPosition}
+ * @example
+ * // Usage
+ * position="relative"
+ * position="absolute"
+ * position="fixed"
+ */
+export type LibPosition = keyof typeof designTokens.libPosition
+/**
+ * @description All z-index tokens available in the design system.
+ * @type {keyof typeof designTokens.libZIndex}
+ * @example
+ * // Usage
+ * zIndex="10"
+ * zIndex="999"
+ */
 export type LibZIndex = keyof typeof designTokens.libZIndex
 
-/* Component base */
 /**
- * @description Props common to nearly all components
- * @prop data-testid?: string
- * @prop as?: ElementType
+ * @description Props common to nearly all components.
+ *
+ * @template T - The HTML element type.
+ * @prop {ElementType} [element] - The HTML element or React component to render as.
+ * @prop {RefObject<T>} [ref] - Ref for the rendered element.
+ * @prop {string} [data-testid] - Test id for testing utilities.
+ * @extends HTMLAttributes<T>
  */
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
 	element?: ElementType
 	ref?: RefObject<T>
 }
 
-/* Box shadow */
 /**
- * @description Props for components with box shadow
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs"
- * @type { default: "xxl" | "xl" | "l" | "m" | "s" | "xs"; hover: "xxl" | "xl" | "l" | "m" | "s" | "xs"; active: "xxl" | "xl" | "l" | "m" | "s" | "xs" }
+ * @description Props for components with box shadow.
+ * Can be a single shadow token or an object specifying different shadows for default, hover, and active states.
+ * @type {LibShadows | { default: LibShadows; hover: LibShadows; active: LibShadows }}
+ * @example
+ * // Single shadow
+ * boxShadow="md"
+ *
+ * // Different shadows for states
+ * boxShadow={{ default: "md", hover: "lg", active: "sm" }}
  */
 export type ILibBoxShadow =
 	| LibShadows
@@ -69,9 +259,15 @@ export type ILibBoxShadow =
 
 /* Border radius */
 /**
- * @description Props for components with border radius
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle"
- * @type { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
+ * @description Props for components with border radius.
+ * Can be a single radius token, null, or an object specifying different radii for each corner.
+ * @type {"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "full" | null | { topLeft?: LibRadiuses | null; topRight?: LibRadiuses | null; bottomLeft?: LibRadiuses | null; bottomRight?: LibRadiuses | null }}
+ * @example
+ * // Single radius
+ * radius="md"
+ *
+ * // Different radii for corners
+ * radius={{ topLeft: "sm", bottomRight: "xl" }}
  */
 export type ILibRadius =
 	| LibRadiuses
@@ -85,9 +281,15 @@ export type ILibRadius =
 
 /* Padding */
 /**
- * @description Props for components with paddings
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
- * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+ * @description Props for components with paddings.
+ * Can be a single spacer token from the design system or an object specifying paddings for each side or axis.
+ * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }}
+ * @example
+ * // Single padding
+ * padding="md"
+ *
+ * // Different paddings for sides
+ * padding={{ left: "lg", top: "2xl" }}
  */
 export type ILibPadding =
 	| LibSpacers
@@ -102,9 +304,18 @@ export type ILibPadding =
 
 /* Margins */
 /**
- * @description Props for components with margins
- * @type "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px" | "auto" | "0 auto"
- * @type { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
+ * @description Props for components with margins.
+ * Can be a single spacer token, "auto", "0 auto", or an object specifying margins for each side or axis.
+ * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px" | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" } | undefined}
+ * @example
+ * // Single margin
+ * margin="md"
+ *
+ * // Centered margin
+ * margin="0 auto"
+ *
+ * // Different margins for sides
+ * margin={{ left: "lg", top: "2xl" }}
  */
 export type ILibMargin =
 	| LibSpacers
@@ -122,10 +333,13 @@ export type ILibMargin =
 
 /* Border */
 /**
- * @description Props for components with borders
- * @prop style?: CssBorderStyle
- * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
- * @prop color?: Any color from the library
+ * @description Props for components with borders.
+ * @prop style - Border style (e.g., "border-solid", "border-dashed", "border-dotted", "border-double", "border-hidden", "border-none")
+ * @prop width - Border width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
+ * @prop color - Any color from the library
+ * @example
+ * // Solid border, medium width, primary color
+ * border={{ style: "border-solid", width: "md", color: "primary" }}
  */
 export type ILibBorder = {
 	style?: CssBorderStyle
@@ -135,10 +349,13 @@ export type ILibBorder = {
 
 /* Outline */
 /**
- * @description Props for components with outlines
- * @prop style?: CssOutlineStyle
- * @prop width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs"
- * @prop color?: Any color from the library
+ * @description Props for components with outlines.
+ * @prop style - Outline style (e.g., "outline-solid", "outline-dashed", "outline-dotted", "outline-double", "outline-none", "outline-hidden")
+ * @prop width - Outline width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
+ * @prop color - Any color from the library
+ * @example
+ * // Solid outline, medium width, primary color
+ * outline={{ style: "outline-solid", width: "md", color: "primary" }}
  */
 export type ILibOutline = {
 	style?: CssOutlineStyle
@@ -148,15 +365,19 @@ export type ILibOutline = {
 
 /* Position */
 /**
- * @description Props for components with CSS position
- * @prop position?: "relative" | "absolute" | "fixed"
- * @prop left?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
- * @prop top?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
- * @prop right?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
- * @prop bottom?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "0px"
+ * @description Props for components with CSS position and z-index.
+ * @prop position - CSS position value (e.g., "relative", "absolute", "fixed").
+ * @prop left - Left offset using a spacer token.
+ * @prop top - Top offset using a spacer token.
+ * @prop right - Right offset using a spacer token.
+ * @prop bottom - Bottom offset using a spacer token.
+ * @prop zIndex - z-index value from the design system.
+ * @example
+ * // Example usage
+ * position={{ position: "absolute", top: "md", left: "lg", zIndex: "999" }}
  */
 export interface ILibPosition {
-	position?: LibPositionExtract
+	position?: LibPosition
 	left?: LibSpacers
 	top?: LibSpacers
 	right?: LibSpacers
@@ -170,31 +391,21 @@ type LinkHref = { to?: never; href?: string }
 
 /**
  * @description Props for links
- * @prop to?: string => only if href is not defined
- * @prop href?: string => only if to is not defined
  */
 export type LibLink = LinkTo | LinkHref
 
 /**
  * @description Props for links, to or href are required
- * @prop to?: string => only if href is not defined
- * @prop href?: string => only if to is not defined
  */
 export type LibLinkRequired = RequireAtLeastOne<LibLink, "to" | "href">
 
 /**
  * @description Props for links
- * @prop to?: string => only if href is not defined
- * @prop href?: string => only if to is not defined
- * @prop blank?: boolean
  */
 export type LibLinkBlank = LibLink & { blank?: boolean }
 
 /**
  * @description Props for links, to or href are required
- * @prop to?: string => only if href is not defined
- * @prop href?: string => only if to is not defined
- * @prop blank?: boolean
  */
 export type LibLinkBlankRequired = LibLinkRequired & { blank?: boolean }
 
@@ -221,10 +432,6 @@ type LibButtonLinkHref = {
 
 /**
  * @description Props for buttons and links
- * @prop onClick?: void => only if to or href are not defined
- * @prop disabled?: boolean => only if onClick is defined
- * @prop to?: string => only if onClick and href are not defined
- * @prop href?: string => only if onClick and to are not defined
  */
 export type LibButtonLink =
 	| LibButtonLinkClick
@@ -233,10 +440,6 @@ export type LibButtonLink =
 
 /**
  * @description Props for buttons and links, onClick, to or href are required
- * @prop onClick?: void => only if to or href are not defined
- * @prop disabled?: boolean => only if onClick is defined
- * @prop to?: string => only if onClick and href are not defined
- * @prop href?: string => only if onClick and to are not defined
  */
 export type LibButtonLinkRequired = RequireAtLeastOne<
 	LibButtonLink,
@@ -245,11 +448,6 @@ export type LibButtonLinkRequired = RequireAtLeastOne<
 
 /**
  * @description Props for buttons and links
- * @prop onClick?: void => only if to or href are not defined
- * @prop disabled?: boolean => only if onClick is defined
- * @prop to?: string => only if onClick and href are not defined
- * @prop href?: string => only if onClick and to are not defined
- * @prop blank?: boolean => only if to or href are defined
  */
 export type LibButtonLinkBlank =
 	| (LibButtonLinkClick & { blank?: never })
@@ -258,11 +456,6 @@ export type LibButtonLinkBlank =
 
 /**
  * @description Props for buttons and links, onClick, to or href are required
- * @prop onClick: void => only if to or href are not defined
- * @prop disabled?: boolean => only if onClick is defined
- * @prop to: string => only if onClick and href are not defined
- * @prop href: string => only if onClick and to are not defined
- * @prop blank?: boolean => only if to or href are defined
  */
 export type LibButtonLinkBlankRequired = RequireAtLeastOne<
 	LibButtonLinkBlank,
@@ -272,7 +465,6 @@ export type LibButtonLinkBlankRequired = RequireAtLeastOne<
 /* useTranslation hook */
 /**
  * @description Props for useTranslation hook
- * @prop [language: string]: { [key: string]: string }
  */
 export type TranslateLang = {
 	[language: string]: {
@@ -283,29 +475,34 @@ export type TranslateLang = {
 /* BackgroundImage */
 /**
  * @description Props for background images
- * @prop img: string
- * @prop clip?: CssBackgroundClip
- * @prop origin?: CssBackgroundOrigin
- * @prop position?: CssBackgroundPosition
- * @prop repeat?: CssBackgroundRepeat
- * @prop size?: CssBackgroundSize
  */
 export interface ILibBackgroundImage {
 	img: string
-	clip?: Property.BackgroundClip
-	origin?: Property.BackgroundOrigin
-	position?: Property.BackgroundPosition
-	repeat?: Property.BackgroundRepeat
-	size?: Property.BackgroundSize
+	clip?: "border" | "padding" | "content" | "text"
+	origin?: "border" | "padding" | "content"
+	position?:
+		| "top-left"
+		| "top"
+		| "top-right"
+		| "left"
+		| "center"
+		| "right"
+		| "bottom-left"
+		| "bottom"
+		| "bottom-right"
+	repeat?:
+		| "repeat"
+		| "repeat-x"
+		| "repeat-y"
+		| "repeat-space"
+		| "repeat-round"
+		| "no-repeat"
+	size?: "auto" | "cover" | "contain"
 }
 
 /* Input phone */
 /**
  * @description Props for countries used in InputPhone component
- * @prop name: string
- * @prop dial_code: string
- * @prop code: Any Alpha-2 Code from https://www.iban.com/country-codes
- * @prop flag: string
  */
 export type LibCountry = {
 	name: string
@@ -315,24 +512,15 @@ export type LibCountry = {
 }
 
 /* BackToTop */
+/**
+ * @description Props for position for BackToTop component
+ */
 export interface LibBackToTopPosition {
 	left?: LibSpacers | "unset"
 	top?: LibSpacers | "unset"
 	right?: LibSpacers | "unset"
 	bottom?: LibSpacers | "unset"
 	zIndex?: LibZIndex
-}
-
-/**
- * @description Props for ThemeContext
- * @prop theme: DefaultTheme => import from "styled-components"
- * @prop selectedTheme: "light" | "dark" | undefined
- * @prop toggleTheme: () => void
- */
-export interface ILibThemeContext {
-	theme: LibThemeNames
-	selectedTheme: LibThemeNames | undefined
-	toggleTheme: () => void
 }
 
 export type ReactChildren = ReactNode | Array<ReactNode>
@@ -343,16 +531,64 @@ export type CssTextAlign = Property.TextAlign
 export type CssVerticalAlign = Property.VerticalAlign
 export type CssTextDecoration = Property.TextDecoration
 export type CssPosition = Property.Position
-export type CssJustifyItems = Property.JustifyItems
-export type CssAlignItems = Property.AlignItems
-export type CssJustifyContent = Property.JustifyContent
-export type CssAlignContent = Property.AlignContent
+export type CssJustifyItems =
+	| "start"
+	| "end"
+	| "end-safe"
+	| "center"
+	| "center-safe"
+	| "stretch"
+	| "normal"
+export type CssAlignItems =
+	| "start"
+	| "end"
+	| "end-safe"
+	| "center"
+	| "center-safe"
+	| "baseline"
+	| "baseline-start"
+	| "stretch"
+export type CssJustifyContent =
+	| "start"
+	| "end"
+	| "end-safe"
+	| "center"
+	| "center-sage"
+	| "space-between"
+	| "space-around"
+	| "space-evenly"
+	| "stretch"
+	| "baseline"
+	| "normal"
+export type CssAlignContent =
+	| "normal"
+	| "center"
+	| "start"
+	| "end"
+	| "space-between"
+	| "space-around"
+	| "space-evenly"
+	| "baseline"
+	| "stretch"
+	| "stretch"
 export type CssFlexDirection = Property.FlexDirection
 export type CssFlexWrap = Property.FlexWrap
 export type CssObjectFit = Property.ObjectFit
 export type CssCursor = Property.Cursor
-export type CssBorderStyle = Property.BorderStyle
-export type CssOutlineStyle = Property.OutlineStyle
+export type CssBorderStyle =
+	| "border-solid"
+	| "border-dashed"
+	| "border-dotted"
+	| "border-double"
+	| "border-hidden"
+	| "border-none"
+export type CssOutlineStyle =
+	| "outline-solid"
+	| "outline-dashed"
+	| "outline-dotted"
+	| "outline-double"
+	| "outline-none"
+	| "outline-hidden"
 export type CssFontStyle = Property.FontStyle
 
 export type LibMainSize = keyof typeof designTokens.libMainSizes

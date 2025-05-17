@@ -17,36 +17,38 @@ interface ILibThemeProvider {
 
 export const ThemeProviderWrapper = ({ children }: ILibThemeProvider) => {
 	const storedTheme = localStorage.getItem("theme") as LibThemeNames
-	const [theme, setTheme] = useState(storedTheme ?? "system")
+	const [theme, setTheme] = useState(storedTheme ?? "light")
 
 	const docEl = document.documentElement
 
+	const switchToLight = () => {
+		docEl.classList.add("light")
+		docEl.classList.remove("dark")
+		setTheme("light")
+		localStorage.setItem("theme", "light")
+	}
+
+	const switchToDark = () => {
+		docEl.classList.remove("light")
+		docEl.classList.add("dark")
+		setTheme("dark")
+		localStorage.setItem("theme", "dark")
+	}
+
 	useEffect(() => {
-		if (storedTheme || theme === "system") {
-			if (theme === "light") {
-				docEl.classList.add("light")
-				docEl.classList.remove("dark")
-			} else if (theme === "dark") {
-				docEl.classList.add("dark")
-				docEl.classList.remove("light")
-			} else {
-				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-					docEl.classList.add("dark")
-					docEl.classList.remove("light")
-				} else {
-					docEl.classList.add("light")
-					docEl.classList.remove("dark")
-				}
-			}
+		if (storedTheme) {
+			if (theme === "light") switchToLight()
+			else switchToDark()
 		} else {
-			localStorage.setItem("theme", "system")
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+				switchToDark()
+			else switchToLight()
 		}
 	}, [theme, localStorage.getItem("theme"), docEl])
 
 	const switchTheme = () => {
-		const newTheme = theme === "dark" ? "light" : "dark"
-		setTheme(newTheme)
-		localStorage.setItem("theme", newTheme)
+		if (theme === "light") switchToDark()
+		else switchToLight()
 	}
 
 	return (
@@ -59,11 +61,8 @@ export const ThemeProviderWrapper = ({ children }: ILibThemeProvider) => {
 /**
  * Custom hook to access the theme context.
  *
- * @returns {ILibThemeContext} The theme context value, including the current theme,
- * a function to update the theme, and a handler to change the theme.
- *
+ * @returns {ILibThemeContext} The current theme, a setter for the theme, and a function to toggle between light and dark themes.
  * @example
- * const { theme, setTheme, handleChangeTheme } = useLibTheme()
- * handleChangeTheme("dark")
+ * const { theme, setTheme, switchTheme } = useLibTheme()
  */
 export const useLibTheme = () => useContext(ThemeContext) as ILibThemeContext

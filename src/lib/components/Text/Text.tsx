@@ -25,11 +25,34 @@ export const BASE_CLASSES = clsx(
 )
 
 /**
- * @description Returns a Text component
- * @link https://documentation-components-react.vercel.app/styles/text
- * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement
- * @prop element?: ElementType
- * @prop ref?: RefObject<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement>
+ * Text component for rendering semantic HTML text elements with consistent styles.
+ *
+ * Renders the appropriate semantic element based on the `tag` prop, such as headings, paragraphs, lists, blockquotes, etc.
+ *
+ * @component
+ * @example
+ * <Text tag="h2">Section title</Text>
+ * <Text tag="p">Paragraph content</Text>
+ * <Text tag="ul">
+ *   <li>Item 1</li>
+ *   <li>Item 2</li>
+ * </Text>
+ *
+ * @param {object} props - Component props.
+ * @param {ElementType} [props.element="p"] - The HTML element or React component to render.
+ * @param {"h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"small"|"strong"|"em"|"blockquote"|"ul"|"ol"|"dl"} [props.tag="p"] - The semantic HTML tag to render.
+ * @param {string} [props.color="currentColor"] - Text color.
+ * @param {string} [props.linkColor="blue"] - Link color.
+ * @param {string} [props.textAlign="left"] - Text alignment.
+ * @param {boolean} [props.display=false] - Whether to use display block.
+ * @param {string} [props.className] - Additional class names to apply.
+ * @param {React.RefObject<any>} [props.ref] - Ref for the rendered element.
+ * @param {React.ReactNode} props.children - Text content.
+ * @param {object} [props.rest] - Additional props spread to the rendered element.
+ *
+ * @returns {JSX.Element} The rendered text element.
+ *
+ * @see https://documentation-components-react.vercel.app/styles/text
  */
 export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
 	if (tag === "h1") return <H1 {...rest} />

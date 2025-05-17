@@ -7,3 +7,23 @@ export const genGap = {
 	xs: "gap-(--spacer-xs)",
 	"2xs": "gap-(--spacer-2xs)",
 }
+
+export const genRowGap = {
+	"2xl": "gap-y-(--spacer-2xl)",
+	xl: "gap-y-(--spacer-xl)",
+	lg: "gap-y-(--spacer-lg)",
+	md: "gap-y-(--spacer-md)",
+	sm: "gap-y-(--spacer-sm)",
+	xs: "gap-y-(--spacer-xs)",
+	"2xs": "gap-y-(--spacer-2xs)",
+}
+
+export const genColGap = {
+	"2xl": "gap-x-(--spacer-2xl)",
+	xl: "gap-x-(--spacer-xl)",
+	lg: "gap-x-(--spacer-lg)",
+	md: "gap-x-(--spacer-md)",
+	sm: "gap-x-(--spacer-sm)",
+	xs: "gap-x-(--spacer-xs)",
+	"2xs": "gap-x-(--spacer-2xs)",
+}

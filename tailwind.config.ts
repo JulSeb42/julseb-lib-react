@@ -7,9 +7,11 @@ const config: Config = {
 			fontFamily: {
 				sans: ["var(--lato)"],
 			},
+			animation: {
+				
+			},
+			keyframes: {},
 		},
-		animation: {},
-		keyframes: {},
 	},
 	// eslint-disable-next-line
 	plugins: [require("@tailwindcss/forms")],

@@ -16,7 +16,7 @@ export default (plop: NodePlopAPI) => {
 				name: "category",
 				message: "Which category?",
 				choices: ["styles", "layouts", "components", "helpers"],
-				default: "styles",
+				default: "layouts",
 			},
 			{
 				type: "input",

@@ -1,12 +1,12 @@
 import { useState, useRef } from "react"
 import { NavLink } from "react-router-dom"
 import { toTitleCase } from "@julseb-lib/utils"
-import { useLibTheme, useKeyPress } from "../../lib"
+import { useLibTheme, useKeyPress, clsx } from "../../lib"
 import { routesPaths } from "../../routes"
 import { componentPaths } from "../../data/components"
 
 export const Nav = () => {
-	const { switchTheme } = useLibTheme()
+	const { switchTheme, theme } = useLibTheme()
 
 	const [search, setSearch] = useState("")
 
@@ -23,7 +23,11 @@ export const Nav = () => {
 			<input
 				type="text"
 				placeholder="Search component"
-				className="bg-white p-1 border-1 border-gray-200 focus:border-blue-200 border-solid rounded-sm outline-none w-full"
+				className={clsx(
+					"p-1 w-full",
+					"border-1 border-gray-200 focus:border-blue-200 border-solid rounded-sm outline-none",
+					theme === "dark" ? "dark:bg-black" : "bg-white",
+				)}
 				value={search}
 				onChange={e => setSearch(e.target.value)}
 				ref={el}

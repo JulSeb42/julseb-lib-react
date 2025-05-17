@@ -3,11 +3,26 @@ import { clsx, genBgColor } from "../../utils"
 import type { ILibAside } from "./types"
 
 /**
- * @description Returns a Aside component
- * @link https://documentation-components-react.vercel.app/styles/aside
- * @extends HTMLDivElement
- * @prop element?: ElementType
- * @prop ref?: RefObject<HTMLDivElement>
+ * Aside component for rendering a sidebar or secondary content area.
+ *
+ * @component
+ * @example
+ * <Aside size="small" backgroundColor="white">
+ *   <p>Sidebar content</p>
+ * </Aside>
+ *
+ * @param {object} props - Component props.
+ * @param {string} [props.className] - Additional class names to apply.
+ * @param {ElementType} [props.element="aside"] - The HTML element or React component to render as the aside container.
+ * @param {React.RefObject<HTMLDivElement>} [props.ref] - Ref for the aside container.
+ * @param {React.ReactNode} props.children - Aside content.
+ * @param {"default"|"small"} [props.size="default"] - Aside width size.
+ * @param {string} [props.backgroundColor="white"] - Background color token.
+ * @param {object} [props.rest] - Additional props spread to the container.
+ *
+ * @returns {JSX.Element} The rendered aside container.
+ *
+ * @see https://documentation-components-react.vercel.app/styles/aside
  */
 export const Aside: FC<ILibAside> = ({
 	className,

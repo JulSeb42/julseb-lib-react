@@ -66,13 +66,13 @@ button {
 	--shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.06);
 	--shadow-none: none;
 
-	--spacer-2xl: 48px;
-	--spacer-xl: 32px;
-	--spacer-lg: 24px;
-	--spacer-md: 16px;
-	--spacer-sm: 12px;
-	--spacer-xs: 8px;
 	--spacer-2xs: 4px;
+	--spacer-xs: 8px;
+	--spacer-sm: 12px;
+	--spacer-md: 16px;
+	--spacer-lg: 24px;
+	--spacer-xl: 32px;
+	--spacer-2xl: 48px;
 }
 
 @layer utilities {

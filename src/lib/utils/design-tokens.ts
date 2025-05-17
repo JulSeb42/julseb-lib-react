@@ -441,6 +441,7 @@ export const designTokens = {
 		currentColor: "currentColor",
 		transparent: "transparent",
 	},
+
 	/**
 	 * Colors hover
 	 * For hoverable colors
@@ -466,6 +467,7 @@ export const designTokens = {
 		rose: "rose",
 		slate: "slate",
 	},
+
 	/**
 	 * Overlays
 	 * Backgrounds with different opacities
@@ -478,6 +480,7 @@ export const designTokens = {
 		"gradient-black": "gradient-black",
 		"gradient-white": "gradient-white",
 	},
+
 	/**
 	 * Font families
 	 * All font families used in the project
@@ -486,6 +489,7 @@ export const designTokens = {
 		body: "body",
 		code: "code",
 	},
+
 	/**
 	 * Spacers
 	 * Common spacing sizes
@@ -499,6 +503,7 @@ export const designTokens = {
 		/** 32px */ xl: "xl",
 		/** 48px */ "2xl": "2xl",
 	},
+
 	/**
 	 * Breakpoints
 	 * @link https://tailwindcss.com/docs/responsive-design#using-custom-breakpoints
@@ -510,6 +515,7 @@ export const designTokens = {
 		xl: "xl",
 		"2xl": "2xl",
 	},
+
 	/**
 	 * Container
 	 * @link https://tailwindcss.com/plus/ui-blocks/application-ui/layout/containers
@@ -529,6 +535,7 @@ export const designTokens = {
 		"6xl": "6xl",
 		"7xl": "7xl",
 	},
+
 	/**
 	 * Font sizes
 	 * @link https://tailwindcss.com/docs/font-size
@@ -548,6 +555,7 @@ export const designTokens = {
 		"8xl": "8xl",
 		"9xl": "9xl",
 	},
+
 	/**
 	 * Line heights
 	 * @link https://tailwindcss.com/docs/font-size
@@ -567,6 +575,7 @@ export const designTokens = {
 		"8xl": "8xl--line-height",
 		"9xl": "9xl--line-height",
 	},
+
 	/**
 	 * Font weights
 	 * @link https://tailwindcss.com/docs/font-weight
@@ -582,6 +591,7 @@ export const designTokens = {
 		extrabold: "extrabold",
 		black: "black",
 	},
+
 	/**
 	 * Tracking (letter spacing)
 	 * @link https://tailwindcss.com/docs/letter-spacing#using-a-custom-value
@@ -594,6 +604,7 @@ export const designTokens = {
 		wider: "wider",
 		widest: "widest",
 	},
+
 	/**
 	 * Leading (line height)
 	 * @link https://tailwindcss.com/docs/line-height#setting-independently
@@ -606,6 +617,7 @@ export const designTokens = {
 		loose: "loose",
 		none: "none",
 	},
+
 	/**
 	 * Border radius
 	 * @link https://tailwindcss.com/docs/border-radius
@@ -621,6 +633,7 @@ export const designTokens = {
 		"4xl": "4xl",
 		full: "full",
 	},
+
 	/**
 	 * Box shadow
 	 * @link https://tailwindcss.com/docs/box-shadow
@@ -635,6 +648,7 @@ export const designTokens = {
 		"2xl": "2xl",
 		none: "none",
 	},
+
 	/**
 	 * Inset shadow
 	 * @link https://tailwindcss.com/docs/box-shadow#adding-an-inset-shadow
@@ -644,6 +658,7 @@ export const designTokens = {
 		xs: "xs",
 		sm: "sm",
 	},
+
 	/**
 	 * Box shadow
 	 * @link https://tailwindcss.com/docs/box-shadow
@@ -656,6 +671,7 @@ export const designTokens = {
 		xl: "xl",
 		"2xl": "2xl",
 	},
+
 	/**
 	 * Text shadow
 	 * @link https://tailwindcss.com/docs/text-shadow
@@ -667,6 +683,7 @@ export const designTokens = {
 		md: "md",
 		lg: "lg",
 	},
+
 	/**
 	 * Transition timing functions
 	 * @link https://tailwindcss.com/docs/transition-timing-function
@@ -676,6 +693,7 @@ export const designTokens = {
 		"--ease-out": "--ease-out",
 		"--ease-in-out": "--ease-in-out",
 	},
+
 	/**
 	 * Animate
 	 * @link https://tailwindcss.com/docs/animation
@@ -686,6 +704,7 @@ export const designTokens = {
 		pulse: "pulse",
 		bounce: "bounce",
 	},
+
 	/**
 	 * Blur
 	 * @link https://tailwindcss.com/docs/filter-blur
@@ -699,6 +718,7 @@ export const designTokens = {
 		"2xl": "2xl",
 		"3xl": "3xl",
 	},
+
 	/**
 	 * Perspective
 	 * @link https://tailwindcss.com/docs/perspective
@@ -710,11 +730,13 @@ export const designTokens = {
 		midrange: "midrange",
 		distant: "distant",
 	},
+
 	/**
 	 * Aspect video
 	 * @link https://tailwindcss.com/docs/aspect-ratio#using-a-video-aspect-ratio
 	 */
 	libAspectVideo: {},
+
 	/**
 	 *
 	 */
@@ -725,6 +747,7 @@ export const designTokens = {
 		h4: "h4",
 		h5: "h5",
 	},
+
 	/**
 	 * All HTML text tags
 	 */
@@ -739,6 +762,7 @@ export const designTokens = {
 		ol: "ol",
 		dl: "dl",
 	},
+
 	/**
 	 * Transitions
 	 * Common transition properties
@@ -753,6 +777,7 @@ export const designTokens = {
 		shadow: "shadow",
 		transform: "transform",
 	},
+
 	/**
 	 * Themes
 	 * Common theme names
@@ -760,8 +785,8 @@ export const designTokens = {
 	libThemes: {
 		light: "light",
 		dark: "dark",
-		system: "system",
 	},
+
 	/**
 	 * Input variants
 	 * Common input styles
@@ -778,6 +803,7 @@ export const designTokens = {
 		"rounded-full": "rounded-full",
 		pill: "pill",
 	},
+
 	/**
 	 * Input backgrounds
 	 * Background styles for inputs
@@ -786,6 +812,7 @@ export const designTokens = {
 		light: "light",
 		dark: "dark",
 	},
+
 	/**
 	 * Main sizes
 	 * Common sizes for main elements
@@ -795,6 +822,7 @@ export const designTokens = {
 		large: "large",
 		form: "form",
 	},
+
 	/**
 	 * Aside sizes
 	 * Common sizes for aside elements
@@ -803,6 +831,11 @@ export const designTokens = {
 		default: "default",
 		small: "small",
 	},
+
+	/**
+	 * Z indexes
+	 * Common z indexes
+	 */
 	libZIndex: {
 		"0": "0",
 		"10": "10",
@@ -819,6 +852,16 @@ export const designTokens = {
 		"997": "997",
 		"998": "998",
 		"999": "999",
+	},
+
+	/**
+	 * Positions
+	 * CSS position values
+	 */
+	libPosition: {
+		relative: "relative",
+		absolute: "absolute",
+		fixed: "fixed",
 	},
 
 	/**
