@@ -70,4 +70,5 @@ export * from "./components/Grid"
 export * from "./components/Flexbox"
 export * from "./components/Key"
 export * from "./components/Highlight"
+export * from "./components/Linkify"
 /* Prepend here - DO NOT REMOVE */

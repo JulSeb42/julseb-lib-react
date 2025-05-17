@@ -13,11 +13,11 @@ import type { ILibHighlight } from "./types"
  * @param {object} props - Component props.
  * @param {string} [props.className] - Additional class names to apply.
  * @param {ElementType} [props.element=Text] - The HTML element or React component to render as the container.
- * @param {React.RefObject<HTMLHeadingElement | HTMLParagraphElement | HTMLQuoteElement | HTMLDListElement | HTMLOListElement | HTMLUListElement>} [props.ref] - Ref for the container.
- * @param {React.ReactNode} props.children - The text content to display.
+ * @param {RefObject<HTMLHeadingElement | HTMLParagraphElement | HTMLQuoteElement | HTMLDListElement | HTMLOListElement | HTMLUListElement>} [props.ref] - Ref for the container.
+ * @param {ReactNode} props.children - The text content to display.
  * @param {string} [props.highlightedText] - The substring to highlight within the children.
  * @param {string} [props.highlightClasses] - Additional class names to apply to the highlighted text.
- * @param {React.CSSProperties} [props.highlightStyle] - Inline style to apply to the highlighted text.
+ * @param {CSSProperties} [props.highlightStyle] - Inline style to apply to the highlighted text.
  * @param {object} [props.rest] - Additional props spread to the container.
  * @returns {JSX.Element} The rendered Highlight component.
  */

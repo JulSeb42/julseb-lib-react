@@ -1,5 +1,4 @@
 import { Fragment, type CSSProperties } from "react"
-import type { ClassNameValue } from "tailwind-merge"
 import { uuid, slugify } from "@julseb-lib/utils"
 import { clsx } from "../utils"
 import { Text } from ".."
@@ -9,7 +8,7 @@ export const getHighlightedText = (
 	text: ReactChildren,
 	value: string,
 	highlightStyle?: CSSProperties,
-	...className: Array<ClassNameValue>
+	className?: string | Array<string>
 ) => {
 	const parts = text?.toString().split(new RegExp(`(${value})`, "gi"))
 
