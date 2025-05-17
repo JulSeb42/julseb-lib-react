@@ -8,7 +8,6 @@ import type {
 	FunctionComponent,
 	RefObject,
 } from "react"
-import type { Property } from "csstype"
 import type { designTokens } from "../utils/design-tokens"
 import type { RequireAtLeastOne } from "./require-at-least-one"
 
@@ -268,6 +267,16 @@ export type LibKeySize = keyof typeof designTokens.libKeySizes
  * maxWidth="full"
  */
 export type LibMaxWidth = keyof typeof designTokens.libMaxWidths
+/**
+ * @description All skeleton animation tokens available in the library.
+ * @type {"pulse" | "shine"}
+ * @example
+ * // Usage
+ * skeletonAnimation="pulse"
+ * skeletonAnimation="shine"
+ */
+export type LibSkeletonAnimation =
+	keyof typeof designTokens.libSkeletonAnimations
 
 /**
  * @description Props common to nearly all components.
@@ -281,153 +290,6 @@ export type LibMaxWidth = keyof typeof designTokens.libMaxWidths
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
 	element?: ElementType
 	ref?: RefObject<T>
-}
-
-/**
- * @description Props for components with box shadow.
- * Can be a single shadow token or an object specifying different shadows for default, hover, and active states.
- * @type {LibShadows | { default: LibShadows; hover: LibShadows; active: LibShadows }}
- * @example
- * // Single shadow
- * boxShadow="md"
- *
- * // Different shadows for states
- * boxShadow={{ default: "md", hover: "lg", active: "sm" }}
- */
-export type ILibBoxShadow =
-	| LibShadows
-	| {
-			default: LibShadows
-			hover: LibShadows
-			active: LibShadows
-	  }
-
-/* Border radius */
-/**
- * @description Props for components with border radius.
- * Can be a single radius token, null, or an object specifying different radii for each corner.
- * @type {"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "full" | null | { topLeft?: LibRadiuses | null; topRight?: LibRadiuses | null; bottomLeft?: LibRadiuses | null; bottomRight?: LibRadiuses | null }}
- * @example
- * // Single radius
- * radius="md"
- *
- * // Different radii for corners
- * radius={{ topLeft: "sm", bottomRight: "xl" }}
- */
-export type ILibRadius =
-	| LibRadiuses
-	| null
-	| {
-			topLeft?: LibRadiuses | null
-			topRight?: LibRadiuses | null
-			bottomLeft?: LibRadiuses | null
-			bottomRight?: LibRadiuses | null
-	  }
-
-/* Padding */
-/**
- * @description Props for components with paddings.
- * Can be a single spacer token from the library or an object specifying paddings for each side or axis.
- * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }}
- * @example
- * // Single padding
- * padding="md"
- *
- * // Different paddings for sides
- * padding={{ left: "lg", top: "2xl" }}
- */
-export type ILibPadding =
-	| LibSpacers
-	| {
-			left?: LibSpacers | "auto"
-			top?: LibSpacers | "auto"
-			right?: LibSpacers | "auto"
-			bottom?: LibSpacers | "auto"
-			leftRight?: LibSpacers | "auto"
-			topBottom?: LibSpacers | "auto"
-	  }
-
-/* Margins */
-/**
- * @description Props for components with margins.
- * Can be a single spacer token, "auto", "0 auto", or an object specifying margins for each side or axis.
- * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px" | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" } | undefined}
- * @example
- * // Single margin
- * margin="md"
- *
- * // Centered margin
- * margin="0 auto"
- *
- * // Different margins for sides
- * margin={{ left: "lg", top: "2xl" }}
- */
-export type ILibMargin =
-	| LibSpacers
-	| undefined
-	| "auto"
-	| "0 auto"
-	| {
-			left?: LibSpacers | "auto"
-			top?: LibSpacers | "auto"
-			right?: LibSpacers | "auto"
-			bottom?: LibSpacers | "auto"
-			leftRight?: LibSpacers | "auto"
-			topBottom?: LibSpacers | "auto"
-	  }
-
-/* Border */
-/**
- * @description Props for components with borders.
- * @prop style - Border style token ("solid", "dashed", "dotted", "double", "hidden", "none")
- * @prop width - Border width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
- * @prop color - Any color from the library.
- * @example
- * // Solid border, medium width, primary color
- * border={{ style: "solid", width: "md", color: "primary" }}
- */
-export type ILibBorder = {
-	style?: CssBorderStyle
-	width?: Exclude<LibSpacers, "0px">
-	color?: LibColors
-}
-
-/* Outline */
-/**
- * @description Props for components with outlines.
- * @prop style - Outline style token ("solid", "dashed", "dotted", "double", "none", "hidden")
- * @prop width - Outline width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
- * @prop color - Any color from the library.
- * @example
- * // Solid outline, medium width, primary color
- * outline={{ style: "solid", width: "md", color: "primary" }}
- */
-export type ILibOutline = {
-	style?: CssOutlineStyle
-	width?: Exclude<LibSpacers, "0px">
-	color?: LibColors
-}
-
-/* Position */
-/**
- * @description Props for components with CSS position and z-index.
- * @prop position - CSS position value token ("relative", "absolute", "fixed").
- * @prop left - Left offset using a spacer token.
- * @prop top - Top offset using a spacer token.
- * @prop right - Right offset using a spacer token.
- * @prop bottom - Bottom offset using a spacer token.
- * @prop zIndex - z-index value from the library.
- * @example
- * // Example usage
- * position={{ position: "absolute", top: "md", left: "lg", zIndex: "999" }}
- */
-export interface ILibPosition {
-	position?: LibPosition
-	left?: LibSpacers
-	top?: LibSpacers
-	right?: LibSpacers
-	bottom?: LibSpacers
-	zIndex?: LibZIndex
 }
 
 /* Links & buttons */
@@ -579,9 +441,15 @@ export type CssTextAlign =
 	| "justify"
 	| "start"
 	| "end"
-export type CssVerticalAlign = Property.VerticalAlign
-export type CssTextDecoration = Property.TextDecoration
-export type CssPosition = Property.Position
+export type CssVerticalAlign =
+	| "align-baseline"
+	| "align-top"
+	| "align-middle"
+	| "align-bottom"
+	| "align-text-top"
+	| "align-text-bottom"
+	| "align-sub"
+	| "align-super"
 export type CssJustifyItems =
 	| "start"
 	| "end"
@@ -624,7 +492,6 @@ export type CssAlignContent =
 export type CssFlexDirection = "row" | "row-reverse" | "col" | "col-reverse"
 export type CssFlexWrap = "nowrap" | "wrap" | "wrap-reverse"
 export type CssObjectFit = "contain" | "cover" | "fill" | "none" | "scale-down"
-export type CssCursor = Property.Cursor
 export type CssBorderStyle =
 	| "solid"
 	| "dashed"
@@ -639,7 +506,6 @@ export type CssOutlineStyle =
 	| "double"
 	| "none"
 	| "hidden"
-export type CssFontStyle = Property.FontStyle
 
 export type LibMainSize = keyof typeof designTokens.libMainSizes
 export type LibAsideSize = keyof typeof designTokens.libAsideSizes

@@ -184,6 +184,34 @@ button {
 	.text-stone {
 		color: var(--color-stone-500);
 	}
+
+	@keyframes shine {
+		from {
+			left: -150px;
+		}
+
+		to {
+			left: 106%;
+		}
+	}
+
+	.animate-shine {
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -200px;
+			bottom: -200px;
+			background-color: var(--color-white);
+			opacity: 0.7;
+			filter: blur(20px);
+			width: 100px;
+			transform: skew(-15deg);
+			animation: shine 2000ms ease-in-out infinite;
+		}
+	}
 }
 
 .overlay-black-50 {

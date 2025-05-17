@@ -955,6 +955,11 @@ export const designTokens = {
 	},
 
 	/**
+	 * Skeleton animations
+	 */
+	libSkeletonAnimations: { pulse: "pulse", shine: "shine", none: "none" },
+
+	/**
 	 * Country codes
 	 * To use in the InputPhone component
 	 */
