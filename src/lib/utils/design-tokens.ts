@@ -339,7 +339,7 @@ export const designTokens = {
 		// "indigo-900": "indigo-900",
 		// "indigo-950": "indigo-950",
 		// "violet-50": "violet-50",
-		
+
 		"purple-50": "purple-50",
 		"purple-100": "purple-100",
 		"purple-200": "purple-200",
@@ -921,6 +921,38 @@ export const designTokens = {
 	 * To use with the Key component
 	 */
 	libKeySizes: { large: "large", small: "small" },
+
+	/**
+	 * Max widths
+	 */
+	libMaxWidths: {
+		"3xs": "3xs",
+		"2xs": "2xs",
+		xs: "xs",
+		sm: "sm",
+		md: "md",
+		lg: "lg",
+		xl: "xl",
+		"2xl": "2xl",
+		"3xl": "3xl",
+		"4xl": "4xl",
+		"5xl": "5xl",
+		"6xl": "6xl",
+		"7xl": "7xl",
+		none: "none",
+		px: "px",
+		full: "full",
+		dvw: "dvw",
+		dvh: "dvh",
+		lvw: "lvw",
+		lvh: "lvh",
+		svw: "svw",
+		svh: "svh",
+		screen: "screen",
+		min: "min",
+		max: "max",
+		fit: "fit",
+	},
 
 	/**
 	 * Country codes

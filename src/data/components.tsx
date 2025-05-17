@@ -18,6 +18,7 @@ import { flexboxPreview } from "../lib/components/Flexbox/__preview__/Flexbox.pr
 import { keyPreview } from "../lib/components/Key/__preview__/Key.preview"
 import { highlightPreview } from "../lib/components/Highlight/__preview__/Highlight.preview"
 import { linkifyPreview } from "../lib/components/Linkify/__preview__/Linkify.preview"
+import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -68,6 +69,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	keyPreview,
 	highlightPreview,
 	linkifyPreview,
+	hrPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

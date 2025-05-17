@@ -8,4 +8,5 @@ export * from "../components/Flexbox/types"
 export * from "../components/Key/types"
 export * from "../components/Highlight/types"
 export * from "../components/Linkify/types"
+export * from "../components/Hr/types"
 /* Prepend here - DO NOT REMOVE */

@@ -250,7 +250,6 @@ export type LibZIndex = keyof typeof designTokens.libZIndex
  * minHeight="min-h-screen"
  */
 export type LibMinHeight = keyof typeof designTokens.libMinHeights
-
 /**
  * @description All key sizes for the Key component.
  * @type {"large" | "small"}
@@ -260,6 +259,15 @@ export type LibMinHeight = keyof typeof designTokens.libMinHeights
  * keySize="small"
  */
 export type LibKeySize = keyof typeof designTokens.libKeySizes
+/**
+ * @description All max widths from the library.
+ * @type {"3xs" | "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "none" | "px" | "full" | "dvw" | "dvh" | "lvw" | "lvh" | "svw" | "svh" | "screen" | "min" | "max" | "fit"}
+ * @example
+ * // Usage
+ * maxWidth="md"
+ * maxWidth="full"
+ */
+export type LibMaxWidth = keyof typeof designTokens.libMaxWidths
 
 /**
  * @description Props common to nearly all components.

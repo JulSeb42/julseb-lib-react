@@ -5,20 +5,32 @@ export const Homepage = () => {
 	const { theme, switchTheme } = useLibTheme()
 
 	const heights = [
-		"min-h-px",
-		"min-h-full",
-		"min-h-screen",
-		"min-h-dvh",
-		"min-h-dvw",
-		"min-h-lvh",
-		"min-h-lvw",
-		"min-h-svw",
-		"min-h-svh",
-		"min-h-auto",
-		"min-h-min",
-		"min-h-max",
-		"min-h-fit",
-		"min-h-lh",
+		"3xs",
+		"2xs",
+		"xs",
+		"sm",
+		"md",
+		"lg",
+		"xl",
+		"2xl",
+		"3xl",
+		"4xl",
+		"5xl",
+		"6xl",
+		"7xl",
+		"none",
+		"px",
+		"full",
+		"dvw",
+		"dvh",
+		"lvw",
+		"lvh",
+		"svw",
+		"svh",
+		"screen",
+		"min",
+		"max",
+		"fit",
 	]
 
 	return (
@@ -33,7 +45,7 @@ export const Homepage = () => {
 
 			<ul>
 				{heights.map(h => (
-					<li key={h}>{`"${h.replaceAll("min-h-", "")}"|`}</li>
+					<li key={h}>{`"${h}": "${h}",`}</li>
 				))}
 			</ul>
 		</Page>

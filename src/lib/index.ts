@@ -71,4 +71,5 @@ export * from "./components/Flexbox"
 export * from "./components/Key"
 export * from "./components/Highlight"
 export * from "./components/Linkify"
+export * from "./components/Hr"
 /* Prepend here - DO NOT REMOVE */
