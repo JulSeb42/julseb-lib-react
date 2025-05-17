@@ -1,7 +1,7 @@
 import type { ElementType } from "react"
 import type {
 	CssTextAlign,
-	LibColors,
+	LibAllColors,
 	LibColorsHover,
 	LibComponentBase,
 	LibTextDisplay,
@@ -18,7 +18,7 @@ interface ILibTextBase
 			HTMLUListElement
 	> {
 	element?: ElementType
-	color?: LibColors
+	color?: LibAllColors
 	linkColor?: LibColorsHover
 	textAlign?: CssTextAlign
 }

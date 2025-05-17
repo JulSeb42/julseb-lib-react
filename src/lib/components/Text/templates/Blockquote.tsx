@@ -4,8 +4,8 @@ import {
 	clsx,
 	genLinkColor,
 	genTextAlign,
-	genTextColor,
 	genButtonColor,
+	genTextAllColor,
 } from "../../../utils"
 import type { ILibText } from "../types"
 
@@ -27,7 +27,7 @@ export const Blockquote: FC<ILibText> = ({
 				"text-[18px]",
 				"italic ps-4",
 				genTextAlign[textAlign],
-				(genTextColor as any)[color],
+				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
 				className,

@@ -4,7 +4,7 @@ import {
 	clsx,
 	genLinkColor,
 	genTextAlign,
-	genTextColor,
+	genTextAllColor,
 	genButtonColor,
 } from "../../../utils"
 import type { ILibText } from "../types"
@@ -27,7 +27,7 @@ export const Ol: FC<ILibText> = ({
 				"text-[16px]",
 				"list-decimal ps-8",
 				(genTextAlign as any)[textAlign],
-				(genTextColor as any)[color],
+				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
 				className,

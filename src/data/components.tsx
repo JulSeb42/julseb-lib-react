@@ -16,6 +16,7 @@ import { sectionPreview } from "../lib/components/Section/__preview__/Section.pr
 import { gridPreview } from "../lib/components/Grid/__preview__/Grid.preview"
 import { flexboxPreview } from "../lib/components/Flexbox/__preview__/Flexbox.preview"
 import { keyPreview } from "../lib/components/Key/__preview__/Key.preview"
+import { highlightPreview } from "../lib/components/Highlight/__preview__/Highlight.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -64,6 +65,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	gridPreview,
 	flexboxPreview,
 	keyPreview,
+	highlightPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 
