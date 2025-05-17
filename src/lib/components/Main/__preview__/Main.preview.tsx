@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Main, Text } from "../../../"
-import type {} from "../../../types"
+
 import type { ILibMain } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -14,11 +14,11 @@ export const mainPreview: ComponentPreview<ILibMain> = {
 	name: "Main",
 	component: Main,
 	category: "styles",
-	import: "Main", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibMain", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Main",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibMain",
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		{

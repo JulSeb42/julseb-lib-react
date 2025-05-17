@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { clsx, genGap } from "../../utils"
 import type { ILibSection } from "./types"
 
@@ -16,9 +15,9 @@ import type { ILibSection } from "./types"
  * @param {object} props - Component props.
  * @param {string} [props.className] - Additional class names to apply.
  * @param {ElementType} [props.element="section"] - The HTML element or React component to render as the section container.
- * @param {React.RefObject<HTMLDivElement>} [props.ref] - Ref for the section container.
- * @param {React.ReactNode} props.children - Section content.
- * @param {"2xl"|"xl"|"lg"|"md"|"sm"|"xs"|"2xs"} [props.gap="md"] - Gap between children (uses spacer tokens).
+ * @param {RefObject<HTMLDivElement>} [props.ref] - Ref for the section container.
+ * @param {ReactNode} props.children - Section content.
+ * @param {"2xl"|"xl"|"lg"|"md"|"sm"|"xs"|"2xs"|"0px"} [props.gap="md"] - Gap between children (uses spacer tokens).
  * @param {object} [props.rest] - Additional props spread to the container.
  *
  * @returns {JSX.Element} The rendered section container.
@@ -40,7 +39,7 @@ export const Section: FC<ILibSection> = ({
 			ref={ref}
 			className={clsx(
 				"flex flex-col items-stretch",
-				(genGap as any)[gap],
+				genGap[gap],
 				className,
 			)}
 			{...rest}

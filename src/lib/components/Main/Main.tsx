@@ -14,10 +14,10 @@ import type { ILibMain } from "./types"
  * @param {object} props - Component props.
  * @param {string} [props.className] - Additional class names to apply.
  * @param {ElementType} [props.element="main"] - The HTML element or React component to render as the main container.
- * @param {React.RefObject<HTMLDivElement>} [props.ref] - Ref for the main container.
- * @param {React.ReactNode} props.children - Main content.
- * @param {"default"|"large"|"form"|"full"} [props.size="default"] - Main width size.
- * @param {string} [props.backgroundColor="white"] - Background color token.
+ * @param {RefObject<HTMLDivElement>} [props.ref] - Ref for the main container.
+ * @param {ReactNode} props.children - Main content.
+ * @param {"default"|"large"|"form"} [props.size="default"] - Main width size.
+ * @param {string} [props.backgroundColor="white"] - Any color from the library.
  * @param {"2xl"|"xl"|"lg"|"md"|"sm"|"xs"|"2xs"} [props.gap="lg"] - Gap between children (uses spacer tokens).
  * @param {object} [props.rest] - Additional props spread to the container.
  *
@@ -43,8 +43,8 @@ export const Main: FC<ILibMain> = ({
 			className={clsx(
 				"flex flex-col py-4 sm:py-8 md:py-12 w-full",
 				(genBgColor as any)[backgroundColor],
-				(genGap as any)[gap],
-				(maxWidth as any)[size],
+				genGap[gap],
+				maxWidth[size],
 				className,
 			)}
 			{...rest}
@@ -58,5 +58,4 @@ const maxWidth = {
 	default: "sm:max-w-(--main-default)",
 	large: "sm:max-w-(--main-large)",
 	form: "sm:max-w-(--main-form)",
-	full: "sm:max-w-(--main-full)",
 }

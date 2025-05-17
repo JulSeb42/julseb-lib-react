@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Aside, Text } from "../../../"
-import type {} from "../../../types"
+
 import type { ILibAside } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -14,15 +14,14 @@ export const asidePreview: ComponentPreview<ILibAside> = {
 	name: "Aside",
 	component: Aside,
 	category: "styles",
-	import: "Aside", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibAside", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Aside",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibAside",
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		{
-			previewTitle: "Default",
 			demo: (
 				<div className="flex flex-col gap-1">
 					{links.map((link, i) => (

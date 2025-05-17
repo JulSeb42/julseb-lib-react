@@ -38,13 +38,3 @@ export const Blockquote: FC<ILibText> = ({
 		</Element>
 	)
 }
-
-// font-style: italic;
-// ${({ $textAlign, $color, $linkColor }) =>
-// 	TextBaseMixin({
-// 		$fontSize: "h6",
-// 		$fontWeight: "bold",
-// 		$textAlign,
-// 		$color,
-// 		$linkColor,
-// 	})}

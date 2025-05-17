@@ -1,5 +1,5 @@
 import { Text } from "../../../"
-import type {} from "../../../types"
+
 import type { ILibText } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 import { TextDisplay } from "./previews/TextDisplay"
@@ -15,11 +15,11 @@ export const textPreview: ComponentPreview<ILibText> = {
 	name: "Text",
 	component: Text,
 	category: "styles",
-	import: "Text", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibText", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Text",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibText",
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		{ previewTitle: "Display", demo: <TextDisplay /> },

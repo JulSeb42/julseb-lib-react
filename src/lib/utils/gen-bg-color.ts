@@ -245,4 +245,5 @@ export const genBgColor = {
 	"stone-950": "bg-stone-950",
 	current: "bg-current",
 	transparent: "bg-transparent",
+	background: "bg-background",
 }

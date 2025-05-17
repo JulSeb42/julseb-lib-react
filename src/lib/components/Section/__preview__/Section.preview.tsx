@@ -8,11 +8,11 @@ export const sectionPreview: ComponentPreview<ILibSection> = {
 	name: "Section",
 	component: Section,
 	category: "layouts",
-	import: "Section", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibSection", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Section",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibSection",
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		...sizes.map((size, i) => (

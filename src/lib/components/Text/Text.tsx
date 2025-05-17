@@ -41,13 +41,13 @@ export const BASE_CLASSES = clsx(
  * @param {object} props - Component props.
  * @param {ElementType} [props.element="p"] - The HTML element or React component to render.
  * @param {"h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"small"|"strong"|"em"|"blockquote"|"ul"|"ol"|"dl"} [props.tag="p"] - The semantic HTML tag to render.
- * @param {string} [props.color="currentColor"] - Text color.
- * @param {string} [props.linkColor="blue"] - Link color.
- * @param {string} [props.textAlign="left"] - Text alignment.
+ * @param {string} [props.color="currentColor"] - Any color from the library.
+ * @param {"red"|"orange"|"amber"|"yellow"|"lime"|"green"|"emerald"|"teal"|"cyan"|"sky"|"blue"|"indigo"|"violet"|"purple"|"fuchsia"|"pink"|"rose"|"slate"} [props.linkColor="blue"] - Any hover color.
+ * @param {"text-left"|"text-center"|"text-right"|"text-justify"|"text-start"|"text-end"} [props.textAlign="left"] - Text alignment.
  * @param {boolean} [props.display=false] - Whether to use display block.
  * @param {string} [props.className] - Additional class names to apply.
- * @param {React.RefObject<any>} [props.ref] - Ref for the rendered element.
- * @param {React.ReactNode} props.children - Text content.
+ * @param {RefObject<any>} [props.ref] - Ref for the rendered element.
+ * @param {ReactNode} props.children - Text content.
  * @param {object} [props.rest] - Additional props spread to the rendered element.
  *
  * @returns {JSX.Element} The rendered text element.

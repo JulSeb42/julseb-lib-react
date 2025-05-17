@@ -6,6 +6,7 @@ export const genGap = {
 	sm: "gap-(--spacer-sm)",
 	xs: "gap-(--spacer-xs)",
 	"2xs": "gap-(--spacer-2xs)",
+	"0px": "0px",
 }
 
 export const genRowGap = {
@@ -16,6 +17,7 @@ export const genRowGap = {
 	sm: "gap-y-(--spacer-sm)",
 	xs: "gap-y-(--spacer-xs)",
 	"2xs": "gap-y-(--spacer-2xs)",
+	"0px": "0px",
 }
 
 export const genColGap = {
@@ -26,4 +28,5 @@ export const genColGap = {
 	sm: "gap-x-(--spacer-sm)",
 	xs: "gap-x-(--spacer-xs)",
 	"2xs": "gap-x-(--spacer-2xs)",
+	"0px": "0px",
 }

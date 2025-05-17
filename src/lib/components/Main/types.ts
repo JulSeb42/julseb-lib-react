@@ -6,7 +6,7 @@ import type {
 } from "../../types"
 
 export interface ILibMain extends LibComponentBase<HTMLDivElement> {
-	gap?: Exclude<LibSpacers, "0px">
+	gap?: LibSpacers
 	backgroundColor?: LibColors
 	size?: LibMainSize
 }

@@ -67,4 +67,5 @@ export * from "./components/Main"
 export * from "./components/Aside"
 export * from "./components/Section"
 export * from "./components/Grid"
+export * from "./components/Flexbox"
 /* Prepend here - DO NOT REMOVE */

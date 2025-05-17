@@ -440,6 +440,7 @@ export const designTokens = {
 		// "stone-950": "stone-950",
 		currentColor: "currentColor",
 		transparent: "transparent",
+		background: "background",
 	},
 
 	/**
@@ -862,6 +863,27 @@ export const designTokens = {
 		relative: "relative",
 		absolute: "absolute",
 		fixed: "fixed",
+	},
+
+	/**
+	 * Min heights
+	 * Tailwind min height classes
+	 */
+	libMinHeights: {
+		px: "px",
+		full: "full",
+		screen: "screen",
+		dvh: "dvh",
+		dvw: "dvw",
+		lvh: "lvh",
+		lvw: "lvw",
+		svw: "svw",
+		svh: "svh",
+		auto: "auto",
+		min: "min",
+		max: "max",
+		fit: "fit",
+		lh: "lh",
 	},
 
 	/**

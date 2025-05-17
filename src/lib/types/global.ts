@@ -5,7 +5,6 @@ import type {
 	Dispatch,
 	SetStateAction,
 	MouseEventHandler,
-	ReactElement,
 	FunctionComponent,
 	RefObject,
 } from "react"
@@ -14,7 +13,7 @@ import type { designTokens } from "../utils/design-tokens"
 import type { RequireAtLeastOne } from "./require-at-least-one"
 
 /**
- * @description All color tokens available in the design system.
+ * @description All color tokens available in the library.
  * @type {keyof typeof designTokens.libColors}
  * @example
  * // Usage
@@ -23,7 +22,7 @@ import type { RequireAtLeastOne } from "./require-at-least-one"
  */
 export type LibColors = keyof typeof designTokens.libColors
 /**
- * @description All hover color tokens available in the design system.
+ * @description All hover color tokens available in the library.
  * @type {keyof typeof designTokens.libColorsHover}
  * @example
  * // Usage
@@ -42,7 +41,7 @@ export type LibColorsHover = keyof typeof designTokens.libColorsHover
  */
 export type LibColorsHoverAndCurrent = LibColorsHover | "current"
 /**
- * @description All overlay tokens available in the design system.
+ * @description All overlay tokens available in the library.
  * @type {keyof typeof designTokens.libOverlays}
  * @example
  * // Usage
@@ -51,7 +50,7 @@ export type LibColorsHoverAndCurrent = LibColorsHover | "current"
  */
 export type LibOverlays = keyof typeof designTokens.libOverlays
 /**
- * @description All color and overlay tokens available in the design system.
+ * @description All color and overlay tokens available in the library.
  * @type {keyof typeof designTokens.libColors | keyof typeof designTokens.libOverlays}
  * @example
  * // Usage
@@ -64,7 +63,7 @@ export type LibAllColorsAndOverlays =
 	| keyof typeof designTokens.libColors
 	| keyof typeof designTokens.libOverlays
 /**
- * @description All font family tokens available in the design system.
+ * @description All font family tokens available in the library.
  * @type {keyof typeof designTokens.libFontFamilies}
  * @example
  * // Usage
@@ -73,7 +72,7 @@ export type LibAllColorsAndOverlays =
  */
 export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
 /**
- * @description All font size tokens available in the design system.
+ * @description All font size tokens available in the library.
  * @type {keyof typeof designTokens.libFontSizes}
  * @example
  * // Usage
@@ -82,7 +81,7 @@ export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
  */
 export type LibFontSizes = keyof typeof designTokens.libFontSizes
 /**
- * @description All font weight tokens available in the design system.
+ * @description All font weight tokens available in the library.
  * @type {keyof typeof designTokens.libFontWeights}
  * @example
  * // Usage
@@ -91,7 +90,7 @@ export type LibFontSizes = keyof typeof designTokens.libFontSizes
  */
 export type LibFontWeights = keyof typeof designTokens.libFontWeights
 /**
- * @description All line height tokens available in the design system.
+ * @description All line height tokens available in the library.
  * @type {keyof typeof designTokens.libLineHeights}
  * @example
  * // Usage
@@ -100,7 +99,7 @@ export type LibFontWeights = keyof typeof designTokens.libFontWeights
  */
 export type LibLineHeights = keyof typeof designTokens.libLineHeights
 /**
- * @description All box shadow tokens available in the design system.
+ * @description All box shadow tokens available in the library.
  * @type {keyof typeof designTokens.libShadows}
  * @example
  * // Usage
@@ -109,7 +108,7 @@ export type LibLineHeights = keyof typeof designTokens.libLineHeights
  */
 export type LibShadows = keyof typeof designTokens.libShadows
 /**
- * @description All spacer tokens available in the design system, plus "0px".
+ * @description All spacer tokens available in the library, plus "0px".
  * @type {keyof typeof designTokens.libSpacers | "0px"}
  * @example
  * // Usage
@@ -120,7 +119,7 @@ export type LibShadows = keyof typeof designTokens.libShadows
  */
 export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
 /**
- * @description All border radius tokens available in the design system.
+ * @description All border radius tokens available in the library.
  * @type {keyof typeof designTokens.libRadius}
  * @example
  * // Usage
@@ -129,7 +128,7 @@ export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
  */
 export type LibRadiuses = keyof typeof designTokens.libRadius
 /**
- * @description All transition tokens available in the design system.
+ * @description All transition tokens available in the library.
  * @type {keyof typeof designTokens.libTransitions}
  * @example
  * // Usage
@@ -148,7 +147,7 @@ export type LibTransitions = keyof typeof designTokens.libTransitions
  */
 export type LibValidationStatus = boolean | undefined
 /**
- * @description All theme names available in the design system.
+ * @description All theme names available in the library.
  * @type {keyof typeof designTokens.libThemes}
  * @example
  * // Usage
@@ -157,7 +156,7 @@ export type LibValidationStatus = boolean | undefined
  */
 export type LibThemeNames = keyof typeof designTokens.libThemes
 /**
- * @description All input variant tokens available in the design system.
+ * @description All input variant tokens available in the library.
  * @type {keyof typeof designTokens.libInputVariants}
  * @example
  * // Usage
@@ -167,7 +166,7 @@ export type LibThemeNames = keyof typeof designTokens.libThemes
  */
 export type LibInputVariant = keyof typeof designTokens.libInputVariants
 /**
- * @description All input background tokens available in the design system.
+ * @description All input background tokens available in the library.
  * @type {keyof typeof designTokens.libInputBackgrounds}
  * @example
  * // Usage
@@ -176,7 +175,7 @@ export type LibInputVariant = keyof typeof designTokens.libInputVariants
  */
 export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
 /**
- * @description All display text tag tokens available in the design system (headings from 1 to 5).
+ * @description All display text tag tokens available in the library (headings from 1 to 5).
  * @type {keyof typeof designTokens.libTextDisplayTags}
  * @example
  * // Usage
@@ -185,7 +184,7 @@ export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
  */
 export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
 /**
- * @description All text tags without the display prop tokens available in the design system (paragraphs, lists, etc.).
+ * @description All text tags without the display prop tokens available in the library (paragraphs, lists, etc.).
  * @type {keyof typeof designTokens.libTextTags}
  * @example
  * // Usage
@@ -195,7 +194,7 @@ export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
  */
 export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
 /**
- * @description All text tag tokens available in the design system (display and non-display).
+ * @description All text tag tokens available in the library (display and non-display).
  * @type {LibTextDisplay | LibTextNoDisplay}
  * @example
  * // Usage
@@ -205,7 +204,7 @@ export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
  */
 export type LibText = LibTextDisplay | LibTextNoDisplay
 /**
- * @description All CSS position tokens available in the design system.
+ * @description All CSS position tokens available in the library.
  * @type {keyof typeof designTokens.libPosition}
  * @example
  * // Usage
@@ -215,7 +214,7 @@ export type LibText = LibTextDisplay | LibTextNoDisplay
  */
 export type LibPosition = keyof typeof designTokens.libPosition
 /**
- * @description All z-index tokens available in the design system.
+ * @description All z-index tokens available in the library.
  * @type {keyof typeof designTokens.libZIndex}
  * @example
  * // Usage
@@ -223,6 +222,15 @@ export type LibPosition = keyof typeof designTokens.libPosition
  * zIndex="999"
  */
 export type LibZIndex = keyof typeof designTokens.libZIndex
+/**
+ * @description All min heights available in the library
+ * @type {keyof typeof designTokens.libMinHeights}
+ * @example
+ * // Usage
+ * minHeight="min-h-full"
+ * minHeight="min-h-screen"
+ */
+export type LibMinHeight = keyof typeof designTokens.libMinHeights
 
 /**
  * @description Props common to nearly all components.
@@ -282,7 +290,7 @@ export type ILibRadius =
 /* Padding */
 /**
  * @description Props for components with paddings.
- * Can be a single spacer token from the design system or an object specifying paddings for each side or axis.
+ * Can be a single spacer token from the library or an object specifying paddings for each side or axis.
  * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }}
  * @example
  * // Single padding
@@ -334,12 +342,12 @@ export type ILibMargin =
 /* Border */
 /**
  * @description Props for components with borders.
- * @prop style - Border style (e.g., "border-solid", "border-dashed", "border-dotted", "border-double", "border-hidden", "border-none")
+ * @prop style - Border style token ("solid", "dashed", "dotted", "double", "hidden", "none")
  * @prop width - Border width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
- * @prop color - Any color from the library
+ * @prop color - Any color from the library.
  * @example
  * // Solid border, medium width, primary color
- * border={{ style: "border-solid", width: "md", color: "primary" }}
+ * border={{ style: "solid", width: "md", color: "primary" }}
  */
 export type ILibBorder = {
 	style?: CssBorderStyle
@@ -350,12 +358,12 @@ export type ILibBorder = {
 /* Outline */
 /**
  * @description Props for components with outlines.
- * @prop style - Outline style (e.g., "outline-solid", "outline-dashed", "outline-dotted", "outline-double", "outline-none", "outline-hidden")
+ * @prop style - Outline style token ("solid", "dashed", "dotted", "double", "none", "hidden")
  * @prop width - Outline width token ("2xs", "xs", "sm", "md", "lg", "xl", "2xl")
- * @prop color - Any color from the library
+ * @prop color - Any color from the library.
  * @example
  * // Solid outline, medium width, primary color
- * outline={{ style: "outline-solid", width: "md", color: "primary" }}
+ * outline={{ style: "solid", width: "md", color: "primary" }}
  */
 export type ILibOutline = {
 	style?: CssOutlineStyle
@@ -366,12 +374,12 @@ export type ILibOutline = {
 /* Position */
 /**
  * @description Props for components with CSS position and z-index.
- * @prop position - CSS position value (e.g., "relative", "absolute", "fixed").
+ * @prop position - CSS position value token ("relative", "absolute", "fixed").
  * @prop left - Left offset using a spacer token.
  * @prop top - Top offset using a spacer token.
  * @prop right - Right offset using a spacer token.
  * @prop bottom - Bottom offset using a spacer token.
- * @prop zIndex - z-index value from the design system.
+ * @prop zIndex - z-index value from the library.
  * @example
  * // Example usage
  * position={{ position: "absolute", top: "md", left: "lg", zIndex: "999" }}
@@ -527,7 +535,13 @@ export type ReactChildren = ReactNode | Array<ReactNode>
 export type FC = FunctionComponent
 export type DispatchState<T> = Dispatch<SetStateAction<T>>
 
-export type CssTextAlign = Property.TextAlign
+export type CssTextAlign =
+	| "text-left"
+	| "text-center"
+	| "text-right"
+	| "text-justify"
+	| "text-start"
+	| "text-end"
 export type CssVerticalAlign = Property.VerticalAlign
 export type CssTextDecoration = Property.TextDecoration
 export type CssPosition = Property.Position
@@ -570,25 +584,24 @@ export type CssAlignContent =
 	| "space-evenly"
 	| "baseline"
 	| "stretch"
-	| "stretch"
-export type CssFlexDirection = Property.FlexDirection
-export type CssFlexWrap = Property.FlexWrap
-export type CssObjectFit = Property.ObjectFit
+export type CssFlexDirection = "row" | "row-reverse" | "col" | "col-reverse"
+export type CssFlexWrap = "nowrap" | "wrap" | "wrap-reverse"
+export type CssObjectFit = "contain" | "cover" | "fill" | "none" | "scale-down"
 export type CssCursor = Property.Cursor
 export type CssBorderStyle =
-	| "border-solid"
-	| "border-dashed"
-	| "border-dotted"
-	| "border-double"
-	| "border-hidden"
-	| "border-none"
+	| "solid"
+	| "dashed"
+	| "dotted"
+	| "double"
+	| "hidden"
+	| "none"
 export type CssOutlineStyle =
-	| "outline-solid"
-	| "outline-dashed"
-	| "outline-dotted"
-	| "outline-double"
-	| "outline-none"
-	| "outline-hidden"
+	| "solid"
+	| "dashed"
+	| "dotted"
+	| "double"
+	| "none"
+	| "hidden"
 export type CssFontStyle = Property.FontStyle
 
 export type LibMainSize = keyof typeof designTokens.libMainSizes
