@@ -1,4 +1,6 @@
-export const genAlignContent = {
+import type { CssAlignContent, CssAlignItems } from "../types"
+
+export const genAlignContent: Record<CssAlignContent, string> = {
 	normal: "content-normal",
 	center: "content-center",
 	start: "content-start",
@@ -10,7 +12,7 @@ export const genAlignContent = {
 	stretch: "content-stretch",
 }
 
-export const genAlignItems = {
+export const genAlignItems: Record<CssAlignItems, string> = {
 	start: "items-start",
 	end: "items-end",
 	"end-safe": "items-end-safe",

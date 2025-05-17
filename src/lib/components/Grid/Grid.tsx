@@ -6,6 +6,8 @@ import {
 	genColGap,
 	genJustifyItems,
 	genAlignItems,
+	genJustifyContent,
+	genAlignContent,
 } from "../../utils"
 import type { ILibGrid } from "./types"
 
@@ -52,6 +54,8 @@ export const Grid: FC<ILibGrid> = ({
 	colGap = "0px",
 	justifyItems = "stretch",
 	alignItems = "stretch",
+	justifyContent = "auto",
+	alignContent = "normal",
 	...rest
 }) => {
 	const Element = element
@@ -61,14 +65,14 @@ export const Grid: FC<ILibGrid> = ({
 			ref={ref}
 			className={clsx(
 				inline ? "inline-grid" : "grid",
-				(genGridColumns as any)[cols],
-				(genGap as any)[gap],
-				(genRowGap as any)[rowGap],
-				(genColGap as any)[colGap],
-				// (genJustifyContent as any)[justifyContent],
-				(genJustifyItems as any)[justifyItems],
-				// (genAlignContent as any)[alignContent],
-				(genAlignItems as any)[alignItems],
+				genGridColumns[cols],
+				genGap[gap],
+				genRowGap[rowGap],
+				genColGap[colGap],
+				genJustifyItems[justifyItems],
+				genAlignItems[alignItems],
+				(genJustifyContent as any)[justifyContent],
+				genAlignContent[alignContent],
 				className,
 			)}
 			{...rest}

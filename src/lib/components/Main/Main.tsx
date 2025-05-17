@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { clsx, genBgColor, genGap } from "../../utils"
+import { clsx, genBgAllColors, genGap } from "../../utils"
 import type { ILibMain } from "./types"
 
 /**
@@ -42,7 +42,7 @@ export const Main: FC<ILibMain> = ({
 			ref={ref}
 			className={clsx(
 				"flex flex-col py-4 sm:py-8 md:py-12 w-full",
-				(genBgColor as any)[backgroundColor],
+				(genBgAllColors as any)[backgroundColor],
 				genGap[gap],
 				maxWidth[size],
 				className,

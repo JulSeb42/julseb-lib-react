@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { clsx, genBgColor, genGap } from "../../utils"
+import { clsx, genBgAllColors, genGap } from "../../utils"
 import type { ILibWrapper } from "./types"
 
 /**
@@ -42,7 +42,7 @@ export const Wrapper: FC<ILibWrapper> = ({
 			ref={ref}
 			className={clsx(
 				"flex sm:flex-row flex-col justify-stretch sm:justify-center-safe gap-6 px-4 md:px-6 lg:px-12 w-full",
-				(genBgColor as any)[backgroundColor],
+				(genBgAllColors as any)[backgroundColor],
 				genMinHeight[minHeight],
 				genGap[gap],
 				className,

@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { clsx, genBgColor } from "../../utils"
+import { clsx, genBgAllColors } from "../../utils"
 import type { ILibAside } from "./types"
 
 /**
@@ -40,8 +40,8 @@ export const Aside: FC<ILibAside> = ({
 			ref={ref}
 			className={clsx(
 				"py-4 sm:py-8 md:py-12 w-full",
-				(genBgColor as any)[backgroundColor],
-				(asideSize as any)[size],
+				(genBgAllColors as any)[backgroundColor],
+				asideSize[size],
 				className,
 			)}
 			{...rest}

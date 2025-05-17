@@ -1,4 +1,11 @@
-export const genTextColor = {
+import type {
+	LibAllColors,
+	LibColors,
+	LibColorsHover,
+	LibColorsShort,
+} from "../types"
+
+export const genTextColor: Record<LibColors, string> = {
 	black: "text-black",
 	white: "text-white",
 	"red-50": "text-red-50",
@@ -245,4 +252,102 @@ export const genTextColor = {
 	"stone-950": "text-stone-950",
 	current: "text-current",
 	transparent: "text-transparent",
+	background: "text-background",
+}
+
+export const genTextColorShort: Record<LibColorsShort, string> = {
+	red: "text-red-500",
+	orange: "text-orange-500",
+	amber: "text-amber-500",
+	yellow: "text-yellow-500",
+	lime: "text-lime-500",
+	green: "text-green-500",
+	emerald: "text-emerald-500",
+	teal: "text-teal-500",
+	cyan: "text-cyan-500",
+	sky: "text-sky-500",
+	blue: "text-blue-500",
+	indigo: "text-indigo-500",
+	violet: "text-violet-500",
+	purple: "text-purple-500",
+	fuchsia: "text-fuchsia-500",
+	pink: "text-pink-500",
+	rose: "text-rose-500",
+	slate: "text-slate-500",
+	black: "text-black",
+	white: "text-white",
+	current: "text-current",
+	transparent: "text-transparent",
+	background: "text-background",
+}
+
+export const genTextColorHoverDefault: Record<LibColorsHover, string> = {
+	red: "text-red-500",
+	orange: "text-orange-500",
+	amber: "text-amber-500",
+	yellow: "text-yellow-500",
+	lime: "text-lime-500",
+	green: "text-green-500",
+	emerald: "text-emerald-500",
+	teal: "text-teal-500",
+	cyan: "text-cyan-500",
+	sky: "text-sky-500",
+	blue: "text-blue-500",
+	indigo: "text-indigo-500",
+	violet: "text-violet-500",
+	purple: "text-purple-500",
+	fuchsia: "text-fuchsia-500",
+	pink: "text-pink-500",
+	rose: "text-rose-500",
+	slate: "text-slate-500",
+	white: "text-white",
+}
+
+export const genTextColorHoverHover: Record<LibColorsHover, string> = {
+	red: "hover:text-red-500",
+	orange: "hover:text-orange-500",
+	amber: "hover:text-amber-500",
+	yellow: "hover:text-yellow-500",
+	lime: "hover:text-lime-500",
+	green: "hover:text-green-500",
+	emerald: "hover:text-emerald-500",
+	teal: "hover:text-teal-500",
+	cyan: "hover:text-cyan-500",
+	sky: "hover:text-sky-500",
+	blue: "hover:text-blue-500",
+	indigo: "hover:text-indigo-500",
+	violet: "hover:text-violet-500",
+	purple: "hover:text-purple-500",
+	fuchsia: "hover:text-fuchsia-500",
+	pink: "hover:text-pink-500",
+	rose: "hover:text-rose-500",
+	slate: "hover:text-slate-500",
+	white: "hover:text-white",
+}
+
+export const genTextColorHoverActive: Record<LibColorsHover, string> = {
+	red: "active:text-red-500",
+	orange: "active:text-orange-500",
+	amber: "active:text-amber-500",
+	yellow: "active:text-yellow-500",
+	lime: "active:text-lime-500",
+	green: "active:text-green-500",
+	emerald: "active:text-emerald-500",
+	teal: "active:text-teal-500",
+	cyan: "active:text-cyan-500",
+	sky: "active:text-sky-500",
+	blue: "active:text-blue-500",
+	indigo: "active:text-indigo-500",
+	violet: "active:text-violet-500",
+	purple: "active:text-purple-500",
+	fuchsia: "active:text-fuchsia-500",
+	pink: "active:text-pink-500",
+	rose: "active:text-rose-500",
+	slate: "active:text-slate-500",
+	white: "active:text-white",
+}
+
+export const genTextAllColor: Record<LibAllColors, string> = {
+	...genTextColor,
+	...genTextColorShort,
 }

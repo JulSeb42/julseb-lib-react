@@ -5,4 +5,5 @@ export * from "../components/Aside/types"
 export * from "../components/Section/types"
 export * from "../components/Grid/types"
 export * from "../components/Flexbox/types"
+export * from "../components/Key/types"
 /* Prepend here - DO NOT REMOVE */

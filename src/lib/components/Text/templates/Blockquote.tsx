@@ -26,7 +26,7 @@ export const Blockquote: FC<ILibText> = ({
 				BASE_CLASSES,
 				"text-[18px]",
 				"italic ps-4",
-				(genTextAlign as any)[textAlign],
+				genTextAlign[textAlign],
 				(genTextColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],

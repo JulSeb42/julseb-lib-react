@@ -17,13 +17,32 @@ import type { RequireAtLeastOne } from "./require-at-least-one"
  * @type {keyof typeof designTokens.libColors}
  * @example
  * // Usage
- * color="primary"
+ * color="red-300"
  * color="gray-100"
  */
 export type LibColors = keyof typeof designTokens.libColors
 /**
+ * @description All color short tokens available in the library. This returns the color-500.
+ * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate" | "black" | "white" | "current" | "transparent" | "background"}
+ * @example
+ * // Usage
+ * color="blue"
+ * color="gray"
+ */
+export type LibColorsShort = keyof typeof designTokens.libColorsShort
+/**
+ * @description All color tokens and color short tokens available in the library.
+ * @type {keyof typeof designTokens.libColors | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate" | "black" | "white" | "current" | "transparent" | "background"}
+ * @example
+ * // Usage
+ * color="red-300"
+ * color="blue"
+ * color="gray-100"
+ */
+export type LibAllColors = LibColors | LibColorsShort
+/**
  * @description All hover color tokens available in the library.
- * @type {keyof typeof designTokens.libColorsHover}
+ * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"}
  * @example
  * // Usage
  * color="primary-hover"
@@ -32,7 +51,7 @@ export type LibColors = keyof typeof designTokens.libColors
 export type LibColorsHover = keyof typeof designTokens.libColorsHover
 /**
  * @description All hover color tokens plus "current" for currentColor support.
- * @type {LibColorsHover | "current"}
+ * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"|"current"}
  * @example
  * // Usage
  * color="primary-hover"
@@ -42,7 +61,7 @@ export type LibColorsHover = keyof typeof designTokens.libColorsHover
 export type LibColorsHoverAndCurrent = LibColorsHover | "current"
 /**
  * @description All overlay tokens available in the library.
- * @type {keyof typeof designTokens.libOverlays}
+ * @type {"black-50" | "black-80" | "white-50" | "white-80" | "gradient-black" | "gradient-white"}
  * @example
  * // Usage
  * overlay="overlay-100"
@@ -51,7 +70,7 @@ export type LibColorsHoverAndCurrent = LibColorsHover | "current"
 export type LibOverlays = keyof typeof designTokens.libOverlays
 /**
  * @description All color and overlay tokens available in the library.
- * @type {keyof typeof designTokens.libColors | keyof typeof designTokens.libOverlays}
+ * @type {Any color from the library | Any overlay from the library}
  * @example
  * // Usage
  * color="primary"
@@ -64,7 +83,7 @@ export type LibAllColorsAndOverlays =
 	| keyof typeof designTokens.libOverlays
 /**
  * @description All font family tokens available in the library.
- * @type {keyof typeof designTokens.libFontFamilies}
+ * @type {"body"|"code"}
  * @example
  * // Usage
  * fontFamily="body"
@@ -73,7 +92,7 @@ export type LibAllColorsAndOverlays =
 export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
 /**
  * @description All font size tokens available in the library.
- * @type {keyof typeof designTokens.libFontSizes}
+ * @type {"xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl"}
  * @example
  * // Usage
  * fontSize="md"
@@ -82,7 +101,7 @@ export type LibFontFamilies = keyof typeof designTokens.libFontFamilies
 export type LibFontSizes = keyof typeof designTokens.libFontSizes
 /**
  * @description All font weight tokens available in the library.
- * @type {keyof typeof designTokens.libFontWeights}
+ * @type {"thin" | "extralight" | "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold" | "black"}
  * @example
  * // Usage
  * fontWeight="regular"
@@ -91,7 +110,7 @@ export type LibFontSizes = keyof typeof designTokens.libFontSizes
 export type LibFontWeights = keyof typeof designTokens.libFontWeights
 /**
  * @description All line height tokens available in the library.
- * @type {keyof typeof designTokens.libLineHeights}
+ * @type {"xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl"}
  * @example
  * // Usage
  * lineHeight="normal"
@@ -100,7 +119,7 @@ export type LibFontWeights = keyof typeof designTokens.libFontWeights
 export type LibLineHeights = keyof typeof designTokens.libLineHeights
 /**
  * @description All box shadow tokens available in the library.
- * @type {keyof typeof designTokens.libShadows}
+ * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "none"}
  * @example
  * // Usage
  * boxShadow="md"
@@ -109,7 +128,7 @@ export type LibLineHeights = keyof typeof designTokens.libLineHeights
 export type LibShadows = keyof typeof designTokens.libShadows
 /**
  * @description All spacer tokens available in the library, plus "0px".
- * @type {keyof typeof designTokens.libSpacers | "0px"}
+ * @type {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px"}
  * @example
  * // Usage
  * padding="md"
@@ -120,7 +139,7 @@ export type LibShadows = keyof typeof designTokens.libShadows
 export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
 /**
  * @description All border radius tokens available in the library.
- * @type {keyof typeof designTokens.libRadius}
+ * @type {"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "full"}
  * @example
  * // Usage
  * radius="m"
@@ -129,11 +148,11 @@ export type LibSpacers = keyof typeof designTokens.libSpacers | "0px"
 export type LibRadiuses = keyof typeof designTokens.libRadius
 /**
  * @description All transition tokens available in the library.
- * @type {keyof typeof designTokens.libTransitions}
+ * @type {"none" | "all" | "default" | "colors" | "opacity" | "shadow" | "transform"}
  * @example
  * // Usage
- * transition="fast"
- * transition="slow"
+ * transition="all"
+ * transition="colors"
  */
 export type LibTransitions = keyof typeof designTokens.libTransitions
 /**
@@ -148,7 +167,7 @@ export type LibTransitions = keyof typeof designTokens.libTransitions
 export type LibValidationStatus = boolean | undefined
 /**
  * @description All theme names available in the library.
- * @type {keyof typeof designTokens.libThemes}
+ * @type {"light"|"dark"}
  * @example
  * // Usage
  * theme="light"
@@ -157,7 +176,7 @@ export type LibValidationStatus = boolean | undefined
 export type LibThemeNames = keyof typeof designTokens.libThemes
 /**
  * @description All input variant tokens available in the library.
- * @type {keyof typeof designTokens.libInputVariants}
+ * @type {"rounded" | "rounded-sm" | "rounded-md" | "rounded-lg" | "rounded-xl" | "rounded-2xl" | "rounded-3xl" | "rounded-full" | "pill"}
  * @example
  * // Usage
  * variant="rounded"
@@ -167,7 +186,7 @@ export type LibThemeNames = keyof typeof designTokens.libThemes
 export type LibInputVariant = keyof typeof designTokens.libInputVariants
 /**
  * @description All input background tokens available in the library.
- * @type {keyof typeof designTokens.libInputBackgrounds}
+ * @type {"light" | "dark"}
  * @example
  * // Usage
  * inputBackground="light"
@@ -176,7 +195,7 @@ export type LibInputVariant = keyof typeof designTokens.libInputVariants
 export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
 /**
  * @description All display text tag tokens available in the library (headings from 1 to 5).
- * @type {keyof typeof designTokens.libTextDisplayTags}
+ * @type {"h1" | "h2" | "h3" | "h4" | "h5"}
  * @example
  * // Usage
  * tag="h1"
@@ -185,7 +204,7 @@ export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
 export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
 /**
  * @description All text tags without the display prop tokens available in the library (paragraphs, lists, etc.).
- * @type {keyof typeof designTokens.libTextTags}
+ * @type {"h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"}
  * @example
  * // Usage
  * tag="p"
@@ -195,7 +214,7 @@ export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
 export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
 /**
  * @description All text tag tokens available in the library (display and non-display).
- * @type {LibTextDisplay | LibTextNoDisplay}
+ * @type {"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"}
  * @example
  * // Usage
  * tag="h1"
@@ -205,7 +224,7 @@ export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
 export type LibText = LibTextDisplay | LibTextNoDisplay
 /**
  * @description All CSS position tokens available in the library.
- * @type {keyof typeof designTokens.libPosition}
+ * @type {"relative" | "absolute" | "fixed"}
  * @example
  * // Usage
  * position="relative"
@@ -215,7 +234,7 @@ export type LibText = LibTextDisplay | LibTextNoDisplay
 export type LibPosition = keyof typeof designTokens.libPosition
 /**
  * @description All z-index tokens available in the library.
- * @type {keyof typeof designTokens.libZIndex}
+ * @type {"0" | "10" | "20" | "30" | "40" | "50" | "-0" | "-10" | "-20" | "-30" | "-40" | "-50" | "997" | "998" | "999"}
  * @example
  * // Usage
  * zIndex="10"
@@ -224,13 +243,23 @@ export type LibPosition = keyof typeof designTokens.libPosition
 export type LibZIndex = keyof typeof designTokens.libZIndex
 /**
  * @description All min heights available in the library
- * @type {keyof typeof designTokens.libMinHeights}
+ * @type {"px" | "full" | "screen" | "dvh" | "dvw" | "lvh" | "lvw" | "svw" | "svh" | "auto" | "min" | "max" | "fit" | "lh"}
  * @example
  * // Usage
  * minHeight="min-h-full"
  * minHeight="min-h-screen"
  */
 export type LibMinHeight = keyof typeof designTokens.libMinHeights
+
+/**
+ * @description All key sizes for the Key component.
+ * @type {"large" | "small"}
+ * @example
+ * // Usage
+ * keySize="large"
+ * keySize="small"
+ */
+export type LibKeySize = keyof typeof designTokens.libKeySizes
 
 /**
  * @description Props common to nearly all components.
@@ -536,12 +565,12 @@ export type FC = FunctionComponent
 export type DispatchState<T> = Dispatch<SetStateAction<T>>
 
 export type CssTextAlign =
-	| "text-left"
-	| "text-center"
-	| "text-right"
-	| "text-justify"
-	| "text-start"
-	| "text-end"
+	| "left"
+	| "center"
+	| "right"
+	| "justify"
+	| "start"
+	| "end"
 export type CssVerticalAlign = Property.VerticalAlign
 export type CssTextDecoration = Property.TextDecoration
 export type CssPosition = Property.Position

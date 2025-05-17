@@ -1,4 +1,11 @@
-export const genBgColor = {
+import type {
+	LibAllColors,
+	LibColors,
+	LibColorsHover,
+	LibColorsShort,
+} from "../types"
+
+export const genBgColor: Record<LibColors, string> = {
 	black: "bg-black",
 	white: "bg-white",
 	"red-50": "bg-red-50",
@@ -246,4 +253,128 @@ export const genBgColor = {
 	current: "bg-current",
 	transparent: "bg-transparent",
 	background: "bg-background",
+}
+
+export const genBgColorShort: Record<LibColorsShort, string> = {
+	red: "bg-red-500",
+	orange: "bg-orange-500",
+	amber: "bg-amber-500",
+	yellow: "bg-yellow-500",
+	lime: "bg-lime-500",
+	green: "bg-green-500",
+	emerald: "bg-emerald-500",
+	teal: "bg-teal-500",
+	cyan: "bg-cyan-500",
+	sky: "bg-sky-500",
+	blue: "bg-blue-500",
+	indigo: "bg-indigo-500",
+	violet: "bg-violet-500",
+	purple: "bg-purple-500",
+	fuchsia: "bg-fuchsia-500",
+	pink: "bg-pink-500",
+	rose: "bg-rose-500",
+	slate: "bg-slate-500",
+	black: "bg-black",
+	white: "bg-white",
+	current: "bg-current",
+	transparent: "bg-transparent",
+	background: "bg-background",
+}
+
+export const genBgColor50: Record<
+	Exclude<
+		LibColorsShort,
+		"black" | "white" | "transparent" | "background" | "current"
+	>,
+	string
+> = {
+	red: "bg-red-50",
+	orange: "bg-orange-50",
+	amber: "bg-amber-50",
+	yellow: "bg-yellow-50",
+	lime: "bg-lime-50",
+	green: "bg-green-50",
+	emerald: "bg-emerald-50",
+	teal: "bg-teal-50",
+	cyan: "bg-cyan-50",
+	sky: "bg-sky-50",
+	blue: "bg-blue-50",
+	indigo: "bg-indigo-50",
+	violet: "bg-violet-50",
+	purple: "bg-purple-50",
+	fuchsia: "bg-fuchsia-50",
+	pink: "bg-pink-50",
+	rose: "bg-rose-50",
+	slate: "bg-slate-50",
+}
+
+export const genBgColorHoverDefault: Record<LibColorsHover, string> = {
+	red: "bg-red-500",
+	orange: "bg-orange-500",
+	amber: "bg-amber-500",
+	yellow: "bg-yellow-500",
+	lime: "bg-lime-500",
+	green: "bg-green-500",
+	emerald: "bg-emerald-500",
+	teal: "bg-teal-500",
+	cyan: "bg-cyan-500",
+	sky: "bg-sky-500",
+	blue: "bg-blue-500",
+	indigo: "bg-indigo-500",
+	violet: "bg-violet-500",
+	purple: "bg-purple-500",
+	fuchsia: "bg-fuchsia-500",
+	pink: "bg-pink-500",
+	rose: "bg-rose-500",
+	slate: "bg-slate-500",
+	white: "bg-white",
+}
+
+export const genBgColorHoverHover: Record<LibColorsHover, string> = {
+	red: "hover:bg-red-300",
+	orange: "hover:bg-orange-300",
+	amber: "hover:bg-amber-300",
+	yellow: "hover:bg-yellow-300",
+	lime: "hover:bg-lime-300",
+	green: "hover:bg-green-300",
+	emerald: "hover:bg-emerald-300",
+	teal: "hover:bg-teal-300",
+	cyan: "hover:bg-cyan-300",
+	sky: "hover:bg-sky-300",
+	blue: "hover:bg-blue-300",
+	indigo: "hover:bg-indigo-300",
+	violet: "hover:bg-violet-300",
+	purple: "hover:bg-purple-300",
+	fuchsia: "hover:bg-fuchsia-300",
+	pink: "hover:bg-pink-300",
+	rose: "hover:bg-rose-300",
+	slate: "hover:bg-slate-300",
+	white: "hover:bg-gray-300",
+}
+
+export const genBgColorHoverActive: Record<LibColorsHover, string> = {
+	red: "active:bg-red-600",
+	orange: "active:bg-orange-600",
+	amber: "active:bg-amber-600",
+	yellow: "active:bg-yellow-600",
+	lime: "active:bg-lime-600",
+	green: "active:bg-green-600",
+	emerald: "active:bg-emerald-600",
+	teal: "active:bg-teal-600",
+	cyan: "active:bg-cyan-600",
+	sky: "active:bg-sky-600",
+	blue: "active:bg-blue-600",
+	indigo: "active:bg-indigo-600",
+	violet: "active:bg-violet-600",
+	purple: "active:bg-purple-600",
+	fuchsia: "active:bg-fuchsia-600",
+	pink: "active:bg-pink-600",
+	rose: "active:bg-rose-600",
+	slate: "active:bg-slate-600",
+	white: "active:bg-gray-100",
+}
+
+export const genBgAllColors: Record<LibAllColors, string> = {
+	...genBgColor,
+	...genBgColorShort,
 }

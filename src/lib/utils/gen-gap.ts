@@ -1,4 +1,6 @@
-export const genGap = {
+import type { LibSpacers } from "../types"
+
+export const genGap: Record<LibSpacers, string> = {
 	"2xl": "gap-(--spacer-2xl)",
 	xl: "gap-(--spacer-xl)",
 	lg: "gap-(--spacer-lg)",
@@ -9,7 +11,7 @@ export const genGap = {
 	"0px": "0px",
 }
 
-export const genRowGap = {
+export const genRowGap: Record<LibSpacers, string> = {
 	"2xl": "gap-y-(--spacer-2xl)",
 	xl: "gap-y-(--spacer-xl)",
 	lg: "gap-y-(--spacer-lg)",
@@ -20,7 +22,7 @@ export const genRowGap = {
 	"0px": "0px",
 }
 
-export const genColGap = {
+export const genColGap: Record<LibSpacers, string> = {
 	"2xl": "gap-x-(--spacer-2xl)",
 	xl: "gap-x-(--spacer-xl)",
 	lg: "gap-x-(--spacer-lg)",

@@ -1,12 +1,12 @@
 import type {
 	LibComponentBase,
 	LibSpacers,
-	LibColors,
+	LibAllColors,
 	LibMinHeight,
 } from "../../types"
 
 export interface ILibWrapper extends LibComponentBase<HTMLDivElement> {
 	gap?: LibSpacers
-	backgroundColor?: LibColors
+	backgroundColor?: LibAllColors
 	minHeight?: LibMinHeight
 }

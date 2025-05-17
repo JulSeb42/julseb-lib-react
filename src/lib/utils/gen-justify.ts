@@ -1,4 +1,6 @@
-export const genJustifyContent = {
+import type { CssJustifyContent, CssJustifyItems } from "../types"
+
+export const genJustifyContent: Record<CssJustifyContent, string> = {
 	start: "justify-start",
 	end: "justify-end",
 	"end-safe": "justify-end-safe",
@@ -12,7 +14,7 @@ export const genJustifyContent = {
 	normal: "justify-normal",
 }
 
-export const genJustifyItems = {
+export const genJustifyItems: Record<CssJustifyItems, string> = {
 	start: "justify-items-start",
 	end: "justify-items-end",
 	"end-safe": "justify-items-end-safe",

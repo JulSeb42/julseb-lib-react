@@ -68,4 +68,5 @@ export * from "./components/Aside"
 export * from "./components/Section"
 export * from "./components/Grid"
 export * from "./components/Flexbox"
+export * from "./components/Key"
 /* Prepend here - DO NOT REMOVE */
