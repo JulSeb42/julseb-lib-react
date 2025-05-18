@@ -8,32 +8,32 @@ import type {
 } from "react"
 import type { Property } from "csstype"
 import type { DefaultTheme } from "styled-components"
-import type { typeValues } from "./type-values"
+import type { designTokens } from "./design-tokens"
 import type { RequireAtLeastOne } from "./require-at-least-one"
 
-export type LibColors = keyof typeof typeValues.libColors
-export type LibColorsShort = keyof typeof typeValues.colorsShort
+export type LibColors = keyof typeof designTokens.libColors
+export type LibColorsShort = keyof typeof designTokens.colorsShort
 export type LibAllColors = LibColors | LibColorsShort
-export type LibColorsHover = keyof typeof typeValues.colorsHover
+export type LibColorsHover = keyof typeof designTokens.colorsHover
 export type LibColorsHoverAndCurrent = LibColorsHover | "currentColor"
-export type LibOverlays = keyof typeof typeValues.overlays
+export type LibOverlays = keyof typeof designTokens.overlays
 export type LibAllColorsAndOverlays =
-    | keyof typeof typeValues.libColors
-    | keyof typeof typeValues.colorsShort
-    | keyof typeof typeValues.overlays
-export type LibFontFamilies = keyof typeof typeValues.fontFamilies
-export type LibFontSizes = keyof typeof typeValues.fontSizes
-export type LibFontWeights = keyof typeof typeValues.fontWeights | number
-export type LibLineHeights = keyof typeof typeValues.lineHeights | number
-export type LibShadows = keyof typeof typeValues.shadows
-export type LibSpacers = keyof typeof typeValues.spacers | number | "0px"
-export type LibRadiuses = keyof typeof typeValues.radiuses | number
-export type LibTransitions = keyof typeof typeValues.transitions
+    | keyof typeof designTokens.libColors
+    | keyof typeof designTokens.colorsShort
+    | keyof typeof designTokens.overlays
+export type LibFontFamilies = keyof typeof designTokens.fontFamilies
+export type LibFontSizes = keyof typeof designTokens.fontSizes
+export type LibFontWeights = keyof typeof designTokens.fontWeights | number
+export type LibLineHeights = keyof typeof designTokens.lineHeights | number
+export type LibShadows = keyof typeof designTokens.shadows
+export type LibSpacers = keyof typeof designTokens.spacers | number | "0px"
+export type LibRadiuses = keyof typeof designTokens.radiuses | number
+export type LibTransitions = keyof typeof designTokens.transitions
 export type LibValidationStatus = boolean | undefined
-export type LibThemeNames = keyof typeof typeValues.theme
+export type LibThemeNames = keyof typeof designTokens.theme
 export type LibIcon = string | JSX.Element
-export type LibInputVariant = keyof typeof typeValues.inputVariants
-export type LibInputBackground = keyof typeof typeValues.inputBackgrounds
+export type LibInputVariant = keyof typeof designTokens.inputVariants
+export type LibInputBackground = keyof typeof designTokens.inputBackgrounds
 export type LibPositionExtract = Extract<
     Property.Position,
     "relative" | "absolute" | "fixed"
@@ -352,15 +352,16 @@ export type CssBorderStyle = Property.BorderStyle
 export type CssOutlineStyle = Property.OutlineStyle
 export type CssFontStyle = Property.FontStyle
 
-export type LibMainSize = keyof typeof typeValues.mainSizes | number
-export type LibAsideSize = keyof typeof typeValues.asideSizes | number
-export type LibAccordionVariant = keyof typeof typeValues.accordionVariants
+export type LibMainSize = keyof typeof designTokens.mainSizes | number
+export type LibAsideSize = keyof typeof designTokens.asideSizes | number
+export type LibAccordionVariant = keyof typeof designTokens.accordionVariants
 export type LibAccordionIcon =
-    | keyof typeof typeValues.accordionIcons
+    | keyof typeof designTokens.accordionIcons
     | JSX.Element
-export type LibAvatarBadgePosition = keyof typeof typeValues.avatarBadgePosition
+export type LibAvatarBadgePosition =
+    keyof typeof designTokens.avatarBadgePosition
 export type LibBreadcrumbSeparator =
-    | keyof typeof typeValues.breadcrumbSeparators
+    | keyof typeof designTokens.breadcrumbSeparators
     | JSX.Element
 export type LibButtonIconVariant = Extract<
     LibButtonVariant,
@@ -370,60 +371,63 @@ export type LibImageBackgroundOverlay = Exclude<
     LibAllColorsAndOverlays,
     "gradient-black" | "gradient-white"
 >
-export type LibInputType = keyof typeof typeValues.inputTypes
-export type LibInputCheckVariant = keyof typeof typeValues.checkInputVariants
-export type LibKeySize = keyof typeof typeValues.keySizes
-export type LibLoaderVariant = keyof typeof typeValues.loaderVariants
-export type LibSkeletonAnimation = keyof typeof typeValues.skeletonAnimations
-export type LibStepperDirection = keyof typeof typeValues.stepperDirections
-export type LibTextDisplayTag = keyof typeof typeValues.textDisplayTags
-export type LibTextTag = keyof typeof typeValues.textTags
+export type LibInputType = keyof typeof designTokens.inputTypes
+export type LibInputCheckVariant = keyof typeof designTokens.checkInputVariants
+export type LibKeySize = keyof typeof designTokens.keySizes
+export type LibLoaderVariant = keyof typeof designTokens.loaderVariants
+export type LibSkeletonAnimation = keyof typeof designTokens.skeletonAnimations
+export type LibStepperDirection = keyof typeof designTokens.stepperDirections
+export type LibTextDisplayTag = keyof typeof designTokens.textDisplayTags
+export type LibTextTag = keyof typeof designTokens.textTags
 export type LibTextAllTag = LibTextDisplayTag | LibTextTag
 export type LibTextIconTag = Exclude<
     LibTextAllTag,
     "strong" | "em" | "ul" | "ol" | "dl"
 >
-export type LibTooltipTrigger = keyof typeof typeValues.tooltipTriggers
-export type LibTabVariant = keyof typeof typeValues.tabsVariants
-export type LibTabJustify = keyof typeof typeValues.tabsJustify
-export type LibSlideshowPagination = keyof typeof typeValues.slideshowPagination
+export type LibTooltipTrigger = keyof typeof designTokens.tooltipTriggers
+export type LibTabVariant = keyof typeof designTokens.tabsVariants
+export type LibTabJustify = keyof typeof designTokens.tabsJustify
+export type LibSlideshowPagination =
+    keyof typeof designTokens.slideshowPagination
 export type LibSlideshowPaginationPosition =
-    keyof typeof typeValues.slideshowPaginationPosition
+    keyof typeof designTokens.slideshowPaginationPosition
 export type LibSlideshowButtonPosition =
-    keyof typeof typeValues.slideshowButtonsPositions
+    keyof typeof designTokens.slideshowButtonsPositions
 export type LibSlideshowButtonSize =
-    keyof typeof typeValues.slideshowButtonsSizes
-export type LibTableVariant = keyof typeof typeValues.tableVariants
-export type LibMessageType = keyof typeof typeValues.messageType
-export type LibMdEditorEditor = keyof typeof typeValues.markdownEditorEditor
-export type LibMdEditorButton = keyof typeof typeValues.markdownEditorButtons
-export type LibMdEditorTitle = keyof typeof typeValues.markdownEditorTitles
-export type LibNavBurgerPosition = keyof typeof typeValues.navBurgerPositions
-export type LibNavMobileVariant = keyof typeof typeValues.navMobileVariants
-export type LibHeaderVariant = keyof typeof typeValues.headerVariants
+    keyof typeof designTokens.slideshowButtonsSizes
+export type LibTableVariant = keyof typeof designTokens.tableVariants
+export type LibMessageType = keyof typeof designTokens.messageType
+export type LibMdEditorEditor = keyof typeof designTokens.markdownEditorEditor
+export type LibMdEditorButton = keyof typeof designTokens.markdownEditorButtons
+export type LibMdEditorTitle = keyof typeof designTokens.markdownEditorTitles
+export type LibNavBurgerPosition = keyof typeof designTokens.navBurgerPositions
+export type LibNavMobileVariant = keyof typeof designTokens.navMobileVariants
+export type LibHeaderVariant = keyof typeof designTokens.headerVariants
 export type LibHeaderPosition = LibPositionExtract
-export type LibIconMenuDirection = keyof typeof typeValues.iconMenuDirections
-export type LibIconMenuIcon = keyof typeof typeValues.iconMenuIcon
+export type LibIconMenuDirection = keyof typeof designTokens.iconMenuDirections
+export type LibIconMenuIcon = keyof typeof designTokens.iconMenuIcon
 export type LibIconMenuPosition = LibPositionExtract
-export type LibToastStatus = keyof typeof typeValues.toastStatus
-export type LibToasterPosition = keyof typeof typeValues.toasterPositions
-export type LibInputListDirection = keyof typeof typeValues.listInputDirections
-export type LibButtonVariant = keyof typeof typeValues.buttonVariants
-export type LibButtonSize = keyof typeof typeValues.buttonSizes
-export type LibTooltipPosition = keyof typeof typeValues.tooltipPositions
-export type CountryCode = keyof typeof typeValues.countryCodes
-export type LibFooterDirection = keyof typeof typeValues.footerDirections
-export type LibFooterLinksSeparator = keyof typeof typeValues.footerSeparators
+export type LibToastStatus = keyof typeof designTokens.toastStatus
+export type LibToasterPosition = keyof typeof designTokens.toasterPositions
+export type LibInputListDirection =
+    keyof typeof designTokens.listInputDirections
+export type LibButtonVariant = keyof typeof designTokens.buttonVariants
+export type LibButtonSize = keyof typeof designTokens.buttonSizes
+export type LibTooltipPosition = keyof typeof designTokens.tooltipPositions
+export type CountryCode = keyof typeof designTokens.countryCodes
+export type LibFooterDirection = keyof typeof designTokens.footerDirections
+export type LibFooterLinksSeparator = keyof typeof designTokens.footerSeparators
 export type LibInputPrefixAndSuffix = string | JSX.Element
 export type LibButtonGroupToggleSelect =
-    keyof typeof typeValues.buttonGroupToggleSelects
+    keyof typeof designTokens.buttonGroupToggleSelects
 export type LibValueInputPin = { [n: number]: number | "" | undefined }
-export type LibDrawerPosition = keyof typeof typeValues.drawerPositions
-export type LibPageLayoutTemplate = keyof typeof typeValues.pageLayoutTemplates
-export type LibTimepickerSteps = keyof typeof typeValues.timepickerSteps
-export type LibTimepickerHours = keyof typeof typeValues.hours
-export type LibTimepickerHalfTimes = keyof typeof typeValues.halfHours
-export type LibTimepickerQuarterTimes = keyof typeof typeValues.quarterHours
-export type LibTimepickerMinutes = keyof typeof typeValues.minutes
+export type LibDrawerPosition = keyof typeof designTokens.drawerPositions
+export type LibPageLayoutTemplate =
+    keyof typeof designTokens.pageLayoutTemplates
+export type LibTimepickerSteps = keyof typeof designTokens.timepickerSteps
+export type LibTimepickerHours = keyof typeof designTokens.hours
+export type LibTimepickerHalfTimes = keyof typeof designTokens.halfHours
+export type LibTimepickerQuarterTimes = keyof typeof designTokens.quarterHours
+export type LibTimepickerMinutes = keyof typeof designTokens.minutes
 export type LibMessagingDateFormat =
-    keyof typeof typeValues.messagingDateFormats
+    keyof typeof designTokens.messagingDateFormats

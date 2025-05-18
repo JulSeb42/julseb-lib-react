@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { Page } from "../components"
 import {} from "../lib"
-import { typeValues } from "../lib/types"
+import { designTokens } from "../lib/types"
 
 export const Generate: FC = () => {
     const propsDoc = replaceTypes([
@@ -288,22 +288,22 @@ export const Generate: FC = () => {
 }
 
 const replaceTypes = (arr: Array<string>) => {
-    const mappedRadiuses = Object.keys(typeValues.radiuses)
+    const mappedRadiuses = Object.keys(designTokens.radiuses)
         .map(r => `"${r}"`)
         .join(" | ")
-    const mappedSpacers = Object.keys(typeValues.spacers)
+    const mappedSpacers = Object.keys(designTokens.spacers)
         .map(s => `"${s}"`)
         .join(" | ")
-    const mappedColorsShort = Object.keys(typeValues.colorsShort)
+    const mappedColorsShort = Object.keys(designTokens.colorsShort)
         .map(c => `"${c}"`)
         .join(" | ")
-    const mappedAccordionIcons = Object.keys(typeValues.accordionIcons)
+    const mappedAccordionIcons = Object.keys(designTokens.accordionIcons)
         .map(i => `"${i}"`)
         .join(" | ")
-    const mappedAccordionVariants = Object.keys(typeValues.accordionVariants)
+    const mappedAccordionVariants = Object.keys(designTokens.accordionVariants)
         .map(v => `"${v}"`)
         .join(" | ")
-    const mappedAsideSizes = Object.keys(typeValues.asideSizes)
+    const mappedAsideSizes = Object.keys(designTokens.asideSizes)
         .map(s => `"${s}"`)
         .join(" | ")
     const allColorsDesc = "Any color from the library"

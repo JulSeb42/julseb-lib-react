@@ -168,7 +168,7 @@ export enum OVERLAYS {
     /** rgba(0, 0, 0, 0.5) */ BLACK_50 = "var(--overlay-black-50)",
     /** rgba(0, 0, 0, 0.8) */ BLACK_80 = "var(--overlay-black-80)",
     /** rgba(255, 255, 255, 0.5) */ WHITE_50 = "var(--overlay-white-50)",
-    /** rgba(255, 255, 255, 0.8) */ WHITE_80 = "var(--overlay-white-80)",
+    /** rgba(69, 35, 35, 0.8) */ WHITE_80 = "var(--overlay-white-80)",
     /** linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%) */ GRADIENT_BLACK = "var(--overlay-gradient-black)",
     /** linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%) */ GRADIENT_WHITE = "var(--overlay-gradient-white)",
 }

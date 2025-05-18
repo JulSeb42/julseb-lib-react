@@ -18,7 +18,7 @@ const textTags = {
     dl: "dl",
 } as const
 
-export const typeValues = {
+export const designTokens = {
     libColors: {
         black: "black",
         white: "white",

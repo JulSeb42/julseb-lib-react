@@ -2,7 +2,7 @@ import { ButtonIcon, Flexbox } from "../../../"
 import {
     type LibButtonIconVariant,
     type ReactChildren,
-    typeValues,
+    designTokens,
 } from "../../../types"
 import type { ILibButtonIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
@@ -22,7 +22,7 @@ const FlexPreview = ({ children }: { children?: ReactChildren }) => {
 }
 
 const ButtonsMap = (props: ILibButtonIcon) => {
-    const colors = Object.values(typeValues.colorsHover)
+    const colors = Object.values(designTokens.colorsHover)
 
     return (
         <FlexPreview>

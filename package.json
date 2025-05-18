@@ -76,26 +76,26 @@
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.es.js",
             "require": "./dist/index.umd.js",
+            "import": "./dist/index.es.js",
             "types": "./dist/lib/index.ts",
             "default": "./dist/index.cjs.js"
         },
         "./index.css": {
-            "import": "./dist/index.css",
             "require": "./dist/index.css",
+            "import": "./dist/index.css",
             "default": "./dist/index.css"
         },
         "./types": {
+            "require": "./dist/lib/types/index.ts",
             "types": "./dist/lib/types/index.ts",
             "import": "./dist/lib/types/index.ts",
-            "require": "./dist/lib/types/index.ts",
             "default": "./dist/lib/types/index.ts"
         },
         "./component-props": {
+            "require": "./dist/lib/types/components-props.ts",
             "types": "./dist/lib/types/components-props.ts",
             "import": "./dist/lib/types/components-props.ts",
-            "require": "./dist/lib/types/components-props.ts",
             "default": "./dist/lib/types/components-props.ts"
         }
     },

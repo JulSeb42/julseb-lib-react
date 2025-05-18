@@ -1,5 +1,5 @@
 import { Loader } from "../../../"
-import { typeValues } from "../../../types"
+import { designTokens } from "../../../types"
 import type { ILibLoader } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -14,7 +14,7 @@ export const loaderPreview: ComponentPreview<ILibLoader> = {
     additionalTypeImports: null,
     extends: ["HTMLSpanElement"],
     previews: [
-        ...Object.values(typeValues.loaderVariants).map(v => ({
+        ...Object.values(designTokens.loaderVariants).map(v => ({
             previewTitle: `Variant ${v}`,
             props: {
                 variant: v,

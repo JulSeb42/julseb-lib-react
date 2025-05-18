@@ -3,7 +3,7 @@ import { Page } from "../components"
 import { previews } from "../data/components"
 import { LIB_TOKENS } from "../lib"
 import { generateColorTokens } from "../lib/lib-utils/generate-lib-tokens"
-import { typeValues } from "../lib/types"
+import { designTokens } from "../lib/types"
 
 export const Generate = () => {
     const tokens = [
@@ -102,37 +102,37 @@ function replaceTypes(arr: Array<string>) {
             .map(v => `"${v}"`)
             .join(" | ")
 
-    const mappedRadiuses = `${mapValues(typeValues.radiuses)} | number`
-    const mappedSpacers = `${mapValues(typeValues.spacers)} | number | "0px"`
-    const mappedColorsShort = mapValues(typeValues.colorsShort)
-    const mappedAccordionIcons = mapValues(typeValues.accordionIcons)
-    const mappedAccordionVariants = mapValues(typeValues.accordionVariants)
-    const mappedAsideSizes = `${mapValues(typeValues.asideSizes)} | number`
-    const mappedListDirection = mapValues(typeValues.listInputDirections)
+    const mappedRadiuses = `${mapValues(designTokens.radiuses)} | number`
+    const mappedSpacers = `${mapValues(designTokens.spacers)} | number | "0px"`
+    const mappedColorsShort = mapValues(designTokens.colorsShort)
+    const mappedAccordionIcons = mapValues(designTokens.accordionIcons)
+    const mappedAccordionVariants = mapValues(designTokens.accordionVariants)
+    const mappedAsideSizes = `${mapValues(designTokens.asideSizes)} | number`
+    const mappedListDirection = mapValues(designTokens.listInputDirections)
     const mappedBreadcrumbsSeparators = `${mapValues(
-        typeValues.breadcrumbSeparators
+        designTokens.breadcrumbSeparators
     )} | JSX.Element`
     const allColorsDesc = "Any color from the library"
     const allColorsAndOverlaysDesc = "Any color or overlay from the library"
-    const mappedColorsHover = mapValues(typeValues.colorsHover)
-    const mappedColorsHoverAndCurrent = mapValues(typeValues.colorsHover)
-    const mappedShadows = mapValues(typeValues.shadows)
-    const mappedButtonSizes = mapValues(typeValues.buttonSizes)
-    const mappedButtonVariants = mapValues(typeValues.buttonVariants)
-    const mappedLoaderVariants = mapValues(typeValues.loaderVariants)
+    const mappedColorsHover = mapValues(designTokens.colorsHover)
+    const mappedColorsHoverAndCurrent = mapValues(designTokens.colorsHover)
+    const mappedShadows = mapValues(designTokens.shadows)
+    const mappedButtonSizes = mapValues(designTokens.buttonSizes)
+    const mappedButtonVariants = mapValues(designTokens.buttonVariants)
+    const mappedLoaderVariants = mapValues(designTokens.loaderVariants)
     const mappedButtonIconVariants = '"plain" | "transparent" | "ghost"'
     const mappedInterfaceMargin = `${mappedSpacers} | "auto" | "0 auto" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }`
-    const mappedInputCheckVariants = mapValues(typeValues.checkInputVariants)
-    const mappedInputBackgrounds = mapValues(typeValues.inputBackgrounds)
-    const mappedInputVariants = mapValues(typeValues.inputVariants)
-    const mappedKeySizes = mapValues(typeValues.keySizes)
-    const mappedMainSizes = `${mapValues(typeValues.mainSizes)} | number`
-    const mappedSkeletonAnimations = mapValues(typeValues.skeletonAnimations)
-    const mappedStepperDirections = mapValues(typeValues.stepperDirections)
-    const mappedLibFontSizes = mapValues(typeValues.fontSizes)
-    const mappedTextTag = mapValues(typeValues.textTags)
-    const mappedTextDisplayTags = mapValues(typeValues.textDisplayTags)
-    const mappedToastStatus = mapValues(typeValues.toastStatus)
+    const mappedInputCheckVariants = mapValues(designTokens.checkInputVariants)
+    const mappedInputBackgrounds = mapValues(designTokens.inputBackgrounds)
+    const mappedInputVariants = mapValues(designTokens.inputVariants)
+    const mappedKeySizes = mapValues(designTokens.keySizes)
+    const mappedMainSizes = `${mapValues(designTokens.mainSizes)} | number`
+    const mappedSkeletonAnimations = mapValues(designTokens.skeletonAnimations)
+    const mappedStepperDirections = mapValues(designTokens.stepperDirections)
+    const mappedLibFontSizes = mapValues(designTokens.fontSizes)
+    const mappedTextTag = mapValues(designTokens.textTags)
+    const mappedTextDisplayTags = mapValues(designTokens.textDisplayTags)
+    const mappedToastStatus = mapValues(designTokens.toastStatus)
 
     // LibShadows | { default: LibShadows; hover: LibShadows; active: LibShadows }
 
@@ -155,7 +155,7 @@ function replaceTypes(arr: Array<string>) {
                 .replaceAll("LibSpacers", mappedSpacers)
                 .replaceAll(
                     "LibIconMenuDirection",
-                    mapValues(typeValues.iconMenuDirections)
+                    mapValues(designTokens.iconMenuDirections)
                 )
                 .replaceAll("ILibPosition", '"relative" | "absolute" | "fixed"')
                 .replaceAll(
@@ -164,7 +164,7 @@ function replaceTypes(arr: Array<string>) {
                 )
                 .replaceAll(
                     "LibIconMenuIcon",
-                    mapValues(typeValues.iconMenuIcon)
+                    mapValues(designTokens.iconMenuIcon)
                 )
                 .replaceAll("LibColorsShort", mappedColorsShort)
                 .replaceAll("LibAllColorsAndOverlays", allColorsAndOverlaysDesc)
@@ -271,34 +271,49 @@ function replaceTypes(arr: Array<string>) {
                 .replaceAll("LibToastStatus", mappedToastStatus)
                 .replaceAll(
                     "LibToasterPosition",
-                    mapValues(typeValues.toasterPositions)
+                    mapValues(designTokens.toasterPositions)
                 )
                 .replaceAll(
                     "LibTooltipTrigger",
-                    mapValues(typeValues.tooltipTriggers)
+                    mapValues(designTokens.tooltipTriggers)
                 )
                 .replaceAll(
                     "LibTooltipPosition",
-                    mapValues(typeValues.tooltipPositions)
+                    mapValues(designTokens.tooltipPositions)
                 )
-                .replaceAll("LibShadows", mapValues(typeValues.shadows))
-                .replaceAll("LibOverlays", mapValues(typeValues.overlays))
-                .replaceAll("LibTransitions", mapValues(typeValues.transitions))
-                .replaceAll("LibFontWeights", mapValues(typeValues.fontWeights))
-                .replaceAll("LibTabJustify", mapValues(typeValues.tabsJustify))
-                .replaceAll("LibTabVariant", mapValues(typeValues.tabsVariants))
+                .replaceAll("LibShadows", mapValues(designTokens.shadows))
+                .replaceAll("LibOverlays", mapValues(designTokens.overlays))
+                .replaceAll(
+                    "LibTransitions",
+                    mapValues(designTokens.transitions)
+                )
+                .replaceAll(
+                    "LibFontWeights",
+                    mapValues(designTokens.fontWeights)
+                )
+                .replaceAll(
+                    "LibTabJustify",
+                    mapValues(designTokens.tabsJustify)
+                )
+                .replaceAll(
+                    "LibTabVariant",
+                    mapValues(designTokens.tabsVariants)
+                )
                 .replaceAll(
                     "LibSlideshowPaginationPosition",
-                    mapValues(typeValues.slideshowPaginationPosition)
+                    mapValues(designTokens.slideshowPaginationPosition)
                 )
                 .replaceAll(
                     "LibSlideshowPagination",
-                    mapValues(typeValues.slideshowPagination)
+                    mapValues(designTokens.slideshowPagination)
                 )
-                .replaceAll("LibMessageType", mapValues(typeValues.messageType))
+                .replaceAll(
+                    "LibMessageType",
+                    mapValues(designTokens.messageType)
+                )
                 .replaceAll(
                     "LibMdEditorEditor",
-                    mapValues(typeValues.markdownEditorEditor)
+                    mapValues(designTokens.markdownEditorEditor)
                 )
                 .replaceAll(
                     "LibPositionExtract",
@@ -306,18 +321,18 @@ function replaceTypes(arr: Array<string>) {
                 )
                 .replaceAll(
                     "LibFooterLinksSeparator",
-                    mapValues(typeValues.footerSeparators)
+                    mapValues(designTokens.footerSeparators)
                 )
                 .replaceAll(
                     "LibFooterDirection",
-                    mapValues(typeValues.footerDirections)
+                    mapValues(designTokens.footerDirections)
                 )
                 .replaceAll(`"data-testid"`, "data-testid")
                 .replaceAll("string | JSX.ElementMenuItem", "LibIconMenuItem")
                 .replaceAll("LibInputPrefixAndSuffix", "string | JSX.Element")
                 .replaceAll(
                     "LibDrawerPosition",
-                    mapValues(typeValues.drawerPositions)
+                    mapValues(designTokens.drawerPositions)
                 )
                 .replaceAll(
                     "LibValueInputPin",
@@ -325,7 +340,7 @@ function replaceTypes(arr: Array<string>) {
                 )
                 .replaceAll(
                     "LibHeaderVariant",
-                    mapValues(typeValues.headerVariants)
+                    mapValues(designTokens.headerVariants)
                 )
         )
     })

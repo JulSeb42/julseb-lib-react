@@ -1,6 +1,6 @@
 import { Button, Flexbox } from "../../../"
 import {
-    typeValues,
+    designTokens,
     type LibColorsHover,
     type ReactChildren,
 } from "../../../types"
@@ -16,7 +16,9 @@ const PreviewFlex = ({ children }: { children?: ReactChildren }) => {
 }
 
 const ButtonPreview = (props: ILibButton) => {
-    const colors: Array<LibColorsHover> = Object.values(typeValues.colorsHover)
+    const colors: Array<LibColorsHover> = Object.values(
+        designTokens.colorsHover
+    )
 
     return (
         <PreviewFlex>
@@ -47,7 +49,7 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
         "ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement>",
     ],
     previews: [
-        ...Object.values(typeValues.buttonSizes).map((size, i) => ({
+        ...Object.values(designTokens.buttonSizes).map((size, i) => ({
             previewTitle: `Size ${size}`,
             demo: (
                 <ButtonPreview size={size} key={i}>
@@ -55,7 +57,7 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
                 </ButtonPreview>
             ),
         })),
-        ...Object.values(typeValues.buttonVariants).map((variant, i) => ({
+        ...Object.values(designTokens.buttonVariants).map((variant, i) => ({
             previewTitle: `Variant ${variant}`,
             demo: (
                 <ButtonPreview variant={variant} key={i}>
@@ -94,7 +96,7 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
             previewTitle: "Disabled",
             demo: (
                 <PreviewFlex>
-                    {Object.values(typeValues.buttonVariants).map(
+                    {Object.values(designTokens.buttonVariants).map(
                         (variant, i) => (
                             <Button
                                 key={i}

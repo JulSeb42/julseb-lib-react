@@ -1,10 +1,10 @@
 import { Alert, Text, Button, Flexbox } from "../../../"
-import { type LibColorsShort, typeValues } from "../../../types"
+import { type LibColorsShort, designTokens } from "../../../types"
 import type { ILibAlert } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const colors: Array<Exclude<LibColorsShort, "black" | "white">> = Object.values(
-    typeValues.colorsShort
+    designTokens.colorsShort
 ).filter(color => color !== "black" && color !== "white")
 
 const DemoAlertButtons = () => {

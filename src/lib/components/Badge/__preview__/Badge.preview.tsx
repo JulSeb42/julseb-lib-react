@@ -1,12 +1,12 @@
 import { Badge, Flexbox, getRandomString } from "../../../"
-import { type LibColorsShort, typeValues } from "../../../types"
+import { type LibColorsShort, designTokens } from "../../../types"
 import { roundIconSize } from "../../../lib-utils"
 import { StarFull } from "../../../icons"
 import type { ILibBadge } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const BadgePreview = (props: ILibBadge & { title: string }) => {
-    const arr = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
+    const arr = Object.keys(designTokens.colorsShort) as Array<LibColorsShort>
 
     return (
         <Flexbox gap="s" flexWrap="wrap">

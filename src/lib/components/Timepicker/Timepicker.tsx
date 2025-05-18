@@ -17,7 +17,7 @@ import {
 } from "../InputComponents"
 import { Clock } from "../../icons"
 import { useKeyboardNavigation } from "../ComponentsMixins"
-import { typeValues } from "../../types"
+import { designTokens } from "../../types"
 import { InputTime } from "./styles"
 import type { ILibTimepicker } from "./types"
 
@@ -102,12 +102,12 @@ export const Timepicker = forwardRef<HTMLInputElement, ILibTimepicker>(
 
         let times: Array<string> =
             step === "30min"
-                ? Object.keys(typeValues.halfHours)
+                ? Object.keys(designTokens.halfHours)
                 : step === "15min"
-                ? Object.keys(typeValues.quarterHours)
+                ? Object.keys(designTokens.quarterHours)
                 : step === "1min"
-                ? Object.keys(typeValues.minutes)
-                : Object.keys(typeValues.hours)
+                ? Object.keys(designTokens.minutes)
+                : Object.keys(designTokens.hours)
 
         if (minTime) {
             times = times.splice(

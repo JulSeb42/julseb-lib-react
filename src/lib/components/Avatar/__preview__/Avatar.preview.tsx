@@ -1,12 +1,12 @@
 import { Avatar, Flexbox } from "../../../"
-import { typeValues, type LibColorsShort } from "../../../types"
+import { designTokens, type LibColorsShort } from "../../../types"
 import type { ILibAvatar } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const IMG_URL = "/images/pic-avatar.jpg"
 
 const AvatarPreview = (props: Omit<ILibAvatar, "img">) => {
-    const arr = Object.values(typeValues.colorsShort) as Array<LibColorsShort>
+    const arr = Object.values(designTokens.colorsShort) as Array<LibColorsShort>
 
     return (
         <Flexbox gap="s">

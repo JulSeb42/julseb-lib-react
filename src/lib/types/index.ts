@@ -1,4 +1,4 @@
-export * from "./type-values"
+export * from "./design-tokens"
 export * from "./global"
 export * from "./require-at-least-one"
 export * from "./component-items"

@@ -1,5 +1,5 @@
 import { ProgressBar, getRandomNumber } from "../../../"
-import { typeValues } from "../../../types"
+import { designTokens } from "../../../types"
 import type { ILibProgressBar } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -13,7 +13,7 @@ export const progressBarPreview: ComponentPreview<ILibProgressBar> = {
     propsImport: "ILibProgressBar",
     additionalTypeImports: null,
     extends: ["HTMLDivElement"],
-    previews: Object.values(typeValues.colorsHover).map((c, i) => ({
+    previews: Object.values(designTokens.colorsHover).map((c, i) => ({
         previewTitle: `Color ${c}`,
         props: {
             value: getRandomNumber(),

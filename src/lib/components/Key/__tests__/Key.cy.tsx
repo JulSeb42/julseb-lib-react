@@ -1,7 +1,7 @@
 import { Key, LIB_TOKENS } from "../../.."
-import { typeValues, type LibColorsHover } from "../../../types"
+import { designTokens, type LibColorsHover } from "../../../types"
 
-const colors = Object.keys(typeValues.colorsHover) as Array<LibColorsHover>
+const colors = Object.keys(designTokens.colorsHover) as Array<LibColorsHover>
 
 describe("<Key />", () => {
     const keys = ["⌘", "K"]

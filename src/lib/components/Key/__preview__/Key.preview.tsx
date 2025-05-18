@@ -1,11 +1,11 @@
 import { Key, capitalize } from "../../../"
-import { typeValues, type LibKeySize } from "../../../types"
+import { designTokens, type LibKeySize } from "../../../types"
 import type { ComponentPreview } from "../../../../data/components"
 import type { ILibKey } from "../../../types/components-props"
 
 const keys = ["⌘", "K"]
 const sizes: Array<LibKeySize> = Object.keys(
-    typeValues.keySizes
+    designTokens.keySizes
 ) as Array<LibKeySize>
 
 export const keyPreview: ComponentPreview<ILibKey> = {

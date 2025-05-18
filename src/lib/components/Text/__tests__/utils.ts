@@ -1,5 +1,5 @@
-import { typeValues, type LibTextAllTag } from "../../../types"
+import { designTokens, type LibTextAllTag } from "../../../types"
 
 export const tags = Object.values(
-    typeValues.allTextTags
+    designTokens.allTextTags
 ) as Array<LibTextAllTag>

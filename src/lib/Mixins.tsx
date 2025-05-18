@@ -13,7 +13,7 @@ import {
     FONT_WEIGHTS,
 } from "./Variables"
 import {
-    typeValues,
+    designTokens,
     type LibAllColors,
     type LibColorsShort,
     type LibColorsHover,
@@ -153,7 +153,7 @@ const getColorMixinFromTheme = (
         if (!$color) return null as any
 
         const overlayColors = Object.keys(
-            typeValues.overlays
+            designTokens.overlays
         ) as Array<LibOverlays>
 
         if (overlayColors.find(c => c === $color)) {

@@ -1,10 +1,12 @@
 import { Tag, Flexbox } from "../../../"
-import { typeValues, type LibColorsShort } from "../../../types"
+import { designTokens, type LibColorsShort } from "../../../types"
 import type { ILibTag } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const TagDemo = ({ ...rest }: ILibTag) => {
-    const colors = Object.keys(typeValues.colorsShort) as Array<LibColorsShort>
+    const colors = Object.keys(
+        designTokens.colorsShort
+    ) as Array<LibColorsShort>
 
     return (
         <Flexbox gap="xs" alignItems="flex-start">
