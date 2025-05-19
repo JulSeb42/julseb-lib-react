@@ -1,6 +1,6 @@
 
 
-import { forwardRef } from "react"
+import { type FC } from "react"
 import {  } from "@julseb-lib/utils"
 import { {{ pascalCase other }} } from "../../"
 import { Styled{{ pascalCase name }} } from "./styles"
@@ -12,17 +12,15 @@ import type { ILib{{ pascalCase name }} } from "./types"
  * @extends HTML{{ pascalCase attribute }}Element
  * @prop data-testid?: string
 {{#if as}} * @prop as?: ElementType{{/if}}
- * @prop ref?: ForwardedRef<HTML{{ pascalCase attribute }}Element>
+ * @prop ref?: Ref<HTML{{ pascalCase attribute }}Element>
  */
-export const {{ pascalCase name }} = forwardRef<HTML{{ pascalCase attribute }}Element, ILib{{ pascalCase name }}>(
-    (
-        { "data-testid": testid,{{#if as}} as,{{/if}}{{#if children}} children,{{/if}} ...rest },
-        ref
-    ) => {
-        return (
-            <Styled{{ pascalCase name }} data-testid={testid} ref={ref} {{#if as}}as={as} {{/if}}{...rest}{{#if children}}>
-                {children}
-            </Styled{{ pascalCase name }}>{{ else }} />{{/if}}
-        )
-    }
-)
+export const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> =
+(
+	{ "data-testid": testid,{{#if as}} as,{{/if}} ref,{{#if children}} children,{{/if}} ...rest },
+) => {
+	return (
+		<Styled{{ pascalCase name }} data-testid={testid} ref={ref} {{#if as}}as={as} {{/if}}{...rest}{{#if children}}>
+			{children}
+		</Styled{{ pascalCase name }}>{{ else }} />{{/if}}
+	)
+}

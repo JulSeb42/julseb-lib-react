@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import { Helmet, Header, Wrapper, Main, Footer, PageLoading } from "../../"
+import { Meta, Header, Wrapper, Main, Footer, PageLoading } from "../../"
 import type { ILibPageLayout } from "./types"
 
 /**
@@ -36,61 +36,61 @@ import type { ILibPageLayout } from "./types"
  * </PageLayout>
  */
 export const PageLayout: FC<ILibPageLayout> = ({
-    children,
-    isLoading,
-    pageLoading,
-    titleLoading,
-    helmet,
-    header,
-    footer,
-    noWrapper,
-    wrapper,
-    template = "single",
-    main,
-    mainMinHeight = "85vh",
+	children,
+	isLoading,
+	pageLoading,
+	titleLoading,
+	meta: helmet,
+	header,
+	footer,
+	noWrapper,
+	wrapper,
+	template = "single",
+	main,
+	mainMinHeight = "85vh",
 }) => {
-    return (
-        <>
-            {helmet && (
-                <Helmet
-                    {...helmet}
-                    title={
-                        isLoading && titleLoading ? titleLoading : helmet.title
-                    }
-                />
-            )}
+	return (
+		<>
+			{helmet && (
+				<Meta
+					{...helmet}
+					title={
+						isLoading && titleLoading ? titleLoading : helmet.title
+					}
+				/>
+			)}
 
-            {isLoading ? (
-                <PageLoading {...pageLoading} />
-            ) : (
-                <>
-                    {header && (
-                        <Header {...(header as any)}>
-                            {header?.nav && header?.nav}
-                        </Header>
-                    )}
+			{isLoading ? (
+				<PageLoading {...pageLoading} />
+			) : (
+				<>
+					{header && (
+						<Header {...(header as any)}>
+							{header?.nav && header?.nav}
+						</Header>
+					)}
 
-                    {!noWrapper ? (
-                        <Wrapper className="wrapper" {...wrapper}>
-                            {template === "single" ? (
-                                <Main
-                                    className="main"
-                                    minHeight={mainMinHeight}
-                                    {...(main as any)}
-                                >
-                                    {children}
-                                </Main>
-                            ) : (
-                                children
-                            )}
-                        </Wrapper>
-                    ) : (
-                        children
-                    )}
+					{!noWrapper ? (
+						<Wrapper className="wrapper" {...wrapper}>
+							{template === "single" ? (
+								<Main
+									className="main"
+									minHeight={mainMinHeight}
+									{...(main as any)}
+								>
+									{children}
+								</Main>
+							) : (
+								children
+							)}
+						</Wrapper>
+					) : (
+						children
+					)}
 
-                    {footer && <Footer {...(footer as any)} />}
-                </>
-            )}
-        </>
-    )
+					{footer && <Footer {...(footer as any)} />}
+				</>
+			)}
+		</>
+	)
 }

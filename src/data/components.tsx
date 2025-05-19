@@ -84,8 +84,8 @@ import { drawerPreview } from "../lib/components/Drawer/__preview__/Drawer.previ
 import { headerPreview } from "../lib/components/Header/__preview__/Header.preview"
 import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu.preview"
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
-import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
 import { pageLayoutPreview } from "../lib/components/PageLayout/__preview__/PageLayout.preview"
+import { metaPreview } from "../lib/components/Meta/__preview__/Meta.preview"
 /* Prepend import - DO NOT REMOVE */
 
 import { helpersPreview } from "./previews/utils/Helpers.preview"
@@ -98,130 +98,130 @@ import { hooksPreview } from "./previews/utils/Hooks.preview"
 import { resetScrollPreview } from "../lib/components/ResetScroll/__preview__/ResetScroll.preview"
 
 export type PreviewProp<T> = {
-    props: T
+	props: T
 }
 
 export type PreviewDemo = {
-    demo: JSX.Element
+	demo: JSX.Element
 }
 
 export interface ComponentPreview<T> {
-    name: string
-    component: FC | ForwardRefExoticComponent<T & RefAttributes<any>> | null
-    category: "styles" | "layouts" | "components" | "helpers"
-    import: string | null // import Component (ex: Skeleton)
-    additionalImports: Array<string> | null // import OtherComponent (ex: SkeletonCard)
-    optionalImports: Array<string> | null // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-    propsImport: string | null // import ILibComponent (ex: ILibAccordion)
-    additionalTypeImports: Array<string> | null // import ILibComponentItem (ex: ILibAccordionItem)
-    extends: Array<string> | Array<{ name: string; from: string }> | null
-    noStretch?: boolean
-    // TODO?: noAs: boolean
-    // TODO?: noRef?: boolean
-    previews: Array<
-        (PreviewProp<T> | PreviewDemo) & {
-            previewTitle?: string
-        }
-    > | null
+	name: string
+	component: FC | ForwardRefExoticComponent<T & RefAttributes<any>> | null
+	category: "styles" | "layouts" | "components" | "helpers"
+	import: string | null // import Component (ex: Skeleton)
+	additionalImports: Array<string> | null // import OtherComponent (ex: SkeletonCard)
+	optionalImports: Array<string> | null // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+	propsImport: string | null // import ILibComponent (ex: ILibAccordion)
+	additionalTypeImports: Array<string> | null // import ILibComponentItem (ex: ILibAccordionItem)
+	extends: Array<string> | Array<{ name: string; from: string }> | null
+	noStretch?: boolean
+	// TODO?: noAs: boolean
+	// TODO?: noRef?: boolean
+	previews: Array<
+		(PreviewProp<T> | PreviewDemo) & {
+			previewTitle?: string
+		}
+	> | null
 }
 
 export const previews = [
-    colorsPreview,
-    overlaysPreview,
-    textPreviews,
-    shadowsPreview,
-    spacersPreview,
-    radiusesPreview,
-    themeProviderPreview,
+	colorsPreview,
+	overlaysPreview,
+	textPreviews,
+	shadowsPreview,
+	spacersPreview,
+	radiusesPreview,
+	themeProviderPreview,
 
-    wrapperPreview,
-    mainPreview,
-    asidePreview,
-    sectionPreview,
-    gridPreview,
-    flexboxPreview,
+	wrapperPreview,
+	mainPreview,
+	asidePreview,
+	sectionPreview,
+	gridPreview,
+	flexboxPreview,
 
-    iconPreview,
-    linkPreview,
-    keyPreview,
-    textIconPreview,
-    highlightPreview,
-    linkifyPreview,
-    tooltipPreview,
-    hrPreview,
-    skeletonPreview,
-    imagePreview,
-    masonryPreview,
-    fullBleedPreview,
-    videoPreview,
-    youtubePreview,
-    badgePreview,
-    avatarPreview,
-    loaderPreview,
-    burgerPreview,
-    buttonPreview,
-    buttonIconPreview,
-    buttonGroupPreview,
-    tagPreview,
-    truncatePreview,
-    cardPreview,
-    inputPreview,
-    inputImagePreview,
-    inputCheckPreview,
-    inputPhonePreview,
-    inputCounterPreview,
-    inputSliderPreview,
-    selectPreview,
-    autocompletePreview,
-    ratingPreview,
-    inputPinPreview,
-    datepickerPreview,
-    timepickerPreview,
-    fieldsetPreview,
-    formPreview,
-    listGroupPreview,
-    breadcrumbsPreview,
-    accordionPreview,
-    dropdownPreview,
-    toastPreview,
-    alertPreview,
-    modalPreview,
-    dragListPreview,
-    paginationPreview,
-    paginatorPreview,
-    stepperPreview,
-    progressBarPreview,
-    progressCirclePreview,
-    tabsPreview,
-    slideshowPreview,
-    coverPreview,
-    tablePreview,
-    pageLoadingPreview,
-    stickyPreview,
-    messagingPreview,
-    markdownEditorPreview,
-    markdownContainerPreview,
-    codeContainerPreview,
-    fadePreview,
-    backToTopPreview,
-    drawerPreview,
-    headerPreview,
-    iconMenuPreview,
-    footerPreview,
-    helmetPreview,
-    pageLayoutPreview,
-    /* Prepend array - DO NOT REMOVE */
+	iconPreview,
+	linkPreview,
+	keyPreview,
+	textIconPreview,
+	highlightPreview,
+	linkifyPreview,
+	tooltipPreview,
+	hrPreview,
+	skeletonPreview,
+	imagePreview,
+	masonryPreview,
+	fullBleedPreview,
+	videoPreview,
+	youtubePreview,
+	badgePreview,
+	avatarPreview,
+	loaderPreview,
+	burgerPreview,
+	buttonPreview,
+	buttonIconPreview,
+	buttonGroupPreview,
+	tagPreview,
+	truncatePreview,
+	cardPreview,
+	inputPreview,
+	inputImagePreview,
+	inputCheckPreview,
+	inputPhonePreview,
+	inputCounterPreview,
+	inputSliderPreview,
+	selectPreview,
+	autocompletePreview,
+	ratingPreview,
+	inputPinPreview,
+	datepickerPreview,
+	timepickerPreview,
+	fieldsetPreview,
+	formPreview,
+	listGroupPreview,
+	breadcrumbsPreview,
+	accordionPreview,
+	dropdownPreview,
+	toastPreview,
+	alertPreview,
+	modalPreview,
+	dragListPreview,
+	paginationPreview,
+	paginatorPreview,
+	stepperPreview,
+	progressBarPreview,
+	progressCirclePreview,
+	tabsPreview,
+	slideshowPreview,
+	coverPreview,
+	tablePreview,
+	pageLoadingPreview,
+	stickyPreview,
+	messagingPreview,
+	markdownEditorPreview,
+	markdownContainerPreview,
+	codeContainerPreview,
+	fadePreview,
+	backToTopPreview,
+	drawerPreview,
+	headerPreview,
+	iconMenuPreview,
+	footerPreview,
+	metaPreview,
+	pageLayoutPreview,
+	/* Prepend array - DO NOT REMOVE */
 
-    helpersPreview,
-    srOnlyPreview,
-    variablesPreview,
-    mixinsPreview,
-    utilsPreview,
-    optionsMarkdownPreview,
-    hooksPreview,
-    resetScrollPreview,
+	helpersPreview,
+	srOnlyPreview,
+	variablesPreview,
+	mixinsPreview,
+	utilsPreview,
+	optionsMarkdownPreview,
+	hooksPreview,
+	resetScrollPreview,
 ] as Array<ComponentPreview<any>>
 
 export const componentPaths: ComponentPaths = previews.map(preview => ({
-    path: `/${toKebabCase(preview.name)}`,
+	path: `/${toKebabCase(preview.name)}`,
 }))

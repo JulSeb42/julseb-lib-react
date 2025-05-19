@@ -1,0 +1,14 @@
+import type { ReactChildren } from "../../types"
+
+export interface ILibMeta {
+	title: string
+	favicon?: string
+	description?: string
+	keywords?: Array<string>
+	author?: string
+	type?: string
+	cover?: string
+	siteName?: string
+	language?: string
+	children?: ReactChildren
+}

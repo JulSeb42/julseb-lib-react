@@ -3,49 +3,49 @@ import { PageLayout, Text } from "../../lib"
 import type { LibHeaderLink, LibFooterLink, LibMainSize } from "../../lib/types"
 
 const links: Array<LibHeaderLink> = [
-    { text: "Link", to: "/" },
-    { text: "Link", to: "/" },
+	{ text: "Link", to: "/" },
+	{ text: "Link", to: "/" },
 ]
 
 export const PageLayoutDemo: FC<{ mainSize?: LibMainSize }> = ({
-    mainSize,
+	mainSize,
 }) => {
-    const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => {
-        setTimeout(() => setIsLoading(false), 1000)
-    }, [])
+	useEffect(() => {
+		setTimeout(() => setIsLoading(false), 1000)
+	}, [])
 
-    return (
-        <PageLayout
-            isLoading={isLoading}
-            helmet={{
-                title: "Hello Page Layout",
-                keywords: ["Hello", "World"],
-            }}
-            header={{
-                logo: "Demo Page Layout",
-                links,
-                nav: <Nav />,
-            }}
-            footer={{
-                logo: "Demo",
-                direction: "vertical",
-                links: [...links, ...links] as Array<LibFooterLink>,
-                withSeparator: true,
-            }}
-            main={{ size: mainSize }}
-        >
-            <Text tag="h1">Hello World</Text>
-        </PageLayout>
-    )
+	return (
+		<PageLayout
+			isLoading={isLoading}
+			meta={{
+				title: "Hello Page Layout",
+				keywords: ["Hello", "World"],
+			}}
+			header={{
+				logo: "Demo Page Layout",
+				links,
+				nav: <Nav />,
+			}}
+			footer={{
+				logo: "Demo",
+				direction: "vertical",
+				links: [...links, ...links] as Array<LibFooterLink>,
+				withSeparator: true,
+			}}
+			main={{ size: mainSize }}
+		>
+			<Text tag="h1">Hello World</Text>
+		</PageLayout>
+	)
 }
 
 const Nav: FC = () => {
-    return (
-        <>
-            <p>Hello</p>
-            <p>World</p>
-        </>
-    )
+	return (
+		<>
+			<p>Hello</p>
+			<p>World</p>
+		</>
+	)
 }
