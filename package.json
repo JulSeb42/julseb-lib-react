@@ -23,8 +23,8 @@
 		"cssgen": "cssjson src/lib/index.css --output src/data/styles.json",
 		"check-errors": "tsc --noEmit",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build ./.storybook",
-		"serve-storybook": "serve storybook-static"
+		"build-storybook": "storybook build --docs --force-build-preview --disable-telemetry",
+		"serve-storybook": "serve ./storybook-static"
 	},
 	"dependencies": {
 		"@julseb-lib/utils": "^0.0.12",
@@ -73,6 +73,7 @@
 		"globals": "^16.1.0",
 		"playwright": "^1.52.0",
 		"plop": "^4.0.1",
+		"serve": "^14.2.4",
 		"storybook": "^8.6.14",
 		"tsx": "^4.19.4",
 		"typescript": "^5.8.3",
