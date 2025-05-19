@@ -1,3 +1,4 @@
+import type { Ref } from "react"
 import type {
     DispatchState,
     LibButtonGroupButtonItem,
@@ -16,6 +17,7 @@ export interface ILibButtonGroupButton
         | "color"
         | "size"
         | "iconBaseUrl"
+        | "ref"
     > {
     button: LibButtonGroupButtonItem
     index: number
@@ -37,4 +39,5 @@ export interface ILibButtonGroupToggle
     toggles: { [id: string]: boolean }
     setToggles: DispatchState<{ [id: string]: boolean }>
     index: number
+    ref?: Ref<HTMLLabelElement>
 }

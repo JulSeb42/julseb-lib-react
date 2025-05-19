@@ -6,10 +6,17 @@ interface IUsePaginatedData<T> {
 }
 
 /**
- * @description Hook to use with Pagination or Paginator components
- * @link https://documentation-components-react.vercel.app/helpers/hooks#usePaginatedData
- * @argument data: Array<T> => to define
- * @argument defaultLimit?: number
+ * usePaginatedData is a hook to paginate an array of data, returning the current page's data and total number of pages.
+ *
+ * @function
+ * @template T
+ * @param {Array<T>} data - The array of data to paginate.
+ * @param {number} [defaultLimit=20] - The number of items per page.
+ * @returns {{ paginatedData: Array<T>, totalPages: number }} An object containing the paginated data and total number of pages.
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#usePaginatedData
+ *
+ * @example
+ * const { paginatedData, totalPages } = usePaginatedData(dataArray, 10)
  */
 export const usePaginatedData = <T,>(
     data: Array<T>,

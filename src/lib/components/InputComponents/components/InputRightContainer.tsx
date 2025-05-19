@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { StyledInputRightContainer } from "../styles"
 import type { ILibInputRightContainer } from "../types"
 
@@ -11,14 +12,14 @@ import type { ILibInputRightContainer } from "../types"
  * @prop withBorder: boolean | undefined
  * @prop children?: ReactChildren
  */
-export const InputRightContainer = ({
+export const InputRightContainer: FC<ILibInputRightContainer> = ({
     "data-testid": testid,
     className,
     children,
     disabled,
     withPadding,
     withBorder,
-}: ILibInputRightContainer) => {
+}) => {
     return (
         <StyledInputRightContainer
             data-testid={testid && `${testid}.RightContainer`}

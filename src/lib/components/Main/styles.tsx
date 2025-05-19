@@ -23,8 +23,8 @@ const StyledMain = styled.main<{
 }>`
     position: relative;
     width: 100%;
-    height: auto;
-    min-height: ${({ $minHeight }) => stringifyPx($minHeight)};
+    height: 100%;
+    min-height: 100%;
     max-width: ${({ $size }) => getMainSize($size || "default")};
     padding: ${SPACERS.XXL} 0;
     ${Mixins.Flexbox({
@@ -49,8 +49,10 @@ const StyledMain = styled.main<{
             }
         `}
 
-    @media ${MEDIA.BREAKPOINT_TABLET_SMALL} {
+    @media ${MEDIA.BREAKPOINT_TABLET_LARGE} {
         height: unset;
+        min-height: unset;
+        padding: ${SPACERS.L} 0;
     }
 `
 

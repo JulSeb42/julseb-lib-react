@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { getIconSizeFromFont } from "../../../lib-utils"
 import { LibIcon } from "../../LibIcon"
 import { CloseCircle, CheckCircle } from "../../../icons"
@@ -15,11 +16,11 @@ import type { ILibInputValidationHelper } from "../types"
  * @prop className: string | undefined
  * @prop validation: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  */
-export const InputValidationHelper = ({
+export const InputValidationHelper: FC<ILibInputValidationHelper> = ({
     "data-testid": testid,
     className,
     validation,
-}: ILibInputValidationHelper) => {
+}) => {
     const {
         status,
         message,

@@ -1,4 +1,4 @@
-import { useRef, type ReactNode } from "react"
+import { useRef, type FC, type ReactNode } from "react"
 import classNames from "classnames"
 import { uuid } from "@julseb-lib/utils"
 import { useMaxWidth, useClickOutside } from "../../"
@@ -8,7 +8,7 @@ import { Nav } from "./styles"
 import type { ILibHeaderNav } from "./subtypes"
 import type { LibHeaderLink } from "../../types"
 
-export const HeaderNav = ({
+export const HeaderNav: FC<ILibHeaderNav> = ({
     "data-testid": testid,
     className,
     search,
@@ -22,10 +22,10 @@ export const HeaderNav = ({
     burgerRef,
     handleClose,
     nav,
-}: ILibHeaderNav) => {
+}) => {
     const isMobile = useMaxWidth(600)
 
-    const el = useRef<HTMLDivElement>(null)
+    const el = useRef<HTMLDivElement>(null as any)
     useClickOutside(el, e => {
         if (!burgerRef?.current?.contains(e.target as any)) {
             handleClose()

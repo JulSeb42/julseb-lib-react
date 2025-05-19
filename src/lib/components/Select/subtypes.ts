@@ -18,6 +18,7 @@ export interface ILibSelectButton
         | "inputBackground"
         | "validation"
         | "options"
+        | "ref"
     > {
     onClick?: MouseEventHandler<HTMLButtonElement>
     isOpen: boolean

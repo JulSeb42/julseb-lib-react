@@ -1,6 +1,7 @@
 import classNames from "classnames"
 import { StyledInputWrapper } from "../styles"
 import type { ILibInputWrapper } from "../types"
+import type { FC } from "react"
 
 /**
  * @description Returns a wrapper for inputs holding icon left, input and right container
@@ -15,7 +16,7 @@ import type { ILibInputWrapper } from "../types"
  * @prop validationStatus: boolean | undefined
  * @prop children?: ReactChildren
  */
-export const InputWrapper = ({
+export const InputWrapper: FC<ILibInputWrapper> = ({
     "data-testid": testid,
     className,
     hasContainer,
@@ -25,7 +26,7 @@ export const InputWrapper = ({
     inputBackground,
     inputVariant,
     validationStatus,
-}: ILibInputWrapper) => {
+}) => {
     return (
         <StyledInputWrapper
             data-testid={hasContainer && testid ? `${testid}.Wrapper` : testid}

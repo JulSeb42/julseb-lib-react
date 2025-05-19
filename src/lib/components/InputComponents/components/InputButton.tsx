@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { LibIcon } from "../../LibIcon"
 import { StyledInputButton } from "../styles"
 import type { ILibInputButton } from "../types"
@@ -17,7 +18,7 @@ import type { ILibInputButton } from "../types"
  * @prop validationStatus: boolean | undefined | undefined
  * @prop className: string | undefined
  */
-export const InputButton = ({
+export const InputButton: FC<ILibInputButton> = ({
     "data-testid": testid,
     "aria-label": ariaLabel,
     onClick,
@@ -29,7 +30,7 @@ export const InputButton = ({
     inputBackground,
     validationStatus,
     className,
-}: ILibInputButton) => {
+}) => {
     return (
         <StyledInputButton
             aria-label={ariaLabel}

@@ -1,44 +1,48 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { StyledTabsButtonsContainer } from "./styles"
 import type { ILibTabsButtonsContainer } from "./types"
 
 /**
- * @description Returns a TabsButtonsContainer component
- * @link https://documentation-components-react.vercel.app/components/tabs
+ * TabsButtonsContainer component for wrapping tab buttons with customizable justification and visual variant.
+ *
+ * @component
  * @extends HTMLDivElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop justify?: "start" | "stretch"
- * @prop variant?: "basic" | "rounded"
+ * @param {Object} props - TabsButtonsContainer props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ElementType} [props.as] - Custom element type to render as.
+ * @param {ForwardedRef<HTMLDivElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {"start" | "stretch"} [props.justify="start"] - Justification of the tab buttons.
+ * @param {"basic" | "rounded"} [props.variant="basic"] - Visual variant of the tab buttons.
+ * @param {ReactNode} [props.children] - Tab button elements.
+ * @param {any} [props.rest] - Additional props passed to the root element.
+ * @returns {JSX.Element} The rendered TabsButtonsContainer component.
+ *
+ * @see https://documentation-components-react.vercel.app/components/tabs
+ * @example
+ * <TabsButtonsContainer justify="stretch" variant="rounded">
+ *   {tabButtons}
+ * </TabsButtonsContainer>
  */
-export const TabsButtonsContainer = forwardRef<
-    HTMLDivElement,
-    ILibTabsButtonsContainer
->(
-    (
-        {
-            "data-testid": testid,
-            as,
-            children,
-            justify = "start",
-            variant = "basic",
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledTabsButtonsContainer
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                $cols={(children as Array<typeof children>)?.length}
-                $justify={justify}
-                $variant={variant}
-                {...rest}
-            >
-                {children}
-            </StyledTabsButtonsContainer>
-        )
-    }
-)
+export const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
+    "data-testid": testid,
+    as,
+    ref,
+    children,
+    justify = "start",
+    variant = "basic",
+    ...rest
+}) => {
+    return (
+        <StyledTabsButtonsContainer
+            data-testid={testid}
+            ref={ref}
+            as={as}
+            $cols={(children as Array<typeof children>)?.length}
+            $justify={justify}
+            $variant={variant}
+            {...rest}
+        >
+            {children}
+        </StyledTabsButtonsContainer>
+    )
+}

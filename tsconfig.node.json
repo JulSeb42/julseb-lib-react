@@ -9,6 +9,7 @@
         "strict": false,
         "noEmit": true,
         "declaration": true,
+        "verbatimModuleSyntax": true,
 
         "lib": [
             "ES2020",

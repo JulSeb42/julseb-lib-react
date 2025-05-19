@@ -1,13 +1,14 @@
+import type { FC } from "react"
 import classNames from "classnames"
 import { StyledCircle } from "./styles"
 import type { ILibProgressCircle } from "./types"
 
-export const Circle = ({
+export const Circle: FC<ILibProgressCircle> = ({
     className,
     value,
     color = "primary",
     noAnimation,
-}: ILibProgressCircle) => {
+}) => {
     const r = 70
     const circ = 2 * Math.PI * r
     const strokePct = ((100 - value) * circ) / 100

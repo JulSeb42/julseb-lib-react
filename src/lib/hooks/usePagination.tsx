@@ -11,12 +11,24 @@ interface ILibUsePaginationNavigation {
 }
 
 /**
- * @description Hook to use for building Pagination or Paginator buttons
- * @link https://documentation-components-react.vercel.app/helpers/hooks#usePagination
- * @prop currentPage: number
- * @prop setCurrentPage: Dispatch<SetStateAction<number>>
- * @prop queries?: Array<Array<string>>
- * @prop totalPages?: number
+ * usePagination is a hook to handle pagination logic and URL query updates for paginated components.
+ *
+ * @function
+ * @param {Object} params - Pagination parameters.
+ * @param {number} params.currentPage - The current page number.
+ * @param {DispatchState<number>} params.setCurrentPage - State setter for the current page.
+ * @param {Array<Array<string>>} [params.queries] - Additional query parameters to include in the URL.
+ * @param {number} [params.totalPages] - Total number of pages (used for bounds checking).
+ * @returns {{ handlePrev: () => void, handleNext: () => void, handlePage: (n: number) => void }} Pagination handlers for previous, next, and specific page navigation.
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#usePagination
+ *
+ * @example
+ * const { handlePrev, handleNext, handlePage } = usePagination({
+ *   currentPage,
+ *   setCurrentPage,
+ *   queries,
+ *   totalPages
+ * })
  */
 export const usePagination = ({
     currentPage,

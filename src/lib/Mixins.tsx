@@ -66,88 +66,89 @@ const getColorMixinFromTheme = (
     }
 
     const colorsShortMap = new Map<LibColorsShort, keyof typeof THEME>([
-        ["primary", THEME.PRIMARY_500],
-        ["secondary", THEME.SECONDARY_500],
-        ["success", THEME.SUCCESS_500],
-        ["danger", THEME.DANGER_500],
-        ["warning", THEME.WARNING_500],
-        ["gray", THEME.GRAY_500],
-        ["black", THEME.BLACK],
-        ["white", THEME.WHITE],
+        ["primary", "PRIMARY_500"],
+        ["secondary", "SECONDARY_500"],
+        ["success", "SUCCESS_500"],
+        ["danger", "DANGER_500"],
+        ["warning", "WARNING_500"],
+        ["gray", "GRAY_500"],
+        ["black", "BLACK"],
+        ["white", "WHITE"],
     ])
 
     const allColorsMap = new Map<LibAllColors, keyof typeof THEME>([
-        ...colorsShortMap,
-        ["gray-50", THEME.GRAY_50],
-        ["gray-100", THEME.GRAY_100],
-        ["gray-200", THEME.GRAY_200],
-        ["gray-300", THEME.GRAY_300],
-        ["gray-400", THEME.GRAY_400],
-        ["gray-500", THEME.GRAY_500],
-        ["gray-600", THEME.GRAY_600],
-        ["gray-700", THEME.GRAY_700],
-        ["gray-800", THEME.GRAY_800],
-        ["gray-900", THEME.GRAY_900],
-        ["primary-50", THEME.PRIMARY_50],
-        ["primary-100", THEME.PRIMARY_100],
-        ["primary-200", THEME.PRIMARY_200],
-        ["primary-300", THEME.PRIMARY_300],
-        ["primary-400", THEME.PRIMARY_400],
-        ["primary-500", THEME.PRIMARY_500],
-        ["primary-600", THEME.PRIMARY_600],
-        ["primary-700", THEME.PRIMARY_700],
-        ["primary-800", THEME.PRIMARY_800],
-        ["primary-900", THEME.PRIMARY_900],
-        ["secondary-50", THEME.SECONDARY_50],
-        ["secondary-100", THEME.SECONDARY_100],
-        ["secondary-200", THEME.SECONDARY_200],
-        ["secondary-300", THEME.SECONDARY_300],
-        ["secondary-400", THEME.SECONDARY_400],
-        ["secondary-500", THEME.SECONDARY_500],
-        ["secondary-600", THEME.SECONDARY_600],
-        ["secondary-700", THEME.SECONDARY_700],
-        ["secondary-800", THEME.SECONDARY_800],
-        ["secondary-900", THEME.SECONDARY_900],
-        ["success-50", THEME.SUCCESS_50],
-        ["success-100", THEME.SUCCESS_100],
-        ["success-200", THEME.SUCCESS_200],
-        ["success-300", THEME.SUCCESS_300],
-        ["success-400", THEME.SUCCESS_400],
-        ["success-500", THEME.SUCCESS_500],
-        ["success-600", THEME.SUCCESS_600],
-        ["success-700", THEME.SUCCESS_700],
-        ["success-800", THEME.SUCCESS_800],
-        ["success-900", THEME.SUCCESS_900],
-        ["danger-50", THEME.DANGER_50],
-        ["danger-100", THEME.DANGER_100],
-        ["danger-200", THEME.DANGER_200],
-        ["danger-300", THEME.DANGER_300],
-        ["danger-400", THEME.DANGER_400],
-        ["danger-500", THEME.DANGER_500],
-        ["danger-600", THEME.DANGER_600],
-        ["danger-700", THEME.DANGER_700],
-        ["danger-800", THEME.DANGER_800],
-        ["danger-900", THEME.DANGER_900],
-        ["warning-50", THEME.WARNING_50],
-        ["warning-100", THEME.WARNING_100],
-        ["warning-200", THEME.WARNING_200],
-        ["warning-300", THEME.WARNING_300],
-        ["warning-400", THEME.WARNING_400],
-        ["warning-500", THEME.WARNING_500],
-        ["warning-600", THEME.WARNING_600],
-        ["warning-700", THEME.WARNING_700],
-        ["warning-800", THEME.WARNING_800],
-        ["warning-900", THEME.WARNING_900],
-        ["background", THEME.BACKGROUND],
-        ["font", THEME.FONT],
-        ["currentColor", THEME.CURRENT_COLOR],
-        ["transparent", THEME.TRANSPARENT],
+        ...Array.from(colorsShortMap.entries()),
+        ["gray-50", "GRAY_50"],
+        ["gray-100", "GRAY_100"],
+        ["gray-200", "GRAY_200"],
+        ["gray-300", "GRAY_300"],
+        ["gray-400", "GRAY_400"],
+        ["gray-500", "GRAY_500"],
+        ["gray-600", "GRAY_600"],
+        ["gray-700", "GRAY_700"],
+        ["gray-800", "GRAY_800"],
+        ["gray-900", "GRAY_900"],
+        ["primary-50", "PRIMARY_50"],
+        ["primary-100", "PRIMARY_100"],
+        ["primary-200", "PRIMARY_200"],
+        ["primary-300", "PRIMARY_300"],
+        ["primary-400", "PRIMARY_400"],
+        ["primary-500", "PRIMARY_500"],
+        ["primary-600", "PRIMARY_600"],
+        ["primary-700", "PRIMARY_700"],
+        ["primary-800", "PRIMARY_800"],
+        ["primary-900", "PRIMARY_900"],
+        ["secondary-50", "SECONDARY_50"],
+        ["secondary-100", "SECONDARY_100"],
+        ["secondary-200", "SECONDARY_200"],
+        ["secondary-300", "SECONDARY_300"],
+        ["secondary-400", "SECONDARY_400"],
+        ["secondary-500", "SECONDARY_500"],
+        ["secondary-600", "SECONDARY_600"],
+        ["secondary-700", "SECONDARY_700"],
+        ["secondary-800", "SECONDARY_800"],
+        ["secondary-900", "SECONDARY_900"],
+        ["success-50", "SUCCESS_50"],
+        ["success-100", "SUCCESS_100"],
+        ["success-200", "SUCCESS_200"],
+        ["success-300", "SUCCESS_300"],
+        ["success-400", "SUCCESS_400"],
+        ["success-500", "SUCCESS_500"],
+        ["success-600", "SUCCESS_600"],
+        ["success-700", "SUCCESS_700"],
+        ["success-800", "SUCCESS_800"],
+        ["success-900", "SUCCESS_900"],
+        ["danger-50", "DANGER_50"],
+        ["danger-100", "DANGER_100"],
+        ["danger-200", "DANGER_200"],
+        ["danger-300", "DANGER_300"],
+        ["danger-400", "DANGER_400"],
+        ["danger-500", "DANGER_500"],
+        ["danger-600", "DANGER_600"],
+        ["danger-700", "DANGER_700"],
+        ["danger-800", "DANGER_800"],
+        ["danger-900", "DANGER_900"],
+        ["warning-50", "WARNING_50"],
+        ["warning-100", "WARNING_100"],
+        ["warning-200", "WARNING_200"],
+        ["warning-300", "WARNING_300"],
+        ["warning-400", "WARNING_400"],
+        ["warning-500", "WARNING_500"],
+        ["warning-600", "WARNING_600"],
+        ["warning-700", "WARNING_700"],
+        ["warning-800", "WARNING_800"],
+        ["warning-900", "WARNING_900"],
+        ["background", "BACKGROUND"],
+        ["font", "FONT"],
+        ["currentColor", "CURRENT_COLOR"],
+        ["transparent", "TRANSPARENT"],
     ])
 
     const ColorsShort = ($color: LibColorsShort = "primary") =>
-        colorsShortMap.get($color)
+        THEME[colorsShortMap.get($color) as keyof typeof THEME]
 
-    const AllColors = ($color: LibAllColors) => allColorsMap.get($color)
+    const AllColors = ($color: LibAllColors) =>
+        THEME[allColorsMap.get($color) as keyof typeof THEME]
 
     const ColorsAndOverlays = ($color: LibAllColorsAndOverlays | undefined) => {
         if (!$color) return null as any
@@ -168,6 +169,7 @@ const getColorMixinFromTheme = (
     ) => {
         if ($color === "currentColor") return "currentColor"
 
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_500],
             ["secondary", THEME.SECONDARY_500],
@@ -186,6 +188,7 @@ const getColorMixinFromTheme = (
     const ColorsHoverHover = ($color: LibColorsHoverAndCurrent = "primary") => {
         if ($color === "currentColor") return "currentColor"
 
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_300],
             ["secondary", THEME.SECONDARY_300],
@@ -205,7 +208,7 @@ const getColorMixinFromTheme = (
         $color: LibColorsHoverAndCurrent = "primary"
     ) => {
         if ($color === "currentColor") return "currentColor"
-
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_600],
             ["secondary", THEME.SECONDARY_600],
@@ -226,6 +229,7 @@ const getColorMixinFromTheme = (
     ) => {
         if ($color === "currentColor") return "currentColor"
 
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_50],
             ["secondary", THEME.SECONDARY_50],
@@ -244,6 +248,7 @@ const getColorMixinFromTheme = (
     const ColorsGhostHover = ($color: LibColorsHoverAndCurrent = "primary") => {
         if ($color === "currentColor") return "currentColor"
 
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_200],
             ["secondary", THEME.SECONDARY_200],
@@ -264,6 +269,7 @@ const getColorMixinFromTheme = (
     ) => {
         if ($color === "currentColor") return "currentColor"
 
+        // @ts-ignore
         const colorsMap = new Map<LibColorsHover, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_100],
             ["secondary", THEME.SECONDARY_100],
@@ -282,6 +288,7 @@ const getColorMixinFromTheme = (
     const Colors50 = (
         $color: Exclude<LibColorsShort, "black" | "white"> = "primary"
     ) => {
+        // @ts-ignore
         const colorsMap = new Map<LibColorsShort, keyof typeof THEME>([
             ["primary", THEME.PRIMARY_50],
             ["secondary", THEME.SECONDARY_50],

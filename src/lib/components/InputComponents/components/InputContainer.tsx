@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { InputContainer as Container } from "../../InputContainer"
 import type { ILibInputContainer } from "../../InputContainer/types"
 
@@ -18,7 +19,7 @@ import type { ILibInputContainer } from "../../InputContainer/types"
  * @prop style: CSSProperties | undefined
  * @prop iconBaseUrl: string | undefined
  */
-export const InputContainer = ({
+export const InputContainer: FC<ILibInputContainer> = ({
     "data-testid": testid,
     id,
     label,
@@ -34,7 +35,7 @@ export const InputContainer = ({
     hasListOpen,
     iconBaseUrl,
     style,
-}: ILibInputContainer) => {
+}) => {
     if (
         !label &&
         !labelComment &&

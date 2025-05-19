@@ -1,11 +1,10 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { StyledLoaderOne } from "../styles"
 import type { ILibLoader } from "../types"
 
-export const LoaderOne = forwardRef<HTMLSpanElement, ILibLoader>(
+export const LoaderOne: FC<ILibLoader> = (
     (
-        { "data-testid": testid, as, size, color, borderWidth = 8, ...rest },
-        ref
+        { "data-testid": testid, ref, as, size, color, borderWidth = 8, ...rest },
     ) => {
         return (
             <StyledLoaderOne

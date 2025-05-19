@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { StyledInputPrefix } from "../styles"
 import type { ILibInputPrefix } from "../types"
 
@@ -9,12 +10,12 @@ import type { ILibInputPrefix } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop prefix: string | JSX.Element | undefined
  */
-export const InputPrefix = ({
+export const InputPrefix: FC<ILibInputPrefix> = ({
     "data-testid": testid,
     className,
     prefix,
     inputBackground,
-}: ILibInputPrefix) => {
+}) => {
     if (!prefix) return null
 
     return (

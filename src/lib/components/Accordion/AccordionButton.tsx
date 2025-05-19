@@ -1,4 +1,4 @@
-import { useCallback } from "react"
+import { useCallback, type FC } from "react"
 import classNames from "classnames"
 import { capitalize } from "@julseb-lib/utils"
 import { LibIcon } from "../LibIcon"
@@ -6,7 +6,7 @@ import { Plus, ChevronDown } from "../../icons"
 import { StyledAccordionButton, StyledAccordionIcon } from "./styles"
 import type { ILibAccordionButton } from "./subtypes"
 
-export const AccordionButton = ({
+export const AccordionButton: FC<ILibAccordionButton> = ({
     "data-testid": testid,
     className,
     variant = "basic",
@@ -14,7 +14,7 @@ export const AccordionButton = ({
     isOpen,
     setIsOpen,
     title,
-}: ILibAccordionButton) => {
+}) => {
     const iconProps = {
         "data-testid":
             testid &&

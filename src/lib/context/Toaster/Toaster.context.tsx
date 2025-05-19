@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { createContext, useReducer, useContext } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { Toaster } from "../../components/Toast/Toaster"
@@ -39,13 +37,18 @@ const initialState = {
 }
 
 /**
- * @description Returns a Context component for Toast
- * @link https://documentation-components-react.vercel.app/components/toast
- * @prop data-testid?: string
- * @prop className?: string
- * @prop children: ReactChildren
- * @prop toastOptions?: { duration?: number; labelClose?: string; withTimer?: boolean }
- * @prop position?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+ * ToasterProviderWrapper provides a context for managing toast notifications throughout the app.
+ *
+ * @component
+ * @param {Object} props - ToasterProviderWrapper props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {string} [props.className] - Additional class names.
+ * @param {ReactChildren} props.children - Children components to wrap with the toaster context.
+ * @param {{ duration?: number; labelClose?: string; withTimer?: boolean }} [props.toastOptions] - Default options for all toasts.
+ * @param {"top-left" | "top-right" | "bottom-left" | "bottom-right"} [props.position] - Position of the toaster on the screen.
+ * @returns {JSX.Element} The Toaster context provider with the Toaster component.
+ *
+ * @see https://documentation-components-react.vercel.app/components/toast
  */
 export const ToasterProviderWrapper = ({
     "data-testid": testid,
@@ -118,13 +121,11 @@ export const ToasterProviderWrapper = ({
 }
 
 /**
- * @description Hook for Toaster context
- * @link https://documentation-components-react.vercel.app/components/toast
- * @function success
- * @function error
- * @function warning
- * @function info
- * @function loading
- * @function remove
+ * useToast is a hook for accessing the Toaster context and managing toast notifications.
+ *
+ * @function
+ * @returns {ILibToasterContext} The toaster context with methods: success, error, warning, info, loading, remove.
+ *
+ * @see https://documentation-components-react.vercel.app/components/toast
  */
 export const useToast = () => useContext(ToastContext) as ILibToasterContext

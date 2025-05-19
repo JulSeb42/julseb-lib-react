@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { CheckCircle, CloseCircle } from "../../../icons"
 import { LibIcon } from "../../LibIcon"
 import { StyledInputValidationIcon } from "../styles"
@@ -13,12 +14,12 @@ const DEFAULT_ICON_SIZE = 16
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop validation: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
  */
-export const InputValidationIcon = ({
+export const InputValidationIcon: FC<ILibInputValidationIcon> = ({
     "data-testid": testid,
     className,
     validation,
     inputBackground,
-}: ILibInputValidationIcon) => {
+}) => {
     const commonIconProps = {
         className: className && "ValidationIcon",
         size: DEFAULT_ICON_SIZE,

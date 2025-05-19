@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { LibIcon } from "../../LibIcon"
 import { StyledInputIconContainer } from "../styles"
 import type { ILibInputIconContainer } from "../types"
@@ -15,7 +16,7 @@ import type { ILibInputIconContainer } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop inputVariant: "rounded" | "pill" | undefined
  */
-export const InputIcon = ({
+export const InputIcon: FC<ILibInputIconContainer> = ({
     "data-testid": testid,
     className,
     icon,
@@ -25,7 +26,7 @@ export const InputIcon = ({
     inputBackground,
     disabled,
     inputVariant,
-}: ILibInputIconContainer) => {
+}) => {
     if (!icon) return null
 
     return (

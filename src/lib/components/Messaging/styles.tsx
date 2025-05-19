@@ -34,6 +34,7 @@ const StyledMessagesContainer = styled.div`
 const StyledMessagesList = styled(Flexbox)`
     flex-grow: 1;
     overflow-y: scroll;
+    ${Mixins.HideScrollbar};
 `
 
 const MessageListBottom = styled.div`

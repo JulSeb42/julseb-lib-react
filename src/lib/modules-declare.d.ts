@@ -4,6 +4,7 @@ import type { COLORS_LIGHT, COLORS_DARK } from "./Variables"
 
 declare module "*.svg" {
     const content: FunctionComponent<SVGAttributes<SVGElement>>
+    // @ts-ignore
     // eslint-disable-next-line
     export default content
 }

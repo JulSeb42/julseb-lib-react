@@ -1,8 +1,8 @@
-import type { FC, ForwardRefExoticComponent, RefAttributes } from "react"
+import type { FC, RefAttributes, RefObject } from "react"
 import { Flexbox, Text } from "../lib"
 
 interface IComponentPreviewContent {
-    component: FC | ForwardRefExoticComponent<any & RefAttributes<any>> | null
+    component: FC | RefObject<any & RefAttributes<any>> | null
     props?: any
     demo?: JSX.Element
 }

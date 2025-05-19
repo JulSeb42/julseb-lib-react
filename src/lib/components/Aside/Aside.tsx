@@ -1,40 +1,41 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { StyledAside } from "./styles"
 import type { ILibAside } from "./types"
 
 /**
- * @description Returns an Aside component
- * @link https://documentation-components-react.vercel.app/layouts/container
- * @extends HTMLDivElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop size?: "default" | "small" | number
- * @prop minHeight?: string | number
+ * Aside component for displaying complementary content.
+ *
+ * @component
+ * @param {Object} props - Aside props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ElementType} [props.as] - Custom element type to render as.
+ * @param {Ref<HTMLDivElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {"default" | "small" | number} [props.size] - Size of the aside.
+ * @param {ReactNode} [props.children] - Content of the aside.
+ * @returns {JSX.Element} The rendered Aside component.
+ *
+ * @example
+ * <Aside size="small" minHeight="50vh">
+ *   Sidebar content here
+ * </Aside>
  */
-export const Aside = forwardRef<HTMLDivElement, ILibAside>(
-    (
-        {
-            "data-testid": testid,
-            as,
-            children,
-            size,
-            minHeight = "100vh",
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledAside
-                data-testid={testid}
-                ref={ref}
-                as={as}
-                $size={size}
-                $minHeight={minHeight}
-                {...rest}
-            >
-                {children}
-            </StyledAside>
-        )
-    }
-)
+export const Aside: FC<ILibAside> = ({
+    "data-testid": testid,
+    as,
+    ref,
+    children,
+    size,
+    ...rest
+}) => {
+    return (
+        <StyledAside
+            data-testid={testid}
+            ref={ref}
+            as={as}
+            $size={size}
+            {...rest}
+        >
+            {children}
+        </StyledAside>
+    )
+}

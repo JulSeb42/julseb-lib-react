@@ -1,15 +1,15 @@
-import { useState, type FormEvent, type ChangeEvent } from "react"
+import { useState, type FormEvent, type ChangeEvent, type FC } from "react"
 import { useNavigate, createSearchParams } from "react-router-dom"
 import { Input } from "../../"
 import { SearchForm } from "./styles"
 import type { ILibHeaderSearch } from "./subtypes"
 
-export const HeaderSearch = ({
+export const HeaderSearch: FC<ILibHeaderSearch> = ({
     "data-testid": testid,
     className,
     search,
     handleClose,
-}: ILibHeaderSearch) => {
+}) => {
     if (!search) return null
 
     const {

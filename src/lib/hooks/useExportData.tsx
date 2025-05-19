@@ -17,8 +17,20 @@ const downloadFile = ({ blob, fileName }: IDownloadFile) => {
 }
 
 /**
- * @description Hook to export data to JSON or CSV
- * @link https://documentation-components-react.vercel.app/helpers/hooks#useExportData
+ * useExportData is a hook to export data to JSON or CSV files.
+ *
+ * @function
+ * @template T
+ * @returns {{
+ *   exportToJson: (data: Array<T>, fileName: string) => void,
+ *   exportToCsv: (data: Array<T>, fileName: string, headers: Array<string>) => void
+ * }} An object with methods to export data as JSON or CSV.
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#useExportData
+ *
+ * @example
+ * const { exportToJson, exportToCsv } = useExportData()
+ * exportToJson(dataArray, "my-data")
+ * exportToCsv(dataArray, "my-data", ["header1", "header2"])
  */
 export const useExportData = <T,>() => {
     const exportToJson = (data: Array<T>, fileName: string) =>

@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from "styled-components"
 import { stringifyPx } from "@julseb-lib/utils"
-import { setDefaultTheme, Flexbox, Mixins } from "../../"
+import { setDefaultTheme, Flexbox, Mixins } from "../.."
 import type { ILibBorder, ILibPadding, LibSkeletonAnimation } from "../../types"
 import type { ILibSkeletonCommonStyles } from "./subtypes"
 

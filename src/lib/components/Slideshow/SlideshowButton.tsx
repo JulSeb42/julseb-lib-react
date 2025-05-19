@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { LibIcon } from "../LibIcon"
 import { ChevronLeft, ChevronRight } from "../../icons"
 import { StyledSlideshowButton } from "./styles"
@@ -6,13 +7,13 @@ import type { ILibSlideshowButton } from "./subtypes"
 const DEFAULT_ICON_SIZE_SMALL = 24
 const DEFAULT_ICON_SIZE_LARGE = 32
 
-export const SlideshowButton = ({
+export const SlideshowButton: FC<ILibSlideshowButton> = ({
     "data-testid": testid,
     className,
     onClick,
     position,
     controls,
-}: ILibSlideshowButton) => {
+}) => {
     const {
         "data-testid": controlTestid,
         className: controlClassName,

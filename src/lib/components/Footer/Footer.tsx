@@ -1,4 +1,4 @@
-import { forwardRef, Fragment } from "react"
+import { Fragment, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { FooterLogo } from "./FooterLogo"
 import { FooterLink } from "./FooterLink"
@@ -10,95 +10,94 @@ import {
 import type { ILibFooter } from "./types"
 
 /**
- * @description Returns a Footer component
- * @link https://documentation-components-react.vercel.app/components/footer
- * @extends HTMLDivElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop links: Array<LibFooterLink> => required if direction is set to horizontal, only if children is not defined
- * @prop logo: string | { img: string => only if text is not defined; text: string => only if img is not defined; alt?: string => only if img is defined; width?: number => only if img is defined; height?: number => only if img is defined } => required if direction is set to horizontal
- * @prop children?: ReactChildren
- * @prop withSeparator?: boolean
- * @prop linksSeparator?: "dot" | "dash"
- * @prop direction?: "horizontal" | "vertical"
+ * Footer component for displaying a footer section with links, logo, and optional separators.
  *
- * @type LibFooterLink
- * @prop data-testid?: string
- * @prop className?: string
- * @prop id?: string
- * @prop ref?: ForwardedRef<HTMLAnchorElement & HTMLButtonElement>
- * @prop text: string
- * @prop onClick: void => only if to or href are not defined
- * @prop disabled?: boolean => only if onClick is defined
- * @prop to: string => only if onClick and href are not defined
- * @prop href: string => only if onClick and to are not defined
- * @prop blank?: boolean => only if to or href are defined
+ * @component
+ * @extends HTMLDivElement
+ * @param {Object} props - Footer props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ElementType} [props.as] - Custom element type to render as.
+ * @param {Ref<HTMLDivElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {Array<LibFooterLink>} [props.links] - Array of footer links (required if direction is horizontal and children is not provided).
+ * @param {string|Object} [props.logo] - Logo for the footer. String for text, or object with { img, text, alt, width, height }.
+ * @param {ReactNode} [props.children] - Custom footer content (used if links is not provided).
+ * @param {boolean} [props.withSeparator] - Show separator between links.
+ * @param {"dot" | "dash"} [props.linksSeparator="dot"] - Separator style between links.
+ * @param {"horizontal" | "vertical"} [props.direction="horizontal"] - Layout direction for the footer.
+ * @param {string} [props.className] - Additional class names.
+ * @returns {JSX.Element} The rendered Footer component.
+ *
+ * @example
+ * <Footer
+ *   logo={{ img: "/logo.svg", alt: "Logo" }}
+ *   links={[
+ *     { text: "Home", to: "/" },
+ *     { text: "About", to: "/about" }
+ *   ]}
+ *   withSeparator
+ *   linksSeparator="dash"
+ * />
  */
-export const Footer = forwardRef<HTMLDivElement, ILibFooter>(
-    (
-        {
-            "data-testid": testid,
-            as,
-            children,
-            className,
-            withSeparator,
-            links,
-            logo,
-            direction = "horizontal",
-            linksSeparator = "dot",
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledFooter
-                data-testid={testid}
-                ref={ref}
-                className={className}
-                as={as}
-                $withSeparator={withSeparator}
-                $direction={direction}
-                {...rest}
+export const Footer: FC<ILibFooter> = ({
+    "data-testid": testid,
+    as,
+    ref,
+    children,
+    className,
+    withSeparator,
+    links,
+    logo,
+    direction = "horizontal",
+    linksSeparator = "dot",
+    ...rest
+}) => {
+    return (
+        <StyledFooter
+            data-testid={testid}
+            ref={ref}
+            className={className}
+            as={as}
+            $withSeparator={withSeparator}
+            $direction={direction}
+            {...rest}
+        >
+            {logo && (
+                <FooterLogo
+                    data-testid={testid && `${testid}.Logo`}
+                    className={className && "FooterLogo"}
+                    logo={logo}
+                />
+            )}
+
+            <FooterLinksContainer
+                data-testid={testid && `${testid}.FooterLinksContainer`}
+                className={className && "FooterLinksContainer"}
             >
-                {logo && (
-                    <FooterLogo
-                        data-testid={testid && `${testid}.Logo`}
-                        className={className && "FooterLogo"}
-                        logo={logo}
-                    />
-                )}
+                {links
+                    ? links.map((link, i) => (
+                          <Fragment key={uuid()}>
+                              <FooterLink
+                                  data-testid={
+                                      testid &&
+                                      `${testid}.FooterLinksContainer.FooterLink`
+                                  }
+                                  className={className && "FooterLink"}
+                                  item={link}
+                              />
 
-                <FooterLinksContainer
-                    data-testid={testid && `${testid}.FooterLinksContainer`}
-                    className={className && "FooterLinksContainer"}
-                >
-                    {links
-                        ? links.map((link, i) => (
-                              <Fragment key={uuid()}>
-                                  <FooterLink
-                                      data-testid={
-                                          testid &&
-                                          `${testid}.FooterLinksContainer.FooterLink`
-                                      }
-                                      className={className && "FooterLink"}
-                                      item={link}
-                                  />
-
-                                  {i !== links.length - 1 && (
-                                      <FooterLinkSeparatorContainer>
-                                          {linksSeparator === "dash"
-                                              ? "-"
-                                              : linksSeparator === "dot"
-                                              ? "•"
-                                              : ""}
-                                      </FooterLinkSeparatorContainer>
-                                  )}
-                              </Fragment>
-                          ))
-                        : children}
-                </FooterLinksContainer>
-            </StyledFooter>
-        )
-    }
-)
+                              {i !== links.length - 1 && (
+                                  <FooterLinkSeparatorContainer>
+                                      {linksSeparator === "dash"
+                                          ? "-"
+                                          : linksSeparator === "dot"
+                                          ? "•"
+                                          : ""}
+                                  </FooterLinkSeparatorContainer>
+                              )}
+                          </Fragment>
+                      ))
+                    : children}
+            </FooterLinksContainer>
+        </StyledFooter>
+    )
+}

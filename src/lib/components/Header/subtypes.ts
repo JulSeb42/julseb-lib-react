@@ -1,4 +1,4 @@
-import type { FC, RefObject } from "react"
+import type { FC, Ref } from "react"
 import type { LibHeaderLink, LibLink } from "../../types"
 import type { ILibHeader } from "./types"
 
@@ -17,7 +17,7 @@ export interface ILibHeaderNav
         | "burgerPosition"
         | "nav"
     > {
-    burgerRef: RefObject<HTMLButtonElement>
+    burgerRef: Ref<HTMLButtonElement>
     isOpen: boolean
     headerHeight: number
     handleClose: () => void
@@ -35,6 +35,7 @@ export interface ILibHeaderBurger
     isOpen: boolean
     handleOpen: () => void
     handleClose: () => void
+    ref?: Ref<HTMLButtonElement>
 }
 
 export interface ILibHeaderLogo

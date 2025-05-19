@@ -5,6 +5,7 @@ import type { LibSpacers } from "../../types"
 
 const StyledTruncate = styled.div<{ $gap?: LibSpacers }>`
     overflow: hidden;
+    ${Mixins.HideScrollbar};
     ${({ $gap }) =>
         Mixins.Flexbox({
             $flexDirection: "row",

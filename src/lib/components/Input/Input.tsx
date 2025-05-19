@@ -1,4 +1,4 @@
-import { forwardRef, type ForwardedRef } from "react"
+import { type FC, type ForwardedRef } from "react"
 import { ColorInput } from "./templates/ColorInput"
 import { DateInput } from "./templates/DateInput"
 import { FileInput } from "./templates/FileInput"
@@ -44,144 +44,120 @@ function renderComponent(
     }
 }
 
-const InputFunction = forwardRef<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-    ILibInput
->(({ type, ...rest }, ref) => renderComponent(rest, type, ref))
+const InputFunction: FC<ILibInput> = ({ type, ref, ...rest }) =>
+    renderComponent(rest, type, ref)
 
 /**
- * @description Returns a Input component
- * @link https://documentation-components-react.vercel.app/components/input
+ * Input component for rendering various types of input fields, including text, select, textarea, date, file, password, search, color, and time, with flexible configuration and styling.
+ *
+ * @component
  * @extends HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
- * @constant => for all inputs
- * @prop data-testid?: string
- * @prop ref?: ForwardedRef<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
- * @prop type?: "color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "select" | "textarea" | "email" | "number" | "tel" | "text" | "url" | "time"
- * @prop id?: string
- * @prop label?: string
- * @prop labelComment?: string
- * @prop helper?: string
- * @prop helperBottom?: string | { text: string => only if element is not defined; element: ReactChildren => only if text is not defined; textColor?: Any color from the library; fontStyle?: CssFontStyle; icon?: string | JSX.Element; iconColor?: Any color from the library; iconSize?: number }
- * @prop validation?: { status: LibValidationStatus; message?: string; iconNotPassed?: LibIcon; iconNotPassedSize?: number; iconPassed?: LibIcon; iconPassedSize?: number; iconBaseUrl?: string }
- * @prop iconBaseUrl?: string
- * @prop inputBackground?: "light" | "dark"
- * @prop inputVariant?: "rounded" | "pill"
- * @prop containerStyle?: CSSProperties
+ * @param {Object} props - Input props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ForwardedRef<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {string} [props.id] - Input id.
+ * @param {string} [props.label] - Label for the input.
+ * @param {string} [props.labelComment] - Additional comment for the label.
+ * @param {string} [props.helper] - Helper text above the input.
+ * @param {string|Object} [props.helperBottom] - Helper text or element below the input.
+ * @param {Object} [props.validation] - Validation status and message.
+ * @param {number} [props.counter] - Character counter value.
+ * @param {number} [props.maxLength] - Maximum length for the input value.
+ * @param {string|number} [props.value] - Input value.
+ * @param {string} [props.className] - Additional class names.
+ * @param {"color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "select" | "textarea" | "email" | "number" | "tel" | "text" | "url" | "time"} [props.type="text"] - Input type.
+ * @param {"light" | "dark"} [props.inputBackground] - Input background style.
+ * @param {"rounded" | "pill"} [props.inputVariant="rounded"] - Input variant style.
+ * @param {string} [props.iconBaseUrl] - Base URL for icons.
+ * @param {CSSProperties} [props.containerStyle] - Style for the input container.
+ * @param {any} [props.rest] - Additional props passed to the input.
+ * @returns {JSX.Element} The rendered Input component.
  *
- * @type for type date | datetime-local | month | week | password | search | email | number | tel | text | url | time
- * @prop icon?: string | JSX.Element
- * @prop iconSize?: number
- * @prop prefix?: string | JSX.Element
- *
- * @type for type date | datetime-local | month | week
- * @prop iconCalendar?: string | JSX.Element
- * @prop iconCalendarSize?: number
- *
- * @type for type password
- * @prop hideButton?: boolean
- * @prop button?: { iconShow: string | JSX.Element; iconShowSize?: number; iconHide: string | JSX.Element; iconHideSize?: number; textShow?: string; textHide?: string }
- *
- * @type for type search
- * @prop clearSearch?: MouseEventHandler<HTMLButtonElement>
- * @prop iconClear?: string | JSX.Element
- * @prop iconClearSize?: number
- * @prop focusKeys?: Array<string>
- * @prop showKeys?: boolean => only if focusKeys is defined
- *
- * @type for type select
- * @prop iconSelect?: string | JSX.Element
- * @prop iconSelectSize?: number
- * @prop children?: ReactChildren
- *
- * @type for type time
- * @prop iconClock?: string | JSX.Element
- * @prop iconClockSize?: number
- *
- * @type for type email | number | tel | text | url
- * @prop suffix?: string | JSX.Element
+ * @see https://documentation-components-react.vercel.app/components/input
+ * @example
+ * <Input
+ *   label="Email"
+ *   type="email"
+ *   helper="Enter your email address"
+ *   validation={{ status: "success", message: "Looks good!" }}
+ *   inputVariant="pill"
+ * />
  */
-export const Input = forwardRef<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement,
-    ILibInput
->(
-    (
-        {
-            "data-testid": testid,
-            id,
-            label,
-            labelComment,
-            helper,
-            helperBottom,
-            validation,
-            counter,
-            maxLength,
-            value,
-            className,
-            type = "text",
-            inputBackground,
-            inputVariant = "rounded",
-            iconBaseUrl,
-            containerStyle,
-            ...rest
-        },
-        ref
-    ) => {
-        const hasContainer = !!(
-            label ||
-            labelComment ||
-            helper ||
-            helperBottom ||
-            validation ||
-            counter
-        )
+export const Input: FC<ILibInput> = ({
+    "data-testid": testid,
+    ref,
+    id,
+    label,
+    labelComment,
+    helper,
+    helperBottom,
+    validation,
+    counter,
+    maxLength,
+    value,
+    className,
+    type = "text",
+    inputBackground,
+    inputVariant = "rounded",
+    iconBaseUrl,
+    containerStyle,
+    ...rest
+}) => {
+    const hasContainer = !!(
+        label ||
+        labelComment ||
+        helper ||
+        helperBottom ||
+        validation ||
+        counter
+    )
 
-        return (
-            <InputContainer
+    return (
+        <InputContainer
+            data-testid={testid}
+            id={id}
+            label={label}
+            labelComment={labelComment}
+            helper={helper}
+            helperBottom={helperBottom}
+            validation={validation}
+            counter={counter}
+            maxLength={maxLength}
+            value={value}
+            className={className}
+            iconBaseUrl={iconBaseUrl}
+            style={containerStyle}
+            hasListOpen={undefined}
+        >
+            <InputWrapper
                 data-testid={testid}
-                id={id}
-                label={label}
-                labelComment={labelComment}
-                helper={helper}
-                helperBottom={helperBottom}
-                validation={validation}
-                counter={counter}
-                maxLength={maxLength}
-                value={value}
                 className={className}
-                iconBaseUrl={iconBaseUrl}
-                style={containerStyle}
-                hasListOpen={undefined}
+                hasContainer={hasContainer}
+                isTextArea={type === "textarea"}
+                inputBackground={inputBackground}
+                inputVariant={inputVariant}
+                validationStatus={validation?.status}
+                hasListOpen={false}
             >
-                <InputWrapper
+                <InputFunction
                     data-testid={testid}
+                    id={id}
+                    ref={ref}
+                    label={label}
+                    helper={helper}
+                    helperBottom={helperBottom}
+                    validation={validation}
+                    counter={counter}
+                    maxLength={maxLength}
+                    value={value}
                     className={className}
-                    hasContainer={hasContainer}
-                    isTextArea={type === "textarea"}
+                    type={type}
                     inputBackground={inputBackground}
                     inputVariant={inputVariant}
-                    validationStatus={validation?.status}
-                    hasListOpen={false}
-                >
-                    <InputFunction
-                        data-testid={testid}
-                        id={id}
-                        ref={ref}
-                        label={label}
-                        helper={helper}
-                        helperBottom={helperBottom}
-                        validation={validation}
-                        counter={counter}
-                        maxLength={maxLength}
-                        value={value}
-                        className={className}
-                        type={type}
-                        inputBackground={inputBackground}
-                        inputVariant={inputVariant}
-                        iconBaseUrl={iconBaseUrl}
-                        {...(rest as any)}
-                    />
-                </InputWrapper>
-            </InputContainer>
-        )
-    }
-)
+                    iconBaseUrl={iconBaseUrl}
+                    {...(rest as any)}
+                />
+            </InputWrapper>
+        </InputContainer>
+    )
+}

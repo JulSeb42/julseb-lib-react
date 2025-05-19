@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import classNames from "classnames"
 import { StyledListInput } from "../styles"
 import type { ILibListInput } from "../types"
@@ -15,35 +15,28 @@ import type { ILibListInput } from "../types"
  * @prop validationStatus: boolean | undefined
  * @prop children?: ReactChildren
  */
-export const ListInput = forwardRef<HTMLDivElement, ILibListInput>(
-    (
-        {
-            "data-testid": testid,
-            className,
-            children,
-            direction = "down",
-            inputBackground,
-            validationStatus,
-            isOpen,
-            inputVariant,
-        },
-        ref
-    ) => {
-        return (
-            <StyledListInput
-                data-testid={testid && `${testid}.ListInput`}
-                className={classNames(
-                    { ListInput: className },
-                    { Open: isOpen }
-                )}
-                ref={ref}
-                $direction={direction}
-                $inputBackground={inputBackground}
-                $validationStatus={validationStatus}
-                $inputVariant={inputVariant}
-            >
-                {children}
-            </StyledListInput>
-        )
-    }
-)
+export const ListInput: FC<ILibListInput> = ({
+    "data-testid": testid,
+    ref,
+    className,
+    children,
+    direction = "down",
+    inputBackground,
+    validationStatus,
+    isOpen,
+    inputVariant,
+}) => {
+    return (
+        <StyledListInput
+            data-testid={testid && `${testid}.ListInput`}
+            className={classNames({ ListInput: className }, { Open: isOpen })}
+            ref={ref}
+            $direction={direction}
+            $inputBackground={inputBackground}
+            $validationStatus={validationStatus}
+            $inputVariant={inputVariant}
+        >
+            {children}
+        </StyledListInput>
+    )
+}

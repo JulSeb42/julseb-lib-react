@@ -83,6 +83,7 @@ const StyledMarkdownEditor = styled.textarea`
     height: var(--markdown-input-height, 250px);
     min-height: 250px;
     color: currentColor;
+    ${Mixins.HideScrollbar};
 
     &.Visible {
         display: block;
@@ -154,6 +155,7 @@ const MarkdownContainer = styled(Markdown)`
     padding: ${SPACERS.XS};
     overflow-y: scroll;
     color: currentColor;
+    ${Mixins.HideScrollbar};
 
     &.Visible {
         display: flex;

@@ -178,6 +178,7 @@ export const designTokens = {
         error: "error",
         warning: "warning",
         info: "info",
+        loading: "loading",
     },
 
     toasterPositions: {

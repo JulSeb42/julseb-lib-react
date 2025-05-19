@@ -70,6 +70,7 @@ export const Calendar = ({
     const range = (start: number, end: number) => {
         const length = Math.abs((end - start) / 1)
 
+        // @ts-ignore
         const { result } = Array.from({ length }).reduce(
             ({ result, current }) => ({
                 result: [...result, current],

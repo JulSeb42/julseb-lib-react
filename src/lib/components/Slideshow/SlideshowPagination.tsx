@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import classNames from "classnames"
 import { uuid, generateNumbers } from "@julseb-lib/utils"
 import { Image } from "../.."
@@ -8,7 +9,7 @@ import {
 } from "./styles"
 import type { ILibSlideshowPagination } from "./subtypes"
 
-export const SlideshowPagination = ({
+export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
     "data-testid": testid,
     className,
     pagination,
@@ -16,7 +17,7 @@ export const SlideshowPagination = ({
     setActive,
     contentLength,
     activeSlide,
-}: ILibSlideshowPagination) => {
+}) => {
     const {
         position = "outside",
         hideOnTouch,

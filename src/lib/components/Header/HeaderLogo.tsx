@@ -1,14 +1,15 @@
+import type { FC } from "react"
 import { Link } from "react-router-dom"
 import { Logo, LogoImg } from "./styles"
 import type { ILibHeaderLogo } from "./subtypes"
 
-export const HeaderLogo = ({
+export const HeaderLogo: FC<ILibHeaderLogo> = ({
     "data-testid": testid,
     className,
     logo,
     children,
     isOpen,
-}: ILibHeaderLogo) => {
+}) => {
     const {
         to = "/",
         href,

@@ -1,10 +1,18 @@
 import { useEffect } from "react"
 
 /**
- * @description Hook to trigger functions on key press
- * @link https://documentation-components-react.vercel.app/helpers/hooks#useKeyPress
- * @argument keyCodes: string | Array<string>
- * @argument callback: () => void
+ * useKeyPress is a hook to trigger a callback function when specific key(s) are pressed, with optional exclusion of modifier keys.
+ *
+ * @function
+ * @param {string | Array<string>} keyCodes - Key code or array of key codes to listen for (e.g., "Enter", ["Control", "KeyS"]).
+ * @param {() => void} callback - Function to call when the key(s) are pressed.
+ * @param {Array<string>} [excludeKeys] - Array of modifier keys to exclude (e.g., ["Command", "Control"]).
+ * @returns {void}
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#useKeyPress
+ *
+ * @example
+ * useKeyPress("Enter", () => console.log("Enter pressed"))
+ * useKeyPress(["Control", "KeyS"], () => save(), ["Shift"])
  */
 export const useKeyPress = (
     keyCodes: string | Array<string>,

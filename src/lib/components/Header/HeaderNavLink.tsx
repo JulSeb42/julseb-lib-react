@@ -1,14 +1,14 @@
 // @ts-nocheck
 
-import { isValidElement } from "react"
+import { isValidElement, type FC } from "react"
 import { Link } from "../../"
 import type { ILibHeaderNavLink } from "./subtypes"
 
-export const HeaderNavLink = ({
+export const HeaderNavLink: FC<ILibHeaderNavLink> = ({
     "data-testid": testid,
     link,
     className,
-}: ILibHeaderNavLink) => {
+}) => {
     if (isValidElement(link)) return link
 
     return (

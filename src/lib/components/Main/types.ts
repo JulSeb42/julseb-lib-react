@@ -1,8 +1,6 @@
 import type { LibComponentBase, LibMainSize } from "../../types"
 
-interface ILibMainBase extends LibComponentBase<HTMLDivElement> {
-    minHeight?: string | number
-}
+interface ILibMainBase extends LibComponentBase<HTMLDivElement> {}
 
 interface MainWithSize extends ILibMainBase {
     size?: Exclude<LibMainSize, "full">

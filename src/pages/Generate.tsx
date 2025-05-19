@@ -1,4 +1,9 @@
-import { toCamelCase, toPascalCase, uuid } from "@julseb-lib/utils"
+import {
+    toCamelCase,
+    toPascalCase,
+    uuid,
+    toConstantCase,
+} from "@julseb-lib/utils"
 import { Page } from "../components"
 import { previews } from "../data/components"
 import { LIB_TOKENS } from "../lib"
@@ -71,10 +76,74 @@ export const Generate = () => {
         "--color-dark-font: var(--color-white)",
     ]
 
+    const colors = [
+        "primary-50: rgb(0,0,0)",
+        "primary-100: rgb(4,5,6)",
+        "primary-200: rgb(13,14,18)",
+        "primary-300: rgb(21,24,30)",
+        "primary-400: rgb(29,34,42)",
+        "primary-500: rgb(38,44,54)",
+        "primary-600: rgb(46,54,66)",
+        "primary-700: rgb(54,64,78)",
+        "primary-800: rgb(63,74,90)",
+        "primary-900: rgb(71,84,102)",
+        "secondary-50: rgb(16,17,19)",
+        "secondary-100: rgb(21,22,25)",
+        "secondary-200: rgb(30,32,37)",
+        "secondary-300: rgb(39,42,48)",
+        "secondary-400: rgb(48,52,59)",
+        "secondary-500: rgb(57,62,70)",
+        "secondary-600: rgb(66,72,82)",
+        "secondary-700: rgb(75,82,93)",
+        "secondary-800: rgb(84,92,104)",
+        "secondary-900: rgb(93,102,116)",
+        "success-50: rgb(1,45,34)",
+        "success-100: rgb(2,69,52)",
+        "success-200: rgb(3,94,70)",
+        "success-300: rgb(4,118,88)",
+        "success-400: rgb(5,143,107)",
+        "success-500: rgb(6,167,125)",
+        "success-600: rgb(7,192,144)",
+        "success-700: rgb(8,217,162)",
+        "success-800: rgb(9,241,181)",
+        "success-900: rgb(29,247,190)",
+        "danger-50: rgb(95,33,33)",
+        "danger-100: rgb(114,39,39)",
+        "danger-200: rgb(133,46,45)",
+        "danger-300: rgb(152,53,52)",
+        "danger-400: rgb(171,59,58)",
+        "danger-500: rgb(191,67,66)",
+        "danger-600: rgb(197,84,84)",
+        "danger-700: rgb(203,103,103)",
+        "danger-800: rgb(209,122,122)",
+        "danger-900: rgb(216,141,141)",
+        "warning-50: rgb(64,47,2)",
+        "warning-100: rgb(114,84,4)",
+        "warning-200: rgb(163,120,5)",
+        "warning-300: rgb(212,156,7)",
+        "warning-400: rgb(247,186,23)",
+        "warning-500: rgb(249,200,70)",
+        "warning-600: rgb(250,208,97)",
+        "warning-700: rgb(251,215,122)",
+        "warning-800: rgb(252,222,146)",
+        "warning-900: rgb(253,229,171)",
+        "gray-50: rgb(24,24,24)",
+        "gray-100: rgb(47,47,47)",
+        "gray-200: rgb(71,71,71)",
+        "gray-300: rgb(94,94,94)",
+        "gray-400: rgb(118,118,118)",
+        "gray-500: rgb(145,145,145)",
+        "gray-600: rgb(173,173,173)",
+        "gray-700: rgb(200,200,200)",
+        "gray-800: rgb(228,228,228)",
+        "gray-900: rgb(248,248,248)",
+        "background: rgb(18,18,18)",
+    ]
+
     return (
         <Page title="Generate">
             <ul>
-                {generateColorTokens(tokens).map(token => (
+                {/* {generateColorTokens(tokens).map(token => (
                     <li key={uuid()}>
                         {`${JSON.stringify(token)
                             .replaceAll('\\"', "")
@@ -87,10 +156,31 @@ export const Generate = () => {
                             .replaceAll(`{"background`, `"background`)
                             .replaceAll("}}", "}")},`}
                     </li>
-                ))}
+                ))} */}
                 {/* {generateColorTokens(tokens).map(token => (
                     <li key={uuid()}>{JSON.parse(token as any)}</li>
                 ))} */}
+
+                {colors
+                    .filter(c => c.includes("-500"))
+                    .map(c => (
+                        <li key={c}>{`/** ${c.split(":")[1]} */ ["${c
+                            .split(":")[0]
+                            .replaceAll(
+                                "-500",
+                                ""
+                            )}", COLORS_DARK.${toConstantCase(
+                            c.split(":")[0]
+                        )}],`}</li>
+                    ))}
+            </ul>
+
+            <ul>
+                {colors.map(c => (
+                    <li key={c}>{`/** ${c.split(":")[1]} */ ["${
+                        c.split(":")[0]
+                    }", COLORS_DARK.${toConstantCase(c.split(":")[0])}],`}</li>
+                ))}
             </ul>
         </Page>
     )

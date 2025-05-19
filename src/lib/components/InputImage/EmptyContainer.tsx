@@ -1,16 +1,17 @@
+import type { FC } from "react"
 import { Image } from "../../icons"
 import { LibIcon } from "../LibIcon"
 import { StyledEmptyContainer } from "./styles"
 import type { ILibEmptyContainer } from "./subtypes"
 
-export const EmptyContainer = ({
+export const EmptyContainer: FC<ILibEmptyContainer> = ({
     "data-testid": testid,
     className,
     validation,
     iconSizes,
     icons,
     iconBaseUrl,
-}: ILibEmptyContainer) => {
+}) => {
     return (
         <StyledEmptyContainer
             data-testid={testid && `${testid}.EmptyContainer`}

@@ -16,11 +16,11 @@ const getAsideSize = (size: LibAsideSize) => {
 
 const StyledAside = styled.aside<{
     $size?: LibAsideSize
-    $minHeight: string | number
 }>`
     position: relative;
     width: 100%;
-    min-height: ${({ $minHeight }) => stringifyPx($minHeight)};
+    height: 100%;
+    min-height: 100%;
     max-width: ${({ $size }) => getAsideSize($size || "default")};
     padding: ${SPACERS.XXL} 0;
     ${Mixins.Flexbox({
@@ -34,8 +34,12 @@ const StyledAside = styled.aside<{
         flex-shrink: 0;
     }
 
-    @media ${MEDIA.BREAKPOINT_TABLET_SMALL} {
-        height: inherit;
+    @media ${MEDIA.BREAKPOINT_TABLET_LARGE} {
+        width: 100%;
+        max-width: ${({ $size }) => getAsideSize($size || "default")};
+        height: unset;
+        min-height: unset;
+        padding: ${SPACERS.L} 0;
     }
 `
 

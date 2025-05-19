@@ -1,40 +1,42 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { StyledIcon } from "./styles"
 import type { ILibIcon } from "./types"
 
 /**
- * @description Returns an Icon component
- * @link https://documentation-components-react.vercel.app/components/icon
+ * Icon component for rendering SVG icons from the `/public/icons` folder.
+ *
+ * @component
  * @extends Props from react-inlinesvg
- * @tutorial To use this component, add the SVG file for the icon you want to render in `/public/icons` folder
- * @prop data-testid?: string
- * @prop ref?: ForwardedRef<SVGElement>
- * @prop src: string
- * @prop size?: number
- * @prop color?: Any color from the library
- * @prop baseUrl?: string
+ * @param {Object} props - Icon props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ForwardedRef<SVGElement>} [props.ref] - Ref forwarded to the SVG element.
+ * @param {string} props.src - Icon name (SVG file name without extension).
+ * @param {number} [props.size=32] - Size of the icon.
+ * @param {string} [props.color="currentColor"] - Any color from the library.
+ * @param {string} [props.baseURL="/icons"] - Base URL for the icon files.
+ * @returns {JSX.Element} The rendered Icon component.
+ *
+ * @see https://documentation-components-react.vercel.app/components/icon
+ * @example
+ * <Icon src="star" size={24} color="primary" />
  */
-export const Icon = forwardRef<SVGElement, ILibIcon>(
-    (
-        {
-            "data-testid": testid,
-            src,
-            size = 32,
-            color = "currentColor",
-            baseURL = "/icons",
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledIcon
-                data-testid={testid}
-                innerRef={ref}
-                src={`${baseURL}/${src}.svg`}
-                $size={size}
-                $color={color}
-                {...rest}
-            />
-        )
-    }
-)
+export const Icon: FC<ILibIcon> = ({
+    "data-testid": testid,
+    ref,
+    src,
+    size = 32,
+    color = "currentColor",
+    baseURL = "/icons",
+    ...rest
+}) => {
+    return (
+        <StyledIcon
+            data-testid={testid}
+            innerRef={ref}
+            src={`${baseURL}/${src}.svg`}
+            $size={size}
+            $color={color}
+            {...rest}
+        />
+    )
+}

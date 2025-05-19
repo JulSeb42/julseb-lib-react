@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect, createContext, useContext } from "react"
 import type { IStyleSheetManager, DefaultTheme } from "styled-components"
 import { StyleSheetManager } from "../utils"
@@ -14,10 +12,19 @@ interface ILibThemeProvider {
 }
 
 /**
- * @description Returns a Wrapper for the theme
- * @link https://documentation-components-react.vercel.app/styles/theme-provider
- * @prop stylesheetManager?: boolean | IStyleSheetManager => import IStyleSheetManager from "styled-components"
- * @prop children?: ReactChildren
+ * ThemeProviderWrapper provides a context for managing and toggling between light and dark themes in the application.
+ *
+ * @component
+ * @param {Object} props - ThemeProviderWrapper props.
+ * @param {boolean | IStyleSheetManager} [props.stylesheetManager] - Optionally wrap children with a styled-components StyleSheetManager.
+ * @param {ReactChildren} [props.children] - Children components to wrap with the theme context.
+ * @returns {JSX.Element} The Theme context provider with optional StyleSheetManager.
+ *
+ * @see https://documentation-components-react.vercel.app/styles/theme-provider
+ * @example
+ * <ThemeProviderWrapper>
+ *   <App />
+ * </ThemeProviderWrapper>
  */
 export const ThemeProviderWrapper = ({
     children,
@@ -97,10 +104,13 @@ export const ThemeProviderWrapper = ({
 }
 
 /**
- * @description Hook for Theme context
- * @link https://documentation-components-react.vercel.app/styles/theme-provider
- * @prop theme: DefaultTheme => import from "styled-components"
- * @prop selectedTheme: "light" | "dark" | undefined
- * @prop toggleTheme: () => void
+ * useLibTheme is a hook for accessing the Theme context and toggling the theme.
+ *
+ * @function
+ * @returns {ILibThemeContext} The theme context with properties: theme, selectedTheme, toggleTheme.
+ *
+ * @see https://documentation-components-react.vercel.app/styles/theme-provider
+ * @example
+ * const { theme, selectedTheme, toggleTheme } = useLibTheme()
  */
 export const useLibTheme = () => useContext(ThemeContext) as ILibThemeContext

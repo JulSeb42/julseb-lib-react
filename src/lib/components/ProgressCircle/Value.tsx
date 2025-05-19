@@ -1,13 +1,14 @@
+import type { FC } from "react"
 import { SrOnly } from "../../"
 import { Value as StyledValue } from "./styles"
 import type { ILibProgressCircleValue } from "./subtypes"
 
-export const Value = ({
+export const Value: FC<ILibProgressCircleValue> = ({
     "data-testid": testid,
     className,
     showValue,
     value,
-}: ILibProgressCircleValue) => {
+}) => {
     if (!showValue)
         return (
             <SrOnly

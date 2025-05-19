@@ -11,7 +11,7 @@ export const DemoAsideBoth = () => {
         <BasePage title="Demo Aside Both Sides">
             <StyledWrapper data-testid="testid" className="className">
                 <StyledAside
-                    size={100}
+                    // size={100}
                     data-testid="testid"
                     className="className"
                 >
@@ -23,7 +23,7 @@ export const DemoAsideBoth = () => {
                 </StyledMain>
 
                 <StyledAside
-                    size={100}
+                    // size={100}
                     data-testid="testid"
                     className="className"
                 >

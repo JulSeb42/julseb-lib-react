@@ -1,4 +1,4 @@
-import type { CSSProperties, MouseEventHandler } from "react"
+import type { CSSProperties, MouseEventHandler, Ref } from "react"
 import type {
     ReactChildren,
     LibInputListDirection,
@@ -84,6 +84,7 @@ export interface ILibInputBase
     inputVariant?: LibInputVariant
     containerStyle?: CSSProperties
     inputAndListContainerStyle?: CSSProperties
+    ref?: Ref<HTMLInputElement>
 }
 
 export interface ILibExtendedInputBase extends ILibInputBase {
@@ -180,6 +181,7 @@ export interface ILibInputWrapper {
 
 export interface ILibListInput {
     "data-testid": string | undefined
+    ref: Ref<HTMLDivElement> | undefined
     className: string | undefined
     direction: LibInputListDirection | undefined
     inputBackground: LibInputBackground | undefined
@@ -251,6 +253,7 @@ export interface ILibInputSuffix extends ILibPrefixAndSuffixBase {
 
 export interface ILibInputAndListContainer {
     "data-testid": string | undefined
+    ref?: Ref<HTMLDivElement>
     className: string | undefined
     hasListOpen: boolean
     isParent: boolean | undefined

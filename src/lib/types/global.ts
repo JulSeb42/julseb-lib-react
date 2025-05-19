@@ -5,6 +5,7 @@ import type {
     Dispatch,
     SetStateAction,
     MouseEventHandler,
+    Ref,
 } from "react"
 import type { Property } from "csstype"
 import type { DefaultTheme } from "styled-components"
@@ -48,6 +49,7 @@ export type LibPositionExtract = Extract<
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
     "data-testid"?: string
     as?: ElementType
+    ref?: Ref<T>
 }
 
 /* Box shadow */

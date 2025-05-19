@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { H1 } from "./templates/H1"
 import { H2 } from "./templates/H2"
 import { H3 } from "./templates/H3"
@@ -16,52 +16,56 @@ import { Dl } from "./templates/Dl"
 import type { ILibText } from "./types"
 
 /**
- * @description Returns a Text component
- * @link https://documentation-components-react.vercel.app/styles/text
+ * Text component for rendering semantic HTML text elements with flexible tag, color, alignment, and display options.
+ *
+ * @component
  * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop ref?: ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>
- * @prop color?: Any color from the library
- * @prop linkColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"
- * @prop textAlign?: CssTextAlign
- * @prop tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"
- * @prop display?: boolean => only if tag is set to h1 to h5
+ * @param {Object} props - Text props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ElementType} [props.as] - Custom element type to render as.
+ * @param {ForwardedRef<HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLUListElement & HTMLOListElement & HTMLDListElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {string} [props.color] - Any color from the library.
+ * @param {"primary" | "secondary" | "success" | "danger" | "warning" | "white" | "gray" | "font" | "background"} [props.linkColor] - Link color for text links.
+ * @param {CssTextAlign} [props.textAlign] - Text alignment.
+ * @param {"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "strong" | "em" | "small" | "blockquote" | "ul" | "ol" | "dl"} [props.tag="p"] - HTML tag to render as.
+ * @param {boolean} [props.display] - Display property (only if tag is set to h1 to h5).
+ * @returns {JSX.Element} The rendered Text component.
+ *
+ * @see https://documentation-components-react.vercel.app/styles/text
+ * @example
+ * <Text tag="h2" color="primary" textAlign="center">
+ *   Welcome to the documentation!
+ * </Text>
  */
-export const Text = forwardRef<
-    HTMLHeadingElement &
-        HTMLParagraphElement &
-        HTMLQuoteElement &
-        HTMLUListElement &
-        HTMLOListElement &
-        HTMLDListElement,
-    ILibText
->(({ tag = "p", ...rest }, ref) => {
-    if (tag === "h1") return <H1 ref={ref} {...rest} />
-
-    if (tag === "h2") return <H2 ref={ref} {...rest} />
-
-    if (tag === "h3") return <H3 ref={ref} {...rest} />
-
-    if (tag === "h4") return <H4 ref={ref} {...rest} />
-
-    if (tag === "h5") return <H5 ref={ref} {...rest} />
-
-    if (tag === "h6") return <H6 ref={ref} {...rest} />
-
-    if (tag === "strong") return <Strong ref={ref} {...rest} />
-
-    if (tag === "em") return <Em ref={ref} {...rest} />
-
-    if (tag === "small") return <Small ref={ref} {...rest} />
-
-    if (tag === "blockquote") return <Blockquote ref={ref} {...rest} />
-
-    if (tag === "ul") return <Ul ref={ref} {...rest} />
-
-    if (tag === "ol") return <Ol ref={ref} {...rest} />
-
-    if (tag === "dl") return <Dl ref={ref} {...rest} />
-
-    return <P ref={ref} {...rest} />
-})
+export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
+    switch (tag) {
+        case "h1":
+            return <H1 {...rest} />
+        case "h2":
+            return <H2 {...rest} />
+        case "h3":
+            return <H3 {...rest} />
+        case "h4":
+            return <H4 {...rest} />
+        case "h5":
+            return <H5 {...rest} />
+        case "h6":
+            return <H6 {...rest} />
+        case "strong":
+            return <Strong {...rest} />
+        case "em":
+            return <Em {...rest} />
+        case "small":
+            return <Small {...rest} />
+        case "blockquote":
+            return <Blockquote {...rest} />
+        case "ul":
+            return <Ul {...rest} />
+        case "ol":
+            return <Ol {...rest} />
+        case "dl":
+            return <Dl {...rest} />
+        default:
+            return <P {...rest} />
+    }
+}

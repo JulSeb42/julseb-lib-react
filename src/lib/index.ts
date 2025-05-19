@@ -1,7 +1,7 @@
 "use client"
 
 export { ThemeProvider } from "styled-components"
-import {} from "styled-components/cssprop"
+// import {} from "styled-components/cssprop"
 export * from "./utils"
 export {
     addDay,

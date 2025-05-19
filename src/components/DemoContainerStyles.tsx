@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { setDefaultTheme, Wrapper, Main, Aside } from "../lib"
 
 const StyledWrapper = styled(Wrapper)`
-    background-color: ${({ theme }) => theme.WARNING_100};
+    background-color: ${({ theme }) => theme.WARNING_100} !important;
 `
 
 const StyledMain = styled(Main)`

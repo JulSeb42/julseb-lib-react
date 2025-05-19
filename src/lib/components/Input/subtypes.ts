@@ -1,6 +1,7 @@
 import type {
     InputHTMLAttributes,
     MouseEventHandler,
+    Ref,
     SelectHTMLAttributes,
     TextareaHTMLAttributes,
 } from "react"
@@ -128,6 +129,7 @@ export type ILibSelectInput = Omit<
 export type ILibTextareaInput = TextareaHTMLAttributes<HTMLTextAreaElement> &
     Omit<ILibExtendedInputBase, "inputAndListContainerStyle"> &
     ILibInputNoFocusKeys & {
+        ref?: Ref<HTMLTextAreaElement>
         type: "textarea"
         inputVariant?: never
     }

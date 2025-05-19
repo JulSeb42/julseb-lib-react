@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react"
 
 /**
- * @description Hook to detect if an element is larger than a set width
- * @link https://documentation-components-react.vercel.app/helpers/hooks#useMinWidth
- * @argument width: number
+ * useMinWidth is a hook to detect if the window width is greater than or equal to a specified value.
+ *
+ * @function
+ * @param {number} width - The minimum width to check against (in pixels).
+ * @returns {boolean} Returns true if the window width is greater than or equal to the specified width, otherwise false.
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#useMinWidth
+ *
+ * @example
+ * const isDesktop = useMinWidth(1024)
  */
 export const useMinWidth = (width: number): boolean => {
     const [isMin, setIsMin] = useState<boolean>(false)

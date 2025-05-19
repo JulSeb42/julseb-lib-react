@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import type { RefObject } from "react"
+import type { Ref } from "react"
 import type { LibMdEditorEditor, DispatchState } from "../../types"
 import type { ILibMarkdownEditor } from "./types"
 
@@ -9,7 +9,7 @@ import type { ILibMarkdownEditor } from "./types"
 export interface ILibMdEditorInput extends ILibMarkdownEditor {
     editor: LibMdEditorEditor
     setHeight: DispatchState<number>
-    inputRef: RefObject<HTMLTextAreaElement>
+    inputRef: Ref<HTMLTextAreaElement>
 }
 
 export interface ILibMdEditorButtons
@@ -31,7 +31,7 @@ export interface ILibMarkdownEditorTitles
         ILibMarkdownEditor,
         "data-testid" | "showButtons" | "className" | "textButtonTitles"
     > {
-    inputRef: RefObject<HTMLTextAreaElement>
+    inputRef: Ref<HTMLTextAreaElement>
     addCode: (code: string) => void
 }
 

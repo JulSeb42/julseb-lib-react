@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import classNames from "classnames"
 import { StyledListInputItem } from "../styles"
 import type { ILibListInputItem } from "../types"
@@ -16,39 +16,33 @@ import type { ILibListInputItem } from "../types"
  * @prop inputBackground: "light" | "dark" | undefined
  * @prop children?: ReactChildren
  */
-export const ListInputItem = forwardRef<HTMLSpanElement, ILibListInputItem>(
-    (
-        {
-            "data-testid": testid,
-            className,
-            validationStatus,
-            inputBackground,
-            children,
-            isActive,
-            onClick,
-            readOnly,
-            isHovered,
-            ...rest
-        },
-        ref
-    ) => {
-        return (
-            <StyledListInputItem
-                data-testid={testid && `${testid}.ListItem`}
-                ref={ref}
-                className={classNames(
-                    { ListItem: className },
-                    { Active: isActive },
-                    { Hovered: isHovered }
-                )}
-                onClick={onClick}
-                $readOnly={readOnly}
-                $validationStatus={validationStatus}
-                $inputBackground={inputBackground}
-                {...rest}
-            >
-                {children}
-            </StyledListInputItem>
-        )
-    }
-)
+export const ListInputItem: FC<ILibListInputItem> = ({
+    "data-testid": testid,
+    className,
+    validationStatus,
+    inputBackground,
+    children,
+    isActive,
+    onClick,
+    readOnly,
+    isHovered,
+    ...rest
+}) => {
+    return (
+        <StyledListInputItem
+            data-testid={testid && `${testid}.ListItem`}
+            className={classNames(
+                { ListItem: className },
+                { Active: isActive },
+                { Hovered: isHovered }
+            )}
+            onClick={onClick}
+            $readOnly={readOnly}
+            $validationStatus={validationStatus}
+            $inputBackground={inputBackground}
+            {...rest}
+        >
+            {children}
+        </StyledListInputItem>
+    )
+}

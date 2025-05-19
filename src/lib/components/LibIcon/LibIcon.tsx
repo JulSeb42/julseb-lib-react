@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { Icon } from "../../"
 import type { ILibLibIcon } from "./types"
 
@@ -10,14 +11,14 @@ import type { ILibLibIcon } from "./types"
  * @prop color?: Any color from the library
  * @prop className?: string
  */
-export const LibIcon = ({
+export const LibIcon: FC<ILibLibIcon> = ({
     "data-testid": testid,
     icon,
     size,
     color,
     className,
     baseUrl,
-}: ILibLibIcon) => {
+}) => {
     if (typeof icon !== "string") return icon
 
     return (

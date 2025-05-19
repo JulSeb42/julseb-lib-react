@@ -35,6 +35,7 @@ const StyledDropdown = styled.div<{
     max-height: 0;
     transition: ${TRANSITIONS.SHORT};
     background-color: ${({ theme }) => theme.BACKGROUND};
+    ${Mixins.HideScrollbar};
     ${Mixins.Flexbox({
         $flexDirection: "column",
         $alignItems: "stretch",

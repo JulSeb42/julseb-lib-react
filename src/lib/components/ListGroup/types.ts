@@ -1,4 +1,4 @@
-import type { ForwardedRef, RefObject } from "react"
+import type { ForwardedRef, Ref } from "react"
 import type {
     LibAllColors,
     LibComponentBase,
@@ -49,7 +49,7 @@ interface ILibListGroupTitleBase extends LibComponentBase<HTMLDivElement> {
 
 interface ListGroupItemTitleWithShadow extends ILibListGroupTitleBase {
     shadowOnScroll?: LibShadows
-    listRef: RefObject<HTMLDivElement>
+    listRef: Ref<HTMLDivElement>
 }
 
 interface ListGroupItemTitleWithoutShadow extends ILibListGroupTitleBase {

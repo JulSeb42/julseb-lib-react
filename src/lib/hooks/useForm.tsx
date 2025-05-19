@@ -1,10 +1,22 @@
 import { useState, type ChangeEvent } from "react"
 
 /**
- * @description Hook to use in forms
- * @link https://documentation-components-react.vercel.app/helpers/hooks#useForm
- * @argument initialState = {} as T => type to define
- * @argument onSubmit?: (formData: T) => void
+ * useForm is a hook to manage form state, input changes, reset, and submission.
+ *
+ * @function
+ * @template T
+ * @param {T} [initialState={}] - Initial state of the form.
+ * @param {(formData: T) => void} [onSubmit] - Optional submit handler called with form data.
+ * @returns {{
+ *   formData: T,
+ *   handleInputs: (e: ChangeEvent<HTMLInputElement>) => void,
+ *   resetForm: () => void,
+ *   handleSubmit: (e: ChangeEvent<HTMLFormElement>) => void
+ * }} An object with form state and handlers.
+ * @see https://documentation-components-react.vercel.app/helpers/hooks#useForm
+ *
+ * @example
+ * const { formData, handleInputs, resetForm, handleSubmit } = useForm({ name: "" }, data => console.log(data))
  */
 export const useForm = <T,>(
     initialState = {} as T,

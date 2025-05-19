@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react"
+import type { InputHTMLAttributes, Ref } from "react"
 import type { IFuseOptions } from "fuse.js"
 import type { LibIcon, LibInputListDirection, DispatchState } from "../../types"
 import type {
@@ -9,6 +9,7 @@ import type {
 type ILibAutocompleteBase = InputHTMLAttributes<HTMLInputElement> &
     ILibInputBase &
     LibInputWithValidation & {
+        ref?: Ref<HTMLInputElement>
         value: string
         setValue: DispatchState<string>
         listResults: Array<string>

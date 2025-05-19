@@ -1,4 +1,4 @@
-import type { CSSProperties, InputHTMLAttributes } from "react"
+import type { CSSProperties, InputHTMLAttributes, Ref } from "react"
 import type {
     LibIcon,
     LibValidationStatus,
@@ -8,6 +8,7 @@ import type {
 
 interface ILibInputCheckBase extends InputHTMLAttributes<HTMLInputElement> {
     "data-testid"?: string
+    ref?: Ref<HTMLInputElement>
     id: string
     label: ReactChildren
     children?: never

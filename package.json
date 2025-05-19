@@ -28,13 +28,13 @@
         "classnames": "^2.5.1",
         "fuse.js": "^7.0.0",
         "markdown-to-jsx": "^7.7.1",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-helmet": "^6.1.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-helmet-async": "^2.0.5",
         "react-inlinesvg": "^4.1.5",
-        "react-router-dom": "^7.0.2",
+        "react-router-dom": "^7.6.0",
         "react-syntax-highlighter": "^15.6.1",
-        "styled-components": "^6.1.13"
+        "styled-components": "^6.1.18"
     },
     "devDependencies": {
         "@eslint/compat": "^1.2.4",
@@ -42,14 +42,14 @@
         "@react-docgen/cli": "^2.0.4",
         "@types/jest": "^29.5.14",
         "@types/mocha": "^10.0.10",
-        "@types/react": "^18.3.13",
-        "@types/react-dom": "^18.3.1",
+        "@types/react": "^19.1.4",
+        "@types/react-dom": "^19.1.5",
         "@types/react-helmet": "^6.1.11",
         "@types/react-inlinesvg": "^1.0.0",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-syntax-highlighter": "^15.5.13",
         "@types/styled-components": "^5.1.34",
-        "@vitejs/plugin-react": "^4.3.4",
+        "@vitejs/plugin-react": "^4.4.1",
         "axios": "^1.7.9",
         "cross-env": "^7.0.3",
         "cssjson-cli": "^1.0.1",
@@ -58,12 +58,12 @@
         "eslint-plugin-react": "^7.37.2",
         "globals": "^15.13.0",
         "plop": "^4.0.1",
-        "tsx": "^4.19.2",
-        "typescript": "^5.7.2",
-        "typescript-eslint": "^8.17.0",
-        "vite": "^6.0.3",
-        "vite-plugin-checker": "^0.8.0",
-        "vite-plugin-dts": "^4.3.0"
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.32.1",
+        "vite": "^6.3.5",
+        "vite-plugin-checker": "^0.9.3",
+        "vite-plugin-dts": "^4.5.4"
     },
     "peerDependencies": {
         "react-router-dom": "^7.0.1"
@@ -76,9 +76,9 @@
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "require": "./dist/index.umd.js",
             "import": "./dist/index.es.js",
             "types": "./dist/lib/index.ts",
+            "require": "./dist/index.umd.js",
             "default": "./dist/index.cjs.js"
         },
         "./index.css": {

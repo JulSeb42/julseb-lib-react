@@ -1,4 +1,4 @@
-import type { ForwardedRef, ReactNode } from "react"
+import type { ReactNode, Ref } from "react"
 import type {
     LibButtonLinkBlank,
     LibAllColors,
@@ -24,7 +24,7 @@ interface LibComponentItemBase<T> {
     "data-testid"?: string
     className?: string
     id?: string
-    ref?: ForwardedRef<T>
+    ref?: Ref<T>
 }
 
 type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &

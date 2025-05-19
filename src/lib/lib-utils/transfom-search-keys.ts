@@ -1,4 +1,4 @@
-export const transformSearchKeys = (keys: Array<string>) => {
+export const transformSearchKeys = (keys: Array<string>): Array<string> => {
     return keys.map(key =>
         key.includes("Key")
             ? key.replace("Key", "")

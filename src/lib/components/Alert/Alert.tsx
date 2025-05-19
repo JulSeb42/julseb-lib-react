@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import classNames from "classnames"
 import { stringifyPx, getRandomString } from "@julseb-lib/utils"
 import { Text } from "../../"
@@ -40,77 +40,81 @@ const alertStyles: {
 }
 
 /**
- * @description Returns a Alert component
- * @link https://documentation-components-react.vercel.app/components/alert
- * @extends HTMLDivElement
- * @prop data-testid?: string
- * @prop as?: ElementType
- * @prop ref?: ForwardedRef<HTMLDivElement>
- * @prop maxWidth?: number
- * @prop textColor?: Any color from the library
- * @prop padding?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | { left?: LibSpacers | "auto"; top?: LibSpacers | "auto"; right?: LibSpacers | "auto"; bottom?: LibSpacers | "auto"; leftRight?: LibSpacers | "auto"; topBottom?: LibSpacers | "auto" }
- * @prop borderRadius?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | { topLeft?: LibRadiuses; topRight?: LibRadiuses; bottomLeft?: LibRadiuses; bottomRight?: LibRadiuses }
- * @prop gap?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"
- * @prop alertColor?: "primary" | "secondary" | "success" | "danger" | "warning" | "gray" | "black" | "white"
- * @prop backgroundColor?: Any color from the library => only if alertColor is not defined
- * @prop border?: { style?: CssBorderStyle; width?: "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"; color?: Any color from the library (only if alertColor is not defined) }
+ * Alert component for displaying important messages or notifications.
+ *
+ * @component
+ * @param {Object} props - Alert props.
+ * @param {string} [props.data-testid] - Test id for testing purposes.
+ * @param {ElementType} [props.as] - Custom element type to render as.
+ * @param {Ref<HTMLDivElement>} [props.ref] - Ref forwarded to the root element.
+ * @param {string} [props.className] - Additional class names.
+ * @param {string} [props.id] - HTML id attribute.
+ * @param {ReactNode} [props.children] - Content of the alert.
+ * @param {number} [props.maxWidth] - Maximum width of the alert.
+ * @param {LibAllColors} [props.textColor="font"] - Text color.
+ * @param {"xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px" | Object} [props.padding="s"] - Padding for the alert.
+ * @param {"xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | Object} [props.borderRadius="m"] - Border radius for the alert.
+ * @param {"xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | number | "0px"} [props.gap="xs"] - Gap between alert content.
+ * @param {"primary" | "secondary" | "success" | "danger" | "warning" | "gray" | "black" | "white"} [props.alertColor="primary"] - Predefined alert color.
+ * @param {LibAllColors} [props.backgroundColor] - Custom background color (overrides alertColor).
+ * @param {Object} [props.border] - Border style, width, and color.
+ * @returns {JSX.Element} The rendered Alert component.
+ *
+ * @example
+ * <Alert alertColor="success" padding="m" borderRadius="l">
+ *   This is a success alert!
+ * </Alert>
  */
-export const Alert = forwardRef<HTMLDivElement, ILibAlert>(
-    (
-        {
-            "data-testid": testid,
-            as,
-            className,
-            id,
-            children,
-            maxWidth,
-            textColor = "font",
-            padding = "s",
-            borderRadius = "m",
-            gap = "xs",
-            alertColor = "primary",
-            backgroundColor,
-            border,
-            ...rest
-        },
-        ref
-    ) => {
-        const styles = alertStyles[alertColor]
-        const randomClass = getRandomString(10, true)
-        const withClass = className?.split(" ")[0] || randomClass
+export const Alert: FC<ILibAlert> = ({
+    "data-testid": testid,
+    as,
+    ref,
+    className,
+    id,
+    children,
+    maxWidth,
+    textColor = "font",
+    padding = "s",
+    borderRadius = "m",
+    gap = "xs",
+    alertColor = "primary",
+    backgroundColor,
+    border,
+    ...rest
+}) => {
+    const styles = alertStyles[alertColor]
+    const randomClass = getRandomString(10, true)
+    const withClass = className?.split(" ")[0] || randomClass
 
-        appendStyles(`
+    appendStyles(`
             ${id ? `#${id}` : `.${withClass}`} {
                 --alert-max-width: ${stringifyPx(maxWidth || "100%")};
             }
         `)
 
-        return (
-            <>
-                <StyledAlert
-                    data-testid={testid}
-                    ref={ref}
-                    as={as || typeof children === "string" ? Text : "div"}
-                    className={classNames(className, randomClass)}
-                    id={id}
-                    $backgroundColor={
-                        backgroundColor ||
-                        styles.backgroundColor ||
-                        "primary-50"
-                    }
-                    $border={{
-                        color: styles.borderColor || "primary",
-                        ...border,
-                    }}
-                    $borderRadius={borderRadius}
-                    $gap={gap}
-                    $padding={padding}
-                    $textColor={textColor}
-                    {...rest}
-                >
-                    {children}
-                </StyledAlert>
-            </>
-        )
-    }
-)
+    return (
+        <>
+            <StyledAlert
+                data-testid={testid}
+                ref={ref}
+                as={as || typeof children === "string" ? Text : "div"}
+                className={classNames(className, randomClass)}
+                id={id}
+                $backgroundColor={
+                    backgroundColor || styles.backgroundColor || "primary-50"
+                }
+                $border={{
+                    color: styles.borderColor || "primary",
+                    ...border,
+                }}
+                $borderRadius={borderRadius}
+                $gap={gap}
+                $padding={padding}
+                $textColor={textColor}
+                {...rest}
+            >
+                {children}
+            </StyledAlert>
+        </>
+    )
+}

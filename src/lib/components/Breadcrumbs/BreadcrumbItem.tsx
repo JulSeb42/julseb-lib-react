@@ -1,13 +1,14 @@
+import type { FC } from "react"
 import { Link } from "react-router-dom"
 import { uuid } from "@julseb-lib/utils"
 import type { ILibBreadcrumbItem } from "./subtypes"
 
-export const BreadcrumbItem = ({
+export const BreadcrumbItem: FC<ILibBreadcrumbItem> = ({
     "data-testid": testid,
     className,
     item,
     index,
-}: ILibBreadcrumbItem) => {
+}) => {
     if (item.to)
         return (
             <Link

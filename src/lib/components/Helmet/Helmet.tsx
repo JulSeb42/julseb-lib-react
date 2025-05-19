@@ -1,22 +1,41 @@
-import { Helmet as Meta } from "react-helmet"
+import type { FC } from "react"
+import { Helmet as Meta, HelmetData } from "react-helmet-async"
 import type { ILibHelmet } from "./types"
 
+const helmetData = new HelmetData({})
+
 /**
- * @description Returns a Helmet component
- * @link https://documentation-components-react.vercel.app/components/helmet
- * @extends HelmetProps => imported from react-helmet
- * @prop title: string
- * @prop favicon?: string
- * @prop description?: string
- * @prop keywords?: string | Array<string>
- * @prop author?: string
- * @prop type?: string
- * @prop cover?: string
- * @prop siteName?: string
- * @prop language?: string
- * @prop children?: ReactChildren
+ * Helmet component for managing changes to the document head, such as title, meta tags, and favicon.
+ *
+ * @component
+ * @extends HelmetProps (from react-helmet-async)
+ * @param {Object} props - Helmet props.
+ * @param {string} props.title - Page title.
+ * @param {string} [props.favicon] - URL for the favicon.
+ * @param {string} [props.description] - Meta description for the page.
+ * @param {string | Array<string>} [props.keywords] - Meta keywords for the page.
+ * @param {string} [props.author] - Author of the page.
+ * @param {string} [props.type] - Open Graph type.
+ * @param {string} [props.cover] - Open Graph image URL.
+ * @param {string} [props.siteName] - Open Graph site name.
+ * @param {string} [props.language="en"] - Language of the document.
+ * @param {ReactNode} [props.children] - Additional elements to include in the head.
+ * @returns {JSX.Element} The rendered Helmet component.
+ *
+ * @example
+ * <Helmet
+ *   title="My Page"
+ *   favicon="/favicon.ico"
+ *   description="This is my page"
+ *   keywords={["react", "seo"]}
+ *   author="Julien Sebag"
+ *   type="website"
+ *   cover="/cover.jpg"
+ *   siteName="MySite"
+ *   language="en"
+ * />
  */
-export const Helmet = ({
+export const Helmet: FC<ILibHelmet> = ({
     title,
     favicon,
     description,
@@ -28,9 +47,9 @@ export const Helmet = ({
     language = "en",
     children,
     ...rest
-}: ILibHelmet) => {
+}) => {
     return (
-        <Meta {...rest}>
+        <Meta helmetData={helmetData} {...rest}>
             <title>{title}</title>
             <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
             <meta
@@ -41,14 +60,7 @@ export const Helmet = ({
             {favicon && <link rel="icon" href={favicon} />}
             {description && <meta name="description" content={description} />}
             {keywords && (
-                <meta
-                    name="keywords"
-                    content={
-                        typeof keywords === "string"
-                            ? keywords
-                            : keywords?.join(", ")
-                    }
-                />
+                <meta name="keywords" content={keywords?.join(", ")} />
             )}
             {author && <meta name="author" content={author} />}
             <meta property="og:title" content={title} />

@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import classNames from "classnames"
 import { StyledInputAndListContainer } from "../styles"
 import type { ILibInputAndListContainer } from "../types"
@@ -13,37 +13,30 @@ import type { ILibInputAndListContainer } from "../types"
  * @prop inputAndListContainerStyle: CSSProperties | undefined
  * @prop children?: ReactChildren
  */
-export const InputAndListContainer = forwardRef<
-    HTMLDivElement,
-    ILibInputAndListContainer
->(
-    (
-        {
-            "data-testid": testid,
-            className,
-            children,
-            hasListOpen,
-            isParent,
-            inputAndListContainerStyle,
-        },
-        ref
-    ) => {
-        return (
-            <StyledInputAndListContainer
-                data-testid={
-                    testid &&
-                    (isParent ? testid : `${testid}.InputAndListContainer`)
-                }
-                className={classNames(
-                    { InputAndListContainer: className && !isParent },
-                    { Open: hasListOpen },
-                    isParent && className
-                )}
-                ref={ref}
-                style={inputAndListContainerStyle}
-            >
-                {children}
-            </StyledInputAndListContainer>
-        )
-    }
-)
+export const InputAndListContainer: FC<ILibInputAndListContainer> = ({
+    "data-testid": testid,
+    ref,
+    className,
+    children,
+    hasListOpen,
+    isParent,
+    inputAndListContainerStyle,
+}) => {
+    return (
+        <StyledInputAndListContainer
+            data-testid={
+                testid &&
+                (isParent ? testid : `${testid}.InputAndListContainer`)
+            }
+            className={classNames(
+                { InputAndListContainer: className && !isParent },
+                { Open: hasListOpen },
+                isParent && className
+            )}
+            ref={ref}
+            style={inputAndListContainerStyle}
+        >
+            {children}
+        </StyledInputAndListContainer>
+    )
+}

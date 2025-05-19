@@ -1,11 +1,13 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { Link } from "react-router-dom"
 import type { ILibFooterLink } from "./subtypes"
 
-export const FooterLink = forwardRef<
-    HTMLButtonElement & HTMLAnchorElement,
-    ILibFooterLink
->(({ "data-testid": testid, className, item }, ref) => {
+export const FooterLink: FC<ILibFooterLink> = ({
+    "data-testid": testid,
+    ref,
+    className,
+    item,
+}) => {
     const commonProps = {
         "data-testid": testid,
         className,
@@ -26,4 +28,4 @@ export const FooterLink = forwardRef<
         return <Link to={item.to} {...blankProps} {...(commonProps as any)} />
 
     return <button onClick={item.onClick} type="button" {...commonProps} />
-})
+}

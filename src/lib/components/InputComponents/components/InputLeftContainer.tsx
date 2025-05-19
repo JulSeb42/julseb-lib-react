@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import type { FC } from "react"
 import { StyledInputLeftContainer } from "../styles"
 import type { ILibInputLeftContainer } from "../types"
 
@@ -10,18 +10,19 @@ import type { ILibInputLeftContainer } from "../types"
  * @prop children?: ReactChildren
  * @prop disabled: boolean | undefined
  */
-export const InputLeftContainer = forwardRef<
-    HTMLSpanElement,
-    ILibInputLeftContainer
->(({ "data-testid": testid, className, children, disabled }, ref) => {
+export const InputLeftContainer: FC<ILibInputLeftContainer> = ({
+    "data-testid": testid,
+    className,
+    children,
+    disabled,
+}) => {
     return (
         <StyledInputLeftContainer
             data-testid={testid && `${testid}.LeftContainer`}
-            ref={ref}
             className={className && "LeftContainer"}
             $disabled={disabled}
         >
             {children}
         </StyledInputLeftContainer>
     )
-})
+}

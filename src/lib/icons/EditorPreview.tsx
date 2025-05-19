@@ -1,13 +1,14 @@
+import type { FC } from "react"
 import { StyledIcon } from "./styles"
 import type { ILibIcon } from "./types"
 
-export const EditorPreview = ({
+export const EditorPreview: FC<ILibIcon> = ({
     "data-testid": testid,
     className,
     size = 64,
     color = "currentColor",
     ...rest
-}: ILibIcon) => {
+}) => {
     return (
         <StyledIcon
             data-testid={testid}
