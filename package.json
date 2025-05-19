@@ -23,7 +23,8 @@
 		"cssgen": "cssjson src/lib/index.css --output src/data/styles.json",
 		"check-errors": "tsc --noEmit",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"serve-storybook": "serve storybook-static"
 	},
 	"dependencies": {
 		"@julseb-lib/utils": "^0.0.12",
