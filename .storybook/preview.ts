@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react"
-import { Text, CodeContainer } from "../src/lib"
+import { CodeContainer } from "../src/lib"
 import "../src/lib/index.css"
 
 const preview: Preview = {

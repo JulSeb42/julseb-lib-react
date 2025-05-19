@@ -26,3 +26,5 @@ cypress/screenshots
 
 README.local.md
 *storybook.log
+
+storybook-static
