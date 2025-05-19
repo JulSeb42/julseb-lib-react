@@ -52,6 +52,7 @@ import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/
 import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
 import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin.preview"
 import { datepickerPreview } from "../lib/components/Datepicker/__preview__/Datepicker.preview"
+import { timepickerPreview } from "../lib/components/Timepicker/__preview__/Timepicker.preview"
 import { fieldsetPreview } from "../lib/components/Fieldset/__preview__/Fieldset.preview"
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
@@ -85,7 +86,6 @@ import { iconMenuPreview } from "../lib/components/IconMenu/__preview__/IconMenu
 import { footerPreview } from "../lib/components/Footer/__preview__/Footer.preview"
 import { helmetPreview } from "../lib/components/Helmet/__preview__/Helmet.preview"
 import { pageLayoutPreview } from "../lib/components/PageLayout/__preview__/PageLayout.preview"
-import { timepickerPreview } from "../lib/components/Timepicker/__preview__/Timepicker.preview"
 /* Prepend import - DO NOT REMOVE */
 
 import { helpersPreview } from "./previews/utils/Helpers.preview"
@@ -176,6 +176,7 @@ export const previews = [
     ratingPreview,
     inputPinPreview,
     datepickerPreview,
+    timepickerPreview,
     fieldsetPreview,
     formPreview,
     listGroupPreview,
@@ -209,7 +210,6 @@ export const previews = [
     footerPreview,
     helmetPreview,
     pageLayoutPreview,
-    timepickerPreview,
     /* Prepend array - DO NOT REMOVE */
 
     helpersPreview,

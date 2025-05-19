@@ -1,0 +1,53 @@
+import { Meta } from "@storybook/blocks";
+import { CodeContainer, Text } from "../lib"
+
+<Meta title="Getting started" />
+
+# Getting started
+
+This library was built using <a href="https://styled-components.com/" target="_blank" rel="noreferrer noopener">`styled-components`</a> and <a href="https://reactrouter.com/" target="_blank" rel="noreferrer noopener">`react-router`</a>. Unfortunately some components will not work on projects not using `react-router-dom`, so this works only on projects using <a href="https://vite.dev/" target="_blank" rel="noreferrer noopener">`Vite`</a>. See the section [`CLI and Boilerplates`](/docs/cli-and-boilerplates--docs) to generate a boilerplate using this library.
+	
+## Install in your project
+
+Open your app in a terminal and run:
+
+```shell
+$ npm i tsx-library-julseb
+```
+
+Then, open your `main.tsx` file and add this line:
+
+```javascript
+import "tsx-library-julseb/index.css"
+```
+
+## Overrides
+
+To override a variable, you can create a `.css` file and import it in your `main.tsx` after the library's CSS:
+
+```javascript
+import "tsx-library-julseb/index.css"
+import "./styles/<your-file>.css"
+```
+
+Then, in your new `.css` file, create a `:root` element and change the variables:
+
+```css
+:root {
+	--color-light-primary-500: #445BE4;
+}
+```
+
+## TypeScript
+
+For TypeScript users, you can import types in needed components with this file:
+
+```javascript
+import type { <Type> } from "tsx-library-julseb/types"
+```
+
+If you want to use the components' types, you can import them like this:
+
+```javascript
+import type { <Type> } from "tsx-library-julseb/component-props"
+```
