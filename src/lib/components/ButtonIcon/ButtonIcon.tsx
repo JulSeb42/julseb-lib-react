@@ -45,6 +45,7 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
     "data-testid": testid,
     as,
     ref,
+	role = "button",	
     size = 32,
     icon,
     iconSize = roundIconSize(size),
@@ -73,6 +74,7 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
     const props = {
         "data-testid": testid,
         as,
+		role,
         className,
         showTooltip,
         to,

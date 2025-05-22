@@ -15,27 +15,27 @@ import type { ILibAside } from "./types"
  * @returns {JSX.Element} The rendered Aside component.
  *
  * @example
- * <Aside size="small" minHeight="50vh">
+ * <Aside size="small">
  *   Sidebar content here
  * </Aside>
  */
 export const Aside: FC<ILibAside> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    children,
-    size,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	children,
+	size = "default",
+	...rest
 }) => {
-    return (
-        <StyledAside
-            data-testid={testid}
-            ref={ref}
-            as={as}
-            $size={size}
-            {...rest}
-        >
-            {children}
-        </StyledAside>
-    )
+	return (
+		<StyledAside
+			data-testid={testid}
+			ref={ref}
+			as={as}
+			$size={size}
+			{...rest}
+		>
+			{children}
+		</StyledAside>
+	)
 }

@@ -41,94 +41,96 @@ import type { ILibButton } from "./types"
  * </Button>
  */
 export const Button: FC<ILibButton> = ({
-    "data-testid": testid,
-    "aria-label": ariaLabel = "Button",
-    disabled,
-    "aria-disabled": ariaDisabled = disabled,
-    as,
-    ref,
-    className,
-    children,
-    color = "primary",
-    shadow,
-    size = "default",
-    borderRadius = size === "small" ? "s" : "m",
-    icons,
-    iconSizes,
-    iconBaseUrl,
-    gap = "xs",
-    variant = "plain",
-    noPadding,
-    isLoading,
-    loaderVariant,
-    to,
-    href,
-    blank,
-    ...rest
+	"data-testid": testid,
+	"aria-label": ariaLabel = "Button",
+	disabled,
+	"aria-disabled": ariaDisabled = disabled,
+	as,
+	ref,
+	className,
+	role = "button",
+	children,
+	color = "primary",
+	shadow,
+	size = "default",
+	borderRadius = size === "small" ? "s" : "m",
+	icons,
+	iconSizes,
+	iconBaseUrl,
+	gap = "xs",
+	variant = "plain",
+	noPadding,
+	isLoading,
+	loaderVariant,
+	to,
+	href,
+	blank,
+	...rest
 }) => {
-    const loaderProps: Omit<ILibLoader, "variant" | "borderWidth"> = {
-        size: size === "small" ? 14 : 16,
-        color: "gray",
-        "data-testid": testid && `${testid}.Loader`,
-        className: "Loader",
-    }
+	const loaderProps: Omit<ILibLoader, "variant" | "borderWidth"> = {
+		size: size === "small" ? 14 : 16,
+		color: "gray",
+		"data-testid": testid && `${testid}.Loader`,
+		className: "Loader",
+	}
 
-    const defaultIconSize = size === "small" ? 14 : 16
+	const defaultIconSize = size === "small" ? 14 : 16
 
-    return (
-        <StyledButton
-            data-testid={testid}
-            ref={ref}
-            as={as ? as : to ? Link : href ? "a" : "button"}
-            to={to === "prev" ? -1 : to}
-            href={href}
-            className={className}
-            aria-label={ariaLabel}
-            aria-disabled={ariaDisabled}
-            disabled={isLoading || disabled}
-            target={blank && "_blank"}
-            rel={blank && "noreferrer noopener"}
-            $color={color}
-            $shadow={shadow}
-            $borderRadius={borderRadius}
-            $size={size}
-            $gap={gap}
-            $variant={variant}
-            $noPadding={noPadding}
-            {...rest}
-        >
-            {icons?.left && !isLoading && (
-                <LibIcon
-                    icon={icons.left}
-                    data-testid={testid && `${testid}.IconLeft`}
-                    className={className && "IconLeft"}
-                    size={iconSizes?.left || defaultIconSize}
-                    baseUrl={iconBaseUrl}
-                />
-            )}
+	return (
+		<StyledButton
+			data-testid={testid}
+			ref={ref}
+			as={as ? as : to ? Link : href ? "a" : "button"}
+			to={to === "prev" ? -1 : to}
+			role={role}
+			href={href}
+			className={className}
+			aria-label={ariaLabel}
+			aria-disabled={ariaDisabled}
+			disabled={isLoading || disabled}
+			target={blank && "_blank"}
+			rel={blank && "noreferrer noopener"}
+			$color={color}
+			$shadow={shadow}
+			$borderRadius={borderRadius}
+			$size={size}
+			$gap={gap}
+			$variant={variant}
+			$noPadding={noPadding}
+			{...rest}
+		>
+			{icons?.left && !isLoading && (
+				<LibIcon
+					icon={icons.left}
+					data-testid={testid && `${testid}.IconLeft`}
+					className={className && "IconLeft"}
+					size={iconSizes?.left || defaultIconSize}
+					baseUrl={iconBaseUrl}
+				/>
+			)}
 
-            {isLoading &&
-                (loaderVariant === 4 ? (
-                    <Loader variant={4 as any} {...loaderProps} />
-                ) : (
-                    <Loader
-                        variant={loaderVariant as any}
-                        borderWidth={2}
-                        {...loaderProps}
-                    />
-                ))}
+			{isLoading &&
+				(loaderVariant === 4 ? (
+					<Loader variant={4 as any} {...loaderProps} />
+				) : (
+					<Loader
+						variant={loaderVariant as any}
+						borderWidth={2}
+						{...loaderProps}
+					/>
+				))}
 
-            {children}
+			{children}
 
-            {icons?.right && (
-                <LibIcon
-                    icon={icons.right}
-                    data-testid={testid && `${testid}.IconRight`}
-                    className={className && "IconRight"}
-                    size={iconSizes?.right || defaultIconSize}
-                    baseUrl={iconBaseUrl}
-                />
-            )}
-        </StyledButton>
-    )
+			{icons?.right && (
+				<LibIcon
+					icon={icons.right}
+					data-testid={testid && `${testid}.IconRight`}
+					className={className && "IconRight"}
+					size={iconSizes?.right || defaultIconSize}
+					baseUrl={iconBaseUrl}
+				/>
+			)}
+		</StyledButton>
+	)
 }

@@ -1,20 +1,21 @@
 import type { CSSProperties } from "react"
 import type {
-    LibComponentBase,
-    LibAllColorsAndOverlays,
-    LibAllColors,
-    LibTooltipPosition,
-    LibSpacers,
-    LibTooltipTrigger,
+	LibComponentBase,
+	LibAllColorsAndOverlays,
+	LibAllColors,
+	LibTooltipPosition,
+	LibSpacers,
+	LibTooltipTrigger,
+	ReactChildren,
 } from "../../types"
 
 export interface ILibTooltip extends LibComponentBase<HTMLDivElement> {
-    tooltip: string | JSX.Element
-    position?: LibTooltipPosition
-    hideArrow?: boolean
-    trigger?: LibTooltipTrigger
-    backgroundColor?: LibAllColorsAndOverlays
-    textColor?: LibAllColors
-    offset?: LibSpacers
-    tooltipStyles?: CSSProperties
+	tooltip: string | ReactChildren
+	position?: LibTooltipPosition
+	hideArrow?: boolean
+	trigger?: LibTooltipTrigger
+	backgroundColor?: LibAllColorsAndOverlays
+	textColor?: LibAllColors
+	offset?: LibSpacers
+	tooltipStyles?: CSSProperties
 }

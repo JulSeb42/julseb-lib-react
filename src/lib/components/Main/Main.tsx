@@ -25,24 +25,24 @@ import type { ILibMain } from "./types"
  * </Main>
  */
 export const Main: FC<ILibMain> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    children,
-    size,
-    contentSize,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	children,
+	size = "default",
+	contentSize = "default",
+	...rest
 }) => {
-    return (
-        <StyledMain
-            data-testid={testid}
-            ref={ref}
-            as={as}
-            $size={size}
-            $contentSize={contentSize}
-            {...rest}
-        >
-            {children}
-        </StyledMain>
-    )
+	return (
+		<StyledMain
+			data-testid={testid}
+			ref={ref}
+			as={as}
+			$size={size}
+			$contentSize={contentSize}
+			{...rest}
+		>
+			{children}
+		</StyledMain>
+	)
 }

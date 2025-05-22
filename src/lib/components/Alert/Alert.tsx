@@ -8,35 +8,35 @@ import { StyledAlert } from "./styles"
 import type { ILibAlert } from "./types"
 
 const alertStyles: {
-    [key: string]: {
-        backgroundColor: LibAllColors
-        borderColor: LibAllColors
-    }
+	[key: string]: {
+		backgroundColor: LibAllColors
+		borderColor: LibAllColors
+	}
 } = {
-    primary: {
-        backgroundColor: "primary-50",
-        borderColor: "primary-500",
-    },
-    secondary: {
-        backgroundColor: "secondary-50",
-        borderColor: "secondary-500",
-    },
-    success: {
-        backgroundColor: "success-50",
-        borderColor: "success-500",
-    },
-    danger: {
-        backgroundColor: "danger-50",
-        borderColor: "danger-500",
-    },
-    warning: {
-        backgroundColor: "warning-50",
-        borderColor: "warning-500",
-    },
-    gray: {
-        backgroundColor: "gray-50",
-        borderColor: "gray-500",
-    },
+	primary: {
+		backgroundColor: "primary-50",
+		borderColor: "primary-500",
+	},
+	secondary: {
+		backgroundColor: "secondary-50",
+		borderColor: "secondary-500",
+	},
+	success: {
+		backgroundColor: "success-50",
+		borderColor: "success-500",
+	},
+	danger: {
+		backgroundColor: "danger-50",
+		borderColor: "danger-500",
+	},
+	warning: {
+		backgroundColor: "warning-50",
+		borderColor: "warning-500",
+	},
+	gray: {
+		backgroundColor: "gray-50",
+		borderColor: "gray-500",
+	},
 }
 
 /**
@@ -66,55 +66,57 @@ const alertStyles: {
  * </Alert>
  */
 export const Alert: FC<ILibAlert> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    className,
-    id,
-    children,
-    maxWidth,
-    textColor = "font",
-    padding = "s",
-    borderRadius = "m",
-    gap = "xs",
-    alertColor = "primary",
-    backgroundColor,
-    border,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	className,
+	id,
+	role = "alert",
+	children,
+	maxWidth,
+	textColor = "font",
+	padding = "s",
+	borderRadius = "m",
+	gap = "xs",
+	alertColor = "primary",
+	backgroundColor,
+	border,
+	...rest
 }) => {
-    const styles = alertStyles[alertColor]
-    const randomClass = getRandomString(10, true)
-    const withClass = className?.split(" ")[0] || randomClass
+	const styles = alertStyles[alertColor]
+	const randomClass = getRandomString(10, true)
+	const withClass = className?.split(" ")[0] || randomClass
 
-    appendStyles(`
+	appendStyles(`
             ${id ? `#${id}` : `.${withClass}`} {
                 --alert-max-width: ${stringifyPx(maxWidth || "100%")};
             }
         `)
 
-    return (
-        <>
-            <StyledAlert
-                data-testid={testid}
-                ref={ref}
-                as={as || typeof children === "string" ? Text : "div"}
-                className={classNames(className, randomClass)}
-                id={id}
-                $backgroundColor={
-                    backgroundColor || styles.backgroundColor || "primary-50"
-                }
-                $border={{
-                    color: styles.borderColor || "primary",
-                    ...border,
-                }}
-                $borderRadius={borderRadius}
-                $gap={gap}
-                $padding={padding}
-                $textColor={textColor}
-                {...rest}
-            >
-                {children}
-            </StyledAlert>
-        </>
-    )
+	return (
+		<>
+			<StyledAlert
+				data-testid={testid}
+				ref={ref}
+				as={as || typeof children === "string" ? Text : "div"}
+				className={classNames(className, randomClass)}
+				id={id}
+				role={role}
+				$backgroundColor={
+					backgroundColor || styles.backgroundColor || "primary-50"
+				}
+				$border={{
+					color: styles.borderColor || "primary",
+					...border,
+				}}
+				$borderRadius={borderRadius}
+				$gap={gap}
+				$padding={padding}
+				$textColor={textColor}
+				{...rest}
+			>
+				{children}
+			</StyledAlert>
+		</>
+	)
 }

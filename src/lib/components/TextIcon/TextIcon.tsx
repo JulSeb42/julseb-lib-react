@@ -36,65 +36,65 @@ import type { ILibTextIcon } from "./types"
  * <TextIcon icon="star" tag="h2" color="primary">Featured</TextIcon>
  */
 export const TextIcon: FC<ILibTextIcon> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    textAs,
-    className,
-    children,
-    icon,
-    iconColor,
-    iconSize,
-    iconBaseUrl,
-    tag = "p",
-    display,
-    gap,
-    containerStyle,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	textAs,
+	className,
+	children,
+	icon,
+	iconColor,
+	iconSize,
+	iconBaseUrl,
+	tag = "p",
+	display,
+	gap = "xs",
+	containerStyle,
+	...rest
 }) => {
-    const textProps: Partial<Omit<ILibTextIcon, "tag" | "display">> = {
-        "data-testid": testid && `${testid}.Text`,
-        as: textAs,
-        className: "Text",
-        children,
-        ...rest,
-    }
+	const textProps: Partial<Omit<ILibTextIcon, "tag" | "display">> = {
+		"data-testid": testid && `${testid}.Text`,
+		as: textAs,
+		className: "Text",
+		children,
+		...rest,
+	}
 
-    return (
-        <StyledTextIcon
-            data-testid={testid}
-            ref={ref}
-            as={as}
-            className={className}
-            style={containerStyle}
-            $gap={gap}
-        >
-            <IconContainer
-                data-testid={testid && `${testid}.IconContainer`}
-                className={className && "IconContainer"}
-                $tag={tag}
-                $display={display}
-                $iconSize={iconSize}
-            >
-                <LibIcon
-                    data-testid={testid && `${testid}.IconContainer.Icon`}
-                    className={className && "Icon"}
-                    icon={icon}
-                    size={iconSize || getIconHeight(tag, display)}
-                    color={iconColor}
-                    baseUrl={iconBaseUrl}
-                />
-            </IconContainer>
+	return (
+		<StyledTextIcon
+			data-testid={testid}
+			ref={ref}
+			as={as}
+			className={className}
+			style={containerStyle}
+			$gap={gap}
+		>
+			<IconContainer
+				data-testid={testid && `${testid}.IconContainer`}
+				className={className && "IconContainer"}
+				$tag={tag}
+				$display={display}
+				$iconSize={iconSize}
+			>
+				<LibIcon
+					data-testid={testid && `${testid}.IconContainer.Icon`}
+					className={className && "Icon"}
+					icon={icon}
+					size={iconSize || getIconHeight(tag, display)}
+					color={iconColor}
+					baseUrl={iconBaseUrl}
+				/>
+			</IconContainer>
 
-            {tag === "h1" ||
-            tag === "h2" ||
-            tag === "h3" ||
-            tag === "h4" ||
-            tag === "h5" ? (
-                <Text display={display} tag={tag} {...textProps} />
-            ) : (
-                <Text tag={tag} {...textProps} />
-            )}
-        </StyledTextIcon>
-    )
+			{tag === "h1" ||
+			tag === "h2" ||
+			tag === "h3" ||
+			tag === "h4" ||
+			tag === "h5" ? (
+				<Text display={display} tag={tag} {...textProps} />
+			) : (
+				<Text tag={tag} {...textProps} />
+			)}
+		</StyledTextIcon>
+	)
 }

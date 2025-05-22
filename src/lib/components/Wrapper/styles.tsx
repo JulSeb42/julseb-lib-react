@@ -11,7 +11,6 @@ const StyledWrapper = styled.section<{
     position: relative;
     background-color: ${({ $backgroundColor, theme }) =>
         Mixins.AllColors($backgroundColor, theme)};
-    height: ${({ $minHeight }) => stringifyPx($minHeight)};
     min-height: ${({ $minHeight }) => stringifyPx($minHeight)};
     ${({ $gap }) =>
         Mixins.Flexbox({
