@@ -1,9 +1,5 @@
-import { ButtonIcon, Flexbox } from "../../../"
-import {
-	type LibButtonIconVariant,
-	type ReactChildren,
-	designTokens,
-} from "../../../types"
+import { ButtonIcon, Flexbox, designTokens } from "../../../"
+import type { LibButtonIconVariant, ReactChildren } from "../../../types"
 import type { ILibButtonIcon } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

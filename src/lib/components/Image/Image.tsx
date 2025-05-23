@@ -40,81 +40,85 @@ import type { ILibImage } from "./types"
  * />
  */
 export const Image: FC<ILibImage> = ({
-    "data-testid": testid,
-    ref,
-    className,
-    src,
-    alt,
-    caption,
-    width = "100%",
-    height = "auto",
-    aspectRatio,
-    borderRadius,
-    fit,
-    fallback = (
-        <Fallback
-            $aspectRatio={aspectRatio}
-            $width={width}
-            $height={height}
-            $borderRadius={borderRadius}
-        />
-    ),
-    containerStyle,
-    containerAs,
-    ...rest
+	"data-testid": testid,
+	ref,
+	role = "img",
+	className,
+	src,
+	alt,
+	caption,
+	width = "100%",
+	height = "auto",
+	aspectRatio,
+	borderRadius,
+	fit,
+	fallback = (
+		<Fallback
+			$aspectRatio={aspectRatio}
+			$width={width}
+			$height={height}
+			$borderRadius={borderRadius}
+		/>
+	),
+	containerStyle,
+	containerAs,
+	...rest
 }) => {
-    const imageProps = {
-        "data-testid": testid,
-        ref,
-        fallback,
-        caption,
-        className,
-        src,
-        alt,
-        aspectRatio,
-        width,
-        height,
-        borderRadius,
-        fit,
-        ...rest,
-    }
+	const imageProps = {
+		"data-testid": testid,
+		ref,
+		role,
+		fallback,
+		caption,
+		className,
+		src,
+		alt,
+		aspectRatio,
+		width,
+		height,
+		borderRadius,
+		fit,
+		...rest,
+	}
 
-    if (caption)
-        return (
-            <ImgContainer
-                data-testid={testid}
-                className={className}
-                style={containerStyle}
-                as={containerAs}
-                $width={width}
-                $height={height}
-                $borderRadius={borderRadius}
-            >
-                <ImageFunction {...imageProps} />
+	if (caption)
+		return (
+			<ImgContainer
+				data-testid={testid}
+				className={className}
+				style={containerStyle}
+				as={containerAs}
+				role="figure"
+				$width={width}
+				$height={height}
+				$borderRadius={borderRadius}
+			>
+				<ImageFunction {...imageProps} />
 
-                <Caption
-                    data-testid={testid && `${testid}.Caption`}
-                    className={className && "Caption"}
-                    as={
-                        typeof caption === "object" && caption.as
-                            ? caption.as
-                            : "figcaption"
-                    }
-                    $backgroundColor={
-                        typeof caption === "object" && caption.background
-                            ? caption?.background
-                            : "black-50"
-                    }
-                    $textColor={
-                        typeof caption === "object" && caption.textColor
-                            ? caption.textColor
-                            : "white"
-                    }
-                >
-                    {typeof caption === "object" ? caption.text : caption}
-                </Caption>
-            </ImgContainer>
-        )
+				<Caption
+					data-testid={testid && `${testid}.Caption`}
+					className={className && "Caption"}
+					role="contentinfo"
+					as={
+						typeof caption === "object" && caption.as
+							? caption.as
+							: "figcaption"
+					}
+					$backgroundColor={
+						typeof caption === "object" && caption.background
+							? caption?.background
+							: "black-50"
+					}
+					$textColor={
+						typeof caption === "object" && caption.textColor
+							? caption.textColor
+							: "white"
+					}
+				>
+					{typeof caption === "object" ? caption.text : caption}
+				</Caption>
+			</ImgContainer>
+		)
 
-    return <ImageFunction {...imageProps} />
+	return <ImageFunction {...imageProps} />
 }
