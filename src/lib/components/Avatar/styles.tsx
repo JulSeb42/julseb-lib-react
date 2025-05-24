@@ -1,115 +1,88 @@
 import type { FC } from "react"
 import styled, { css } from "styled-components"
-import {
-    setDefaultTheme,
-    Badge,
-    Mixins,
-    FONT_WEIGHTS,
-    SPACERS,
-    stringifyPx,
-} from "../../"
+import { setDefaultTheme, Badge, Mixins, FONT_WEIGHTS, SPACERS } from "../../"
 import type {
-    LibAllColors,
-    ILibBorder,
-    ILibRadius,
-    LibSpacers,
-    ILibOutline,
-    LibFontSizes,
+	LibAllColors,
+	ILibBorder,
+	ILibRadius,
+	LibSpacers,
+	ILibOutline,
+	LibFontSizes,
 } from "../../types"
 
 const Common = ({
-    $borderRadius,
-    $backgroundColor,
-    $contentColor,
+	$borderRadius,
+	$backgroundColor,
+	$contentColor,
 }: {
-    $borderRadius?: ILibRadius
-    $backgroundColor: LibAllColors
-    $contentColor: LibAllColors
+	$borderRadius?: ILibRadius
+	$backgroundColor: LibAllColors
+	$contentColor: LibAllColors
 }) => css`
-    background-color: ${({ theme }) =>
-        Mixins.AllColors($backgroundColor, theme)};
-    color: ${({ theme }) => Mixins.AllColors($contentColor, theme)};
-    ${Mixins.BorderRadius($borderRadius)};
-    ${Mixins.Flexbox({
-        $inline: true,
-        $alignItems: "center",
-        $justifyContent: "center",
-    })}
+	background-color: ${({ theme }) =>
+		Mixins.AllColors($backgroundColor, theme)};
+	color: ${({ theme }) => Mixins.AllColors($contentColor, theme)};
+	${Mixins.BorderRadius($borderRadius)};
+	${Mixins.Flexbox({
+		$inline: true,
+		$alignItems: "center",
+		$justifyContent: "center",
+	})}
 
-    && {
-        width: var(--avatar-size);
-        height: var(--avatar-size);
-    }
+	&& {
+		width: var(--avatar-size);
+		height: var(--avatar-size);
+	}
 `
 
 const StyledAvatarContainer = styled.span<{
-    $borderRadius?: ILibRadius
-    $backgroundColor: LibAllColors
-    $contentColor: LibAllColors
+	$borderRadius?: ILibRadius
+	$backgroundColor: LibAllColors
+	$contentColor: LibAllColors
 }>`
-    ${Common}
-    position: relative;
-    padding: 0;
-    border-style: inherit;
+	${Common}
+	position: relative;
+	padding: 0;
+	border-style: inherit;
 `
 
 const StyledAvatar = styled.span<{
-    $border?: ILibBorder
-    $borderRadius?: ILibRadius
-    $backgroundColor: LibAllColors
-    $contentColor: LibAllColors
-    $fontSize: LibFontSizes
+	$border?: ILibBorder
+	$borderRadius?: ILibRadius
+	$backgroundColor: LibAllColors
+	$contentColor: LibAllColors
+	$fontSize: LibFontSizes
 }>`
-    ${Common}
-    ${({ $border }) => Mixins.Border($border)};
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
-    font-weight: ${FONT_WEIGHTS.BLACK};
-    line-height: var(--avatar-size);
-    text-transform: uppercase;
-    font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
+	${Common}
+	${({ $border }) => Mixins.Border($border)};
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	font-weight: ${FONT_WEIGHTS.BLACK};
+	line-height: var(--avatar-size);
+	text-transform: uppercase;
+	font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
 `
 
 const StyledBadge = styled(Badge)<{
-    $width: number
-    $paddingLeftRight: LibSpacers | "auto"
-    $outline?: ILibOutline
+	$width: number
+	$paddingLeftRight: LibSpacers | "auto"
+	$outline?: ILibOutline
 }>`
-    position: absolute;
-    right: ${({ $width, $paddingLeftRight }) =>
-        `calc((${$width / 2}px + ${Mixins.Spacer($paddingLeftRight)}) * -1)`};
-    ${({ $outline }) => Mixins.Outline($outline)}
+	position: absolute;
+	right: ${({ $width, $paddingLeftRight }) =>
+		`calc((${$width / 2}px + ${Mixins.Spacer($paddingLeftRight)}) * -1)`};
+	${({ $outline }) => Mixins.Outline($outline)}
 
-    &.PositionTop {
-        top: ${SPACERS.XXS};
-    }
+	&.PositionTop {
+		top: ${SPACERS.XXS};
+	}
 
-    &.PositionBottom {
-        bottom: ${SPACERS.XXS};
-    }
+	&.PositionBottom {
+		bottom: ${SPACERS.XXS};
+	}
 ` as FC<any>
 
-const StyledFallback = styled.span<{
-    $size: number
-    $backgroundColor: LibAllColors
-    $fontColor: LibAllColors
-    $fontSize: LibFontSizes
-}>`
-    width: ${({ $size }) => stringifyPx($size)};
-    height: ${({ $size }) => stringifyPx($size)};
-    font-weight: ${FONT_WEIGHTS.BLACK};
-    background-color: ${({ $backgroundColor, theme }) =>
-        Mixins.AllColors($backgroundColor, theme)};
-    color: ${({ $fontColor, theme }) => Mixins.AllColors($fontColor, theme)};
-    font-size: ${({ $fontSize }) => Mixins.FontSize($fontSize)};
-`
+setDefaultTheme([StyledAvatarContainer, StyledAvatar, StyledBadge])
 
-setDefaultTheme([
-    StyledAvatarContainer,
-    StyledAvatar,
-    StyledBadge,
-    StyledFallback,
-])
-
-export { StyledAvatarContainer, StyledAvatar, StyledBadge, StyledFallback }
+export { StyledAvatarContainer, StyledAvatar, StyledBadge }

@@ -73,7 +73,15 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
 		{
 			previewTitle: "On error",
 			props: {
-				img: { src: "./abc.png", alt: "Hello", fallback: "JS" },
+				img: {
+					src: "./abc.png",
+					alt: "Hello",
+					fallback: "JS",
+					fallbackBackgroundColor: "danger",
+					fallbackFontColor: "white",
+					fallbackFontSize: "h3",
+				},
+				size: 64,
 			},
 		},
 	],
