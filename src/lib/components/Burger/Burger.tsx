@@ -25,36 +25,38 @@ import type { ILibBurger } from "./types"
  * <Burger isOpen={menuOpen} onClick={toggleMenu} />
  */
 export const Burger: FC<ILibBurger> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    className,
-    isOpen,
-    color = "primary",
-    width = 32,
-    height = 24,
-    noHover,
-    borderWidth = 2,
-    "aria-label": ariaLabel = `${isOpen ? "Close" : "Open"} burger`,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	className,
+	isOpen,
+	color = "primary",
+	width = 32,
+	height = 24,
+	noHover,
+	borderWidth = 2,
+	"aria-label": ariaLabel = `${isOpen ? "Close" : "Open"} burger`,
+	role = "button",
+	...rest
 }) => {
-    return (
-        <StyledBurger
-            data-testid={testid}
-            ref={ref}
-            as={as ? as : noHover ? "span" : "button"}
-            className={classNames(className, { Open: isOpen })}
-            aria-label={ariaLabel}
-            $noHover={noHover}
-            $borderWidth={borderWidth}
-            $color={color}
-            $height={height}
-            $width={width}
-            {...rest}
-        >
-            <span />
-            <span />
-            <span />
-        </StyledBurger>
-    )
+	return (
+		<StyledBurger
+			data-testid={testid}
+			ref={ref}
+			as={as ? as : noHover ? "span" : "button"}
+			className={classNames(className, { Open: isOpen })}
+			aria-label={ariaLabel}
+			role={role}
+			$noHover={noHover}
+			$borderWidth={borderWidth}
+			$color={color}
+			$height={height}
+			$width={width}
+			{...rest}
+		>
+			<span />
+			<span />
+			<span />
+		</StyledBurger>
+	)
 }

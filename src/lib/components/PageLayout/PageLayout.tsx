@@ -10,9 +10,9 @@ import type { ILibPageLayout } from "./types"
  * @param {Object} props - PageLayout props.
  * @param {string} [props.data-testid] - Test id for testing purposes.
  * @param {boolean} [props.isLoading] - Whether the page is in a loading state.
- * @param {string} [props.titleLoading] - Title to display in the Helmet while loading.
+ * @param {string} [props.titleLoading] - Title to display in the Meta while loading.
  * @param {ILibPageLoading} [props.pageLoading] - Props for the PageLoading component.
- * @param {ILibHelmet} [props.helmet] - Props for the Helmet component.
+ * @param {ILibMeta} [props.meta] - Props for the Meta component.
  * @param {ILibHeader & { nav?: JSX.Element }} [props.header] - Props for the Header component, with optional navigation.
  * @param {ILibFooter} [props.footer] - Props for the Footer component.
  * @param {ILibWrapper} [props.wrapper] - Props for the Wrapper component (only if noWrapper is not set to true).
@@ -27,7 +27,7 @@ import type { ILibPageLayout } from "./types"
  * @example
  * <PageLayout
  *   isLoading={loading}
- *   helmet={{ title: "My Page" }}
+ *   meta={{ title: "My Page" }}
  *   header={{ title: "Header" }}
  *   footer={{ copyright: "© 2025" }}
  * >
@@ -40,7 +40,7 @@ export const PageLayout: FC<ILibPageLayout> = ({
 	isLoading,
 	pageLoading,
 	titleLoading,
-	meta: helmet,
+	meta,
 	header,
 	footer,
 	noWrapper,
@@ -51,11 +51,11 @@ export const PageLayout: FC<ILibPageLayout> = ({
 }) => {
 	return (
 		<>
-			{helmet && (
+			{meta && (
 				<Meta
-					{...helmet}
+					{...meta}
 					title={
-						isLoading && titleLoading ? titleLoading : helmet.title
+						isLoading && titleLoading ? titleLoading : meta.title
 					}
 				/>
 			)}
