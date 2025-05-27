@@ -31,7 +31,9 @@ import type { ILibCard } from "./types"
  * @param {"xxl" | "xl" | "l" | "m" | "s" | "xs" | "round" | "circle" | number | Object} [props.borderRadius] - Border radius for the card.
  * @param {CssCursor} [props.cursor] - Cursor style.
  * @param {string|number} [props.width="100%"] - Width of the card.
+ * @param {string|number} [props.maxWidth="100%"] - Max width of the card.
  * @param {string|number} [props.height] - Height of the card.
+ * @param {string|number} [props.maxHeight] - Max height of the card.
  * @param {"xxl" | "xl" | "l" | "m" | "s" | "xs" | Object} [props.shadow] - Shadow style.
  * @param {string} [props.backgroundColor="background"] - Background color.
  * @param {string} [props.textColor="font"] - Text color.
@@ -47,80 +49,84 @@ import type { ILibCard } from "./types"
  * </Card>
  */
 export const Card: FC<ILibCard> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    children,
-    border,
-    borderRadius,
-    padding,
-    cursor,
-    width = "100%",
-    height,
-    shadow,
-    backgroundColor = "background",
-    textColor = "font",
-    backgroundImg,
-    textAlign = "left",
-    href,
-    to,
-    blank,
-    onClick,
-    inline,
-    flexDirection,
-    flexWrap,
-    justifyContent,
-    alignItems,
-    justifyItems,
-    alignContent,
-    gap,
-    columnGap,
-    rowGap,
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	children,
+	border,
+	borderRadius,
+	padding,
+	cursor,
+	width = "100%",
+	maxWidth = "100%",
+	height,
+	maxHeight,
+	shadow,
+	backgroundColor = "background",
+	textColor = "font",
+	backgroundImg,
+	textAlign = "left",
+	href,
+	to,
+	blank,
+	onClick,
+	inline,
+	flexDirection,
+	flexWrap,
+	justifyContent,
+	alignItems,
+	justifyItems,
+	alignContent,
+	gap,
+	columnGap,
+	rowGap,
+	...rest
 }) => {
-    return (
-        <StyledCard
-            data-testid={testid}
-            ref={ref}
-            as={as ? as : to ? Link : href ? "a" : onClick ? "button" : "div"}
-            to={to}
-            href={href}
-            target={blank ? "_blank" : undefined}
-            rel={blank ? "noreferrer noopener" : undefined}
-            onClick={onClick}
-            $border={border}
-            $borderRadius={borderRadius}
-            $padding={padding}
-            $cursor={cursor}
-            $width={width}
-            $height={height}
-            $shadow={shadow}
-            $backgroundColor={backgroundColor}
-            $textColor={textColor}
-            $backgroundImg={
-                backgroundImg && {
-                    $img: backgroundImg.img,
-                    $clip: backgroundImg.clip,
-                    $origin: backgroundImg.origin,
-                    $position: backgroundImg.position,
-                    $repeat: backgroundImg.repeat,
-                    $size: backgroundImg.size,
-                }
-            }
-            $textAlign={textAlign}
-            $inline={inline}
-            $flexDirection={flexDirection}
-            $flexWrap={flexWrap}
-            $justifyContent={justifyContent}
-            $alignItems={alignItems}
-            $justifyItems={justifyItems}
-            $alignContent={alignContent}
-            $gap={gap}
-            $columnGap={columnGap}
-            $rowGap={rowGap}
-            {...rest}
-        >
-            {children}
-        </StyledCard>
-    )
+	return (
+		<StyledCard
+			data-testid={testid}
+			ref={ref}
+			as={as ? as : to ? Link : href ? "a" : onClick ? "button" : "div"}
+			to={to}
+			href={href}
+			target={blank ? "_blank" : undefined}
+			rel={blank ? "noreferrer noopener" : undefined}
+			onClick={onClick}
+			$border={border}
+			$borderRadius={borderRadius}
+			$padding={padding}
+			$cursor={cursor}
+			$width={width}
+			$maxWidth={maxWidth}
+			$height={height}
+			$maxHeight={maxHeight}
+			$shadow={shadow}
+			$backgroundColor={backgroundColor}
+			$textColor={textColor}
+			$backgroundImg={
+				backgroundImg && {
+					$img: backgroundImg.img,
+					$clip: backgroundImg.clip,
+					$origin: backgroundImg.origin,
+					$position: backgroundImg.position,
+					$repeat: backgroundImg.repeat,
+					$size: backgroundImg.size,
+				}
+			}
+			$textAlign={textAlign}
+			$inline={inline}
+			$flexDirection={flexDirection}
+			$flexWrap={flexWrap}
+			$justifyContent={justifyContent}
+			$alignItems={alignItems}
+			$justifyItems={justifyItems}
+			$alignContent={alignContent}
+			$gap={gap}
+			$columnGap={columnGap}
+			$rowGap={rowGap}
+			{...rest}
+		>
+			{children}
+		</StyledCard>
+	)
 }

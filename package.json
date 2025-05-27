@@ -1,6 +1,6 @@
 {
 	"name": "@julseb-lib/react",
-	"version": "0.0.94",
+	"version": "0.0.97",
 	"type": "module",
 	"license": "MIT",
 	"scripts": {
@@ -14,7 +14,7 @@
 		"plop": "cross-env NODE_OPTIONS='--import tsx' plop --plopfile=./plop/plopfile.ts",
 		"plop:c": "yarn plop component",
 		"plop:p": "yarn plop preview",
-		"plop:st": "yarn plop subtype",	
+		"plop:st": "yarn plop subtype",
 		"cy": "cypress",
 		"cy:open": "cypress open",
 		"cy:ct:run": "cypress run --component --browser electron",

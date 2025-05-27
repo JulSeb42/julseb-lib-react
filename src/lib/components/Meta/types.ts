@@ -10,5 +10,7 @@ export interface ILibMeta {
 	cover?: string
 	siteName?: string
 	language?: string
+	url?: string
+	email?: string
 	children?: ReactChildren
 }
