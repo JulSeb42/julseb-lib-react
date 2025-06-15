@@ -1,3 +1,4 @@
+import type { ReactElement } from "react"
 import { createBrowserRouter } from "react-router-dom"
 import { slugify, toKebabCase } from "@julseb-lib/utils"
 
@@ -25,58 +26,58 @@ import { DemoHeader } from "../pages/demos/DemoHeader"
 import { PageLayoutDemo } from "../pages/demos/PageLayoutDemo"
 
 export type Route = {
-    path: string
-    element: JSX.Element
+	path: string
+	element: ReactElement
 }
 
 export type ComponentPaths = Array<Pick<Route, "path">>
 
 const demos: Array<Route> = [
-    { path: "/demos/main-default", element: <DemoMainDefault /> },
-    { path: "/demos/main-large", element: <DemoMainLarge /> },
-    { path: "/demos/main-form", element: <DemoMainForm /> },
-    { path: "/demos/main-number", element: <DemoMainNumber /> },
-    { path: "/demos/main-full", element: <DemoMainFull /> },
-    { path: "/demos/aside-default", element: <DemoAsideDefault /> },
-    { path: "/demos/aside-small", element: <DemoAsideSmall /> },
-    { path: "/demos/aside-both-sides", element: <DemoAsideBoth /> },
+	{ path: "/demos/main-default", element: <DemoMainDefault /> },
+	{ path: "/demos/main-large", element: <DemoMainLarge /> },
+	{ path: "/demos/main-form", element: <DemoMainForm /> },
+	{ path: "/demos/main-number", element: <DemoMainNumber /> },
+	{ path: "/demos/main-full", element: <DemoMainFull /> },
+	{ path: "/demos/aside-default", element: <DemoAsideDefault /> },
+	{ path: "/demos/aside-small", element: <DemoAsideSmall /> },
+	{ path: "/demos/aside-both-sides", element: <DemoAsideBoth /> },
 
-    { path: "/cover/cover-center", element: <DemoCoverCenter /> },
-    {
-        path: "/cover/cover-center-overlay",
-        element: <DemoCoverCenterOverlay />,
-    },
-    { path: "/cover/cover-bottom", element: <DemoCoverBottom /> },
-    {
-        path: "/cover/cover-bottom-overlay",
-        element: <DemoCoverBottomOverlay />,
-    },
+	{ path: "/cover/cover-center", element: <DemoCoverCenter /> },
+	{
+		path: "/cover/cover-center-overlay",
+		element: <DemoCoverCenterOverlay />,
+	},
+	{ path: "/cover/cover-bottom", element: <DemoCoverBottom /> },
+	{
+		path: "/cover/cover-bottom-overlay",
+		element: <DemoCoverBottomOverlay />,
+	},
 
-    { path: "/page-loading/demo", element: <DemoPageLoading /> },
+	{ path: "/page-loading/demo", element: <DemoPageLoading /> },
 
-    { path: "/back-to-top/demo", element: <BackToTopDemo /> },
+	{ path: "/back-to-top/demo", element: <BackToTopDemo /> },
 
-    { path: "/header/demo", element: <DemoHeader /> },
+	{ path: "/header/demo", element: <DemoHeader /> },
 
-    { path: "/page-layout/demo", element: <PageLayoutDemo /> },
+	{ path: "/page-layout/demo", element: <PageLayoutDemo /> },
 ]
 
 export const routes: Array<Route> = [
-    { path: "*", element: <NotFoundPage /> },
-    { path: "/", element: <Homepage /> },
-    { path: "/generate", element: <Generate /> },
-    { path: "/:componentName", element: <ComponentPage /> },
+	{ path: "*", element: <NotFoundPage /> },
+	{ path: "/", element: <Homepage /> },
+	{ path: "/generate", element: <Generate /> },
+	{ path: "/:componentName", element: <ComponentPage /> },
 
-    /* Prepend here - DO NOT REMOVE */
+	/* Prepend here - DO NOT REMOVE */
 ]
 
 export const routesPaths: ComponentPaths = routes
-    .filter(route => route.path !== "/:componentName" && route.path !== "*")
-    .map(route => ({
-        path:
-            route.path === "/"
-                ? "/"
-                : `/${toKebabCase(slugify(route.path.replaceAll("/", "")))}`,
-    }))
+	.filter(route => route.path !== "/:componentName" && route.path !== "*")
+	.map(route => ({
+		path:
+			route.path === "/"
+				? "/"
+				: `/${toKebabCase(slugify(route.path.replaceAll("/", "")))}`,
+	}))
 
 export const router = createBrowserRouter([...routes, ...demos])

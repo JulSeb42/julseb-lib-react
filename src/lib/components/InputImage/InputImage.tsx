@@ -12,7 +12,7 @@ import type { ILibInputImage } from "./types"
  * @extends HTMLInputElement
  * @param {Object} props - InputImage props.
  * @param {string} [props.data-testid] - Test id for testing purposes.
- *  * @param {Ref<HTMLInputElement>} [props.ref] - Ref forwarded to the input element.
+ * @param {Ref<HTMLInputElement>} [props.ref] - Ref forwarded to the input element.
  * @param {string} props.id - Input id.
  * @param {string} props.value - Image source value.
  * @param {string|number} [props.width=64] - Width of the image/input.

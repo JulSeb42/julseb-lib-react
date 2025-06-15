@@ -59,9 +59,6 @@ export const AvatarFunction: FC<IAvatarFunction> = ({
             }
         `)
 
-	// @ts-ignore
-	console.log(img?.fallbackBackgroundColor)
-
 	return (
 		<StyledAvatar
 			data-testid={hasBadge && testid ? `${testid}.Avatar` : testid}

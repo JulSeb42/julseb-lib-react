@@ -1,15 +1,15 @@
-import type { ReactNode, Ref } from "react"
+import type { ReactElement, ReactNode, Ref } from "react"
 import type {
-    LibButtonLinkBlank,
-    LibAllColors,
-    LibIcon,
-    LibButtonLinkBlankRequired,
-    LibSpacers,
-    LibToastStatus,
-    ReactChildren,
-    LibMessageType,
-    CssFontStyle,
-    LibColorsHover,
+	LibButtonLinkBlank,
+	LibAllColors,
+	LibIcon,
+	LibButtonLinkBlankRequired,
+	LibSpacers,
+	LibToastStatus,
+	ReactChildren,
+	LibMessageType,
+	CssFontStyle,
+	LibColorsHover,
 } from "./"
 
 /**
@@ -21,44 +21,44 @@ import type {
  * @prop ref?: ForwardedRef<T>
  */
 interface LibComponentItemBase<T> {
-    "data-testid"?: string
-    className?: string
-    id?: string
-    ref?: Ref<T>
+	"data-testid"?: string
+	className?: string
+	id?: string
+	ref?: Ref<T>
 }
 
 type ButtonGroupItemsBase = LibComponentItemBase<HTMLButtonElement> &
-    LibButtonLinkBlank & {
-        "aria-label"?: string
-        iconBaseUrl?: string
-    }
+	LibButtonLinkBlank & {
+		"aria-label"?: string
+		iconBaseUrl?: string
+	}
 
 type ButtonGroupItemText = ButtonGroupItemsBase & {
-    text: string
-    icons?: {
-        left?: LibIcon
-        right?: LibIcon
-        only?: never
-    }
-    iconSizes?: {
-        left?: number
-        right?: number
-        only?: never
-    }
+	text: string
+	icons?: {
+		left?: LibIcon
+		right?: LibIcon
+		only?: never
+	}
+	iconSizes?: {
+		left?: number
+		right?: number
+		only?: never
+	}
 }
 
 type ButtonGroupItemIcon = ButtonGroupItemsBase & {
-    text?: never
-    icons?: {
-        left?: never
-        right?: never
-        only?: LibIcon
-    }
-    iconSizes?: {
-        left?: never
-        right?: never
-        only?: number
-    }
+	text?: never
+	icons?: {
+		left?: never
+		right?: never
+		only?: LibIcon
+	}
+	iconSizes?: {
+		left?: never
+		right?: never
+		only?: number
+	}
 }
 
 /**
@@ -78,27 +78,27 @@ type ButtonGroupItemIcon = ButtonGroupItemsBase & {
 export type LibButtonGroupButtonItem = ButtonGroupItemText | ButtonGroupItemIcon
 
 interface LibButtonGroupToggleBase
-    extends LibComponentItemBase<HTMLInputElement> {
-    id: string
-    value: boolean
+	extends LibComponentItemBase<HTMLInputElement> {
+	id: string
+	value: boolean
 }
 
 interface ButtonGroupToggleWithIcon extends LibButtonGroupToggleBase {
-    icon: LibIcon
-    iconSize?: number
-    label?: string
-    tooltip?: string
-    showTooltip?: boolean
-    text?: never
+	icon: LibIcon
+	iconSize?: number
+	label?: string
+	tooltip?: string
+	showTooltip?: boolean
+	text?: never
 }
 
 interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
-    icon?: never
-    iconSize?: never
-    label?: never
-    tooltip?: never
-    showTooltip?: never
-    text: string
+	icon?: never
+	iconSize?: never
+	label?: never
+	tooltip?: never
+	showTooltip?: never
+	text: string
 }
 
 /**
@@ -116,27 +116,27 @@ interface ButtonGroupToggleWithText extends LibButtonGroupToggleBase {
  * @prop showTooltip?: boolean => only if text is not defined
  */
 export type LibButtonGroupToggle =
-    | ButtonGroupToggleWithIcon
-    | ButtonGroupToggleWithText
+	| ButtonGroupToggleWithIcon
+	| ButtonGroupToggleWithText
 
 // ! DO NOT EXPORT
 
 type ListGroupItemBadgeColor = {
-    backgroundColor?: LibAllColors
-    contentColor?: LibAllColors
-    size?: number
+	backgroundColor?: LibAllColors
+	contentColor?: LibAllColors
+	size?: number
 }
 
 type ListGroupItemBadgeIcon = ListGroupItemBadgeColor & {
-    icon?: LibIcon
-    iconSize?: number
-    number?: never
+	icon?: LibIcon
+	iconSize?: number
+	number?: never
 }
 
 type ListGroupItemBadgeNumber = ListGroupItemBadgeColor & {
-    icon?: never
-    iconSize?: never
-    number?: number
+	icon?: never
+	iconSize?: never
+	number?: number
 }
 
 /**
@@ -148,25 +148,25 @@ type ListGroupItemBadgeNumber = ListGroupItemBadgeColor & {
  * @prop number?: number => only if icon is not defined
  */
 type ListGroupItemBadgeExtended =
-    | ListGroupItemBadgeIcon
-    | ListGroupItemBadgeNumber
+	| ListGroupItemBadgeIcon
+	| ListGroupItemBadgeNumber
 
 // ! END DO NOT EXPORT
 
 type ListGroupItemBase = LibButtonLinkBlank &
-    LibComponentItemBase<HTMLDivElement> & {
-        text: string
-        body?: string
-    }
+	LibComponentItemBase<HTMLDivElement> & {
+		text: string
+		body?: string
+	}
 
 type ListGroupItemWithBadge = ListGroupItemBase & {
-    badge?: boolean | ListGroupItemBadgeExtended
-    date?: never
+	badge?: boolean | ListGroupItemBadgeExtended
+	date?: never
 }
 
 type ListGroupItemWithDate = ListGroupItemBase & {
-    badge?: never
-    date?: string | Date
+	badge?: never
+	date?: string | Date
 }
 
 /**
@@ -194,9 +194,9 @@ export type LibListGroupItem = ListGroupItemWithBadge | ListGroupItemWithDate
  * @prop content?: ReactChildren
  */
 export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
-    title: string
-    content?: ReactChildren
-    defaultOpen?: boolean
+	title: string
+	content?: ReactChildren
+	defaultOpen?: boolean
 }
 
 /**
@@ -212,12 +212,12 @@ export interface LibAccordionItem extends LibComponentItemBase<HTMLDivElement> {
  * @prop gap?: LibSpacers
  */
 export type LibDropdownItem = LibButtonLinkBlankRequired &
-    LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
-        text: string
-        icon?: LibIcon
-        iconSize?: number
-        gap?: LibSpacers
-    }
+	LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
+		text: string
+		icon?: LibIcon
+		iconSize?: number
+		gap?: LibSpacers
+	}
 
 /**
  * @description Props for Toaster component items: https://documentation-components-react.vercel.app/components/toast
@@ -235,21 +235,21 @@ export type LibDropdownItem = LibButtonLinkBlankRequired &
  * @prop timerBackgroundColor?: Any color from the library
  */
 export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
-    body?: string | ReactChildren
-    duration?: number
-    icons?: {
-        left?: LibIcon
-        close?: LibIcon
-    }
-    iconSizes?: {
-        left?: number
-        close?: number
-    }
-    iconLeftColor?: LibAllColors
-    iconsBaseUrl?: string
-    labelClose?: string
-    withTimer?: boolean
-    timerBackgroundColor?: LibAllColors
+	body?: string | ReactChildren
+	duration?: number
+	icons?: {
+		left?: LibIcon
+		close?: LibIcon
+	}
+	iconSizes?: {
+		left?: number
+		close?: number
+	}
+	iconLeftColor?: LibAllColors
+	iconsBaseUrl?: string
+	labelClose?: string
+	withTimer?: boolean
+	timerBackgroundColor?: LibAllColors
 }
 
 /**
@@ -278,10 +278,10 @@ export interface LibToastOptions extends LibComponentItemBase<HTMLDivElement> {
  * @prop timerBackgroundColor?: Any color from the library
  */
 export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
-    title: string
-    id?: string
-    status?: LibToastStatus
-    options?: LibToastOptions
+	title: string
+	id?: string
+	status?: LibToastStatus
+	options?: LibToastOptions
 }
 
 /**
@@ -299,9 +299,9 @@ export interface LibToast extends LibComponentItemBase<HTMLDivElement> {
  * @prop blank?: boolean => only if to or href are defined
  */
 export type LibStep = LibButtonLinkBlank &
-    LibComponentItemBase<HTMLDivElement> & {
-        text: string
-    }
+	LibComponentItemBase<HTMLDivElement> & {
+		text: string
+	}
 
 /**
  * @description Props for Breadcrumbs component items: https://documentation-components-react.vercel.app/components/breadcrumbs
@@ -313,9 +313,9 @@ export type LibStep = LibButtonLinkBlank &
  * @prop text: string
  */
 export type LibBreadcrumbItem = LibButtonLinkBlank &
-    LibComponentItemBase<HTMLAnchorElement & HTMLSpanElement> & {
-        text: string | JSX.Element
-    }
+	LibComponentItemBase<HTMLAnchorElement & HTMLSpanElement> & {
+		text: string | ReactElement
+	}
 
 /**
  * @description Props for Tabs component items: https://documentation-components-react.vercel.app/components/tabs
@@ -327,9 +327,9 @@ export type LibBreadcrumbItem = LibButtonLinkBlank &
  * @prop content: ReactNode
  */
 export interface LibTabItem
-    extends LibComponentItemBase<HTMLDivElement & HTMLButtonElement> {
-    title: string
-    content: ReactNode
+	extends LibComponentItemBase<HTMLDivElement & HTMLButtonElement> {
+	title: string
+	content: ReactNode
 }
 
 /**
@@ -344,10 +344,10 @@ export interface LibTabItem
  * @prop time?: string
  */
 export interface LibMessage extends LibComponentItemBase<HTMLDivElement> {
-    type: LibMessageType
-    text: string
-    date?: Date | string
-    time?: string
+	type: LibMessageType
+	text: string
+	date?: Date | string
+	time?: string
 }
 
 /**
@@ -371,23 +371,23 @@ export interface LibMessage extends LibComponentItemBase<HTMLDivElement> {
  * @prop editorPreview?: boolean
  */
 export interface LibMarkdownEditorOptions {
-    titles?: boolean
-    bold?: boolean
-    italic?: boolean
-    strikethrough?: boolean
-    underline?: boolean
-    ul?: boolean
-    ol?: boolean
-    link?: boolean
-    quote?: boolean
-    hr?: boolean
-    code?: boolean
-    codeBlock?: boolean
-    comment?: boolean
-    image?: boolean
-    editorCode?: boolean
-    editorLive?: boolean
-    editorPreview?: boolean
+	titles?: boolean
+	bold?: boolean
+	italic?: boolean
+	strikethrough?: boolean
+	underline?: boolean
+	ul?: boolean
+	ol?: boolean
+	link?: boolean
+	quote?: boolean
+	hr?: boolean
+	code?: boolean
+	codeBlock?: boolean
+	comment?: boolean
+	image?: boolean
+	editorCode?: boolean
+	editorLive?: boolean
+	editorPreview?: boolean
 }
 
 /**
@@ -401,10 +401,10 @@ export interface LibMarkdownEditorOptions {
  * @prop end?: boolean => prop from react-router, to render the active class only if path is not further
  */
 export type LibHeaderLink = LibButtonLinkBlankRequired &
-    LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
-        text: ReactChildren
-        end?: boolean
-    }
+	LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
+		text: ReactChildren
+		end?: boolean
+	}
 
 /**
  * @description Props for Items in IconMenu component items: https://documentation-components-react.vercel.app/icon-menu
@@ -418,11 +418,11 @@ export type LibHeaderLink = LibButtonLinkBlankRequired &
  * @prop iconSize?: number
  */
 export type LibIconMenuItem = LibButtonLinkBlankRequired &
-    LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
-        label: string
-        icon: LibIcon
-        iconSize?: number
-    }
+	LibComponentItemBase<HTMLButtonElement & HTMLAnchorElement> & {
+		label: string
+		icon: LibIcon
+		iconSize?: number
+	}
 
 /**
  * @description Props for links in Footer component items: https://documentation-components-react.vercel.app/components/footer
@@ -434,36 +434,36 @@ export type LibIconMenuItem = LibButtonLinkBlankRequired &
  * @prop text: ReactChildren
  */
 export type LibFooterLink = LibButtonLinkBlankRequired &
-    LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
-        text: ReactChildren
-    }
+	LibComponentItemBase<HTMLAnchorElement & HTMLButtonElement> & {
+		text: ReactChildren
+	}
 
 type LibDragListItemBase = LibComponentItemBase<HTMLDivElement> & {
-    id: string
+	id: string
 }
 
 interface DragListItemWithContentAndBadge extends LibDragListItemBase {
-    title: string
-    body?: string
-    badge?: boolean | ListGroupItemBadgeExtended
-    date?: never
-    element?: never
+	title: string
+	body?: string
+	badge?: boolean | ListGroupItemBadgeExtended
+	date?: never
+	element?: never
 }
 
 interface DragListItemWithContentAndDate extends LibDragListItemBase {
-    title: string
-    body?: string
-    badge?: never
-    date?: string | Date
-    element?: never
+	title: string
+	body?: string
+	badge?: never
+	date?: string | Date
+	element?: never
 }
 
 interface DragListItemWithElement extends LibDragListItemBase {
-    title?: never
-    body?: never
-    badge?: never
-    date?: never
-    element?: JSX.Element
+	title?: never
+	body?: never
+	badge?: never
+	date?: never
+	element?: ReactElement
 }
 
 /**
@@ -479,33 +479,33 @@ interface DragListItemWithElement extends LibDragListItemBase {
  * @prop element?: JSX.ELement => only if title and other props are not defined
  */
 export type LibDragListItem =
-    | DragListItemWithContentAndBadge
-    | DragListItemWithContentAndDate
-    | DragListItemWithElement
+	| DragListItemWithContentAndBadge
+	| DragListItemWithContentAndDate
+	| DragListItemWithElement
 
 interface HelperBottomWithText {
-    text: string
-    textColor?: LibAllColors
-    fontStyle?: CssFontStyle
-    icon?: LibIcon
-    iconColor?: LibAllColors
-    iconSize?: number
-    element?: never
-    linkColor?: LibColorsHover
+	text: string
+	textColor?: LibAllColors
+	fontStyle?: CssFontStyle
+	icon?: LibIcon
+	iconColor?: LibAllColors
+	iconSize?: number
+	element?: never
+	linkColor?: LibColorsHover
 }
 
 interface HelperBottomWithElement {
-    text?: never
-    textColor?: never
-    fontStyle?: never
-    icon?: never
-    iconColor?: never
-    iconSize?: never
-    element: ReactChildren
-    linkColor?: LibColorsHover
+	text?: never
+	textColor?: never
+	fontStyle?: never
+	icon?: never
+	iconColor?: never
+	iconSize?: never
+	element: ReactChildren
+	linkColor?: LibColorsHover
 }
 
 export type LibHelperBottom =
-    | string
-    | HelperBottomWithText
-    | HelperBottomWithElement
+	| string
+	| HelperBottomWithText
+	| HelperBottomWithElement

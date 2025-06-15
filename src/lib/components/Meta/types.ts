@@ -6,6 +6,7 @@ export interface ILibMeta {
 	description?: string
 	keywords?: Array<string>
 	author?: string
+	publisher?: string
 	type?: string
 	cover?: string
 	siteName?: string

@@ -46,7 +46,7 @@ export const Avatar: FC<ILibAvatar> = ({
 	letter,
 	icon,
 	iconSize = roundIconSize(size),
-	backgroundColor = "danger",
+	backgroundColor = "primary",
 	contentColor = backgroundColor === "white"
 		? "primary"
 		: backgroundColor === "black"

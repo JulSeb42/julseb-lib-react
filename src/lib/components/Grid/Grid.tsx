@@ -32,40 +32,40 @@ import type { ILibGrid } from "./types"
  * </Grid>
  */
 export const Grid: FC<ILibGrid> = ({
-    "data-testid": testid,
-    as,
-    ref,
-    children,
-    inline,
-    col = 1,
-    gap = "0px",
-    columnGap = "0px",
-    rowGap = "0px",
-    justifyItems = "stretch",
-    alignItems = "stretch",
-    justifyContent = "auto",
-    alignContent = "normal",
-    padding = "0px",
-    ...rest
+	"data-testid": testid,
+	as,
+	ref,
+	children,
+	inline,
+	col = 1,
+	gap,
+	columnGap,
+	rowGap,
+	justifyItems = "stretch",
+	alignItems = "stretch",
+	justifyContent = "auto",
+	alignContent = "normal",
+	padding = "0px",
+	...rest
 }) => {
-    return (
-        <StyledGrid
-            data-testid={testid}
-            ref={ref}
-            as={as}
-            $inline={inline}
-            $col={col}
-            $gap={gap}
-            $columnGap={columnGap}
-            $rowGap={rowGap}
-            $justifyItems={justifyItems}
-            $alignItems={alignItems}
-            $justifyContent={justifyContent}
-            $alignContent={alignContent}
-            $padding={padding}
-            {...rest}
-        >
-            {children}
-        </StyledGrid>
-    )
+	return (
+		<StyledGrid
+			data-testid={testid}
+			ref={ref}
+			as={as}
+			$inline={inline}
+			$col={col}
+			$gap={gap}
+			$columnGap={columnGap}
+			$rowGap={rowGap}
+			$justifyItems={justifyItems}
+			$alignItems={alignItems}
+			$justifyContent={justifyContent}
+			$alignContent={alignContent}
+			$padding={padding}
+			{...rest}
+		>
+			{children}
+		</StyledGrid>
+	)
 }
