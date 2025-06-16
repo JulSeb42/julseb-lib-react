@@ -19,7 +19,7 @@ export const Nav = () => {
 	useKeyPress(["Command", "KeyK"], () => el?.current?.focus())
 
 	return (
-		<nav className="fixed flex flex-col items-stretch gap-2 bg-blue-500 p-4 w-[250px] h-[100vh] overflow-y-scroll no-scrollbar">
+		<nav className="fixed flex flex-col items-stretch gap-2 bg-blue-800 p-4 w-[250px] h-[100vh] overflow-y-scroll no-scrollbar">
 			<input
 				type="text"
 				placeholder="Search component"

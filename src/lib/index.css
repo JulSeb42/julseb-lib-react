@@ -1,39 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import "tailwindcss";
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
-/*====================== Common styles ======================*/
-
-html,
-body {
-	font-family: var(--font-family-body);
-	width: 100%;
-	min-height: 100vh;
-	background-color: var(--color-background);
-	color: var(--color-font);
-
-	&.dark {
-		--color-background: var(--color-black);
-		--color-font: var(--color-white);
-	}
-}
-
-a,
-button {
-	cursor: pointer;
-	transition: all 200ms ease;
-}
-
 @theme {
-	--font-family-body: var(--font-sans);
+	--font-lato: "Lato", sans-serif;
+	--font-family-body: var(--font-lato);
 	--font-family-code: monospace;
+
+	--font-weight-thin: 100;
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
 
 	--color-background: var(--color-white);
 	--color-font: var(--color-black);
 
-	--overlay-black-50: rgba(0, 0, 0, 0.5);
-	--overlay-black-80: rgba(0, 0, 0, 0.8);
-	--overlay-white-50: rgba(255, 255, 255, 0.5);
-	--overlay-white-80: rgba(255, 255, 255, 0.8);
+	--color-overlay-black-50: rgba(0, 0, 0, 0.5);
+	--color-overlay-black-80: rgba(0, 0, 0, 0.8);
+	--color-overlay-white-50: rgba(255, 255, 255, 0.5);
+	--color-overlay-white-80: rgba(255, 255, 255, 0.8);
 	--overlay-gradient-black: linear-gradient(
 		180deg,
 		rgba(255, 255, 255, 0) 0%,
@@ -73,6 +59,28 @@ button {
 	--spacer-lg: 24px;
 	--spacer-xl: 32px;
 	--spacer-2xl: 48px;
+}
+
+/*====================== Common styles ======================*/
+
+html,
+body {
+	font-family: var(--font-family-body);
+	width: 100%;
+	min-height: 100vh;
+	background-color: var(--color-background);
+	color: var(--color-font);
+
+	&.dark {
+		--color-background: var(--color-black);
+		--color-font: var(--color-white);
+	}
+}
+
+a,
+button {
+	cursor: pointer;
+	transition: all 200ms ease;
 }
 
 @layer utilities {
@@ -212,28 +220,88 @@ button {
 			animation: shine 2000ms ease-in-out infinite;
 		}
 	}
-}
 
-.overlay-black-50 {
-	background: var(--overlay-black-50);
-}
+	.lato-thin {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-thin);
+		font-style: normal;
+	}
 
-.overlay-black-80 {
-	background: var(--overlay-black-80);
-}
+	.lato-light {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-light);
+		font-style: normal;
+	}
 
-.overlay-white-50 {
-	background: var(--overlay-white-50);
-}
+	.lato-regular {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-normal);
+		font-style: normal;
+	}
 
-.overlay-white-80 {
-	background: var(--overlay-white-80);
-}
+	.lato-bold {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-bold);
+		font-style: normal;
+	}
 
-.overlay-gradient-black {
-	background: var(--overlay-gradient-black);
-}
+	.lato-black {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-black);
+		font-style: normal;
+	}
 
-.overlay-gradient-white {
-	background: var(--overlay-gradient-white);
+	.lato-thin-italic {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-thin);
+		font-style: italic;
+	}
+
+	.lato-light-italic {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-light);
+		font-style: italic;
+	}
+
+	.lato-regular-italic {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-normal);
+		font-style: italic;
+	}
+
+	.lato-bold-italic {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-bold);
+		font-style: italic;
+	}
+
+	.lato-black-italic {
+		font-family: var(--font-family-body);
+		font-weight: var(--font-weight-black);
+		font-style: italic;
+	}
+
+	.overlay-black-50 {
+		background: var(--color-overlay-black-50);
+	}
+
+	.overlay-black-80 {
+		background: var(--color-overlay-black-80);
+	}
+
+	.overlay-white-50 {
+		background: var(--color-overlay-white-50);
+	}
+
+	.overlay-white-80 {
+		background: var(--color-overlay-white-80);
+	}
+
+	.overlay-gradient-black {
+		background: var(--overlay-gradient-black);
+	}
+
+	.overlay-gradient-white {
+		background: var(--overlay-gradient-white);
+	}
 }

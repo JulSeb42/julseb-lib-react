@@ -1,5 +1,6 @@
 import classNameX from "clsx"
-import { twMerge, type ClassNameValue } from "tailwind-merge"
+import type { ClassNameValue } from "tailwind-merge"
+import { tw } from "./tools"
 
 export const clsx = (...classes: Array<ClassNameValue>) =>
-	classNameX(twMerge(classes))
+	classNameX(tw.def(classes))

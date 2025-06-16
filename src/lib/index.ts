@@ -73,4 +73,5 @@ export * from "./components/Highlight"
 export * from "./components/Linkify"
 export * from "./components/Hr"
 export * from "./components/Skeleton"
+export * from "./components/Tooltip"
 /* Prepend here - DO NOT REMOVE */

@@ -959,6 +959,15 @@ export const designTokens = {
 	 */
 	libSkeletonAnimations: { pulse: "pulse", shine: "shine", none: "none" },
 
+	libTooltipPositions: {
+		top: "top",
+		bottom: "bottom",
+		left: "left",
+		right: "right",
+	},
+
+	libTooltipTriggers: { hover: "hover", click: "click" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

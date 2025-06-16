@@ -7,9 +7,7 @@ const config: Config = {
 			fontFamily: {
 				sans: ["var(--lato)"],
 			},
-			animation: {
-				
-			},
+			animation: {},
 			keyframes: {},
 		},
 	},

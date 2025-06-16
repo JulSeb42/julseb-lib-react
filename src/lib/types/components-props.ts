@@ -10,4 +10,5 @@ export * from "../components/Highlight/types"
 export * from "../components/Linkify/types"
 export * from "../components/Hr/types"
 export * from "../components/Skeleton/types"
+export * from "../components/Tooltip/types"
 /* Prepend here - DO NOT REMOVE */

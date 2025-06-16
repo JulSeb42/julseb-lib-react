@@ -1,8 +1,10 @@
 import type {
 	LibAllColors,
+	LibAllColorsAndOverlays,
 	LibColors,
 	LibColorsHover,
 	LibColorsShort,
+	LibOverlays,
 } from "../types"
 
 export const genBgColor: Record<LibColors, string> = {
@@ -374,7 +376,24 @@ export const genBgColorHoverActive: Record<LibColorsHover, string> = {
 	white: "active:bg-gray-100",
 }
 
+export const genBgOverlay: Record<LibOverlays, string> = {
+	"black-50": "bg-overlay-black-50",
+	"black-80": "bg-overlay-black-80",
+	"white-50": "bg-overlay-white-50",
+	"white-80": "bg-overlay-white-80",
+	"gradient-black": "bg-gradient-black",
+	"gradient-white": "bg-gradient-white",
+}
+
 export const genBgAllColors: Record<LibAllColors, string> = {
 	...genBgColor,
 	...genBgColorShort,
+}
+
+export const genBgAllColorsAndOverlays: Record<
+	LibAllColorsAndOverlays,
+	string
+> = {
+	...genBgAllColors,
+	...genBgOverlay,
 }

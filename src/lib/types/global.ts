@@ -78,7 +78,7 @@ export type LibOverlays = keyof typeof designTokens.libOverlays
  * overlay="overlay-dark"
  */
 export type LibAllColorsAndOverlays =
-	| keyof typeof designTokens.libColors
+	| LibAllColors
 	| keyof typeof designTokens.libOverlays
 /**
  * @description All font family tokens available in the library.
@@ -277,6 +277,24 @@ export type LibMaxWidth = keyof typeof designTokens.libMaxWidths
  */
 export type LibSkeletonAnimation =
 	keyof typeof designTokens.libSkeletonAnimations
+/**
+ * @description All tooltip position tokens available in the library.
+ * @type {"top" | "bottom" | "left" | "right"}
+ * @example
+ * // Usage
+ * tooltipPosition="top"
+ * tooltipPosition="right"
+ */
+export type LibTooltipPosition = keyof typeof designTokens.libTooltipPositions
+/**
+ * @description All tooltip trigger tokens available in the library.
+ * @type {"hover" | "click"}
+ * @example
+ * // Usage
+ * tooltipTrigger="hover"
+ * tooltipTrigger="click"
+ */
+export type LibTooltipTrigger = keyof typeof designTokens.libTooltipTriggers
 
 /**
  * @description Props common to nearly all components.

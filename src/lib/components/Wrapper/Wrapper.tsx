@@ -41,11 +41,11 @@ export const Wrapper: FC<ILibWrapper> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				className,
 				"flex sm:flex-row flex-col justify-stretch sm:justify-center-safe gap-6 px-4 md:px-6 lg:px-12 w-full",
 				(genBgAllColors as any)[backgroundColor],
 				genMinHeight[minHeight],
 				genGap[gap],
+				className,
 			)}
 			{...rest}
 		>
