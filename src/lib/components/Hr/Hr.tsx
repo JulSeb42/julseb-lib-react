@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { clsx, genBgAllColors, genMaxWidth } from "../../utils"
 import type { ILibHr } from "./types"
 

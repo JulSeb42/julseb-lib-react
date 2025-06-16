@@ -1,5 +1,4 @@
 import { useCallback, useRef, useState, type FC, type RefObject } from "react"
-import {} from "@julseb-lib/utils"
 import { clsx, genBgAllColorsAndOverlays, genTextAllColor } from "../../utils"
 import type { ILibTooltip } from "./types"
 import { useClickOutside, useTouchScreen } from "../../hooks"
@@ -10,11 +9,29 @@ import type {
 } from "../../types"
 
 /**
- * @description Returns a Tooltip component
+ * Tooltip component for displaying contextual information on hover or click.
+ *
+ * @component
  * @link https://documentation-components-react.vercel.app/components/tooltip
  * @extends HTMLDivElement
- * @prop element?: ElementType
- * @prop ref?: RefObject<HTMLDivElement>
+ * @param {object} props - Component props.
+ * @param {string} [props.className] - Additional class names to apply.
+ * @param {ElementType} [props.element="div"] - The HTML element or React component to render as the tooltip container.
+ * @param {React.RefObject<HTMLDivElement>} [props.ref] - Ref for the tooltip container.
+ * @param {React.ReactNode} props.children - The element that triggers the tooltip.
+ * @param {string} props.tooltip - The tooltip text to display.
+ * @param {"top" | "bottom" | "left" | "right"} [props.position="top"] - Tooltip position.
+ * @param {boolean} [props.hideArrow] - If true, hides the tooltip arrow.
+ * @param {"hover" | "click"} [props.trigger="hover"] - Tooltip trigger event.
+ * @param {string} [props.backgroundColor="black-80"] - Tooltip background color.
+ * @param {string} [props.textColor="white"] - Tooltip text color.
+ * @param {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px"} [props.offset="xs"] - Tooltip offset.
+ * @param {string} [props.tooltipClasses] - Additional class names for the tooltip.
+ * @param {function} [props.onClick] - Click event handler.
+ * @param {function} [props.onMouseEnter] - Mouse enter event handler.
+ * @param {function} [props.onMouseLeave] - Mouse leave event handler.
+ * @param {object} [props.rest] - Additional props spread to the tooltip container.
+ * @returns {JSX.Element} The rendered Tooltip component.
  */
 export const Tooltip: FC<ILibTooltip> = ({
 	className,
