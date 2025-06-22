@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { Main, Text } from "../../../"
-
 import type { ILibMain } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -37,6 +36,32 @@ export const mainPreview: ComponentPreview<ILibMain> = {
 					))}
 				</div>
 			),
+		},
+	],
+	props: [
+		{
+			name: "gap",
+			type: "string",
+			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+			defaultValue: null,
+			description: "Spacing between children elements.",
+			isRequired: false,
+		},
+		{
+			name: "backgroundColor",
+			type: "string",
+			possibleValues: "Any color from the library",
+			defaultValue: null,
+			description: "Background color of the main container.",
+			isRequired: false,
+		},
+		{
+			name: "size",
+			type: "string",
+			possibleValues: ["default", "large", "form"],
+			defaultValue: "default",
+			description: "Size of the main container.",
+			isRequired: false,
 		},
 	],
 }

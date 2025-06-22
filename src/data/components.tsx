@@ -1,7 +1,6 @@
 import type { ForwardRefExoticComponent, RefAttributes } from "react"
 import { toKebabCase } from "@julseb-lib/utils"
 import type { ComponentPaths } from "../routes"
-
 import { colorsPreview } from "./previews/styles/Colors.preview"
 import { overlaysPreview } from "./previews/styles/Overlays.preview"
 import { textPreview } from "../lib/components/Text/__preview__/Text.preview"
@@ -21,6 +20,7 @@ import { linkifyPreview } from "../lib/components/Linkify/__preview__/Linkify.pr
 import { tooltipPreview } from "../lib/components/Tooltip/__preview__/Tooltip.preview"
 import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 import { skeletonPreview } from "../lib/components/Skeleton/__preview__/Skeleton.preview"
+import { imagePreview } from "../lib/components/Image/__preview__/Image.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -29,6 +29,34 @@ export type PreviewProp<T> = {
 
 export type PreviewDemo = {
 	demo: ReactElement
+}
+
+type Prop = {
+	name: string
+	type:
+		| ""
+		| "string"
+		| "Array<string>"
+		| "number"
+		| "boolean"
+		| "string | number"
+		| "string | Object"
+		| "boolean | number | string | Object"
+		| "number | string | Object"
+		| "Object"
+		| "boolean | Object"
+		| "Array of objects"
+		| "function"
+		| "string | JSX.Element"
+		| "ReactNode"
+	possibleValues:
+		| Array<string>
+		| "Any color from the library"
+		| "Any color or overlay from the library"
+		| null
+	defaultValue: string | null
+	description: string
+	isRequired: boolean
 }
 
 export interface ComponentPreview<T> {
@@ -52,6 +80,10 @@ export interface ComponentPreview<T> {
 			previewTitle?: string
 		}
 	> | null
+	propsTitle?: string
+	props: Array<Prop>
+	propsSecondTitle?: string
+	propsSecond?: Array<Prop>
 }
 
 export const previews: Array<ComponentPreview<any>> = [
@@ -74,6 +106,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	tooltipPreview,
 	hrPreview,
 	skeletonPreview,
+	imagePreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

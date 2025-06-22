@@ -74,4 +74,5 @@ export * from "./components/Linkify"
 export * from "./components/Hr"
 export * from "./components/Skeleton"
 export * from "./components/Tooltip"
+export * from "./components/Image"
 /* Prepend here - DO NOT REMOVE */

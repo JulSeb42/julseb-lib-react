@@ -17,4 +17,18 @@ export const {{ camelCase name }}Preview: ComponentPreview<ILib{{ pascalCase nam
         { previewTitle: "Default", props: {  } },
         { previewTitle: "Default", demo: <{{ pascalCase name }} /> },
     ],
+	props: [
+		/*
+		Generate the documentation like this:
+		{
+			name: "<name of prop>",
+			type: '<type of prop, can be: "" | "string" | "Array<string>" | "number" | "boolean" | "string | number" | "string | Object" | "boolean | number | string | Object" | "string | number | Object" | "Object" | "boolean | Object" | "function" | "CSSProperties" | "string | JSX.Element" | "ReactNode">',
+			possibleValues: ["<possible value of prop>"],
+			defaultValue: "<default value or null>",
+			description: "<description of the prop>",
+			isRequired: <boolean telling if the prop is required or not>,
+		},
+		ignore ref, children, rest, className, element
+		*/
+	],
 }

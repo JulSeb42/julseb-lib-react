@@ -7,11 +7,11 @@ export const linkifyPreview: ComponentPreview<ILibLinkify> = {
 	name: "Linkify",
 	component: Linkify,
 	category: "components",
-	import: "Linkify", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibLinkify", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Linkify",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibLinkify",
+	additionalTypeImports: null,
 	extends: ["HTMLHeadingElement"],
 	previews: [
 		{
@@ -19,6 +19,16 @@ export const linkifyPreview: ComponentPreview<ILibLinkify> = {
 				children: "Hello world https://julien-sebag.com/ foo baz",
 				blank: true,
 			},
+		},
+	],
+	props: [
+		{
+			name: "blank",
+			type: "boolean",
+			possibleValues: [],
+			defaultValue: null,
+			description: "If true, links open in a new tab.",
+			isRequired: false,
 		},
 	],
 }

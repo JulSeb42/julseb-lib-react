@@ -1,5 +1,5 @@
 import { createTools, type CreateTailwindest } from "tailwindest"
-import type { Tailwind, TailwindNestGroups } from "../../../tailwind"
+import type { Tailwind, TailwindNestGroups } from "../types"
 import { twMerge } from "tailwind-merge"
 
 type Tailwindest = CreateTailwindest<{

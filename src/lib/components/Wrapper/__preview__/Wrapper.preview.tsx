@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { Wrapper, Text } from "../../../"
-
 import type { ILibWrapper } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -38,6 +37,42 @@ export const wrapperPreview: ComponentPreview<ILibWrapper> = {
 					</Text>
 				</div>
 			),
+		},
+	],
+	props: [
+		{
+			name: "gap",
+			type: "string",
+			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+			defaultValue: "lg",
+			description: "Spacing between children elements.",
+			isRequired: false,
+		},
+		{
+			name: "backgroundColor",
+			type: "string",
+			possibleValues: ["Any color from the library"],
+			defaultValue: "background",
+			description: "Background color of the wrapper.",
+			isRequired: false,
+		},
+		{
+			name: "minHeight",
+			type: "string",
+			possibleValues: [
+				"0",
+				"full",
+				"screen",
+				"min",
+				"max",
+				"fit",
+				"dvh",
+				"lvh",
+				"svh",
+			],
+			defaultValue: "svh",
+			description: "Minimum height of the wrapper.",
+			isRequired: false,
 		},
 	],
 }

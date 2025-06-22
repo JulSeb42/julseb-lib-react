@@ -22,4 +22,14 @@ export const sectionPreview: ComponentPreview<ILibSection> = {
 			</Section>
 		)),
 	],
+	props: [
+		{
+			name: "gap",
+			type: "string",
+			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+			defaultValue: null,
+			description: "Spacing between children elements.",
+			isRequired: false,
+		},
+	],
 }

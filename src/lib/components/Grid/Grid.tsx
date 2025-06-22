@@ -22,25 +22,25 @@ import type { ILibGrid } from "./types"
  *   <div>Item 3</div>
  * </Grid>
  *
- * @param {object} props - Component props.
- * @param {string} [props.className] - Additional class names to apply.
- * @param {ElementType} [props.element="div"] - The HTML element or React component to render as the grid container.
- * @param {RefObject<HTMLDivElement>} [props.ref] - Ref for the grid container.
- * @param {ReactNode} props.children - Grid content.
- * @param {boolean} [props.inline] - Use inline-grid instead of grid.
- * @param {1|2|3|4|5|6|7|8|9|10|11|12} [props.cols=1] - Number of columns (1-12).
- * @param {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.gap="0px"] - Gap between rows and columns (can use spacer tokens).
- * @param {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.rowGap="0px"] - Row gap (can use spacer tokens).
- * @param {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.colGap="0px"] - Column gap (can use spacer tokens).
- * @param {"start"|"end"|"end-safe"|"center"|"center-sage"|"space-between"|"space-around"|"space-evenly"|"stretch"|"baseline"|"normal"} [props.justifyContent="start"] - Justify content property.
- * @param {"start"|"end"|"end-safe"|"center"|"center-safe"|"stretch"|"normal"} [props.justifyItems="stretch"] - Justify items property.
- * @param {"normal"|"center"|"start"|"end"|"space-between"|"space-around"|"space-evenly"|"baseline"|"stretch"} [props.alignContent="start"] - Align content property.
- * @param {"start"|"end"|"end-safe"|"center"|"center-safe"|"baseline"|"baseline-start"|"stretch"} [props.alignItems="stretch"] - Align items property.
- * @param {object} [props.rest] - Additional props spread to the container.
+ * @prop {object} props - Component props.
+ * @prop {string} [props.className] - Additional class names to apply.
+ * @prop {ElementType} [props.element="div"] - The HTML element or React component to render as the grid container.
+ * @prop {RefObject<HTMLDivElement>} [props.ref] - Ref for the grid container.
+ * @prop {ReactNode} props.children - Grid content.
+ * @prop {boolean} [props.inline] - Use inline-grid instead of grid.
+ * @prop {1|2|3|4|5|6|7|8|9|10|11|12} [props.cols=1] - Number of columns (1-12).
+ * @prop {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.gap="0px"] - Gap between rows and columns (can use spacer tokens).
+ * @prop {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.rowGap="0px"] - Row gap (can use spacer tokens).
+ * @prop {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.colGap="0px"] - Column gap (can use spacer tokens).
+ * @prop {"start"|"end"|"end-safe"|"center"|"center-sage"|"space-between"|"space-around"|"space-evenly"|"stretch"|"baseline"|"normal"} [props.justifyContent="start"] - Justify content property.
+ * @prop {"start"|"end"|"end-safe"|"center"|"center-safe"|"stretch"|"normal"} [props.justifyItems="stretch"] - Justify items property.
+ * @prop {"normal"|"center"|"start"|"end"|"space-between"|"space-around"|"space-evenly"|"baseline"|"stretch"} [props.alignContent="start"] - Align content property.
+ * @prop {"start"|"end"|"end-safe"|"center"|"center-safe"|"baseline"|"baseline-start"|"stretch"} [props.alignItems="stretch"] - Align items property.
+ * @prop {object} [props.rest] - Additional props spread to the container.
  *
  * @returns {JSX.Element} The rendered grid container.
  *
- * @see https://documentation-components-react.vercel.app/layouts/grid
+ * @see https://doc-julseb-lib-react.vercel.app/layouts/grid
  */
 export const Grid: FC<ILibGrid> = ({
 	className,

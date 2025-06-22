@@ -1,11 +1,9 @@
 import type { ReactElement } from "react"
 import { createBrowserRouter } from "react-router-dom"
 import { slugify, toKebabCase } from "@julseb-lib/utils"
-
 import { Homepage } from "../pages/Homepage"
 import { NotFound } from "../pages/NotFound"
 import { ComponentPage } from "../pages/Component"
-
 import { MainDefaultDemo } from "../pages/demos/MainDefaultDemo"
 import { AsideLeftDemo } from "../pages/demos/AsideDefaultDemo"
 import { MainLargeDemo } from "../pages/demos/MainLargeDemo"

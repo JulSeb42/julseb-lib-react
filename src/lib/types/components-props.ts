@@ -11,4 +11,5 @@ export * from "../components/Linkify/types"
 export * from "../components/Hr/types"
 export * from "../components/Skeleton/types"
 export * from "../components/Tooltip/types"
+export * from "../components/Image/types"
 /* Prepend here - DO NOT REMOVE */

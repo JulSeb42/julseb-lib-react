@@ -6,23 +6,23 @@ let currentLanguage = detectLanguage() || "en"
 
 /**
  * @description Hook to detect the language, and return translated content
- * @link https://documentation-components-react.vercel.app/helpers/hooks#useTranslation
+ * @link https://doc-julseb-lib-react.vercel.app/helpers/hooks#useTranslation
  * @argument translations: [language: string]: { [key: string]: string }
  */
 export const useTranslation = (translations: TranslateLang) => {
-    const [language, setLanguage] = useState<string>(currentLanguage)
-    const languages = Object.keys(translations)
+	const [language, setLanguage] = useState<string>(currentLanguage)
+	const languages = Object.keys(translations)
 
-    useEffect(() => {
-        currentLanguage = language || "en"
-    }, [language])
+	useEffect(() => {
+		currentLanguage = language || "en"
+	}, [language])
 
-    const translate = (key: string) => translations?.[language]?.[key]
+	const translate = (key: string) => translations?.[language]?.[key]
 
-    return {
-        translate,
-        setLanguage,
-        language,
-        languages,
-    }
+	return {
+		translate,
+		setLanguage,
+		language,
+		languages,
+	}
 }

@@ -8,19 +8,28 @@ const URL_REGEX =
 	/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm
 
 /**
- * Linkify component that automatically detects URLs in text and wraps them in anchor tags.
+ * Linkify component that automatically detects URLs in the provided text and wraps them in anchor tags.
  *
  * @component
- * @link https://documentation-components-react.vercel.app/components/linkify
+ *
+ * @example
+ * <Linkify>
+ *   Visit https://github.com for more information.
+ * </Linkify>
+ *
  * @extends ILibText
- * @param {object} props - Component props.
- * @param {string} [props.className] - Additional class names to apply.
- * @param {ElementType} [props.element=Text] - The HTML element or React component to render as the container.
- * @param {RefObject<HTMLHeadingElement | HTMLParagraphElement | HTMLQuoteElement | HTMLDListElement | HTMLOListElement | HTMLUListElement>} [props.ref] - Ref for the container.
- * @param {string} props.children - The text content to parse and linkify.
- * @param {boolean} [props.blank] - If true, links open in a new tab.
- * @param {object} [props.rest] - Additional props spread to the container.
- * @returns {ReactElement} The rendered Linkify component.
+ *
+ * @prop {string} [props.className] - Additional class names to apply to the container element.
+ * @prop {ElementType} [props.element=Text] - The HTML element or React component to render as the container. Default is `Text`.
+ * @prop {RefObject<HTMLHeadingElement | HTMLParagraphElement | HTMLQuoteElement | HTMLDListElement | HTMLOListElement | HTMLUListElement>} [props.ref] - Ref for the container element.
+ * @prop {string} props.children - The text content to parse and linkify.
+ * @prop {boolean} [props.blank] - If true, links open in a new tab (`_blank`). Default is `false`.
+ * @prop {string} [props.linkClasses] - Additional class names to apply to the generated anchor tags.
+ * @prop {object} [props.rest] - Additional props spread to the container element.
+ *
+ * @returns {ReactElement} The rendered Linkify component with URLs converted to clickable links.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/linkify
  */
 export const Linkify: FC<ILibLinkify> = ({
 	className,

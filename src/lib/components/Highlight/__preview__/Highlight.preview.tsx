@@ -7,11 +7,11 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
 	name: "Highlight",
 	component: Highlight,
 	category: "components",
-	import: "Highlight", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibHighlight", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Highlight",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibHighlight",
+	additionalTypeImports: null,
 	extends: ["ILibText"],
 	previews: [
 		{
@@ -29,9 +29,36 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
 				children: "Hello world",
 				highlightClasses: ["text-red"],
 				// highlightStyle: {
-				// 	color: "red",
+				// 	color: "blue",
 				// },
 			},
+		},
+	],
+	props: [
+		{
+			name: "highlightedText",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "The substring to highlight within the children.",
+			isRequired: true,
+		},
+		{
+			name: "highlightStyle",
+			type: "CSSProperties",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Inline style to apply to the highlighted text.",
+			isRequired: false,
+		},
+		{
+			name: "highlightClasses",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description:
+				"Additional class names to apply to the highlighted text.",
+			isRequired: false,
 		},
 	],
 }

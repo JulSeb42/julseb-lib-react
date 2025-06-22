@@ -34,22 +34,24 @@ export const BASE_CLASSES = clsx(
  *   <li>Item 1</li>
  *   <li>Item 2</li>
  * </Text>
+ * 
+ * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement
  *
- * @param {object} props - Component props.
- * @param {ElementType} [props.element="p"] - The HTML element or React component to render.
- * @param {"h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"small"|"strong"|"em"|"blockquote"|"ul"|"ol"|"dl"} [props.tag="p"] - The semantic HTML tag to render.
- * @param {string} [props.color="currentColor"] - Any color from the library.
- * @param {"red"|"orange"|"amber"|"yellow"|"lime"|"green"|"emerald"|"teal"|"cyan"|"sky"|"blue"|"indigo"|"violet"|"purple"|"fuchsia"|"pink"|"rose"|"slate"} [props.linkColor="blue"] - Any hover color.
- * @param {"text-left"|"text-center"|"text-right"|"text-justify"|"text-start"|"text-end"} [props.textAlign="left"] - Text alignment.
- * @param {boolean} [props.display=false] - Whether to use display block.
- * @param {string} [props.className] - Additional class names to apply.
- * @param {RefObject<any>} [props.ref] - Ref for the rendered element.
- * @param {ReactNode} props.children - Text content.
- * @param {object} [props.rest] - Additional props spread to the rendered element.
+ * @prop {object} props - Component props.
+ * @prop {ElementType} [props.element="p"] - The HTML element or React component to render.
+ * @prop {"h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"p"|"small"|"strong"|"em"|"blockquote"|"ul"|"ol"|"dl"} [props.tag="p"] - The semantic HTML tag to render.
+ * @prop {string} [props.color="currentColor"] - Any color from the library.
+ * @prop {"red"|"orange"|"amber"|"yellow"|"lime"|"green"|"emerald"|"teal"|"cyan"|"sky"|"blue"|"indigo"|"violet"|"purple"|"fuchsia"|"pink"|"rose"|"slate"} [props.linkColor="blue"] - Any hover color.
+ * @prop {"text-left"|"text-center"|"text-right"|"text-justify"|"text-start"|"text-end"} [props.textAlign="left"] - Text alignment.
+ * @prop {boolean} [props.display=false] - Whether to use display block.
+ * @prop {string} [props.className] - Additional class names to apply.
+ * @prop {RefObject<any>} [props.ref] - Ref for the rendered element.
+ * @prop {ReactNode} props.children - Text content.
+ * @prop {object} [props.rest] - Additional props spread to the rendered element.
  *
  * @returns {JSX.Element} The rendered text element.
  *
- * @see https://documentation-components-react.vercel.app/styles/text
+ * @see https://doc-julseb-lib-react.vercel.app/styles/text
  */
 export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
 	if (tag === "h1") return <H1 {...rest} />

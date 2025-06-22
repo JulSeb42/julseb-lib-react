@@ -3,13 +3,24 @@ import {  } from "@julseb-lib/utils"
 import { clsx } from "../../utils"
 import type { ILib{{ pascalCase name }} } from "./types"
 
-/** 
- * @description Returns a {{ pascalCase name }} component
- * @link https://documentation-components-react.vercel.app/{{ category }}/{{ kebabCase name }}
- * @extends HTML{{ pascalCase attribute }}Element
- * @prop element?: ElementType
- * @prop ref?: RefObject<HTML{{ pascalCase attribute }}Element>
- */
+/*
+	Generate JSDoc with:
+	* <short description of the component>
+	*
+	* @component
+	*
+	* @example
+	* <an example of the component>
+	* 
+	* @extends <type the component is extending (check in ./types.ts)>
+	*
+	for each prop, generate:
+	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
+	* 
+	* @returns <what the component returns>
+	*
+	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
+*/
 export const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className, element = "{{ lowerCase tag }}", ref, {{#if children}} children,{{/if}} ...rest }) => {
 	const Element = element
 

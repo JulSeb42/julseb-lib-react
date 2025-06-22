@@ -11,19 +11,21 @@ import type { ILibWrapper } from "./types"
  *   <Main>Content</Main>
  * </Wrapper>
  *
- * @param {object} props - Component props.
- * @param {string} [props.className] - Additional class names to apply.
- * @param {ElementType} [props.element="section"] - The HTML element or React component to render as the wrapper container.
- * @param {RefObject<HTMLDivElement>} [props.ref] - Ref for the wrapper container.
- * @param {ReactNode} props.children - Wrapper content.
- * @param {"px"|"full"|"screen"|"dvh"|"dvw"|"lvh"|"lvw"|"svw"|"svh"|"auto"|"min"|"max"|"fit"|"lh"|} [props.minHeight="svh"] - Minimum height class (uses Tailwind min-h-* utilities).
- * @param {string} [props.backgroundColor="background"] - Any color from the library.
- * @param {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.gap="lg"] - Gap between children (uses library spacers).
- * @param {object} [props.rest] - Additional props spread to the container.
+ * @extends HTMLDivElement
+ *
+ * @prop {object} props - Component props.
+ * @prop {string} [props.className] - Additional class names to apply.
+ * @prop {ElementType} [props.element="section"] - The HTML element or React component to render as the wrapper container.
+ * @prop {RefObject<HTMLDivElement>} [props.ref] - Ref for the wrapper container.
+ * @prop {ReactNode} props.children - Wrapper content.
+ * @prop {"px"|"full"|"screen"|"dvh"|"dvw"|"lvh"|"lvw"|"svw"|"svh"|"auto"|"min"|"max"|"fit"|"lh"|} [props.minHeight="svh"] - Minimum height class (uses Tailwind min-h-* utilities).
+ * @prop {string} [props.backgroundColor="background"] - Any color from the library.
+ * @prop {"2xs"|"xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"0px"} [props.gap="lg"] - Gap between children (uses library spacers).
+ * @prop {object} [props.rest] - Additional props spread to the container.
  *
  * @returns {JSX.Element} The rendered wrapper container.
  *
- * @see https://documentation-components-react.vercel.app/styles/wrapper
+ * @see https://doc-julseb-lib-react.vercel.app/styles/wrapper
  */
 export const Wrapper: FC<ILibWrapper> = ({
 	className,

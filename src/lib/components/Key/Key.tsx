@@ -3,11 +3,21 @@ import { clsx, genBgColor50, genBorderColorShort } from "../../utils"
 import type { ILibKey } from "./types"
 
 /**
- * @description Returns a Key component
- * @link https://documentation-components-react.vercel.app/components/key
- * @extends HTMLSpanElement
- * @prop element?: ElementType
- * @prop ref?: RefObject<HTMLSpanElement>
+ * Key component for displaying keyboard keys or shortcuts.
+ *
+ * @component
+ *
+ * @example
+ * <Key keys={["Ctrl", "C"]} size="large" accentColor="blue" />
+ *
+ * @prop {Array<string>} keys - The list of keys to display.
+ * @prop {boolean} [withSeparator] - If true, displays a separator between keys.
+ * @prop {"default" | "large" | "form"} [size] - The size of the key component.
+ * @prop {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"} [accentColor] - Accent color for the key, excluding black, white, transparent, background, and current.
+ *
+ * @returns {JSX.Element} The rendered Key component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/layouts/key
  */
 export const Key: FC<ILibKey> = ({
 	className,

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { Aside, Text } from "../../../"
-
 import type { ILibAside } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -37,6 +36,24 @@ export const asidePreview: ComponentPreview<ILibAside> = {
 					))}
 				</div>
 			),
+		},
+	],
+	props: [
+		{
+			name: "size",
+			type: "string",
+			possibleValues: ["default", "small"],
+			defaultValue: "default",
+			description: "Size of the aside component.",
+			isRequired: false,
+		},
+		{
+			name: "backgroundColor",
+			type: "string",
+			possibleValues: ["Any color from the library"],
+			defaultValue: "white",
+			description: "Background color of the aside component.",
+			isRequired: false,
 		},
 	],
 }
