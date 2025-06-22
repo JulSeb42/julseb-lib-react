@@ -12,4 +12,5 @@ export * from "../components/Hr/types"
 export * from "../components/Skeleton/types"
 export * from "../components/Tooltip/types"
 export * from "../components/Image/types"
+export * from "../components/Masonry/types"
 /* Prepend here - DO NOT REMOVE */

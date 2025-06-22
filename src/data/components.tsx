@@ -21,6 +21,7 @@ import { tooltipPreview } from "../lib/components/Tooltip/__preview__/Tooltip.pr
 import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 import { skeletonPreview } from "../lib/components/Skeleton/__preview__/Skeleton.preview"
 import { imagePreview } from "../lib/components/Image/__preview__/Image.preview"
+import { masonryPreview } from "../lib/components/Masonry/__preview__/Masonry.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -107,6 +108,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	hrPreview,
 	skeletonPreview,
 	imagePreview,
+	masonryPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

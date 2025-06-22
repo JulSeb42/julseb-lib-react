@@ -75,4 +75,5 @@ export * from "./components/Hr"
 export * from "./components/Skeleton"
 export * from "./components/Tooltip"
 export * from "./components/Image"
+export * from "./components/Masonry"
 /* Prepend here - DO NOT REMOVE */
