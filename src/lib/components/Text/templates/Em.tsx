@@ -14,7 +14,7 @@ export const Em: FC<ILibText> = ({
 	className,
 	children,
 	color = "currentColor",
-	linkColor = "blue",
+	linkColor = "primary",
 	textAlign = "left",
 	...rest
 }) => {

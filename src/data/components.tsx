@@ -22,6 +22,7 @@ import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 import { skeletonPreview } from "../lib/components/Skeleton/__preview__/Skeleton.preview"
 import { imagePreview } from "../lib/components/Image/__preview__/Image.preview"
 import { masonryPreview } from "../lib/components/Masonry/__preview__/Masonry.preview"
+import { badgePreview } from "../lib/components/Badge/__preview__/Badge.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -50,6 +51,7 @@ type Prop = {
 		| "function"
 		| "string | JSX.Element"
 		| "ReactNode"
+		| "CSSProperties"
 	possibleValues:
 		| Array<string>
 		| "Any color from the library"
@@ -109,6 +111,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	skeletonPreview,
 	imagePreview,
 	masonryPreview,
+	badgePreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

@@ -13,7 +13,7 @@ import type { ILibKey } from "./types"
  * @prop {Array<string>} keys - The list of keys to display.
  * @prop {boolean} [withSeparator] - If true, displays a separator between keys.
  * @prop {"default" | "large" | "form"} [size] - The size of the key component.
- * @prop {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"} [accentColor] - Accent color for the key, excluding black, white, transparent, background, and current.
+ * @prop {"primary" | "secondary" | "success" | "danger" | "warning" | "gray"} [accentColor] - Accent color for the key, excluding black, white, transparent, background, and current.
  *
  * @returns {JSX.Element} The rendered Key component.
  *
@@ -26,7 +26,7 @@ export const Key: FC<ILibKey> = ({
 	keys,
 	withSeparator,
 	size = "small",
-	accentColor = "blue",
+	accentColor = "primary",
 	...rest
 }) => {
 	const Element = element
@@ -35,7 +35,7 @@ export const Key: FC<ILibKey> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"justify-self-start self-start border-1 border-solid text-font",
+				"justify-self-start self-start border-1 border-solid text-black",
 				genBorderRadius[size],
 				genFontSize[size],
 				genPadding[size],

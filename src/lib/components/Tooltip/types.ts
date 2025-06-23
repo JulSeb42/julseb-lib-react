@@ -1,5 +1,6 @@
 import type { ReactElement } from "react"
 import type {
+	ClassNames,
 	LibAllColors,
 	LibAllColorsAndOverlays,
 	LibComponentBase,
@@ -16,5 +17,5 @@ export interface ILibTooltip extends LibComponentBase<HTMLDivElement> {
 	backgroundColor?: LibAllColorsAndOverlays
 	textColor?: LibAllColors
 	offset?: LibSpacers
-	tooltipClasses?: string | Array<string>
+	tooltipClasses?: ClassNames
 }

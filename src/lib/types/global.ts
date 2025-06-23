@@ -15,45 +15,45 @@ import type { RequireAtLeastOne } from "./require-at-least-one"
  * @description All color tokens available in the library.
  * @type {keyof typeof designTokens.libColors}
  * @example
- * color="red-300"
+ * color="danger-300"
  * color="gray-100"
  */
 export type LibColors = keyof typeof designTokens.libColors
 
 /**
  * @description All color short tokens available in the library. This returns the color-500.
- * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate" | "black" | "white" | "current" | "transparent" | "background"}
+ * @type {"primary" | "secondary" | "success" | "danger" | "warning" | "gray" | "black" | "white" | "current" | "transparent" | "background"}
  * @example
- * color="blue"
+ * color="primary"
  * color="gray"
  */
 export type LibColorsShort = keyof typeof designTokens.libColorsShort
 
 /**
  * @description All color tokens and color short tokens available in the library.
- * @type {keyof typeof designTokens.libColors | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate" | "black" | "white" | "current" | "transparent" | "background"}
+ * @type {keyof typeof designTokens.libColors | "primary" | "secondary" | "success" | "danger" | "warning" | "gray" | "black" | "white" | "current" | "transparent" | "background"}
  * @example
- * color="red-300"
- * color="blue"
+ * color="danger-300"
+ * color="primary"
  * color="gray-100"
  */
 export type LibAllColors = LibColors | LibColorsShort
 
 /**
  * @description All hover color tokens available in the library.
- * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"}
+ * @type {"primary" | "secondary" | "success" | "danger" | "warning" | "white"}
  * @example
- * color="primary-hover"
- * color="gray-100-hover"
+ * color="primary"
+ * color="gray"
  */
 export type LibColorsHover = keyof typeof designTokens.libColorsHover
 
 /**
  * @description All hover color tokens plus "current" for currentColor support.
- * @type {"red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "slate"|"current"}
+ * @type {"primary" | "secondary" | "success" | "danger" | "warning" | "white" | "current"}
  * @example
- * color="primary-hover"
- * color="gray-100-hover"
+ * color="primary"
+ * color="gray"
  * color="current"
  */
 export type LibColorsHoverAndCurrent = LibColorsHover | "current"
@@ -532,3 +532,4 @@ export type CssOutlineStyle =
 export type LibMainSize = keyof typeof designTokens.libMainSizes
 export type LibAsideSize = keyof typeof designTokens.libAsideSizes
 export type CountryCode = keyof typeof designTokens.libCountryCodes
+export type ClassNames = string | Array<string>

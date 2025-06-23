@@ -14,7 +14,7 @@ export const H1: FC<ILibText> = ({
 	className,
 	children,
 	color = "currentColor",
-	linkColor = "blue",
+	linkColor = "primary",
 	textAlign = "left",
 	display,
 	...rest

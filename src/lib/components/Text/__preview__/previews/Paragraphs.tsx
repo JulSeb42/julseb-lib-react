@@ -20,14 +20,14 @@ export const Paragraphs = () => {
 					italic
 				</Text>
 			</Text>
-			<Text tag="p" data-testid="testid" linkColor="red">
+			<Text tag="p" data-testid="testid" linkColor="danger">
 				Paragraph with <Link to="#">link</Link>
 			</Text>
 			<Text
 				tag="p"
 				data-testid="testid"
 				className="className"
-				linkColor="amber"
+				linkColor="warning"
 			>
 				Paragraph with <button>button</button>
 			</Text>
