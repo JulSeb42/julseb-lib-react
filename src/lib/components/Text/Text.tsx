@@ -34,7 +34,7 @@ export const BASE_CLASSES = clsx(
  *   <li>Item 1</li>
  *   <li>Item 2</li>
  * </Text>
- * 
+ *
  * @extends HTMLHeadingElement & HTMLParagraphElement & HTMLQuoteElement & HTMLDListElement & HTMLOListElement & HTMLUListElement
  *
  * @prop {object} props - Component props.
@@ -54,18 +54,35 @@ export const BASE_CLASSES = clsx(
  * @see https://doc-julseb-lib-react.vercel.app/styles/text
  */
 export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
-	if (tag === "h1") return <H1 {...rest} />
-	if (tag === "h2") return <H2 {...rest} />
-	if (tag === "h3") return <H3 {...rest} />
-	if (tag === "h4") return <H4 {...rest} />
-	if (tag === "h5") return <H5 {...rest} />
-	if (tag === "h6") return <H6 {...rest} />
-	if (tag === "small") return <Small {...rest} />
-	if (tag === "strong") return <Strong {...rest} />
-	if (tag === "em") return <Em {...rest} />
-	if (tag === "blockquote") return <Blockquote {...rest} />
-	if (tag === "ul") return <Ul {...rest} />
-	if (tag === "ol") return <Ol {...rest} />
-	if (tag === "dl") return <Dl {...rest} />
-	return <P {...rest} />
+	switch (tag) {
+		case "h1":
+			return <H1 {...rest} />
+		case "h2":
+			return <H2 {...rest} />
+		case "h3":
+			return <H3 {...rest} />
+		case "h4":
+			return <H4 {...rest} />
+		case "h5":
+			return <H5 {...rest} />
+		case "h6":
+			return <H6 {...rest} />
+		case "small":
+			return <Small {...rest} />
+		case "strong":
+			return <Strong {...rest} />
+		case "em":
+			return <Em {...rest} />
+		case "blockquote":
+			return <Blockquote {...rest} />
+		case "ul":
+			return <Ul {...rest} />
+		case "ol":
+			return <Ol {...rest} />
+		case "dl":
+			return <Dl {...rest} />
+		case "p":
+		default:
+			return <P {...rest} />
+	}
 }

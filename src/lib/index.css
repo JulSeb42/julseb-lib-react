@@ -126,6 +126,14 @@
 	--spacer-lg: 24px;
 	--spacer-xl: 32px;
 	--spacer-2xl: 48px;
+
+	--animate-cubic-bezier: cubic-bezier(0.5, 0, 0.5, 1);
+
+	--uib-size: 43px;
+	--uib-color: black;
+	--uib-speed: 1.3s;
+	/* --uib-dot-size: calc(var(--uib-size) * 0.24); */
+	--uib-dot-size: 24px;
 }
 
 /*====================== Common styles ======================*/
@@ -166,101 +174,7 @@ button {
 		scrollbar-width: none;
 	}
 
-	.z-997 {
-		z-index: 997;
-	}
-
-	.z-998 {
-		z-index: 998;
-	}
-
-	.z-999 {
-		z-index: 999;
-	}
-
-	.text-primary {
-		color: var(--color-primary-500);
-	}
-
-	.bg-primary {
-		background-color: var(--color-primary-500);
-	}
-
-	.text-secondary {
-		color: var(--color-secondary-500);
-	}
-
-	.bg-secondary {
-		background-color: var(--color-secondary-500);
-	}
-
-	.text-success {
-		color: var(--color-success-500);
-	}
-
-	.bg-success {
-		background-color: var(--color-success-500);
-	}
-
-	.text-danger {
-		color: var(--color-danger-500);
-	}
-
-	.bg-danger {
-		background-color: var(--color-danger-500);
-	}
-
-	.text-warning {
-		color: var(--color-warning-500);
-	}
-
-	.bg-warning {
-		background-color: var(--color-warning-500);
-	}
-
-	.text-gray {
-		color: var(--color-gray-500);
-	}
-
-	.bg-gray {
-		background-color: var(--color-gray-500);
-	}
-
-	.text-white {
-		color: var(--color-white);
-	}
-
-	.bg-white {
-		background-color: var(--color-white);
-	}
-
-	@keyframes shine {
-		from {
-			left: -150px;
-		}
-
-		to {
-			left: 106%;
-		}
-	}
-
-	.animate-shine {
-		position: relative;
-		overflow: hidden;
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: -200px;
-			bottom: -200px;
-			background-color: var(--color-white);
-			opacity: 0.7;
-			filter: blur(20px);
-			width: 100px;
-			transform: skew(-15deg);
-			animation: shine 2000ms ease-in-out infinite;
-		}
-	}
+	/*====================== Fonts ======================*/
 
 	.lato-thin {
 		font-family: var(--font-family-body);
@@ -322,6 +236,64 @@ button {
 		font-style: italic;
 	}
 
+	/*====================== Colors ======================*/
+
+	.text-primary {
+		color: var(--color-primary-500);
+	}
+
+	.bg-primary {
+		background-color: var(--color-primary-500);
+	}
+
+	.text-secondary {
+		color: var(--color-secondary-500);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary-500);
+	}
+
+	.text-success {
+		color: var(--color-success-500);
+	}
+
+	.bg-success {
+		background-color: var(--color-success-500);
+	}
+
+	.text-danger {
+		color: var(--color-danger-500);
+	}
+
+	.bg-danger {
+		background-color: var(--color-danger-500);
+	}
+
+	.text-warning {
+		color: var(--color-warning-500);
+	}
+
+	.bg-warning {
+		background-color: var(--color-warning-500);
+	}
+
+	.text-gray {
+		color: var(--color-gray-500);
+	}
+
+	.bg-gray {
+		background-color: var(--color-gray-500);
+	}
+
+	.text-white {
+		color: var(--color-white);
+	}
+
+	.bg-white {
+		background-color: var(--color-white);
+	}
+
 	.overlay-black-50 {
 		background: var(--color-overlay-black-50);
 	}
@@ -344,5 +316,70 @@ button {
 
 	.overlay-gradient-white {
 		background: var(--overlay-gradient-white);
+	}
+
+	/*====================== Keyframes & animations ======================*/
+
+	@keyframes shine {
+		from {
+			left: -150px;
+		}
+
+		to {
+			left: 106%;
+		}
+	}
+
+	.animate-shine {
+		position: relative;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: -200px;
+			bottom: -200px;
+			background-color: var(--color-white);
+			opacity: 0.7;
+			filter: blur(20px);
+			width: 100px;
+			transform: skew(-15deg);
+			animation: shine 2000ms ease-in-out infinite;
+		}
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.animate-spin {
+		animation: spin 1200ms linear infinite;
+	}
+
+	.animate-bezier {
+		animation: spin 1200ms var(--animate-cubic-bezier) infinite;
+		animation-delay: var(--spinner-delay);
+	}
+
+	@keyframes loader-pulse {
+		0%,
+		100% {
+			transform: scale(0);
+		}
+
+		50% {
+			transform: scale(1);
+		}
+	}
+
+	.dot {
+		animation: loader-pulse 1200ms linear infinite;
+		animation-delay: var(--dot-delay);
 	}
 }

@@ -78,4 +78,5 @@ export * from "./components/Image"
 export * from "./components/Masonry"
 export * from "./components/Badge"
 export * from "./components/Avatar"
+export * from "./components/Loader"
 /* Prepend here - DO NOT REMOVE */
