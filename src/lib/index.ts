@@ -77,4 +77,5 @@ export * from "./components/Tooltip"
 export * from "./components/Image"
 export * from "./components/Masonry"
 export * from "./components/Badge"
+export * from "./components/Avatar"
 /* Prepend here - DO NOT REMOVE */

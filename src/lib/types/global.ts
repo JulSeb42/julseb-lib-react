@@ -7,7 +7,9 @@ import type {
 	MouseEventHandler,
 	FunctionComponent,
 	RefObject,
+	CSSProperties as CSS,
 } from "react"
+
 import type { designTokens } from "../utils/design-tokens"
 import type { RequireAtLeastOne } from "./require-at-least-one"
 
@@ -533,3 +535,4 @@ export type LibMainSize = keyof typeof designTokens.libMainSizes
 export type LibAsideSize = keyof typeof designTokens.libAsideSizes
 export type CountryCode = keyof typeof designTokens.libCountryCodes
 export type ClassNames = string | Array<string>
+export type CSSProperties = CSS

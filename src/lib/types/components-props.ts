@@ -14,4 +14,5 @@ export * from "../components/Tooltip/types"
 export * from "../components/Image/types"
 export * from "../components/Masonry/types"
 export * from "../components/Badge/types"
+export * from "../components/Avatar/types"
 /* Prepend here - DO NOT REMOVE */
