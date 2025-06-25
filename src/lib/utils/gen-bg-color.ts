@@ -102,10 +102,7 @@ export const genBgColorShort: Record<LibColorsShort, string> = {
 }
 
 export const genBgColor50: Record<
-	Exclude<
-		LibColorsShort,
-		"black" | "white" | "transparent" | "background" | "current"
-	>,
+	Exclude<LibColorsShort, "black" | "transparent" | "background" | "current">,
 	string
 > = {
 	primary: "bg-primary-50",
@@ -114,6 +111,7 @@ export const genBgColor50: Record<
 	danger: "bg-danger-50",
 	warning: "bg-warning-50",
 	gray: "bg-gray-50",
+	white: "bg-white",
 }
 
 export const genBgColorHover: Record<LibColorsHover, string> = {

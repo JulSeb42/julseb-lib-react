@@ -94,34 +94,14 @@ export const genBorderColorShort: Record<LibColorsShort, string> = {
 	background: "border-background",
 }
 
-export const genBorderColorHoverDefault: Record<LibColorsHover, string> = {
-	primary: "border-primary-500",
-	secondary: "border-secondary-500",
-	success: "border-success-500",
-	danger: "border-danger-500",
-	warning: "border-warning-500",
-	gray: "border-gray-500",
-	white: "border-white",
-}
-
-export const genBorderColorHoverHover: Record<LibColorsHover, string> = {
-	primary: "hover:border-primary-300",
-	secondary: "hover:border-secondary-300",
-	success: "hover:border-success-300",
-	danger: "hover:border-danger-300",
-	warning: "hover:border-warning-300",
-	gray: "hover:border-gray-300",
-	white: "hover:border-gray-300",
-}
-
-export const genBorderColorHoverActive: Record<LibColorsHover, string> = {
-	primary: "active:border-primary-600",
-	secondary: "active:border-secondary-600",
-	success: "active:border-success-600",
-	danger: "active:border-danger-600",
-	warning: "active:border-warning-600",
-	gray: "active:border-gray-600",
-	white: "active:border-gray-100",
+export const genBorderColorHover: Record<LibColorsHover, string> = {
+	primary: "border-primary-500 hover:border-primary-300 active:border-primary-600",
+	secondary: "border-secondary-500 hover:border-secondary-300 active:border-secondary-600",
+	success: "border-success-500 hover:border-success-300 active:border-success-600",
+	danger: "border-danger-500 hover:border-danger-300 active:border-danger-600",
+	warning: "border-warning-500 hover:border-warning-300 active:border-warning-600",
+	gray: "border-gray-500 hover:border-gray-300 active:border-gray-600",
+	white: "border-white hover:border-gray-300 active:border-gray-100",
 }
 
 export const genBorderAllColors: Record<LibAllColors, string> = {

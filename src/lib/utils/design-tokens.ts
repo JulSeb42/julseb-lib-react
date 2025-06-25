@@ -308,8 +308,8 @@ export const designTokens = {
 	},
 
 	/**
-	 * Box shadow
-	 * @link https://tailwindcss.com/docs/box-shadow
+	 * Drop shadow
+	 * @link https://tailwindcss.com/docs/drop-shadow
 	 */
 	libDropShadows: {
 		xs: "xs",
@@ -584,6 +584,17 @@ export const designTokens = {
 	},
 
 	libTooltipTriggers: { hover: "hover", click: "click" },
+
+	libLoaderVariants: { 1: 1, 2: 2, 3: 3 },
+
+	libButtonVariants: {
+		plain: "plain",
+		ghost: "ghost",
+		outline: "outline",
+		transparent: "transparent",
+	},
+
+	libButtonSize: { default: "default", small: "small" },
 
 	/**
 	 * Country codes

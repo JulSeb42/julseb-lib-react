@@ -26,6 +26,7 @@ import { badgePreview } from "../lib/components/Badge/__preview__/Badge.preview"
 import { avatarPreview } from "../lib/components/Avatar/__preview__/Avatar.preview"
 import { loaderPreview } from "../lib/components/Loader/__preview__/Loader.preview"
 import { burgerPreview } from "../lib/components/Burger/__preview__/Burger.preview"
+import { buttonPreview } from "../lib/components/Button/__preview__/Button.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -118,6 +119,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	avatarPreview,
 	loaderPreview,
 	burgerPreview,
+	buttonPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

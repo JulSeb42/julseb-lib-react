@@ -156,6 +156,10 @@ a,
 button {
 	cursor: pointer;
 	transition: all 200ms ease;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
 }
 
 @layer utilities {

@@ -4,14 +4,11 @@ import type {
 	ReactNode,
 	Dispatch,
 	SetStateAction,
-	MouseEventHandler,
 	FunctionComponent,
 	RefObject,
 	CSSProperties as CSS,
 } from "react"
-
 import type { designTokens } from "../utils/design-tokens"
-import type { RequireAtLeastOne } from "./require-at-least-one"
 
 /**
  * @description All color tokens available in the library.
@@ -186,6 +183,32 @@ export type LibThemeNames = keyof typeof designTokens.libThemes
 export type LibInputVariant = keyof typeof designTokens.libInputVariants
 
 /**
+ * @description All loader variant tokens available in the library.
+ * @type {1 | 2 | 3}
+ * @example
+ * variant={3}
+ */
+export type LibLoaderVariant = keyof typeof designTokens.libLoaderVariants
+
+/**
+ * @description All button variant tokens available in the library.
+ * @type {"plain" | "ghost" | "outline" | "transparent"}
+ * @example
+ * variant="plain"
+ * variant="ghost"
+ * variant="transparent"
+ */
+export type LibButtonVariant = keyof typeof designTokens.libButtonVariants
+
+/**
+ * @description All button size tokens available in the library.
+ * @type {"default" | "small"}
+ * @example
+ * variant="small"
+ */
+export type LibButtonSize = keyof typeof designTokens.libButtonSize
+
+/**
  * @description All input background tokens available in the library.
  * @type {"light" | "dark"}
  * @example
@@ -310,83 +333,6 @@ export interface LibComponentBase<T> extends HTMLAttributes<T> {
 	element?: ElementType
 	ref?: RefObject<T>
 }
-
-/* Links & buttons */
-type LinkTo = { to?: string; href?: never }
-type LinkHref = { to?: never; href?: string }
-
-/**
- * @description Props for links
- */
-export type LibLink = LinkTo | LinkHref
-
-/**
- * @description Props for links, to or href are required
- */
-export type LibLinkRequired = RequireAtLeastOne<LibLink, "to" | "href">
-
-/**
- * @description Props for links
- */
-export type LibLinkBlank = LibLink & { blank?: boolean }
-
-/**
- * @description Props for links, to or href are required
- */
-export type LibLinkBlankRequired = LibLinkRequired & { blank?: boolean }
-
-type LibButtonLinkClick = {
-	onClick?: MouseEventHandler<HTMLButtonElement>
-	disabled?: boolean
-	to?: never
-	href?: never
-}
-
-type LibButtonLinkTo = {
-	onClick?: never
-	disabled?: never
-	to?: string | "prev"
-	href?: never
-}
-
-type LibButtonLinkHref = {
-	onClick?: never
-	disabled?: never
-	to?: never
-	href?: string
-}
-
-/**
- * @description Props for buttons and links
- */
-export type LibButtonLink =
-	| LibButtonLinkClick
-	| LibButtonLinkTo
-	| LibButtonLinkHref
-
-/**
- * @description Props for buttons and links, onClick, to or href are required
- */
-export type LibButtonLinkRequired = RequireAtLeastOne<
-	LibButtonLink,
-	"onClick" | "to" | "href"
->
-
-/**
- * @description Props for buttons and links
- */
-export type LibButtonLinkBlank =
-	| (LibButtonLinkClick & { blank?: never })
-	| (LibButtonLinkTo & { blank?: boolean })
-	| (LibButtonLinkHref & { blank?: boolean })
-
-/**
- * @description Props for buttons and links, onClick, to or href are required
- */
-export type LibButtonLinkBlankRequired = RequireAtLeastOne<
-	LibButtonLinkBlank,
-	"to" | "href" | "onClick"
->
 
 /* useTranslation hook */
 

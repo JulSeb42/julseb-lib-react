@@ -1,7 +1,11 @@
-import type { LibAllColors, LibComponentBase } from "../../types"
+import type {
+	LibAllColors,
+	LibComponentBase,
+	LibLoaderVariant,
+} from "../../types"
 
 export interface ILibLoader extends LibComponentBase<HTMLSpanElement> {
 	children?: never
-	variant?: 1 | 2 | 3
+	variant?: LibLoaderVariant
 	color?: LibAllColors
 }
