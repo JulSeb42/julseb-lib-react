@@ -39,7 +39,7 @@ export const keyPreview: ComponentPreview<ILibKey> = {
 		{
 			name: "keys",
 			type: "Array<string>",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "The list of keys to display.",
 			isRequired: true,
@@ -47,7 +47,7 @@ export const keyPreview: ComponentPreview<ILibKey> = {
 		{
 			name: "withSeparator",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "If true, displays a separator between keys.",
 			isRequired: false,

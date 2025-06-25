@@ -35,7 +35,7 @@ export const flexboxPreview: ComponentPreview<ILibFlexbox> = {
 		{
 			name: "inline",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Use inline-flex instead of flex.",
 			isRequired: false,

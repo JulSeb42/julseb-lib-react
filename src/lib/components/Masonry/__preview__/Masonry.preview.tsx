@@ -1,5 +1,4 @@
 import { Masonry, Image, uuid } from "../../../"
-import type {} from "../../../types"
 import type { ILibMasonry } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -21,11 +20,11 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 	name: "Masonry",
 	component: Masonry,
 	category: "components",
-	import: "Masonry", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibMasonry", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Masonry",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibMasonry",
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		{
@@ -47,7 +46,7 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 		{
 			name: "col",
 			type: "number",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "4",
 			description: "Number of columns in the masonry grid.",
 			isRequired: false,

@@ -1,6 +1,5 @@
 import { BiUser } from "react-icons/bi"
 import { Avatar } from "../../../"
-import type {} from "../../../types"
 import type { ILibAvatar } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -8,11 +7,11 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
 	name: "Avatar",
 	component: Avatar,
 	category: "components",
-	import: "Avatar", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibAvatar", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Avatar",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibAvatar",
+	additionalTypeImports: null,
 	extends: ["HTMLSpanElement"],
 	previews: [
 		{
@@ -41,7 +40,7 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
 		{
 			name: "badge",
 			type: "string | Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Badge to display on the avatar, can be a string or an object with content and colors.",
@@ -50,7 +49,7 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
 		{
 			name: "containerStyle",
 			type: "CSSProperties",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Inline styles for the avatar container.",
 			isRequired: false,
@@ -58,7 +57,7 @@ export const avatarPreview: ComponentPreview<ILibAvatar> = {
 		{
 			name: "containerClassName",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Additional CSS classes for the avatar container.",
 			isRequired: false,

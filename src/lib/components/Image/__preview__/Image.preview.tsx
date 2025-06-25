@@ -1,5 +1,4 @@
 import { Image } from "../../../"
-import type {} from "../../../types"
 import type { ILibImage } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -10,11 +9,11 @@ export const imagePreview: ComponentPreview<ILibImage> = {
 	name: "Image",
 	component: Image,
 	category: "components",
-	import: "Image", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibImage", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Image",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibImage",
+	additionalTypeImports: null,
 	extends: ["HTMLImgElement"],
 	previews: [
 		{ previewTitle: "Default", props: { src: IMG_SRC, alt: IMG_ALT } },
@@ -36,7 +35,7 @@ export const imagePreview: ComponentPreview<ILibImage> = {
 		{
 			name: "caption",
 			type: "string | Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Caption for the image. Can be a string or an object with text and optional styling.",

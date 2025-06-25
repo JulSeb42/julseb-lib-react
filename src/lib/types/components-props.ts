@@ -16,4 +16,5 @@ export * from "../components/Masonry/types"
 export * from "../components/Badge/types"
 export * from "../components/Avatar/types"
 export * from "../components/Loader/types"
+export * from "../components/Burger/types"
 /* Prepend here - DO NOT REMOVE */

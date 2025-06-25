@@ -1,5 +1,4 @@
 import { Loader } from "../../../"
-import type {} from "../../../types"
 import type { ILibLoader } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -7,11 +6,11 @@ export const loaderPreview: ComponentPreview<ILibLoader> = {
 	name: "Loader",
 	component: Loader,
 	category: "components",
-	import: "Loader", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibLoader", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Loader",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibLoader",
+	additionalTypeImports: null,
 	extends: ["HTMLSpanElement"],
 	previews: [
 		{ previewTitle: "Default", props: {} },

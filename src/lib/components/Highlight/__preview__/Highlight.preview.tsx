@@ -1,5 +1,4 @@
 import { Highlight } from "../../../"
-import type {} from "../../../types"
 import type { ILibHighlight } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -38,7 +37,7 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
 		{
 			name: "highlightedText",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "The substring to highlight within the children.",
 			isRequired: true,
@@ -46,7 +45,7 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
 		{
 			name: "highlightStyle",
 			type: "CSSProperties",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Inline style to apply to the highlighted text.",
 			isRequired: false,
@@ -54,7 +53,7 @@ export const highlightPreview: ComponentPreview<ILibHighlight> = {
 		{
 			name: "highlightClasses",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Additional class names to apply to the highlighted text.",

@@ -1,5 +1,4 @@
 import { Hr } from "../../../"
-import type {} from "../../../types"
 import type { ILibHr } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -59,7 +58,7 @@ export const hrPreview: ComponentPreview<ILibHr> = {
 		{
 			name: "color",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "gray-200",
 			description: "Background color of the hr.",
 			isRequired: false,
@@ -67,7 +66,7 @@ export const hrPreview: ComponentPreview<ILibHr> = {
 		{
 			name: "isRounded",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "If true, the hr will have fully rounded borders.",
 			isRequired: false,

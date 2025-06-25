@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { clsx } from "../../../utils"
 import { genBorderBottomColor } from "../utils/gen-border-bottom"
 import type { ILibLoader } from "../types"

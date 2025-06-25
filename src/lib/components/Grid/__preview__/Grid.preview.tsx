@@ -34,7 +34,7 @@ export const gridPreview: ComponentPreview<ILibGrid> = {
 		{
 			name: "inline",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Use inline-grid instead of grid.",
 			isRequired: false,
@@ -42,7 +42,7 @@ export const gridPreview: ComponentPreview<ILibGrid> = {
 		{
 			name: "columns",
 			type: "string | number",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Number of columns or grid-template-columns value.",
 			isRequired: false,
@@ -50,7 +50,7 @@ export const gridPreview: ComponentPreview<ILibGrid> = {
 		{
 			name: "rows",
 			type: "string | number",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Number of rows or grid-template-rows value.",
 			isRequired: false,

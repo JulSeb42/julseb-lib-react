@@ -88,7 +88,7 @@ export const textPreview: ComponentPreview<ILibText> = {
 		{
 			name: "display",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Only if the tag is h1 to h5.",
 			isRequired: false,

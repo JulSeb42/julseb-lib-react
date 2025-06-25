@@ -1,5 +1,4 @@
 import { Skeleton, SkeletonCard } from "../../../"
-import type {} from "../../../types"
 import type { ILibSkeleton } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -137,7 +136,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 		{
 			name: "isShiny",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "If true, applies a shiny animation to the component.",
 			isRequired: false,
@@ -145,7 +144,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 		{
 			name: "inline",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Use inline-flex instead of flex for the component.",
 			isRequired: false,

@@ -1,5 +1,4 @@
 import { Linkify } from "../../../"
-import type {} from "../../../types"
 import type { ILibLinkify } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -25,7 +24,7 @@ export const linkifyPreview: ComponentPreview<ILibLinkify> = {
 		{
 			name: "blank",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "If true, links open in a new tab.",
 			isRequired: false,

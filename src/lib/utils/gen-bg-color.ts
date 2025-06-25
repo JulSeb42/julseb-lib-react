@@ -116,34 +116,15 @@ export const genBgColor50: Record<
 	gray: "bg-gray-50",
 }
 
-export const genBgColorHoverDefault: Record<LibColorsHover, string> = {
-	primary: "bg-primary-500",
-	secondary: "bg-secondary-500",
-	success: "bg-success-500",
-	danger: "bg-danger-500",
-	warning: "bg-warning-500",
-	gray: "bg-gray-500",
-	white: "bg-white",
-}
-
-export const genBgColorHoverHover: Record<LibColorsHover, string> = {
-	primary: "hover:bg-primary-300",
-	secondary: "hover:bg-secondary-300",
-	success: "hover:bg-success-300",
-	danger: "hover:bg-danger-300",
-	warning: "hover:bg-warning-300",
-	gray: "hover:bg-gray-300",
-	white: "hover:bg-gray-300",
-}
-
-export const genBgColorHoverActive: Record<LibColorsHover, string> = {
-	primary: "hover:bg-primary-600",
-	secondary: "hover:bg-secondary-600",
-	success: "hover:bg-success-600",
-	danger: "hover:bg-danger-600",
-	warning: "hover:bg-warning-600",
-	gray: "hover:bg-gray-600",
-	white: "hover:bg-gray-100",
+export const genBgColorHover: Record<LibColorsHover, string> = {
+	primary: "bg-primary-500 hover:bg-primary-300 active:bg-primary-600",
+	secondary:
+		"bg-secondary-500 hover:bg-secondary-300 active:bg-secondary-600",
+	success: "bg-success-500 hover:bg-success-300 active:bg-success-600",
+	danger: "bg-danger-500 hover:bg-danger-300 active:bg-danger-600",
+	warning: "bg-warning-500 hover:bg-warning-300 active:bg-warning-600",
+	gray: "bg-gray-500 hover:bg-gray-300 active:bg-gray-600",
+	white: "bg-white hover:bg-gray-300 active:bg-gray-100",
 }
 
 export const genBgOverlay: Record<LibOverlays, string> = {

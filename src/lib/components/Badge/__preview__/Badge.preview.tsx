@@ -1,6 +1,5 @@
 import { BiStar } from "react-icons/bi"
 import { Badge, designTokens, Flexbox } from "../../../"
-import type {} from "../../../types"
 import type { ILibBadge } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -8,11 +7,11 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
 	name: "Badge",
 	component: Badge,
 	category: "components",
-	import: "Badge", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibBadge", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Badge",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibBadge",
+	additionalTypeImports: null,
 	extends: ["HTMLSpanElement"],
 	previews: [
 		{
