@@ -25,7 +25,7 @@ export const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className
 	const Element = element
 
 	return (
-		<Element ref={ref} className={clsx(className)} {...rest}{{#if children}}>
+		<Element ref={ref} className={clsx("", className)} {...rest}{{#if children}}>
 			{children}
 		</Element>{{ else }} />{{/if}}
 	)

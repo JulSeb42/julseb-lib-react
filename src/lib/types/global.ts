@@ -7,6 +7,7 @@ import type {
 	FunctionComponent,
 	RefObject,
 	CSSProperties as CSS,
+	ReactElement as ReactEl,
 } from "react"
 import type { designTokens } from "../utils/design-tokens"
 
@@ -400,6 +401,7 @@ export interface LibBackToTopPosition {
 }
 
 export type ReactChildren = ReactNode | Array<ReactNode>
+export type ReactElement = ReactEl
 export type FC = FunctionComponent
 export type DispatchState<T> = Dispatch<SetStateAction<T>>
 export type Classes = string | Array<string>

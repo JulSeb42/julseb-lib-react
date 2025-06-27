@@ -102,7 +102,15 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
 			previewTitle: "Disabled",
 			demo: (
 				<Flex>
-					<Button disabled>Button</Button>
+					<Button variant="plain" disabled>
+						Button
+					</Button>
+					<Button variant="ghost" disabled>
+						Button
+					</Button>
+					<Button variant="transparent" disabled>
+						Button
+					</Button>
 				</Flex>
 			),
 		},

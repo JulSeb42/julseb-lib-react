@@ -2,14 +2,14 @@ import { type FC } from "react"
 import {
 	clsx,
 	genBgColorHover,
-	genBgColor50,
 	genTextAllColor,
 	genBorderColorHover,
 	genTextColorHover,
+	genBgColorGhostHover,
 } from "../../utils"
 import { Loader } from "../Loader"
 import type { ILibButton } from "./types"
-import type { LibButtonVariant, LibColorsHover } from "../../types"
+import type { LibButtonVariant } from "../../types"
 
 /**
  * Button component for user interactions with multiple variants, colors, and loading states.
@@ -63,10 +63,9 @@ export const Button: FC<ILibButton> = ({
 					color === "white" && "text-primary",
 				],
 				variant === "ghost" && [
-					genBgColor50[color],
 					genTextAllColor[color],
 					color === "white" && "text-primary",
-					genBgGhostHover[color],
+					genBgColorGhostHover[color],
 				],
 				variant === "outline" && [
 					"border-1 border-solid",
@@ -94,19 +93,9 @@ export const Button: FC<ILibButton> = ({
 	)
 }
 
-const genBgGhostHover: Record<LibColorsHover, string> = {
-	primary: "hover:bg-primary-300 active:bg-primary-100",
-	secondary: "hover:bg-secondary-300 active:bg-secondary-100",
-	success: "hover:bg-success-300 active:bg-success-100",
-	danger: "hover:bg-danger-300 active:bg-danger-100",
-	warning: "hover:bg-warning-300 active:bg-warning-100",
-	gray: "hover:bg-gray-300 active:bg-gray-100",
-	white: "hover:bg-gray-300 active:bg-gray-100",
-}
-
 const genButtonDisabled: Record<LibButtonVariant, string> = {
-	plain: "disabled:bg-gray-100 disabled:hover:bg-gray-100 disabled:text-gray-500",
-	ghost: "disabled:bg-gray-100 disabled:hover:bg-gray-100 disabled:text-gray-500",
+	plain: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
+	ghost: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
 	outline:
 		"disabled:border-gray-500 disabled:text-gray-500 disabled:hover:border-gray-500 disabled:hover:text-gray-500",
 	transparent: "disabled:text-gray-500 disabled:hover:text-gray-500",

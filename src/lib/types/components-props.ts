@@ -18,4 +18,5 @@ export * from "../components/Avatar/types"
 export * from "../components/Loader/types"
 export * from "../components/Burger/types"
 export * from "../components/Button/types"
+export * from "../components/ButtonIcon/types"
 /* Prepend here - DO NOT REMOVE */

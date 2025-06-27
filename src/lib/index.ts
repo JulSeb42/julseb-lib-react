@@ -81,4 +81,5 @@ export * from "./components/Avatar"
 export * from "./components/Loader"
 export * from "./components/Burger"
 export * from "./components/Button"
+export * from "./components/ButtonIcon"
 /* Prepend here - DO NOT REMOVE */
