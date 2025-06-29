@@ -598,6 +598,8 @@ export const designTokens = {
 
 	libButtonGroupToggle: { single: "single", multi: "multi" },
 
+	libTagVariant: { plain: "plain", outline: "outline" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

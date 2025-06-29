@@ -20,4 +20,5 @@ export * from "../components/Burger/types"
 export * from "../components/Button/types"
 export * from "../components/ButtonIcon/types"
 export * from "../components/ButtonGroup/types"
+export * from "../components/Tag/types"
 /* Prepend here - DO NOT REMOVE */

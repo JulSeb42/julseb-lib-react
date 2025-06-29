@@ -83,4 +83,5 @@ export * from "./components/Burger"
 export * from "./components/Button"
 export * from "./components/ButtonIcon"
 export * from "./components/ButtonGroup"
+export * from "./components/Tag"
 /* Prepend here - DO NOT REMOVE */

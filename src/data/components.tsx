@@ -29,6 +29,7 @@ import { burgerPreview } from "../lib/components/Burger/__preview__/Burger.previ
 import { buttonPreview } from "../lib/components/Button/__preview__/Button.preview"
 import { buttonIconPreview } from "../lib/components/ButtonIcon/__preview__/ButtonIcon.preview"
 import { buttonGroupPreview } from "../lib/components/ButtonGroup/__preview__/ButtonGroup.preview"
+import { tagPreview } from "../lib/components/Tag/__preview__/Tag.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -125,6 +126,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	buttonPreview,
 	buttonIconPreview,
 	buttonGroupPreview,
+	tagPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

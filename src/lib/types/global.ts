@@ -359,6 +359,14 @@ export type LibButtonGroupButtonItem = LibComponentBase<HTMLButtonElement> &
 export type LibButtonGroupToggle =
 	keyof typeof designTokens.libButtonGroupToggle
 
+/**
+ * @description Variants for Tag component.
+ * @type {"plain" | "outline"}
+ * @example
+ * variant="plain"
+ */
+export type LibTagVariant = keyof typeof designTokens.libTagVariant
+
 /* useTranslation hook */
 
 /**
