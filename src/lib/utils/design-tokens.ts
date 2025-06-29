@@ -596,6 +596,8 @@ export const designTokens = {
 
 	libButtonSize: { default: "default", small: "small" },
 
+	libButtonGroupToggle: { single: "single", multi: "multi" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

@@ -15,11 +15,11 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
 	name: "Button",
 	component: Button,
 	category: "components",
-	import: "Button", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibButton", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Button",
+	additionalImports: [],
+	optionalImports: [],
+	propsImport: "ILibButton",
+	additionalTypeImports: [],
 	extends: ["HTMLButtonElement"],
 	previews: [
 		{

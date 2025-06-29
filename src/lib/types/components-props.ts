@@ -19,4 +19,5 @@ export * from "../components/Loader/types"
 export * from "../components/Burger/types"
 export * from "../components/Button/types"
 export * from "../components/ButtonIcon/types"
+export * from "../components/ButtonGroup/types"
 /* Prepend here - DO NOT REMOVE */

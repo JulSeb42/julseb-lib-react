@@ -117,7 +117,7 @@ export const Tooltip: FC<ILibTooltip> = ({
 
 			<div
 				className={clsx(
-					"absolute px-(--spacer-xs) py-(--spacer-2xs) rounded-md max-w-[unset] text-sm whitespace-nowrap transition-all duration-200 ease-in-out",
+					"absolute px-2 py-1 rounded-md max-w-[unset] text-sm whitespace-nowrap transition-all duration-200 ease-in-out",
 					genBgAllColorsAndOverlays[backgroundColor],
 					genTextAllColor[textColor],
 					isVisible ? "opacity-100 visible" : "opacity-0 hidden",

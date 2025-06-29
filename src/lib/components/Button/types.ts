@@ -5,6 +5,7 @@ import type {
 	LibColorsHover,
 	LibComponentBase,
 	LibLoaderVariant,
+	LibRadiuses,
 } from "../../types"
 
 interface ILibButtonBase
@@ -13,6 +14,7 @@ interface ILibButtonBase
 	variant?: LibButtonVariant
 	color?: LibColorsHover
 	size?: LibButtonSize
+	borderRadius?: LibRadiuses
 }
 
 interface ButtonWithLoader extends ILibButtonBase {

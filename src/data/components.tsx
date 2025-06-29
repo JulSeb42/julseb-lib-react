@@ -28,6 +28,7 @@ import { loaderPreview } from "../lib/components/Loader/__preview__/Loader.previ
 import { burgerPreview } from "../lib/components/Burger/__preview__/Burger.preview"
 import { buttonPreview } from "../lib/components/Button/__preview__/Button.preview"
 import { buttonIconPreview } from "../lib/components/ButtonIcon/__preview__/ButtonIcon.preview"
+import { buttonGroupPreview } from "../lib/components/ButtonGroup/__preview__/ButtonGroup.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -57,6 +58,7 @@ type Prop = {
 		| "string | JSX.Element"
 		| "ReactNode"
 		| "CSSProperties"
+		| "ReactElement"
 	possibleValues:
 		| Array<string>
 		| "Any color from the library"
@@ -122,6 +124,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	burgerPreview,
 	buttonPreview,
 	buttonIconPreview,
+	buttonGroupPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

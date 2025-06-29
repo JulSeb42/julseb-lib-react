@@ -16,14 +16,13 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 	name: "ButtonIcon",
 	component: ButtonIcon,
 	category: "components",
-	import: "ButtonIcon", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibButtonIcon", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "ButtonIcon",
+	additionalImports: [],
+	optionalImports: [],
+	propsImport: "ILibButtonIcon",
+	additionalTypeImports: [],
 	extends: ["HTMLButtonElement"],
 	previews: [
-		// { previewTitle: "Default", props: { icon: <BiEnvelope /> } },
 		{
 			previewTitle: "Plain",
 			demo: (
@@ -129,5 +128,112 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 			),
 		},
 	],
-	props: [],
+	props: [
+		{
+			name: "icon",
+			type: "ReactElement",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Icon element to display inside the button.",
+			isRequired: true,
+		},
+		{
+			name: "color",
+			type: "string",
+			possibleValues: [
+				"primary",
+				"secondary",
+				"success",
+				"danger",
+				"warning",
+				"gray",
+				"white",
+			],
+			defaultValue: "primary",
+			description: "Button color theme.",
+			isRequired: false,
+		},
+		{
+			name: "borderRadius",
+			type: "string",
+			possibleValues: [
+				"none",
+				"sm",
+				"md",
+				"lg",
+				"xl",
+				"2xl",
+				"3xl",
+				"full",
+			],
+			defaultValue: "full",
+			description: "Border radius of the button.",
+			isRequired: false,
+		},
+		{
+			name: "variant",
+			type: "string",
+			possibleValues: ["plain", "ghost", "outline", "transparent"],
+			defaultValue: "plain",
+			description: "Button variant style.",
+			isRequired: false,
+		},
+		{
+			name: "isLoading",
+			type: "boolean",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Whether the button is in a loading state.",
+			isRequired: false,
+		},
+		{
+			name: "loaderVariant",
+			type: "number",
+			possibleValues: ["1", "2", "3"],
+			defaultValue: "1",
+			description: "Loader variant to display when loading.",
+			isRequired: false,
+		},
+		{
+			name: "loaderClasses",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the loader.",
+			isRequired: false,
+		},
+		{
+			name: "tooltip",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Tooltip text to display.",
+			isRequired: false,
+		},
+		{
+			name: "showTooltip",
+			type: "boolean | Object",
+			possibleValues: [],
+			defaultValue: null,
+			description:
+				"Whether to show tooltip or tooltip configuration object.",
+			isRequired: false,
+		},
+		{
+			name: "containerStyle",
+			type: "CSSProperties",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Inline styles for the container.",
+			isRequired: false,
+		},
+		{
+			name: "containerClasses",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
+	],
 }

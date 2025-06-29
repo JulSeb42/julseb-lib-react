@@ -31,8 +31,6 @@ export const Skeleton: FC<ILibSkeleton> = ({
 }) => {
 	const Element = element
 
-	console.log({ borderRadius, gen: genBorderRadius[borderRadius] })
-
 	return (
 		<Element
 			ref={ref}

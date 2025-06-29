@@ -6,6 +6,7 @@ import {
 	genBgColorGhostHover,
 	genTextAllColor,
 	genTextColorHover,
+	genButtonDisabled,
 } from "../../utils"
 import type { ILibButtonIcon } from "./types"
 import { Loader } from "../Loader"
@@ -36,21 +37,18 @@ export const ButtonIconFn: FC<
 			ref={ref}
 			className={clsx(
 				"inline-flex justify-center items-center size-12",
+				genButtonDisabled[variant],
 				variant === "plain" && [
 					genBgColorHover[color],
-					"text-white disabled:bg-gray-200 disabled:text-gray-500",
+					"text-white",
 					color === "white" && "text-primary-500",
 				],
 				variant === "ghost" && [
 					genBgColorGhostHover[color],
 					genTextAllColor[color],
 					color === "white" && "text-primary-500",
-					"disabled:bg-gray-200 disabled:text-gray-500",
 				],
-				variant === "transparent" && [
-					genTextColorHover[color],
-					"disabled:text-gray-500",
-				],
+				variant === "transparent" && [genTextColorHover[color]],
 				genBorderRadius[borderRadius],
 				className,
 			)}

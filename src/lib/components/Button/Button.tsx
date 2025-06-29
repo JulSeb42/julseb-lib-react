@@ -6,10 +6,11 @@ import {
 	genBorderColorHover,
 	genTextColorHover,
 	genBgColorGhostHover,
+	genBorderRadius,
+	genButtonDisabled,
 } from "../../utils"
 import { Loader } from "../Loader"
 import type { ILibButton } from "./types"
-import type { LibButtonVariant } from "../../types"
 
 /**
  * Button component for user interactions with multiple variants, colors, and loading states.
@@ -48,6 +49,7 @@ export const Button: FC<ILibButton> = ({
 	isLoading,
 	loaderVariant,
 	disabled,
+	borderRadius = "md",
 	...rest
 }) => {
 	const Element = element
@@ -56,7 +58,8 @@ export const Button: FC<ILibButton> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"inline-flex items-center gap-2 px-4 py-2 rounded-md font-bold text-base",
+				"inline-flex items-center gap-2 px-4 py-2 font-bold text-base",
+				genBorderRadius[borderRadius],
 				variant === "plain" && [
 					genBgColorHover[color],
 					color !== "white" && "text-white",
@@ -91,12 +94,4 @@ export const Button: FC<ILibButton> = ({
 			)}
 		</Element>
 	)
-}
-
-const genButtonDisabled: Record<LibButtonVariant, string> = {
-	plain: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
-	ghost: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
-	outline:
-		"disabled:border-gray-500 disabled:text-gray-500 disabled:hover:border-gray-500 disabled:hover:text-gray-500",
-	transparent: "disabled:text-gray-500 disabled:hover:text-gray-500",
 }

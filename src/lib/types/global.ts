@@ -8,6 +8,7 @@ import type {
 	RefObject,
 	CSSProperties as CSS,
 	ReactElement as ReactEl,
+	ButtonHTMLAttributes,
 } from "react"
 import type { designTokens } from "../utils/design-tokens"
 
@@ -327,13 +328,36 @@ export type LibTooltipTrigger = keyof typeof designTokens.libTooltipTriggers
  * @template T - The HTML element type.
  * @prop {ElementType} [element] - The HTML element or React component to render as.
  * @prop {RefObject<T>} [ref] - Ref for the rendered element.
- * @prop {string} [data-testid] - Test id for testing utilities.
  * @extends HTMLAttributes<T>
  */
 export interface LibComponentBase<T> extends HTMLAttributes<T> {
 	element?: ElementType
 	ref?: RefObject<T>
 }
+
+/**
+ * @description Props for Button inside ButtonGroup.
+ *
+ * @extends HTMLButtonElement
+ * @prop {JSX.Element} [content] - The content of the button
+ * @prop {string} [id] - The id if the button.
+ */
+export type LibButtonGroupButtonItem = LibComponentBase<HTMLButtonElement> &
+	ButtonHTMLAttributes<HTMLButtonElement> & {
+		id: string
+		buttonContent: ReactChildren
+		children?: never
+	}
+
+/**
+ * @description Type of toggles for ButtonGroup.
+ * @type {"single" | "multi"}
+ * @example
+ * toggleType="single"
+ * toggleType="multi"
+ */
+export type LibButtonGroupToggle =
+	keyof typeof designTokens.libButtonGroupToggle
 
 /* useTranslation hook */
 
