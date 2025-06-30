@@ -28,7 +28,7 @@ export const AvatarFn: FC<
 			ref={ref}
 			className={clsx(
 				"inline-flex justify-center items-center rounded-full size-12 overflow-hidden font-bold text-xl",
-				borderColor !== "transparent" && "border-1 border-solid",
+				borderColor !== "transparent" && "border",
 				genBorderRadius[borderRadius],
 				genBorderAllColors[borderColor],
 				genBgAllColors[backgroundColor],

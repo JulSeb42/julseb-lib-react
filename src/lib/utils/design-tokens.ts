@@ -442,13 +442,6 @@ export const designTokens = {
 	 */
 	libInputVariants: {
 		rounded: "rounded",
-		"rounded-sm": "rounded-sm",
-		"rounded-md": "rounded-md",
-		"rounded-lg": "rounded-lg",
-		"rounded-xl": "rounded-xl",
-		"rounded-2xl": "rounded-2xl",
-		"rounded-3xl": "rounded-3xl",
-		"rounded-full": "rounded-full",
 		pill: "pill",
 	},
 
@@ -599,6 +592,25 @@ export const designTokens = {
 	libButtonGroupToggle: { single: "single", multi: "multi" },
 
 	libTagVariant: { plain: "plain", outline: "outline" },
+
+	libInputTypes: {
+		color: "color",
+		date: "date",
+		"datetime-local": "datetime-local",
+		month: "month",
+		week: "week",
+		file: "file",
+		password: "password",
+		search: "search",
+		email: "email",
+		number: "number",
+		tel: "tel",
+		text: "text",
+		url: "url",
+		time: "time",
+		select: "select",
+		textarea: "textarea",
+	},
 
 	/**
 	 * Country codes

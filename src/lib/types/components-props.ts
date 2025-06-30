@@ -21,4 +21,6 @@ export * from "../components/Button/types"
 export * from "../components/ButtonIcon/types"
 export * from "../components/ButtonGroup/types"
 export * from "../components/Tag/types"
+export * from "../components/InputContainer/types"
+export * from "../components/Input/types"
 /* Prepend here - DO NOT REMOVE */

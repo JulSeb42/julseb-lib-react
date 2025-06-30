@@ -53,7 +53,7 @@ export const Tag: FC<ILibTag> = ({
 						: genTextAllColor[contentColor ?? "white"],
 				],
 				variant === "outline" && [
-					"border-1 border-solid",
+					"border",
 					genBorderAllColors[color],
 					genTextAllColor[contentColor || color],
 				],

@@ -71,7 +71,7 @@ export const Button: FC<ILibButton> = ({
 					genBgColorGhostHover[color],
 				],
 				variant === "outline" && [
-					"border-1 border-solid",
+					"border",
 					genBorderColorHover[color],
 					genTextColorHover[color],
 				],

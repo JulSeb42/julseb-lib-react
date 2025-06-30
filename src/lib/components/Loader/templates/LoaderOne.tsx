@@ -16,7 +16,7 @@ export const LoaderOne: FC<Omit<ILibLoader, "variant">> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"inline-block relative border-8 border-transparent border-solid rounded-full size-12 animate-spin",
+				"inline-block relative border-8 border-transparent rounded-full size-12 animate-spin",
 				genBorderBottomColor[color],
 				className,
 			)}

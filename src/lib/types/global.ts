@@ -166,6 +166,19 @@ export type LibTransitions = keyof typeof designTokens.libTransitions
 export type LibValidationStatus = boolean | undefined
 
 /**
+ * @description Validation for input components.
+ * @type {Object}
+ * @example
+ * validation={{ status: false, message: "Name is required" }}
+ */
+export type LibValidation = {
+	status: LibValidationStatus
+	message?: ReactChildren
+	iconPassed?: ReactChildren
+	iconNotPassed?: ReactChildren
+}
+
+/**
  * @description All theme names available in the library.
  * @type {"light"|"dark"}
  * @example
@@ -183,6 +196,16 @@ export type LibThemeNames = keyof typeof designTokens.libThemes
  * variant="pill"
  */
 export type LibInputVariant = keyof typeof designTokens.libInputVariants
+
+/**
+ * @description All input type tokens available in the library for form inputs.
+ * @type {"color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "email" | "number" | "tel" | "text" | "url" | "time" | "select" | "textarea"}
+ * @example
+ * type="email"
+ * type="password"
+ * type="select"
+ */
+export type LibInputType = keyof typeof designTokens.libInputTypes
 
 /**
  * @description All loader variant tokens available in the library.

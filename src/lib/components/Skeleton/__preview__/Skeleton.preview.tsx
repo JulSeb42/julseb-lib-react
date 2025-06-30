@@ -33,7 +33,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 				<SkeletonCard
 					flexDirection="col"
 					gap="sm"
-					className="px-2 py-4 border-1 border-gray-200 border-solid"
+					className="px-2 py-4 border-1 border-gray-200"
 				>
 					<Skeleton
 						borderRadius="sm"
@@ -56,7 +56,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 					gap="xs"
 					borderRadius="md"
 					isShiny
-					className="p-4 border-1 border-gray-200 border-solid"
+					className="p-4 border-1 border-gray-200"
 				>
 					<Skeleton
 						borderRadius="lg"
