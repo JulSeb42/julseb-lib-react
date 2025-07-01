@@ -6,7 +6,7 @@ import type {
 } from "../../types"
 import type { ILibValidationStatus } from "../InputComponents"
 
-type ILibInputCheckBase = LibComponentBase<HTMLInputElement> &
+type ILibInputCheckBase = Omit<LibComponentBase<HTMLInputElement>, "element"> &
 	InputHTMLAttributes<HTMLInputElement> & {
 		ref?: Ref<HTMLLabelElement>
 		id: string

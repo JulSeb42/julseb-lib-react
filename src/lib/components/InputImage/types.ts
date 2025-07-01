@@ -5,7 +5,10 @@ import type {
 	ILibInputWithValidation,
 } from "../InputComponents"
 
-export type ILibInputImage = InputHTMLAttributes<HTMLInputElement> &
+export type ILibInputImage = Omit<
+	InputHTMLAttributes<HTMLInputElement>,
+	"element"
+> &
 	Omit<ILibInputCommon, "inputVariant" | "inputBackground"> &
 	ILibInputWithValidation & {
 		ref?: Ref<HTMLLabelElement>

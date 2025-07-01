@@ -618,6 +618,8 @@ export const designTokens = {
 		selector: "selector",
 	},
 
+	libListInputDirections: { up: "up", down: "down" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

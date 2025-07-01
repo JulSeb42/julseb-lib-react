@@ -49,7 +49,7 @@ export const InputContainer: FC<ILibInputContainer> = ({
 			ref={ref}
 			className={clsx(
 				"flex flex-col gap-1",
-				hasListOpen && "z-20",
+				hasListOpen && "z-40",
 				className,
 			)}
 			{...rest}

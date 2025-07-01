@@ -3,9 +3,14 @@ import { BiX } from "react-icons/bi"
 import { clsx } from "../../../utils"
 import { transformSearchKeys } from "../../../lib-utils"
 import { Key } from "../../Key"
-import { InputButton, InputIcon, InputPrefix } from "../../InputComponents"
+import {
+	InputButton,
+	InputIcon,
+	InputPrefix,
+	InputWrapper,
+} from "../../InputComponents"
 import { useTouchScreen, useMergeRefs, useKeyPress } from "../../../hooks"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibSearchInput } from "../subtypes"
 
 export const SearchInput: FC<ILibSearchInput> = ({
@@ -34,15 +39,11 @@ export const SearchInput: FC<ILibSearchInput> = ({
 	useKeyPress(keys, handleFocus)
 
 	return (
-		<div
-			className={clsx(
-				INPUT_CONTAINER_CLASSES({
-					validation: undefined,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={undefined}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputPrefix prefix={prefix} />
 
@@ -78,6 +79,6 @@ export const SearchInput: FC<ILibSearchInput> = ({
 					<Key keys={transformSearchKeys(keys)} size="small" />
 				</span>
 			)}
-		</div>
+		</InputWrapper>
 	)
 }

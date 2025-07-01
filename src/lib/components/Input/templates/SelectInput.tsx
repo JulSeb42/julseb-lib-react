@@ -2,8 +2,13 @@ import { useRef, type FC, type MouseEvent } from "react"
 import { BiChevronDown } from "react-icons/bi"
 import { clsx } from "../../../utils"
 import { useMergeRefs } from "../../../hooks"
-import { InputIcon, InputValidation, InputButton } from "../../InputComponents"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import {
+	InputIcon,
+	InputValidation,
+	InputButton,
+	InputWrapper,
+} from "../../InputComponents"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibSelectInput } from "../subtypes"
 
 export const SelectInput: FC<ILibSelectInput> = ({
@@ -37,16 +42,11 @@ export const SelectInput: FC<ILibSelectInput> = ({
 	}
 
 	return (
-		<div
-			className={clsx(
-				"cursor-pointer",
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputIcon
 				icon={icon}
@@ -71,6 +71,6 @@ export const SelectInput: FC<ILibSelectInput> = ({
 			<InputButton className="text-gray-500" onClick={handleIconClick}>
 				{iconSelect}
 			</InputButton>
-		</div>
+		</InputWrapper>
 	)
 }

@@ -171,7 +171,7 @@ export type LibValidationStatus = boolean | undefined
  * @example
  * validation={{ status: false, message: "Name is required" }}
  */
-export type LibValidation = {
+export type LibInputValidation = {
 	status: LibValidationStatus
 	message?: ReactChildren
 	iconPassed?: ReactChildren
@@ -398,6 +398,15 @@ export type LibTagVariant = keyof typeof designTokens.libTagVariant
  */
 export type LibCheckInputVariant =
 	keyof typeof designTokens.libCheckInputVariants
+
+/**
+ * @description List direction variants for inputs with list.
+ * @type {"up" | "down"}
+ * @example
+ * variant="up"
+ */
+export type LibInputListDirection =
+	keyof typeof designTokens.libListInputDirections
 
 /* useTranslation hook */
 

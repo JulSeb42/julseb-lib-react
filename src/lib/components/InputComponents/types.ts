@@ -1,7 +1,7 @@
 import type { Ref } from "react"
 import type {
 	ReactChildren,
-	LibValidation,
+	LibInputValidation,
 	LibInputVariant,
 	LibInputBackground,
 } from "../../types"
@@ -44,7 +44,7 @@ export type ILibInputWithList = ILibInputExtended & { hasListOpen?: boolean }
 export type ILibValidationStatus = boolean | undefined
 
 export interface ILibInputWithValidation {
-	validation?: LibValidation
+	validation?: LibInputValidation
 }
 
 export interface ILibInputWithIcon {

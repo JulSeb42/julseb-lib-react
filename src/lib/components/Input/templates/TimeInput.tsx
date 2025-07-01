@@ -7,8 +7,9 @@ import {
 	InputButton,
 	InputIcon,
 	InputPrefix,
+	InputWrapper,
 } from "../../InputComponents"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibTimeInput } from "../subtypes"
 
 export const TimeInput: FC<ILibTimeInput> = ({
@@ -29,15 +30,11 @@ export const TimeInput: FC<ILibTimeInput> = ({
 	const showPicker = () => el.current?.showPicker()
 
 	return (
-		<div
-			className={clsx(
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputPrefix prefix={prefix} />
 
@@ -62,6 +59,6 @@ export const TimeInput: FC<ILibTimeInput> = ({
 			<InputButton onClick={showPicker}>{iconClock}</InputButton>
 
 			<InputValidation validation={validation} />
-		</div>
+		</InputWrapper>
 	)
 }

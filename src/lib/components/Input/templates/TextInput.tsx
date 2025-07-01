@@ -1,11 +1,12 @@
 import { type FC } from "react"
 import { clsx } from "../../../utils"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import { INPUT_CLASSES } from "../classes"
 import {
 	InputPrefix,
 	InputValidation,
 	InputSuffix,
 	InputIcon,
+	InputWrapper,
 } from "../../InputComponents"
 import type { ILibTextInput } from "../subtypes"
 
@@ -23,15 +24,11 @@ export const TextInput: FC<ILibTextInput> = ({
 	...rest
 }) => {
 	return (
-		<div
-			className={clsx(
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputPrefix prefix={prefix} />
 
@@ -51,6 +48,6 @@ export const TextInput: FC<ILibTextInput> = ({
 			<InputValidation validation={validation} />
 
 			<InputSuffix suffix={suffix} />
-		</div>
+		</InputWrapper>
 	)
 }

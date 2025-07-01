@@ -1,7 +1,7 @@
 import { type FC } from "react"
 import { clsx } from "../../../utils"
-import { InputValidation } from "../../InputComponents"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import { InputValidation, InputWrapper } from "../../InputComponents"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibFileInput } from "../subtypes"
 
 export const FileInput: FC<ILibFileInput> = ({
@@ -14,16 +14,11 @@ export const FileInput: FC<ILibFileInput> = ({
 	...rest
 }) => {
 	return (
-		<div
-			className={clsx(
-				"cursor-pointer",
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<input
 				{...rest}
@@ -36,6 +31,6 @@ export const FileInput: FC<ILibFileInput> = ({
 			/>
 
 			<InputValidation validation={validation} />
-		</div>
+		</InputWrapper>
 	)
 }

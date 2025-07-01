@@ -2,8 +2,13 @@ import { useRef, type FC } from "react"
 import { BiCalendar } from "react-icons/bi"
 import { clsx } from "../../../utils"
 import { useMergeRefs } from "../../../hooks"
-import { InputValidation, InputButton, InputIcon } from "../../InputComponents"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import {
+	InputValidation,
+	InputButton,
+	InputIcon,
+	InputWrapper,
+} from "../../InputComponents"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibDateInput } from "../subtypes"
 
 export const DateInput: FC<ILibDateInput> = ({
@@ -23,16 +28,11 @@ export const DateInput: FC<ILibDateInput> = ({
 	const showPicker = () => el.current?.showPicker()
 
 	return (
-		<div
-			className={clsx(
-				"cursor-pointer",
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputIcon
 				icon={icon}
@@ -55,6 +55,6 @@ export const DateInput: FC<ILibDateInput> = ({
 			<InputButton onClick={showPicker}>{iconCalendar}</InputButton>
 
 			<InputValidation validation={validation} />
-		</div>
+		</InputWrapper>
 	)
 }

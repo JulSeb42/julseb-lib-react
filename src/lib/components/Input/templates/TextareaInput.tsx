@@ -1,6 +1,6 @@
 import { type FC } from "react"
 import { clsx } from "../../../utils"
-import { INPUT_CONTAINER_CLASSES } from "../classes"
+import { INPUT_CONTAINER_CLASSES } from "../../InputComponents/classes"
 import type { ILibTextareaInput } from "../subtypes"
 
 export const TextareaInput: FC<ILibTextareaInput> = ({

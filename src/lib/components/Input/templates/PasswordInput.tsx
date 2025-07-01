@@ -6,8 +6,9 @@ import {
 	InputButton,
 	InputPrefix,
 	InputIcon,
+	InputWrapper,
 } from "../../InputComponents"
-import { INPUT_CLASSES, INPUT_CONTAINER_CLASSES } from "../classes"
+import { INPUT_CLASSES } from "../classes"
 import type { ILibPasswordInput } from "../subtypes"
 
 export const PasswordInput: FC<ILibPasswordInput> = ({
@@ -26,15 +27,11 @@ export const PasswordInput: FC<ILibPasswordInput> = ({
 	const [inputType, setInputType] = useState<"password" | "text">("password")
 
 	return (
-		<div
-			className={clsx(
-				INPUT_CONTAINER_CLASSES({
-					validation,
-					inputBackground,
-					inputVariant,
-				}),
-				className,
-			)}
+		<InputWrapper
+			className={className}
+			validation={validation}
+			inputBackground={inputBackground}
+			inputVariant={inputVariant}
 		>
 			<InputPrefix prefix={prefix} />
 
@@ -66,6 +63,6 @@ export const PasswordInput: FC<ILibPasswordInput> = ({
 			)}
 
 			<InputValidation validation={validation} />
-		</div>
+		</InputWrapper>
 	)
 }

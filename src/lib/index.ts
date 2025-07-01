@@ -88,4 +88,5 @@ export * from "./components/InputContainer"
 export * from "./components/Input"
 export * from "./components/InputImage"
 export * from "./components/InputCheck"
+export * from "./components/InputPhone"
 /* Prepend here - DO NOT REMOVE */

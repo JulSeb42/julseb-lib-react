@@ -1,7 +1,7 @@
 import { BiXCircle, BiCheckCircle } from "react-icons/bi"
 import { clsx } from "../../utils"
 import { INPUT_VALIDATION_CONTAINER } from "./classes"
-import type { LibValidation } from "../../types"
+import type { LibInputValidation } from "../../types"
 
 export const InputValidation: FC<IInputValidation> = ({ validation }) => {
 	if (!validation || validation.status === undefined) return null
@@ -9,7 +9,6 @@ export const InputValidation: FC<IInputValidation> = ({ validation }) => {
 	return (
 		<span
 			className={clsx(
-				"px-2",
 				INPUT_VALIDATION_CONTAINER,
 				validation.status === false
 					? "text-danger-500"
@@ -24,5 +23,5 @@ export const InputValidation: FC<IInputValidation> = ({ validation }) => {
 }
 
 interface IInputValidation {
-	validation: LibValidation | undefined
+	validation: LibInputValidation | undefined
 }
