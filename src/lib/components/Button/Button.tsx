@@ -20,7 +20,7 @@ import type { ILibButton } from "./types"
  * @example
  * <Button variant="plain" color="primary" size="default">Click me</Button>
  *
- * @extends ILibButton
+ * @extends HTMLButtonElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the button.
  * @prop {keyof JSX.IntrinsicElements} [props.element="button"] - The HTML element to render as the button.

@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { Tooltip } from "../Tooltip"
 import { ButtonIconFn } from "./ButtonFn"
 import type { ILibButtonIcon } from "./types"
@@ -12,7 +11,7 @@ import type { ILibButtonIcon } from "./types"
  * @example
  * <ButtonIcon icon={<BiUser />} color="primary" variant="plain" tooltip="User profile" showTooltip />
  *
- * @extends ILibButtonIcon
+ * @extends HTMLButtonElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the button.
  * @prop {keyof JSX.IntrinsicElements} [props.element="button"] - The HTML element to render as the button.

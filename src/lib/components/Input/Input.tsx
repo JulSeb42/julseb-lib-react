@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { InputContainer } from "../InputContainer"
 import { ColorInput } from "./templates/ColorInput"
 import { DateInput } from "./templates/DateInput"

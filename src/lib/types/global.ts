@@ -390,6 +390,15 @@ export type LibButtonGroupToggle =
  */
 export type LibTagVariant = keyof typeof designTokens.libTagVariant
 
+/**
+ * @description Variants for InputCheck component.
+ * @type {"tile" | "toggle" | "selector"}
+ * @example
+ * variant="toggle"
+ */
+export type LibCheckInputVariant =
+	keyof typeof designTokens.libCheckInputVariants
+
 /* useTranslation hook */
 
 /**

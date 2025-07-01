@@ -12,7 +12,7 @@ import type { ILibAvatar } from "./types"
  * @example
  * <Avatar backgroundColor="primary" contentColor="white" borderRadius="full" badge="New">JS</Avatar>
  *
- * @extends ILibAvatar
+ * @extends HTMLSpanElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the avatar.
  * @prop {keyof JSX.IntrinsicElements} [props.element="span"] - The HTML element to render as the avatar.

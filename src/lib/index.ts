@@ -87,4 +87,5 @@ export * from "./components/Tag"
 export * from "./components/InputContainer"
 export * from "./components/Input"
 export * from "./components/InputImage"
+export * from "./components/InputCheck"
 /* Prepend here - DO NOT REMOVE */

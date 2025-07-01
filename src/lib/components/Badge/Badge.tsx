@@ -15,7 +15,7 @@ import type { ILibBadge } from "./types"
  * @example
  * <Badge backgroundColor="primary" contentColor="white" borderRadius="full">New</Badge>
  *
- * @extends ILibBadge
+ * @extends HTMLSpanElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the badge.
  * @prop {keyof JSX.IntrinsicElements} [props.element="span"] - The HTML element to render as the badge.

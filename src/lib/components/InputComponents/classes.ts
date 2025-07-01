@@ -14,5 +14,5 @@ export const SUFFIX_CLASSES = [
 ]
 
 export const INPUT_ICON_CONTAINER_CLASSES = [
-	"h-full w-[32px] inline-flex items-center justify-center border-e-1 border-e-gray-200",
+	"h-full w-8 inline-flex items-center justify-center border-e-1 border-e-gray-200",
 ]

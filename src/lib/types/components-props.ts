@@ -24,4 +24,5 @@ export * from "../components/Tag/types"
 export * from "../components/InputContainer/types"
 export * from "../components/Input/types"
 export * from "../components/InputImage/types"
+export * from "../components/InputCheck/types"
 /* Prepend here - DO NOT REMOVE */

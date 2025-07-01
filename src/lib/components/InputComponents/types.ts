@@ -41,6 +41,8 @@ export type ILibInputExtended = InputWithCounter | InputWithoutCounter
 
 export type ILibInputWithList = ILibInputExtended & { hasListOpen?: boolean }
 
+export type ILibValidationStatus = boolean | undefined
+
 export interface ILibInputWithValidation {
 	validation?: LibValidation
 }

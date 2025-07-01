@@ -32,6 +32,7 @@ import { buttonGroupPreview } from "../lib/components/ButtonGroup/__preview__/Bu
 import { tagPreview } from "../lib/components/Tag/__preview__/Tag.preview"
 import { inputPreview } from "../lib/components/Input/__preview__/Input.preview"
 import { inputImagePreview } from "../lib/components/InputImage/__preview__/InputImage.preview"
+import { inputCheckPreview } from "../lib/components/InputCheck/__preview__/InputCheck.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -131,6 +132,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	tagPreview,
 	inputPreview,
 	inputImagePreview,
+	inputCheckPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

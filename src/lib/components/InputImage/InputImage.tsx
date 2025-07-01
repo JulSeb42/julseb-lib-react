@@ -1,5 +1,4 @@
 import { useState, type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { InputContainer } from "../InputContainer"
 import { HoverContainer } from "./HoverContainer"
 import { EmptyContainer } from "./EmptyContainer"
@@ -19,7 +18,7 @@ import type { ILibInputImage } from "./types"
  *   icons={{ upload: <BiUpload />, edit: <BiEdit /> }}
  * />
  *
- * @extends ILibInputImage
+ * @extends HTMLInputElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the input image container.
  * @prop {React.Ref<any>} [props.ref] - Ref to the label element.

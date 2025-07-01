@@ -12,7 +12,7 @@ import type { ILibLoader } from "./types"
  * @example
  * <Loader variant={2} color="primary" />
  *
- * @extends ILibLoader
+ * @extends HTMLSpanElement
  *
  * @prop {1 | 2 | 3} [props.variant=1] Possible values: 1, 2, 3. - Loader variant style.
  * @prop {string} [props.color="primary"] Any color from the library. - Loader color.

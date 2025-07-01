@@ -38,12 +38,12 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 					<Skeleton
 						borderRadius="sm"
 						animation="pulse"
-						className="w-full h-[24px]"
+						className="w-full h-6"
 					/>
 					<Skeleton
 						borderRadius="sm"
 						animation="pulse"
-						className="w-[90%] h-[24px]"
+						className="w-[90%] h-6"
 					/>
 				</SkeletonCard>
 			),
@@ -62,8 +62,8 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 						borderRadius="lg"
 						className="w-[200px] h-[150px]"
 					/>
-					<Skeleton borderRadius="sm" className="w-full h-[24px]" />
-					<Skeleton borderRadius="sm" className="w-[90%] h-[24px]" />
+					<Skeleton borderRadius="sm" className="w-full h-6" />
+					<Skeleton borderRadius="sm" className="w-[90%] h-6" />
 				</SkeletonCard>
 			),
 		},

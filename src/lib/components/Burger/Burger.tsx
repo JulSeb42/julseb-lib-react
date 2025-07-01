@@ -14,7 +14,7 @@ const SPAN_COMMON =
  * @example
  * <Burger isOpen={true} color="primary" />
  *
- * @extends ILibBurger
+ * @extends HTMLButtonElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the burger.
  * @prop {keyof JSX.IntrinsicElements} [props.element="button"] - The HTML element to render as the burger.
@@ -44,11 +44,7 @@ export const Burger: FC<ILibBurger> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx(
-				"relative w-[32px] h-[24px]",
-				genHover[color],
-				className,
-			)}
+			className={clsx("relative w-8 h-6", genHover[color], className)}
 			role={role}
 			aria-label={ariaLabel}
 			{...rest}

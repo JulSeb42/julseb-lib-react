@@ -13,7 +13,7 @@ export const INPUT_CONTAINER_CLASSES = ({
 	inputVariant: LibInputVariant | undefined
 	inputBackground: LibInputBackground | undefined
 }) => [
-	"w-full h-[32px] border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden",
+	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden",
 	"has-[input:focus]:border-primary-500",
 	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500",
 	validation &&

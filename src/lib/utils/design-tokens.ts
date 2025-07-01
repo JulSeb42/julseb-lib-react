@@ -612,6 +612,12 @@ export const designTokens = {
 		textarea: "textarea",
 	},
 
+	libCheckInputVariants: {
+		tile: "tile",
+		toggle: "toggle",
+		selector: "selector",
+	},
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component
