@@ -16,10 +16,10 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
 	component: Button,
 	category: "components",
 	import: "Button",
-	additionalImports: [],
-	optionalImports: [],
+	additionalImports: null,
+	optionalImports: null,
 	propsImport: "ILibButton",
-	additionalTypeImports: [],
+	additionalTypeImports: null,
 	extends: ["HTMLButtonElement"],
 	previews: [
 		{
@@ -159,7 +159,7 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
 		{
 			name: "isLoading",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Whether the button is in a loading state.",
 			isRequired: false,

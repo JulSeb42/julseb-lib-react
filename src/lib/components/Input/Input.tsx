@@ -47,24 +47,45 @@ const renderComponent = (props: any, type: LibInputType) => {
 const InputFunction: FC<ILibInput> = ({ type, ...rest }: ILibInput) =>
 	renderComponent(rest, type as LibInputType)
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * Input component with multiple types and variants for form data collection.
+ *
+ * @component
+ *
+ * @example
+ * <Input type="text" label="Name" placeholder="Enter your name" />
+ * <Input type="email" label="Email" validation={{ status: true }} />
+ * <Input type="select" label="Country">
+ *   <option value="us">United States</option>
+ *   <option value="ca">Canada</option>
+ * </Input>
+ *
+ * @extends InputHTMLAttributes
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the input.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the input element.
+ * @prop {string} [props.id] - Unique identifier for the input element.
+ * @prop {string} [props.label] - Label text to display above the input.
+ * @prop {string} [props.labelComment] - Additional comment text next to the label.
+ * @prop {string} [props.helper] - Helper text to display below the label.
+ * @prop {string} [props.helperBottom] - Helper text to display at the bottom of the input.
+ * @prop {"color" | "date" | "datetime-local" | "month" | "week" | "file" | "password" | "search" | "email" | "number" | "tel" | "text" | "url" | "time" | "select" | "textarea"} [props.type="text"] - Type of input to render.
+ * @prop {LibValidation} [props.validation] - Validation state and configuration object.
+ * @prop {string | number} [props.value] - Current value of the input.
+ * @prop {boolean | object} [props.counter] - Whether to show character counter or counter configuration.
+ * @prop {number} [props.maxLength] - Maximum number of characters allowed.
+ * @prop {"rounded" | "pill"} [props.inputVariant] - Visual variant of the input.
+ * @prop {"light" | "dark"} [props.inputBackground] - Background theme of the input.
+ * @prop {React.ReactNode} [props.icon] - Icon element to display inside the input.
+ * @prop {string} [props.placeholder] - Placeholder text for the input.
+ * @prop {boolean} [props.disabled] - Whether the input is disabled.
+ * @prop {React.ReactNode} [props.children] - Child elements for select and textarea types.
+ * @prop {any} [props.rest] - Additional props spread to the input element.
+ *
+ * @returns {JSX.Element} The rendered Input component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/input
+ */
 export const Input: FC<ILibInput> = ({
 	className,
 	ref,

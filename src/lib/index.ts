@@ -86,4 +86,5 @@ export * from "./components/ButtonGroup"
 export * from "./components/Tag"
 export * from "./components/InputContainer"
 export * from "./components/Input"
+export * from "./components/InputImage"
 /* Prepend here - DO NOT REMOVE */

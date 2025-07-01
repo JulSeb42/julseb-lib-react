@@ -1,6 +1,5 @@
 import { BiEnvelope } from "react-icons/bi"
 import { Input } from "../../../"
-import type {} from "../../../types"
 import { PreviewWithValidation, PreviewFull, PreviewSearch } from "./Previews"
 import type { ILibInput } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
@@ -9,11 +8,11 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 	name: "Input",
 	component: Input,
 	category: "components",
-	import: "Input", // import Component (ex: Skeleton)
-	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
-	propsImport: "ILibInput", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	import: "Input",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibInput",
+	additionalTypeImports: null,
 	extends: ["HTMLInputElement"],
 	previews: [
 		{ previewTitle: "Full", demo: <PreviewFull /> },
@@ -87,5 +86,152 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 			props: { inputVariant: "pill", prefix: "Prefix", suffix: "Suffix" },
 		},
 	],
-	props: [],
+	props: [
+		{
+			name: "type",
+			type: "string",
+			possibleValues: [
+				"color",
+				"date",
+				"datetime-local",
+				"month",
+				"week",
+				"file",
+				"password",
+				"search",
+				"email",
+				"number",
+				"tel",
+				"text",
+				"url",
+				"time",
+				"select",
+				"textarea",
+			],
+			defaultValue: "text",
+			description: "Type of input to render.",
+			isRequired: false,
+		},
+		{
+			name: "label",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Label text to display above the input.",
+			isRequired: false,
+		},
+		{
+			name: "labelComment",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Additional comment text next to the label.",
+			isRequired: false,
+		},
+		{
+			name: "helper",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Helper text to display below the label.",
+			isRequired: false,
+		},
+		{
+			name: "helperBottom",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Helper text to display at the bottom of the input.",
+			isRequired: false,
+		},
+		{
+			name: "validation",
+			type: "Object",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Validation state and configuration object.",
+			isRequired: false,
+		},
+		{
+			name: "value",
+			type: "string | number",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Current value of the input.",
+			isRequired: false,
+		},
+		{
+			name: "counter",
+			type: "boolean | Object",
+			possibleValues: null,
+			defaultValue: null,
+			description:
+				"Whether to show character counter or counter configuration.",
+			isRequired: false,
+		},
+		{
+			name: "maxLength",
+			type: "number",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Maximum number of characters allowed.",
+			isRequired: false,
+		},
+		{
+			name: "inputVariant",
+			type: "string",
+			possibleValues: ["rounded", "pill"],
+			defaultValue: "rounded",
+			description: "Visual variant of the input.",
+			isRequired: false,
+		},
+		{
+			name: "inputBackground",
+			type: "string",
+			possibleValues: ["light", "dark"],
+			defaultValue: "light",
+			description: "Background theme of the input.",
+			isRequired: false,
+		},
+		{
+			name: "icon",
+			type: "ReactElement",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Icon element to display inside the input.",
+			isRequired: false,
+		},
+		{
+			name: "placeholder",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Placeholder text for the input.",
+			isRequired: false,
+		},
+		{
+			name: "disabled",
+			type: "boolean",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Whether the input is disabled.",
+			isRequired: false,
+		},
+		{
+			name: "prefix",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Text to display as a prefix inside the input.",
+			isRequired: false,
+		},
+		{
+			name: "suffix",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Text to display as a suffix inside the input.",
+			isRequired: false,
+		},
+	],
 }

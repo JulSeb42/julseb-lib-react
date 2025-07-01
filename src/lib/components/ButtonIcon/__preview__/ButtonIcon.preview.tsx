@@ -17,10 +17,10 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 	component: ButtonIcon,
 	category: "components",
 	import: "ButtonIcon",
-	additionalImports: [],
-	optionalImports: [],
+	additionalImports: null,
+	optionalImports: null,
 	propsImport: "ILibButtonIcon",
-	additionalTypeImports: [],
+	additionalTypeImports: null,
 	extends: ["HTMLButtonElement"],
 	previews: [
 		{
@@ -132,7 +132,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "icon",
 			type: "ReactElement",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Icon element to display inside the button.",
 			isRequired: true,
@@ -181,7 +181,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "isLoading",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Whether the button is in a loading state.",
 			isRequired: false,
@@ -197,7 +197,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "loaderClasses",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Additional CSS classes for the loader.",
 			isRequired: false,
@@ -205,7 +205,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "tooltip",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Tooltip text to display.",
 			isRequired: false,
@@ -213,7 +213,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "showTooltip",
 			type: "boolean | Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Whether to show tooltip or tooltip configuration object.",
@@ -222,7 +222,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "containerStyle",
 			type: "CSSProperties",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Inline styles for the container.",
 			isRequired: false,
@@ -230,7 +230,7 @@ export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
 		{
 			name: "containerClasses",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Additional CSS classes for the container.",
 			isRequired: false,
