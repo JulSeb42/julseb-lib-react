@@ -21,7 +21,7 @@ interface ILibButtonIconBase
 	icon: ReactElement
 	color?: LibColorsHover
 	borderRadius?: LibRadiuses
-	variant?: Extract<LibButtonVariant, "plain" | "ghost" | "transparent">
+	variant?: LibButtonVariant
 }
 
 interface ButtonIconLoading extends ILibButtonIconBase {

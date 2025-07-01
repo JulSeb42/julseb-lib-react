@@ -5,7 +5,7 @@ import type { ComponentPreview } from "../../../../data/components"
 import { Preview } from "./Preview"
 
 export const inputImagePreview: ComponentPreview<ILibInputImage> = {
-	name: "InputImage",
+	name: "Input Image",
 	component: InputImage,
 	category: "components",
 	import: "InputImage",

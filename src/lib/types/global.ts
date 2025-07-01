@@ -217,13 +217,25 @@ export type LibLoaderVariant = keyof typeof designTokens.libLoaderVariants
 
 /**
  * @description All button variant tokens available in the library.
- * @type {"plain" | "ghost" | "outline" | "transparent"}
+ * @type {"plain" | "ghost" | "transparent"}
  * @example
  * variant="plain"
  * variant="ghost"
  * variant="transparent"
  */
 export type LibButtonVariant = keyof typeof designTokens.libButtonVariants
+
+/**
+ * @description All button variant tokens available in the library.
+ * @type {"plain" | "ghost" | "outline" | "transparent"}
+ * @example
+ * variant="plain"
+ * variant="ghost"
+ * variant="outline"
+ */
+export type LibButtonVariantExtended =
+	| keyof typeof designTokens.libButtonVariants
+	| "outline"
 
 /**
  * @description All button size tokens available in the library.

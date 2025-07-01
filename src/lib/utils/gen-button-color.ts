@@ -1,6 +1,6 @@
-import type { LibButtonVariant } from "../types"
+import type { LibButtonVariantExtended } from "../types"
 
-export const genButtonDisabled: Record<LibButtonVariant, string> = {
+export const genButtonDisabled: Record<LibButtonVariantExtended, string> = {
 	plain: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
 	ghost: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
 	outline:

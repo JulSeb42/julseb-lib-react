@@ -4,24 +4,42 @@ import { Text } from "../Text"
 import { clsx } from "../../utils"
 import type { ILibInputContainer } from "./types"
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * InputContainer component for wrapping input elements with labels, helper text, validation messages, and character counters.
+ *
+ * @component
+ *
+ * @example
+ * <InputContainer
+ *   label="Email"
+ *   helper="Enter your email address"
+ *   validation={{ status: true, message: "Valid email" }}
+ * >
+ *   <input type="email" />
+ * </InputContainer>
+ *
+ * @extends ILibInputContainer
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the container.
+ * @prop {React.ComponentType | string} [props.element="div"] - The HTML element or component to render as the container.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the container element.
+ * @prop {React.ReactNode} [props.children] - Input elements or other content to display inside the container.
+ * @prop {string} [props.label] - Label text to display above the input.
+ * @prop {string} [props.labelComment] - Additional comment text next to the label in gray italic text.
+ * @prop {string} [props.helper] - Helper text to display below the label.
+ * @prop {string} [props.helperBottom] - Helper text to display at the bottom of the container.
+ * @prop {LibValidation} [props.validation] - Validation state and configuration object with status, message, and custom icons.
+ * @prop {string | number} [props.value] - Current value for character counter calculation.
+ * @prop {boolean | object} [props.counter] - Whether to show character counter or counter configuration.
+ * @prop {number} [props.maxLength] - Maximum character length for counter display.
+ * @prop {boolean} [props.hasListOpen] - Whether a dropdown list is open (adds z-index styling).
+ * @prop {string} [props.id] - Unique identifier to associate label with input element.
+ * @prop {any} [props.rest] - Additional props spread to the container element.
+ *
+ * @returns {JSX.Element} The rendered InputContainer component or just children if no wrapper content is needed.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/input
+ */
 export const InputContainer: FC<ILibInputContainer> = ({
 	className,
 	element = "div",

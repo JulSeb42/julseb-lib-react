@@ -5,7 +5,7 @@ import type { ILibInputPhone } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
-	name: "InputPhone",
+	name: "Input Phone",
 	component: InputPhone,
 	category: "components",
 	import: "InputPhone", // import Component (ex: Skeleton)

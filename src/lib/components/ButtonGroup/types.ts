@@ -10,7 +10,7 @@ import type { ILibFlexbox } from "../Flexbox/types"
 
 interface ILibButtonGroupBase extends ILibFlexbox {
 	color?: LibColorsHover
-	variant?: Extract<LibButtonVariant, "plain" | "transparent" | "ghost">
+	variant?: LibButtonVariant
 	borderRadius?: LibRadiuses
 	size?: LibButtonSize
 }

@@ -13,7 +13,7 @@ const buttons: Array<LibButtonGroupButtonItem> = [
 ]
 
 export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {
-	name: "ButtonGroup",
+	name: "Button Group",
 	component: ButtonGroup,
 	category: "components",
 	import: "ButtonGroup",

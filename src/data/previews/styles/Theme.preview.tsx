@@ -28,4 +28,5 @@ export const themeProviderPreview: ComponentPreview<null> = {
 	additionalTypeImports: null,
 	extends: null,
 	previews: [{ demo: <ThemeProviderPreview /> }],
+	props: null,
 }

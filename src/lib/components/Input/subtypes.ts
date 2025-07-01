@@ -5,7 +5,7 @@ import type {
 	SelectHTMLAttributes,
 	TextareaHTMLAttributes,
 } from "react"
-import type { ReactChildren } from "../../types"
+import type { ReactChildren, ReactElement } from "../../types"
 import type {
 	ILibInputCommon,
 	ILibInputExtended,
@@ -38,7 +38,7 @@ export type ILibDateInput = Omit<
 	ILibInputWithIcon &
 	ILibInputWithValidation & {
 		type: "date" | "datetime-local" | "month" | "week"
-		iconCalendar?: ReactChildren
+		iconCalendar?: ReactElement
 	}
 
 /*====================== File ======================*/
@@ -68,8 +68,8 @@ type ILibPasswordInputBase = Omit<
 type PasswordInputWithButtonIcon = ILibPasswordInputBase & {
 	hideButton?: false
 	button?: {
-		iconShow?: ReactChildren
-		iconHide?: ReactChildren
+		iconShow?: ReactElement
+		iconHide?: ReactElement
 		textShow?: never
 		textHide?: never
 	}
@@ -106,7 +106,7 @@ type ILibSearchInputBase = Omit<
 	ILibInputWithPrefix & {
 		type: "search"
 		clearSearch?: MouseEventHandler<HTMLButtonElement>
-		iconClear?: ReactChildren
+		iconClear?: ReactElement
 	}
 
 type SearchInputShowKeys = ILibSearchInputBase & {
@@ -131,7 +131,7 @@ export type ILibSelectInput = Omit<
 	ILibInputWithIcon &
 	ILibInputWithValidation & {
 		type: "select"
-		iconSelect?: ReactChildren
+		iconSelect?: ReactElement
 		children?: ReactChildren
 	}
 
@@ -169,5 +169,5 @@ export type ILibTimeInput = Omit<
 	ILibInputWithValidation &
 	ILibInputWithPrefix & {
 		type: "time"
-		iconClock?: ReactChildren
+		iconClock?: ReactElement
 	}

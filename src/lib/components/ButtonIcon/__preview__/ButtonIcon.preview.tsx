@@ -13,7 +13,7 @@ const Flex = ({ children }: { children?: ReactChildren }) => {
 }
 
 export const buttonIconPreview: ComponentPreview<ILibButtonIcon> = {
-	name: "ButtonIcon",
+	name: "Button Icon",
 	component: ButtonIcon,
 	category: "components",
 	import: "ButtonIcon",

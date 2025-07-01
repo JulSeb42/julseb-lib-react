@@ -583,7 +583,6 @@ export const designTokens = {
 	libButtonVariants: {
 		plain: "plain",
 		ghost: "ghost",
-		outline: "outline",
 		transparent: "transparent",
 	},
 

@@ -32,7 +32,7 @@ import type { ILibButtonIcon } from "./types"
  *
  * @returns {JSX.Element} The rendered ButtonIcon component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/buttonicon
+ * @see https://doc-julseb-lib-react.vercel.app/components/button-icon
  */
 export const ButtonIcon: FC<ILibButtonIcon> = ({
 	className,
@@ -62,7 +62,7 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
 		variant,
 		isLoading,
 		loaderVariant,
-		ariaLabel,
+		"aria-label": ariaLabel,
 		...rest,
 	}
 
@@ -104,10 +104,10 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
 						: undefined
 				}
 			>
-				<ButtonIconFn {...buttonProps} />
+				<ButtonIconFn {...(buttonProps as any)} />
 			</Tooltip>
 		)
 	}
 
-	return <ButtonIconFn {...buttonProps} />
+	return <ButtonIconFn {...(buttonProps as any)} />
 }

@@ -4,7 +4,7 @@ import type { ILibInputCheck } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 export const inputCheckPreview: ComponentPreview<ILibInputCheck> = {
-	name: "InputCheck",
+	name: "Input Check",
 	component: InputCheck,
 	category: "components",
 	import: "InputCheck", // import Component (ex: Skeleton)

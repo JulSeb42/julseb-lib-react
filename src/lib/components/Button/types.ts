@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes } from "react"
 import type {
 	LibButtonSize,
-	LibButtonVariant,
+	LibButtonVariantExtended,
 	LibColorsHover,
 	LibComponentBase,
 	LibLoaderVariant,
@@ -11,7 +11,7 @@ import type {
 interface ILibButtonBase
 	extends LibComponentBase<HTMLButtonElement>,
 		ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: LibButtonVariant
+	variant?: LibButtonVariantExtended
 	color?: LibColorsHover
 	size?: LibButtonSize
 	borderRadius?: LibRadiuses

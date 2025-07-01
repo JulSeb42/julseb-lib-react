@@ -36,7 +36,7 @@ import type { ILibInputImage } from "./types"
  *
  * @returns {JSX.Element} The rendered InputImage component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/inputimage
+ * @see https://doc-julseb-lib-react.vercel.app/components/input-image
  */
 export const InputImage: FC<ILibInputImage> = ({
 	className,

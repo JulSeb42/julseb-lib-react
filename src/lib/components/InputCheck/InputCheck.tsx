@@ -19,7 +19,7 @@ import type { ILibInputCheck } from "./types"
  * <InputCheck id="notifications" variant="toggle">
  *   Enable notifications
  * </InputCheck>
- * 
+ *
  * @extends HTMLInputElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the input check container.
@@ -34,10 +34,10 @@ import type { ILibInputCheck } from "./types"
  * @prop {boolean} [props.checked] - Whether the input check is checked (controlled).
  * @prop {boolean} [props.defaultChecked] - Whether the input check is initially checked (uncontrolled).
  * @prop {any} [props.rest] - Additional props spread to the input element.
- * 
+ *
  * @returns {JSX.Element} The rendered InputCheck component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/inputcheck
+ * @see https://doc-julseb-lib-react.vercel.app/components/input-check
  */
 export const InputCheck: FC<ILibInputCheck> = ({
 	className,
