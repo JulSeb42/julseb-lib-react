@@ -389,4 +389,8 @@ button {
 		animation: loader-pulse 1200ms linear infinite;
 		animation-delay: var(--dot-delay);
 	}
+
+	input::-webkit-slider-thumb {
+		box-shadow: var(--shadow-lg);
+	}
 }

@@ -1,6 +1,5 @@
 import { InputCounter } from "../../../"
 import { Preview } from "./Preview"
-import type {} from "../../../types"
 import type { ILibInputCounter } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 

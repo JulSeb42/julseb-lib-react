@@ -52,7 +52,7 @@ import type { ILibInputCounter } from "./types"
  * 
  * @returns {JSX.Element} The rendered InputCounter component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/inputcounter
+ * @see https://doc-julseb-lib-react.vercel.app/components/input-counter
  */
 export const InputCounter: FC<ILibInputCounter> = ({
 	className,

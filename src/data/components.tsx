@@ -35,6 +35,7 @@ import { inputImagePreview } from "../lib/components/InputImage/__preview__/Inpu
 import { inputCheckPreview } from "../lib/components/InputCheck/__preview__/InputCheck.preview"
 import { inputPhonePreview } from "../lib/components/InputPhone/__preview__/InputPhone.preview"
 import { inputCounterPreview } from "../lib/components/InputCounter/__preview__/InputCounter.preview"
+import { inputSliderPreview } from "../lib/components/InputSlider/__preview__/InputSlider.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -137,6 +138,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	inputCheckPreview,
 	inputPhonePreview,
 	inputCounterPreview,
+	inputSliderPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

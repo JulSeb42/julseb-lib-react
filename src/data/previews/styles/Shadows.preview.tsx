@@ -45,4 +45,5 @@ export const shadowsPreview: ComponentPreview<null> = {
 	additionalTypeImports: null,
 	extends: null,
 	previews: [{ previewTitle: "", demo: <ShadowsPreview /> }],
+	props: [],
 }
