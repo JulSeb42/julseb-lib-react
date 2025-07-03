@@ -30,4 +30,5 @@ export * from "../components/InputCounter/types"
 export * from "../components/InputSlider/types"
 export * from "../components/Select/types"
 export * from "../components/Autocomplete/types"
+export * from "../components/Rating/types"
 /* Prepend here - DO NOT REMOVE */

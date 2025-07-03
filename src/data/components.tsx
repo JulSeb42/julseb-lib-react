@@ -38,6 +38,7 @@ import { inputCounterPreview } from "../lib/components/InputCounter/__preview__/
 import { inputSliderPreview } from "../lib/components/InputSlider/__preview__/InputSlider.preview"
 import { selectPreview } from "../lib/components/Select/__preview__/Select.preview"
 import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/Autocomplete.preview"
+import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -143,6 +144,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	inputSliderPreview,
 	selectPreview,
 	autocompletePreview,
+	ratingPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

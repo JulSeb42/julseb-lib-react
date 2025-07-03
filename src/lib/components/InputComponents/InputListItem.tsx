@@ -39,6 +39,7 @@ export const InputListItem: FC<IInputListItem> = ({
 							: "bg-primary-500"),
 			)}
 			aria-label={ariaLabel}
+			type="button"
 		>
 			{content}
 			{children}

@@ -12,6 +12,7 @@ export const InputButton: FC<IInputButton> = ({
 		<button
 			onClick={onClick}
 			className={clsx(INPUT_BUTTON_CLASSES, className)}
+			type="button"
 		>
 			{children}
 		</button>
