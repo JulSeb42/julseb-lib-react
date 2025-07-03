@@ -14,7 +14,6 @@ import type { ILibTimeInput } from "../subtypes"
 
 export const TimeInput: FC<ILibTimeInput> = ({
 	ref,
-	id,
 	className,
 	validation,
 	inputBackground,

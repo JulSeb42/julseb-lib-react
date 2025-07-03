@@ -4,7 +4,6 @@ import { INPUT_CONTAINER_CLASSES } from "../../InputComponents/classes"
 import type { ILibTextareaInput } from "../subtypes"
 
 export const TextareaInput: FC<ILibTextareaInput> = ({
-	id,
 	className,
 	validation,
 	inputBackground,

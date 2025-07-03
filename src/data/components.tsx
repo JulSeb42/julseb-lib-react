@@ -41,6 +41,7 @@ import { autocompletePreview } from "../lib/components/Autocomplete/__preview__/
 import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.preview"
 import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin.preview"
 import { fieldsetPreview } from "../lib/components/Fieldset/__preview__/Fieldset.preview"
+import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -149,6 +150,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	ratingPreview,
 	inputPinPreview,
 	fieldsetPreview,
+	formPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

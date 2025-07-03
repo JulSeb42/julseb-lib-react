@@ -20,7 +20,7 @@ import type { ILibFieldset } from "./types"
  *   <Input label="Email" />
  * </Fieldset>
  *
- * @extends ILibFieldset
+ * @extends HTMLFieldSetElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the fieldset container.
  * @prop {React.Ref<any>} [props.ref] - Ref to the fieldset element.

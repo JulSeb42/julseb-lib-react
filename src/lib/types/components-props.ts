@@ -33,4 +33,5 @@ export * from "../components/Autocomplete/types"
 export * from "../components/Rating/types"
 export * from "../components/InputPin/types"
 export * from "../components/Fieldset/types"
+export * from "../components/Form/types"
 /* Prepend here - DO NOT REMOVE */

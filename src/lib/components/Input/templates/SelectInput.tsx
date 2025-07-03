@@ -14,7 +14,6 @@ import type { ILibSelectInput } from "../subtypes"
 export const SelectInput: FC<ILibSelectInput> = ({
 	ref,
 	children,
-	id,
 	className,
 	validation,
 	inputBackground,

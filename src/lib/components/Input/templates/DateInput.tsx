@@ -13,7 +13,6 @@ import type { ILibDateInput } from "../subtypes"
 
 export const DateInput: FC<ILibDateInput> = ({
 	ref,
-	id,
 	className,
 	type = "date",
 	validation,

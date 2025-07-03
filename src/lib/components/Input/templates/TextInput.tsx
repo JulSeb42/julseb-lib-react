@@ -11,7 +11,6 @@ import {
 import type { ILibTextInput } from "../subtypes"
 
 export const TextInput: FC<ILibTextInput> = ({
-	id,
 	className,
 	validation,
 	inputBackground,

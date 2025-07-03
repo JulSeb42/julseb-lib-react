@@ -18,7 +18,7 @@ import type { ILibInputContainer } from "./types"
  *   <input type="email" />
  * </InputContainer>
  *
- * @extends ILibInputContainer
+ * @extends HTMLDivElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the container.
  * @prop {React.ComponentType | string} [props.element="div"] - The HTML element or component to render as the container.

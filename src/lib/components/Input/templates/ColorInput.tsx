@@ -8,7 +8,6 @@ import {
 import type { ILibColorInput } from "../subtypes"
 
 export const ColorInput: FC<ILibColorInput> = ({
-	id,
 	className,
 	type = "color",
 	validation,

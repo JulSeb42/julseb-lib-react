@@ -43,7 +43,8 @@ const renderComponent = (props: any, type: LibInputType) => {
 	}
 }
 
-const InputFunction: FC<ILibInput> = ({ type, ...rest }: ILibInput) =>
+// @ts-ignore
+const InputFunction: FC<ILibInput> = ({ type, ...rest }) =>
 	renderComponent(rest, type as LibInputType)
 
 /**
@@ -112,12 +113,14 @@ export const Input: FC<ILibInput> = ({
 			value={value}
 			counter={counter as any}
 			maxLength={maxLength}
+			id={id}
 		>
 			<InputFunction
 				ref={ref}
 				value={value}
 				maxLength={maxLength as any}
 				className={className}
+				id={id}
 				// @ts-ignore
 				validation={validation as any}
 				{...rest}

@@ -20,7 +20,7 @@ import type { ILibInputSlider } from "./types"
  *   showMinMax
  * />
  *
- * @extends ILibInputSlider
+ * @extends HTMLInputElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the slider container.
  * @prop {React.Ref<any>} [props.ref] - Ref to the input element.

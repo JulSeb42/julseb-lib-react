@@ -8,7 +8,6 @@ import {
 import type { ILibFileInput } from "../subtypes"
 
 export const FileInput: FC<ILibFileInput> = ({
-	id,
 	className,
 	type = "file",
 	validation,

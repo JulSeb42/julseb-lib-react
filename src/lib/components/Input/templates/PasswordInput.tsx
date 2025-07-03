@@ -12,7 +12,6 @@ import {
 import type { ILibPasswordInput } from "../subtypes"
 
 export const PasswordInput: FC<ILibPasswordInput> = ({
-	id,
 	className,
 	validation,
 	inputBackground,
