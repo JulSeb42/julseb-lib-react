@@ -423,6 +423,11 @@ export type LibCheckInputVariant =
 export type LibInputListDirection =
 	keyof typeof designTokens.libListInputDirections
 
+/**
+ * @description Type of values for InputPin
+ */
+export type LibValueInputPin = { [n: number]: number | "" | undefined }
+
 /* useTranslation hook */
 
 /**
