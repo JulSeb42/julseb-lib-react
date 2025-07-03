@@ -40,7 +40,6 @@ const FormDemo = () => {
 			}
 			buttonSecondary={{ content: "Reset", onClick: resetForm }}
 			onSubmit={handleSubmit}
-			isLoading
 		>
 			<Input
 				id="name"
