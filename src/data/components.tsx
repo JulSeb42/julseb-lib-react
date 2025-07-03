@@ -43,6 +43,7 @@ import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin
 import { fieldsetPreview } from "../lib/components/Fieldset/__preview__/Fieldset.preview"
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
 import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
+import { breadcrumbsPreview } from "../lib/components/Breadcrumbs/__preview__/Breadcrumbs.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -156,6 +157,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	fieldsetPreview,
 	formPreview,
 	listGroupPreview,
+	breadcrumbsPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

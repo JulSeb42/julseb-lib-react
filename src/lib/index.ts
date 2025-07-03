@@ -98,4 +98,5 @@ export * from "./components/InputPin"
 export * from "./components/Fieldset"
 export * from "./components/Form"
 export * from "./components/ListGroup"
+export * from "./components/Breadcrumbs"
 /* Prepend here - DO NOT REMOVE */

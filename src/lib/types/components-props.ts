@@ -35,4 +35,5 @@ export * from "../components/InputPin/types"
 export * from "../components/Fieldset/types"
 export * from "../components/Form/types"
 export * from "../components/ListGroup/types"
+export * from "../components/Breadcrumbs/types"
 /* Prepend here - DO NOT REMOVE */
