@@ -95,4 +95,5 @@ export * from "./components/Select"
 export * from "./components/Autocomplete"
 export * from "./components/Rating"
 export * from "./components/InputPin"
+export * from "./components/Fieldset"
 /* Prepend here - DO NOT REMOVE */
