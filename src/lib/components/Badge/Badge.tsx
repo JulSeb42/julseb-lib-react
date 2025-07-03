@@ -46,7 +46,7 @@ export const Badge: FC<ILibBadge> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"inline-flex justify-center items-center size-6",
+				"inline-flex justify-center items-center w-fit min-w-6 h-6",
 				genBgAllColors[backgroundColor],
 				genTextAllColor[contentColor],
 				genBorderRadius[borderRadius],

@@ -42,6 +42,7 @@ import { ratingPreview } from "../lib/components/Rating/__preview__/Rating.previ
 import { inputPinPreview } from "../lib/components/InputPin/__preview__/InputPin.preview"
 import { fieldsetPreview } from "../lib/components/Fieldset/__preview__/Fieldset.preview"
 import { formPreview } from "../lib/components/Form/__preview__/Form.preview"
+import { listGroupPreview } from "../lib/components/ListGroup/__preview__/ListGroup.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -72,6 +73,7 @@ type Prop = {
 		| "ReactNode"
 		| "CSSProperties"
 		| "ReactElement"
+		| "Ref"
 	possibleValues:
 		| Array<string>
 		| "Any color from the library"
@@ -107,6 +109,8 @@ export interface ComponentPreview<T> {
 	props: Array<Prop> | null
 	propsSecondTitle?: string
 	propsSecond?: Array<Prop>
+	propsThirdTitle?: string
+	propsThird?: Array<Prop>
 }
 
 export const previews: Array<ComponentPreview<any>> = [
@@ -151,6 +155,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	inputPinPreview,
 	fieldsetPreview,
 	formPreview,
+	listGroupPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

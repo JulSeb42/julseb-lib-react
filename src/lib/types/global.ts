@@ -388,14 +388,18 @@ export type LibButtonGroupButtonItem = Omit<
 	}
 
 /**
- * @description Type of toggles for ButtonGroup.
- * @type {"single" | "multi"}
- * @example
- * toggleType="single"
- * toggleType="multi"
+ * @description Props for Item inside ListGroup.
+ *
+ * @extends HTMLDivElement
+ * @prop {JSX.Element} [title] - The title of the item.
+ * @prop {JSX.Element} [body] - The body text of the item.
+ * @prop {JSX.Element} [contentRight] - The content on the right of the item.
  */
-export type LibButtonGroupToggle =
-	keyof typeof designTokens.libButtonGroupToggle
+export type LibListGroupItem = LibComponentBase<HTMLDivElement> & {
+	title: ReactChildren
+	body?: ReactChildren
+	contentRight?: ReactChildren
+}
 
 /**
  * @description Variants for Tag component.
