@@ -47,7 +47,7 @@ export const Button: FC<ILibButton> = ({
 	color = "primary",
 	size = "default",
 	isLoading,
-	loaderVariant,
+	loaderVariant = 1,
 	disabled,
 	borderRadius = "md",
 	...rest
@@ -89,7 +89,14 @@ export const Button: FC<ILibButton> = ({
 				<Loader
 					variant={loaderVariant}
 					color="gray"
-					className="border-3 size-4"
+					className={clsx(
+						loaderVariant === 1
+							? "border-3 size-4"
+							: loaderVariant === 2
+								? "size-4 [&_span]:border-3"
+								: loaderVariant === 3 &&
+									"[&_span]:size-2 translate-y-[5px]",
+					)}
 				/>
 			)}
 		</Element>

@@ -122,6 +122,26 @@ export const buttonPreview: ComponentPreview<ILibButton> = {
 				</Flex>
 			),
 		},
+		{
+			previewTitle: "Loading variant 2",
+			demo: (
+				<Flex>
+					<Button isLoading loaderVariant={2}>
+						Button
+					</Button>
+				</Flex>
+			),
+		},
+		{
+			previewTitle: "Loading variant 3",
+			demo: (
+				<Flex>
+					<Button isLoading loaderVariant={3}>
+						Button
+					</Button>
+				</Flex>
+			),
+		},
 	],
 	props: [
 		{
