@@ -6,4 +6,6 @@ import type {
 
 export type ILibInputContainer = LibComponentBase<HTMLDivElement> &
 	ILibInputWithList &
-	ILibInputWithValidation
+	ILibInputWithValidation & {
+		hasListOpen?: boolean
+	}

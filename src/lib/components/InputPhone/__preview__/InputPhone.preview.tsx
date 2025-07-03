@@ -30,6 +30,12 @@ export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
 			previewTitle: "Pill",
 			demo: <Preview inputVariant="pill" listDirection="up" />,
 		},
+		{
+			previewTitle: "With validation",
+			demo: (
+				<Preview validation={{ status: false, message: "Message" }} />
+			),
+		},
 	],
 	props: [
 		{
@@ -151,7 +157,7 @@ export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
 			name: "inputBackground",
 			type: "string",
 			possibleValues: ["light", "dark"],
-			defaultValue: "light",
+			defaultValue: null,
 			description: "Background theme of the input.",
 			isRequired: false,
 		},

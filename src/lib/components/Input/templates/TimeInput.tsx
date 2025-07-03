@@ -8,8 +8,8 @@ import {
 	InputIcon,
 	InputPrefix,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
-import { INPUT_CLASSES } from "../classes"
 import type { ILibTimeInput } from "../subtypes"
 
 export const TimeInput: FC<ILibTimeInput> = ({
@@ -47,7 +47,10 @@ export const TimeInput: FC<ILibTimeInput> = ({
 			<input
 				{...rest}
 				className={clsx(
-					INPUT_CLASSES,
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
 					"[&::-webkit-calendar-picker-indicator]:opacity-0",
 					"[&::-webkit-calendar-picker-indicator]:absolute",
 				)}

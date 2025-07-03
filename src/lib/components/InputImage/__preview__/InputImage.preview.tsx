@@ -29,7 +29,12 @@ export const inputImagePreview: ComponentPreview<ILibInputImage> = {
 		},
 		{
 			previewTitle: "With validation",
-			demo: <Preview id="2" validation={{ status: false }} />,
+			demo: (
+				<Preview
+					id="2"
+					validation={{ status: false, message: "hello" }}
+				/>
+			),
 		},
 		{ previewTitle: "Disabled", demo: <Preview id="3" disabled /> },
 	],

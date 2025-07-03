@@ -7,8 +7,8 @@ import {
 	InputValidation,
 	InputButton,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
-import { INPUT_CLASSES } from "../classes"
 import type { ILibSelectInput } from "../subtypes"
 
 export const SelectInput: FC<ILibSelectInput> = ({
@@ -59,7 +59,7 @@ export const SelectInput: FC<ILibSelectInput> = ({
 				ref={useMergeRefs([ref, el])}
 				className={clsx(
 					"appearance-none cursor-pointer",
-					INPUT_CLASSES,
+					INPUT_COMMON_CLASSES({ inputBackground, validationStatus: validation?.status }),
 				)}
 				disabled={disabled}
 			>

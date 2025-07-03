@@ -1,12 +1,12 @@
 import { type FC } from "react"
 import { clsx } from "../../../utils"
-import { INPUT_CLASSES } from "../classes"
 import {
 	InputPrefix,
 	InputValidation,
 	InputSuffix,
 	InputIcon,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
 import type { ILibTextInput } from "../subtypes"
 
@@ -40,7 +40,12 @@ export const TextInput: FC<ILibTextInput> = ({
 
 			<input
 				{...rest}
-				className={clsx(INPUT_CLASSES)}
+				className={clsx(
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
+				)}
 				type={type}
 				disabled={disabled}
 			/>

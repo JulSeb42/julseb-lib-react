@@ -92,4 +92,5 @@ export * from "./components/InputPhone"
 export * from "./components/InputCounter"
 export * from "./components/InputSlider"
 export * from "./components/Select"
+export * from "./components/Autocomplete"
 /* Prepend here - DO NOT REMOVE */

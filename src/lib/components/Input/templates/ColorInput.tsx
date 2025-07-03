@@ -1,7 +1,10 @@
 import { type FC } from "react"
 import { clsx } from "../../../utils"
-import { InputValidation, InputWrapper } from "../../InputComponents"
-import { INPUT_CLASSES } from "../classes"
+import {
+	InputValidation,
+	InputWrapper,
+	INPUT_COMMON_CLASSES,
+} from "../../InputComponents"
 import type { ILibColorInput } from "../subtypes"
 
 export const ColorInput: FC<ILibColorInput> = ({
@@ -20,7 +23,16 @@ export const ColorInput: FC<ILibColorInput> = ({
 			inputBackground={inputBackground}
 			inputVariant={inputVariant}
 		>
-			<input {...rest} type={type} className={clsx(INPUT_CLASSES)} />
+			<input
+				{...rest}
+				type={type}
+				className={clsx(
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
+				)}
+			/>
 
 			<InputValidation validation={validation} />
 		</InputWrapper>

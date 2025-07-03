@@ -30,6 +30,7 @@ export const InputList: FC<IInputList> = ({
 					inputBackground,
 					validation,
 				}),
+				"z-0",
 				className,
 			)}
 			ref={ref}

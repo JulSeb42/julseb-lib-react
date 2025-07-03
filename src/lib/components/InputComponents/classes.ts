@@ -5,6 +5,29 @@ import type {
 	LibInputListDirection,
 } from "../../types"
 
+export const INPUT_COMMON_CLASSES = ({
+	inputBackground,
+	validationStatus,
+}: {
+	inputBackground: LibInputBackground | undefined
+	validationStatus: boolean | undefined
+}) => [
+	"relative z-10",
+	"grow h-full px-2",
+	"outline-none",
+	"placeholder:text-gray-500",
+	"disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500",
+	validationStatus === false
+		? "bg-danger-50"
+		: validationStatus === true
+			? "bg-success-50"
+			: inputBackground === "dark"
+				? "bg-black"
+				: inputBackground === "light"
+					? "bg-white"
+					: "bg-background",
+]
+
 export const INPUT_VALIDATION_CONTAINER = ["px-2"]
 
 export const INPUT_BUTTON_CLASSES = [
@@ -28,12 +51,14 @@ export const INPUT_CONTAINER_CLASSES = ({
 	validation,
 	inputVariant,
 	inputBackground,
+	hasListOpen,
 }: {
 	validation: LibInputValidation | undefined
 	inputVariant: LibInputVariant | undefined
 	inputBackground: LibInputBackground | undefined
+	hasListOpen?: boolean
 }) => [
-	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden",
+	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden relative",
 	"has-[input:focus]:border-primary-500",
 	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500",
 	validation &&
@@ -44,6 +69,7 @@ export const INPUT_CONTAINER_CLASSES = ({
 	inputVariant === "pill" && "rounded-full",
 	inputBackground === "light" && "bg-white text-black",
 	inputBackground === "dark" && "bg-black text-white",
+	hasListOpen && "z-20",
 ]
 
 export const INPUT_LIST_CLASSES = ({

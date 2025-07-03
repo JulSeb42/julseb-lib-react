@@ -8,6 +8,8 @@ import {
 	InputWrapper,
 	InputList,
 	InputWithListWrapper,
+	INPUT_COMMON_CLASSES,
+	InputListItem,
 } from "../InputComponents"
 import { useClickOutside } from "../../hooks"
 import { clsx } from "../../utils"
@@ -150,7 +152,12 @@ export const InputPhone: FC<ILibInputPhone> = ({
 					<input
 						id={id}
 						ref={ref}
-						className={clsx("px-2 outline-none h-full grow")}
+						className={clsx(
+							INPUT_COMMON_CLASSES({
+								inputBackground,
+								validationStatus: validation?.status,
+							}),
+						)}
 						{...rest}
 					/>
 
@@ -199,30 +206,23 @@ export const InputPhone: FC<ILibInputPhone> = ({
 							{textNoResult}
 						</Text>
 					) : (
-						results.map(result => (
-							<button
-								type="button"
-								key={result?.code}
-								role="button"
-								aria-label={result?.name}
-								className={clsx(
-									"inline-flex items-center gap-2 hover:bg-primary-300 active:bg-primary-600 p-2 w-full text-left",
-									validation?.status === false
-										? "hover:bg-danger-300 active:bg-danger-600"
-										: validation?.status === true &&
-												"hover:bg-success-300 active:bg-success-600",
-									(selectedCountry?.code ||
-										defaultCountry) === result?.code &&
-										(validation?.status === false
-											? "bg-danger-500 text-white"
-											: validation?.status === true
-												? "bg-success-500 text-white"
-												: "bg-primary-500 text-white"),
-								)}
+						results.map((result, i) => (
+							<InputListItem
+								key={result.code}
 								onClick={() => {
 									setSelectedCountry(result)
 									setIsOpen(false)
 								}}
+								aria-label={result?.name}
+								content={undefined}
+								value={result.code}
+								cursor={undefined}
+								index={i}
+								validationStatus={validation?.status}
+								isActive={
+									result?.code ===
+									(selectedCountry?.code || defaultCountry)
+								}
 							>
 								<img
 									src={result?.flag}
@@ -231,7 +231,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 								/>
 
 								{result?.name}
-							</button>
+							</InputListItem>
 						))
 					)}
 				</InputList>

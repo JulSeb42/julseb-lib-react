@@ -8,9 +8,9 @@ import {
 	InputIcon,
 	InputPrefix,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
 import { useTouchScreen, useMergeRefs, useKeyPress } from "../../../hooks"
-import { INPUT_CLASSES } from "../classes"
 import type { ILibSearchInput } from "../subtypes"
 
 export const SearchInput: FC<ILibSearchInput> = ({
@@ -57,11 +57,14 @@ export const SearchInput: FC<ILibSearchInput> = ({
 				{...rest}
 				ref={useMergeRefs([ref, el])}
 				className={clsx(
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: undefined,
+					}),
 					"[&::-webkit-search-cancel-button]:appearance-none",
 					"[&::-webkit-search-cancel-button]:hidden",
 					"[&::-webkit-search-decoration]:appearance-none",
 					"[&::-webkit-search-decoration]:hidden",
-					INPUT_CLASSES,
 				)}
 				type={type}
 				disabled={disabled}

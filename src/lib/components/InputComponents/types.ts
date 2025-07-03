@@ -4,6 +4,7 @@ import type {
 	LibInputValidation,
 	LibInputVariant,
 	LibInputBackground,
+	LibInputListDirection,
 } from "../../types"
 
 interface ILibInputBase {
@@ -39,7 +40,9 @@ type InputWithoutCounter = ILibInputCommon & {
 
 export type ILibInputExtended = InputWithCounter | InputWithoutCounter
 
-export type ILibInputWithList = ILibInputExtended & { hasListOpen?: boolean }
+export type ILibInputWithList = ILibInputExtended & {
+	listDirection?: LibInputListDirection
+}
 
 export type ILibValidationStatus = boolean | undefined
 

@@ -189,7 +189,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 			name: "inputBackground",
 			type: "string",
 			possibleValues: ["light", "dark"],
-			defaultValue: "light",
+			defaultValue: null,
 			description: "Background theme of the input.",
 			isRequired: false,
 		},

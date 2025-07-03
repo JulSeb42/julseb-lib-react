@@ -7,8 +7,8 @@ import {
 	InputPrefix,
 	InputIcon,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
-import { INPUT_CLASSES } from "../classes"
 import type { ILibPasswordInput } from "../subtypes"
 
 export const PasswordInput: FC<ILibPasswordInput> = ({
@@ -43,7 +43,12 @@ export const PasswordInput: FC<ILibPasswordInput> = ({
 
 			<input
 				{...rest}
-				className={clsx(INPUT_CLASSES)}
+				className={clsx(
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
+				)}
 				type={inputType}
 				disabled={disabled}
 			/>

@@ -7,8 +7,8 @@ import {
 	InputButton,
 	InputIcon,
 	InputWrapper,
+	INPUT_COMMON_CLASSES,
 } from "../../InputComponents"
-import { INPUT_CLASSES } from "../classes"
 import type { ILibDateInput } from "../subtypes"
 
 export const DateInput: FC<ILibDateInput> = ({
@@ -45,7 +45,10 @@ export const DateInput: FC<ILibDateInput> = ({
 				type={type}
 				ref={useMergeRefs([ref, el])}
 				className={clsx(
-					INPUT_CLASSES,
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
 					"cursor-pointer",
 					"[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
 				)}

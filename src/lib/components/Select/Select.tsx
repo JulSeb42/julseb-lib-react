@@ -9,28 +9,49 @@ import {
 	InputValidation,
 	InputIcon,
 	InputWrapper,
+	InputListItem,
 } from "../InputComponents"
 import { clsx } from "../../utils"
 import type { ILibSelect } from "./types"
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * Select component for creating dropdown selection inputs with keyboard navigation, validation states, and customizable styling.
+ *
+ * @component
+ *
+ * @example
+ * <Select
+ *   value={selectedValue}
+ *   setValue={setSelectedValue}
+ *   options={["Option 1", "Option 2", "Option 3"]}
+ *   label="Choose an option"
+ *   placeholder="Select..."
+ * />
+ *
+ * @extends HTMLButtonElement
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the select container.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the button element.
+ * @prop {string} [props.value] - Currently selected value.
+ * @prop {function} [props.setValue] - Function to update the selected value.
+ * @prop {string[]} [props.options] - Array of options to display in the dropdown.
+ * @prop {"up" | "down"} [props.listDirection] - Direction for the dropdown list to appear.
+ * @prop {object} [props.icons] - Icon configuration object with left icon and caret icon.
+ * @prop {"rounded" | "pill"} [props.inputVariant] - Visual variant of the select input.
+ * @prop {"light" | "dark"} [props.inputBackground] - Background theme of the select input.
+ * @prop {string} [props.label] - Label text to display above the select.
+ * @prop {string} [props.labelComment] - Additional comment text next to the label.
+ * @prop {string} [props.helper] - Helper text to display below the label.
+ * @prop {string} [props.helperBottom] - Helper text to display at the bottom of the select.
+ * @prop {string} [props.id] - Unique identifier for the select element.
+ * @prop {LibValidation} [props.validation] - Validation state and configuration object.
+ * @prop {boolean} [props.disabled] - Whether the select is disabled.
+ * @prop {any} [props.rest] - Additional props spread to the button element.
+ *
+ * @returns {JSX.Element} The rendered Select component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/select
+ */
 export const Select: FC<ILibSelect> = ({
 	className,
 	ref,
@@ -69,6 +90,7 @@ export const Select: FC<ILibSelect> = ({
 			helper={helper}
 			helperBottom={helperBottom}
 			hasListOpen={isOpen}
+			validation={validation}
 		>
 			<InputWithListWrapper ref={el} isOpen={isOpen}>
 				<InputWrapper
@@ -143,36 +165,20 @@ export const Select: FC<ILibSelect> = ({
 					ref={listRef}
 				>
 					{options?.map((option, i) => (
-						<button
+						<InputListItem
 							key={option}
+							content={option}
 							onClick={() => {
 								setValue(option)
 								setIsOpen(false)
 							}}
-							className={clsx(
-								"p-2 w-full text-left",
-								validation?.status === false
-									? "hover:bg-danger-300 active:bg-danger-600"
-									: validation?.status === true
-										? "hover:bg-success-300 active:bg-success-600"
-										: "hover:bg-primary-300 active:bg-primary-600",
-								cursor === i &&
-									(validation?.status === false
-										? "bg-danger-300"
-										: validation?.status === true
-											? "bg-success-300"
-											: "bg-primary-300"),
-								option === value && "text-white",
-								option === value &&
-									(validation?.status === false
-										? "bg-danger-500"
-										: validation?.status === true
-											? "bg-success-500"
-											: "bg-primary-500"),
-							)}
-						>
-							{option}
-						</button>
+							validationStatus={validation?.status}
+							value={value}
+							cursor={cursor}
+							index={i}
+							aria-label={option}
+							isActive={option === value}
+						/>
 					))}
 				</InputList>
 			</InputWithListWrapper>

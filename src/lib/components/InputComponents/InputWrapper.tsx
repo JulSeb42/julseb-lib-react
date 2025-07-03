@@ -15,6 +15,7 @@ export const InputWrapper: FC<IInputWrapper> = ({
 	inputBackground,
 	inputVariant,
 	className,
+	hasListOpen,
 }) => {
 	return (
 		<div
@@ -23,6 +24,7 @@ export const InputWrapper: FC<IInputWrapper> = ({
 					validation,
 					inputBackground,
 					inputVariant,
+					hasListOpen,
 				}),
 				className,
 			)}
@@ -38,4 +40,5 @@ interface IInputWrapper {
 	inputBackground: LibInputBackground | undefined
 	inputVariant: LibInputVariant | undefined
 	className: ClassNames | undefined
+	hasListOpen?: boolean
 }
