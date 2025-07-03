@@ -5,11 +5,11 @@ import type { ILibButtonGroup } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const buttons: Array<LibButtonGroupButtonItem> = [
-	{ id: "1", buttonContent: <BiLeftArrowAlt /> },
-	{ id: "2", buttonContent: "Button", disabled: true },
-	{ id: "3", buttonContent: "Button", onClick: () => alert("Clicked") },
-	{ id: "4", buttonContent: "Button" },
-	{ id: "5", buttonContent: <BiRightArrowAlt /> },
+	{ id: "1", content: <BiLeftArrowAlt /> },
+	{ id: "2", content: "Button", disabled: true },
+	{ id: "3", content: "Button", onClick: () => alert("Clicked") },
+	{ id: "4", content: "Button" },
+	{ id: "5", content: <BiRightArrowAlt /> },
 ]
 
 export const buttonGroupPreview: ComponentPreview<ILibButtonGroup> = {

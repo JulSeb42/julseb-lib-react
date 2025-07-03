@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes, Ref } from "react"
-import type { LibRadiuses, ReactChildren } from "../../types"
+import type { LibRadiuses, ReactElement } from "../../types"
 import type {
 	ILibInputCommon,
 	ILibInputWithValidation,
@@ -17,8 +17,8 @@ export type ILibInputImage = Omit<
 		value: string
 		borderRadius?: LibRadiuses
 		icons?: {
-			empty?: ReactChildren
-			hover?: ReactChildren
+			empty?: ReactElement
+			hover?: ReactElement
 		}
 		type?: never
 	}

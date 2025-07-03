@@ -174,8 +174,8 @@ export type LibValidationStatus = boolean | undefined
 export type LibInputValidation = {
 	status: LibValidationStatus
 	message?: ReactChildren
-	iconPassed?: ReactChildren
-	iconNotPassed?: ReactChildren
+	iconPassed?: ReactElement
+	iconNotPassed?: ReactElement
 }
 
 /**
@@ -377,10 +377,13 @@ export interface LibComponentBase<T> extends HTMLAttributes<T> {
  * @prop {JSX.Element} [content] - The content of the button
  * @prop {string} [id] - The id if the button.
  */
-export type LibButtonGroupButtonItem = LibComponentBase<HTMLButtonElement> &
-	ButtonHTMLAttributes<HTMLButtonElement> & {
+export type LibButtonGroupButtonItem = Omit<
+	LibComponentBase<HTMLButtonElement>,
+	"content"
+> &
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "content"> & {
 		id: string
-		buttonContent: ReactChildren
+		content: ReactChildren
 		children?: never
 	}
 

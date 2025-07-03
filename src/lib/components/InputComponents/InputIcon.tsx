@@ -1,7 +1,7 @@
 import type { FC } from "react"
 import { INPUT_ICON_CONTAINER_CLASSES } from "./classes"
 import { clsx } from "../../utils"
-import type { ReactChildren, LibInputVariant } from "../../types"
+import type { ReactElement, LibInputVariant } from "../../types"
 
 export const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
 	if (!icon) return null
@@ -21,7 +21,7 @@ export const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
 }
 
 interface IInputIcon {
-	icon: ReactChildren | undefined
+	icon: ReactElement | undefined
 	inputVariant: LibInputVariant | undefined
 	disabled: boolean | undefined
 }

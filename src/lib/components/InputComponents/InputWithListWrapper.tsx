@@ -1,19 +1,21 @@
-import type { FC } from "react"
+import type { FC, Ref } from "react"
 import { clsx } from "../../utils"
 import type { ReactChildren } from "../../types"
 
 export const InputWithListWrapper: FC<IInputWithListWrapper> = ({
 	isOpen,
 	children,
+	ref,
 }) => {
 	return (
-		<div className={clsx("z-10 relative", isOpen && "z-20")}>
+		<div ref={ref} className={clsx("z-10 relative", isOpen && "z-20")}>
 			{children}
 		</div>
 	)
 }
 
 interface IInputWithListWrapper {
+	ref?: Ref<HTMLDivElement>
 	isOpen: boolean
 	children?: ReactChildren
 }

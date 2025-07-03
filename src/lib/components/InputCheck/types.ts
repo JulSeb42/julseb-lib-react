@@ -2,7 +2,7 @@ import type { Ref, InputHTMLAttributes } from "react"
 import type {
 	LibCheckInputVariant,
 	LibComponentBase,
-	ReactChildren,
+	ReactElement,
 } from "../../types"
 import type { ILibValidationStatus } from "../InputComponents"
 
@@ -16,7 +16,7 @@ type ILibInputCheckBase = Omit<LibComponentBase<HTMLInputElement>, "element"> &
 
 interface InputCheckbox extends ILibInputCheckBase {
 	type?: "checkbox"
-	iconCheck?: ReactChildren
+	iconCheck?: ReactElement
 }
 
 interface InputRadio extends ILibInputCheckBase {

@@ -5,7 +5,7 @@ import type {
 	LibInputListDirection,
 	LibCountry,
 	DispatchState,
-	ReactChildren,
+	ReactElement,
 } from "../../types"
 import type {
 	ILibInputCommon,
@@ -22,7 +22,7 @@ export type ILibInputPhone = Omit<
 		selectedCountry: LibCountry
 		setSelectedCountry: DispatchState<LibCountry>
 		defaultCountry?: CountryCode
-		icons?: { search?: ReactChildren; caret?: ReactChildren }
+		icons?: { search?: ReactElement; caret?: ReactElement }
 		searchPlaceholder?: string
 		listDirection?: LibInputListDirection
 		countryButtonAriaLabel?: string

@@ -98,9 +98,9 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 								],
 								button.className,
 							)}
-							{...button}
+							{...(button as any)}
 						>
-							{button.buttonContent}
+							{button.content}
 						</button>
 
 						{variant === "transparent" &&

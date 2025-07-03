@@ -28,4 +28,5 @@ export * from "../components/InputCheck/types"
 export * from "../components/InputPhone/types"
 export * from "../components/InputCounter/types"
 export * from "../components/InputSlider/types"
+export * from "../components/Select/types"
 /* Prepend here - DO NOT REMOVE */

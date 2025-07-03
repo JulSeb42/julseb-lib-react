@@ -91,4 +91,5 @@ export * from "./components/InputCheck"
 export * from "./components/InputPhone"
 export * from "./components/InputCounter"
 export * from "./components/InputSlider"
+export * from "./components/Select"
 /* Prepend here - DO NOT REMOVE */

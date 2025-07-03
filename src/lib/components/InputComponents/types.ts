@@ -48,7 +48,7 @@ export interface ILibInputWithValidation {
 }
 
 export interface ILibInputWithIcon {
-	icon?: ReactChildren
+	icon?: ReactElement
 }
 
 export interface ILibInputWithPrefix {

@@ -21,7 +21,7 @@ export const SUFFIX_CLASSES = [
 ]
 
 export const INPUT_ICON_CONTAINER_CLASSES = [
-	"h-full w-8 inline-flex items-center justify-center border-e-1 border-e-gray-200",
+	"h-[32px] w-8 inline-flex items-center justify-center border-e-1 border-e-gray-200",
 ]
 
 export const INPUT_CONTAINER_CLASSES = ({
@@ -59,9 +59,9 @@ export const INPUT_LIST_CLASSES = ({
 	inputBackground: LibInputBackground | undefined
 	validation: LibInputValidation | undefined
 }) => [
-	"left-0 absolute flex flex-col items-start opacity-0 border border-primary-500 rounded-md w-full max-h-0 overflow-hidden overflow-y-scroll transition-all duration-200 ease-in-out",
-	isOpen && " opacity-100 max-h-[300px]",
-	listDirection === "down" && ["top-0", isOpen && "pt-12"],
+	"left-0 absolute flex flex-col items-start opacity-0 border border-primary-500 rounded-md w-full max-h-0 overflow-hidden overflow-y-scroll transition-all duration-200 ease-in-out z-0",
+	isOpen && "opacity-100 max-h-[300px]",
+	(listDirection === "down" || !listDirection) && ["top-0", isOpen && "pt-8"],
 	listDirection === "up" && ["bottom-0", isOpen && "pt-2"],
 	inputVariant === "pill" && "rounded-l-2xl rounded-tr-2xl",
 	inputBackground === "dark"
