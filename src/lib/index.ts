@@ -100,4 +100,5 @@ export * from "./components/Form"
 export * from "./components/ListGroup"
 export * from "./components/Breadcrumbs"
 export * from "./components/Accordion"
+export * from "./components/Dropdown"
 /* Prepend here - DO NOT REMOVE */

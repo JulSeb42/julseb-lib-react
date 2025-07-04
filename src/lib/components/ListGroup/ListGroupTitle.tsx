@@ -1,9 +1,7 @@
 import { useEffect, useState, type FC } from "react"
-import {} from "@julseb-lib/utils"
 import { Text } from "../Text"
-import { clsx } from "../../utils"
+import { clsx, genBoxShadow } from "../../utils"
 import type { ILibListGroupTitle } from "./types"
-import { genShadow } from "../../utils/gen-box-shadow"
 
 /**
  * ListGroupTitle component for rendering a styled header/title for list groups with optional fixed positioning and shadow effects.
@@ -74,7 +72,7 @@ export const ListGroupTitle: FC<ILibListGroupTitle> = ({
 				"bg-primary-500 p-3 w-full font-black text-white text-left transition-shadow duration-200",
 				!noSeparator && "border-b-gray-200 border-b",
 				isFixed && "sticky top-0 left-0",
-				isScrolled && shadow && genShadow[shadow],
+				isScrolled && shadow && genBoxShadow[shadow],
 				className,
 			)}
 			{...rest}

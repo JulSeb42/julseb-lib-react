@@ -1,6 +1,6 @@
 import type { LibShadows } from "../types"
 
-export const genShadow: Record<LibShadows, string> = {
+export const genBoxShadow: Record<LibShadows, string> = {
 	"2xs": "shadow-2xs",
 	xs: "shadow-xs",
 	sm: "shadow-sm",

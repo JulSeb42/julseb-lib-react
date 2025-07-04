@@ -89,7 +89,7 @@ export const listGroupPreview: ComponentPreview<ILibListGroup> = {
 	category: "components",
 	import: "ListGroup", // import Component (ex: Skeleton)
 	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+	optionalImports: ["ListGroupTitle", "ListGroupItem"], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
 	propsImport: "ILibListGroup", // import ILibComponent (ex: ILibAccordion)
 	additionalTypeImports: ["LibListGroupItem"], // import LibComponentItem (ex: LibAccordionItem)
 	extends: ["HTMLDivElement"],

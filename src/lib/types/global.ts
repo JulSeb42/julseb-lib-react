@@ -434,6 +434,20 @@ export type LibAccordionItem = LibComponentBase<HTMLDivElement> & {
 }
 
 /**
+ * @description Props for Item inside Dropdown.
+ *
+ * @extends HTMLButtonElement
+ * @prop {JSX.Element} [content] - The content of the item.
+ */
+export type LibDropdownItem = Omit<
+	LibComponentBase<HTMLButtonElement>,
+	"content"
+> &
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "content"> & {
+		content: ReactChildren
+	}
+
+/**
  * @description Variants for Tag component.
  * @type {"plain" | "outline"}
  * @example

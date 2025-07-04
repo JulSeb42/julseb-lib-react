@@ -37,4 +37,5 @@ export * from "../components/Form/types"
 export * from "../components/ListGroup/types"
 export * from "../components/Breadcrumbs/types"
 export * from "../components/Accordion/types"
+export * from "../components/Dropdown/types"
 /* Prepend here - DO NOT REMOVE */

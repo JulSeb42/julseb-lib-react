@@ -28,7 +28,7 @@ export const accordionPreview: ComponentPreview<ILibAccordion> = {
 	category: "components",
 	import: "Accordion", // import Component (ex: Skeleton)
 	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+	optionalImports: ["AccordionItem"], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
 	propsImport: "ILibAccordion", // import ILibComponent (ex: ILibAccordion)
 	additionalTypeImports: ["LibAccordionItem"], // import LibComponentItem (ex: LibAccordionItem)
 	extends: ["HTMLDivElement"],
