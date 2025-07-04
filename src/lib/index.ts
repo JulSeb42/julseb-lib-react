@@ -99,4 +99,5 @@ export * from "./components/Fieldset"
 export * from "./components/Form"
 export * from "./components/ListGroup"
 export * from "./components/Breadcrumbs"
+export * from "./components/Accordion"
 /* Prepend here - DO NOT REMOVE */

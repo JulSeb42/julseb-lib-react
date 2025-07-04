@@ -2,7 +2,7 @@ import { type FC } from "react"
 import { BiStar, BiSolidStar } from "react-icons/bi"
 import { generateNumbers } from "@julseb-lib/utils"
 import { InputContainer } from "../InputContainer"
-import { clsx } from "../../utils"
+import { clsx, genTextColorHover } from "../../utils"
 import type { ILibRating } from "./types"
 
 /**
@@ -80,17 +80,17 @@ export const Rating: FC<ILibRating> = ({
 							onClick={() => !readOnly && setRating!(n + 1)}
 							type="button"
 							className={clsx(
-								"text-primary-500",
-								!readOnly &&
-									"hover:text-primary-300 active:text-primary-600",
+								readOnly
+									? "text-primary-500"
+									: genTextColorHover["primary"],
 								validation?.status === false
 									? readOnly
 										? "text-danger-500"
-										: "text-danger-500 hover:text-danger-300 active:text-danger-600"
+										: genTextColorHover["danger"]
 									: validation?.status === true &&
 											(readOnly
 												? "text-success-500"
-												: "text-success-500 hover:text-success-300 active:text-success-600"),
+												: genTextColorHover["success"]),
 							)}
 						>
 							{n >= rating

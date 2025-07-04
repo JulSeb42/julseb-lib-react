@@ -619,6 +619,10 @@ export const designTokens = {
 
 	libListInputDirections: { up: "up", down: "down" },
 
+	libAccordionVariant: { basic: "basic", rounded: "rounded" },
+
+	libAccordionIcon: { plus: "plus", chevron: "chevron" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

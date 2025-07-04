@@ -36,4 +36,5 @@ export * from "../components/Fieldset/types"
 export * from "../components/Form/types"
 export * from "../components/ListGroup/types"
 export * from "../components/Breadcrumbs/types"
+export * from "../components/Accordion/types"
 /* Prepend here - DO NOT REMOVE */

@@ -402,6 +402,38 @@ export type LibListGroupItem = LibComponentBase<HTMLDivElement> & {
 }
 
 /**
+ * @description All variants available for Accordion item.
+ * @type {"basic" | "rounded"}
+ * @example
+ * variant="basic"
+ * variant="rounded"
+ */
+export type LibAccordionVariant = keyof typeof designTokens.libAccordionVariant
+
+/**
+ * @description All icons available for Accordion item.
+ * @type {"plus" | "chevron"}
+ * @example
+ * icon="plus"
+ * icon="chevron"
+ */
+export type LibAccordionIcon = keyof typeof designTokens.libAccordionIcon
+
+/**
+ * @description Props for Item inside Accordion.
+ *
+ * @extends HTMLDivElement
+ * @prop {JSX.Element} [title] - The title of the item.
+ * @prop {JSX.Element} [content] - The content of the item.
+ * @prop {true | false} [defaultOpen] - Wether the item is open by default.
+ */
+export type LibAccordionItem = LibComponentBase<HTMLDivElement> & {
+	title: ReactChildren
+	content: ReactChildren
+	defaultOpen?: boolean
+}
+
+/**
  * @description Variants for Tag component.
  * @type {"plain" | "outline"}
  * @example
