@@ -40,4 +40,5 @@ export * from "../components/Accordion/types"
 export * from "../components/Dropdown/types"
 export * from "../components/Toast/types"
 export * from "../components/Alert/types"
+export * from "../components/Modal/types"
 /* Prepend here - DO NOT REMOVE */

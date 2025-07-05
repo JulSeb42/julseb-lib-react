@@ -103,4 +103,5 @@ export * from "./components/Accordion"
 export * from "./components/Dropdown"
 export * from "./components/Toast"
 export * from "./components/Alert"
+export * from "./components/Modal"
 /* Prepend here - DO NOT REMOVE */
