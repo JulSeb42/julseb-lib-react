@@ -43,4 +43,5 @@ export * from "../components/Alert/types"
 export * from "../components/Modal/types"
 export * from "../components/DragList/types"
 export * from "../components/Pagination/types"
+export * from "../components/Paginator/types"
 /* Prepend here - DO NOT REMOVE */

@@ -106,4 +106,5 @@ export * from "./components/Alert"
 export * from "./components/Modal"
 export * from "./components/DragList"
 export * from "./components/Pagination"
+export * from "./components/Paginator"
 /* Prepend here - DO NOT REMOVE */
