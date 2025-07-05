@@ -6,9 +6,23 @@ import {
 } from "react"
 
 /**
- * @description Hook to add possibility to add multiple refs to an element
- * @link https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMergeRefs
- * @argument refs: Array<Ref<Instance> | undefined>
+ * Hook to merge multiple refs into a single ref callback for use on a single element.
+ *
+ * @hook
+ *
+ * @example
+ * const ref1 = useRef<HTMLDivElement>(null)
+ * const ref2 = useRef<HTMLDivElement>(null)
+ * const mergedRef = useMergeRefs([ref1, ref2])
+ *
+ * return <div ref={mergedRef}>Content</div>
+ *
+ * @template Instance - Type of the element instance being referenced
+ * @param {Array<Ref<Instance> | undefined>} refs - Array of refs to merge together
+ *
+ * @returns {RefCallback<Instance> | null} Merged ref callback or null if all refs are null/undefined
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMergeRefs
  */
 export const useMergeRefs = <Instance>(
 	refs: Array<Ref<Instance> | undefined>,

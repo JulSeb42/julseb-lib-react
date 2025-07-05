@@ -50,6 +50,7 @@ import { toastPreview } from "../lib/components/Toast/__preview__/Toast.preview"
 import { alertPreview } from "../lib/components/Alert/__preview__/Alert.preview"
 import { modalPreview } from "../lib/components/Modal/__preview__/Modal.preview"
 import { draglistPreview } from "../lib/components/DragList/__preview__/Draglist.preview"
+import { paginationPreview } from "../lib/components/Pagination/__preview__/Pagination.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -170,6 +171,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	alertPreview,
 	modalPreview,
 	draglistPreview,
+	paginationPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

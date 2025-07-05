@@ -1,108 +1,73 @@
-import { useCallback } from "react"
-import { useSearchParams } from "react-router-dom"
 import { scrollToTop } from "@julseb-lib/utils"
 import type { DispatchState } from "../types"
 
 interface ILibUsePaginationNavigation {
 	currentPage: number
 	setCurrentPage: DispatchState<number>
-	queries?: Array<Array<string>>
 	totalPages?: number
 }
 
 /**
- * @description Hook to use for building Pagination or Paginator buttons
- * @link https://doc-julseb-lib-react.vercel.app/helpers/hooks#usePagination
- * @prop currentPage: number
- * @prop setCurrentPage: Dispatch<SetStateAction<number>>
- * @prop queries?: Array<Array<string>>
- * @prop totalPages?: number
+ * Hook to manage pagination navigation with URL parameter integration and automatic scrolling.
+ *
+ * @hook
+ *
+ * @example
+ * const [currentPage, setCurrentPage] = useState(1)
+ * const { handlePrev, handleNext, handlePage } = usePagination({
+ *   currentPage,
+ *   setCurrentPage,
+ *   totalPages: 10
+ * })
+ *
+ * return (
+ *   <div>
+ *     <button onClick={handlePrev}>Previous</button>
+ *     <button onClick={() => handlePage(5)}>Go to page 5</button>
+ *     <button onClick={handleNext}>Next</button>
+ *   </div>
+ * )
+ *
+ * @param {object} params - Configuration object for pagination
+ * @param {number} params.currentPage - Current active page number
+ * @param {DispatchState<number>} params.setCurrentPage - State setter function for current page
+ * @param {number} [params.totalPages] - Total number of pages available
+ *
+ * @returns {object} Object containing pagination navigation functions
+ * @returns {function} returns.handlePrev - Function to navigate to the previous page
+ * @returns {function} returns.handleNext - Function to navigate to the next page
+ * @returns {function} returns.handlePage - Function to navigate to a specific page number
+ * @returns {number} returns.handlePage.n - Page number to navigate to
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#usePagination
  */
 export const usePagination = ({
 	currentPage,
 	setCurrentPage,
-	queries,
 	totalPages,
 }: ILibUsePaginationNavigation) => {
-	const [_, setSearchParams] = useSearchParams()
-
-	const handlePrev = useCallback(() => {
-		const newPage = currentPage - 1
-
-		setCurrentPage(newPage)
-
-		setSearchParams(
-			queries
-				? {
-						page: newPage.toString(),
-						...Object.fromEntries(queries),
-					}
-				: { page: newPage.toString() },
-			{ replace: true },
-		)
-
+	const handlePrev = () => {
+		setCurrentPage(currentPage - 1)
 		scrollToTop()
-	}, [currentPage, queries, setCurrentPage, setSearchParams])
+	}
 
-	const handleNext = useCallback(() => {
-		const newPage = currentPage + 1
-
-		setCurrentPage(newPage)
-
-		setSearchParams(
-			queries
-				? {
-						page: newPage.toString(),
-						...Object.fromEntries(queries),
-					}
-				: { page: newPage.toString() },
-			{ replace: true },
-		)
-
+	const handleNext = () => {
+		setCurrentPage(currentPage + 1)
 		scrollToTop()
-	}, [currentPage, queries, setCurrentPage, setSearchParams])
+	}
 
 	const handlePage = (n: number) => {
 		if (n < 1) {
 			setCurrentPage(1)
-			setSearchParams(
-				queries
-					? {
-							page: "1",
-							...Object.fromEntries(queries),
-						}
-					: { page: "1" },
-				{ replace: true },
-			)
 			return
 		}
 
 		if (totalPages && n > totalPages) {
 			setCurrentPage(totalPages)
-			setSearchParams(
-				queries
-					? {
-							page: totalPages.toString(),
-							...Object.fromEntries(queries),
-						}
-					: { page: totalPages.toString() },
-				{ replace: true },
-			)
 			return
 		}
 
 		setCurrentPage(n)
-
-		setSearchParams(
-			queries
-				? {
-						page: n.toString(),
-						...Object.fromEntries(queries),
-					}
-				: { page: n.toString() },
-			{ replace: true },
-		)
-
 		scrollToTop()
 	}
 

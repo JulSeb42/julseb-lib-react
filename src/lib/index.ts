@@ -105,4 +105,5 @@ export * from "./components/Toast"
 export * from "./components/Alert"
 export * from "./components/Modal"
 export * from "./components/DragList"
+export * from "./components/Pagination"
 /* Prepend here - DO NOT REMOVE */

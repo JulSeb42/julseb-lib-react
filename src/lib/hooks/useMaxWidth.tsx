@@ -1,9 +1,23 @@
 import { useState, useEffect } from "react"
 
 /**
- * @description Hook to detect if an element is smaller than a set width
- * @link https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMaxWidth
- * @argument width: number
+ * Hook to detect if the viewport width is smaller than or equal to a specified width breakpoint.
+ *
+ * @hook
+ *
+ * @example
+ * const isMobile = useMaxWidth(768)
+ * const isTablet = useMaxWidth(1024)
+ *
+ * if (isMobile) {
+ *   // Render mobile layout
+ * }
+ *
+ * @param {number} width - The maximum width breakpoint to check against
+ *
+ * @returns {boolean} Whether the current viewport width is smaller than or equal to the specified width
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMaxWidth
  */
 export const useMaxWidth = (width: number): boolean => {
 	const [isMax, setIsMax] = useState<boolean>(false)

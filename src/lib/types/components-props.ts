@@ -42,4 +42,5 @@ export * from "../components/Toast/types"
 export * from "../components/Alert/types"
 export * from "../components/Modal/types"
 export * from "../components/DragList/types"
+export * from "../components/Pagination/types"
 /* Prepend here - DO NOT REMOVE */

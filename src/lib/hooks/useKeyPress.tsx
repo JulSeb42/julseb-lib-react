@@ -1,10 +1,27 @@
 import { useEffect } from "react"
 
 /**
- * @description Hook to trigger functions on key press
- * @link https://doc-julseb-lib-react.vercel.app/helpers/hooks#useKeyPress
- * @argument keyCodes: string | Array<string>
- * @argument callback: () => void
+ * Hook to trigger functions on specific key press events with support for modifier keys and exclusions.
+ *
+ * @hook
+ *
+ * @example
+ * // Single key press
+ * useKeyPress('Escape', () => setIsOpen(false))
+ *
+ * // Modifier key combination
+ * useKeyPress(['Control', 'KeyS'], () => saveDocument())
+ *
+ * // With excluded keys
+ * useKeyPress('Enter', handleSubmit, ['Shift'])
+ *
+ * @param {string | Array<string>} keyCodes - Single key code or array of key codes for combinations
+ * @param {function} callback - Function to execute when the key combination is pressed
+ * @param {Array<string>} [excludeKeys] - Array of modifier keys to exclude from triggering the callback
+ *
+ * @returns {void} This hook doesn't return anything
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useKeyPress
  */
 export const useKeyPress = (
 	keyCodes: string | Array<string>,

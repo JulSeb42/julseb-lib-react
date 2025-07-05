@@ -51,9 +51,9 @@ export const draglistPreview: ComponentPreview<ILibDragList> = {
 	category: "components",
 	import: "DragList", // import Component (ex: Skeleton)
 	additionalImports: [], // import OtherComponent (ex: SkeletonCard)
-	optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+	optionalImports: ["DragListItem"], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
 	propsImport: "ILibDraglist", // import ILibComponent (ex: ILibAccordion)
-	additionalTypeImports: [], // import LibComponentItem (ex: LibAccordionItem)
+	additionalTypeImports: ["LibDragListItem"], // import LibComponentItem (ex: LibAccordionItem)
 	extends: ["HTMLDivElement"],
 	previews: [{ previewTitle: "Default", demo: <DragListDemo /> }],
 	propsTitle: "DragList",
