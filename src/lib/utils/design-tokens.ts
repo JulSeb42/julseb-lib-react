@@ -631,6 +631,10 @@ export const designTokens = {
 		loading: "loading",
 	},
 
+	libTabsJustify: { start: "start", stretch: "stretch" },
+
+	libTabsVariant: { basic: "basic", rounded: "rounded" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

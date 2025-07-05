@@ -1,0 +1,5 @@
+export * from "./Tabs"
+export * from "./TabsContainer"
+export * from "./TabsButtonsContainer"
+export * from "./TabsButton"
+export * from "./TabsContent"

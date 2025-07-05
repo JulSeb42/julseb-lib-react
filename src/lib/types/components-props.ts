@@ -46,4 +46,5 @@ export * from "../components/Pagination/types"
 export * from "../components/Paginator/types"
 export * from "../components/ProgressBar/types"
 export * from "../components/ProgressCircle/types"
+export * from "../components/Tabs/types"
 /* Prepend here - DO NOT REMOVE */

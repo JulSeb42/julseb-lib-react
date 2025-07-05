@@ -5,7 +5,7 @@ import type { ILibProgressCircle } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 export const progressCirclePreview: ComponentPreview<ILibProgressCircle> = {
-	name: "ProgressCircle",
+	name: "Progress Circle",
 	component: ProgressCircle,
 	category: "components",
 	import: "ProgressCircle", // import Component (ex: Skeleton)

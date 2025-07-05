@@ -422,6 +422,22 @@ export type LibInputListDirection =
 	keyof typeof designTokens.libListInputDirections
 
 /**
+ * @description All tab justification tokens available in the library for positioning tabs within their container.
+ * @type {"start" | "stretch"}
+ * @example
+ * justify="stretch"
+ */
+export type LibTabsJustify = keyof typeof designTokens.libTabsJustify
+
+/**
+ * @description All tab variant tokens available in the library for styling tab components.
+ * @type {"basic" | "rounded"}
+ * @example
+ * variant="basic"
+ */
+export type LibTabsVariant = keyof typeof designTokens.libTabsVariant
+
+/**
  * @description Type of values for InputPin
  */
 export type LibValueInputPin = { [n: number]: number | "" | undefined }
