@@ -8,7 +8,6 @@ import type {
 	RefObject,
 	CSSProperties as CSS,
 	ReactElement as ReactEl,
-	ButtonHTMLAttributes,
 } from "react"
 import type { designTokens } from "../utils/design-tokens"
 
@@ -371,37 +370,6 @@ export interface LibComponentBase<T> extends HTMLAttributes<T> {
 }
 
 /**
- * @description Props for Button inside ButtonGroup.
- *
- * @extends HTMLButtonElement
- * @prop {JSX.Element} [content] - The content of the button
- * @prop {string} [id] - The id if the button.
- */
-export type LibButtonGroupButtonItem = Omit<
-	LibComponentBase<HTMLButtonElement>,
-	"content"
-> &
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "content"> & {
-		id: string
-		content: ReactChildren
-		children?: never
-	}
-
-/**
- * @description Props for Item inside ListGroup.
- *
- * @extends HTMLDivElement
- * @prop {JSX.Element} [title] - The title of the item.
- * @prop {JSX.Element} [body] - The body text of the item.
- * @prop {JSX.Element} [contentRight] - The content on the right of the item.
- */
-export type LibListGroupItem = LibComponentBase<HTMLDivElement> & {
-	title: ReactChildren
-	body?: ReactChildren
-	contentRight?: ReactChildren
-}
-
-/**
  * @description All variants available for Accordion item.
  * @type {"basic" | "rounded"}
  * @example
@@ -418,34 +386,6 @@ export type LibAccordionVariant = keyof typeof designTokens.libAccordionVariant
  * icon="chevron"
  */
 export type LibAccordionIcon = keyof typeof designTokens.libAccordionIcon
-
-/**
- * @description Props for Item inside Accordion.
- *
- * @extends HTMLDivElement
- * @prop {JSX.Element} [title] - The title of the item.
- * @prop {JSX.Element} [content] - The content of the item.
- * @prop {true | false} [defaultOpen] - Wether the item is open by default.
- */
-export type LibAccordionItem = LibComponentBase<HTMLDivElement> & {
-	title: ReactChildren
-	content: ReactChildren
-	defaultOpen?: boolean
-}
-
-/**
- * @description Props for Item inside Dropdown.
- *
- * @extends HTMLButtonElement
- * @prop {JSX.Element} [content] - The content of the item.
- */
-export type LibDropdownItem = Omit<
-	LibComponentBase<HTMLButtonElement>,
-	"content"
-> &
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "content"> & {
-		content: ReactChildren
-	}
 
 /**
  * @description Variants for Tag component.

@@ -1,7 +1,7 @@
 import type { LibAllColors, LibComponentBase, LibRadiuses } from "../../types"
 
 export interface ILibBadge extends LibComponentBase<HTMLSpanElement> {
-	backgroundColor?: LibAllColors
+	color?: LibAllColors
 	contentColor?: LibAllColors
 	borderRadius?: LibRadiuses
 }

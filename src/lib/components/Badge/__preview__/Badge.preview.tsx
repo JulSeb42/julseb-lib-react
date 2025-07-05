@@ -20,7 +20,7 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
 				<Flexbox gap="sm">
 					{Object.keys(designTokens.libColorsShort).map(
 						(color, i) => (
-							<Badge backgroundColor={color as any} key={i} />
+							<Badge color={color as any} key={i} />
 						),
 					)}
 				</Flexbox>
@@ -34,7 +34,7 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
 			previewTitle: "With short number",
 			props: {
 				children: 2,
-				backgroundColor: "danger",
+				color: "danger",
 			},
 		},
 		{
@@ -42,7 +42,7 @@ export const badgePreview: ComponentPreview<ILibBadge> = {
 			props: {
 				children: 300,
 				className: "w-fit px-2",
-				backgroundColor: "success",
+				color: "success",
 			},
 		},
 	],

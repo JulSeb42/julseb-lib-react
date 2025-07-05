@@ -41,4 +41,5 @@ export * from "../components/Dropdown/types"
 export * from "../components/Toast/types"
 export * from "../components/Alert/types"
 export * from "../components/Modal/types"
+export * from "../components/DragList/types"
 /* Prepend here - DO NOT REMOVE */

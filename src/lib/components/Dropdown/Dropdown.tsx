@@ -63,9 +63,9 @@ export const Dropdown: FC<ILibDropdown> = ({
 		<Element
 			ref={useMergeRefs([ref, el])}
 			className={clsx(
-				"left-0 absolute flex flex-col bg-background overflow-hidden transition-all duration-200 ease",
+				"left-0 absolute flex flex-col bg-background overflow-hidden overflow-y-scroll transition-all duration-200 ease no-scrollbar",
 				genBorderRadius[borderRadius],
-				isOpen ? "max-h-300" : "max-h-0",
+				isOpen ? "max-h-100" : "max-h-0",
 				direction === "down" ? "top-[40px]" : "bottom-[40px]",
 				isOpen && shadow && genBoxShadow[shadow],
 				className,

@@ -35,7 +35,7 @@ export const Badge: FC<ILibBadge> = ({
 	element = "span",
 	ref,
 	children,
-	backgroundColor = "primary",
+	color = "primary",
 	contentColor = "white",
 	borderRadius = "full",
 	...rest
@@ -47,7 +47,7 @@ export const Badge: FC<ILibBadge> = ({
 			ref={ref}
 			className={clsx(
 				"inline-flex justify-center items-center w-fit min-w-6 h-6",
-				genBgAllColors[backgroundColor],
+				genBgAllColors[color],
 				genTextAllColor[contentColor],
 				genBorderRadius[borderRadius],
 				className,

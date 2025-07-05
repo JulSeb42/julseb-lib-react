@@ -104,4 +104,5 @@ export * from "./components/Dropdown"
 export * from "./components/Toast"
 export * from "./components/Alert"
 export * from "./components/Modal"
+export * from "./components/DragList"
 /* Prepend here - DO NOT REMOVE */

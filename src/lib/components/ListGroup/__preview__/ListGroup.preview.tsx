@@ -16,7 +16,7 @@ const items: Array<LibListGroupItem> = [
 	{
 		title: "With badge and number",
 		contentRight: (
-			<Badge backgroundColor="danger" className="px-2">
+			<Badge color="danger" className="px-2">
 				350
 			</Badge>
 		),
@@ -24,7 +24,7 @@ const items: Array<LibListGroupItem> = [
 	{
 		title: "With badge and icon",
 		contentRight: (
-			<Badge backgroundColor="success">
+			<Badge color="success">
 				<BiStar />
 			</Badge>
 		),
@@ -32,7 +32,7 @@ const items: Array<LibListGroupItem> = [
 	},
 	{
 		title: "With color badge",
-		contentRight: <Badge backgroundColor="warning" />,
+		contentRight: <Badge color="warning" />,
 	},
 	{
 		title: "Router link",
@@ -66,8 +66,9 @@ const items: Array<LibListGroupItem> = [
 			</Text>
 		),
 		body: "Body",
-		onClick: () => alert("Clicked!"),
 		element: "button",
+		// @ts-ignore
+		onClick: () => alert("Clicked!"),
 	},
 	{
 		title: "Button disabled",
@@ -77,6 +78,7 @@ const items: Array<LibListGroupItem> = [
 			</Text>
 		),
 		element: "button",
+		// @ts-ignore
 		onClick: () => alert("Clicked!"),
 		// @ts-ignore
 		disabled: true,

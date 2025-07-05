@@ -68,7 +68,7 @@ export const Avatar: FC<ILibAvatar> = ({
 					contentColor={
 						typeof badge === "object" ? badge.contentColor : "white"
 					}
-					backgroundColor={
+					color={
 						typeof badge === "object"
 							? badge.backgroundColor
 							: "primary"
