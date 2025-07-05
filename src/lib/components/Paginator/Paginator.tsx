@@ -1,6 +1,5 @@
 import { type FC, type ChangeEvent } from "react"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
-import {} from "@julseb-lib/utils"
 import { ButtonIcon } from "../ButtonIcon"
 import { Text } from "../Text"
 import { usePagination } from "../../hooks"

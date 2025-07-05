@@ -1,6 +1,5 @@
 import { useState, useMemo, useRef, type FC } from "react"
 import { BiCaretDown, BiSearch } from "react-icons/bi"
-import {} from "@julseb-lib/utils"
 import { InputContainer } from "../InputContainer"
 import { Text } from "../Text"
 import {

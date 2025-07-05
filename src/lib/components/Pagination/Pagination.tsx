@@ -1,6 +1,5 @@
 import { type FC } from "react"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
-import {} from "@julseb-lib/utils"
 import { usePagination, useMaxWidth } from "../../hooks"
 import { PaginationButton } from "./PaginationButton"
 import { clsx } from "../../utils"
@@ -19,7 +18,7 @@ import type { ILibPagination } from "./types"
  *   accentColor="primary"
  *   pageLimit={5}
  * />
- * 
+ *
  * @extends HTMLDivElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the pagination container.
@@ -34,7 +33,7 @@ import type { ILibPagination } from "./types"
  * @prop {number} [props.pageLimit=5] - Maximum number of page buttons to display at once.
  * @prop {number} [props.currentPage] - Current active page number.
  * @prop {function} [props.setCurrentPage] - Function to update the current page state.
- * 
+ *
  * @returns {JSX.Element} The rendered Pagination component.
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/pagination

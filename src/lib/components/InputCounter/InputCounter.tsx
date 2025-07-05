@@ -1,6 +1,5 @@
 import { type FC } from "react"
 import { BiPlus, BiMinus } from "react-icons/bi"
-import {} from "@julseb-lib/utils"
 import { clsx } from "../../utils"
 import { ButtonIcon } from "../ButtonIcon"
 import { InputContainer } from "../InputContainer"
@@ -12,20 +11,20 @@ import type { ILibInputCounter } from "./types"
  * @component
  *
  * @example
- * <InputCounter 
- *   value={count} 
- *   setValue={setCount} 
- *   min={0} 
- *   max={10} 
- *   label="Quantity" 
+ * <InputCounter
+ *   value={count}
+ *   setValue={setCount}
+ *   min={0}
+ *   max={10}
+ *   label="Quantity"
  * />
- * <InputCounter 
- *   value={amount} 
- *   setValue={setAmount} 
- *   noInput 
- *   buttonsColor="secondary" 
+ * <InputCounter
+ *   value={amount}
+ *   setValue={setAmount}
+ *   noInput
+ *   buttonsColor="secondary"
  * />
- * 
+ *
  * @extends InputHTMLAttributes
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the counter container.
@@ -49,7 +48,7 @@ import type { ILibInputCounter } from "./types"
  * @prop {number} [props.max=100] - Maximum allowed value for the counter.
  * @prop {number} [props.step=1] - Increment/decrement step value.
  * @prop {any} [props.rest] - Additional props spread to the input or span element.
- * 
+ *
  * @returns {JSX.Element} The rendered InputCounter component.
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-counter
