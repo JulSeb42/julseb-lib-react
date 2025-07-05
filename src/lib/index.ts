@@ -107,4 +107,5 @@ export * from "./components/Modal"
 export * from "./components/DragList"
 export * from "./components/Pagination"
 export * from "./components/Paginator"
+export * from "./components/ProgressBar"
 /* Prepend here - DO NOT REMOVE */

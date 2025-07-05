@@ -52,6 +52,7 @@ import { modalPreview } from "../lib/components/Modal/__preview__/Modal.preview"
 import { draglistPreview } from "../lib/components/DragList/__preview__/Draglist.preview"
 import { paginationPreview } from "../lib/components/Pagination/__preview__/Pagination.preview"
 import { paginatorPreview } from "../lib/components/Paginator/__preview__/Paginator.preview"
+import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -174,6 +175,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	draglistPreview,
 	paginationPreview,
 	paginatorPreview,
+	progressBarPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

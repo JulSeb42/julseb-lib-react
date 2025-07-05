@@ -44,4 +44,5 @@ export * from "../components/Modal/types"
 export * from "../components/DragList/types"
 export * from "../components/Pagination/types"
 export * from "../components/Paginator/types"
+export * from "../components/ProgressBar/types"
 /* Prepend here - DO NOT REMOVE */
