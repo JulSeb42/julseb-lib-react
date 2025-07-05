@@ -29,7 +29,7 @@ export interface ILibTabsButton
 	variant?: LibTabsVariant
 }
 
-/*====================== Tab item ======================*/
+/*====================== Tab content ======================*/
 
 export interface ILibTabContent extends LibComponentBase<HTMLDivElement> {
 	isActive: boolean

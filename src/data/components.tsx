@@ -123,6 +123,10 @@ export interface ComponentPreview<T> {
 	propsSecond?: Array<Prop>
 	propsThirdTitle?: string
 	propsThird?: Array<Prop>
+	propsFourthTitle?: string
+	propsFourth?: Array<Prop>
+	propsFifthTitle?: string
+	propsFifth?: Array<Prop>
 }
 
 export const previews: Array<ComponentPreview<any>> = [
