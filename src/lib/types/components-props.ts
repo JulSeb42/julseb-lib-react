@@ -38,4 +38,5 @@ export * from "../components/ListGroup/types"
 export * from "../components/Breadcrumbs/types"
 export * from "../components/Accordion/types"
 export * from "../components/Dropdown/types"
+export * from "../components/Toast/types"
 /* Prepend here - DO NOT REMOVE */

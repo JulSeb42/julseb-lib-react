@@ -8,24 +8,34 @@ import {
 } from "../../utils"
 import type { ILibTag } from "./types"
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * Tag component for displaying labeled content with customizable colors, variants, and styling options.
+ *
+ * @component
+ *
+ * @example
+ * <Tag color="primary" variant="plain">
+ *   New Feature
+ * </Tag>
+ * <Tag color="success" variant="outline" borderRadius="md">
+ *   Approved
+ * </Tag>
+ *
+ * @extends HTMLSpanElement
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the tag container.
+ * @prop {React.ElementType} [props.element="span"] - HTML element type to render as the container.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the tag element.
+ * @prop {React.ReactNode} [props.children] - Content to display inside the tag.
+ * @prop {LibAllColors} [props.color="primary"] - Background or border color of the tag.
+ * @prop {LibAllColors} [props.contentColor] - Text color of the tag content.
+ * @prop {"xs" | "sm" | "md" | "lg" | "xl" | "full"} [props.borderRadius="full"] - Border radius size of the tag.
+ * @prop {"plain" | "outline"} [props.variant="plain"] - Visual style variant of the tag.
+ *
+ * @returns {JSX.Element} The rendered Tag component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/tag
+ */
 export const Tag: FC<ILibTag> = ({
 	className,
 	element = "span",

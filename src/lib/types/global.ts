@@ -456,6 +456,14 @@ export type LibDropdownItem = Omit<
 export type LibTagVariant = keyof typeof designTokens.libTagVariant
 
 /**
+ * @description Variants for Toast component.
+ * @type {"success" | "error" | "warning" | "info" | "loading"}
+ * @example
+ * status="error"
+ */
+export type LibToastStatus = keyof typeof designTokens.libToastStatus
+
+/**
  * @description Variants for InputCheck component.
  * @type {"tile" | "toggle" | "selector"}
  * @example

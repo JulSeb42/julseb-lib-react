@@ -394,4 +394,23 @@ button {
 	input::-webkit-slider-thumb {
 		box-shadow: var(--shadow-lg);
 	}
+
+	@keyframes toast-timer-animation {
+		0% {
+			width: 100%;
+		}
+
+		100% {
+			width: 0;
+		}
+	}
+
+	.toast-timer {
+		animation: toast-timer-animation var(--toast-timer-duration) linear
+			forwards;
+	}
+
+	.Toastify__progress-bar--bg {
+		background-color: transparent !important;
+	}
 }

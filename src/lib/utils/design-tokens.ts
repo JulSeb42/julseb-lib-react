@@ -623,6 +623,14 @@ export const designTokens = {
 
 	libAccordionIcon: { plus: "plus", chevron: "chevron" },
 
+	libToastStatus: {
+		success: "success",
+		error: "error",
+		warning: "warning",
+		info: "info",
+		loading: "loading",
+	},
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component
