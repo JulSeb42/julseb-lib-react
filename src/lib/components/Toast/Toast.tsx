@@ -19,7 +19,7 @@ import type { ILibToast } from "./types"
  *   closeToast={handleClose}
  * />
  *
- * @extends ILibToast
+ * @extends HTMLDivElement
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the toast container.
  * @prop {React.ElementType} [props.element="div"] - HTML element type to render as the container.

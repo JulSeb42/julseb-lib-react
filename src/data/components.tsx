@@ -47,6 +47,7 @@ import { breadcrumbsPreview } from "../lib/components/Breadcrumbs/__preview__/Br
 import { accordionPreview } from "../lib/components/Accordion/__preview__/Accordion.preview"
 import { dropdownPreview } from "../lib/components/Dropdown/__preview__/Dropdown.preview"
 import { toastPreview } from "../lib/components/Toast/__preview__/Toast.preview"
+import { alertPreview } from "../lib/components/Alert/__preview__/Alert.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -164,6 +165,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	accordionPreview,
 	dropdownPreview,
 	toastPreview,
+	alertPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 
