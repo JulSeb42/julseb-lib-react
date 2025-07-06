@@ -59,6 +59,7 @@ import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slides
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
+import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -93,7 +94,7 @@ type Prop = {
 		| "Array of array of ReactElement"
 		| "Array of React Element"
 	possibleValues:
-		| Array<string>
+		| Array<string | number>
 		| "Any color from the library"
 		| "Any color or overlay from the library"
 		| null
@@ -194,6 +195,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	coverPreview,
 	tablePreview,
 	pageLoadingPreview,
+	stickyPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

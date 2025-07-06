@@ -4,24 +4,33 @@ import { Loader } from "../Loader"
 import { clsx, genBgAllColors } from "../../utils"
 import type { ILibPageLoading } from "./types"
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * PageLoading component for displaying a full-screen loading overlay with customizable background and loader.
+ *
+ * @component
+ *
+ * @example
+ * <PageLoading
+ *   backgroundColor="primary-500"
+ *   loaderColor="white"
+ *   loaderVariant={2}
+ *   stopScrolling
+ * />
+ *
+ * @extends HTMLDivElement
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the page loading container.
+ * @prop {React.ElementType} [props.element="div"] - HTML element type to render as the container.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the page loading element.
+ * @prop {LibColors} [props.backgroundColor="primary-500"] - Background color for the loading overlay.
+ * @prop {LibColorsShort} [props.loaderColor="white"] - Color of the loading spinner.
+ * @prop {1 | 2 | 3} [props.loaderVariant=1] - Visual variant of the loading spinner.
+ * @prop {boolean} [props.stopScrolling] - Whether to disable page scrolling while loading is visible.
+ *
+ * @returns {JSX.Element} The rendered PageLoading component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/pageloading
+ */
 export const PageLoading: FC<ILibPageLoading> = ({
 	className,
 	element = "div",

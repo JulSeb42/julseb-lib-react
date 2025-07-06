@@ -29,5 +29,39 @@ export const pageLoadingPreview: ComponentPreview<ILibPageLoading> = {
 			),
 		},
 	],
-	props: [],
+	props: [
+		{
+			name: "backgroundColor",
+			type: "string",
+			possibleValues: "Any color from the library",
+			defaultValue: "primary-500",
+			description: "Background color for the loading overlay.",
+			isRequired: false,
+		},
+		{
+			name: "loaderColor",
+			type: "string",
+			possibleValues: "Any color from the library",
+			defaultValue: "white",
+			description: "Color of the loading spinner.",
+			isRequired: false,
+		},
+		{
+			name: "loaderVariant",
+			type: "number",
+			possibleValues: [1, 2, 3],
+			defaultValue: "1",
+			description: "Visual variant of the loading spinner.",
+			isRequired: false,
+		},
+		{
+			name: "stopScrolling",
+			type: "boolean",
+			possibleValues: [],
+			defaultValue: "false",
+			description:
+				"Whether to disable page scrolling while loading is visible.",
+			isRequired: false,
+		},
+	],
 }
