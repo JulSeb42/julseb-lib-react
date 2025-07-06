@@ -115,4 +115,5 @@ export * from "./components/Cover"
 export * from "./components/Table"
 export * from "./components/PageLoading"
 export * from "./components/Sticky"
+export * from "./components/TextEditor"
 /* Prepend here - DO NOT REMOVE */

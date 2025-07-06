@@ -11,8 +11,7 @@ const config: Config = {
 			keyframes: {},
 		},
 	},
-	// eslint-disable-next-line
-	plugins: [require("@tailwindcss/forms")],
+	plugins: [],
 }
 
 // eslint-disable-next-line

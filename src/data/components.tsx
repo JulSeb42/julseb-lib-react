@@ -60,6 +60,7 @@ import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
 import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
+import { textEditorPreview } from "../lib/components/TextEditor/__preview__/TextEditor.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -196,6 +197,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	tablePreview,
 	pageLoadingPreview,
 	stickyPreview,
+	textEditorPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

@@ -1,0 +1,30 @@
+import { type FC } from "react"
+import {  } from "@julseb-lib/utils"
+import { clsx } from "../../utils"
+import type { ILibTextEditor } from "./types"
+
+/*
+	Generate JSDoc with:
+	* <short description of the component>
+	*
+	* @component
+	*
+	* @example
+	* <an example of the component>
+	* 
+	* @extends <type the component is extending (check in ./types.ts)>
+	*
+	for each prop, generate:
+	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
+	* 
+	* @returns <what the component returns>
+	*
+	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
+*/
+export const TextEditor: FC<ILibTextEditor> = ({ className, element = "div", ref,  ...rest }) => {
+	const Element = element
+
+	return (
+		<Element ref={ref} className={clsx("", className)} {...rest} />
+	)
+}
