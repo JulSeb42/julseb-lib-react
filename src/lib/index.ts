@@ -110,4 +110,5 @@ export * from "./components/Paginator"
 export * from "./components/ProgressBar"
 export * from "./components/ProgressCircle"
 export * from "./components/Tabs"
+export * from "./components/Slideshow"
 /* Prepend here - DO NOT REMOVE */

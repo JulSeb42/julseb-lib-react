@@ -437,6 +437,60 @@ export type LibTabsJustify = keyof typeof designTokens.libTabsJustify
  */
 export type LibTabsVariant = keyof typeof designTokens.libTabsVariant
 
+// libSlideshowPagination: {
+// 	dots: "dots",
+// 	"dots-outline": "dots-outline",
+// 	bars: "bars",
+// 	thumbnails: "thumbnails",
+// },
+
+// libSlideshowPaginationPosition: { inside: "inside", outside: "outside" },
+
+// libSlideshowButtonsPositions: { left: "left", right: "right" },
+
+// libSlideshowButtonsSizes: { small: "small", large: "large" },
+
+/**
+ * @description All slideshow pagination variant tokens available in the library for styling pagination controls.
+ * @type {"dots" | "dots-outline" | "bars" | "thumbnails"}
+ * @example
+ * pagination="dots"
+ * pagination="bars"
+ * pagination="thumbnails"
+ */
+export type LibSlideshowPagination =
+	keyof typeof designTokens.libSlideshowPagination
+
+/**
+ * @description All slideshow pagination position tokens available in the library for positioning pagination controls.
+ * @type {"inside" | "outside"}
+ * @example
+ * paginationPosition="inside"
+ * paginationPosition="outside"
+ */
+export type LibSlideshowPaginationPosition =
+	keyof typeof designTokens.libSlideshowPaginationPosition
+
+/**
+ * @description All slideshow navigation buttons position tokens available in the library for positioning previous/next controls.
+ * @type {"left" | "right"}
+ * @example
+ * buttonsPosition="left"
+ * buttonsPosition="right"
+ */
+export type LibSlideshowButtonsPosition =
+	keyof typeof designTokens.libSlideshowButtonsPositions
+
+/**
+ * @description All slideshow navigation buttons size tokens available in the library for sizing previous/next controls.
+ * @type {"small" | "large"}
+ * @example
+ * buttonsSize="small"
+ * buttonsSize="large"
+ */
+export type LibSlideshowButtonsSize =
+	keyof typeof designTokens.libSlideshowButtonsSizes
+
 /**
  * @description Type of values for InputPin
  */

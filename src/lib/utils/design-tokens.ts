@@ -635,6 +635,19 @@ export const designTokens = {
 
 	libTabsVariant: { basic: "basic", rounded: "rounded" },
 
+	libSlideshowPagination: {
+        dots: "dots",
+        "dots-outline": "dots-outline",
+        bars: "bars",
+        thumbnails: "thumbnails",
+    },
+
+    libSlideshowPaginationPosition: { inside: "inside", outside: "outside" },
+
+    libSlideshowButtonsPositions: { left: "left", right: "right" },
+
+    libSlideshowButtonsSizes: { small: "small", large: "large" },
+
 	/**
 	 * Country codes
 	 * To use in the InputPhone component

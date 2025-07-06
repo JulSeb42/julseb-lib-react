@@ -55,6 +55,7 @@ import { paginatorPreview } from "../lib/components/Paginator/__preview__/Pagina
 import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/ProgressBar.preview"
 import { progressCirclePreview } from "../lib/components/ProgressCircle/__preview__/ProgressCircle.preview"
 import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
+import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -184,6 +185,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	progressBarPreview,
 	progressCirclePreview,
 	tabsPreview,
+	slideshowPreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 
