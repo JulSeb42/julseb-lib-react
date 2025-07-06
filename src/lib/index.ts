@@ -111,4 +111,5 @@ export * from "./components/ProgressBar"
 export * from "./components/ProgressCircle"
 export * from "./components/Tabs"
 export * from "./components/Slideshow"
+export * from "./components/Cover"
 /* Prepend here - DO NOT REMOVE */

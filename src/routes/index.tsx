@@ -10,6 +10,10 @@ import { MainLargeDemo } from "../pages/demos/MainLargeDemo"
 import { MainFormDemo } from "../pages/demos/MainFormDemo"
 import { AsideRightDemo } from "../pages/demos/AsideRightDemo"
 import { AsideBothDemo } from "../pages/demos/AsideBothDemo"
+import { CoverCenterDemo } from "../pages/demos/CoverCenterDemo"
+import { CoverCenterOverlayDemo } from "../pages/demos/CoverCenterOverlayDemo"
+import { CoverBottomDemo } from "../pages/demos/CoverBottomDemo"
+import { CoverBottomOverlayDemo } from "../pages/demos/CoverBottomOverlayDemo"
 /* Prepend demo import - DO NOT REMOVE */
 
 export type Route = {
@@ -26,6 +30,10 @@ const demos: Array<Route> = [
 	{ path: "/aside/demo-left", element: <AsideLeftDemo /> },
 	{ path: "/aside/demo-right", element: <AsideRightDemo /> },
 	{ path: "/aside/demo-both", element: <AsideBothDemo /> },
+	{ path: "/cover/demo-center", element: <CoverCenterDemo /> },
+	{ path: "/cover/demo-center-overlay", element: <CoverCenterOverlayDemo /> },
+	{ path: "/cover/demo-bottom", element: <CoverBottomDemo /> },
+	{ path: "/cover/demo-bottom-overlay", element: <CoverBottomOverlayDemo /> },
 	/* Prepend here - DO NOT REMOVE */
 ]
 

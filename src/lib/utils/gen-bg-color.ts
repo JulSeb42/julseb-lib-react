@@ -140,8 +140,8 @@ export const genBgOverlay: Record<LibOverlays, string> = {
 	"black-80": "bg-overlay-black-80",
 	"white-50": "bg-overlay-white-50",
 	"white-80": "bg-overlay-white-80",
-	"gradient-black": "bg-gradient-black",
-	"gradient-white": "bg-gradient-white",
+	"gradient-black": "overlay-gradient-black",
+	"gradient-white": "overlay-gradient-white",
 }
 
 export const genBgAllColors: Record<LibAllColors, string> = {

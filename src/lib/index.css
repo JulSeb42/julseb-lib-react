@@ -87,12 +87,12 @@
 	--color-overlay-black-80: rgba(0, 0, 0, 0.8);
 	--color-overlay-white-50: rgba(255, 255, 255, 0.5);
 	--color-overlay-white-80: rgba(255, 255, 255, 0.8);
-	--overlay-gradient-black: linear-gradient(
+	--color-overlay-gradient-black: linear-gradient(
 		180deg,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(0, 0, 0, 0.56) 100%
 	);
-	--overlay-gradient-white: linear-gradient(
+	--color-overlay-gradient-white: linear-gradient(
 		180deg,
 		rgba(0, 0, 0, 0) 0%,
 		rgba(255, 255, 255, 0.35) 100%
@@ -327,11 +327,11 @@ button {
 	}
 
 	.overlay-gradient-black {
-		background: var(--overlay-gradient-black);
+		background: var(--color-overlay-gradient-black);
 	}
 
 	.overlay-gradient-white {
-		background: var(--overlay-gradient-white);
+		background: var(--color-overlay-gradient-white);
 	}
 
 	/*====================== Keyframes & animations ======================*/
