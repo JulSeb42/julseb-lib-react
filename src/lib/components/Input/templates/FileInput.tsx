@@ -32,6 +32,7 @@ export const FileInput: FC<ILibFileInput> = ({
 					}),
 					"cursor-pointer px-0",
 					"[&::file-selector-button]:bg-gray-200 [&::file-selector-button]:px-2 hover:[&::file-selector-button]:bg-gray-300 [&::file-selector-button]:cursor-pointer [&::file-selector-button]:transition-all [&::file-selector-button]:duration-200 [&::file-selector-button]:ease-in-out [&::file-selector-button]:h-8 [&::file-selector-button]:mr-2 [&::file-selector-button]:text-black",
+					"input-file",
 				)}
 			/>
 

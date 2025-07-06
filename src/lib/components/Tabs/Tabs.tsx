@@ -7,24 +7,39 @@ import { TabsContent } from "./TabsContent"
 import { clsx } from "../../utils"
 import type { ILibTabs } from "./types"
 
-/*
-	Generate JSDoc with:
-	* <short description of the component>
-	*
-	* @component
-	*
-	* @example
-	* <an example of the component>
-	* 
-	* @extends <type the component is extending (check in ./types.ts)>
-	*
-	for each prop, generate:
-	* @prop {type} [props.<prop name>] <prop with the possible values, and default values> - <short description of the prop>
-	* 
-	* @returns <what the component returns>
-	*
-	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
-*/
+/**
+ * Tabs component for creating tabbed interfaces with automatic state management and customizable styling.
+ *
+ * @component
+ *
+ * @example
+ * const tabItems = [
+ *   { title: "Tab 1", content: "Content for tab 1" },
+ *   { title: "Tab 2", content: "Content for tab 2" },
+ *   { title: "Tab 3", content: "Content for tab 3" }
+ * ]
+ *
+ * <Tabs
+ *   items={tabItems}
+ *   justify="stretch"
+ *   variant="rounded"
+ *   activeTab={0}
+ * />
+ *
+ * @extends HTMLDivElement
+ *
+ * @prop {string} [props.className] - Additional CSS classes to apply to the tabs container.
+ * @prop {React.ElementType} [props.element="div"] - HTML element type to render as the container.
+ * @prop {React.Ref<any>} [props.ref] - Ref to the tabs container element.
+ * @prop {Array<LibTabItem>} [props.items] - Array of tab items containing title and content for each tab.
+ * @prop {"start" | "stretch"} [props.justify="start"] - Justification for positioning tabs within their container.
+ * @prop {"basic" | "rounded"} [props.variant="basic"] - Visual variant for styling the tab buttons.
+ * @prop {number} [props.activeTab=0] - Index of the initially active tab.
+ *
+ * @returns {JSX.Element} The rendered Tabs component.
+ *
+ * @see https://doc-julseb-lib-react.vercel.app/components/tabs
+ */
 export const Tabs: FC<ILibTabs> = ({
 	className,
 	element = "div",
@@ -41,7 +56,7 @@ export const Tabs: FC<ILibTabs> = ({
 		<TabsContainer
 			element={element}
 			ref={ref}
-			className={clsx("", className)}
+			className={clsx(className)}
 			{...rest}
 		>
 			<TabsButtonsContainer justify={justify} variant={variant}>

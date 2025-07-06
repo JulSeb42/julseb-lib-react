@@ -24,11 +24,13 @@ export const Ul: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				BASE_CLASSES,
-				"text-[16px] list-disc ps-8",
+				"text-(length:--font-size-body)",
+				"list-disc ps-8",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"ul",
 				className,
 			)}
 			{...rest}

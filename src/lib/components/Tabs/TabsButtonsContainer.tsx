@@ -47,6 +47,7 @@ export const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
 				variant === "rounded" && "bg-gray-200 rounded-md p-2",
 				justify === "start" && "justify-start",
 				justify === "stretch" && "justify-stretch",
+				"tabs-buttons-container",
 				className,
 			)}
 			{...rest}

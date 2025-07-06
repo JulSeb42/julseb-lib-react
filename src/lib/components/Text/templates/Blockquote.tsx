@@ -24,12 +24,13 @@ export const Blockquote: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				BASE_CLASSES,
-				"text-[18px]",
+				"text-(length:--font-size-h6)",
 				"italic ps-4",
 				genTextAlign[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"blockquote",
 				className,
 			)}
 			{...rest}

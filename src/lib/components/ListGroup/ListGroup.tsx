@@ -55,6 +55,7 @@ export const ListGroup: FC<ILibListGroup> = ({
 			ref={useMergeRefs([ref, listRef])}
 			className={clsx(
 				"border border-gray-200 rounded-lg overflow-y-scroll",
+				"list-group-container",
 				className,
 			)}
 			{...rest}

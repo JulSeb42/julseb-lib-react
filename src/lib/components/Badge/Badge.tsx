@@ -50,6 +50,7 @@ export const Badge: FC<ILibBadge> = ({
 				genBgAllColors[color],
 				genTextAllColor[contentColor],
 				genBorderRadius[borderRadius],
+				"badge",
 				className,
 			)}
 			{...rest}

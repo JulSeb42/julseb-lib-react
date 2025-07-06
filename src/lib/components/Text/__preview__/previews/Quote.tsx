@@ -1,9 +1,5 @@
 import { Text } from "../.."
 
 export const BlockQuote = () => {
-    return (
-        <Text tag="blockquote" data-testid="testid" className="className">
-            Blockquote
-        </Text>
-    )
+	return <Text tag="blockquote">Blockquote</Text>
 }

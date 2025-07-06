@@ -37,6 +37,7 @@ export const DropdownItem: FC<ILibDropdownItem> = ({
 		<Element
 			className={clsx(
 				"inline-flex items-center gap-2 bg-background hover:bg-primary-300 active:bg-primary-600 disabled:hover:bg-background p-2 min-w-[300px] font-bold text-primary-500 disabled:text-gray-500",
+				"dropdown-item",
 				className,
 			)}
 			content={undefined}

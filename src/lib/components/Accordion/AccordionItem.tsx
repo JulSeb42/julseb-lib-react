@@ -45,7 +45,10 @@ export const AccordionItem: FC<ILibAccordionItem> = ({
 	const [isOpen, setIsOpen] = useState(defaultOpen)
 
 	return (
-		<Element className={clsx("flex flex-col", className)} {...rest}>
+		<Element
+			className={clsx("flex flex-col", "accordion-item", className)}
+			{...rest}
+		>
 			<AccordionTitle
 				isOpen={isOpen}
 				setIsOpen={setIsOpen}

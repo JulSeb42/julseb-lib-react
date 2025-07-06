@@ -65,6 +65,7 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 			"w-fit overflow-hidden",
 			genBorderRadius[borderRadius],
 			variant === "transparent" && ["border", genBorderColorShort[color]],
+			"button-group",
 			className,
 		),
 		flexDirection: "row",
@@ -96,6 +97,7 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 								variant === "transparent" && [
 									genTextColorHover[color],
 								],
+								"button-group-button",
 								button.className,
 							)}
 							{...(button as any)}
@@ -109,6 +111,7 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 									className={clsx(
 										"inline-block w-[1px] h-full",
 										genBgColorShort[color],
+										"button-group-separator",
 									)}
 								/>
 							)}

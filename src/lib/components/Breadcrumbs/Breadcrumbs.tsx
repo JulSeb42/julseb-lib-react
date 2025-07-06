@@ -43,7 +43,11 @@ export const Breadcrumbs: FC<ILibBreadcrumbs> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx("flex flex-wrap items-center gap-2", className)}
+			className={clsx(
+				"flex flex-wrap items-center gap-2",
+				"breadcrumbs",
+				className,
+			)}
 			{...rest}
 		>
 			{childrenArray.map((child, i) => {
@@ -54,7 +58,12 @@ export const Breadcrumbs: FC<ILibBreadcrumbs> = ({
 
 						{i !== childrenArray.length - 1 &&
 							(typeof separator === "string" ? (
-								<Text>{separator}</Text>
+								<Text
+									element="span"
+									className="breadcrumbs-separator"
+								>
+									{separator}
+								</Text>
 							) : (
 								separator
 							))}

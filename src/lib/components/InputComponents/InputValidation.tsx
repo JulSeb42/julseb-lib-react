@@ -13,11 +13,16 @@ export const InputValidation: FC<IInputValidation> = ({ validation }) => {
 				validation.status === false
 					? "text-danger-500"
 					: "text-success-500",
+				"input-validation-container",
 			)}
 		>
 			{validation.status === false
-				? (validation.iconNotPassed ?? <BiXCircle />)
-				: (validation.iconPassed ?? <BiCheckCircle />)}
+				? (validation.iconNotPassed ?? (
+						<BiXCircle className="input-validation-icon" />
+					))
+				: (validation.iconPassed ?? (
+						<BiCheckCircle className="input-validation-icon" />
+					))}
 		</span>
 	)
 }

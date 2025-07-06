@@ -56,6 +56,7 @@ export const DragListItem: FC<ILibDragListItem> = ({
 			ref={ref}
 			className={clsx(
 				"flex items-start gap-2 w-full cursor-grab active:cursor-grabbing",
+				"drag-list-item",
 				className,
 			)}
 			id={item?.id ?? id}
@@ -70,23 +71,35 @@ export const DragListItem: FC<ILibDragListItem> = ({
 			<button
 				role="button"
 				aria-label={iconLabel}
-				className="cursor-grab! active:cursor-grabbing"
+				className={clsx(
+					"cursor-grab! active:cursor-grabbing",
+					"drag-list-item-button",
+				)}
 			>
 				{iconDrag}
 			</button>
 
-			<div className="flex flex-col gap-1 grow">
+			<div
+				className={clsx(
+					"flex flex-col gap-1 grow",
+					"drag-list-item-content",
+				)}
+			>
 				{item ? (
 					<>
 						{typeof item.title === "string" ? (
-							<Text tag="h6">{item.title}</Text>
+							<Text tag="h6" className="drag-list-item-title">
+								{item.title}
+							</Text>
 						) : (
 							item.title
 						)}
 
 						{item.body &&
 							(typeof item.body === "string" ? (
-								<Text>{item.body}</Text>
+								<Text className="drag-list-item-body">
+									{item.body}
+								</Text>
 							) : (
 								item.body
 							))}

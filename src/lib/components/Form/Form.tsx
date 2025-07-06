@@ -49,18 +49,19 @@ export const Form: FC<ILibForm> = ({
 	return (
 		<form
 			ref={ref}
-			className={clsx("flex flex-col gap-4", className)}
+			className={clsx("flex flex-col gap-4", "form", className)}
 			{...rest}
 		>
 			{children}
 
 			{buttonPrimary && (
-				<div className="flex items-center gap-2">
+				<div className="flex items-center gap-2 form-buttons-container">
 					<Button
 						type="submit"
 						disabled={disabled}
 						isLoading={isLoading}
 						loaderVariant={loaderVariant}
+						className="form-button"
 					>
 						{buttonPrimary}
 					</Button>
@@ -70,6 +71,7 @@ export const Form: FC<ILibForm> = ({
 							{...(buttonSecondary as any)}
 							type={buttonSecondary.type ?? "button"}
 							variant="transparent"
+							className="form-button"
 						>
 							{buttonSecondary.content}
 						</Button>

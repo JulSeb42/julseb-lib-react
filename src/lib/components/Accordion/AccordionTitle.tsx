@@ -47,18 +47,20 @@ export const AccordionTitle: FC<ILibAccordionTitle> = ({
 				variant === "rounded"
 					? "bg-primary-500 text-white py-1 px-2 border-b-white"
 					: [genTextColorHover["primary"], "border-b-gray-200"],
+				"accordion-title",
 				className,
 			)}
 			onClick={() => setIsOpen(!isOpen)}
 			{...rest}
 		>
-			<span>{children}</span>
+			<span className="accordion-title-content">{children}</span>
 
 			{icon === "plus" ? (
 				<BiPlus
 					className={clsx(
 						"transition-all duration-200 ease-in-out",
 						isOpen && "rotate-45",
+						"accordion-title-icon",
 					)}
 				/>
 			) : (
@@ -66,6 +68,7 @@ export const AccordionTitle: FC<ILibAccordionTitle> = ({
 					className={clsx(
 						"transition-all duration-200 ease-in-out",
 						isOpen && "rotate-180",
+						"accordion-title-icon",
 					)}
 				/>
 			)}

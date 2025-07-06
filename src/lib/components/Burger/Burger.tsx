@@ -44,7 +44,12 @@ export const Burger: FC<ILibBurger> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx("relative w-8 h-6", genHover[color], className)}
+			className={clsx(
+				"relative w-8 h-6",
+				genHover[color],
+				"burger",
+				className,
+			)}
 			role={role}
 			aria-label={ariaLabel}
 			{...rest}
@@ -55,6 +60,7 @@ export const Burger: FC<ILibBurger> = ({
 					"top-0",
 					genBgAllColors[color],
 					isOpen && "rotate-45 top-[45%]",
+					"burger-span",
 				)}
 			/>
 			<span
@@ -63,6 +69,7 @@ export const Burger: FC<ILibBurger> = ({
 					"top-[50%] -translate-y-[50%]",
 					genBgAllColors[color],
 					isOpen && "w-0",
+					"burger-span",
 				)}
 			/>
 			<span
@@ -71,6 +78,7 @@ export const Burger: FC<ILibBurger> = ({
 					"bottom-0 ",
 					genBgAllColors[color],
 					isOpen && "-rotate-45 bottom-[45%]",
+					"burger-span",
 				)}
 			/>
 		</Element>

@@ -47,6 +47,7 @@ export const PasswordInput: FC<ILibPasswordInput> = ({
 						inputBackground,
 						validationStatus: validation?.status,
 					}),
+					"input-password",
 				)}
 				type={inputType}
 				disabled={disabled}

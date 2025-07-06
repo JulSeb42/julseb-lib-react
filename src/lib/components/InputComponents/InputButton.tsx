@@ -11,7 +11,7 @@ export const InputButton: FC<IInputButton> = ({
 	return (
 		<button
 			onClick={onClick}
-			className={clsx(INPUT_BUTTON_CLASSES, className)}
+			className={clsx(INPUT_BUTTON_CLASSES, "input-button", className)}
 			type="button"
 		>
 			{children}

@@ -69,11 +69,14 @@ export const Fieldset: FC<ILibFieldset> = ({
 						? "border-danger-500"
 						: validation?.status === true && "border-success-500",
 					genBorderRadius[borderRadius],
+					"fieldset",
 					className,
 				)}
 				{...rest}
 			>
-				<legend className="px-3 font-black">{legend}</legend>
+				<legend className="px-3 font-black fieldset-legend">
+					{legend}
+				</legend>
 
 				{children}
 			</fieldset>

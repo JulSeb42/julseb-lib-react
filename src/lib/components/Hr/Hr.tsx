@@ -39,6 +39,7 @@ export const Hr: FC<ILibHr> = ({
 				isRounded ? "rounded-full" : "rounded-none",
 				genBgAllColors[color],
 				genMaxWidth[maxWidth],
+				"hr",
 				className,
 			)}
 			{...rest}

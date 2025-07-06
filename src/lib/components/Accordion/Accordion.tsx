@@ -52,6 +52,7 @@ export const Accordion: FC<ILibAccordion> = ({
 				variant === "rounded"
 					? "rounded-md overflow-hidden border border-gray-200"
 					: "gap-2",
+				"accordion",
 				className,
 			)}
 			{...rest}

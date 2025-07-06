@@ -54,23 +54,28 @@ export const ListGroupItem: FC<ILibListGroupItem> = ({
 				!noSeparator &&
 					"[&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-gray-200",
 				"disabled:bg-gray-200 disabled:text-gray-500",
+				"list-group-item",
 				className,
 			)}
 			{...rest}
 		>
 			{children ?? (
 				<>
-					<div className="flex flex-col gap-0.5 grow">
+					<div className="flex flex-col gap-0.5 content-wrapper grow">
 						{number ? (
-							<span className="inline-flex gap-2">
-								<span>{number}</span>
-								<Text tag="h6">{title}</Text>
+							<span className="inline-flex gap-2 title-wrapper">
+								<span className="number">{number}</span>
+								<Text tag="h6" className="title">
+									{title}
+								</Text>
 							</span>
 						) : (
-							<Text tag="h6">{title}</Text>
+							<Text tag="h6" className="title">
+								{title}
+							</Text>
 						)}
 
-						{body && <Text>{body}</Text>}
+						{body && <Text className="body">{body}</Text>}
 					</div>
 
 					{contentRight}

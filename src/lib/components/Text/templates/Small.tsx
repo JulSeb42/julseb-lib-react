@@ -24,11 +24,12 @@ export const Small: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				BASE_CLASSES,
-				"text-[14px]",
+				"text-(length:--font-size-small)",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"small",
 				className,
 			)}
 			{...rest}

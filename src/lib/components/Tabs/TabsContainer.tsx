@@ -40,7 +40,7 @@ export const TabsContainer: FC<ILibTabsContainer> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx("flex flex-col gap-4", className)}
+			className={clsx("flex flex-col gap-4", "tabs-container", className)}
 			{...rest}
 		>
 			{children}

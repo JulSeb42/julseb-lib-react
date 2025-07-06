@@ -122,6 +122,7 @@ export const Select: FC<ILibSelect> = ({
 								? "bg-danger-50"
 								: validation?.status === true &&
 										"bg-success-50",
+							"select-button",
 							className,
 						)}
 						onClick={() => setIsOpen(!isOpen)}
@@ -135,12 +136,14 @@ export const Select: FC<ILibSelect> = ({
 							disabled={disabled}
 						/>
 
-						<span className="px-2 text-left grow">{value}</span>
+						<span className="px-2 text-left select-value grow">
+							{value}
+						</span>
 
 						<InputValidation validation={validation} />
 
 						{icons?.caret ?? (
-							<span className="px-2">
+							<span className="px-2 select-caret-container">
 								<BiCaretDown
 									size={16}
 									className={clsx(
@@ -149,6 +152,7 @@ export const Select: FC<ILibSelect> = ({
 											: validation?.status === true
 												? "text-success-500"
 												: "text-primary-500",
+										"select-caret",
 									)}
 								/>
 							</span>

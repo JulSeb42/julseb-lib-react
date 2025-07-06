@@ -45,7 +45,7 @@ export const Linkify: FC<ILibLinkify> = ({
 	const words: Array<string> = children ? children.split(" ") : []
 
 	return (
-		<Element ref={ref} className={clsx(className)} {...rest}>
+		<Element ref={ref} className={clsx("linkify",className)} {...rest}>
 			{words?.map((word: string) =>
 				word.match(URL_REGEX) ? (
 					<Fragment key={uuid()}>
@@ -53,7 +53,7 @@ export const Linkify: FC<ILibLinkify> = ({
 							href={word}
 							target={blank ? "_blank" : undefined}
 							rel={blank ? "noreferrer noopener" : undefined}
-							className={clsx(linkClasses)}
+							className={clsx(linkClasses, "linkify-link")}
 						>
 							{word}
 						</a>{" "}

@@ -29,12 +29,7 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 	previews: [
 		{
 			demo: (
-				<Masonry
-					col={3}
-					gap="xl"
-					data-testid="testid"
-					className="className"
-				>
+				<Masonry col={3} gap="xl">
 					{images.map((image, i) => (
 						<Image src={image} alt={`Img ${i}`} key={uuid()} />
 					))}

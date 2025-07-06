@@ -39,6 +39,7 @@ export const Skeleton: FC<ILibSkeleton> = ({
 				genBgAllColors[backgroundColor],
 				genAnimation[animation],
 				genBorderRadius[borderRadius],
+				"skeleton",
 				className,
 			)}
 			{...rest}

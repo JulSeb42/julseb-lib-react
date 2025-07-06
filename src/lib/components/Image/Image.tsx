@@ -43,7 +43,7 @@ export const Image: FC<ILibImage> = ({
 			<Element
 				ref={ref}
 				className={clsx(
-					"relative overflow-hidden",
+					"relative overflow-hidden image-container",
 					borderRadius && genBorderRadius[borderRadius],
 					className,
 				)}
@@ -53,6 +53,7 @@ export const Image: FC<ILibImage> = ({
 						"z-0 relative",
 						fit && genObjectFit[fit],
 						typeof caption === "object" && caption.imgClasses,
+						"image",
 					)}
 					{...rest}
 				/>
@@ -67,6 +68,7 @@ export const Image: FC<ILibImage> = ({
 							caption.textColor &&
 							genTextAllColor[caption.textColor],
 						typeof caption === "object" && caption.captionClasses,
+						"figcaption",
 					)}
 				>
 					{typeof caption === "object" ? caption.text : caption}
@@ -82,6 +84,7 @@ export const Image: FC<ILibImage> = ({
 				borderRadius && genBorderRadius[borderRadius],
 				fit && genObjectFit[fit],
 				className,
+				"image",
 			)}
 			{...rest}
 		/>

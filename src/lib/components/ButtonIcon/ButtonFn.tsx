@@ -50,6 +50,7 @@ export const ButtonIconFn: FC<
 				],
 				variant === "transparent" && [genTextColorHover[color]],
 				genBorderRadius[borderRadius],
+				"button-icon",
 				className,
 			)}
 			disabled={disabled || isLoading}
@@ -58,7 +59,11 @@ export const ButtonIconFn: FC<
 			{isLoading ? (
 				<Loader
 					variant={loaderVariant}
-					className={clsx("border-5 size-8", loaderClasses)}
+					className={clsx(
+						"border-5 size-8",
+						"button-icon-loader",
+						loaderClasses,
+					)}
 					color="gray"
 				/>
 			) : (

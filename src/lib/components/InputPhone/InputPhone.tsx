@@ -130,6 +130,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 						type="button"
 						className={clsx(
 							"inline-flex items-center gap-1 px-2 border-r-1 border-r-gray-200 w-[81px] h-full",
+							"input-phone-country-button",
 						)}
 						onClick={() => setIsOpen(!isOpen)}
 						role="button"
@@ -140,10 +141,15 @@ export const InputPhone: FC<ILibInputPhone> = ({
 							alt=""
 							width={16}
 							height={16}
-							className="object-contain"
+							className="object-contain input-phone-flag"
 						/>
 
-						{icons?.caret ?? <BiCaretDown size={12} />}
+						{icons?.caret ?? (
+							<BiCaretDown
+								size={12}
+								className="input-phone-caret"
+							/>
+						)}
 
 						{country?.dial_code}
 					</button>
@@ -156,6 +162,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 								inputBackground,
 								validationStatus: validation?.status,
 							}),
+							"input-phone-input",
 						)}
 						{...rest}
 					/>
@@ -179,21 +186,25 @@ export const InputPhone: FC<ILibInputPhone> = ({
 								? "has-[input:focus]:border-b-danger-500"
 								: validation?.status === true &&
 										"has-[input:focus]:border-b-success-500",
+							"input-phone-search-container",
 						)}
 					>
-						<BiSearch
-							size={16}
-							className={clsx(
-								"text-primary-500",
-								validation?.status === false
-									? "text-danger-500"
-									: validation?.status === true &&
-											"text-success-500",
-							)}
-						/>
+						{icons?.search ?? (
+							<BiSearch
+								size={16}
+								className={clsx(
+									"text-primary-500",
+									validation?.status === false
+										? "text-danger-500"
+										: validation?.status === true &&
+												"text-success-500",
+									"input-phone-search-icon",
+								)}
+							/>
+						)}
 
 						<input
-							className="outline-none w-full"
+							className="outline-none w-full input-phone-search"
 							placeholder={searchPlaceholder}
 							value={search}
 							onChange={e => setSearch(e.target.value)}
@@ -201,7 +212,11 @@ export const InputPhone: FC<ILibInputPhone> = ({
 					</div>
 
 					{!results.length ? (
-						<Text tag="em" color="gray-500" className="p-2">
+						<Text
+							tag="em"
+							color="gray-500"
+							className="p-2 input-search-no-result"
+						>
 							{textNoResult}
 						</Text>
 					) : (
@@ -227,6 +242,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 									src={result?.flag}
 									alt={`Flag ${result?.name}`}
 									width={16}
+									className="input-phone-list-flag"
 								/>
 
 								{result?.name}

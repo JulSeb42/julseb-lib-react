@@ -62,7 +62,7 @@ export const Paginator: FC<ILibPaginator> = ({
 	handlePrev,
 	handleNext,
 	handlePage,
-	// ...rest
+	...rest
 }) => {
 	const Element = element
 
@@ -82,16 +82,16 @@ export const Paginator: FC<ILibPaginator> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx("flex gap-2", className)}
-			// {...rest}
+			className={clsx("flex gap-2", "paginator", className)}
+			{...rest}
 		>
 			{noInput ? (
-				<Text>
+				<Text className="paginator-text">
 					{texts?.page ?? "Page"} {currentPage} {texts?.of ?? "of"}{" "}
 					{totalPages}
 				</Text>
 			) : (
-				<span>
+				<span className="paginator-text-wrapper">
 					{texts?.page ?? "Page"}{" "}
 					<input
 						value={currentPage}
@@ -104,6 +104,7 @@ export const Paginator: FC<ILibPaginator> = ({
 							"px-2 border border-gray-200 rounded-md outline-none w-[calc(2ch+20px)]",
 							"focus:border-primary-500",
 							"[&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [appearance:textfield]",
+							"paginator-input",
 						)}
 						size={currentPage.toString().length + 1}
 					/>{" "}
@@ -113,7 +114,7 @@ export const Paginator: FC<ILibPaginator> = ({
 
 			<ButtonIcon
 				icon={icons?.prev ?? <BiLeftArrowAlt />}
-				className="size-6"
+				className="size-6 paginator-button"
 				disabled={currentPage === 1}
 				onClick={handlePrev ?? handlePrevPage}
 				aria-label={labels?.prev ?? "Previous"}
@@ -123,7 +124,7 @@ export const Paginator: FC<ILibPaginator> = ({
 
 			<ButtonIcon
 				icon={icons?.next ?? <BiRightArrowAlt />}
-				className="size-6"
+				className="size-6 paginator-button"
 				disabled={currentPage === totalPages}
 				onClick={handleNext ?? handleNextPage}
 				aria-label={labels?.next ?? "Next"}

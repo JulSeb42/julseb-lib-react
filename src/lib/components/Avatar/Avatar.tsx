@@ -61,7 +61,11 @@ export const Avatar: FC<ILibAvatar> = ({
 	if (badge) {
 		return (
 			<Element
-				className={clsx("relative w-fit h-fit", containerClassName)}
+				className={clsx(
+					"relative w-fit h-fit",
+					"avatar-container",
+					containerClassName,
+				)}
 				style={containerStyle}
 			>
 				<Badge
@@ -78,6 +82,7 @@ export const Avatar: FC<ILibAvatar> = ({
 						typeof badge === "object"
 							? badge.className
 							: (undefined as any),
+						"avatar-badge",
 					)}
 				>
 					{typeof badge === "object" ? badge.content : badge}

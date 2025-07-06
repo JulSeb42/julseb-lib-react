@@ -47,6 +47,7 @@ export const Wrapper: FC<ILibWrapper> = ({
 				(genBgAllColors as any)[backgroundColor],
 				genMinHeight[minHeight],
 				genGap[gap],
+				"wrapper",
 				className,
 			)}
 			{...rest}

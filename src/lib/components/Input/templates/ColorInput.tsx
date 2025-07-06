@@ -30,6 +30,7 @@ export const ColorInput: FC<ILibColorInput> = ({
 						inputBackground,
 						validationStatus: validation?.status,
 					}),
+					"input-color",
 				)}
 			/>
 

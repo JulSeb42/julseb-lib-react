@@ -46,6 +46,7 @@ export const SkeletonCard: FC<ILibSkeletonCard> = ({
 				isShiny && "animate-shine",
 				genBgAllColors[backgroundColor],
 				genBorderRadius[borderRadius],
+				"skeleton-card",
 				className,
 			)}
 			{...rest}

@@ -73,6 +73,7 @@ export const InputImage: FC<ILibInputImage> = ({
 						: "bg-gray-100",
 					disabled && "cursor-not-allowed text-gray-500",
 					genBorderRadius[borderRadius],
+					"input-image-container",
 					className,
 				)}
 				onMouseEnter={() => !disabled && setIsHovered(true)}
@@ -81,7 +82,11 @@ export const InputImage: FC<ILibInputImage> = ({
 				{value === "" || !value ? (
 					<EmptyContainer icons={icons} />
 				) : (
-					<img src={value} alt="Image input" />
+					<img
+						src={value}
+						alt="Image input"
+						className="input-image-image"
+					/>
 				)}
 
 				<HoverContainer isVisible={isHovered} icons={icons} />
@@ -90,7 +95,7 @@ export const InputImage: FC<ILibInputImage> = ({
 					type="file"
 					id={id}
 					disabled={disabled}
-					className="hidden"
+					className="hidden input-image-input"
 					{...rest}
 				/>
 			</label>

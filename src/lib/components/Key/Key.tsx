@@ -42,6 +42,7 @@ export const Key: FC<ILibKey> = ({
 				genBgColor50[accentColor],
 				genBorderColorShort[accentColor],
 				genBorderBottom[size],
+				"key",
 				className,
 			)}
 			{...rest}

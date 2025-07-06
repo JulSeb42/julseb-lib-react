@@ -25,12 +25,15 @@ export const H5: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				BASE_CLASSES,
-				display ? "text-[40px]" : "text-[20px]",
 				"font-black",
+				display
+					? "text-(length:--font-size-display-h5)"
+					: "text-(length:--font-size-h5)",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"h5",
 				className,
 			)}
 			{...rest}

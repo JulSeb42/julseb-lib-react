@@ -52,6 +52,7 @@ export const TimeInput: FC<ILibTimeInput> = ({
 					}),
 					"[&::-webkit-calendar-picker-indicator]:opacity-0",
 					"[&::-webkit-calendar-picker-indicator]:absolute",
+					"input-time",
 				)}
 				ref={useMergeRefs([el, ref])}
 				type={type}

@@ -80,6 +80,7 @@ export const DragList: FC<ILibDragList> = ({
 			ref={ref}
 			className={clsx(
 				"flex flex-col items-stretch gap-3 p-3 border border-gray-200 rounded-md w-full",
+				"drag-list",
 				className,
 			)}
 			{...rest}
@@ -99,7 +100,9 @@ export const DragList: FC<ILibDragList> = ({
 								className={clsx(item.className)}
 							/>
 
-							{!hideSeparator && i !== items.length - 1 && <Hr />}
+							{!hideSeparator && i !== items.length - 1 && (
+								<Hr className="drag-list-separator" />
+							)}
 						</Fragment>
 					))
 				: children}

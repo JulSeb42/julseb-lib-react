@@ -29,6 +29,7 @@ export const Strong: FC<ILibText> = ({
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"strong",
 				className,
 			)}
 			{...rest}

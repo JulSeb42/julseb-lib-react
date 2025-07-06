@@ -62,11 +62,19 @@ export const Masonry: FC<ILibMasonry> = ({
 	return (
 		<Element
 			ref={useMergeRefs([el, ref])}
-			className={clsx("grid grid-flow-col", genGap[gap], className)}
+			className={clsx(
+				"grid grid-flow-col",
+				genGap[gap],
+				"masonry",
+				className,
+			)}
 			{...rest}
 		>
 			{[...Array(numCols)].map((_, i) => (
-				<div className={clsx("grid h-fit", genGap[gap])} key={uuid()}>
+				<div
+					className={clsx("grid h-fit", genGap[gap], "masonry-item")}
+					key={uuid()}
+				>
 					{cols[i]}
 				</div>
 			))}

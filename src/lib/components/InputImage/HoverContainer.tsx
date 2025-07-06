@@ -12,6 +12,7 @@ export const HoverContainer: FC<ILibHoverContainer> = ({
 			className={clsx(
 				"inline-flex top-0 left-0 absolute justify-center items-center bg-overlay-white-80 w-full h-full transition-all duration-200 ease",
 				isVisible ? "opacity-100" : "opacity-0",
+				"hover-container",
 			)}
 		>
 			{icons?.hover ?? <BiEdit size={32} />}

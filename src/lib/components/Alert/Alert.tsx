@@ -46,6 +46,7 @@ export const Alert: FC<ILibAlert> = ({
 				"flex flex-col gap-2 px-4 py-2 border rounded-lg w-full max-w-[400px]",
 				genBgColor50[color],
 				genBorderColorShort[color],
+				"alert",
 				className,
 			)}
 			{...rest}

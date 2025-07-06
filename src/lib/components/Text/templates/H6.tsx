@@ -24,12 +24,13 @@ export const H6: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				BASE_CLASSES,
-				"text-[17px]",
+				"text-(length:--font-size-h6)",
 				"font-black",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				"h6",
 				className,
 			)}
 			{...rest}

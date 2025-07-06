@@ -19,6 +19,7 @@ export const TextareaInput: FC<ILibTextareaInput> = ({
 					inputVariant: undefined,
 				}),
 				"min-h-[80px] max-h-[160px] field-sizing-content h-fit resize-y p-1",
+				"input-textarea",
 				className,
 			)}
 		/>

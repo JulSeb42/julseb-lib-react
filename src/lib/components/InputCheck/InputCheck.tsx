@@ -45,7 +45,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 	children,
 	id,
 	type = "checkbox",
-	iconCheck = <BiCheck size={16} />,
+	iconCheck = <BiCheck size={16} className="input-check-icon" />,
 	variant,
 	validation,
 	disabled,
@@ -94,13 +94,14 @@ export const InputCheck: FC<ILibInputCheck> = ({
 					"cursor-not-allowed",
 					"has-[input:checked]:[&_.checkbox]:border-gray-500 has-[input:checked]:[&_.checkbox]:bg-gray-500",
 				],
+				"input-check-container",
 				className,
 			)}
 		>
 			<input
 				type={type}
 				id={id}
-				className="hidden"
+				className="hidden input-check"
 				disabled={disabled}
 				checked={checked}
 				defaultChecked={defaultChecked}
@@ -118,6 +119,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 								validation === false &&
 									"border-danger-500 after:bg-danger-500",
 								disabled && "border-gray-500 after:bg-gray-500",
+								"input-toggle",
 							)}
 						/>
 					) : type === "radio" ? (
@@ -130,6 +132,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 								validation === false &&
 									"border-danger-500 after:bg-danger-500",
 								disabled && "border-gray-500 after:bg-gray-500",
+								"input-radio",
 							)}
 						/>
 					) : (
@@ -142,6 +145,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 									"inline-flex items-center justify-center",
 									validation === false && "border-danger-500",
 									disabled && "border-gray-500",
+									"input-checkbox",
 								)}
 							>
 								{iconCheck}
@@ -151,7 +155,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 				</span>
 			)}
 
-			<Text>{children}</Text>
+			<Text className="input-check-content">{children}</Text>
 		</label>
 	)
 }

@@ -39,7 +39,11 @@ export const TabsContent: FC<ILibTabContent> = ({
 	return (
 		<Element
 			ref={ref}
-			className={clsx(isActive ? "visible" : "hidden", className)}
+			className={clsx(
+				isActive ? "visible" : "hidden",
+				"tabs-content",
+				className,
+			)}
 			{...rest}
 		>
 			{children}

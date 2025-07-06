@@ -1,5 +1,6 @@
 import { useEffect, useState, type FC } from "react"
 import { Text } from "../Text"
+import { COLORS } from "../../Variables"
 import { clsx, designTokens } from "../../utils"
 import type { ILibProgressCircle } from "./types"
 import type { LibColorsShort } from "../../types"
@@ -70,11 +71,16 @@ export const ProgressCircle: FC<ILibProgressCircle> = ({
 			ref={ref}
 			className={clsx(
 				"inline-flex relative justify-center items-center",
+				"progress-circle-wrapper",
 				className,
 			)}
 			{...rest}
 		>
-			<svg width={size} height={size} className="-rotate-90 transform">
+			<svg
+				width={size}
+				height={size}
+				className="-rotate-90 transform progress-circle"
+			>
 				<circle
 					cx={size / 2}
 					cy={size / 2}
@@ -82,6 +88,7 @@ export const ProgressCircle: FC<ILibProgressCircle> = ({
 					stroke={backgroundColor}
 					strokeWidth={strokeWidth}
 					fill="transparent"
+					className="progress-circle-background"
 				/>
 
 				<circle
@@ -104,11 +111,15 @@ export const ProgressCircle: FC<ILibProgressCircle> = ({
 			</svg>
 
 			{(showValue || icon) && (
-				<div className="absolute inset-0 flex justify-center items-center">
+				<div className="absolute inset-0 flex justify-center items-center progress-circle-center">
 					{icon && icon}
 
 					{showValue && (
-						<Text tag="small" color="gray">
+						<Text
+							tag="small"
+							color="gray"
+							className="progress-circle-value"
+						>
 							{value}%
 						</Text>
 					)}
@@ -122,11 +133,11 @@ const genStrokeColor: Record<
 	Exclude<LibColorsShort, "transparent" | "current" | "black" | "background">,
 	string
 > = {
-	primary: "var(--color-primary-500)",
-	secondary: "var(--color-secondary-500)",
-	success: "var(--color-success-500)",
-	danger: "var(--color-danger-500)",
-	warning: "var(--color-warning-500)",
-	gray: "var(--color-gray-500)",
-	white: "var(--color-white)",
+	primary: COLORS.PRIMARY_500,
+	secondary: COLORS.SECONDARY_500,
+	success: COLORS.SUCCESS_500,
+	danger: COLORS.DANGER_500,
+	warning: COLORS.WARNING_500,
+	gray: COLORS.GRAY_500,
+	white: COLORS.WHITE,
 }

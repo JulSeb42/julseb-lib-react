@@ -42,6 +42,7 @@ export const Aside: FC<ILibAside> = ({
 				"py-4 sm:py-8 md:py-12 w-full",
 				(genBgAllColors as any)[backgroundColor],
 				asideSize[size],
+				"aside",
 				className,
 			)}
 			{...rest}

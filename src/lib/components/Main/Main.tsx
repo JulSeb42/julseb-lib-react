@@ -6,7 +6,7 @@ import type { ILibMain } from "./types"
  * Main component for rendering the primary content area.
  *
  * @component
- * 
+ *
  * @example
  * <Main size="large" gap="xl" backgroundColor="white">
  *   <p>Main content</p>
@@ -46,6 +46,7 @@ export const Main: FC<ILibMain> = ({
 				(genBgAllColors as any)[backgroundColor],
 				genGap[gap],
 				maxWidth[size],
+				"main",
 				className,
 			)}
 			{...rest}

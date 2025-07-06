@@ -84,6 +84,7 @@ export const InputSlider: FC<ILibInputSlider> = ({
 				? "before:bg-danger-500 [&::-webkit-slider-track]:bg-danger-500 [&::-webkit-slider-thumb]:bg-danger-500 [&::-moz-range-thumb]:bg-danger-500"
 				: validation?.status === true &&
 						"before:bg-success-500 [&::-webkit-slider-track]:bg-success-500 [&::-webkit-slider-thumb]:bg-success-500 [&::-moz-range-thumb]:bg-success-500",
+			"input-slider",
 		),
 		min,
 		max,
@@ -101,7 +102,10 @@ export const InputSlider: FC<ILibInputSlider> = ({
 			validation={validation}
 		>
 			<div
-				className={clsx("flex items-center gap-2 w-full", className)}
+				className={clsx(
+					"flex items-center gap-2 w-full input-slider-container",
+					className,
+				)}
 				onMouseEnter={() => {
 					if (showValue === "hover") setIsTooltipVisible(true)
 				}}
@@ -110,12 +114,12 @@ export const InputSlider: FC<ILibInputSlider> = ({
 				}}
 			>
 				{showMinMax && (
-					<Text tag="small" color="gray">
+					<Text tag="small" color="gray" className="min-max">
 						{min}
 					</Text>
 				)}
 
-				<div className="relative w-full">
+				<div className="relative w-full slider-wrapper">
 					{showValue !== "never" && (
 						<span
 							className={clsx(
@@ -131,6 +135,7 @@ export const InputSlider: FC<ILibInputSlider> = ({
 										? "opacity-100"
 										: "opacity-0"),
 								showValue === "always" && "opacity-100",
+								"slider-value",
 							)}
 							style={{
 								left: `${percentage}%`,
@@ -161,7 +166,7 @@ export const InputSlider: FC<ILibInputSlider> = ({
 				</div>
 
 				{showMinMax && (
-					<Text tag="small" color="gray">
+					<Text tag="small" color="gray" className="min-max">
 						{max}
 					</Text>
 				)}

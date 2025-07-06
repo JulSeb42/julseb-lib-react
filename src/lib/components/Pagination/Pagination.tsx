@@ -80,6 +80,7 @@ export const Pagination: FC<ILibPagination> = ({
 			className={clsx(
 				"flex justify-center w-full",
 				isMobile ? "gap-1" : "gap-2",
+				"pagination",
 				className,
 			)}
 			{...rest}

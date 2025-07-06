@@ -78,6 +78,7 @@ export const Button: FC<ILibButton> = ({
 				variant === "transparent" && [genTextColorHover[color]],
 				size === "small" && "text-sm px-2 py-1",
 				genButtonDisabled[variant],
+				"button",
 				className,
 			)}
 			disabled={disabled || isLoading}
@@ -96,6 +97,7 @@ export const Button: FC<ILibButton> = ({
 								? "size-4 [&_span]:border-3"
 								: loaderVariant === 3 &&
 									"[&_span]:size-2 translate-y-[5px]",
+						"button-loader",
 					)}
 				/>
 			)}

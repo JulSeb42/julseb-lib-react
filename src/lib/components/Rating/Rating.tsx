@@ -68,7 +68,7 @@ export const Rating: FC<ILibRating> = ({
 			<div
 				ref={ref}
 				id={id}
-				className={clsx("flex gap-2", className)}
+				className={clsx("flex gap-2", "rating", className)}
 				{...rest}
 			>
 				{generateNumbers(0, 4).map(n => {
@@ -91,11 +91,22 @@ export const Rating: FC<ILibRating> = ({
 											(readOnly
 												? "text-success-500"
 												: genTextColorHover["success"]),
+								"rating-item",
 							)}
 						>
 							{n >= rating
-								? (icons?.default ?? <BiStar size={32} />)
-								: (icons?.checked ?? <BiSolidStar size={32} />)}
+								? (icons?.default ?? (
+										<BiStar
+											size={32}
+											className="rating-icon"
+										/>
+									))
+								: (icons?.checked ?? (
+										<BiSolidStar
+											size={32}
+											className="rating-icon"
+										/>
+									))}
 						</Element>
 					)
 				})}

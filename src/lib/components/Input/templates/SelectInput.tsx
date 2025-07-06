@@ -58,7 +58,11 @@ export const SelectInput: FC<ILibSelectInput> = ({
 				ref={useMergeRefs([ref, el])}
 				className={clsx(
 					"appearance-none cursor-pointer",
-					INPUT_COMMON_CLASSES({ inputBackground, validationStatus: validation?.status }),
+					INPUT_COMMON_CLASSES({
+						inputBackground,
+						validationStatus: validation?.status,
+					}),
+					"input-select",
 				)}
 				disabled={disabled}
 			>

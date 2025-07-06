@@ -68,54 +68,78 @@ export const InputContainer: FC<ILibInputContainer> = ({
 			className={clsx(
 				"flex flex-col gap-1",
 				hasListOpen && "z-40",
+				"input-container",
 				className,
 			)}
 			{...rest}
 		>
 			{label && (
-				<label htmlFor={id} className="font-bold text-primary-500">
+				<label
+					htmlFor={id}
+					className="font-bold text-primary-500 input-container-label"
+				>
 					{label}{" "}
 					{labelComment && (
-						<Text tag="small" color="gray" className="italic">
+						<Text
+							tag="small"
+							color="gray"
+							className="italic input-container-label-comment"
+						>
 							{labelComment}
 						</Text>
 					)}
 				</label>
 			)}
 
-			{helper && <Text>{helper}</Text>}
+			{helper && <Text className="input-container-helper">{helper}</Text>}
 
 			{children}
 
-			{helperBottom && <Text tag="small">{helperBottom}</Text>}
+			{helperBottom && (
+				<Text tag="small" className="input-container-helper-bottom">
+					{helperBottom}
+				</Text>
+			)}
 
 			{validation &&
 				validation.status !== undefined &&
 				validation.message && (
-					<div className="flex items-start gap-1">
+					<div className="flex items-start gap-1 input-container-validation-container">
 						<span
 							className={clsx(
 								"inline-flex items-center h-[21px]",
 								validation.status === false
 									? "text-danger-500"
 									: "text-success-500",
+								"input-container-validation-icon-container",
 							)}
 						>
 							{validation.status === false
 								? (validation.iconNotPassed ?? (
-										<BiXCircle size={14} />
+										<BiXCircle
+											size={14}
+											className="input-container-validation-icon"
+										/>
 									))
 								: (validation.iconPassed ?? (
-										<BiCheckCircle size={14} />
+										<BiCheckCircle
+											size={14}
+											className="input-container-validation-icon"
+										/>
 									))}
 						</span>
 
-						<Text tag="small">{validation.message}</Text>
+						<Text
+							tag="small"
+							className="input-container-validation-message"
+						>
+							{validation.message}
+						</Text>
 					</div>
 				)}
 
 			{counter && (
-				<Text tag="small">
+				<Text tag="small" className="input-container-counter">
 					{value?.length}
 					{maxLength && `/${maxLength}`}
 				</Text>

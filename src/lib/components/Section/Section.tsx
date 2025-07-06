@@ -40,6 +40,7 @@ export const Section: FC<ILibSection> = ({
 			className={clsx(
 				"flex flex-col items-stretch",
 				genGap[gap],
+				"section",
 				className,
 			)}
 			{...rest}

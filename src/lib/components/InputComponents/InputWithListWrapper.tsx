@@ -8,7 +8,14 @@ export const InputWithListWrapper: FC<IInputWithListWrapper> = ({
 	ref,
 }) => {
 	return (
-		<div ref={ref} className={clsx("z-10 relative", isOpen && "z-20")}>
+		<div
+			ref={ref}
+			className={clsx(
+				"z-10 relative",
+				isOpen && "z-20",
+				"input-with-list-wrapper",
+			)}
+		>
 			{children}
 		</div>
 	)

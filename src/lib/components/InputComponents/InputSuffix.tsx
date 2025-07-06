@@ -5,7 +5,9 @@ import { SUFFIX_CLASSES } from "./classes"
 export const InputSuffix: FC<IInputSuffix> = ({ suffix }) => {
 	if (!suffix) return null
 
-	return <span className={clsx(SUFFIX_CLASSES)}>{suffix}</span>
+	return (
+		<span className={clsx(SUFFIX_CLASSES, "input-suffix")}>{suffix}</span>
+	)
 }
 
 interface IInputSuffix {

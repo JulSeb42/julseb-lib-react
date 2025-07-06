@@ -74,6 +74,7 @@ export const Modal: FC<ILibModal> = ({
 			className={clsx(
 				"top-0 left-0 z-999 fixed flex justify-center items-center bg-overlay-black-80 w-full h-svh",
 				isOpen ? "visible opacity-100" : "hidden opacity-0",
+				"modal",
 				className,
 			)}
 			{...rest}
@@ -81,6 +82,7 @@ export const Modal: FC<ILibModal> = ({
 			<button
 				className={clsx(
 					"top-2 right-2 z-10 absolute flex justify-center items-center size-12 text-white hover:text-gray-300 active:text-gray-100",
+					"modal-close",
 				)}
 				onClick={() => setIsOpen(false)}
 				aria-label={labelClose}
@@ -94,6 +96,7 @@ export const Modal: FC<ILibModal> = ({
 				ref={el}
 				className={clsx(
 					"z-0 relative flex justify-center items-center w-full max-w-[90%]",
+					"modal-content",
 				)}
 			>
 				{children}

@@ -50,6 +50,7 @@ export const DateInput: FC<ILibDateInput> = ({
 					}),
 					"cursor-pointer",
 					"[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none",
+					"input-date",
 				)}
 				disabled={disabled}
 			/>

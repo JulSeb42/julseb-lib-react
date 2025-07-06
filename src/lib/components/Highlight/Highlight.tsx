@@ -33,7 +33,7 @@ export const Highlight: FC<ILibHighlight> = ({
 	const Element = element
 
 	return (
-		<Element ref={ref} className={clsx(className)} {...rest}>
+		<Element ref={ref} className={clsx("highlight", className)} {...rest}>
 			{getHighlightedText(
 				children,
 				highlightedText,

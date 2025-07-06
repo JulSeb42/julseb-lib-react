@@ -66,6 +66,7 @@ export const Tag: FC<ILibTag> = ({
 					genBorderAllColors[color],
 					genTextAllColor[contentColor || color],
 				],
+				"tag",
 				className,
 			)}
 			{...rest}

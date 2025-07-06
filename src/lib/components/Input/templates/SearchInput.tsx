@@ -64,6 +64,7 @@ export const SearchInput: FC<ILibSearchInput> = ({
 					"[&::-webkit-search-cancel-button]:hidden",
 					"[&::-webkit-search-decoration]:appearance-none",
 					"[&::-webkit-search-decoration]:hidden",
+					"input-search",
 				)}
 				type={type}
 				disabled={disabled}
@@ -72,13 +73,17 @@ export const SearchInput: FC<ILibSearchInput> = ({
 
 			{clearSearch && value?.length > 0 && (
 				<InputButton onClick={clearSearch}>
-					<BiX />
+					<BiX className="input-clear-icon" />
 				</InputButton>
 			)}
 
 			{!isTouchScreen && showKeys && (
-				<span className="inline-flex items-center px-2">
-					<Key keys={transformSearchKeys(keys)} size="small" />
+				<span className="inline-flex items-center px-2 input-key-container">
+					<Key
+						keys={transformSearchKeys(keys)}
+						size="small"
+						className="input-key"
+					/>
 				</span>
 			)}
 		</InputWrapper>

@@ -88,12 +88,13 @@ export const InputCounter: FC<ILibInputCounter> = ({
 				className={clsx(
 					"inline-flex items-center",
 					noInput ? "gap-4" : "gap-2",
+					"input-counter",
 					className,
 				)}
 			>
 				<ButtonIcon
 					icon={icons?.minus ?? <BiMinus />}
-					className="size-6"
+					className="size-6 input-counter-button"
 					color={buttonsColor}
 					variant={buttonVariant}
 					aria-label={labelButtons?.minus}
@@ -106,7 +107,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 				{noInput ? (
 					<span
 						ref={ref}
-						className="inline-flex items-center h-8 font-black text-2xl"
+						className="inline-flex items-center h-8 font-black text-2xl input-counter-number"
 						{...rest}
 					>
 						{value}
@@ -117,7 +118,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 						id={id}
 						value={value}
 						onChange={e => setValue(Number(e.target.value))}
-						className="px-2 border border-gray-200 focus:border-primary-500 rounded-md outline-none min-w-[calc(3ch+16px)] text-center"
+						className="px-2 border border-gray-200 focus:border-primary-500 rounded-md outline-none min-w-[calc(3ch+16px)] text-center input-counter-input"
 						size={value.toString().length + 1}
 						{...rest}
 					/>
@@ -125,7 +126,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 
 				<ButtonIcon
 					icon={icons?.minus ?? <BiPlus />}
-					className="size-6"
+					className="size-6 input-counter-button"
 					color={buttonsColor}
 					variant={buttonVariant}
 					aria-label={labelButtons?.plus}

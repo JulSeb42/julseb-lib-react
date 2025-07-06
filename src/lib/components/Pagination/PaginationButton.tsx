@@ -52,7 +52,7 @@ export const PaginationButton: FC<ILibPaginationButton> = ({
 				!readOnly &&
 					isActive && [genBgColorHover[accentColor], "text-white"],
 				readOnly && "cursor-default!",
-
+				"pagination-button",
 				className,
 			)}
 			{...rest}

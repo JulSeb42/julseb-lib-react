@@ -53,19 +53,27 @@ export const Toast: FC<ILibToast> = ({
 			className={clsx(
 				"relative p-3 border rounded-lg w-full max-w-[400px] overflow-hidden text-black",
 				genToastColors[status],
+				"toast",
 				className,
 			)}
 			{...rest}
 		>
 			{!hideCloseButton || status === "loading" ? (
-				<div className="flex justify-between gap-2 w-full">
+				<div className="flex justify-between gap-2 w-full toast-content-wrapper">
 					{status === "loading" ? (
-						<span className="inline-flex items-center gap-2">
-							<Text tag="strong">{title}</Text>
-							<Loader className="border-2 size-4" color="gray" />
+						<span className="inline-flex items-center gap-2 toast-title-wrapper">
+							<Text tag="strong" className="toast-title">
+								{title}
+							</Text>
+							<Loader
+								className="border-2 size-4 toast-loader"
+								color="gray"
+							/>
 						</span>
 					) : (
-						<Text tag="strong">{title}</Text>
+						<Text tag="strong" className="toast-title">
+							{title}
+						</Text>
 					)}
 
 					{!hideCloseButton && (
@@ -74,17 +82,24 @@ export const Toast: FC<ILibToast> = ({
 							className={clsx(
 								"inline-flex justify-center items-center size-6",
 								genTextColorHover["gray"],
+								"toast-close-button",
 							)}
 						>
-							<BiX size={20} />
+							<BiX size={20} className="toast-close-icon" />
 						</button>
 					)}
 				</div>
 			) : (
-				<Text tag="strong">{title}</Text>
+				<Text tag="strong" className="toast-title">
+					{title}
+				</Text>
 			)}
 
-			{typeof body === "string" ? <Text>{body}</Text> : body}
+			{typeof body === "string" ? (
+				<Text className="toast-body">{body}</Text>
+			) : (
+				body
+			)}
 		</Element>
 	)
 }

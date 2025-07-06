@@ -1,4 +1,5 @@
 import { type FC } from "react"
+import { clsx } from "../../utils"
 import { Tooltip } from "../Tooltip"
 import { ButtonIconFn } from "./ButtonFn"
 import type { ILibButtonIcon } from "./types"
@@ -93,11 +94,12 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
 						? showTooltip.hideArrow
 						: false
 				}
-				className={
+				className={clsx(
 					typeof showTooltip === "object"
 						? (showTooltip.className as any)
-						: undefined
-				}
+						: undefined,
+					"button-icon-tooltip",
+				)}
 				style={
 					typeof showTooltip === "object"
 						? showTooltip.style

@@ -26,6 +26,7 @@ export const InputWrapper: FC<IInputWrapper> = ({
 					inputVariant,
 					hasListOpen,
 				}),
+				"input-wrapper",
 				className,
 			)}
 		>

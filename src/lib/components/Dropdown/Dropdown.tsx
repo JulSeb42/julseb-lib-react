@@ -68,6 +68,7 @@ export const Dropdown: FC<ILibDropdown> = ({
 				isOpen ? "max-h-100" : "max-h-0",
 				direction === "down" ? "top-[40px]" : "bottom-[40px]",
 				isOpen && shadow && genBoxShadow[shadow],
+				"dropdown",
 				className,
 			)}
 			{...rest}

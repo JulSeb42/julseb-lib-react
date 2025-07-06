@@ -20,6 +20,7 @@ export const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
 			ref={ref}
 			className={clsx(
 				"inline-block relative rounded-full size-12 animate-spin",
+				"loader loader-2",
 				className,
 			)}
 			{...rest}
@@ -29,6 +30,7 @@ export const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
 					SPAN_COMMON,
 					genBorderBottomColor[color],
 					"[--spinner-delay:-450ms]",
+					"loader-2-border",
 				)}
 			/>
 			<span
@@ -36,14 +38,22 @@ export const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
 					SPAN_COMMON,
 					genBorderBottomColor[color],
 					"[--spinner-delay:-300ms]",
+					"loader-2-border",
 				)}
 			/>
-			<span className={clsx(SPAN_COMMON, genBorderBottomColor[color])} />
+			<span
+				className={clsx(
+					SPAN_COMMON,
+					genBorderBottomColor[color],
+					"loader-2-border",
+				)}
+			/>
 			<span
 				className={clsx(
 					SPAN_COMMON,
 					genBorderBottomColor[color],
 					"[--spinner-delay:-150ms]",
+					"loader-2-border",
 				)}
 			/>
 		</Element>

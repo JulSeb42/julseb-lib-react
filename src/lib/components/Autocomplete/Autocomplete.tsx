@@ -142,6 +142,7 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 								inputBackground,
 								validationStatus: validation?.status,
 							}),
+							"autocomplete-input",
 							className,
 						)}
 						id={id}
@@ -154,16 +155,22 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 					/>
 
 					{value?.length ? (
-						<InputButton onClick={() => setValue("")}>
-							{icons?.clear ?? <BiX size={16} />}
+						<InputButton
+							onClick={() => setValue("")}
+							className="input-clear-button"
+						>
+							{icons?.clear ?? (
+								<BiX size={16} className="input-clear-icon" />
+							)}
 						</InputButton>
 					) : null}
 
 					{!isTouchScreen && showKeys && !disabled && (
-						<span className="inline-flex items-center px-2">
+						<span className="inline-flex items-center px-2 input-key-container">
 							<Key
 								keys={transformSearchKeys(keys)}
 								size="small"
+								className="input-key"
 							/>
 						</span>
 					)}
@@ -192,14 +199,21 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 									index={i}
 									aria-label={result}
 								>
-									<Highlight highlightedText={value}>
+									<Highlight
+										className="autocomplete-result"
+										highlightedText={value}
+									>
 										{result}
 									</Highlight>
 								</InputListItem>
 							))}
 						</>
 					) : (
-						<Text tag="em" color="gray-500" className="p-2">
+						<Text
+							tag="em"
+							color="gray-500"
+							className={clsx("p-2", "autocomplete-no-result")}
+						>
 							{textNoResult}
 						</Text>
 					)}

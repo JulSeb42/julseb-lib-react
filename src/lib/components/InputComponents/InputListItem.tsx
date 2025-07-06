@@ -1,6 +1,10 @@
 import type { FC, MouseEventHandler } from "react"
 import { clsx } from "../../utils"
-import type { LibValidationStatus, ReactChildren } from "../../types"
+import type {
+	ClassNames,
+	LibValidationStatus,
+	ReactChildren,
+} from "../../types"
 
 export const InputListItem: FC<IInputListItem> = ({
 	onClick,
@@ -12,6 +16,7 @@ export const InputListItem: FC<IInputListItem> = ({
 	"aria-label": ariaLabel,
 	children,
 	isActive,
+	className,
 }) => {
 	return (
 		<button
@@ -37,6 +42,8 @@ export const InputListItem: FC<IInputListItem> = ({
 						: validationStatus === true
 							? "bg-success-500"
 							: "bg-primary-500"),
+				"input-list-item",
+				className,
 			)}
 			aria-label={ariaLabel}
 			type="button"
@@ -57,4 +64,5 @@ interface IInputListItem {
 	"aria-label": string
 	isActive?: boolean
 	children?: ReactChildren
+	className?: ClassNames
 }

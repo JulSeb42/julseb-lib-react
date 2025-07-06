@@ -73,6 +73,7 @@ export const ListGroupTitle: FC<ILibListGroupTitle> = ({
 				!noSeparator && "border-b-gray-200 border-b",
 				isFixed && "sticky top-0 left-0",
 				isScrolled && shadow && genBoxShadow[shadow],
+				"list-group-title",
 				className,
 			)}
 			{...rest}

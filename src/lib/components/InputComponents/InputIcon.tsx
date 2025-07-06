@@ -13,6 +13,7 @@ export const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
 				INPUT_ICON_CONTAINER_CLASSES,
 				inputVariant === "pill" && "ml-1",
 				disabled && "text-gray-500",
+				"input-icon-container",
 			)}
 		>
 			{icon}

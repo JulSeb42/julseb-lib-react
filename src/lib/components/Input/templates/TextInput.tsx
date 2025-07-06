@@ -44,6 +44,7 @@ export const TextInput: FC<ILibTextInput> = ({
 						inputBackground,
 						validationStatus: validation?.status,
 					}),
+					"input-text"
 				)}
 				type={type}
 				disabled={disabled}

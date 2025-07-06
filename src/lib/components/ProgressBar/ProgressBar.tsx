@@ -61,6 +61,7 @@ export const ProgressBar: FC<ILibProgressBar> = ({
 				!noAnimation && "progress-bar",
 				noAnimation && "before:w-(--meter-value)",
 				genProgressColor[color],
+				"progress-bar",
 				className,
 			)}
 			style={{

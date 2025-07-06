@@ -33,6 +33,7 @@ export const AvatarFn: FC<
 				genBorderAllColors[borderColor],
 				genBgAllColors[backgroundColor],
 				genTextAllColor[contentColor],
+				"avatar",
 				className,
 			)}
 			{...rest}

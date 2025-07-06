@@ -80,7 +80,10 @@ export const InputPin: FC<ILibInputPin> = ({
 			<div
 				ref={ref}
 				id={id}
-				className={clsx("flex items-center gap-2 w-fit", className)}
+				className={clsx(
+					"flex items-center gap-2 w-fit input-pin-container",
+					className,
+				)}
 				{...rest}
 			>
 				{inputsRefsArr.map((inputRef, i) => {
@@ -105,6 +108,7 @@ export const InputPin: FC<ILibInputPin> = ({
 									? "focus:border-danger-500"
 									: validation?.status === true &&
 											"focus:border-success-500",
+								"input-pin",
 							)}
 						/>
 					)

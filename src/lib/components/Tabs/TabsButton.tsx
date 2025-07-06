@@ -58,6 +58,7 @@ export const TabsButton: FC<ILibTabsButton> = ({
 				],
 				justify === "start" && ["min-w-[80px]"],
 				justify === "stretch" && ["grow"],
+				"tabs-button",
 				className,
 			)}
 			onClick={onClick}

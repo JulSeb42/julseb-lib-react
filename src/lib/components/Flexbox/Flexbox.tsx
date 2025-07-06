@@ -75,6 +75,7 @@ export const Flexbox: FC<ILibFlexbox> = ({
 				genGap[gap],
 				genColGap[colGap],
 				genRowGap[rowGap],
+				"flexbox",
 				className,
 			)}
 			{...rest}

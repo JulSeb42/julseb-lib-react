@@ -88,6 +88,7 @@ export const Tooltip: FC<ILibTooltip> = ({
 			className={clsx(
 				"inline-block relative w-fit",
 				isVisible && "z-20",
+				"tooltip-wrapper",
 				className,
 			)}
 			onClick={
@@ -123,6 +124,7 @@ export const Tooltip: FC<ILibTooltip> = ({
 					isVisible ? "opacity-100 visible" : "opacity-0 hidden",
 					!hideArrow && "with-arrow",
 					genPosition[offset][position],
+					"tooltip",
 				)}
 			>
 				{tooltip}
