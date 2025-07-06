@@ -1,5 +1,6 @@
 import { type FC } from "react"
-import {  } from "@julseb-lib/utils"
+import {} from "@julseb-lib/utils"
+import { InputContainer } from "../InputContainer"
 import { clsx } from "../../utils"
 import type { ILibTextEditor } from "./types"
 
@@ -21,10 +22,31 @@ import type { ILibTextEditor } from "./types"
 	*
 	* @see https://doc-julseb-lib-react.vercel.app/components/<name of the component>
 */
-export const TextEditor: FC<ILibTextEditor> = ({ className, element = "div", ref,  ...rest }) => {
-	const Element = element
-
+export const TextEditor: FC<ILibTextEditor> = ({
+	className,
+	ref,
+	label,
+	labelComment,
+	helper,
+	helperBottom,
+	counter,
+	maxLength,
+	validation,
+	id,
+	value,
+	// ...rest
+}) => {
 	return (
-		<Element ref={ref} className={clsx("", className)} {...rest} />
+		<InputContainer
+			label={label as any}
+			labelComment={labelComment as any}
+			helper={helper}
+			helperBottom={helperBottom}
+			counter={counter}
+			maxLength={maxLength as any}
+			validation={validation}
+			id={id}
+			value={value}
+		></InputContainer>
 	)
 }

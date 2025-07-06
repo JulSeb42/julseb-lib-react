@@ -4,6 +4,8 @@ import type {
 	ILibInputWithValidation,
 } from "../InputComponents"
 
-export type ILibTextEditor = LibComponentBase<HTMLDivElement> &
+export type ILibTextEditor = Omit<LibComponentBase<HTMLDivElement>, "element"> &
 	ILibInputExtended &
-	ILibInputWithValidation & {}
+	ILibInputWithValidation & {
+		value?: any
+	}
