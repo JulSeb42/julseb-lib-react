@@ -14,6 +14,7 @@ import { CoverCenterDemo } from "../pages/demos/CoverCenterDemo"
 import { CoverCenterOverlayDemo } from "../pages/demos/CoverCenterOverlayDemo"
 import { CoverBottomDemo } from "../pages/demos/CoverBottomDemo"
 import { CoverBottomOverlayDemo } from "../pages/demos/CoverBottomOverlayDemo"
+import { PageLoadingDemo } from "../pages/demos/PageLoadingDemo"
 /* Prepend demo import - DO NOT REMOVE */
 
 export type Route = {
@@ -34,6 +35,7 @@ const demos: Array<Route> = [
 	{ path: "/cover/demo-center-overlay", element: <CoverCenterOverlayDemo /> },
 	{ path: "/cover/demo-bottom", element: <CoverBottomDemo /> },
 	{ path: "/cover/demo-bottom-overlay", element: <CoverBottomOverlayDemo /> },
+	{ path: "/page-loading/demo", element: <PageLoadingDemo /> },
 	/* Prepend here - DO NOT REMOVE */
 ]
 

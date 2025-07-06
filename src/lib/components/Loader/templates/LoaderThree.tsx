@@ -15,7 +15,7 @@ export const LoaderThree: FC<Omit<ILibLoader, "variant">> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"inline-flex gap-2 w-fit h-4",
+				"inline-flex items-center gap-2 w-fit h-4",
 				"loader loader-3",
 				className,
 			)}

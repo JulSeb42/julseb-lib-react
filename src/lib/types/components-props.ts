@@ -50,4 +50,5 @@ export * from "../components/Tabs/types"
 export * from "../components/Slideshow/types"
 export * from "../components/Cover/types"
 export * from "../components/Table/types"
+export * from "../components/PageLoading/types"
 /* Prepend here - DO NOT REMOVE */
