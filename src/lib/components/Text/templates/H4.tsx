@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import { BASE_CLASSES } from "../Text"
+import { TEXT_BASE_CLASSES } from "../Text"
 import {
 	clsx,
 	genLinkColor,
@@ -24,7 +24,7 @@ export const H4: FC<ILibText> = ({
 	return (
 		<Element
 			className={clsx(
-				BASE_CLASSES,
+				TEXT_BASE_CLASSES,
 				"font-black",
 				display
 					? "text-(length:--font-size-display-h4)"

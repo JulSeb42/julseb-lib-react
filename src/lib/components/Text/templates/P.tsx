@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import { BASE_CLASSES } from "../Text"
+import { TEXT_BASE_CLASSES } from "../Text"
 import {
 	clsx,
 	genLinkColor,
@@ -23,7 +23,7 @@ export const P: FC<ILibText> = ({
 	return (
 		<Element
 			className={clsx(
-				BASE_CLASSES,
+				TEXT_BASE_CLASSES,
 				"text-(length:--font-size-body)",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],

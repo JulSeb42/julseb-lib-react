@@ -636,17 +636,23 @@ export const designTokens = {
 	libTabsVariant: { basic: "basic", rounded: "rounded" },
 
 	libSlideshowPagination: {
-        dots: "dots",
-        "dots-outline": "dots-outline",
-        bars: "bars",
-        thumbnails: "thumbnails",
-    },
+		dots: "dots",
+		"dots-outline": "dots-outline",
+		bars: "bars",
+		thumbnails: "thumbnails",
+	},
 
-    libSlideshowPaginationPosition: { inside: "inside", outside: "outside" },
+	libSlideshowPaginationPosition: { inside: "inside", outside: "outside" },
 
-    libSlideshowButtonsPositions: { left: "left", right: "right" },
+	libSlideshowButtonsPositions: { left: "left", right: "right" },
 
-    libSlideshowButtonsSizes: { small: "small", large: "large" },
+	libSlideshowButtonsSizes: { small: "small", large: "large" },
+
+	libTableVariants: {
+		bordered: "bordered",
+		stripped: "stripped",
+		"border-bottom": "border-bottom",
+	},
 
 	/**
 	 * Country codes

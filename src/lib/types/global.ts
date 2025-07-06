@@ -492,6 +492,16 @@ export type LibSlideshowButtonsSize =
 	keyof typeof designTokens.libSlideshowButtonsSizes
 
 /**
+ * @description All table variant tokens available in the library for styling table components.
+ * @type {"bordered" | "stripped" | "border-bottom"}
+ * @example
+ * variant="bordered"
+ * variant="stripped"
+ * variant="border-bottom"
+ */
+export type LibTableVariant = keyof typeof designTokens.libTableVariants
+
+/**
  * @description Type of values for InputPin
  */
 export type LibValueInputPin = { [n: number]: number | "" | undefined }

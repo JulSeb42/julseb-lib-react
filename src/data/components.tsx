@@ -57,6 +57,7 @@ import { progressCirclePreview } from "../lib/components/ProgressCircle/__previe
 import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
 import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
+import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 /* Prepend import - DO NOT REMOVE */
 
 export type PreviewProp<T> = {
@@ -88,6 +89,8 @@ type Prop = {
 		| "CSSProperties"
 		| "ReactElement"
 		| "Ref"
+		| "Array of array of ReactElement"
+		| "Array of React Element"
 	possibleValues:
 		| Array<string>
 		| "Any color from the library"
@@ -188,6 +191,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	tabsPreview,
 	slideshowPreview,
 	coverPreview,
+	tablePreview,
 	/* Prepend array - DO NOT REMOVE */
 ]
 

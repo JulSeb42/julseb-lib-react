@@ -49,4 +49,5 @@ export * from "../components/ProgressCircle/types"
 export * from "../components/Tabs/types"
 export * from "../components/Slideshow/types"
 export * from "../components/Cover/types"
+export * from "../components/Table/types"
 /* Prepend here - DO NOT REMOVE */
