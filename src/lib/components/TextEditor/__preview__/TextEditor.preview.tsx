@@ -5,7 +5,7 @@ import type { ILibTextEditor } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 export const textEditorPreview: ComponentPreview<ILibTextEditor> = {
-	name: "TextEditor",
+	name: "Text Editor",
 	component: TextEditor,
 	category: "components",
 	import: "TextEditor", // import Component (ex: Skeleton)
