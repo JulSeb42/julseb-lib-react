@@ -1,0 +1,34 @@
+import { {{ pascalCase name }} } from "../../../"
+import type {  } from "../../../types"
+import type { ILib{{ pascalCase name }} } from "../../../types/components-props"
+import type { ComponentPreview } from "../../../../data/components"
+
+export const {{ camelCase name }}Preview: ComponentPreview<ILib{{ pascalCase name }}> = {
+    name: "{{ pascalCase name }}",
+    component: {{ pascalCase name }},
+    category: "{{ category }}",
+    import: "{{ pascalCase name }}", // import Component (ex: Skeleton)
+    additionalImports: [], // import OtherComponent (ex: SkeletonCard)
+    optionalImports: [], // import ComponentItem (ex: AccordionItem) => to build with children instead of prop on component
+    propsImport: "ILib{{ pascalCase name }}", // import ILibComponent (ex: ILibAccordion)
+    additionalTypeImports: [], // import ILibComponentItem (ex: ILibAccordionItem)
+    extends: ["HTML{{ pascalCase attribute }}Element"],
+    previews: [
+        { previewTitle: "Default", props: {  } },
+        { previewTitle: "Default", demo: <{{ pascalCase name }} /> },
+    ],
+	props: [
+		/*
+		Generate the documentation like this:
+		{
+			name: "<name of prop>",
+			type: '<type of prop, can be: "" | "string" | "Array<string>" | "number" | "boolean" | "string | number" | "string | Object" | "boolean | number | string | Object" | "string | number | Object" | "Object" | "boolean | Object" | "function" | "CSSProperties" | "string | JSX.Element" | "ReactNode">',
+			possibleValues: ["<possible value of prop>"],
+			defaultValue: "<default value or null>",
+			description: "<description of the prop>",
+			isRequired: <boolean telling if the prop is required or not>,
+		},
+		ignore ref, children, rest, className, element
+		*/
+	],
+}

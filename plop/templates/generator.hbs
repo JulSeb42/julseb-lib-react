@@ -1,0 +1,16 @@
+import type { NodePlopAPI, ActionType } from "plop"
+import { BASE_PATH } from "../utils"
+
+export default (plop: NodePlopAPI) => {
+    const { setGenerator } = plop
+
+    setGenerator("{{>kebabName}}", {
+        description: "",
+        prompts: [],
+        actions: [],
+        // actions: data => {
+        //     const actions: Array<ActionType> = []
+        //     return actions
+        // },
+    })
+}

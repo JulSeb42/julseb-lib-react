@@ -1,0 +1,242 @@
+import { BiEnvelope } from "react-icons/bi"
+import { Input } from "../../../"
+import {
+	PreviewWithValidation,
+	PreviewFull,
+	PreviewSearch,
+	PreviewColor,
+} from "./Previews"
+import type { ILibInput } from "../../../types/components-props"
+import type { ComponentPreview } from "../../../../data/components"
+
+export const inputPreview: ComponentPreview<ILibInput> = {
+	name: "Input",
+	component: Input,
+	category: "components",
+	import: "Input",
+	additionalImports: null,
+	optionalImports: null,
+	propsImport: "ILibInput",
+	additionalTypeImports: null,
+	extends: ["HTMLInputElement"],
+	previews: [
+		{ previewTitle: "Full", demo: <PreviewFull /> },
+		{ previewTitle: "Color", demo: <PreviewColor /> },
+		{ previewTitle: "Date", props: { type: "date" } },
+		{ previewTitle: "Datetime local", props: { type: "datetime-local" } },
+		{ previewTitle: "Month", props: { type: "month" } },
+		{ previewTitle: "Week", props: { type: "week" } },
+		{ previewTitle: "File", props: { type: "file" } },
+		{ previewTitle: "Password", props: { type: "password" } },
+		{ previewTitle: "Search", demo: <PreviewSearch /> },
+		{
+			previewTitle: "Search with focus keys",
+			demo: <PreviewSearch focusKeys={["Command", "KeyJ"]} showKeys />,
+		},
+		{
+			previewTitle: "Select",
+			props: {
+				type: "select",
+				children: (
+					<>
+						<option value="">Option</option>
+						<option value="">Option</option>
+						<option value="">Option</option>
+					</>
+				),
+			},
+		},
+		{
+			previewTitle: "Textarea",
+			props: { type: "textarea", label: "Textarea" },
+		},
+		{
+			previewTitle: "Text",
+			props: { type: "text", placeholder: "Input text" },
+		},
+		{ previewTitle: "Email", props: { type: "email" } },
+		{ previewTitle: "Number", props: { type: "number" } },
+		{ previewTitle: "Tel", props: { type: "tel" } },
+		{ previewTitle: "Url", props: { type: "url" } },
+		{ previewTitle: "Time", props: { type: "time" } },
+		{ previewTitle: "Disabled", props: { disabled: true, value: "Hello" } },
+		{
+			previewTitle: "Disabled with icon",
+			props: {
+				disabled: true,
+				value: "Hello",
+				icon: <BiEnvelope size={20} />,
+			},
+		},
+		{
+			previewTitle: "With icon",
+			props: { icon: <BiEnvelope size={20} /> },
+		},
+		{ previewTitle: "With validation", demo: <PreviewWithValidation /> },
+		{
+			previewTitle: "With background light",
+			props: { inputBackground: "light" },
+		},
+		{
+			previewTitle: "With background dark",
+			props: { inputBackground: "dark" },
+		},
+		{ previewTitle: "Pill", props: { inputVariant: "pill" } },
+		{
+			previewTitle: "Pill with icon",
+			props: { inputVariant: "pill", icon: <BiEnvelope size={20} /> },
+		},
+		{
+			previewTitle: "Pill with prefix & suffix",
+			props: { inputVariant: "pill", prefix: "Prefix", suffix: "Suffix" },
+		},
+	],
+	props: [
+		{
+			name: "type",
+			type: "string",
+			possibleValues: [
+				"color",
+				"date",
+				"datetime-local",
+				"month",
+				"week",
+				"file",
+				"password",
+				"search",
+				"email",
+				"number",
+				"tel",
+				"text",
+				"url",
+				"time",
+				"select",
+				"textarea",
+			],
+			defaultValue: "text",
+			description: "Type of input to render.",
+			isRequired: false,
+		},
+		{
+			name: "label",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Label text to display above the input.",
+			isRequired: false,
+		},
+		{
+			name: "labelComment",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Additional comment text next to the label.",
+			isRequired: false,
+		},
+		{
+			name: "helper",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Helper text to display below the label.",
+			isRequired: false,
+		},
+		{
+			name: "helperBottom",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Helper text to display at the bottom of the input.",
+			isRequired: false,
+		},
+		{
+			name: "validation",
+			type: "Object",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Validation state and configuration object.",
+			isRequired: false,
+		},
+		{
+			name: "value",
+			type: "string | number",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Current value of the input.",
+			isRequired: false,
+		},
+		{
+			name: "counter",
+			type: "boolean | Object",
+			possibleValues: null,
+			defaultValue: null,
+			description:
+				"Whether to show character counter or counter configuration.",
+			isRequired: false,
+		},
+		{
+			name: "maxLength",
+			type: "number",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Maximum number of characters allowed.",
+			isRequired: false,
+		},
+		{
+			name: "inputVariant",
+			type: "string",
+			possibleValues: ["rounded", "pill"],
+			defaultValue: "rounded",
+			description: "Visual variant of the input.",
+			isRequired: false,
+		},
+		{
+			name: "inputBackground",
+			type: "string",
+			possibleValues: ["light", "dark"],
+			defaultValue: null,
+			description: "Background theme of the input.",
+			isRequired: false,
+		},
+		{
+			name: "icon",
+			type: "ReactElement",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Icon element to display inside the input.",
+			isRequired: false,
+		},
+		{
+			name: "placeholder",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Placeholder text for the input.",
+			isRequired: false,
+		},
+		{
+			name: "disabled",
+			type: "boolean",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Whether the input is disabled.",
+			isRequired: false,
+		},
+		{
+			name: "prefix",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Text to display as a prefix inside the input.",
+			isRequired: false,
+		},
+		{
+			name: "suffix",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Text to display as a suffix inside the input.",
+			isRequired: false,
+		},
+	],
+}

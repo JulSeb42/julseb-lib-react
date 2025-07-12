@@ -1,0 +1,30 @@
+export const genBorderStyle = {
+	solid: "border-solid",
+	dashed: "border-dashed",
+	dotted: "border-dotted",
+	double: "border-double",
+	none: "border-none",
+}
+
+export const genBorderWidth = {
+	1: "border",
+	2: "border-2",
+	3: "border-3",
+	4: "border-4",
+	5: "border-5",
+	6: "border-6",
+	7: "border-7",
+	8: "border-8",
+	9: "border-9",
+	10: "border-10",
+	11: "border-11",
+	12: "border-12",
+	13: "border-13",
+	14: "border-14",
+	15: "border-15",
+	16: "border-16",
+	17: "border-17",
+	18: "border-18",
+	19: "border-19",
+	20: "border-20",
+}

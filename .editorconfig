@@ -1,0 +1,7 @@
+[*]
+indent_size = 4
+indent_style = tab
+charset = utf-8
+
+[*.ts, *.tsx]
+insert_final_newline = true
