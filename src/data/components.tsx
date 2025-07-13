@@ -62,6 +62,7 @@ import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/Pa
 import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
 import { markdownEditorPreview } from "../lib/components/MarkdownEditor/__preview__/MarkdownEditor.preview"
 import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__preview__/MarkdownContainer.preview"
+// import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 import { fadePreview } from "../lib/components/Fade/__preview__/Fade.preview"
 import { backToTopPreview } from "../lib/components/BackToTop/__preview__/BackToTop.preview"

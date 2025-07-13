@@ -14,35 +14,40 @@ interface ILibThemeProvider {
 }
 
 export const ThemeProviderWrapper = ({ children }: ILibThemeProvider) => {
-	const storedTheme = localStorage.getItem("theme") as LibThemeNames
-	const [theme, setTheme] = useState(storedTheme ?? "light")
-
-	const docEl = document.documentElement
+	const [theme, setTheme] = useState<LibThemeNames>("light")
 
 	const switchToLight = () => {
-		docEl.classList.add("light")
-		docEl.classList.remove("dark")
-		setTheme("light")
-		localStorage.setItem("theme", "light")
+		if (typeof window !== "undefined") {
+			document.documentElement.classList.add("light")
+			document.documentElement.classList.remove("dark")
+			setTheme("light")
+			localStorage.setItem("theme", "light")
+		}
 	}
 
 	const switchToDark = () => {
-		docEl.classList.remove("light")
-		docEl.classList.add("dark")
-		setTheme("dark")
-		localStorage.setItem("theme", "dark")
+		if (typeof window !== "undefined") {
+			document.documentElement.classList.remove("light")
+			document.documentElement.classList.add("dark")
+			setTheme("dark")
+			localStorage.setItem("theme", "dark")
+		}
 	}
 
 	useEffect(() => {
-		if (storedTheme) {
-			if (theme === "light") switchToLight()
-			else switchToDark()
-		} else {
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-				switchToDark()
-			else switchToLight()
+		if (typeof window !== "undefined") {
+			const storedTheme = localStorage.getItem("theme") as LibThemeNames
+
+			if (storedTheme) {
+				if (storedTheme === "light") switchToLight()
+				else switchToDark()
+			} else {
+				if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+					switchToDark()
+				else switchToLight()
+			}
 		}
-	}, [theme, localStorage.getItem("theme"), docEl])
+	}, [theme])
 
 	const switchTheme = () => {
 		if (theme === "light") switchToDark()

@@ -58,6 +58,7 @@ import type { ILibAutocomplete } from "./types"
  * @prop {string} [props.textNoResult="No result."] - Text to display when no search results are found.
  * @prop {boolean} [props.disabled] - Whether the autocomplete is disabled.
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the input element.
  *
  * @returns {JSX.Element} The rendered Autocomplete component.
@@ -85,6 +86,7 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 	textNoResult = "No result.",
 	disabled,
 	validation,
+	containerClassName,
 	...rest
 }) => {
 	const isTouchScreen = useTouchScreen()
@@ -120,6 +122,7 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 			id={id}
 			validation={validation}
 			hasListOpen={isOpen}
+			className={containerClassName}
 		>
 			<InputWithListWrapper isOpen={isOpen}>
 				<InputWrapper

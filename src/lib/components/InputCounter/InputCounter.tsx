@@ -47,6 +47,7 @@ import type { ILibInputCounter } from "./types"
  * @prop {number} [props.min=1] - Minimum allowed value for the counter.
  * @prop {number} [props.max=100] - Maximum allowed value for the counter.
  * @prop {number} [props.step=1] - Increment/decrement step value.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the input or span element.
  *
  * @returns {JSX.Element} The rendered InputCounter component.
@@ -74,6 +75,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 	min = 1,
 	max = 100,
 	step = 1,
+	containerClassName,
 	...rest
 }) => {
 	return (
@@ -83,6 +85,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 			helper={helper}
 			helperBottom={helperBottom}
 			id={id}
+			className={containerClassName}
 		>
 			<div
 				className={clsx(

@@ -161,5 +161,13 @@ export const inputPhonePreview: ComponentPreview<ILibInputPhone> = {
 			description: "Background theme of the input.",
 			isRequired: false,
 		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
 	],
 }

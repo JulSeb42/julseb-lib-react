@@ -33,6 +33,7 @@ import type { ILibInputPin } from "./types"
  * @prop {boolean} [props.hideValues] - Whether to hide the input values (password mode).
  * @prop {boolean} [props.disabled] - Whether the pin inputs are disabled.
  * @prop {"light" | "dark"} [props.inputBackground] - Background theme of the input fields.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the pin input container.
  *
  * @returns {JSX.Element} The rendered InputPin component.
@@ -55,6 +56,7 @@ export const InputPin: FC<ILibInputPin> = ({
 	disabled,
 	inputBackground,
 	autoFocus,
+	containerClassName,
 	...rest
 }) => {
 	const [inputsRefsArr] = useState<Array<Ref<HTMLInputElement>>>(() =>
@@ -77,6 +79,7 @@ export const InputPin: FC<ILibInputPin> = ({
 			helperBottom={helperBottom}
 			id={id}
 			validation={validation}
+			className={containerClassName}
 		>
 			<div
 				ref={ref}

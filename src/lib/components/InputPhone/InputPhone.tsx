@@ -49,6 +49,7 @@ import type { ILibInputPhone } from "./types"
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
  * @prop {"rounded" | "pill"} [props.inputVariant] - Visual variant of the input.
  * @prop {"light" | "dark"} [props.inputBackground] - Background theme of the input.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the input element.
  *
  * @returns {JSX.Element} The rendered InputPhone component.
@@ -74,6 +75,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 	validation,
 	inputVariant,
 	inputBackground,
+	containerClassName,
 	...rest
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -105,6 +107,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 			helperBottom={helperBottom}
 			validation={validation}
 			hasListOpen={isOpen}
+			className={containerClassName}
 		>
 			<InputWithListWrapper isOpen={isOpen}>
 				<InputWrapper

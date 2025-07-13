@@ -1,5 +1,6 @@
 import { defineConfig } from "tsup"
 
+// eslint-disable-next-line
 export default defineConfig({
 	entry: [
 		"src/lib/index.ts",

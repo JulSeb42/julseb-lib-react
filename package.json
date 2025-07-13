@@ -1,19 +1,22 @@
 {
 	"name": "@julseb-lib/react",
-	"version": "0.1.28",
+	"version": "0.1.48",
 	"type": "module",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
 	"private": false,
 	"files": [
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
-		"dev": "vite --open"
+		"build": "tsup && cp ./src/lib/index.css ./dist/index.css",
+		"dev": "vite --open",
+		"prepublishOnly": "pnpm build",
+		"plop": "cross-env NODE_OPTIONS='--import tsx' plop --plopfile=./plop/plopfile.ts",
+		"plop:c": "pnpm plop component",
+		"plop:p": "pnpm plop preview",
+		"plop:st": "pnpm plop subtype"
 	},
 	"dependencies": {
-		"@julseb-lib/utils": "^0.0.14",
+		"@julseb-lib/utils": "^0.0.16",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/postcss": "^4.1.11",
 		"@tailwindcss/vite": "^4.1.11",
@@ -22,11 +25,11 @@
 		"fuse.js": "^7.1.0",
 		"markdown-to-jsx": "^7.7.10",
 		"postcss": "^8.5.6",
+		"prism-react-renderer": "^2.4.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-icons": "^5.5.0",
 		"react-router-dom": "^7.6.3",
-		"react-syntax-highlighter": "^15.6.1",
 		"react-toastify": "^11.0.5",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.11",
@@ -51,6 +54,7 @@
 		"@vitejs/plugin-react": "^4.6.0",
 		"autoprefixer": "^10.4.21",
 		"axios": "^1.10.0",
+		"chalk": "^5.4.1",
 		"cross-env": "^7.0.3",
 		"cssjson-cli": "^1.0.1",
 		"dotenv": "^17.0.0",
@@ -76,6 +80,8 @@
 		"vite-plugin-dts": "^4.5.4",
 		"vite-plugin-eslint": "^1.8.1"
 	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
@@ -84,14 +90,19 @@
 		"./types": {
 			"types": "./dist/types/index.d.ts",
 			"import": "./dist/types/index.js",
-			"require": "./dist/types/index.js",
+			"require": "./dist/types/index.cjs",
 			"default": "./dist/types/index.js"
 		},
 		"./component-props": {
 			"types": "./dist/types/components-props.d.ts",
 			"import": "./dist/types/components-props.js",
-			"require": "./dist/types/components-props.js",
+			"require": "./dist/types/components-props.cjs",
 			"default": "./dist/types/components-props.js"
+		},
+		"./index.css": {
+			"require": "./dist/index.css",
+			"import": "./dist/index.css",
+			"default": "./dist/index.css"
 		}
 	},
 	"types": "./dist/index.d.ts",

@@ -95,5 +95,13 @@ export const fieldsetPreview: ComponentPreview<ILibFieldset> = {
 			description: "Border radius size for the fieldset.",
 			isRequired: false,
 		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
 	],
 }

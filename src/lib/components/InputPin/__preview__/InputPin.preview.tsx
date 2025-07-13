@@ -150,5 +150,13 @@ export const inputPinPreview: ComponentPreview<ILibInputPin> = {
 			description: "Background theme of the input fields.",
 			isRequired: false,
 		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
 	],
 }

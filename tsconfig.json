@@ -8,7 +8,8 @@
 		"moduleResolution": "Node",
 		"outDir": "dist",
 		"target": "ES6",
-		"strict": true
+		"strict": true,
+		"verbatimModuleSyntax": true
 	},
 	"include": ["src"]
 }

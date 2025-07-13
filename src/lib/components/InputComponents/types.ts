@@ -5,6 +5,7 @@ import type {
 	LibInputVariant,
 	LibInputBackground,
 	LibInputListDirection,
+	ClassNames,
 } from "../../types"
 
 interface ILibInputBase {
@@ -14,6 +15,7 @@ interface ILibInputBase {
 	value?: any
 	inputVariant?: LibInputVariant
 	inputBackground?: LibInputBackground
+	containerClassName?: ClassNames
 }
 
 interface InputWithLabel extends ILibInputBase {

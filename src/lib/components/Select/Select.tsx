@@ -46,6 +46,7 @@ import type { ILibSelect } from "./types"
  * @prop {string} [props.id] - Unique identifier for the select element.
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
  * @prop {boolean} [props.disabled] - Whether the select is disabled.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the button element.
  *
  * @returns {JSX.Element} The rendered Select component.
@@ -69,6 +70,7 @@ export const Select: FC<ILibSelect> = ({
 	id,
 	validation,
 	disabled,
+	containerClassName,
 	...rest
 }) => {
 	const el = useRef<HTMLDivElement>(null)
@@ -91,6 +93,7 @@ export const Select: FC<ILibSelect> = ({
 			helperBottom={helperBottom}
 			hasListOpen={isOpen}
 			validation={validation}
+			className={containerClassName}
 		>
 			<InputWithListWrapper ref={el} isOpen={isOpen}>
 				<InputWrapper

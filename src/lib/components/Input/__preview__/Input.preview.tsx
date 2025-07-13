@@ -238,5 +238,13 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 			description: "Text to display as a suffix inside the input.",
 			isRequired: false,
 		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
 	],
 }

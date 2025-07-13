@@ -32,6 +32,7 @@ import type { ILibInputImage } from "./types"
  * @prop {"none" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full"} [props.borderRadius="md"] - Border radius of the image container.
  * @prop {boolean} [props.disabled] - Whether the input is disabled.
  * @prop {string} [props.id] - Unique identifier for the input element.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the file input element.
  *
  * @returns {JSX.Element} The rendered InputImage component.
@@ -51,6 +52,7 @@ export const InputImage: FC<ILibInputImage> = ({
 	borderRadius = "md",
 	disabled,
 	id,
+	containerClassName,
 	...rest
 }) => {
 	const [isHovered, setIsHovered] = useState(false)
@@ -62,6 +64,7 @@ export const InputImage: FC<ILibInputImage> = ({
 			helper={helper}
 			helperBottom={helperBottom}
 			validation={validation}
+			className={containerClassName}
 		>
 			<label
 				htmlFor={id}

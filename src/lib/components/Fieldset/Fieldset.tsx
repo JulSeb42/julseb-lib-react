@@ -32,6 +32,7 @@ import type { ILibFieldset } from "./types"
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
  * @prop {string} [props.legend] - Legend text to display as the fieldset title.
  * @prop {"xs" | "sm" | "md" | "lg" | "xl" | "full"} [props.borderRadius="md"] - Border radius size for the fieldset.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the fieldset element.
  *
  * @returns {JSX.Element} The rendered Fieldset component.
@@ -50,6 +51,7 @@ export const Fieldset: FC<ILibFieldset> = ({
 	validation,
 	legend,
 	borderRadius = "md",
+	containerClassName,
 	...rest
 }) => {
 	return (
@@ -60,6 +62,7 @@ export const Fieldset: FC<ILibFieldset> = ({
 			helperBottom={helperBottom}
 			id={id}
 			validation={validation}
+			className={containerClassName}
 		>
 			<fieldset
 				ref={ref}

@@ -34,6 +34,7 @@ import type { ILibInputSlider } from "./types"
  * @prop {number} [props.min=0] - Minimum value for the slider range.
  * @prop {number} [props.max=100] - Maximum value for the slider range.
  * @prop {number} [props.value] - Current value of the slider.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the input element.
  *
  * @returns {JSX.Element} The rendered InputSlider component.
@@ -54,6 +55,7 @@ export const InputSlider: FC<ILibInputSlider> = ({
 	min = 0,
 	max = 100,
 	value,
+	containerClassName,
 	...rest
 }) => {
 	const percentage = ((Number(value) - min) / (max - min)) * 100
@@ -100,6 +102,7 @@ export const InputSlider: FC<ILibInputSlider> = ({
 			helperBottom={helperBottom}
 			id={id}
 			validation={validation}
+			className={containerClassName}
 		>
 			<div
 				className={clsx(

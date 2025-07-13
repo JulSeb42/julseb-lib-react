@@ -79,7 +79,8 @@ const InputFunction: FC<ILibInput> = ({ type, ...rest }) =>
  * @prop {React.ReactNode} [props.icon] - Icon element to display inside the input.
  * @prop {string} [props.placeholder] - Placeholder text for the input.
  * @prop {boolean} [props.disabled] - Whether the input is disabled.
- * @prop {React.ReactNode} [props.children] - Child elements for select and textarea types.
+ * @prop {React.ReactNode} [props.children] - Child elements for select type.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the input element.
  *
  * @returns {JSX.Element} The rendered Input component.
@@ -94,6 +95,7 @@ export const Input: FC<ILibInput> = ({
 	labelComment,
 	helper,
 	helperBottom,
+	containerClassName,
 	// @ts-ignore
 	validation,
 	value,
@@ -114,6 +116,7 @@ export const Input: FC<ILibInput> = ({
 			counter={counter as any}
 			maxLength={maxLength}
 			id={id}
+			className={containerClassName}
 		>
 			<InputFunction
 				ref={ref}

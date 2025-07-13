@@ -1,5 +1,8 @@
-import { MarkdownContainer, CodeContainer } from "../../../"
-import { optionsMarkdown } from "../../../../data/helpers"
+import {
+	MarkdownContainer,
+	// CodeContainer
+} from "../../../"
+// import { optionsMarkdown } from "../../../../data/helpers"
 import type { ILibMarkdownContainer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -21,19 +24,19 @@ export const markdownContainerPreview: ComponentPreview<ILibMarkdownContainer> =
 						"## Hello world \n\n I'm some markdown content **compiled** to *jsx*",
 				},
 			},
-			{
-				previewTitle: "Options",
-				demo: (
-					<CodeContainer
-						highlighterProps={{ language: "typescript" }}
-					>
-						{JSON.stringify(optionsMarkdown, null, "  ").replaceAll(
-							'],\n  "',
-							'],\n\n  "',
-						)}
-					</CodeContainer>
-				),
-			},
+			// {
+			// 	previewTitle: "Options",
+			// 	demo: (
+			// 		<CodeContainer
+			// 			highlighterProps={{ language: "typescript" }}
+			// 		>
+			// 			{JSON.stringify(optionsMarkdown, null, "  ").replaceAll(
+			// 				'],\n  "',
+			// 				'],\n\n  "',
+			// 			)}
+			// 		</CodeContainer>
+			// 	),
+			// },
 		],
 		props: [
 			{

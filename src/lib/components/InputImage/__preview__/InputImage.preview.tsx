@@ -129,5 +129,13 @@ export const inputImagePreview: ComponentPreview<ILibInputImage> = {
 			description: "Whether the input is disabled.",
 			isRequired: false,
 		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
+			isRequired: false,
+		},
 	],
 }

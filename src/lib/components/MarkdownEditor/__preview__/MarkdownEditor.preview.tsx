@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { BiEnvelope } from "react-icons/bi"
 import {
-	CodeContainer,
+	// CodeContainer,
 	MarkdownEditor,
-	libMarkdownEditorOptions,
+	// libMarkdownEditorOptions,
 } from "../../../"
 import type { ILibMarkdownEditor } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
-import { optionsMarkdown } from "../../../../data/helpers"
+// import { optionsMarkdown } from "../../../../data/helpers"
 
 const Preview: FC<Omit<ILibMarkdownEditor, "value" | "setValue">> = props => {
 	const [value, setValue] = useState("# Hello World\n\nHow are you?")
@@ -46,29 +46,29 @@ export const markdownEditorPreview: ComponentPreview<ILibMarkdownEditor> = {
 				/>
 			),
 		},
-		{
-			previewTitle: "Options",
-			demo: (
-				<CodeContainer highlighterProps={{ language: "typescript" }}>
-					{JSON.stringify(optionsMarkdown, null, "  ").replaceAll(
-						'],\n  "',
-						'],\n\n  "',
-					)}
-				</CodeContainer>
-			),
-		},
-		{
-			previewTitle: "Editor options",
-			demo: (
-				<CodeContainer highlighterProps={{ language: "typescript" }}>
-					{JSON.stringify(
-						libMarkdownEditorOptions,
-						null,
-						"  ",
-					).replaceAll('],\n  "', '],\n\n  "')}
-				</CodeContainer>
-			),
-		},
+		// {
+		// 	previewTitle: "Options",
+		// 	demo: (
+		// 		<CodeContainer highlighterProps={{ language: "typescript" }}>
+		// 			{JSON.stringify(optionsMarkdown, null, "  ").replaceAll(
+		// 				'],\n  "',
+		// 				'],\n\n  "',
+		// 			)}
+		// 		</CodeContainer>
+		// 	),
+		// },
+		// {
+		// 	previewTitle: "Editor options",
+		// 	demo: (
+		// 		<CodeContainer highlighterProps={{ language: "typescript" }}>
+		// 			{JSON.stringify(
+		// 				libMarkdownEditorOptions,
+		// 				null,
+		// 				"  ",
+		// 			).replaceAll('],\n  "', '],\n\n  "')}
+		// 		</CodeContainer>
+		// 	),
+		// },
 	],
 	props: [
 		{
@@ -165,6 +165,14 @@ export const markdownEditorPreview: ComponentPreview<ILibMarkdownEditor> = {
 			possibleValues: [],
 			defaultValue: null,
 			description: "Custom icons for toolbar buttons.",
+			isRequired: false,
+		},
+		{
+			name: "containerClassName",
+			type: "string",
+			possibleValues: [],
+			defaultValue: null,
+			description: "Additional CSS classes for the container.",
 			isRequired: false,
 		},
 	],

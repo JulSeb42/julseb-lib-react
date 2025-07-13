@@ -36,6 +36,7 @@ import type { ILibRating } from "./types"
  * @prop {string} [props.helperBottom] - Helper text to display at the bottom of the rating.
  * @prop {string} [props.id] - Unique identifier for the rating element.
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  * @prop {any} [props.rest] - Additional props spread to the rating container.
  *
  * @returns {JSX.Element} The rendered Rating component.
@@ -55,6 +56,7 @@ export const Rating: FC<ILibRating> = ({
 	helperBottom,
 	id,
 	validation,
+	containerClassName,
 	...rest
 }) => {
 	return (
@@ -64,6 +66,7 @@ export const Rating: FC<ILibRating> = ({
 			helper={helper}
 			helperBottom={helperBottom}
 			id={id}
+			className={containerClassName}
 		>
 			<div
 				ref={ref}

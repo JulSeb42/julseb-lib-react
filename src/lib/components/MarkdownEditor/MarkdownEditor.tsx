@@ -45,6 +45,7 @@ import type { LibMdEditorViews } from "../../types"
  * @prop {LibMarkdownEditorOptions} [props.options] - Configuration for which toolbar buttons to show.
  * @prop {string} [props.textButtonTitles="Titles"] - Text for the titles dropdown button.
  * @prop {object} [props.icons] - Custom icons for toolbar buttons.
+ * @prop {string} [containerClassName] - Additional CSS classes for the container.
  *
  * @returns {JSX.Element} The rendered MarkdownEditor component.
  *
@@ -66,6 +67,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 	options,
 	textButtonTitles = "Titles",
 	icons,
+	containerClassName,
 	...rest
 }) => {
 	const [view, setView] = useState<LibMdEditorViews>(defaultView)
@@ -86,6 +88,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 			helperBottom={helperBottom}
 			validation={validation}
 			hasListOpen={isTitlesOpen}
+			className={containerClassName}
 		>
 			<div
 				className={clsx(
