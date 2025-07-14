@@ -1,9 +1,7 @@
-import { type FC, useCallback, useEffect, useRef, useState } from "react"
-import { uuid } from "@julseb-lib/utils"
-import { clsx, genGap } from "../../utils"
-import { useMergeRefs } from "../../hooks"
-import { fillCols, useEventListener } from "./utils"
+import { type FC } from "react"
+import { clsx, genGap, genColGap } from "../../utils"
 import type { ILibMasonry } from "./types"
+import type { LibSpacers } from "../../types"
 
 /**
  * Masonry component for displaying content in a responsive masonry grid layout.
@@ -25,6 +23,8 @@ import type { ILibMasonry } from "./types"
  * @prop {React.ReactNode[]} [props.children=[]] - The content to display in the masonry grid.
  * @prop {number} [props.col=4] - Number of columns in the masonry grid.
  * @prop {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl"} [props.gap="lg"] - Gap between grid items.
+ * @prop {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "0px"} [props.rowGap="lg"] - Vertical gap between grid items.
+ * @prop {"2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl"} [props.colGap="lg"] - Horizontal gap between columns.
  *
  * @returns {JSX.Element} The rendered Masonry component.
  *
@@ -34,50 +34,41 @@ export const Masonry: FC<ILibMasonry> = ({
 	className,
 	element = "div",
 	ref,
-	children = [],
+	children,
 	col = 4,
 	gap = "lg",
+	rowGap = "lg",
+	colGap = "lg",
 	...rest
 }) => {
-	const el = useRef<HTMLDivElement>(null as any)
-
-	const [numCols, setNumCols] = useState(col)
-	const cols = [...Array(col)].map(() => [])
-	fillCols(children, cols)
-
-	const resizeHandler = useCallback(
-		() =>
-			setNumCols(
-				Math.ceil(window.innerWidth / (window.innerWidth / numCols)),
-			),
-		[numCols],
-	)
-
-	useEffect(resizeHandler, [numCols, resizeHandler])
-
-	useEventListener("resize", resizeHandler)
-
 	const Element = element
 
 	return (
 		<Element
-			ref={useMergeRefs([el, ref])}
+			ref={ref}
 			className={clsx(
-				"grid grid-flow-col",
+				"columns-(--col-num)",
 				genGap[gap],
+				genMb[rowGap],
+				genColGap[colGap],
 				"masonry",
 				className,
 			)}
+			style={{ ["--col-num" as any]: col }}
 			{...rest}
 		>
-			{[...Array(numCols)].map((_, i) => (
-				<div
-					className={clsx("grid h-fit", genGap[gap], "masonry-item")}
-					key={uuid()}
-				>
-					{cols[i]}
-				</div>
-			))}
+			{children}
 		</Element>
 	)
+}
+
+const genMb: Record<LibSpacers, string> = {
+	"2xl": "[&>*]:mb-12",
+	xl: "[&>*]:mb-8",
+	lg: "[&>*]:mb-5",
+	md: "[&>*]:mb-4",
+	sm: "[&>*]:mb-3",
+	xs: "[&>*]:mb-2",
+	"2xs": "[&>*]:mb-1",
+	"0px": "[&>*]:mb-0",
 }

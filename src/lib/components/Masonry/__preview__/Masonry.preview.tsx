@@ -29,7 +29,7 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 	previews: [
 		{
 			demo: (
-				<Masonry col={3} gap="xl">
+				<Masonry rowGap="2xs" colGap="2xl" col={3}>
 					{images.map((image, i) => (
 						<Image src={image} alt={`Img ${i}`} key={uuid()} />
 					))}
@@ -41,7 +41,7 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 		{
 			name: "col",
 			type: "number",
-			possibleValues: null,
+			possibleValues: [],
 			defaultValue: "4",
 			description: "Number of columns in the masonry grid.",
 			isRequired: false,
@@ -52,6 +52,22 @@ export const masonryPreview: ComponentPreview<ILibMasonry> = {
 			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
 			defaultValue: "lg",
 			description: "Gap between grid items.",
+			isRequired: false,
+		},
+		{
+			name: "rowGap",
+			type: "string",
+			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl", "0px"],
+			defaultValue: "lg",
+			description: "Vertical gap between grid items.",
+			isRequired: false,
+		},
+		{
+			name: "colGap",
+			type: "string",
+			possibleValues: ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"],
+			defaultValue: "lg",
+			description: "Horizontal gap between columns.",
 			isRequired: false,
 		},
 	],
