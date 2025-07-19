@@ -71,7 +71,11 @@ export const SelectInput: FC<ILibSelectInput> = ({
 
 			<InputValidation validation={validation} />
 
-			<InputButton className="text-gray-500" onClick={handleIconClick}>
+			<InputButton
+				className="text-gray-500"
+				onClick={handleIconClick}
+				disabled={disabled}
+			>
 				{iconSelect}
 			</InputButton>
 		</InputWrapper>

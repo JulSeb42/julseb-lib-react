@@ -170,6 +170,7 @@ export const Header: FC<ILibHeader> = ({
 				"md:top-[unset] w-[100%] md:w-fit h-fit md:h-[unset] left-0 md:left-[unset] py-4 md:py-0",
 				isOpen ? "top-[56px] " : "top-[calc((160px+56px)*-1)]",
 			],
+			"[&>a]:font-normal [&>a.active]:font-black",
 			"nav",
 		),
 		ref: el,

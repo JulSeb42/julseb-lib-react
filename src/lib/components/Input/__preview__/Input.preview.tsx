@@ -44,6 +44,7 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 						<option value="">Option</option>
 					</>
 				),
+				disabled: true,
 			},
 		},
 		{

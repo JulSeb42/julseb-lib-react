@@ -4,8 +4,8 @@ import type {
 	LibAllColors,
 	LibColorsHover,
 	LibComponentBase,
-	LibTextDisplay,
-	LibTextNoDisplay,
+	LibTextTagDisplay,
+	LibTextTagNoDisplay,
 } from "../../types"
 
 interface ILibTextBase
@@ -24,12 +24,12 @@ interface ILibTextBase
 }
 
 interface TextDisplay extends ILibTextBase {
-	tag?: LibTextDisplay
+	tag?: LibTextTagDisplay
 	display?: boolean
 }
 
 interface TextNoDisplay extends ILibTextBase {
-	tag?: LibTextNoDisplay
+	tag?: LibTextTagNoDisplay
 	display?: never
 }
 

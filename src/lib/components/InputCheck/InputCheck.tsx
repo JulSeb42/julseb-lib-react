@@ -60,7 +60,7 @@ export const InputCheck: FC<ILibInputCheck> = ({
 			className={clsx(
 				"inline-flex items-start gap-1 outline-none cursor-pointer",
 				variant === "tile" && [
-					"w-full border-gray-200 border p-2 rounded-lg",
+					"w-full border-gray-200 border p-2 rounded-lg bg-background",
 					"has-[input:checked]:border-primary-500",
 					validation === false &&
 						"has-[input:checked]:border-danger-500",

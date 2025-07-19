@@ -64,7 +64,7 @@ export const flexboxPreview: ComponentPreview<ILibFlexbox> = {
 				"end",
 				"end-safe",
 				"center",
-				"center-sage",
+				"center-safe",
 				"space-between",
 				"space-around",
 				"space-evenly",

@@ -5,7 +5,7 @@ export const genJustifyContent: Record<CssJustifyContent, string> = {
 	end: "justify-end",
 	"end-safe": "justify-end-safe",
 	center: "justify-center",
-	"center-sage": "justify-center-safe",
+	"center-safe": "justify-center-safe",
 	"space-between": "justify-between",
 	"space-around": "justify-around",
 	"space-evenly": "justify-evenly",

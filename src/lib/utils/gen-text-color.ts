@@ -102,7 +102,7 @@ export const genTextColorHover: Record<LibColorsHover, string> = {
 	danger: "text-danger-500 hover:text-danger-300 active:text-danger-600",
 	warning: "text-warning-500 hover:text-warning-300 active:text-warning-600",
 	gray: "text-gray-500 hover:text-gray-300 active:text-gray-600",
-	white: "text-white hover:text-gray-300 active:text-gray-100",
+	white: "text-white hover:text-gray-300! active:text-gray-100!",
 }
 
 export const genTextAllColor: Record<LibAllColors, string> = {

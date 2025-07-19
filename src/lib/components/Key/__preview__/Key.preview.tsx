@@ -37,14 +37,6 @@ export const keyPreview: ComponentPreview<ILibKey> = {
 	],
 	props: [
 		{
-			name: "keys",
-			type: "Array<string>",
-			possibleValues: null,
-			defaultValue: null,
-			description: "The list of keys to display.",
-			isRequired: true,
-		},
-		{
 			name: "withSeparator",
 			type: "boolean",
 			possibleValues: null,

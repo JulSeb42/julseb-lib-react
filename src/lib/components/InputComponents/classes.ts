@@ -31,7 +31,11 @@ export const INPUT_COMMON_CLASSES = ({
 
 export const INPUT_VALIDATION_CONTAINER = ["px-2"]
 
-export const INPUT_BUTTON_CLASSES = ["px-2", genTextColorHover["primary"]]
+export const INPUT_BUTTON_CLASSES = [
+	"px-2 bg-transparent",
+	genTextColorHover["primary"],
+	"disabled:text-gray-500",
+]
 
 export const PREFIX_CLASSES = [
 	"px-2 bg-gray-100 h-full inline-flex items-center border-e-1 border-e-gray-200 text-black",
@@ -58,7 +62,8 @@ export const INPUT_CONTAINER_CLASSES = ({
 }) => [
 	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden relative bg-background",
 	"has-[input:focus]:border-primary-500",
-	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500",
+	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500 has-[select:disabled]:bg-gray-100 has-[select:disabled]:text-gray-500 has-[textarea:disabled]:bg-gray-100 has-[textarea:disabled]:text-gray-500",
+	"[&_input]:bg-transparent [&_textarea]:bg-transparent [&_select]:bg-transparent",
 	validation &&
 		(validation.status === false
 			? "bg-danger-50 has-[input:focus]:border-danger-500 text-black"

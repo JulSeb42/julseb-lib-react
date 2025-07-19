@@ -158,7 +158,7 @@ export enum SPACERS {
 	/** 4px */ "2XS" = "var(--spacer-2xs)",
 }
 
-export enum RADIUS {
+export enum RADIUSES {
 	/** 0px */ NONE = "var(--radius-none)",
 	/**  */ XS = "var(--radius-xs)",
 	/** 0.125rem (2px) */ SM = "var(--radius-sm)",

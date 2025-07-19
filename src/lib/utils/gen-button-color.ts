@@ -1,7 +1,7 @@
 import type { LibButtonVariantExtended } from "../types"
 
 export const genButtonDisabled: Record<LibButtonVariantExtended, string> = {
-	plain: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
+	plain: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500!",
 	ghost: "disabled:bg-gray-200 disabled:hover:bg-gray-200 disabled:text-gray-500",
 	outline:
 		"disabled:border-gray-500 disabled:text-gray-500 disabled:hover:border-gray-500 disabled:hover:text-gray-500",

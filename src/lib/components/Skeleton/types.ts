@@ -15,10 +15,6 @@ export interface ILibSkeletonCard extends ILibFlexbox, ILibSkeletonCommon {
 	isShiny?: boolean
 }
 
-export interface ILibSkeletonShine extends LibComponentBase<HTMLSpanElement> {
-	children?: never
-}
-
 export interface ILibSkeleton
 	extends LibComponentBase<HTMLDivElement>,
 		ILibSkeletonCommon {

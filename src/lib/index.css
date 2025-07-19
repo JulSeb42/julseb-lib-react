@@ -109,6 +109,8 @@
 	--spacer-xl: 32px;
 	--spacer-2xl: 48px;
 
+	--radius-full: calc(infinity * 1px);
+
 	--main-default: 600px;
 	--main-large: 800px;
 	--main-form: 400px;
@@ -255,6 +257,8 @@
 	--spacer-lg: 24px;
 	--spacer-xl: 32px;
 	--spacer-2xl: 48px;
+
+	--radius-full: calc(infinity * 1px);
 
 	--main-default: 600px;
 	--main-large: 800px;

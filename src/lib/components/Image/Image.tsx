@@ -60,7 +60,7 @@ export const Image: FC<ILibImage> = ({
 
 				<figcaption
 					className={clsx(
-						"bottom-0 left-0 z-10 absolute bg-overlay-black-80 px-2 px-4 w-full text-white",
+						"bottom-0 left-0 z-10 absolute bg-overlay-black-80 px-4 py-2 w-full text-white",
 						typeof caption === "object" &&
 							caption.backgroundColor &&
 							genBgAllColorsAndOverlays[caption.backgroundColor],

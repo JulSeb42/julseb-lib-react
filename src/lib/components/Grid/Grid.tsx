@@ -54,7 +54,7 @@ export const Grid: FC<ILibGrid> = ({
 	colGap = "0px",
 	justifyItems = "stretch",
 	alignItems = "stretch",
-	justifyContent = "auto",
+	justifyContent = "normal",
 	alignContent = "normal",
 	...rest
 }) => {

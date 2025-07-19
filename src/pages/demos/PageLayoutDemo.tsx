@@ -45,7 +45,10 @@ export const PageLayoutDemo = () => {
 				hideOnScroll: true,
 			}}
 			footer={{ items: links, direction: "vertical" }}
-			wrapperProps={{ minHeight: "px", className: "pt-(--spacer-2xl)" }}
+			wrapperProps={{
+				minHeight: "px",
+				className: "pt-(--spacer-2xl)",
+			}}
 			mainProps={{ size: "large" }}
 		>
 			<Text>

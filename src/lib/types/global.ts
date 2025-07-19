@@ -261,7 +261,7 @@ export type LibInputBackground = keyof typeof designTokens.libInputBackgrounds
  * tag="h1"
  * tag="h2"
  */
-export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
+export type LibTextTagDisplay = keyof typeof designTokens.libTextDisplayTags
 
 /**
  * @description All text tags without the display prop tokens available in the library (paragraphs, lists, etc.).
@@ -271,7 +271,7 @@ export type LibTextDisplay = keyof typeof designTokens.libTextDisplayTags
  * tag="ul"
  * tag="blockquote"
  */
-export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
+export type LibTextTagNoDisplay = keyof typeof designTokens.libTextTags
 
 /**
  * @description All text tag tokens available in the library (display and non-display).
@@ -281,7 +281,7 @@ export type LibTextNoDisplay = keyof typeof designTokens.libTextTags
  * tag="p"
  * tag="ul"
  */
-export type LibText = LibTextDisplay | LibTextNoDisplay
+export type LibTextTag = LibTextTagDisplay | LibTextTagNoDisplay
 
 /**
  * @description All CSS position tokens available in the library.
@@ -693,7 +693,7 @@ export type LibCountry = {
 	name: string
 	dial_code: string
 	code: CountryCode
-	flag: string
+	flag: ReactElement
 }
 
 /**
@@ -811,7 +811,7 @@ export type CssJustifyContent =
 	| "end"
 	| "end-safe"
 	| "center"
-	| "center-sage"
+	| "center-safe"
 	| "space-between"
 	| "space-around"
 	| "space-evenly"

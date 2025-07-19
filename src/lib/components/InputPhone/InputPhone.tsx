@@ -139,13 +139,14 @@ export const InputPhone: FC<ILibInputPhone> = ({
 						role="button"
 						aria-label={countryButtonAriaLabel}
 					>
-						<img
+						{/* <img
 							src={country?.flag}
 							alt=""
 							width={16}
 							height={16}
 							className="object-contain input-phone-flag"
-						/>
+						/> */}
+						{country?.flag}
 
 						{icons?.caret ?? (
 							<BiCaretDown
@@ -241,12 +242,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 									(selectedCountry?.code || defaultCountry)
 								}
 							>
-								<img
-									src={result?.flag}
-									alt={`Flag ${result?.name}`}
-									width={16}
-									className="input-phone-list-flag"
-								/>
+								{result?.flag}
 
 								{result?.name}
 							</InputListItem>

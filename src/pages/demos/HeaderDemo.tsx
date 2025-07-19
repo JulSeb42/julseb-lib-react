@@ -1,28 +1,16 @@
 import { useState, type FormEvent } from "react"
 import { Link, useSearchParams, NavLink } from "react-router-dom"
 import { CoverLayout } from "../../components"
-import { Header, Cover, Text, uuid, clsx } from "../../lib"
+import { Header, Cover, Text, uuid } from "../../lib"
 
 const links = [
-	<NavLink
-		to="/header/demo"
-		className={clsx("[&&]:font-normal [&.active]:font-black")}
-		key={uuid()}
-	>
+	<NavLink to="/header/demo" key={uuid()}>
 		Home
 	</NavLink>,
-	<NavLink
-		to="/about"
-		className={clsx("[&&]:font-normal [&.active]:font-black")}
-		key={uuid()}
-	>
+	<NavLink to="/about" key={uuid()}>
 		About
 	</NavLink>,
-	<NavLink
-		to="/users"
-		className={clsx("[&&]:font-normal [&.active]:font-black")}
-		key={uuid()}
-	>
+	<NavLink to="/users" key={uuid()}>
 		Users
 	</NavLink>,
 ]

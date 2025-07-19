@@ -37,8 +37,8 @@ export const Masonry: FC<ILibMasonry> = ({
 	children,
 	col = 4,
 	gap = "lg",
-	rowGap = "lg",
-	colGap = "lg",
+	rowGap,
+	colGap,
 	...rest
 }) => {
 	const Element = element
@@ -49,8 +49,8 @@ export const Masonry: FC<ILibMasonry> = ({
 			className={clsx(
 				"columns-(--col-num)",
 				genGap[gap],
-				genMb[rowGap],
-				genColGap[colGap],
+				genMb[rowGap ?? gap],
+				genColGap[colGap ?? gap],
 				"masonry",
 				className,
 			)}

@@ -1,4 +1,5 @@
 import { Fragment, type FC } from "react"
+import { useMaxWidth } from "../../hooks"
 import { Flexbox } from "../Flexbox"
 import {
 	clsx,
@@ -60,6 +61,8 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 }) => {
 	const Element = element
 
+	const isMobile = useMaxWidth(600)
+
 	const elementProps = {
 		ref,
 		className: clsx(
@@ -69,9 +72,9 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 			"button-group",
 			className,
 		),
-		flexDirection: "row",
+		flexDirection: isMobile ? "col" : "row",
 		flexWrap: "wrap",
-		alignItems: "center",
+		alignItems: isMobile ? "stretch" : "center",
 		...rest,
 	}
 
@@ -82,7 +85,7 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 					<Fragment key={button.id}>
 						<button
 							className={clsx(
-								"px-2 py-1 outline-none h-full",
+								"inline-flex justify-center items-center px-2 py-1 outline-none h-8",
 								size === "small" && "text-sm px-2 py-1",
 								genButtonDisabled[variant],
 								genRingColor[color],
@@ -111,8 +114,11 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 							i !== buttons.length - 1 && (
 								<span
 									className={clsx(
-										"inline-block w-[1px] h-full",
+										"inline-block",
 										genBgColorShort[color],
+										isMobile
+											? "w-full h-[1px]"
+											: " w-[1px] h-full",
 										"button-group-separator",
 									)}
 								/>

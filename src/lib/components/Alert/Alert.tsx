@@ -1,6 +1,7 @@
 import { type FC } from "react"
 import { Text } from "../Text"
 import { clsx, genBgColor50, genBorderColorShort } from "../../utils"
+import { useLibTheme } from "../../context"
 import type { ILibAlert } from "./types"
 
 /**
@@ -39,12 +40,14 @@ export const Alert: FC<ILibAlert> = ({
 }) => {
 	const Element = element
 
+	const { theme } = useLibTheme()
+
 	return (
 		<Element
 			ref={ref}
 			className={clsx(
 				"flex flex-col gap-2 px-4 py-2 border rounded-md w-full max-w-[400px]",
-				genBgColor50[color],
+				genBgColor50(theme)[color],
 				genBorderColorShort[color],
 				"alert",
 				className,

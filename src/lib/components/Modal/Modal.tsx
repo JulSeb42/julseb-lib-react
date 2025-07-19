@@ -80,18 +80,20 @@ export const Modal: FC<ILibModal> = ({
 			)}
 			{...rest}
 		>
-			<button
-				className={clsx(
-					"top-2 right-2 z-10 absolute flex justify-center items-center size-12 text-white hover:text-gray-300 active:text-gray-100",
-					"modal-close",
-				)}
-				onClick={() => setIsOpen(false)}
-				aria-label={labelClose}
-				role="button"
-				type="button"
-			>
-				{closeIcon}
-			</button>
+			{!hideCloseButton && (
+				<button
+					className={clsx(
+						"top-2 right-2 z-10 absolute flex justify-center items-center size-12 text-white hover:text-gray-300 active:text-gray-100",
+						"modal-close",
+					)}
+					onClick={() => setIsOpen(false)}
+					aria-label={labelClose}
+					role="button"
+					type="button"
+				>
+					{closeIcon}
+				</button>
+			)}
 
 			<div
 				ref={el}

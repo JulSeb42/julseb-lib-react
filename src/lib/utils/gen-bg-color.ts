@@ -5,6 +5,7 @@ import type {
 	LibColorsHover,
 	LibColorsShort,
 	LibOverlays,
+	LibThemeNames,
 } from "../types"
 
 export const genBgColor: Record<LibColors, string> = {
@@ -101,17 +102,23 @@ export const genBgColorShort: Record<LibColorsShort, string> = {
 	background: "bg-background",
 }
 
-export const genBgColor50: Record<
-	Exclude<LibColorsShort, "black" | "transparent" | "background" | "current">,
-	string
-> = {
-	primary: "bg-primary-50",
-	secondary: "bg-secondary-50",
-	success: "bg-success-50",
-	danger: "bg-danger-50",
-	warning: "bg-warning-50",
-	gray: "bg-gray-50",
-	white: "bg-white",
+export const genBgColor50 = (theme: LibThemeNames) => {
+	const colors: Record<
+		Exclude<
+			LibColorsShort,
+			"black" | "transparent" | "background" | "current"
+		>,
+		string
+	> = {
+		primary: theme === "dark" ? "bg-primary-950" : "bg-primary-50",
+		secondary: theme === "dark" ? "bg-secondary-950" : "bg-secondary-50",
+		success: theme === "dark" ? "bg-success-950" : "bg-success-50",
+		danger: theme === "dark" ? "bg-danger-950" : "bg-danger-50",
+		warning: theme === "dark" ? "bg-warning-950" : "bg-warning-50",
+		gray: theme === "dark" ? "bg-gray-950" : "bg-gray-50",
+		white: theme === "dark" ? "bg-gray-950" : "bg-white",
+	}
+	return colors
 }
 
 export const genBgColorHover: Record<LibColorsHover, string> = {
@@ -122,7 +129,7 @@ export const genBgColorHover: Record<LibColorsHover, string> = {
 	danger: "bg-danger-500 hover:bg-danger-300 active:bg-danger-600",
 	warning: "bg-warning-500 hover:bg-warning-300 active:bg-warning-600",
 	gray: "bg-gray-500 hover:bg-gray-300 active:bg-gray-600",
-	white: "bg-white hover:bg-gray-300 active:bg-gray-100",
+	white: "bg-white hover:bg-gray-300! active:bg-gray-100!",
 }
 
 export const genBgColorGhostHover: Record<LibColorsHover, string> = {
@@ -132,7 +139,7 @@ export const genBgColorGhostHover: Record<LibColorsHover, string> = {
 	danger: "bg-danger-50 hover:bg-danger-300 active:bg-danger-100",
 	warning: "bg-warning-50 hover:bg-warning-300 active:bg-warning-100",
 	gray: "bg-gray-50 hover:bg-gray-300 active:bg-gray-100",
-	white: "bg-white hover:bg-gray-300 active:bg-gray-100",
+	white: "bg-white hover:bg-gray-300! active:bg-gray-100!",
 }
 
 export const genBgOverlay: Record<LibOverlays, string> = {

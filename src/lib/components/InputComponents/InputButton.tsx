@@ -7,6 +7,7 @@ export const InputButton: FC<IInputButton> = ({
 	onClick,
 	children,
 	className,
+	disabled,
 }) => {
 	return (
 		<button
@@ -18,6 +19,7 @@ export const InputButton: FC<IInputButton> = ({
 				className,
 			)}
 			type="button"
+			disabled={disabled}
 		>
 			{children}
 		</button>
@@ -28,4 +30,5 @@ interface IInputButton {
 	onClick?: MouseEventHandler<HTMLButtonElement>
 	children?: ReactChildren
 	className?: ClassNames
+	disabled?: boolean
 }

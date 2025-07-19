@@ -62,7 +62,7 @@ export const Avatar: FC<ILibAvatar> = ({
 		return (
 			<Element
 				className={clsx(
-					"relative w-fit h-fit",
+					"inline-block relative w-fit h-fit",
 					"avatar-container",
 					containerClassName,
 				)}
@@ -74,7 +74,7 @@ export const Avatar: FC<ILibAvatar> = ({
 					}
 					color={typeof badge === "object" ? badge.color : "primary"}
 					className={clsx(
-						"top-0 right-0 absolute -translate-y-2 translate-x-2",
+						"top-0 right-0 absolute -translate-y-1 translate-x-1",
 						typeof badge === "object"
 							? badge.className
 							: (undefined as any),

@@ -119,7 +119,7 @@ export const tagPreview: ComponentPreview<ILibTag> = {
 		{
 			name: "variant",
 			type: "string",
-			possibleValues: ["plain", "light", "outline"],
+			possibleValues: ["plain", "outline"],
 			defaultValue: null,
 			description: "Visual variant for the tag styling.",
 			isRequired: false,
