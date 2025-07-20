@@ -6,14 +6,14 @@ export const EsGaFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			viewBox="0 0 640 480"
 			width={width}
 		>
-			<g font-size="12">
+			<g fontSize="12">
 				<path fill="#fff" fillRule="evenodd" d="M0 0h640v480H0z" />
 				<path
 					fill="#09c"
 					d="M640 410.1 91.7-.1H0v68.4L550.4 480H640v-69.8"
 				/>
 			</g>
-			<g font-size="12">
+			<g fontSize="12">
 				<path
 					fill="#005bbf"
 					d="M316.4 352.3c-64 0-62-60.3-62-60.3v-92.8h124V292s2.2 60.3-62 60.3"

@@ -50,7 +50,7 @@ export const ListGroupItem: FC<ILibListGroupItem> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"flex justify-between gap-2 p-2 w-full",
+				"flex justify-between gap-2 bg-background p-2 w-full",
 				!noSeparator &&
 					"[&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-gray-200",
 				"disabled:bg-gray-200 disabled:text-gray-500",

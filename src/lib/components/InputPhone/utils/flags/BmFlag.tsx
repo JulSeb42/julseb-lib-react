@@ -38,7 +38,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#fff"
 				stroke="#00247d"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M465.8 255s-.6-3.9-1.2-6.4c0 0-1.5-3.9 1-6.8l2.8-3.3s1.8-2.4 4-2.7c0 0 2.3 0 2.4-.5.3-.5 2.8-4.5 8.6 0 0 0 1.8-3 4.8-3.6 0 0 3-.8 4.5 1.4 0 0 3.5-2.6 6.4 1.7 0 0 4.1-2.4 7.2 2.3 0 0 4-2 6.4 2.1 2.5 4.3 2 6 2 6l2 6.8 6.5 8-15.2 5.8h-7l-13.7 3.6-24.3 1.9-6.7-8 9.6-8.3z"
 			/>
@@ -52,7 +52,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M417.8 259.5s-3.5-.2-4-3m-6.1-1.8s1.2 0 2.4 1.2c0 0 .7 1.2 1.9 1"
 			/>
@@ -67,7 +67,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M419.7 319.8s-5.2-3.2-2.3-8.7c0 0 .8-1.5 2.3-1.2 0 0 3.3 1 .8 5.5 0 0-1.4 2.9-.8 4.5zm10.5 5.3s-7.4-3.4-5.1-9.2c0 0 .7-2 2.4-1.8 0 0 2.8.2 2.3 4 0 0-.9 3.6.4 7z"
 			/>
@@ -75,14 +75,14 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M435.2 323.6s6-1.4 4.8-7.5c0 0-.6-2.6-3-2.2 0 0-3 .8-1 4.6 0 0 1.1 2.6-.8 5.1z"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="m461.6 196.7 5.7 1.9s5.4 2.3 12.3 0l5.2-2-3.5 5.4v2.9l2.1 3.2s-1.3.6-5.4-2c0 0-4.4-3.4-9.6 0 0 0-3 2-5.4 2l3.5-3.8-1.3-3.5-3.6-4.3z"
 			/>
@@ -100,14 +100,14 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M484.8 204.4s0 .8-.8 1c0 0-1 .3-1.5-.9v-.3c0-.5-.3-2 1.4-3.3 0 0 2.6-2.1 7.6.5a192 192 0 0 0 14.8 7.5s3.1 1.6 7.9 1.8c0 0 6.5.5 9.3-4.1 0 0 2.1-3.5 0-5.8 0 0-.9-1-2.3-.8a3 3 0 0 0-1.8 1.2s-1 1.4.1 2.5c0 0 1.6 1 2.2-1 0 .2.5 1.7-.4 2.9 0 0-4 6-14.9-.1l-14.3-8.1s-7.1-3.7-11.6 2.1c0 0-3.4 4.8 1.1 7.9 0 0 3.4 2 5.4-1.2 0 0 1.8-3.1-1-4.4 0 0-2.4-1.2-3.3 1.2-1 2.4 1.8 3 2 1.3 0 0 0-.4.3 0z"
 			/>
 			<path
 				fill="#e4cb5e"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M428 229.2v-9c0-.8 0-1.2 1.2-2.2 1-.8 2.1-2.3 3.7 1.7 0 0 3.2-3.5 4.2-4 0 0 2-1.5 3.3.7 0 0 1.6-2.6 3-3.2 0 0 3.2-2 3.3 4.2l2.5-2.4s2-1.5 4.2.7c0 0 3.5 3.6 4 4.6 0 0 .8 1 1 2.7 0 0 0 2 1 3 0 0 1.1 1 2.2 1.2 0 0 2.5.1 3.6 2.6 0 0 .3-.5 1.6 11.2v21.5l-14.4 17.1-23.1-6.6-9.2-3.9-2.2-6.6 9-5.9 4.8-13-1.5-9.3-2.2-5.2z"
 			/>
@@ -124,7 +124,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M441.7 310.6s.1-.8-.4-1.6c0 0-.3-.6-.2-1.5M446.7 217.4s0 2.3.7 4c.6 1.6 2.9 4.5 3 5.9"
 			/>
@@ -138,7 +138,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="m443.8 227.4 6 47.8m-4.5-47.9 6.6 44.6m-5.5-44.8 7.8 44.2"
 			/>
@@ -151,7 +151,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="m450.7 225.3 14.1 35.5m-15-35 13.6 37"
 			/>
@@ -162,14 +162,14 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="m451.5 224.8 14.3 32.4m-18.3-30.4 9 43.7"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M520 259c-6.3-3.6-7.7-11.4-7.7-11.4a24.6 24.6 0 0 1 1.6-14.3c4-8.6 11.1-10.3 11.1-10.3s-6.9 4.8-8.8 11.2c0 0-1.4 5.5-.6 10.7.8 5.5.5 4.1 1.8 8.3l2.6 6z"
 			/>
@@ -182,14 +182,14 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M465 256.2s17.6-5.5 28-10m-36.4 20s22-4 37.3-12.8l5.6-3.8"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="m499.5 252.8-6 4.4s-24.5 11.2-43.2 11.6m43.1-3.6S474.6 275 464 275"
 			/>
@@ -203,77 +203,77 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#fff"
 				stroke="#00247d"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M420.6 268.4s.8-3.7 4.3-2.4c0 0 1.2-6 7.7-6.2 6.5-.2 6.8 6.4 6.8 6.8 0 0 2-2.8 5.1-2.5 0 0 5.5-.3 3.6 8.5l1 1.2s4.1-9.9 12.7-7.4c0 0 8.4 2.6 3 10.7 0 0 4.2 5.5 7.6 5 3.6-.5 6.7-1.6 10.2-7.8 3.6-6.2 11.7-7.2 13.7-6.8 2 .3 3.7 1.8 4 3.2 0 0 4.3-14.3 19.8-12.2l6.2 3.3 2.4 1-3.6 10-8.4 19.2-6.6 2-6.8-3.9-2.4 1.2v5.9l-9 6.4-6.2 2.5-6.8 4.8-1.7 4.2s-3.7-1.7-8 0l-1.4-3.6-4-3.7-15.6-7.4-2.7-9-2.9-1.3-3.2 3.6-4.5.6-7-4.8-7.4-21z"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M488.2 198s-6-.2-5.7 6"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M527 263.3c-10.2-3.2-13-14.3-13-14.3a25.5 25.5 0 0 1 1.2-15.5c4.8-11 12.7-11 12.7-11a4 4 0 0 1 4.5 3.2c.4 2.4-1.3 3.3-1.3 3.3-2.7 1.5-4.5-.5-4.5-.5-1.2-1.6-.3-2.9-.3-2.9.7-1 2-.4 2-.4 1.3.2 1 1.6 1 1.6s.4-1.6-1.2-1.8c0 0-3.2-.7-6.8 3.8 0 0-4.7 6.1-4.7 14.1 0 0-.6 14.8 14.7 18.6 0 0-1.6 2.4-4.6 11.1 0 0-3.3 11.2-6.4 17.3 0 0-4.3 8.6-13.9 5.1 0 0-5.6-2.5-5.6-6.5 0 0-.3-3.8 3-4 0 0 3.3-.3 3.3 2.5 0 0 0 3-3.5 2.4 0 0-1.2-.3-1.1-1.5 0 0 .2-1.2 1.8-.6 1.5.6 0 0 0-.1 0 0-.6-.3-1.2 0 0 0-.6 0-.6 1 0 0 0 .6.7 1.1l1.7.2s1 2 3 2.7a8 8 0 0 0 7.1-1.2 10.7 10.7 0 0 0 3-4.3 113.3 113.3 0 0 0 5.2-13.5s1.8-5.7 3.4-8.7z"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M498 291.4s2-.2 2 1.5c0 0-.1 2.4-3.2 1.9 0 0-3-.6-2-4 0 0 .8-2.3 3.6-2 0 0 2.8 0 4 3.8 0 0 1 3.3-.7 6-1.8 3-6.2 5-8.4 6 0 0-8.7 3.3-11.3 5.3 0 0-4 2.9-2.2 5.6 0 0 .7 1.1 1.7 1.1 0 0 1.2 0 1.3-1.2 0 0 0 .7-.7 1 0 0-.8.4-1.7-.3 0 0-1-1-.2-2.4 0 0 1-1.6 3.6-.6 0 0 2 1.1 1.2 3.3 0 0-.9 2.1-3.4 2 0 0-1.9 0-3.2-1.2-2-2.1-2-6-.2-8 0 0 1.5-2.1 4.7-3.6l9-3.5c2.6-1.1 4.9-2.3 6.4-4.1 0 0 1.3-1.4 1.8-4 0 0 .4-2-.8-2.4l-1.2-.3z"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M498.2 291.4s2.1-.4 3.5 2.2c0 0 .7 1.5.8 2.5m.7-9s-2.1.3-1 3.4c1.1 2.9 3 3.7 3.5 4.2"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M461.6 204.4s0 .8 1 1c0 0 .8.2 1.3-.9v-.3c0-.5.3-2-1.2-3.3 0 0-2.8-2.1-7.8.5 0 0-4 2-6.7 3.6 0 0-7.1 3.8-8 4 0 0-3.2 1.6-8 1.8 0 0-6.5.5-9.2-4.1 0 0-2.2-3.5 0-5.8 0 0 .8-1 2.2-.8.6.1 1.2.4 1.8 1.2 0 0 1 1.4-.1 2.5 0 0-1.6 1-2.2-1 0 .2-.3 1.6.5 3 0 0 4 5.9 14.8-.3l14.3-8s7.2-3.7 11.6 2c0 0 3.4 4.8-1 8 0 0-3.3 2-5.5-1.2 0 0-1.6-3 1-4.4 0 0 2.4-1.2 3.5 1.2 1 2.4-2 3-2.2 1.3 0 0 0-.4-.1 0zm-35.2 54.7c6.3-3.5 7.8-11.5 7.8-11.5 1.4-8-1.7-14.3-1.7-14.3-4-8.6-11-10.3-11-10.3s6.8 4.8 8.7 11.2c0 0 1.6 5.5.6 10.7-.8 5.5-.5 4.1-1.8 8.3z"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M458.4 198s6-.2 5.6 6"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M419.3 263.3c10.3-3.2 13-14.3 13-14.3a25.5 25.5 0 0 0-1.1-15.5c-4.8-11-12.7-11-12.7-11a4 4 0 0 0-4.5 3.2c-.3 2.4 1.3 3.3 1.3 3.3 2.8 1.5 4.6-.5 4.6-.5 1.1-1.6.2-2.9.2-2.9-.7-1-2-.4-2-.4-1.2.2-1 1.6-1 1.6s-.3-1.6 1.2-1.8c0 0 3.2-.7 6.8 3.8 0 0 4.8 6.1 4.8 14.1 0 0 .6 14.8-14.8 18.6 0 0 1.7 2.4 4.6 11.1 0 0 3.4 11.2 6.6 17.3 0 0 4.2 8.6 13.7 5.1 0 0 5.6-2.5 5.6-6.5 0 0 .4-3.8-3-4 0 0-3.3-.3-3.3 2.5 0 0 0 3 3.6 2.4 0 0 1.2-.3 1-1.5 0 0-.2-1.2-1.7-.6-1.6.6 0 0 0-.1 0 0 .5-.3 1.1 0 0 0 .6 0 .6 1 0 0 0 .6-.7 1.1l-1.5.2s-1 2-3.2 2.7a7.5 7.5 0 0 1-7-1.2 10.7 10.7 0 0 1-3-4.3 113.5 113.5 0 0 1-5.3-13.5s-1.8-5.7-3.2-8.7l-.6-1.2z"
 			/>
 			<path
 				fill="#f5ce00"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M448.5 291.4s-2-.2-2 1.5c0 0 0 2.4 3.2 1.9 0 0 3-.6 1.9-4 0 0-.7-2.3-3.6-2 0 0-2.7 0-4 3.8 0 0-.9 3.3.8 6 1.8 3 6.2 5 8.3 6 0 0 8.7 3.3 11.4 5.3 0 0 3.9 2.9 2.1 5.6 0 0-.6 1.1-1.7 1.1 0 0-1.2 0-1.3-1.2 0 0 0 .7.7 1 0 0 .9.4 1.7-.3 0 0 1-1 .2-2.4 0 0-1-1.6-3.4-.6 0 0-2.2 1.1-1.2 3.3 0 0 .7 2.1 3.2 2 0 0 2 0 3.2-1.2 2-2.1 2-6 .4-8 0 0-1.7-2.1-4.8-3.6-1.9-.6-5.5-2.1-9-3.5-2.7-1.1-5-2.3-6.5-4.1 0 0-1.3-1.4-1.8-4 0 0-.3-2 .9-2.4l1.2-.3z"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M448.2 291.4s-2.1-.4-3.4 2.2c0 0-.7 1.5-.9 2.5m-.7-9s2.2.3 1.1 3.4c-1.2 2.9-3 3.7-3.6 4.2m27.4-91.1s5.2-3.3 10.4.3M438.8 235.2s.7-3-2.6-8c0 0-2.2-4.7-3.2-7.5m7.4-3.3 2.3 6.6 3 6.8"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M441.2 238.3s2 2.1 1.8 5.6m-8.1-7.9s2.1 1 1.9 6.8c0 0-.1 4 3 6.2m-5.3 1.4s6.7-.7 7.2 3.5c0 0 0 4 2.4 4.3 0 0 3.3.3 4 3.6m-11.4-6.8s1.2 1.7 2.4 2.6m6.2-7s1.6 2.7 2 4.1m5.3-35s1.6 2.1 3.1 3m3.1 9.6s3.4 1.6 3 10c0 0-.6 5 .9 7.7"
 			/>
@@ -286,7 +286,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M464.7 258.5s20.6-6 28.6-9.6"
 			/>
@@ -299,35 +299,35 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="m463.4 220.1 6.8 33.3m-5.6-33.6 7.7 33m-6.4-33.6 8.4 32.9m-5-34.1 11.5 24.6m-10-25 12.3 24.2M471.8 217l13.4 24.3m-15.5 12.4 5.2-1.6m-9.1-1.6s15.2-4.5 27-9.2M465.4 252s19.5-5 27.2-8.8m-21.2 24.6 1 3.3 2.8-1-1-3.1m5-1.3 1 3 2.8-.9-1-3m-16-17.6-.2-4.2 25.5-7.7 1.3 3.6m-16 .8 1.3 3.8m7.6-6.4 1.6 3.6m.5-4.3 1.6 3.3m.4-4 1.6 3.6m0-4 2.8-1.6 1.2 3.1m-2.6-2.3 1.4 3.3"
 			/>
 			<path
 				fill="none"
 				stroke="#00247d"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M429.5 283.1s-5-5.1 0-10c0 0-5.5-2.6-4.6-7m13.6 21s-5.3.7-3.7-9.4c0 0-2.2 4-2.9 6a4.7 4.7 0 0 0 2 5.4c.9.6 5.5 1.8 7-1.2m-8.3-16.2s-2.1 1.9-.6 5.4m2.8-5s.2 3.5 2 5.4m-.5-6.7s0 4 2.9 6.6m-1.5-8s0 4.5 3.4 7.4m13.5-.7s1.6-3.9 5.2-3.6c0 0-1.7.8-1.7 2.5 0 0-.2 3 2.9 3.2 0 0 2.5.4 3.8-1"
 			/>
 			<path
 				fill="none"
 				stroke="#00247d"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M463.1 293.1s-8.9-4.2-8-10.1c0 0 .4-3.6 4-5.4m-2 3.8s-.8 2.5 1 4.3m1.1-6s-1.2 2.8.7 4.8m1.5-6.3s-1.4 2.4.2 4.5m-8.4 11s4.8 4.3 8.6 4.3m-10.1-2.9s4.5 3.6 7.4 4.2m-9-3.2s5.5 4.9 9 5.2m13.7 4.6s-5.5 3-1.2 6.2m-2.4-9.4 9-4.6m-6.7 6.2s9-5.5 11.7-6.7m-7 7.2s7.7-5.2 11.9-7.5m-6.8 7.1s5.3-4 10.5-7.1m1.7-5.1s-2.6-3.9-11.2 0c0 0 3.3-2.9 9.5-5.2m8.5-16.3s.8 3.1 0 5"
 			/>
 			<path
 				fill="none"
 				stroke="#00247d"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M486.5 285.7s1.8-2.6 6.3-4c0 0 1.2 3 4.8 2.5 0 0 5.2-1.1 3.6-7 0 0-1.1-4.2-7.2-4.7m18.1-7.3s6.1 1.2 6 6.1c0 0 .6 7.6-7.4 9m6.6-12s1.6-3.7 5.5-5.2m-4.6-2.2s1.7 2.8 2.8 3.1m-3.6-1s1.5 2.1 2 2.5m-2.6-.5a8 8 0 0 0 1.5 1.6M485 235.8s1.2-2 4.3-1.2m12.1 15.8s2-7.8 8.5-5m-2.6-.6s.6-3.6-1-5.5m-3.6 5.2s.9 1.5.1 2.7"
 			/>
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M516.2 325s7.4-3.3 5.1-9.1c0 0-.7-2-2.4-1.8 0 0-2.8.1-2.3 4 0 0 1 3.8-.5 7z"
 			/>
@@ -338,7 +338,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M526.7 319.8s5.2-3.2 2.4-8.7c0 0-.9-1.5-2.4-1.2 0 0-3.2 1-.7 5.5 0 0 1.2 2.9.7 4.5z"
 			/>
@@ -349,7 +349,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M511 323.6s-5.8-1.4-4.7-7.5c0 0 .6-2.6 3.1-2.2 0 0 3 .8 1 4.6 0 0-1.1 2.6.7 5.1z"
 			/>
@@ -361,7 +361,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M504.8 310.6s-.3-.8.3-1.6c0 0 .4-.6.2-1.5m23.4-48s3.5-.2 4-3m6-1.8s-1.2 0-2.2 1.2c0 0-.9 1.2-2 1"
 			/>
@@ -369,7 +369,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M526 205.6s.8-1.2.5-4.4c-.4-3.2 2.6-3.7 3.6-2.8 0 0 1.2 1 0 3.1a8.3 8.3 0 0 1-4.1 4.1z"
 			/>
@@ -380,7 +380,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M525.1 204.4s0-1.4-2.3-3.6c-2.4-2.4-.5-4.4 1-4.4 0 0 1.3 0 2 2.3a8.3 8.3 0 0 1-.7 5.7z"
 			/>
@@ -391,7 +391,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M522 203.3s-.7-1-3.5-2.1c-2.9-1-2.2-3.5-1-4 0 0 1.3-.5 2.6 1.1a7.6 7.6 0 0 1 1.8 5z"
 			/>
@@ -402,7 +402,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M523.7 204.4s-1.3.5-4.4-1c-3.1-1.5-4.4 1.1-3.8 2.3 0 0 .5 1.6 2.8 1.2a8.3 8.3 0 0 0 5.4-2.4z"
 			/>
@@ -413,21 +413,21 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M519.3 194.7s1.4.8 1.2 2.5"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M526 195s.6 1.9 0 3"
 			/>
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M420.2 205.6s-.8-1.2-.5-4.4c.4-3.4-2.5-3.7-3.5-2.8 0 0-1.2 1-.2 3.1a8.3 8.3 0 0 0 4.2 4.1z"
 			/>
@@ -438,7 +438,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M421.2 204.4s0-1.4 2.4-3.6c2.3-2.4.4-4.4-1-4.4 0 0-1.6 0-2 2.3a8.3 8.3 0 0 0 .6 5.7z"
 			/>
@@ -449,7 +449,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M424.3 203.3s.6-1 3.5-2.1c2.8-1 2-3.5.9-4 0 0-1.2-.5-2.6 1.1a7.6 7.6 0 0 0-1.8 5z"
 			/>
@@ -460,7 +460,7 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="#64b4d1"
 				stroke="#00247d"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M422.5 204.4s1.4.5 4.4-1c3-1.5 4.4 1.1 4 2.3 0 0-.7 1.6-3 1.2a8.3 8.3 0 0 1-5.4-2.4z"
 			/>
@@ -471,14 +471,14 @@ export const BmFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="2.6"
+				strokeMiterlimit="2.6"
 				strokeWidth="1.2"
 				d="M427 194.7s-1.5.8-1.2 2.5"
 			/>
 			<path
 				fill="none"
 				stroke="#000"
-				stroke-miterlimit="10"
+				strokeMiterlimit="10"
 				strokeWidth="1.2"
 				d="M420.2 195s-.6 1.9 0 3"
 			/>

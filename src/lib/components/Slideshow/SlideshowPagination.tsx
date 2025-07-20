@@ -40,7 +40,7 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 								"slideshow-thumbnail-container",
 							)}
 							onClick={() => setActive(i)}
-							key={image}
+							key={i}
 						>
 							<img
 								src={image}

@@ -2,6 +2,7 @@ import { type FC } from "react"
 import { BiX } from "react-icons/bi"
 import { Text } from "../Text"
 import { Loader } from "../Loader"
+import { useLibTheme } from "../../context"
 import { clsx, genRingColor, genTextColorHover } from "../../utils"
 import { genToastColors } from "./utils"
 import type { ILibToast } from "./types"
@@ -51,12 +52,14 @@ export const Toast: FC<ILibToast> = ({
 }) => {
 	const Element = element
 
+	const { theme } = useLibTheme()
+
 	return (
 		<Element
 			ref={ref}
 			className={clsx(
-				"relative p-3 border rounded-lg w-full max-w-[400px] overflow-hidden text-black",
-				genToastColors[status],
+				"relative p-3 border rounded-lg w-full max-w-[400px] overflow-hidden text-font",
+				genToastColors(theme)[status],
 				"toast",
 				className,
 			)}

@@ -101,8 +101,8 @@ export const InputCounter: FC<ILibInputCounter> = ({
 					color={buttonsColor}
 					variant={buttonVariant}
 					aria-label={labelButtons?.minus}
-					tooltip={labelButtons?.minus}
-					showTooltip={showButtonsTooltip}
+					tooltip={labelButtons?.minus ?? "Minus"}
+					showTooltip={showButtonsTooltip && { offset: "xs" }}
 					onClick={() => setValue(prev => prev - step)}
 					disabled={value === min}
 				/>
@@ -133,8 +133,8 @@ export const InputCounter: FC<ILibInputCounter> = ({
 					color={buttonsColor}
 					variant={buttonVariant}
 					aria-label={labelButtons?.plus}
-					tooltip={labelButtons?.plus}
-					showTooltip={showButtonsTooltip}
+					tooltip={labelButtons?.plus ?? "Plus"}
+					showTooltip={showButtonsTooltip && { offset: "xs" }}
 					onClick={() => setValue(prev => prev + step)}
 					disabled={value === max}
 				/>

@@ -14,7 +14,15 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 	additionalTypeImports: [],
 	extends: ["HTMLInputElement"],
 	previews: [
-		{ previewTitle: "Default", demo: <Preview /> },
+		{
+			previewTitle: "Default",
+			demo: (
+				<Preview
+					showButtonsTooltip
+					// labelButtons={{ minus: "Minus", plus: "Plus" }}
+				/>
+			),
+		},
 		{ previewTitle: "No input", demo: <Preview noInput /> },
 	],
 	props: [

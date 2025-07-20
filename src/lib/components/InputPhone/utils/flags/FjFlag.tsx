@@ -7,7 +7,7 @@ export const FjFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			width={width}
 		>
 			<path fill="#68bfe5" d="M0 0v480h640V0H0z" />
-			<g stroke-miterlimit="4.8">
+			<g strokeMiterlimit="4.8">
 				<path
 					fill="#fff"
 					d="M420.9 193.2v136.4c0 44.6 80.6 71 80.6 71s80.5-26.4 80.5-71V193.2z"
@@ -17,7 +17,7 @@ export const FjFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					d="M490.3 241.2v61.4h-69.4v22.3h69.4v71.5l11.2 4.3 11.1-4.3V325H582v-22.4h-69.4v-61.4z"
 				/>
 				<path fill="#d21034" d="M420.9 193.2H582V246H420.8z" />
-				<g stroke-miterlimit="3">
+				<g strokeMiterlimit="3">
 					<g
 						fill="#fff"
 						stroke="#000"

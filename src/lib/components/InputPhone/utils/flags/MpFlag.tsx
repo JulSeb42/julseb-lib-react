@@ -424,7 +424,7 @@ export const MpFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 				<path
 					fill="#fff"
 					stroke="#000"
-					stroke-dashoffset="1"
+					strokeDashoffset="1"
 					strokeLinecap="square"
 					strokeLinejoin="round"
 					strokeWidth="1.7"

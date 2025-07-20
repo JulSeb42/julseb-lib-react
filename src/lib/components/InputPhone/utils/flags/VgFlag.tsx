@@ -9,8 +9,8 @@ export const VgFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 		>
 			<defs>
 				<linearGradient id="a">
-					<stop offset="0" stop-color="red" />
-					<stop offset="1" stop-color="#ff0" />
+					<stop offset="0" stopColor="red" />
+					<stop offset="1" stopColor="#ff0" />
 				</linearGradient>
 				<linearGradient
 					id="b"
@@ -21,8 +21,8 @@ export const VgFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientTransform="matrix(.99614 0 0 2.25255 703.8 -75)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="red" />
-					<stop offset="1" stop-color="#ff0" />
+					<stop offset="0" stopColor="red" />
+					<stop offset="1" stopColor="#ff0" />
 				</linearGradient>
 			</defs>
 			<path fill="#006" d="M0 0h640v480H0Z" />

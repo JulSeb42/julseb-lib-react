@@ -101,7 +101,7 @@ export const Paginator: FC<ILibPaginator> = ({
 						min={1}
 						max={totalPages}
 						className={clsx(
-							"px-2 border border-gray-200 rounded-md outline-none w-[calc(2ch+20px)]",
+							"bg-background px-2 border border-gray-200 rounded-md outline-none w-[calc(2ch+20px)]",
 							"focus:border-primary-500",
 							"[&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [appearance:textfield]",
 							"paginator-input",

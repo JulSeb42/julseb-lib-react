@@ -8,18 +8,10 @@ import type { ComponentPreview } from "../../../../data/components"
 const Preview: FC<ILibBreadcrumbs> = props => {
 	return (
 		<Breadcrumbs {...props}>
-			<Text>
-				<Link to="/">Home</Link>
-			</Text>
-			<Text>
-				<Link to="#">Page</Link>
-			</Text>
-			<Text>
-				<Link to="#">Page</Link>
-			</Text>
-			<Text>
-				<Link to="#">Page</Link>
-			</Text>
+			<Link to="/">Home</Link>
+			<Link to="#">Page</Link>
+			<Link to="#">Page</Link>
+			<Link to="#">Page</Link>
 			<Text>Current page</Text>
 		</Breadcrumbs>
 	)
@@ -46,9 +38,33 @@ export const breadcrumbsPreview: ComponentPreview<ILibBreadcrumbs> = {
 		{
 			name: "separator",
 			type: "ReactNode",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "/",
 			description: "Separator to display between breadcrumb items.",
+			isRequired: false,
+		},
+		{
+			name: "accentColor",
+			type: "string",
+			possibleValues: [
+				"primary",
+				"secondary",
+				"success",
+				"danger",
+				"warning",
+				"gray",
+				"white",
+			],
+			defaultValue: "primary",
+			description: "Accent color for the breadcrumb links.",
+			isRequired: false,
+		},
+		{
+			name: "textColor",
+			type: "string",
+			possibleValues: "Any color from the library",
+			defaultValue: "font",
+			description: "Text color for the breadcrumb items.",
 			isRequired: false,
 		},
 	],

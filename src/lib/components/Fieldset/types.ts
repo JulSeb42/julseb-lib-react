@@ -8,7 +8,10 @@ export type ILibFieldset = Omit<
 	LibComponentBase<HTMLFieldSetElement>,
 	"element"
 > &
-	Omit<ILibInputCommon, "inputBackground" | "inputVariant"> &
+	Omit<
+		ILibInputCommon,
+		"inputBackground" | "inputVariant" | "label" | "labelComment" | "helper"
+	> &
 	ILibInputWithValidation & {
 		legend: string
 		borderRadius?: LibRadiuses

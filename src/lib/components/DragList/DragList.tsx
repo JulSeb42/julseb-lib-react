@@ -80,7 +80,7 @@ export const DragList: FC<ILibDragList> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"flex flex-col items-stretch gap-3 p-3 border border-gray-200 rounded-md w-full",
+				"flex flex-col items-stretch gap-3 bg-background p-3 border border-gray-200 rounded-md w-full",
 				"drag-list",
 				className,
 			)}

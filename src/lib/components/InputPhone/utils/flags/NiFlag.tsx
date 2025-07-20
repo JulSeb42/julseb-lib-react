@@ -16,9 +16,9 @@ export const NiFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="283.4"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="#510000" />
-					<stop offset=".3" stop-color="#8a0000" />
-					<stop offset="1" stop-color="#a00" />
+					<stop offset="0" stopColor="#510000" />
+					<stop offset=".3" stopColor="#8a0000" />
+					<stop offset="1" stopColor="#a00" />
 				</linearGradient>
 				<linearGradient
 					id="g"
@@ -28,8 +28,8 @@ export const NiFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="287.4"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="#ff2a2a" />
-					<stop offset="1" stop-color="red" />
+					<stop offset="0" stopColor="#ff2a2a" />
+					<stop offset="1" stopColor="red" />
 				</linearGradient>
 				<linearGradient
 					id="b"
@@ -39,13 +39,13 @@ export const NiFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="317.6"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="#F5F549" />
-					<stop offset="1" stop-color="#97C924" />
+					<stop offset="0" stopColor="#F5F549" />
+					<stop offset="1" stopColor="#97C924" />
 				</linearGradient>
 				<linearGradient id="a">
-					<stop offset="0" stop-color="#025" />
-					<stop offset=".5" stop-color="#04a" />
-					<stop offset="1" stop-color="#025" />
+					<stop offset="0" stopColor="#025" />
+					<stop offset=".5" stopColor="#04a" />
+					<stop offset="1" stopColor="#025" />
 				</linearGradient>
 				<linearGradient
 					xlinkHref="#a"

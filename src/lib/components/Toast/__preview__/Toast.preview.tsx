@@ -10,7 +10,7 @@ const Preview = () => {
 				onClick={() =>
 					toast.success("Success", {
 						body: "Body",
-						duration: 1000,
+						duration: 5000,
 					})
 				}
 			>

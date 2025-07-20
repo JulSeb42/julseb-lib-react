@@ -59,8 +59,8 @@ export const FkFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientUnits="userSpaceOnUse"
 				/>
 				<linearGradient id="a">
-					<stop offset="0" stop-color="#a43907" />
-					<stop offset="1" stop-color="#fff" />
+					<stop offset="0" stopColor="#a43907" />
+					<stop offset="1" stopColor="#fff" />
 				</linearGradient>
 				<linearGradient
 					xlinkHref="#a"

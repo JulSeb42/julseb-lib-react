@@ -27,6 +27,12 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 				borderRadius: "2xl",
 				controls: { color: "white" },
 			},
+			// demo: (
+			// 	<div className="aspect-video">
+			// 		{/*  [&_.slides-wrapper]:h-[600px] */}
+			// 		<Slideshow images={images} />
+			// 	</div>
+			// ),
 		},
 		{
 			previewTitle: "With thumbnails",

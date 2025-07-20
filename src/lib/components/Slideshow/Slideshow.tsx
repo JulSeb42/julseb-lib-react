@@ -7,6 +7,7 @@ import {
 	type TouchEvent,
 } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { Image } from "../Image"
 import { clsx, genObjectFit, genBorderRadius } from "../../utils"
 import { SlideshowButton } from "./SlideshowButton"
 import { SlideshowPagination } from "./SlideshowPagination"
@@ -209,7 +210,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"relative flex flex-col gap-2",
+				"relative flex flex-col gap-2 aspect-video",
 				"slideshow",
 				className,
 			)}
@@ -217,7 +218,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 		>
 			<div
 				className={clsx(
-					"relative w-full h-full overflow-hidden",
+					"relative size-full overflow-hidden",
 					"slides-wrapper",
 				)}
 				onTouchStart={handleTouchStart}
@@ -238,7 +239,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 				<div
 					ref={slidesRef}
 					className={clsx(
-						"z-0 relative flex h-full transition-transform duration-300 ease-in-out",
+						"z-0 relative flex size-full transition-transform duration-300 ease-in-out",
 						"slides-container",
 						isDragging && "transition-none",
 					)}
@@ -249,33 +250,27 @@ export const Slideshow: FC<ILibSlideshow> = ({
 				>
 					{images
 						? images.map((img, i) => (
-								<div
+								<Image
 									key={uuid()}
+									src={img}
+									alt={`Slideshow image ${i + 1}`}
 									className={clsx(
-										"flex w-full h-full overflow-hidden shrink-0",
-										"slideshow-images-container",
-										borderRadius &&
-											genBorderRadius[borderRadius],
+										"size-full shrink-0",
+										genObjectFit[imgFit],
+										"slideshow-image",
 									)}
-								>
-									<img
-										key={uuid()}
-										src={img}
-										alt={`Slideshow image ${i + 1}`}
-										className={clsx(
-											"w-full h-full",
-											genObjectFit[imgFit],
-											"slideshow-image",
-										)}
-										draggable={false}
-									/>
-								</div>
+									width="100%"
+									height="100%"
+									fit="cover"
+									borderRadius={borderRadius}
+									draggable={false}
+								/>
 							))
 						: childrenArray.map(child => (
 								<div
 									key={uuid()}
 									className={clsx(
-										"w-full h-full shrink-0",
+										"size-full shrink-0",
 										"slideshow-images-container",
 										borderRadius &&
 											genBorderRadius[borderRadius],

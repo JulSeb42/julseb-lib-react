@@ -42,7 +42,7 @@ export const Key: FC<ILibKey> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"justify-self-start self-start border text-black",
+				"justify-self-start self-start border text-font",
 				genBorderRadius[size],
 				genFontSize[size],
 				genPadding[size],

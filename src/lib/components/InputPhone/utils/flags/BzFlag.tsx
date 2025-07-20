@@ -9,12 +9,12 @@ export const BzFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 		>
 			<defs>
 				<radialGradient id="a">
-					<stop offset="0" stop-color="#ffef5d" />
-					<stop offset="1" stop-color="#ea5700" />
+					<stop offset="0" stopColor="#ffef5d" />
+					<stop offset="1" stopColor="#ea5700" />
 				</radialGradient>
 				<radialGradient id="b">
-					<stop offset="0" stop-color="#952d1a" />
-					<stop offset="1" stop-color="#570a00" />
+					<stop offset="0" stopColor="#952d1a" />
+					<stop offset="1" stopColor="#570a00" />
 				</radialGradient>
 				<radialGradient
 					xlinkHref="#a"

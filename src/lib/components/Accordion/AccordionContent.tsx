@@ -42,7 +42,7 @@ export const AccordionContent: FC<ILibAccordionContent> = ({
 			className={clsx(
 				"overflow-hidden transition-all duration-200 ease",
 				"py-0 max-h-0 opacity-0",
-				variant === "rounded" && "px-2",
+				variant === "rounded" && "px-2 bg-background",
 				isOpen && "open py-2 max-h-auto opacity-100",
 				"accordion-content",
 				className,

@@ -9,8 +9,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 		>
 			<defs>
 				<radialGradient id="a">
-					<stop offset=".2" stop-color="#f9f0aa" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#f9f0aa" />
+					<stop offset="1" stopColor="#b07e09" />
 				</radialGradient>
 				<radialGradient
 					xlinkHref="#b"
@@ -21,8 +21,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientUnits="userSpaceOnUse"
 				/>
 				<radialGradient id="b">
-					<stop offset=".2" stop-color="#f9f0aa" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#f9f0aa" />
+					<stop offset="1" stopColor="#b07e09" />
 				</radialGradient>
 				<radialGradient
 					xlinkHref="#b"
@@ -63,8 +63,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					r=".3"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".3" stop-color="#a50a0a" />
-					<stop offset="1" stop-color="#4c0505" />
+					<stop offset=".3" stopColor="#a50a0a" />
+					<stop offset="1" stopColor="#4c0505" />
 				</radialGradient>
 				<radialGradient
 					id="o"
@@ -76,8 +76,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientTransform="scale(.97707 1.02346)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="#fff" />
-					<stop offset="1" stop-color="#fff" stop-opacity="0" />
+					<stop offset="0" stopColor="#fff" />
+					<stop offset="1" stopColor="#fff" stopOpacity="0" />
 				</radialGradient>
 				<linearGradient
 					id="i"
@@ -87,8 +87,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="232"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stop-color="#b07e09" stop-opacity="0" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#b07e09" stopOpacity="0" />
+					<stop offset="1" stopColor="#b07e09" />
 				</linearGradient>
 				<linearGradient
 					id="j"
@@ -98,8 +98,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="326.6"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stop-color="#b07e09" stop-opacity="0" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#b07e09" stopOpacity="0" />
+					<stop offset="1" stopColor="#b07e09" />
 				</linearGradient>
 				<linearGradient
 					id="l"
@@ -109,8 +109,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="240.6"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stop-color="#f9f0aa" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#f9f0aa" />
+					<stop offset="1" stopColor="#b07e09" />
 				</linearGradient>
 				<linearGradient
 					id="m"
@@ -120,8 +120,8 @@ export const GtFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					y2="270.4"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset=".2" stop-color="#f9f0aa" />
-					<stop offset="1" stop-color="#b07e09" />
+					<stop offset=".2" stopColor="#f9f0aa" />
+					<stop offset="1" stopColor="#b07e09" />
 				</linearGradient>
 			</defs>
 			<path fill="#4997d0" d="M0 0h640v480H0Z" />

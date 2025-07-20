@@ -1,7 +1,15 @@
 import { toast as toastFn, type ToastOptions } from "react-toastify"
 import { Toast } from "./Toast"
 import type { ILibToast } from "./types"
-import type { LibLoaderVariant, ReactElement } from "../../types"
+import type { CSSProperties, LibLoaderVariant, ReactElement } from "../../types"
+
+const COMMON_STYLES: CSSProperties = {
+	padding: 0,
+	height: "unset",
+	minHeight: "unset",
+	overflow: "hidden",
+	borderRadius: "var(--radius-lg)",
+}
 
 /**
  * Toast utility functions for displaying different types of notification messages with customizable options and automatic styling.
@@ -60,12 +68,7 @@ export const toast = {
 				...options,
 				icon: false,
 				closeButton: false,
-				style: {
-					padding: 0,
-					height: "unset",
-					minHeight: "unset",
-					overflow: "hidden",
-				},
+				style: COMMON_STYLES,
 				autoClose: options?.duration,
 				className: "!relative !overflow-hidden",
 				progressClassName: "!bg-success-500 absolute !left-0 !bottom-0",
@@ -98,12 +101,7 @@ export const toast = {
 				...options,
 				icon: false,
 				closeButton: false,
-				style: {
-					padding: 0,
-					height: "unset",
-					minHeight: "unset",
-					overflow: "hidden",
-				},
+				style: COMMON_STYLES,
 				hideProgressBar: false,
 				autoClose: options?.duration,
 				className: "!relative !overflow-hidden",
@@ -137,12 +135,7 @@ export const toast = {
 				...options,
 				icon: false,
 				closeButton: false,
-				style: {
-					padding: 0,
-					height: "unset",
-					minHeight: "unset",
-					overflow: "hidden",
-				},
+				style: COMMON_STYLES,
 				hideProgressBar: false,
 				autoClose: options?.duration,
 				className: "!relative !overflow-hidden",
@@ -176,12 +169,7 @@ export const toast = {
 				...options,
 				icon: false,
 				closeButton: false,
-				style: {
-					padding: 0,
-					height: "unset",
-					minHeight: "unset",
-					overflow: "hidden",
-				},
+				style: COMMON_STYLES,
 				hideProgressBar: false,
 				autoClose: options?.duration,
 				className: "!relative !overflow-hidden",
@@ -220,12 +208,7 @@ export const toast = {
 				...options,
 				icon: false,
 				closeButton: false,
-				style: {
-					padding: 0,
-					height: "unset",
-					minHeight: "unset",
-					overflow: "hidden",
-				},
+				style: COMMON_STYLES,
 				hideProgressBar: false,
 				autoClose: options?.duration,
 				className: "!relative !overflow-hidden",

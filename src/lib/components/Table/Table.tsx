@@ -64,7 +64,7 @@ export const Table: FC<ILibTable> = ({
 		<table
 			ref={ref}
 			className={clsx(
-				"table w-full h-[1px] border-collapse border-spacing-0 table-fixed",
+				"table bg-background w-full h-[1px] border-collapse border-spacing-0 table-fixed",
 				TEXT_BASE_CLASSES,
 				"text-(length:--font-size-small)",
 				genLinkColor["primary"],

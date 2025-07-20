@@ -43,9 +43,6 @@ export const Fieldset: FC<ILibFieldset> = ({
 	className,
 	ref,
 	children,
-	label,
-	labelComment,
-	helper,
 	helperBottom,
 	id,
 	validation,
@@ -56,9 +53,6 @@ export const Fieldset: FC<ILibFieldset> = ({
 }) => {
 	return (
 		<InputContainer
-			label={label}
-			labelComment={labelComment}
-			helper={helper}
 			helperBottom={helperBottom}
 			id={id}
 			validation={validation}

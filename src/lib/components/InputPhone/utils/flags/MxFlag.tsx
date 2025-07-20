@@ -36,8 +36,8 @@ export const MxFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientUnits="userSpaceOnUse"
 				/>
 				<linearGradient id="a">
-					<stop offset="0" stop-color="#fff" />
-					<stop offset="1" stop-color="#f15770" />
+					<stop offset="0" stopColor="#fff" />
+					<stop offset="1" stopColor="#f15770" />
 				</linearGradient>
 			</defs>
 			<path fill="#ce1126" d="M426.7 0H640v480H426.7z" />

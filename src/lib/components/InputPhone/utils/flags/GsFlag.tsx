@@ -9,12 +9,12 @@ export const GsFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 		>
 			<defs>
 				<linearGradient id="b">
-					<stop offset="0" stop-color="#d5dfff" />
-					<stop offset="1" stop-color="#fff" />
+					<stop offset="0" stopColor="#d5dfff" />
+					<stop offset="1" stopColor="#fff" />
 				</linearGradient>
 				<linearGradient id="a">
-					<stop offset="0" stop-color="#474747" />
-					<stop offset="1" stop-color="#f50" />
+					<stop offset="0" stopColor="#474747" />
+					<stop offset="1" stopColor="#f50" />
 				</linearGradient>
 				<linearGradient
 					xlinkHref="#a"
@@ -35,8 +35,8 @@ export const GsFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 					gradientTransform="matrix(.96067 0 0 .6235 388 38.3)"
 					gradientUnits="userSpaceOnUse"
 				>
-					<stop offset="0" stop-color="#b50000" />
-					<stop offset="1" stop-color="#ffc500" />
+					<stop offset="0" stopColor="#b50000" />
+					<stop offset="1" stopColor="#ffc500" />
 				</linearGradient>
 				<linearGradient
 					xlinkHref="#b"

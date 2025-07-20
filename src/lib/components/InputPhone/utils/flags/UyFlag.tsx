@@ -15,7 +15,7 @@ export const UyFlag: FC<{ width?: number }> = ({ width = 16 }) => {
 			<g
 				fill="#fcd116"
 				stroke="#000"
-				stroke-miterlimit="20"
+				strokeMiterlimit="20"
 				strokeWidth=".6"
 				transform="translate(133.3 133.3) scale(2.93333)"
 			>
