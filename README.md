@@ -30,7 +30,7 @@ npm install @julseb-lib/react
 yarn add @julseb-lib/react
 
 # pnpm
-pnpm add @julseb-lib/react
+pnpm install @julseb-lib/react
 ```
 
 ## Type Exports

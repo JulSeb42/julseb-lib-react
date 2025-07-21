@@ -1,6 +1,12 @@
 import { Children, Fragment, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
-import { clsx, genTextAllColor } from "../../utils"
+import { Text } from "../Text"
+import {
+	clsx,
+	genButtonColor,
+	genLinkColor,
+	genTextAllColor,
+} from "../../utils"
 import type { ILibFooter } from "./types"
 
 /**
@@ -28,11 +34,12 @@ import type { ILibFooter } from "./types"
  * @prop {React.ReactNode} [props.children] - Child elements to display in the footer links section.
  * @prop {boolean} [props.hideSeparator] - Whether to hide the top border separator line.
  * @prop {boolean} [props.hideLinksSeparator] - Whether to hide separators between footer links.
- * @prop {"dot" | "dash"} [props.linksSeparator="dot"] - Type of separator to display between links.
+ * @prop {"dot" | "dash"} [props.linksSeparator="dot"] - Type of separator to display between links. Possible values: "dot", "dash". Default: "dot".
  * @prop {Array<React.ReactNode>} [props.items] - Array of footer link items to display.
  * @prop {React.ReactNode} [props.logo] - Logo element to display in the footer.
- * @prop {"horizontal" | "vertical"} [props.direction="horizontal"] - Layout direction for footer content.
- * @prop {LibAllColors} [props.linksSeparatorColor="gray-500"] - Color for the separator between links.
+ * @prop {"horizontal" | "vertical"} [props.direction="horizontal"] - Layout direction for footer content. Possible values: "horizontal", "vertical". Default: "horizontal".
+ * @prop {LibAllColors} [props.linksSeparatorColor="gray-500"] - Color for the separator between links. Default: "gray-500".
+ * @prop {LibColorsHover} [props.linksColor="primary"] - Color for the footer links. Default: "primary".
  *
  * @returns {JSX.Element} The rendered Footer component.
  *
@@ -50,6 +57,7 @@ export const Footer: FC<ILibFooter> = ({
 	logo,
 	direction = "horizontal",
 	linksSeparatorColor = "gray-500",
+	linksColor = "primary",
 	...rest
 }) => {
 	const Element = element
@@ -65,12 +73,14 @@ export const Footer: FC<ILibFooter> = ({
 					: "flex-col items-center gap-2",
 				!hideSeparator &&
 					"before:w-[90%] before:h-[1px] before:absolute before:top-0 before:left-[5%] before:bg-gray-200 pt-4",
+				genLinkColor[linksColor],
+				genButtonColor[linksColor],
 				"footer",
 				className,
 			)}
 			{...rest}
 		>
-			{logo}
+			{typeof logo === "string" ? <Text>{logo}</Text> : logo}
 
 			<div className="flex items-container gap-2">
 				{items?.map((item, i) => (

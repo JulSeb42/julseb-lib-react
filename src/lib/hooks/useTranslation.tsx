@@ -43,9 +43,14 @@ export const useTranslation = (translations: TranslateLang) => {
 
 	useEffect(() => {
 		if (window && typeof window !== "undefined") {
-			setLanguage(detectLanguage() ?? "en")
+			if (localStorage.getItem("lang")) {
+				setLanguage(
+					localStorage.getItem("lang")?.split("-")[0].toLowerCase() ??
+						"en",
+				)
+			}
 		}
-	}, [language])
+	}, [])
 
 	const translate = (key: string) => translations?.[language!]?.[key]
 

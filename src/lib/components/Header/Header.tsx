@@ -51,7 +51,7 @@ import type { ILibHeader } from "./types"
  * @prop {React.ReactNode} [props.nav] - Navigation content to display.
  * @prop {LibAllColors} [props.backgroundColor="primary"] - Background color for the header.
  * @prop {LibAllColors} [props.textColor="white"] - Text color for header content.
- * @prop {LibColorsHover} [props.linkColor="white"] - Color for navigation links.
+ * @prop {LibColorsHover} [props.linksColor="white"] - Color for navigation links.
  *
  * @returns {JSX.Element} The rendered Header component.
  *
@@ -75,7 +75,7 @@ export const Header: FC<ILibHeader> = ({
 	nav,
 	backgroundColor = "primary",
 	textColor = "white",
-	linkColor = "white",
+	linksColor = "white",
 	...rest
 }) => {
 	const Element = element
@@ -143,7 +143,7 @@ export const Header: FC<ILibHeader> = ({
 			"z-999 flex gap-2 [&>a]:outline-none transition-all duration-200 ease-in-out",
 			"fixed md:relative",
 			"flex-col md:flex-row px-[5%] md:px-0",
-			genRingColorChildren[linkColor],
+			genRingColorChildren[linksColor],
 			navDesktopPosition === "left" && "grow",
 			genBgAllColors[backgroundColor],
 			navMobileVariant === "drawer" && [
@@ -194,8 +194,8 @@ export const Header: FC<ILibHeader> = ({
 				position,
 				genBgAllColors[backgroundColor],
 				genTextAllColor[textColor],
-				genLinkColor[linkColor],
-				isHidden ? "top-[-56px]" : "top-0",
+				genLinkColor[linksColor],
+				isHidden ? "top-[-64px]" : "top-0",
 				"header",
 				className,
 			)}
@@ -203,14 +203,18 @@ export const Header: FC<ILibHeader> = ({
 		>
 			{burgerPosition === "left" && <Burger {...burgerProps} />}
 
-			<span
-				className={clsx(
-					"z-999 outline-none [&>a]:outline-none",
-					genRingColorChildren[linkColor],
-				)}
-			>
-				{logo}
-			</span>
+			{typeof logo === "string" ? (
+				<span
+					className={clsx(
+						"z-999 outline-none [&>a]:outline-none",
+						genRingColorChildren[linksColor],
+					)}
+				>
+					{logo}
+				</span>
+			) : (
+				logo
+			)}
 
 			{navDesktopPosition === "left" && <nav {...navProps} />}
 

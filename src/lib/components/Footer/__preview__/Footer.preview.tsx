@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
-import { Footer, clsx, genTextColorHover, uuid } from "../../../"
+import { Footer, clsx, uuid } from "../../../"
 import type { ReactChildren } from "../../../types"
 import type { ILibFooter } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
-const CLASSES = clsx(genTextColorHover["primary"], "font-black")
+const CLASSES = clsx("font-black")
 
 const items: Array<ReactChildren> = [
 	<a href="#" className={CLASSES} key={uuid()}>
@@ -71,6 +71,22 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
 			defaultValue: null,
 			description:
 				"Logo element to display in the footer. Required for horizontal layout, optional for vertical layout.",
+			isRequired: false,
+		},
+		{
+			name: "linksColor",
+			type: "string",
+			possibleValues: [
+				"primary",
+				"secondary",
+				"success",
+				"danger",
+				"warning",
+				"gray",
+				"white",
+			],
+			defaultValue: "primary",
+			description: "Color for navigation links.",
 			isRequired: false,
 		},
 		{

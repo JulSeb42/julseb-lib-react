@@ -23,7 +23,9 @@ export const backToTopPreview: ComponentPreview<ILibBackToTop> = {
 						<Text key={i}>{text}</Text>
 					))}
 
-					<BackToTop showTooltip={{}} />
+					<BackToTop
+					// showTooltip
+					/>
 				</>
 			),
 		},

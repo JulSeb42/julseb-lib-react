@@ -1,5 +1,6 @@
 import type {
 	LibAllColors,
+	LibColorsHover,
 	LibComponentBase,
 	LibFooterDirection,
 	LibFooterLinksSeparator,
@@ -12,6 +13,7 @@ interface ILibFooterBase extends LibComponentBase<HTMLDivElement> {
 	hideLinksSeparator?: boolean
 	linksSeparator?: LibFooterLinksSeparator
 	linksSeparatorColor?: LibAllColors
+	linksColor?: LibColorsHover
 }
 
 interface FooterHorizontalWithItems extends ILibFooterBase {

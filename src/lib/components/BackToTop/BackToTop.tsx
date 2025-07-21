@@ -33,7 +33,7 @@ import type { ILibBackToTop } from "./types"
 export const BackToTop: FC<ILibBackToTop> = ({
 	className,
 	ref,
-	icon = <BiUpArrowAlt />,
+	icon = <BiUpArrowAlt size={32} />,
 	color = "primary",
 	tooltip = "Back to top",
 	showTooltip,
@@ -71,8 +71,9 @@ export const BackToTop: FC<ILibBackToTop> = ({
 		<ButtonIcon
 			ref={ref}
 			className={clsx(
-				isVisible ? "opacity-100 visible " : "opacity-0 invisible",
+				isVisible ? "opacity-100 visible z-50" : "opacity-0 invisible",
 				genRingColor[color],
+				!showTooltip && "fixed bottom-5 right-5",
 				"back-to-top",
 				className,
 			)}

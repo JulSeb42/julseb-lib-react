@@ -102,6 +102,7 @@ type Prop = {
 		| "Array of objects"
 		| "function"
 		| "string | JSX.Element"
+		| "number | boolean"
 		| "ReactNode"
 		| "CSSProperties"
 		| "ReactElement"

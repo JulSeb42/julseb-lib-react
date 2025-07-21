@@ -21,7 +21,7 @@ interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
 	search?: LibHeaderSearch
 	backgroundColor?: LibAllColors
 	textColor?: LibAllColors
-	linkColor?: LibColorsHover
+	linksColor?: LibColorsHover
 }
 
 interface HeaderFixed extends ILibHeaderBase {
