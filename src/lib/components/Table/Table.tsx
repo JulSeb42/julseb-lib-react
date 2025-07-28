@@ -71,6 +71,7 @@ export const Table: FC<ILibTable> = ({
 				genButtonColor["primary"],
 				"[&_thead]:bg-primary-500 [&_thead]:text-white [&_thead]:font-bold",
 				"[&_td]:overflow-x-scroll [&_td]:px-2 [&_td]:py-1 [&_th]:overflow-x-scroll [&_th]:px-2 [&_th]:py-1",
+				"md:[&_td]:table-cell md:[&_th]:table-cell [&_td]:block [&_th]:block",
 				variant === "bordered" && [
 					"border border-gray-200",
 					"[&_thead_th:not(:last-child)]:border-r [&_thead_th:not(:last-child)]:border-background [&_td]:border [&_td]:border-gray-200",

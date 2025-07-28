@@ -112,7 +112,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 				>
 					<div
 						className={clsx(
-							"flex items-center gap-2",
+							"flex flex-wrap items-center gap-2",
 							"md-buttons",
 						)}
 					>
