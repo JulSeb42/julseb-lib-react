@@ -64,7 +64,7 @@ export const Table: FC<ILibTable> = ({
 		<table
 			ref={ref}
 			className={clsx(
-				"table bg-background w-full h-[1px] border-collapse border-spacing-0 table-fixed no-scrollbar [&_*]:no-scrollbar",
+				"table bg-background w-full h-[1px] border-collapse border-spacing-0 table-fixed",
 				TEXT_BASE_CLASSES,
 				"text-(length:--font-size-small)",
 				genLinkColor["primary"],
@@ -94,7 +94,10 @@ export const Table: FC<ILibTable> = ({
 					<tr className={clsx(genVAlign[vAlign])}>
 						{headers.map(header => (
 							<th
-								className={clsx(genVAlign[vAlign])}
+								className={clsx(
+									genVAlign[vAlign],
+									"no-scrollbar",
+								)}
 								key={uuid()}
 							>
 								{linkify && typeof header === "string"
@@ -111,7 +114,7 @@ export const Table: FC<ILibTable> = ({
 					{data.map(row => (
 						<tr key={uuid()}>
 							{row.map(col => (
-								<td key={uuid()}>
+								<td className="no-scrollbar" key={uuid()}>
 									{linkify && typeof col === "string"
 										? linkifyText(col, blank)
 										: col}
@@ -128,7 +131,7 @@ export const Table: FC<ILibTable> = ({
 				<tfoot>
 					<tr>
 						{footers.map(footer => (
-							<td key={uuid()}>
+							<td className="no-scrollbar" key={uuid()}>
 								{linkify && typeof footer === "string"
 									? linkifyText(footer, blank)
 									: footer}

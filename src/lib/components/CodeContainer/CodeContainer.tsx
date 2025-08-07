@@ -68,7 +68,7 @@ export const CodeContainer: FC<ILibCodeContainer> = ({
 				{({ style, tokens, getLineProps, getTokenProps }) => (
 					<pre
 						style={style}
-						className="relative max-w-full overflow-x-scroll hide-scrollbar"
+						className="relative max-w-full overflow-x-scroll no-scrollbar"
 					>
 						{tokens.map((line, i) => (
 							<div key={i} {...getLineProps({ line })}>
