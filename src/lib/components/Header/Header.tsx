@@ -74,8 +74,10 @@ export const Header: FC<ILibHeader> = ({
 	links,
 	nav,
 	backgroundColor = "primary",
+	navMobileBackground,
 	textColor = "white",
 	linksColor = "white",
+	headerOpenMobileBackground = backgroundColor,
 	...rest
 }) => {
 	const Element = element
@@ -144,8 +146,8 @@ export const Header: FC<ILibHeader> = ({
 			"fixed md:relative",
 			"flex-col md:flex-row px-[5%] md:px-0",
 			genRingColorChildren[linksColor],
+			`${genBgAllColors[navMobileBackground ?? "primary-500"]} md:bg-transparent`,
 			navDesktopPosition === "left" && "grow",
-			genBgAllColors[backgroundColor],
 			navMobileVariant === "drawer" && [
 				"top-[56px] md:top-[unset] w-[70%] md:w-fit h-[calc(100svh-56px)] md:h-[unset]",
 				navDesktopPosition === "left"
@@ -193,6 +195,7 @@ export const Header: FC<ILibHeader> = ({
 					"justify-start gap-4 md:justify-between",
 				position,
 				genBgAllColors[backgroundColor],
+				isOpen && genBgAllColors[headerOpenMobileBackground],
 				genTextAllColor[textColor],
 				genLinkColor[linksColor],
 				isHidden ? "top-[-64px]" : "top-0",

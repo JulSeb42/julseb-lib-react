@@ -17,6 +17,8 @@ interface ILibHeaderBase extends LibComponentBase<HTMLDivElement> {
 		| { open?: LibColorsHover; closed?: LibColorsHover }
 	navDesktopPosition?: LibNavBurgerPosition
 	navMobileVariant?: LibNavMobileVariant
+	navMobileBackground?: LibAllColors
+	headerOpenMobileBackground?: LibAllColors
 	enableScrollingOpen?: boolean
 	search?: LibHeaderSearch
 	backgroundColor?: LibAllColors

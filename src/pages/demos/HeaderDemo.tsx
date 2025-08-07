@@ -41,6 +41,9 @@ export const HeaderDemo = () => {
 				}}
 				position="fixed"
 				hideOnScroll
+				navMobileBackground="secondary"
+				backgroundColor="transparent"
+				headerOpenMobileBackground="primary"
 			/>
 
 			<Cover

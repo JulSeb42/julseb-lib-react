@@ -61,6 +61,8 @@ export const Meta: FC<ILibMeta> = ({
 	manifest,
 	category,
 	twitterCard = "summary",
+	appleTouchIcon,
+	themeColor,
 }) => {
 	return (
 		<>
@@ -119,6 +121,10 @@ export const Meta: FC<ILibMeta> = ({
 			{type && <meta property="og:type" content={type} />}
 			{twitterCard && <meta name="twitter:card" content={twitterCard} />}
 			{favicon && <link rel="icon" href={favicon} />}
+			{appleTouchIcon && (
+				<link rel="apple-touch-icon" href={appleTouchIcon} />
+			)}
+			{themeColor && <meta name="theme-color" content={themeColor} />}
 			{children}
 		</>
 	)

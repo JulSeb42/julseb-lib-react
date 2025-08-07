@@ -53,7 +53,12 @@ export const CodeContainer: FC<ILibCodeContainer> = ({
 	}
 
 	return (
-		<div className={clsx("relative bg-[#282c34] p-6", className)}>
+		<div
+			className={clsx(
+				"relative bg-[#282c34] p-6 no-scrollbar [&_*]:no-scrollbar",
+				className,
+			)}
+		>
 			<Highlight
 				theme={themes.oneDark}
 				language={language}

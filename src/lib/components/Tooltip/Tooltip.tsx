@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState, type FC, type RefObject } from "react"
 import { clsx, genBgAllColorsAndOverlays, genTextAllColor } from "../../utils"
 import type { ILibTooltip } from "./types"
-import { useClickOutside, useTouchScreen } from "../../hooks"
+import { useClickOutside, useTouchScreen, useMergeRefs } from "../../hooks"
 import type {
 	LibSpacers,
 	LibTooltipPosition,
@@ -93,7 +93,7 @@ export const Tooltip: FC<ILibTooltip> = ({
 
 	return (
 		<Element
-			ref={ref}
+			ref={useMergeRefs([el, ref])}
 			className={clsx(
 				"inline-block relative w-fit",
 				isVisible && "visible",

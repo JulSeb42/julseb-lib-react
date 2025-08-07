@@ -31,5 +31,7 @@ export interface ILibMeta {
 	manifest?: string
 	category?: string
 	twitterCard?: "app" | "player" | "summary" | "summary_large_image"
+	appleTouchIcon?: string
+	themeColor?: string
 	children?: ReactChildren
 }
