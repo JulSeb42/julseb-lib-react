@@ -32,26 +32,28 @@ import type { ILibHeader } from "./types"
  *   </nav>
  * </Header>
  *
- * @extends HTMLDivElement
+ * @extends ILibHeader
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the header container.
- * @prop {React.ElementType} [props.element="header"] - HTML element type to render as the container.
+ * @prop {React.ElementType} [props.element="header"] - HTML element type to render as the container. Default: "header".
  * @prop {React.Ref<HTMLDivElement>} [props.ref] - Ref to the header element.
- * @prop {React.ReactNode} [props.logo] - Logo content to display in the header.
- * @prop {"left" | "right"} [props.burgerPosition="right"] - Position of the burger menu button.
- * @prop {LibColorsHover | object} [props.burgerColor="white"] - Color for the burger menu button, can be a single color or object with open/closed states.
  * @prop {React.ReactNode} [props.children] - Content to display in the navigation area.
- * @prop {"left" | "right"} [props.navDesktopPosition="right"] - Position of the navigation on desktop screens.
- * @prop {"drawer" | "fullscreen"} [props.navMobileVariant="drawer"] - Variant for mobile navigation display.
+ * @prop {React.ReactNode} [props.logo] - Logo content to display in the header.
+ * @prop {"left" | "right"} [props.burgerPosition="right"] - Position of the burger menu button. Possible values: "left", "right". Default: "right".
+ * @prop {LibColorsHover | { open: LibColorsHover; closed: LibColorsHover }} [props.burgerColor="white"] - Color for the burger menu button, can be a single color or object with open/closed states. Default: "white".
+ * @prop {"left" | "right"} [props.navDesktopPosition="right"] - Position of the navigation on desktop screens. Possible values: "left", "right". Default: "right".
+ * @prop {"drawer" | "full" | "top"} [props.navMobileVariant="drawer"] - Variant for mobile navigation display. Possible values: "drawer", "full", "top". Default: "drawer".
  * @prop {boolean} [props.enableScrollingOpen] - Whether to allow page scrolling when mobile menu is open.
  * @prop {React.ReactNode} [props.search] - Search component to display in the header.
- * @prop {"relative" | "absolute" | "fixed"} [props.position="relative"] - CSS position property for the header.
+ * @prop {"relative" | "absolute" | "fixed"} [props.position="relative"] - CSS position property for the header. Possible values: "relative", "absolute", "fixed". Default: "relative".
  * @prop {boolean | number} [props.hideOnScroll] - Whether to hide header on scroll, or scroll threshold in pixels.
  * @prop {Array<React.ReactNode>} [props.links] - Array of link elements for navigation.
  * @prop {React.ReactNode} [props.nav] - Navigation content to display.
- * @prop {LibAllColors} [props.backgroundColor="primary"] - Background color for the header.
- * @prop {LibAllColors} [props.textColor="white"] - Text color for header content.
- * @prop {LibColorsHover} [props.linksColor="white"] - Color for navigation links.
+ * @prop {LibAllColors} [props.backgroundColor="primary"] - Background color for the header. Default: "primary".
+ * @prop {LibAllColors} [props.navMobileBackground=backgroundColor] - Background color for mobile navigation. Default: backgroundColor value.
+ * @prop {LibAllColors} [props.textColor="white"] - Text color for header content. Default: "white".
+ * @prop {LibColorsHover} [props.linksColor="white"] - Color for navigation links. Default: "white".
+ * @prop {LibAllColors} [props.headerOpenMobileBackground=backgroundColor] - Background color when mobile menu is open. Default: backgroundColor value.
  *
  * @returns {JSX.Element} The rendered Header component.
  *
@@ -74,7 +76,7 @@ export const Header: FC<ILibHeader> = ({
 	links,
 	nav,
 	backgroundColor = "primary",
-	navMobileBackground,
+	navMobileBackground = backgroundColor,
 	textColor = "white",
 	linksColor = "white",
 	headerOpenMobileBackground = backgroundColor,

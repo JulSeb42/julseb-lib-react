@@ -17,6 +17,8 @@ import type { ILibMeta } from "./types"
  *   url="https://mywebsite.com"
  * />
  *
+ * @extends ILibMeta
+ *
  * @prop {React.ReactNode} [props.children] - Additional meta tags or head elements to include.
  * @prop {string} [props.title] - Page title for the document and social media.
  * @prop {string} [props.favicon] - URL path to the favicon icon file.
@@ -26,7 +28,7 @@ import type { ILibMeta } from "./types"
  * @prop {string} [props.author] - Author name for the page content.
  * @prop {string} [props.authorUrl] - URL to the author's profile or website.
  * @prop {string} [props.publisher] - Publisher name for the content.
- * @prop {string} [props.type] - Open Graph type (e.g., "website", "article").
+ * @prop {string} [props.type="website"] - Open Graph type. Possible values: "website", "article". Default: "website".
  * @prop {string} [props.cover] - URL to the cover image for social media sharing.
  * @prop {string} [props.siteName] - Name of the website or application.
  * @prop {string} [props.language] - Language locale code (e.g., "en-US").
@@ -35,7 +37,9 @@ import type { ILibMeta } from "./types"
  * @prop {string} [props.creator] - Creator name for the content.
  * @prop {string} [props.manifest] - URL path to the web app manifest file.
  * @prop {string} [props.category] - Category classification for the content.
- * @prop {string} [props.twitterCard] - Twitter Card type (e.g., "summary", "summary_large_image").
+ * @prop {string} [props.twitterCard="summary"] - Twitter Card type. Possible values: "summary", "summary_large_image". Default: "summary".
+ * @prop {string} [props.appleTouchIcon] - URL path to the Apple touch icon file.
+ * @prop {string} [props.themeColor] - Theme color for the browser interface.
  *
  * @returns {JSX.Element} The rendered Meta component with HTML head elements.
  *

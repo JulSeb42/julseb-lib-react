@@ -18,7 +18,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "title",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Page title for the document and social media.",
 			isRequired: true,
@@ -26,7 +26,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "favicon",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "URL path to the favicon icon file.",
 			isRequired: false,
@@ -34,7 +34,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "description",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Page description for SEO and social media.",
 			isRequired: false,
@@ -42,7 +42,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "generator",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Name of the generator used to create the page.",
 			isRequired: false,
@@ -50,7 +50,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "keywords",
 			type: "Array<string>",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Array of keywords for SEO purposes.",
 			isRequired: false,
@@ -58,7 +58,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "author",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Author name for the page content.",
 			isRequired: false,
@@ -66,7 +66,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "authorUrl",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "URL to the author's profile or website.",
 			isRequired: false,
@@ -74,7 +74,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "publisher",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Publisher name for the content.",
 			isRequired: false,
@@ -96,14 +96,14 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 				"video. tv_show",
 				"website",
 			],
-			defaultValue: "website",
+			defaultValue: null,
 			description: "Open Graph type for social media sharing.",
 			isRequired: false,
 		},
 		{
 			name: "cover",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "URL to the cover image for social media sharing.",
 			isRequired: false,
@@ -111,7 +111,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "siteName",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Name of the website or application.",
 			isRequired: false,
@@ -119,7 +119,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "language",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Language locale code (e.g., 'en-US').",
 			isRequired: false,
@@ -127,7 +127,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "url",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Canonical URL of the page.",
 			isRequired: false,
@@ -135,7 +135,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "email",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Contact email address.",
 			isRequired: false,
@@ -143,7 +143,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "creator",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Creator name for the content.",
 			isRequired: false,
@@ -151,7 +151,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "manifest",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "URL path to the web app manifest file.",
 			isRequired: false,
@@ -159,7 +159,7 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 		{
 			name: "category",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Category classification for the content.",
 			isRequired: false,
@@ -168,8 +168,24 @@ export const metaPreview: ComponentPreview<ILibMeta> = {
 			name: "twitterCard",
 			type: "string",
 			possibleValues: ["app", "player", "summary", "summary_large_image"],
-			defaultValue: "summary",
-			description: "Twitter Card type for social media display.",
+			defaultValue: null,
+			description: "Twitter Card type for social media sharing.",
+			isRequired: false,
+		},
+		{
+			name: "appleTouchIcon",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "URL path to the Apple touch icon file.",
+			isRequired: false,
+		},
+		{
+			name: "themeColor",
+			type: "string",
+			possibleValues: null,
+			defaultValue: null,
+			description: "Theme color for the browser interface.",
 			isRequired: false,
 		},
 	],
