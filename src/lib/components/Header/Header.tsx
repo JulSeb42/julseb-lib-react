@@ -144,14 +144,15 @@ export const Header: FC<ILibHeader> = ({
 			</>
 		),
 		className: clsx(
-			"z-999 flex gap-2 [&>a]:outline-none transition-all duration-200 ease-in-out",
+			"z-999 flex gap-2 [&>a]:outline-none w-fit transition-all duration-200 ease-in-out",
 			"fixed md:relative",
 			"flex-col md:flex-row px-[5%] md:px-0",
 			genRingColorChildren[linksColor],
 			`${genBgAllColors[navMobileBackground ?? "primary-500"]} md:bg-transparent`,
 			navDesktopPosition === "left" && "grow",
 			navMobileVariant === "drawer" && [
-				"top-[56px] md:top-[unset] w-[70%] md:w-fit h-[calc(100svh-56px)] md:h-[unset]",
+				"top-[56px] md:top-[unset] h-[calc(100svh-56px)] md:h-[unset]",
+				"w-[70%] md:w-fit",
 				navDesktopPosition === "left"
 					? isOpen
 						? "left-0 md:left-[unset]"
