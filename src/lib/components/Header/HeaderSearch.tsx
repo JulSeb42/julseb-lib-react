@@ -31,20 +31,22 @@ export const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 			className={clsx("w-full max-w-(--form-max-width)", "search-form")}
 			style={{ ["--form-max-width" as any]: stringifyPx(maxWidth) }}
 		>
-			<Input
-				type="search"
-				placeholder={placeholder}
-				value={value}
-				onChange={e => setValue(e.target.value)}
-				icon={iconLeft}
-				iconClear={iconClear}
-				focusKeys={focusKeys}
-				showKeys={showKeys}
-				inputBackground={inputBackground}
-				inputVariant={inputVariant}
-				className="search-input"
-				clearSearch={clearSearch}
-			/>
+			<search>
+				<Input
+					type="search"
+					placeholder={placeholder}
+					value={value}
+					onChange={e => setValue(e.target.value)}
+					icon={iconLeft}
+					iconClear={iconClear}
+					focusKeys={focusKeys}
+					showKeys={showKeys}
+					inputBackground={inputBackground}
+					inputVariant={inputVariant}
+					className="search-input"
+					clearSearch={clearSearch}
+				/>
+			</search>
 		</form>
 	)
 }

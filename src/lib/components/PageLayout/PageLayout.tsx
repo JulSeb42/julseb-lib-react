@@ -1,10 +1,12 @@
-import { type FC } from "react"
+import { isValidElement, type FC } from "react"
 import { Meta } from "../Meta"
 import { Header } from "../Header"
 import { Wrapper } from "../Wrapper"
 import { Main } from "../Main"
 import { Footer } from "../Footer"
 import type { ILibPageLayout } from "./types"
+import type { ILibHeader } from "../Header/types"
+import type { ILibFooter } from "../Footer/types"
 
 /**
  * PageLayout component for creating a complete page structure with optional header, footer, wrapper, and meta tags.
@@ -48,8 +50,14 @@ export const PageLayout: FC<ILibPageLayout> = ({
 	return (
 		<>
 			{meta && <Meta {...meta} />}
-			{header && <Header {...header} />}
-			{!noWrapper && (
+
+			{isValidElement(header) ? (
+				header
+			) : (
+				<Header {...(header as ILibHeader)} />
+			)}
+
+			{!noWrapper ? (
 				<Wrapper {...wrapperProps}>
 					{!noMain ? (
 						<Main {...mainProps}>{children}</Main>
@@ -57,8 +65,15 @@ export const PageLayout: FC<ILibPageLayout> = ({
 						children
 					)}
 				</Wrapper>
+			) : (
+				children
 			)}
-			{footer && <Footer {...footer} />}
+
+			{isValidElement(footer) ? (
+				footer
+			) : (
+				<Footer {...(footer as ILibFooter)} />
+			)}
 		</>
 	)
 }

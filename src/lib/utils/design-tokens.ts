@@ -508,7 +508,11 @@ export const designTokens = {
 		"border-bottom": "border-bottom",
 	},
 
-	libMdEditorViews: { code: "code", live: "live", preview: "preview" },
+	libMdEditorViews: {
+		viewCode: "viewCode",
+		viewLive: "viewLive",
+		viewPreview: "viewPreview",
+	},
 
 	libMdEditorButtons: {
 		bold: "bold",

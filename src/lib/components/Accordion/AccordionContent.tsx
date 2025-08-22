@@ -26,7 +26,7 @@ import type { ILibAccordionContent } from "./subtypes"
  * @see https://doc-julseb-lib-react.vercel.app/components/accordion
  */
 export const AccordionContent: FC<ILibAccordionContent> = ({
-	element = Text,
+	element,
 	ref,
 	className,
 	variant = "basic",
@@ -34,7 +34,7 @@ export const AccordionContent: FC<ILibAccordionContent> = ({
 	children,
 	...rest
 }) => {
-	const Element = element
+	const Element = element ?? (typeof children === "string" ? Text : "div")
 
 	return (
 		<Element

@@ -7,6 +7,7 @@ import type {
 	LibColorsHover,
 	ReactElement,
 	DispatchState,
+	ClassNames,
 } from "../../types"
 import type { ILibSlideshow } from "./types"
 
@@ -19,6 +20,12 @@ export interface ILibSlideshowPagination {
 	hideOnTouch?: boolean
 	color?: LibColorsHover
 	type?: LibSlideshowPagination
+	className?: ClassNames
+	images?: Array<string>
+	active: number
+	setActive: DispatchState<number>
+	contentLength: number
+	handleClick: (n: number) => void
 }
 
 /*====================== Controls ======================*/
@@ -46,17 +53,4 @@ export interface ILibSlideshowButton
 	extends Pick<ILibSlideshow, "className" | "controls" | "hideControls"> {
 	position: LibSlideshowButtonsPosition
 	onClick: MouseEventHandler<HTMLButtonElement>
-}
-
-/*====================== SlideshowPagination ======================*/
-
-export interface ILibSlideshowPagination
-	extends Pick<
-		ILibSlideshow,
-		"className" | "pagination" | "images" | "hidePagination"
-	> {
-	active: number
-	setActive: DispatchState<number>
-	contentLength: number
-	handleClick: (n: number) => void
 }

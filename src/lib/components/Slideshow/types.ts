@@ -12,29 +12,24 @@ interface ILibSlideshowBase extends LibComponentBase<HTMLDivElement> {
 	controls?: ILibPaginationControls
 	options?: ILibPaginationOptions
 	borderRadius?: LibRadiuses
+	hidePagination?: boolean
 }
 
 interface SlideshowWithImages extends ILibSlideshowBase {
 	images?: Array<string>
-	hidePagination?: boolean
 	pagination?: Pick<
-		ILibSlideshowPagination,
-		| "color"
-		| "className"
-		| "hideOnTouch"
-		| "images"
-		| "pagination"
-		| "hidePagination"
-		| "position"
-		| "type"
+		Partial<ILibSlideshowPagination>,
+		"color" | "className" | "hideOnTouch" | "images" | "position" | "type"
 	>
 	children?: never
 }
 
 interface SlideshowWithChildren extends ILibSlideshowBase {
 	images?: never
-	hidePagination?: boolean
-	pagination?: ILibSlideshowPagination
+	pagination?: Pick<
+		Partial<ILibSlideshowPagination>,
+		"color" | "className" | "hideOnTouch" | "images" | "position" | "type"
+	>
 	children?: Array<ReactNode>
 }
 

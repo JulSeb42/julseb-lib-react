@@ -11,9 +11,13 @@ const ThemeContext = createContext<ILibThemeContext | null>(null)
 
 interface ILibThemeProvider {
 	children?: ReactChildren
+	defaultTheme?: LibThemeNames
 }
 
-export const ThemeProviderWrapper = ({ children }: ILibThemeProvider) => {
+export const ThemeProviderWrapper = ({
+	children,
+	defaultTheme,
+}: ILibThemeProvider) => {
 	const [theme, setTheme] = useState<LibThemeNames>("light")
 
 	const switchToLight = () => {
@@ -38,7 +42,10 @@ export const ThemeProviderWrapper = ({ children }: ILibThemeProvider) => {
 		if (typeof window !== "undefined") {
 			const storedTheme = localStorage.getItem("theme") as LibThemeNames
 
-			if (storedTheme) {
+			if (defaultTheme) {
+				if (defaultTheme === "light") switchToLight()
+				else switchToDark()
+			} else if (storedTheme) {
 				if (storedTheme === "light") switchToLight()
 				else switchToDark()
 			} else {

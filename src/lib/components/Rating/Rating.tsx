@@ -2,7 +2,7 @@ import { type FC } from "react"
 import { BiStar, BiSolidStar } from "react-icons/bi"
 import { generateNumbers } from "@julseb-lib/utils"
 import { InputContainer } from "../InputContainer"
-import { clsx, genTextColorHover } from "../../utils"
+import { clsx, genTextAllColor, genTextColorHover, genGap } from "../../utils"
 import type { ILibRating } from "./types"
 
 /**
@@ -22,13 +22,13 @@ import type { ILibRating } from "./types"
  *   icons={{ default: <BiHeart />, checked: <BiSolidHeart /> }}
  * />
  *
- * @extends HTMLDivElement
+ * @extends ILibRating
  *
  * @prop {string} [props.className] - Additional CSS classes to apply to the rating container.
  * @prop {React.Ref<HTMLDivElement>} [props.ref] - Ref to the rating container div element.
  * @prop {number} [props.rating] - Current rating value (1-5 stars).
- * @prop {function} [props.setRating] - Function to update the rating value when not in read-only mode.
- * @prop {object} [props.icons] - Icon configuration object with default and checked icon variants.
+ * @prop {(rating: number) => void} [props.setRating] - Function to update the rating value when not in read-only mode.
+ * @prop {{ default?: React.ReactNode; checked?: React.ReactNode }} [props.icons] - Icon configuration object with default and checked icon variants.
  * @prop {boolean} [props.readOnly] - Whether the rating is in read-only mode (no interaction).
  * @prop {string} [props.label] - Label text to display above the rating.
  * @prop {string} [props.labelComment] - Additional comment text next to the label.
@@ -36,8 +36,10 @@ import type { ILibRating } from "./types"
  * @prop {string} [props.helperBottom] - Helper text to display at the bottom of the rating.
  * @prop {string} [props.id] - Unique identifier for the rating element.
  * @prop {LibValidation} [props.validation] - Validation state and configuration object.
- * @prop {string} [containerClassName] - Additional CSS classes for the container.
- * @prop {any} [props.rest] - Additional props spread to the rating container.
+ * @prop {string} [props.containerClassName] - Additional CSS classes for the container.
+ * @prop {number} [props.iconsSize=32] - Size of the rating icons. Default: 32.
+ * @prop {LibColorsHover} [props.accentColor="primary"] - Accent color for the icons. Default: "primary".
+ * @prop {"xs" | "sm" | "md" | "lg" | "xl" | "2xl"} [props.gap="xs"] - Gap between rating icons. Default: "xs".
  *
  * @returns {JSX.Element} The rendered Rating component.
  *
@@ -57,6 +59,9 @@ export const Rating: FC<ILibRating> = ({
 	id,
 	validation,
 	containerClassName,
+	iconsSize = 32,
+	accentColor = "primary",
+	gap = "xs",
 	...rest
 }) => {
 	return (
@@ -71,7 +76,7 @@ export const Rating: FC<ILibRating> = ({
 			<div
 				ref={ref}
 				id={id}
-				className={clsx("flex gap-2", "rating", className)}
+				className={clsx("flex", genGap[gap], "rating", className)}
 				{...rest}
 			>
 				{generateNumbers(0, 4).map(n => {
@@ -84,8 +89,8 @@ export const Rating: FC<ILibRating> = ({
 							type="button"
 							className={clsx(
 								readOnly
-									? "text-primary-500"
-									: genTextColorHover["primary"],
+									? genTextAllColor[accentColor]
+									: genTextColorHover[accentColor],
 								validation?.status === false
 									? readOnly
 										? "text-danger-500"
@@ -100,13 +105,13 @@ export const Rating: FC<ILibRating> = ({
 							{n >= rating
 								? (icons?.default ?? (
 										<BiStar
-											size={32}
+											size={iconsSize}
 											className="rating-icon"
 										/>
 									))
 								: (icons?.checked ?? (
 										<BiSolidStar
-											size={32}
+											size={iconsSize}
 											className="rating-icon"
 										/>
 									))}

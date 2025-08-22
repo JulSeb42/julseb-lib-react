@@ -63,7 +63,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 	validation,
 	inputBackground,
 	id,
-	defaultView = "live",
+	defaultView = "viewLive",
 	options,
 	textButtonTitles = "Titles",
 	icons,
@@ -145,7 +145,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 				<div
 					className={clsx(
 						"grid min-h-[150px]",
-						view === "live"
+						view === "viewLive"
 							? "grid-cols-[1fr_2px_1fr]"
 							: "grid-cols-1",
 						"md-editor-content",
@@ -155,7 +155,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 						ref={useMergeRefs([ref, el])}
 						className={clsx(
 							"p-2 outline-none h-fit field-sizing-content resize-none",
-							view === "preview" && "hidden",
+							view === "viewPreview" && "hidden",
 							"md-editor-input",
 							className,
 						)}
@@ -165,7 +165,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 						{...rest}
 					/>
 
-					{view === "live" && (
+					{view === "viewLive" && (
 						<span
 							className={clsx(
 								"bg-gray-200 w-0.5 h-full",
@@ -174,7 +174,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 						/>
 					)}
 
-					{(view === "live" || view === "preview") && (
+					{(view === "viewLive" || view === "viewPreview") && (
 						<Markdown
 							options={libOptionsMarkdown}
 							className={clsx("p-2", "md-editor-markdown")}

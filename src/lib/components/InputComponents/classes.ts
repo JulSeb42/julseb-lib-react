@@ -54,26 +54,34 @@ export const INPUT_CONTAINER_CLASSES = ({
 	inputVariant,
 	inputBackground,
 	hasListOpen,
+	noWrapper,
 }: {
 	validation: LibInputValidation | undefined
 	inputVariant: LibInputVariant | undefined
 	inputBackground: LibInputBackground | undefined
 	hasListOpen?: boolean
+	noWrapper?: boolean
 }) => [
 	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden relative bg-background",
 	"has-[input:focus]:border-primary-500",
-	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500 has-[select:disabled]:bg-gray-100 has-[select:disabled]:text-gray-500 has-[textarea:disabled]:bg-gray-100 has-[textarea:disabled]:text-gray-500",
-	"[&_input]:bg-transparent [&_textarea]:bg-transparent [&_select]:bg-transparent",
+	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500 has-[select:disabled]:bg-gray-100 has-[select:disabled]:text-gray-500 [&.input-textarea]:outline-none",
+	"[&_input]:bg-transparent [&_select]:bg-transparent",
 	validation &&
 		(validation.status === false
-			? "bg-danger-50 has-[input:focus]:border-danger-500 text-black"
+			? "bg-danger-50 has-[input:focus]:border-danger-500 has-[select:focus]:border-danger-500 text-black focus:[&.input-textarea]:border-danger-500"
 			: validation.status === true &&
-				"bg-success-50 has-[input:focus]:border-success-500 text-black"),
+				"bg-success-50 has-[input:focus]:border-success-500 has-[select:focus]:border-success-500 text-black"),
 	inputVariant === "pill" && "rounded-full",
 	inputBackground === "light" && "bg-white text-black",
 	inputBackground === "dark" && "bg-black text-white",
 	hasListOpen && "open",
 	"[&.open]:z-20",
+	noWrapper &&
+		(validation?.status === false
+			? "focus:border-danger-500"
+			: validation?.status === true
+				? "focus:border-success-500"
+				: "focus:border-primary-500"),
 ]
 
 export const INPUT_LIST_CLASSES = ({
@@ -89,7 +97,7 @@ export const INPUT_LIST_CLASSES = ({
 	inputBackground: LibInputBackground | undefined
 	validation: LibInputValidation | undefined
 }) => [
-	"left-0 absolute flex flex-col items-start opacity-0 border border-primary-500 rounded-md w-full max-h-0 overflow-hidden overflow-y-scroll transition-all duration-200 ease-in-out z-0",
+	"left-0 absolute flex flex-col items-start opacity-0 border border-primary-500 rounded-md w-full max-h-0 overflow-y-scroll transition-all duration-200 ease-in-out z-0",
 	isOpen && "open",
 	"[&.open]:opacity-100 [&.open]:max-h-[300px]",
 	(listDirection === "down" || !listDirection) && "top-0 [&.open]:pt-8",

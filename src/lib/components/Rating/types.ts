@@ -1,4 +1,10 @@
-import type { DispatchState, LibComponentBase, ReactElement } from "../../types"
+import type {
+	DispatchState,
+	LibColorsHover,
+	LibComponentBase,
+	LibSpacers,
+	ReactElement,
+} from "../../types"
 import type {
 	ILibInputCommon,
 	ILibInputWithValidation,
@@ -9,6 +15,9 @@ type ILibRatingBase = Omit<LibComponentBase<HTMLDivElement>, "element"> &
 	ILibInputWithValidation & {
 		rating: number
 		icons?: { default?: ReactElement; checked?: ReactElement }
+		iconsSize?: number
+		accentColor?: LibColorsHover
+		gap?: LibSpacers
 		children?: never
 	}
 

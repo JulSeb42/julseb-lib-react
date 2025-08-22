@@ -30,7 +30,7 @@ export const InputList: FC<IInputList> = ({
 					inputBackground,
 					validation,
 				}),
-				"z-0",
+				"z-0 overflow-y-scroll",
 				"input-list",
 				className,
 			)}

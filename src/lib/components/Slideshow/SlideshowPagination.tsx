@@ -7,29 +7,32 @@ import type { LibColorsHover } from "../../types"
 
 export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 	className,
-	pagination,
 	images,
 	active,
 	setActive,
 	contentLength,
+	handleClick,
+	position = "outside",
+	hideOnTouch,
+	color = "primary",
+	type = "dots",
 }) => {
 	const isTouchScreen = useTouchScreen()
 
-	if ((isTouchScreen && pagination?.hideOnTouch) || contentLength === 0)
-		return null
+	if ((isTouchScreen && hideOnTouch) || contentLength === 0) return null
 
 	return (
 		<div
 			className={clsx(
 				"flex justify-center gap-2 mx-auto px-2 w-full max-w-[70%]",
-				pagination?.position === "outside"
+				position === "outside"
 					? ""
 					: "absolute bottom-1 left-[50%] -translate-x-[50%]",
 				"slideshow-controls",
 				className,
 			)}
 		>
-			{pagination?.type === "thumbnails"
+			{type === "thumbnails"
 				? images?.map((image, i) => (
 						<button
 							className={clsx(
@@ -39,7 +42,10 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 								active === i && "active",
 								"slideshow-thumbnail-container",
 							)}
-							onClick={() => setActive(i)}
+							onClick={() => {
+								setActive(i)
+								handleClick(i)
+							}}
 							key={i}
 						>
 							<img
@@ -56,26 +62,23 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 							key={n}
 							className={clsx(
 								"",
-								pagination?.type === "dots-outline"
-									? outlineColor[
-											pagination?.color ?? "primary"
-										]
-									: genBgColor[
-											pagination?.color ?? "primary"
-										],
+								type === "dots-outline"
+									? outlineColor[color ?? "primary"]
+									: genBgColor[color ?? "primary"],
 								active === n && "active",
-								pagination?.type === "dots" && [
+								type === "dots" && [
 									"size-2 rounded-full block",
 								],
-								pagination?.type === "dots-outline" && [
+								type === "dots-outline" && [
 									"size-2 rounded-full border-1",
 								],
-								pagination?.type === "bars" && [
-									"grow h-1 rounded-full",
-								],
+								type === "bars" && ["grow h-1 rounded-full"],
 								"slideshow-control",
 							)}
-							onClick={() => setActive(n)}
+							onClick={() => {
+								setActive(n)
+								handleClick(n)
+							}}
 						/>
 					))}
 		</div>

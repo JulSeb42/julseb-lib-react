@@ -131,6 +131,7 @@ export const Select: FC<ILibSelect> = ({
 						onClick={() => setIsOpen(!isOpen)}
 						onFocus={() => setIsOpen(true)}
 						disabled={disabled}
+						type="button"
 						{...rest}
 					>
 						<InputIcon

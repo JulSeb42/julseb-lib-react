@@ -49,7 +49,10 @@ export const inputPreview: ComponentPreview<ILibInput> = {
 		},
 		{
 			previewTitle: "Textarea",
-			props: { type: "textarea", label: "Textarea" },
+			props: {
+				type: "textarea",
+				label: "Textarea",
+			},
 		},
 		{
 			previewTitle: "Text",

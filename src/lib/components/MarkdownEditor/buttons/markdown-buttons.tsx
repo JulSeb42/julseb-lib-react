@@ -110,15 +110,15 @@ export const libMdButtons: Array<LibMdButtonWithIcon & LibMdButtonWithCode> = [
 
 export const libMdViewButtons: Array<LibMdButtonWithIcon> = [
 	{
-		name: "code",
+		name: "viewCode",
 		defaultIcon: <IconCode size={DEFAULT_ICON_SIZE} />,
 	},
 	{
-		name: "live",
+		name: "viewLive",
 		defaultIcon: <IconLive size={DEFAULT_ICON_SIZE} />,
 	},
 	{
-		name: "preview",
+		name: "viewPreview",
 		defaultIcon: <IconPreview size={DEFAULT_ICON_SIZE} />,
 	},
 ]

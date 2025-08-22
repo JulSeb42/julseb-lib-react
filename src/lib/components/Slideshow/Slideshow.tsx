@@ -301,17 +301,16 @@ export const Slideshow: FC<ILibSlideshow> = ({
 
 			{!hidePagination && totalSlides > 1 && (
 				<SlideshowPagination
+					className={pagination?.className}
+					images={pagination?.images}
 					active={currentSlide}
 					setActive={setCurrentSlide}
 					contentLength={totalSlides}
 					handleClick={goToSlide}
-					pagination={{
-						type: (pagination?.type ?? "dots") as any,
-						hideOnTouch: pagination?.hideOnTouch ?? false,
-						position: pagination?.position ?? "outside",
-						color: pagination?.color ?? "primary",
-					}}
-					images={images}
+					position={pagination?.position}
+					hideOnTouch={pagination?.hideOnTouch}
+					color={pagination?.color}
+					type={pagination?.type}
 				/>
 			)}
 		</Element>

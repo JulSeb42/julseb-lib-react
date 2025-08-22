@@ -8,8 +8,8 @@ import type { ILibFooter } from "../Footer/types"
 interface ILibPageLayoutBase {
 	children?: ReactChildren
 	meta?: ILibMeta
-	header?: ILibHeader
-	footer?: ILibFooter
+	header?: ILibHeader | ReactChildren
+	footer?: ILibFooter | ReactChildren
 }
 
 interface PageLayoutWithWrapper extends ILibPageLayoutBase {
