@@ -12,6 +12,7 @@ import {
 	PreviewUseMinWidth,
 	PreviewUsePaginatedData,
 	PreviewUsePagination,
+	PreviewUseTextLineCount,
 	PreviewUseTouchScreen,
 	PreviewUseTranslation,
 } from "./hooks"
@@ -60,6 +61,7 @@ export const hooksPreview: ComponentPreview<null> = {
 		{ previewTitle: "useMinWidth", demo: <PreviewUseMinWidth /> },
 		{ previewTitle: "usePaginatedData", demo: <PreviewUsePaginatedData /> },
 		{ previewTitle: "usePagination", demo: <PreviewUsePagination /> },
+		{ previewTitle: "useTextLineCount", demo: <PreviewUseTextLineCount /> },
 		{ previewTitle: "useTouchScreen", demo: <PreviewUseTouchScreen /> },
 		{ previewTitle: "useTranslation", demo: <PreviewUseTranslation /> },
 	],

@@ -39,7 +39,8 @@ export const Aside: FC<ILibAside> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"py-4 sm:py-8 md:py-12 w-full",
+				"flex flex-col items-stretch gap-6",
+				"sm:py-8 md:py-12 w-full",
 				(genBgAllColors as any)[backgroundColor],
 				asideSize[size],
 				"aside",

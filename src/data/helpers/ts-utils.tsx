@@ -12,9 +12,6 @@ import {
 	convertToEmail,
 	convertYoutube,
 	deleteDuplicates,
-	detectLanguage,
-	disableScroll,
-	enableScroll,
 	filterObject,
 	formatDate,
 	formatHour,
@@ -38,7 +35,6 @@ import {
 	emailRegex,
 	passwordRegex,
 	rgbToHex,
-	scrollToTop,
 	slugify,
 	sortByFrequency,
 	stringifyPx,
@@ -53,8 +49,16 @@ import {
 	toTitleCase,
 	unslugify,
 	uuid,
+	convertTime,
 } from "@julseb-lib/utils"
-import { Button, Avatar } from "../../lib"
+import {
+	Button,
+	Avatar,
+	detectLanguage,
+	disableScroll,
+	enableScroll,
+	scrollToTop,
+} from "../../lib"
 
 type Util = {
 	name: string
@@ -139,6 +143,13 @@ export const allTsUtils: Array<Util> = [
 		result: convertPrice(100),
 	},
 	{
+		name: "convertTime",
+		effect: "Converts a human readable time",
+		arguments: ["time: Date | string", "withSeconds?: boolean"],
+		example: "convertTime(new Date())",
+		result: convertTime(new Date()),
+	},
+	{
 		name: "convertToEmail",
 		effect: "Converts a string to an email address",
 		arguments: ["name: string", "domain?: string"],
@@ -202,6 +213,7 @@ export const allTsUtils: Array<Util> = [
 		],
 		example: "filterObject({ id: 0, name: null }, ([_, v]) => v !== null)",
 		result: JSON.stringify(
+			// @ts-ignore
 			filterObject({ id: 0, name: null }, ([_, v]) => v !== null),
 		),
 	},

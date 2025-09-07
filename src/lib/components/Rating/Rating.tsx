@@ -79,7 +79,7 @@ export const Rating: FC<ILibRating> = ({
 				className={clsx("flex", genGap[gap], "rating", className)}
 				{...rest}
 			>
-				{generateNumbers(0, 4).map(n => {
+				{generateNumbers(0, 4).map((n: number) => {
 					const Element = readOnly ? "span" : "button"
 
 					return (

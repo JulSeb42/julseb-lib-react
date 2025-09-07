@@ -60,7 +60,7 @@ export const Button: FC<ILibButton> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"inline-flex items-center self-start gap-2 px-4 py-2 outline-none font-bold text-base",
+				"inline-flex justify-center items-center self-start gap-2 px-4 py-2 outline-none font-bold text-base",
 				genBorderRadius[borderRadius],
 				variant === "plain" && [
 					genBgColorHover[color],

@@ -1,8 +1,7 @@
 import { useRef, type FC } from "react"
 import { BiX } from "react-icons/bi"
-import { enableScroll } from "@julseb-lib/utils"
 import { useKeyPress, useClickOutside } from "../../hooks"
-import { clsx } from "../../utils"
+import { clsx, enableScroll } from "../../utils"
 import type { ILibModal } from "./types"
 
 /**

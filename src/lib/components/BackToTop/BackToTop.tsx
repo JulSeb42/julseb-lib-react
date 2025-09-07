@@ -1,8 +1,7 @@
 import { useEffect, useState, type FC } from "react"
 import { BiUpArrowAlt } from "react-icons/bi"
-import { scrollToTop } from "@julseb-lib/utils"
 import { ButtonIcon } from "../ButtonIcon"
-import { clsx, genRingColor } from "../../utils"
+import { clsx, genRingColor, scrollToTop } from "../../utils"
 import type { ILibBackToTop } from "./types"
 
 /**

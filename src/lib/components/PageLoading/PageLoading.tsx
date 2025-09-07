@@ -1,7 +1,6 @@
 import { useEffect, type FC } from "react"
-import { disableScroll } from "@julseb-lib/utils"
 import { Loader } from "../Loader"
-import { clsx, genBgAllColors } from "../../utils"
+import { clsx, genBgAllColors, disableScroll } from "../../utils"
 import type { ILibPageLoading } from "./types"
 
 /**

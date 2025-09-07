@@ -1,6 +1,6 @@
 import { useEffect, useRef, type FC } from "react"
 import { BiX } from "react-icons/bi"
-import { disableScroll, enableScroll, stringifyPx } from "@julseb-lib/utils"
+import { stringifyPx } from "@julseb-lib/utils"
 import { useClickOutside, useKeyPress } from "../../hooks"
 import { ButtonIcon } from "../ButtonIcon"
 import {
@@ -11,6 +11,8 @@ import {
 	genGap,
 	genLinkColor,
 	genTextAllColor,
+	disableScroll,
+	enableScroll,
 } from "../../utils"
 import type { ILibDrawer } from "./types"
 

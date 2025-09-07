@@ -9,6 +9,7 @@ import {
 import { uuid } from "@julseb-lib/utils"
 import { Image } from "../Image"
 import { clsx, genObjectFit, genBorderRadius } from "../../utils"
+import { useKeyPress } from "../../hooks"
 import { SlideshowButton } from "./SlideshowButton"
 import { SlideshowPagination } from "./SlideshowPagination"
 import type { ILibSlideshow } from "./types"
@@ -113,6 +114,9 @@ export const Slideshow: FC<ILibSlideshow> = ({
 
 		setTimeout(() => setIsTransitioning(false), options?.speed ?? 300)
 	}
+
+	useKeyPress("ArrowLeft", handlePrev)
+	useKeyPress("ArrowRight", handleNext)
 
 	const goToSlide = (n: number) => {
 		if (isTransitioning || n === currentSlide) return

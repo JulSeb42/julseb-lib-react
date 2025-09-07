@@ -48,6 +48,7 @@ export const Avatar: FC<ILibAvatar> = ({
 	const Element = element
 
 	const avatarProps = {
+		element,
 		className,
 		ref,
 		children,

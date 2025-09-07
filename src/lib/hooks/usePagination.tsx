@@ -1,4 +1,4 @@
-import { scrollToTop } from "@julseb-lib/utils"
+import { scrollToTop } from "../utils"
 import type { DispatchState } from "../types"
 
 interface ILibUsePaginationNavigation {

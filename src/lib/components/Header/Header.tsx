@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, type FC } from "react"
-import { enableScroll, disableScroll } from "@julseb-lib/utils"
 import { useClickOutside, useMaxWidth, useKeyPress } from "../../hooks"
 import { Burger } from "../Burger"
 import { HeaderSearch } from "./HeaderSearch"
@@ -9,6 +8,8 @@ import {
 	genLinkColor,
 	genRingColorChildren,
 	genTextAllColor,
+	enableScroll,
+	disableScroll,
 } from "../../utils"
 import type { ILibHeader } from "./types"
 

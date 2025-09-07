@@ -18,7 +18,7 @@ export default defineConfig({
 	external: [
 		"react",
 		"react-dom",
-		"@julseb-lib/utils",
+		// "@julseb-lib/utils",
 		"@tailwindcss/postcss",
 		"@tailwindcss/vite",
 		"clsx",
