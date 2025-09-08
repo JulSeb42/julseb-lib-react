@@ -3,7 +3,7 @@ import { clsx, Input, useTextLineCount } from "../../../../lib"
 
 export const PreviewUseTextLineCount = () => {
 	const [text, setText] = useState("")
-	const visualLines = useTextLineCount(text, 300, 16)
+	const { visualLines, elementRef } = useTextLineCount(text)
 
 	return (
 		<Input
@@ -15,6 +15,7 @@ export const PreviewUseTextLineCount = () => {
 			)}
 			value={text}
 			onChange={e => setText(e.target.value)}
+			ref={elementRef as any}
 		/>
 	)
 }
