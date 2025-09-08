@@ -36,7 +36,6 @@ export const useTextLineCount = (text: string, fontSize = 16) => {
 			return
 		}
 
-		// Get the actual computed width of the element
 		const computedStyle = getComputedStyle(element)
 		const paddingLeft = parseInt(computedStyle.paddingLeft) || 0
 		const paddingRight = parseInt(computedStyle.paddingRight) || 0
@@ -56,7 +55,6 @@ export const useTextLineCount = (text: string, fontSize = 16) => {
 		}
 
 		try {
-			// Create a hidden div that mimics the textarea styling
 			const hiddenDiv = document.createElement("div")
 			hiddenDiv.style.position = "absolute"
 			hiddenDiv.style.visibility = "hidden"
@@ -73,10 +71,8 @@ export const useTextLineCount = (text: string, fontSize = 16) => {
 
 			document.body.appendChild(hiddenDiv)
 
-			// Set the text content
 			hiddenDiv.textContent = text
 
-			// Calculate line count
 			const elementHeight = hiddenDiv.offsetHeight
 			const lineHeight =
 				parseInt(getComputedStyle(hiddenDiv).lineHeight) ||
@@ -86,23 +82,20 @@ export const useTextLineCount = (text: string, fontSize = 16) => {
 				Math.round(elementHeight / lineHeight),
 			)
 
-			// Cleanup
 			document.body.removeChild(hiddenDiv)
 
 			setVisualLines(calculatedLines)
 		} catch (error) {
 			console.warn("Element line count measurement failed:", error)
-			setVisualLines(text.split("\n").length) // Fallback to simple newline count
+			setVisualLines(text.split("\n").length)
 		}
 	}, [text, fontSize])
 
 	useEffect(() => {
-		// Small delay to ensure element is rendered and styles are applied
 		const timer = setTimeout(measureLines, 50)
 		return () => clearTimeout(timer)
 	}, [measureLines])
 
-	// Re-measure when element size might have changed
 	useEffect(() => {
 		const element = elementRef.current
 		if (!element) return
