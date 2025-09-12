@@ -51,11 +51,12 @@ export const PageLayout: FC<ILibPageLayout> = ({
 		<>
 			{meta && <Meta {...meta} />}
 
-			{isValidElement(header) ? (
-				header
-			) : (
-				<Header {...(header as ILibHeader)} />
-			)}
+			{header &&
+				(isValidElement(header) ? (
+					header
+				) : (
+					<Header {...(header as ILibHeader)} />
+				))}
 
 			{!noWrapper ? (
 				<Wrapper {...wrapperProps}>
@@ -69,11 +70,12 @@ export const PageLayout: FC<ILibPageLayout> = ({
 				children
 			)}
 
-			{isValidElement(footer) ? (
-				footer
-			) : (
-				<Footer {...(footer as ILibFooter)} />
-			)}
+			{footer &&
+				(isValidElement(footer) ? (
+					footer
+				) : (
+					<Footer {...(footer as ILibFooter)} />
+				))}
 		</>
 	)
 }
