@@ -9,6 +9,7 @@ export interface ILibMeta {
 	author?: string
 	authorUrl?: string
 	publisher?: string
+	appName?: string
 	type?:
 		| "article"
 		| "book"

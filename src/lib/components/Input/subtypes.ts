@@ -138,7 +138,7 @@ export type ILibSelectInput = Omit<
 /*====================== Textarea ======================*/
 
 export type ILibTextareaInput = TextareaHTMLAttributes<HTMLTextAreaElement> &
-	Omit<ILibInputCommon, "inputVariant"> &
+	Omit<ILibInputExtended, "inputVariant"> &
 	ILibInputWithValidation & {
 		ref?: Ref<HTMLTextAreaElement>
 		type: "textarea"

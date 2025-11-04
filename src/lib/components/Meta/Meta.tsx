@@ -67,6 +67,7 @@ export const Meta: FC<ILibMeta> = ({
 	twitterCard = "summary",
 	appleTouchIcon,
 	themeColor,
+	appName,
 }) => {
 	return (
 		<>
@@ -113,6 +114,7 @@ export const Meta: FC<ILibMeta> = ({
 					<meta name="twitter:image" content={cover} />
 				</>
 			)}
+			{appName && <meta name="application-name" content={appName} />}
 			{authorUrl && <link rel="author" href={authorUrl} />}
 			{manifest && <link rel="manifest" href={manifest} />}
 			{generator && <meta name="generator" content={generator} />}

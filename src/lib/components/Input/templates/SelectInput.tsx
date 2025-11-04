@@ -58,6 +58,7 @@ export const SelectInput: FC<ILibSelectInput> = ({
 				ref={useMergeRefs([ref, el])}
 				className={clsx(
 					"appearance-none cursor-pointer",
+					"max-w-[calc(100%-32px-4px)]",
 					INPUT_COMMON_CLASSES({
 						inputBackground,
 						validationStatus: validation?.status,

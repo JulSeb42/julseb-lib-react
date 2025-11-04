@@ -11,7 +11,9 @@ import {
 	convertPrice,
 	convertToEmail,
 	convertYoutube,
+	decrypt,
 	deleteDuplicates,
+	encrypt,
 	filterObject,
 	formatDate,
 	formatHour,
@@ -77,6 +79,8 @@ const TimeWithSeconds = () => {
 
 	return <span className="px-2 py-1">{time.toString()}</span>
 }
+
+const secretKey = "595a4cc5f93e152cb030b3711748bf72"
 
 export const allTsUtils: Array<Util> = [
 	{
@@ -165,6 +169,16 @@ export const allTsUtils: Array<Util> = [
 		result: convertYoutube("https://www.youtube.com/watch?v=C9k0_rNyK-E"),
 	},
 	{
+		name: "decrypt",
+		effect: "Decrypts a string of characters previously encrypted. The secretKey argument must be a string of exactly 32 characters long.",
+		arguments: ["encryptedString: string", "secretKey: string"],
+		example: `decrypt("e0307ff76b606708a423018f41dc09f9:89748d0c6d7227fb37638c8111c0d4ef", ${secretKey})`,
+		result: decrypt(
+			"e0307ff76b606708a423018f41dc09f9:89748d0c6d7227fb37638c8111c0d4ef",
+			secretKey,
+		),
+	},
+	{
 		name: "deleteDuplicates",
 		effect: "Delete duplicated values from array",
 		arguments: ["array: Array<T>"],
@@ -203,6 +217,13 @@ export const allTsUtils: Array<Util> = [
 				</Button>
 			</span>
 		),
+	},
+	{
+		name: "encrypt",
+		effect: "Encrypts a string of characters. The secretKey argument must be a string of exactly 32 characters long.",
+		arguments: ["text: string", "secretKey: string"],
+		example: `encrypt("Hello World", ${secretKey})`,
+		result: encrypt("Hello World", secretKey),
 	},
 	{
 		name: "filterObject",

@@ -14,7 +14,9 @@ export {
 	convertTime,
 	convertToEmail,
 	convertYoutube,
+	decrypt,
 	deleteDuplicates,
+	encrypt,
 	filterObject,
 	formatDate,
 	formatHour,
@@ -124,4 +126,5 @@ export * from "./components/Meta"
 export * from "./components/PageLayout"
 export * from "./components/SrOnly"
 export * from "./components/CodeContainer"
+export * from "./components/Carousel"
 /* Prepend here - DO NOT REMOVE */

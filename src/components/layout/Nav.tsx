@@ -28,7 +28,7 @@ export const Nav = () => {
 					placeholder="Search component"
 					className={clsx(
 						"p-1 w-full",
-						"border-1 border-gray-200 focus:border-blue-200 border-solid rounded-sm outline-none",
+						"border-1 border-gray-200 focus:border-primary-200 border-solid rounded-sm outline-none",
 						theme === "dark" ? "dark:bg-black" : "bg-white",
 					)}
 					value={search}
@@ -39,7 +39,7 @@ export const Nav = () => {
 
 			<button
 				onClick={switchTheme}
-				className="bg-blue-500 hover:bg-blue-300 active:bg-blue-600 px-4 py-2 rounded-md font-black text-white"
+				className="bg-primary-500 hover:bg-primary-300 active:bg-primary-600 px-4 py-2 rounded-md font-black text-white"
 			>
 				Switch theme
 			</button>

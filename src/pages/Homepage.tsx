@@ -38,7 +38,7 @@ export const Homepage = () => {
 			<Text>Theme is {theme}</Text>
 			<button
 				onClick={switchTheme}
-				className="self-start bg-blue-500 hover:bg-blue-300 active:bg-blue-600 px-4 py-2 rounded-md font-black text-white"
+				className="self-start bg-primary-500 hover:bg-primary-300 active:bg-primary-600 px-4 py-2 rounded-md font-black text-white"
 			>
 				Switch to {theme === "light" ? "dark" : "light"} theme
 			</button>

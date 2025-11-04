@@ -55,6 +55,23 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 			previewTitle: "With different height",
 			props: { images, className: "h-[300px]" },
 		},
+		{
+			previewTitle: "With different height",
+			props: {
+				// children: (
+				// 	<>
+				// 		<div className="w-full h-full">
+				// 			<button onClick={() => alert("Hello")}>
+				// 				Hello
+				// 			</button>
+				// 		</div>
+				// 		<div></div>
+				// 	</>
+				// ) as any,
+				images,
+				className: "h-[300px]",
+			},
+		},
 	],
 	props: [
 		{

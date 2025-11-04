@@ -9,7 +9,7 @@ const ThemeProviderPreview = () => {
 			<Text>Selected theme: {theme}</Text>
 			<button
 				onClick={switchTheme}
-				className="self-start bg-blue-500 hover:bg-blue-300 active:bg-blue-600 px-4 py-2 rounded-xl font-bold text-white"
+				className="self-start bg-primary-500 hover:bg-primary-300 active:bg-primary-600 px-4 py-2 rounded-xl font-bold text-white"
 			>
 				Toggle theme
 			</button>

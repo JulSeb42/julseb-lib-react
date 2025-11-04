@@ -471,27 +471,27 @@ iframe {
 	background-color: var(--color-white);
 }
 
-.overlay-black-50 {
+.bg-overlay-black-50 {
 	background: var(--color-overlay-black-50);
 }
 
-.overlay-black-80 {
+.bg-overlay-black-80 {
 	background: var(--color-overlay-black-80);
 }
 
-.overlay-white-50 {
+.bg-overlay-white-50 {
 	background: var(--color-overlay-white-50);
 }
 
-.overlay-white-80 {
+.bg-overlay-white-80 {
 	background: var(--color-overlay-white-80);
 }
 
-.overlay-gradient-black {
+.bg-overlay-gradient-black {
 	background: var(--color-overlay-gradient-black);
 }
 
-.overlay-gradient-white {
+.bg-overlay-gradient-white {
 	background: var(--color-overlay-gradient-white);
 }
 
@@ -539,5 +539,14 @@ iframe {
 
 	100% {
 		width: var(--meter-value);
+	}
+}
+
+@keyframes carousel-scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-33.333%);
 	}
 }

@@ -56,13 +56,13 @@ import { progressBarPreview } from "../lib/components/ProgressBar/__preview__/Pr
 import { progressCirclePreview } from "../lib/components/ProgressCircle/__preview__/ProgressCircle.preview"
 import { tabsPreview } from "../lib/components/Tabs/__preview__/Tabs.preview"
 import { slideshowPreview } from "../lib/components/Slideshow/__preview__/Slideshow.preview"
+import { carouselPreview } from "../lib/components/Carousel/__preview__/Carousel.preview"
 import { coverPreview } from "../lib/components/Cover/__preview__/Cover.preview"
 import { tablePreview } from "../lib/components/Table/__preview__/Table.preview"
 import { pageLoadingPreview } from "../lib/components/PageLoading/__preview__/PageLoading.preview"
 import { stickyPreview } from "../lib/components/Sticky/__preview__/Sticky.preview"
 import { markdownEditorPreview } from "../lib/components/MarkdownEditor/__preview__/MarkdownEditor.preview"
 import { markdownContainerPreview } from "../lib/components/MarkdownContainer/__preview__/MarkdownContainer.preview"
-// import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 import { codeContainerPreview } from "../lib/components/CodeContainer/__preview__/CodeContainer.preview"
 import { fadePreview } from "../lib/components/Fade/__preview__/Fade.preview"
 import { backToTopPreview } from "../lib/components/BackToTop/__preview__/BackToTop.preview"
@@ -108,7 +108,7 @@ type Prop = {
 		| "ReactElement"
 		| "Ref"
 		| "Array of array of ReactElement"
-		| "Array of React Element"
+		| "Array of React Element" | "Array of React Element or Array of string"
 		| "ILibMeta"
 		| "ILibHeader"
 		| "ILibFooter"
@@ -213,6 +213,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	progressCirclePreview,
 	tabsPreview,
 	slideshowPreview,
+	carouselPreview,
 	coverPreview,
 	tablePreview,
 	pageLoadingPreview,
