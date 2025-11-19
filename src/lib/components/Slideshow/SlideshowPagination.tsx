@@ -70,7 +70,7 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 									"size-2 rounded-full block",
 								],
 								type === "dots-outline" && [
-									"size-2 rounded-full border-1",
+									"size-2 rounded-full border",
 								],
 								type === "bars" && ["grow h-1 rounded-full"],
 								"slideshow-control",

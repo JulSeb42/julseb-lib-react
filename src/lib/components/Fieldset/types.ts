@@ -1,4 +1,4 @@
-import type { LibComponentBase, LibRadiuses } from "../../types"
+import type { LibComponentBase, LibRadiuses, ReactChildren } from "../../types"
 import type {
 	ILibInputCommon,
 	ILibInputWithValidation,
@@ -13,6 +13,6 @@ export type ILibFieldset = Omit<
 		"inputBackground" | "inputVariant" | "label" | "labelComment" | "helper"
 	> &
 	ILibInputWithValidation & {
-		legend: string
+		legend: ReactChildren
 		borderRadius?: LibRadiuses
 	}

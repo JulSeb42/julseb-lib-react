@@ -37,10 +37,28 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "setValue",
 			type: "function",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Function to update the counter value.",
 			isRequired: true,
+		},
+		{
+			name: "onClickPlus",
+			type: "function",
+			possibleValues: null,
+			defaultValue: null,
+			description:
+				"Callback function triggered when plus button is clicked.",
+			isRequired: false,
+		},
+		{
+			name: "onClickMinus",
+			type: "function",
+			possibleValues: null,
+			defaultValue: null,
+			description:
+				"Callback function triggered when minus button is clicked.",
+			isRequired: false,
 		},
 		{
 			name: "label",

@@ -306,7 +306,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 			{!hidePagination && totalSlides > 1 && (
 				<SlideshowPagination
 					className={pagination?.className}
-					images={pagination?.images}
+					images={pagination?.images ?? images}
 					active={currentSlide}
 					setActive={setCurrentSlide}
 					contentLength={totalSlides}

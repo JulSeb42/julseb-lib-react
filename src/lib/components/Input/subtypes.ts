@@ -142,6 +142,7 @@ export type ILibTextareaInput = TextareaHTMLAttributes<HTMLTextAreaElement> &
 	ILibInputWithValidation & {
 		ref?: Ref<HTMLTextAreaElement>
 		type: "textarea"
+		counter?: boolean
 	}
 
 /*====================== Text ======================*/

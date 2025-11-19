@@ -26,6 +26,8 @@ type ILibInputCounterBase = Omit<
 		min?: number
 		max?: number
 		step?: number
+		onClickPlus?: () => void
+		onClickMinus?: () => void
 		type?: never
 		children?: never
 	}

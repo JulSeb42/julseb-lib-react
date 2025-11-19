@@ -36,7 +36,10 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 		},
 		{
 			previewTitle: "With thumbnails",
-			props: { images, pagination: { type: "thumbnails" } },
+			props: {
+				images,
+				pagination: { type: "thumbnails" },
+			},
 		},
 		{
 			previewTitle: "With controls",

@@ -48,6 +48,8 @@ import type { ILibInputCounter } from "./types"
  * @prop {number} [props.max=100] - Maximum allowed value for the counter.
  * @prop {number} [props.step=1] - Increment/decrement step value.
  * @prop {string} [containerClassName] - Additional CSS classes for the container.
+ * @param props.onClickPlus - Callback function triggered when plus button is clicked
+ * @param props.onClickMinus - Callback function triggered when minus button is clicked
  * @prop {any} [props.rest] - Additional props spread to the input or span element.
  *
  * @returns {JSX.Element} The rendered InputCounter component.
@@ -76,6 +78,8 @@ export const InputCounter: FC<ILibInputCounter> = ({
 	max = 100,
 	step = 1,
 	containerClassName,
+	onClickPlus,
+	onClickMinus,
 	...rest
 }) => {
 	return (
@@ -103,7 +107,10 @@ export const InputCounter: FC<ILibInputCounter> = ({
 					aria-label={labelButtons?.minus}
 					tooltip={labelButtons?.minus ?? "Minus"}
 					showTooltip={showButtonsTooltip && { offset: "xs" }}
-					onClick={() => setValue(prev => prev - step)}
+					onClick={() => {
+						setValue(prev => prev - step)
+						if (onClickMinus) onClickMinus()
+					}}
 					disabled={value === min}
 				/>
 
@@ -135,7 +142,10 @@ export const InputCounter: FC<ILibInputCounter> = ({
 					aria-label={labelButtons?.plus}
 					tooltip={labelButtons?.plus ?? "Plus"}
 					showTooltip={showButtonsTooltip && { offset: "xs" }}
-					onClick={() => setValue(prev => prev + step)}
+					onClick={() => {
+						setValue(prev => prev + step)
+						if (onClickPlus) onClickPlus()
+					}}
 					disabled={value === max}
 				/>
 			</div>
