@@ -21,6 +21,7 @@ import { tooltipPreview } from "../lib/components/Tooltip/__preview__/Tooltip.pr
 import { hrPreview } from "../lib/components/Hr/__preview__/Hr.preview"
 import { skeletonPreview } from "../lib/components/Skeleton/__preview__/Skeleton.preview"
 import { imagePreview } from "../lib/components/Image/__preview__/Image.preview"
+import { lazyImagePreview } from "../lib/components/LazyImage/__preview__/LazyImage.preview"
 import { masonryPreview } from "../lib/components/Masonry/__preview__/Masonry.preview"
 import { badgePreview } from "../lib/components/Badge/__preview__/Badge.preview"
 import { avatarPreview } from "../lib/components/Avatar/__preview__/Avatar.preview"
@@ -108,12 +109,14 @@ type Prop = {
 		| "ReactElement"
 		| "Ref"
 		| "Array of array of ReactElement"
-		| "Array of React Element" | "Array of React Element or Array of string"
+		| "Array of React Element"
+		| "Array of React Element or Array of string"
 		| "ILibMeta"
 		| "ILibHeader"
 		| "ILibFooter"
 		| "ILibWrapper"
 		| "ILibMain"
+		| "string | Array<string>"
 	possibleValues:
 		| Array<string | number>
 		| "Any color from the library"
@@ -178,6 +181,7 @@ export const previews: Array<ComponentPreview<any>> = [
 	hrPreview,
 	skeletonPreview,
 	imagePreview,
+	lazyImagePreview,
 	masonryPreview,
 	badgePreview,
 	avatarPreview,

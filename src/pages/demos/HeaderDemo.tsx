@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react"
 import { Link, useSearchParams, NavLink } from "react-router-dom"
 import { CoverLayout } from "../../components"
-import { Header, Cover, Text, uuid } from "../../lib"
+import { Header, Cover, Text, Button, uuid } from "../../lib"
 
 const links = [
 	<NavLink to="/header/demo" key={uuid()}>
@@ -41,7 +41,7 @@ export const HeaderDemo = () => {
 				}}
 				position="fixed"
 				hideOnScroll
-				navMobileBackground="secondary"
+				// navMobileBackground="secondary"
 				backgroundColor="transparent"
 				headerOpenMobileBackground="primary"
 			/>
@@ -61,6 +61,8 @@ export const HeaderDemo = () => {
 				<Text tag="h2" display>
 					Subtitle
 				</Text>
+
+				<Button onClick={() => alert("Hello")}>Say Hello</Button>
 			</Cover>
 		</CoverLayout>
 	)

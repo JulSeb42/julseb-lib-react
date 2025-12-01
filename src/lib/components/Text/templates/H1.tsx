@@ -25,8 +25,8 @@ export const H1: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				display
-					? "text-(length:--text-display-h1)"
-					: "text-(length:--text-h1)",
+					? "text-display-h1"
+					: "text-h1",
 				TEXT_BASE_CLASSES,
 				"font-black",
 				(genTextAlign as any)[textAlign],

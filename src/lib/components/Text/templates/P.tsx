@@ -24,7 +24,7 @@ export const P: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-(length:--text-body)",
+				"text-body",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],

@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { clsx, genBgAllColors } from "../../utils"
+import { clsx, genBgAllColors, genGap } from "../../utils"
 import type { ILibAside } from "./types"
 
 /**
@@ -31,6 +31,7 @@ export const Aside: FC<ILibAside> = ({
 	children,
 	size = "default",
 	backgroundColor = "background",
+	gap = "lg",
 	...rest
 }) => {
 	const Element = element
@@ -39,10 +40,10 @@ export const Aside: FC<ILibAside> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"flex flex-col items-stretch gap-6",
-				"sm:py-8 md:py-12 w-full",
+				"flex flex-col items-stretch w-full",
 				(genBgAllColors as any)[backgroundColor],
 				asideSize[size],
+				genGap[gap],
 				"aside",
 				className,
 			)}

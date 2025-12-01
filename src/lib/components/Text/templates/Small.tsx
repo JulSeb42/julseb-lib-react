@@ -24,7 +24,7 @@ export const Small: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-(length:--text-small)",
+				"text-small",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],

@@ -46,7 +46,7 @@ export const Alert: FC<ILibAlert> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"flex flex-col gap-2 px-4 py-2 border rounded-md w-full max-w-[400px]",
+				"flex flex-col gap-2 px-4 py-2 border rounded-md w-full max-w-100",
 				genBgColor50(theme)[color],
 				genBorderColorShort[color],
 				"alert",

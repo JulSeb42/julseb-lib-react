@@ -42,7 +42,7 @@ export const Main: FC<ILibMain> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"flex flex-col sm:py-8 md:py-12 w-full",
+				"flex flex-col items-stretch w-full",
 				(genBgAllColors as any)[backgroundColor],
 				genGap[gap],
 				maxWidth[size],

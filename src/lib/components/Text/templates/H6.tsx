@@ -24,7 +24,7 @@ export const H6: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-(length:--text-h6)",
+				"text-h6",
 				"font-black",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],

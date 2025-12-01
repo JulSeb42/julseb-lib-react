@@ -63,7 +63,7 @@ export const INPUT_CONTAINER_CLASSES = ({
 	noWrapper?: boolean
 }) => [
 	"w-full h-8 border border-gray-200 flex items-center gap-1 rounded-md overflow-hidden relative bg-background",
-	"has-[input:focus]:border-primary-500",
+	"has-[input:focus]:border-primary-500 has-[select:focus]:border-primary-500",
 	"has-[input:disabled]:cursor-not-allowed has-[input:disabled]:bg-gray-100 has-[input:disabled]:text-gray-500 has-[select:disabled]:bg-gray-100 has-[select:disabled]:text-gray-500 [&.input-textarea]:outline-none",
 	"[&_input]:bg-transparent [&_select]:bg-transparent",
 	validation &&

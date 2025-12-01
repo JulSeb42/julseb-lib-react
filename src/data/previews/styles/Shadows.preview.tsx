@@ -6,7 +6,7 @@ const ShadowsPreview = () => {
 		<div className="gap-4 grid grid-cols-2">
 			{allShadows.map((shadow, i) => (
 				<div
-					className="flex flex-col items-center gap-2 p-2 border-1 border-gray-200 rounded-md"
+					className="flex flex-col items-center gap-2 p-2 border border-gray-200 rounded-md"
 					key={i}
 				>
 					<div

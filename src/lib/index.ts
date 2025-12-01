@@ -127,4 +127,5 @@ export * from "./components/PageLayout"
 export * from "./components/SrOnly"
 export * from "./components/CodeContainer"
 export * from "./components/Carousel"
+export * from "./components/LazyImage"
 /* Prepend here - DO NOT REMOVE */

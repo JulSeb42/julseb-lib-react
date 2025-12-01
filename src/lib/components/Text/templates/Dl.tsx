@@ -24,7 +24,7 @@ export const Dl: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-(length:--text-body)",
+				"text-body",
 				"[&>dt]:font-bold",
 				"[&>dd]:font-normal [&>dd]:ps-4",
 				genTextAlign[textAlign],

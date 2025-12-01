@@ -7,7 +7,7 @@ const OverlaysPreview = () => {
 			{allOverlays.map((overlay, i) => (
 				<div
 					key={i}
-					className="flex items-center gap-2 p-2 border-1 border-gray-200 rounded-md"
+					className="flex items-center gap-2 p-2 border border-gray-200 rounded-md"
 				>
 					<div
 						className="size-25"

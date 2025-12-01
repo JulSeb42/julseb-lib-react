@@ -310,7 +310,7 @@ html,
 body {
 	font-family: var(--font-sans);
 	width: 100%;
-	min-height: 100vh;
+	height: fit-content;
 	background-color: var(--color-background);
 	color: var(--color-font);
 	max-width: 100dvw;

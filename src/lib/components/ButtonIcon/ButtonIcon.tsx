@@ -59,6 +59,7 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
 	containerClasses,
 	"aria-label": ariaLabel = tooltip,
 	type = "button",
+	disabled,
 	...rest
 }) => {
 	const buttonProps = {
@@ -73,6 +74,8 @@ export const ButtonIcon: FC<ILibButtonIcon> = ({
 		loaderVariant,
 		"aria-label": ariaLabel,
 		type,
+		loaderClasses,
+		disabled: disabled || isLoading,
 		...rest,
 	}
 

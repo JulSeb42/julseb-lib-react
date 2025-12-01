@@ -20,7 +20,7 @@ export const Nav = () => {
 	useKeyPress(["Command", "KeyK"], () => el?.current?.focus())
 
 	return (
-		<nav className="fixed flex flex-col items-stretch gap-2 bg-primary-800 p-4 w-[250px] h-[100vh] overflow-y-scroll no-scrollbar">
+		<nav className="fixed flex flex-col items-stretch gap-2 bg-primary-800 p-4 w-[250px] h-screen overflow-y-scroll no-scrollbar">
 			<div className="block h-8">
 				<Input
 					type="search"
@@ -28,7 +28,7 @@ export const Nav = () => {
 					placeholder="Search component"
 					className={clsx(
 						"p-1 w-full",
-						"border-1 border-gray-200 focus:border-primary-200 border-solid rounded-sm outline-none",
+						"border border-gray-200 focus:border-primary-200 border-solid rounded-sm outline-none",
 						theme === "dark" ? "dark:bg-black" : "bg-white",
 					)}
 					value={search}

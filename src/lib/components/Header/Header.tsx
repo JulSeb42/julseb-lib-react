@@ -77,10 +77,10 @@ export const Header: FC<ILibHeader> = ({
 	links,
 	nav,
 	backgroundColor = "primary",
-	navMobileBackground = backgroundColor,
+	navMobileBackground = "primary",
 	textColor = "white",
 	linksColor = "white",
-	headerOpenMobileBackground = backgroundColor,
+	headerOpenMobileBackground = "primary",
 	...rest
 }) => {
 	const Element = element
@@ -202,7 +202,7 @@ export const Header: FC<ILibHeader> = ({
 				isOpen && genBgAllColors[headerOpenMobileBackground],
 				genTextAllColor[textColor],
 				genLinkColor[linksColor],
-				isHidden ? "top-[-64px]" : "top-0",
+				isHidden ? "-top-16" : "top-0",
 				"header",
 				className,
 			)}
@@ -234,8 +234,8 @@ export const Header: FC<ILibHeader> = ({
 			{isMobile && navMobileVariant === "drawer" && (
 				<div
 					className={clsx(
-						"md:hidden sm:visible transition-all duration-200 ease-in-out",
-						"absolute w-full h-[calc(100svh-56px)] top-[56px] left-0 z-996 bg-overlay-black-50",
+						"md:hidden transition-all duration-200 ease-in-out",
+						"absolute w-full h-[calc(100svh-56px)] top-14 left-0 z-996 bg-overlay-black-50",
 						isOpen ? "visible opacity-100" : "invisible opacity-0",
 						"drawer-overlay",
 					)}

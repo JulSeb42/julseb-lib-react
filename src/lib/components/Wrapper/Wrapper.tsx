@@ -43,7 +43,7 @@ export const Wrapper: FC<ILibWrapper> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"z-10 relative flex sm:flex-row flex-col justify-stretch sm:justify-center-safe gap-5 px-4 md:px-5 lg:px-12 w-full h-fit",
+				"z-10 relative flex sm:flex-row flex-col justify-stretch sm:justify-center-safe px-[5%] py-12 w-full h-fit",
 				(genBgAllColors as any)[backgroundColor],
 				genMinHeight[minHeight],
 				genGap[gap],

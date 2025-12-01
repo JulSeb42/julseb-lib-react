@@ -1,7 +1,5 @@
 import { useEffect, type RefObject } from "react"
 
-type Event = MouseEvent | TouchEvent
-
 /**
  * Hook to trigger a function when clicking outside a referenced element.
  *
@@ -17,34 +15,36 @@ type Event = MouseEvent | TouchEvent
  * @template T - HTML element type that extends HTMLElement
  * @param {RefObject<T>} ref - React ref object pointing to the target element
  * @param {function} handler - Callback function to execute when clicking outside the element
- * @param {Event} handler.event - The mouse or touch event that triggered the outside click
+ * @param {boolean} isActive - Whether the click outside detection is active (default: true)
+ * @param {number} delay - Delay in milliseconds before activating the listener (default: 100ms)
  *
  * @returns {void} This hook doesn't return anything
  *
  * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useClickOutside
  */
+
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(
 	ref: RefObject<T>,
-	handler: (event: Event) => void,
+	handler: () => void,
+	isActive: boolean = true,
+	delay: number = 100,
 ) => {
 	useEffect(() => {
-		const listener = (e: Event) => {
-			const target = e.target as HTMLElement
-
-			if (target.getAttribute("href")) return false
-
-			const el = ref?.current
-			if (!el || el.contains((e?.target as Node) || null)) {
-				return
+		const handleClickOutside = (event: MouseEvent) => {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
+				handler()
 			}
-
-			handler(e)
 		}
 
-		document.addEventListener("mousedown", listener)
+		if (isActive) {
+			const timeoutId = setTimeout(() => {
+				document.addEventListener("mousedown", handleClickOutside)
+			}, delay)
 
-		return () => {
-			document.removeEventListener("mousedown", listener)
+			return () => {
+				clearTimeout(timeoutId)
+				document.removeEventListener("mousedown", handleClickOutside)
+			}
 		}
-	}, [ref, handler])
+	}, [ref, handler, isActive, delay])
 }

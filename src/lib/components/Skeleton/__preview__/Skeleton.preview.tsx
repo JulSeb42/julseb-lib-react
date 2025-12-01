@@ -18,7 +18,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 			props: {
 				borderRadius: "3xl",
 				animation: "pulse",
-				className: "w-[200px] h-[150px]",
+				className: "w-50 h-[150px]",
 			},
 		},
 		{
@@ -33,7 +33,7 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 				<SkeletonCard
 					flexDirection="col"
 					gap="sm"
-					className="px-2 py-4 border-1 border-gray-200"
+					className="px-2 py-4 border border-gray-200"
 				>
 					<Skeleton
 						borderRadius="sm"
@@ -56,12 +56,9 @@ export const skeletonPreview: ComponentPreview<ILibSkeleton> = {
 					gap="xs"
 					borderRadius="md"
 					isShiny
-					className="p-4 border-1 border-gray-200"
+					className="p-4 border border-gray-200"
 				>
-					<Skeleton
-						borderRadius="lg"
-						className="w-[200px] h-[150px]"
-					/>
+					<Skeleton borderRadius="lg" className="w-50 h-[150px]" />
 					<Skeleton borderRadius="sm" className="w-full h-6" />
 					<Skeleton borderRadius="sm" className="w-[90%] h-6" />
 				</SkeletonCard>

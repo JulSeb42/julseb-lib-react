@@ -135,7 +135,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 				)}
 
 				<ButtonIcon
-					icon={icons?.minus ?? <BiPlus />}
+					icon={icons?.plus ?? <BiPlus />}
 					className="size-6 input-counter-button"
 					color={buttonsColor}
 					variant={buttonVariant}

@@ -66,4 +66,5 @@ export * from "../components/PageLayout/types"
 export * from "../components/SrOnly/types"
 export * from "../components/CodeContainer/types"
 export * from "../components/Carousel/types"
+export * from "../components/LazyImage/types"
 /* Prepend here - DO NOT REMOVE */

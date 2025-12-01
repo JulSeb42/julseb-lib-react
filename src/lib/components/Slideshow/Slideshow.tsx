@@ -3,6 +3,7 @@ import {
 	useState,
 	useEffect,
 	useRef,
+	Suspense,
 	type FC,
 	type TouchEvent,
 } from "react"
@@ -216,6 +217,10 @@ export const Slideshow: FC<ILibSlideshow> = ({
 			className={clsx(
 				"relative flex flex-col gap-2 aspect-video",
 				"slideshow",
+				borderRadius && [
+					genBorderRadius[borderRadius],
+					"overflow-hidden",
+				],
 				className,
 			)}
 			{...rest}
@@ -254,21 +259,26 @@ export const Slideshow: FC<ILibSlideshow> = ({
 				>
 					{images
 						? images.map((img, i) => (
-								<Image
+								<Suspense
 									key={uuid()}
-									src={img}
-									alt={`Slideshow image ${i + 1}`}
-									className={clsx(
-										"size-full shrink-0",
-										genObjectFit[imgFit],
-										"slideshow-image",
-									)}
-									width="100%"
-									height="100%"
-									fit="cover"
-									borderRadius={borderRadius}
-									draggable={false}
-								/>
+									fallback={<p>Loading...</p>}
+								>
+									<Image
+										key={uuid()}
+										src={img}
+										alt={`Slideshow image ${i + 1}`}
+										className={clsx(
+											"size-full shrink-0",
+											genObjectFit[imgFit],
+											"slideshow-image",
+										)}
+										width="100%"
+										height="100%"
+										fit="cover"
+										borderRadius={borderRadius}
+										draggable={false}
+									/>
+								</Suspense>
 							))
 						: childrenArray.map(child => (
 								<div
