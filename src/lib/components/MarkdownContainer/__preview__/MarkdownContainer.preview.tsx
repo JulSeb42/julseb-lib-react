@@ -1,8 +1,4 @@
-import {
-	MarkdownContainer,
-	// CodeContainer
-} from "../../../"
-// import { optionsMarkdown } from "../../../../data/helpers"
+import { MarkdownContainer } from "../../../"
 import type { ILibMarkdownContainer } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
@@ -21,30 +17,17 @@ export const markdownContainerPreview: ComponentPreview<ILibMarkdownContainer> =
 			{
 				props: {
 					children:
-						"## Hello world \n\n I'm some markdown content **compiled** to *jsx*",
+						"## Hello world \n\n I'm some [markdown](https://google.com) content **compiled** to *jsx*",
 				},
 			},
-			// {
-			// 	previewTitle: "Options",
-			// 	demo: (
-			// 		<CodeContainer
-			// 			highlighterProps={{ language: "typescript" }}
-			// 		>
-			// 			{JSON.stringify(optionsMarkdown, null, "  ").replaceAll(
-			// 				'],\n  "',
-			// 				'],\n\n  "',
-			// 			)}
-			// 		</CodeContainer>
-			// 	),
-			// },
 		],
 		props: [
 			{
-				name: "options",
+				name: "components",
 				type: "Object",
-				possibleValues: [],
-				defaultValue: "libOptionsMarkdown",
-				description: "Markdown parsing options and configurations.",
+				possibleValues: null,
+				defaultValue: "libMarkdownComponents",
+				description: "Markdown parsing components.",
 				isRequired: false,
 			},
 		],

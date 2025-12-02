@@ -1,11 +1,11 @@
 import { useState, useRef, type FC } from "react"
-import Markdown from "markdown-to-jsx"
+import Markdown from "react-markdown"
 import { InputContainer } from "../InputContainer"
 import { MarkdownEditorTitles } from "./MarkdownEditorTitles"
 import { MarkdownButtons } from "./MarkdownButtons"
 import { MarkdownViewButtons } from "./MarkdownViewButtons"
 import { useMergeRefs } from "../../hooks"
-import { clsx, libOptionsMarkdown } from "../../utils"
+import { clsx, libMarkdownComponents } from "../../utils"
 import type { ILibMarkdownEditor } from "./types"
 import type { LibMdEditorViews } from "../../types"
 
@@ -175,12 +175,15 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 					)}
 
 					{(view === "viewLive" || view === "viewPreview") && (
-						<Markdown
-							options={libOptionsMarkdown}
-							className={clsx("p-2", "md-editor-markdown")}
-						>
-							{value}
-						</Markdown>
+						<div className="p-2 md-editor-markdown">
+							<Markdown
+								components={libMarkdownComponents}
+
+								// className={clsx("p-2", "md-editor-markdown")}
+							>
+								{value}
+							</Markdown>
+						</div>
 					)}
 				</div>
 			</div>

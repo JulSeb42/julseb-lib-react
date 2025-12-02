@@ -1,10 +1,14 @@
 import { type FC } from "react"
-import Markdown from "markdown-to-jsx"
-import { clsx, libOptionsMarkdown } from "../../utils"
+import Markdown from "react-markdown"
+import { libMarkdownComponents } from "../../utils"
 import type { ILibMarkdownContainer } from "./types"
 
 /**
  * MarkdownContainer component for rendering markdown content with customizable parsing options and styling.
+ *
+ * Renders Markdown using the `react-markdown` library, allowing you to override default Markdown elements
+ * with custom React components via the `components` prop. Supports additional configuration such as
+ * filtering elements and transforming URLs.
  *
  * @component
  *
@@ -16,32 +20,28 @@ import type { ILibMarkdownContainer } from "./types"
  *
  * @extends HTMLDivElement
  *
- * @prop {string} [props.className] - Additional CSS classes to apply to the markdown container.
- * @prop {React.Ref<HTMLDivElement>} [props.ref] - Ref to the markdown container element.
- * @prop {string} [props.children] - Markdown content to parse and render.
- * @prop {object} [props.options=libOptionsMarkdown] - Markdown parsing options and configurations.
+ * @prop {string} [children] - Markdown content to parse and render.
+ * @prop {object} [components=markdownComponents] - Custom React components to override default Markdown rendering.
+ * @prop {(element: React.ElementType, props: any) => boolean} [allowElement] - Function to filter which elements are allowed.
+ * @prop {(url: string, key: string, node: any) => string} [urlTransform] - Function to transform URLs in Markdown.
+ * @prop {object} [rest] - Additional props spread to the underlying Markdown component.
  *
  * @returns {JSX.Element} The rendered MarkdownContainer component.
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/markdown-container
  */
 export const MarkdownContainer: FC<ILibMarkdownContainer> = ({
-	className,
-	ref,
 	children,
-	options = libOptionsMarkdown,
+	components = libMarkdownComponents,
+	allowElement,
+	urlTransform,
 	...rest
 }) => {
 	return (
 		<Markdown
-			// @ts-ignore
-			ref={ref as any}
-			className={clsx(
-				"flex flex-col items-stretch gap-3",
-				"markdown-container",
-				className,
-			)}
-			options={options}
+			components={components}
+			allowElement={allowElement}
+			urlTransform={urlTransform}
 			{...rest}
 		>
 			{children as any}

@@ -18,12 +18,11 @@ export default defineConfig({
 	external: [
 		"react",
 		"react-dom",
-		// "@julseb-lib/utils",
 		"@tailwindcss/postcss",
 		"@tailwindcss/vite",
 		"clsx",
 		"fuse.js",
-		"markdown-to-jsx",
+		"react-markdown",
 		"postcss",
 		"react-icons",
 		"react-syntax-highlighter",

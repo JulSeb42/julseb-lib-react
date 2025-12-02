@@ -14,7 +14,7 @@ export const lazyImagePreview: ComponentPreview<ILibLazyImage> = {
 	optionalImports: null,
 	propsImport: "ILibLazyImage",
 	additionalTypeImports: null,
-	extends: ["HTMLImgElement"],
+	extends: ["ILibImage"],
 	previews: [
 		{
 			previewTitle: "Default",

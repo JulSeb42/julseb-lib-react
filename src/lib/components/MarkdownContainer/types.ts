@@ -1,8 +1,16 @@
-import type { MarkdownToJSX } from "markdown-to-jsx"
-import type { LibComponentBase, ReactChildren } from "../../types"
+import type {
+	Components,
+	AllowElement,
+	ExtraProps,
+	HooksOptions,
+	Options,
+	UrlTransform,
+} from "react-markdown"
 
-export interface ILibMarkdownContainer
-	extends Omit<LibComponentBase<HTMLDivElement>, "element"> {
-	options?: MarkdownToJSX.Options
-	children?: ReactChildren
-}
+export type ILibMarkdownContainer = ExtraProps &
+	HooksOptions &
+	Options & {
+		components?: Components
+		allowElement?: AllowElement
+		urlTransform?: UrlTransform
+	}
