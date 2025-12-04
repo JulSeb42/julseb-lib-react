@@ -1,6 +1,5 @@
 import { Children, Fragment, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
-import { useLibTheme } from "../../context"
 import { clsx, genBgColor50, genBorderColorShort } from "../../utils"
 import type { ILibKey } from "./types"
 
@@ -31,8 +30,6 @@ export const Key: FC<ILibKey> = ({
 	accentColor = "primary",
 	...rest
 }) => {
-	const { theme } = useLibTheme()
-
 	const Element = element
 	const childrenArray = Children.toArray(
 		children?.toString().replaceAll(",", "").split(""),
@@ -46,7 +43,7 @@ export const Key: FC<ILibKey> = ({
 				genBorderRadius[size],
 				genFontSize[size],
 				genPadding[size],
-				genBgColor50(theme)[accentColor],
+				genBgColor50[accentColor],
 				genBorderColorShort[accentColor],
 				genBorderBottom[size],
 				"key",

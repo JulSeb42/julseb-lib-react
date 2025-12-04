@@ -20,7 +20,12 @@ export const Nav = () => {
 	useKeyPress(["Command", "KeyK"], () => el?.current?.focus())
 
 	return (
-		<nav className="fixed flex flex-col items-stretch gap-2 bg-primary-800 p-4 w-[250px] h-screen overflow-y-scroll no-scrollbar">
+		<nav
+			className={clsx(
+				"fixed flex flex-col items-stretch gap-2 p-4 w-[250px] h-screen overflow-y-scroll no-scrollbar",
+				theme === "dark" ? "bg-primary-200" : "bg-primary-800",
+			)}
+		>
 			<div className="block h-8">
 				<Input
 					type="search"
