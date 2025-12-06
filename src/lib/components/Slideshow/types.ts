@@ -13,6 +13,7 @@ interface ILibSlideshowBase extends LibComponentBase<HTMLDivElement> {
 	options?: ILibPaginationOptions
 	borderRadius?: LibRadiuses
 	hidePagination?: boolean
+	defaultSlide?: number
 }
 
 interface SlideshowWithImages extends ILibSlideshowBase {

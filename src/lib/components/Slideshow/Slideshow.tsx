@@ -43,6 +43,7 @@ import type { ILibSlideshow } from "./types"
  * @prop {string[]} [props.images] - Array of image URLs to display in the slideshow.
  * @prop {object} [props.pagination] - Configuration object for pagination indicators and behavior.
  * @prop {boolean} [props.hidePagination] - Whether to hide the pagination indicators.
+ * @prop {number} [props.defaultSlide] - Selects the default slide shown on load of the page.
  * @prop {LibBorderRadius} [props.borderRadius] - Border radius variant for the slideshow container.
  *
  * @returns {JSX.Element} The rendered Slideshow component.
@@ -62,6 +63,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 	pagination,
 	hidePagination,
 	borderRadius,
+	defaultSlide = 0,
 	...rest
 }) => {
 	const Element = element
@@ -69,7 +71,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 	const slides = images ?? childrenArray
 	const totalSlides = slides.length
 
-	const [currentSlide, setCurrentSlide] = useState(0)
+	const [currentSlide, setCurrentSlide] = useState(defaultSlide)
 	const [isTransitioning, setIsTransitioning] = useState(false)
 
 	const touchStartX = useRef<number>(0)

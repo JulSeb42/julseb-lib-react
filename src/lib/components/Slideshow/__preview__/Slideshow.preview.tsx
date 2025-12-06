@@ -39,6 +39,7 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 			props: {
 				images,
 				pagination: { type: "thumbnails" },
+				defaultSlide: 1,
 			},
 		},
 		{
@@ -149,10 +150,18 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 		{
 			name: "pagination",
 			type: "Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Configuration object for pagination indicators and behavior.",
+			isRequired: false,
+		},
+		{
+			name: "defaultSlide",
+			type: "number",
+			possibleValues: null,
+			defaultValue: "0",
+			description: "Sets the default slide shown in the slideshow",
 			isRequired: false,
 		},
 	],
