@@ -1,8 +1,26 @@
+import { useState } from "react"
 import { generateNumbers, Slideshow } from "../../../"
 import type { ILibSlideshow } from "../../../types/components-props"
 import type { ComponentPreview } from "../../../../data/components"
 
 const images = generateNumbers(1, 4).map(n => `/images/slideshow-${n}.avif`)
+
+const SlideshowActive: FC<{ active: number }> = ({ active }) => {
+	const [activeSlide, setActiveSlide] = useState(active)
+
+	return (
+		<>
+			<button onClick={() => setActiveSlide(0)}>Active 0</button>
+			<button onClick={() => setActiveSlide(1)}>Active 1</button>
+			<button onClick={() => setActiveSlide(2)}>Active 2</button>
+			<Slideshow
+				images={images}
+				defaultSlide={activeSlide}
+				key={activeSlide}
+			/>
+		</>
+	)
+}
 
 export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 	name: "Slideshow",
@@ -75,6 +93,10 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 				images,
 				className: "h-[300px]",
 			},
+		},
+		{
+			previewTitle: "Active slide",
+			demo: <SlideshowActive active={2} />,
 		},
 	],
 	props: [
