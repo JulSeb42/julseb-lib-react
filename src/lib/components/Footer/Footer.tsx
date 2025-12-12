@@ -72,7 +72,7 @@ const Footer: FC<ILibFooter> = ({
 					? "flex-row justify-between"
 					: "flex-col items-center gap-2",
 				!hideSeparator &&
-					"before:w-[90%] before:h-[1px] before:absolute before:top-0 before:left-[5%] before:bg-gray-200 pt-4",
+					"before:w-[90%] before:h-px before:absolute before:top-0 before:left-[5%] before:bg-gray-200 pt-4",
 				genLinkColor[linksColor],
 				genButtonColor[linksColor],
 				"footer",

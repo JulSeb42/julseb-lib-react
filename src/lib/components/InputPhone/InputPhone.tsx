@@ -132,7 +132,7 @@ const InputPhone: FC<ILibInputPhone> = ({
 					<button
 						type="button"
 						className={clsx(
-							"inline-flex items-center gap-1 px-2 border-r-1 border-r-gray-200 w-[81px] h-full",
+							"inline-flex items-center gap-1 px-2 border-r border-r-gray-200 w-[81px] h-full",
 							"input-phone-country-button",
 						)}
 						onClick={() => setIsOpen(!isOpen)}

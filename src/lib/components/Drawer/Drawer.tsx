@@ -115,7 +115,7 @@ const Drawer: FC<ILibDrawer> = ({
 
 			<div
 				className={clsx(
-					"top-0 z-10 absolute flex flex-col items-stretch gap-2 p-4 w-full max-w-(--drawer-max-width) h-full [&>*]:text-left transition-all duration-200 ease-in-out",
+					"top-0 z-10 absolute flex flex-col items-stretch gap-2 p-4 w-full max-w-(--drawer-max-width) h-full *:text-left transition-all duration-200 ease-in-out",
 					genGap[gap],
 					genBgAllColors[backgroundColor],
 					genTextAllColor[contentColor],

@@ -52,14 +52,14 @@ const TabsButton: FC<ILibTabsButton> = ({
 				genRingColor["primary"],
 				isActive && "active",
 				variant === "basic" && [
-					"text-left border-b border-b-transparent translate-y-[1px]",
+					"text-left border-b border-b-transparent translate-y-px",
 					"[&.active]:border-b-primary-500",
 				],
 				variant === "rounded" && [
 					"rounded-md bg-transparent hover:bg-primary-300 active:bg-primary-600 hover:text-white py-1",
 					"[&.active]:bg-primary-500 [&.active]:text-white",
 				],
-				justify === "start" && ["min-w-[80px]"],
+				justify === "start" && ["min-w-20"],
 				justify === "stretch" && ["grow"],
 				"tabs-button",
 				className,

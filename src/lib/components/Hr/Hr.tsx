@@ -35,7 +35,7 @@ const Hr: FC<ILibHr> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"border-none h-[1px]",
+				"border-none h-px",
 				isRounded ? "rounded-full" : "rounded-none",
 				genBgAllColors[color],
 				genMaxWidth[maxWidth],
