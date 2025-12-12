@@ -39,7 +39,7 @@ import type { ILibFieldset } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/fieldset
  */
-export const Fieldset: FC<ILibFieldset> = ({
+const Fieldset: FC<ILibFieldset> = ({
 	className,
 	ref,
 	children,
@@ -80,3 +80,4 @@ export const Fieldset: FC<ILibFieldset> = ({
 		</InputContainer>
 	)
 }
+export default Fieldset

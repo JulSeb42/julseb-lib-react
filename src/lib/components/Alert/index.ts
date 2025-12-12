@@ -1,1 +1,3 @@
-export * from "./Alert"
+import { lazy } from "react"
+
+export const Alert = lazy(() => import("./Alert"))

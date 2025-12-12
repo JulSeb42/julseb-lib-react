@@ -39,7 +39,7 @@ import type { ILibInputCheck } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-check
  */
-export const InputCheck: FC<ILibInputCheck> = ({
+const InputCheck: FC<ILibInputCheck> = ({
 	className,
 	ref,
 	children,
@@ -159,3 +159,5 @@ export const InputCheck: FC<ILibInputCheck> = ({
 		</label>
 	)
 }
+
+export default InputCheck

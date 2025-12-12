@@ -3,7 +3,7 @@ import { BiImage } from "react-icons/bi"
 import { clsx } from "../../utils"
 import type { ILibEmptyContainer } from "./subtypes"
 
-export const EmptyContainer: FC<ILibEmptyContainer> = ({ icons }) => {
+const EmptyContainer: FC<ILibEmptyContainer> = ({ icons }) => {
 	return (
 		<div
 			className={clsx(
@@ -15,3 +15,5 @@ export const EmptyContainer: FC<ILibEmptyContainer> = ({ icons }) => {
 		</div>
 	)
 }
+
+export default EmptyContainer

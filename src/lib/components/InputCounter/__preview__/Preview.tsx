@@ -1,5 +1,5 @@
 import { useState, type FC } from "react"
-import { InputCounter } from "../InputCounter"
+import { InputCounter } from "../"
 import type { ILibInputCounter } from "../types"
 
 export const Preview: FC<

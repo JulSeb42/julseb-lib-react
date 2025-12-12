@@ -9,7 +9,7 @@ import {
 import type { ILibMarkdownEditor } from "./types"
 import type { DispatchState } from "../../types"
 
-export const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
+const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 	options,
 	textButtonTitles,
 	addCode,
@@ -75,11 +75,12 @@ export const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 	)
 }
 
-interface IMarkdownEditorTitles
-	extends Pick<
-		ILibMarkdownEditor,
-		"options" | "textButtonTitles" | "inputBackground"
-	> {
+export default MarkdownEditorTitles
+
+interface IMarkdownEditorTitles extends Pick<
+	ILibMarkdownEditor,
+	"options" | "textButtonTitles" | "inputBackground"
+> {
 	addCode: (code: string) => void
 	isOpen: boolean
 	setIsOpen: DispatchState<boolean>

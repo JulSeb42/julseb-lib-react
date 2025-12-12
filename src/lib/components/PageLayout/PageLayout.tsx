@@ -37,7 +37,7 @@ import type { ILibFooter } from "../Footer/types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/page-layout
  */
-export const PageLayout: FC<ILibPageLayout> = ({
+const PageLayout: FC<ILibPageLayout> = ({
 	children,
 	meta,
 	header,
@@ -79,3 +79,4 @@ export const PageLayout: FC<ILibPageLayout> = ({
 		</>
 	)
 }
+export default PageLayout

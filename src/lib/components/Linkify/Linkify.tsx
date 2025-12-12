@@ -31,7 +31,7 @@ const URL_REGEX =
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/linkify
  */
-export const Linkify: FC<ILibLinkify> = ({
+const Linkify: FC<ILibLinkify> = ({
 	className,
 	element = Text,
 	ref,
@@ -45,7 +45,7 @@ export const Linkify: FC<ILibLinkify> = ({
 	const words: Array<string> = children ? children.split(" ") : []
 
 	return (
-		<Element ref={ref} className={clsx("linkify",className)} {...rest}>
+		<Element ref={ref} className={clsx("linkify", className)} {...rest}>
 			{words?.map((word: string) =>
 				word.match(URL_REGEX) ? (
 					<Fragment key={uuid()}>
@@ -65,3 +65,5 @@ export const Linkify: FC<ILibLinkify> = ({
 		</Element>
 	)
 }
+
+export default Linkify

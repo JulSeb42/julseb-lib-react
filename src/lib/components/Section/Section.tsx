@@ -24,7 +24,7 @@ import type { ILibSection } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/section
  */
-export const Section: FC<ILibSection> = ({
+const Section: FC<ILibSection> = ({
 	className,
 	element = "section",
 	ref,
@@ -49,3 +49,5 @@ export const Section: FC<ILibSection> = ({
 		</Element>
 	)
 }
+
+export default Section

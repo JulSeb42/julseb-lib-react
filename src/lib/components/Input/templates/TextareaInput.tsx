@@ -3,7 +3,7 @@ import { clsx } from "../../../utils"
 import { INPUT_CONTAINER_CLASSES } from "../../InputComponents/classes"
 import type { ILibTextareaInput } from "../subtypes"
 
-export const TextareaInput: FC<ILibTextareaInput> = ({
+const TextareaInput: FC<ILibTextareaInput> = ({
 	className,
 	validation,
 	inputBackground,
@@ -26,3 +26,4 @@ export const TextareaInput: FC<ILibTextareaInput> = ({
 		/>
 	)
 }
+export default TextareaInput

@@ -2,7 +2,7 @@ import type { FC, Ref } from "react"
 import { clsx } from "../../utils"
 import type { ReactChildren } from "../../types"
 
-export const InputWithListWrapper: FC<IInputWithListWrapper> = ({
+const InputWithListWrapper: FC<IInputWithListWrapper> = ({
 	isOpen,
 	children,
 	ref,
@@ -22,7 +22,9 @@ export const InputWithListWrapper: FC<IInputWithListWrapper> = ({
 	)
 }
 
-interface IInputWithListWrapper {
+export default InputWithListWrapper
+
+export interface IInputWithListWrapper {
 	ref?: Ref<HTMLDivElement>
 	isOpen: boolean
 	children?: ReactChildren

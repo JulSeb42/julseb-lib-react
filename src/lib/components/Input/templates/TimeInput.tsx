@@ -12,7 +12,7 @@ import {
 } from "../../InputComponents"
 import type { ILibTimeInput } from "../subtypes"
 
-export const TimeInput: FC<ILibTimeInput> = ({
+const TimeInput: FC<ILibTimeInput> = ({
 	ref,
 	className,
 	validation,
@@ -65,3 +65,5 @@ export const TimeInput: FC<ILibTimeInput> = ({
 		</InputWrapper>
 	)
 }
+
+export default TimeInput

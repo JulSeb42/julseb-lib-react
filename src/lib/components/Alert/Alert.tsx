@@ -29,7 +29,7 @@ import type { ILibAlert } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/alert
  */
-export const Alert: FC<ILibAlert> = ({
+const Alert: FC<ILibAlert> = ({
 	children,
 	className,
 	element = typeof children === "string" ? Text : "div",
@@ -55,3 +55,5 @@ export const Alert: FC<ILibAlert> = ({
 		</Element>
 	)
 }
+
+export default Alert

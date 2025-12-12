@@ -2,7 +2,7 @@ import type { FC } from "react"
 import { clsx } from "../../utils"
 import { SUFFIX_CLASSES } from "./classes"
 
-export const InputSuffix: FC<IInputSuffix> = ({ suffix }) => {
+const InputSuffix: FC<IInputSuffix> = ({ suffix }) => {
 	if (!suffix) return null
 
 	return (
@@ -10,6 +10,8 @@ export const InputSuffix: FC<IInputSuffix> = ({ suffix }) => {
 	)
 }
 
-interface IInputSuffix {
+export default InputSuffix
+
+export interface IInputSuffix {
 	suffix: string | undefined
 }

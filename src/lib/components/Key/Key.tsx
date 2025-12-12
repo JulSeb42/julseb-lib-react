@@ -20,7 +20,7 @@ import type { ILibKey } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/key
  */
-export const Key: FC<ILibKey> = ({
+const Key: FC<ILibKey> = ({
 	className,
 	element = "span",
 	ref,
@@ -60,6 +60,8 @@ export const Key: FC<ILibKey> = ({
 		</Element>
 	)
 }
+
+export default Key
 
 type Gen = Record<"small" | "large", string>
 

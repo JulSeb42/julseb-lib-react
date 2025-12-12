@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react"
-import { InputPhone } from "../InputPhone"
+import { InputPhone } from "../"
 import { countries } from "../utils/countries"
 import type { LibCountry } from "../../../types"
 import type { ILibInputPhone } from "../types"

@@ -2,7 +2,7 @@ import { type FC } from "react"
 import { clsx, genBgAllColors } from "../../../utils"
 import type { ILibLoader } from "../types"
 
-export const LoaderThree: FC<Omit<ILibLoader, "variant">> = ({
+const LoaderThree: FC<Omit<ILibLoader, "variant">> = ({
 	className,
 	element = "div",
 	ref,
@@ -45,3 +45,5 @@ export const LoaderThree: FC<Omit<ILibLoader, "variant">> = ({
 		</Element>
 	)
 }
+
+export default LoaderThree

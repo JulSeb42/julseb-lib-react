@@ -30,7 +30,7 @@ import type { LibSpacers } from "../../types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/masonry
  */
-export const Masonry: FC<ILibMasonry> = ({
+const Masonry: FC<ILibMasonry> = ({
 	className,
 	element = "div",
 	ref,
@@ -61,6 +61,8 @@ export const Masonry: FC<ILibMasonry> = ({
 		</Element>
 	)
 }
+
+export default Masonry
 
 const genMb: Record<LibSpacers, string> = {
 	"2xl": "[&>*]:mb-12",

@@ -3,7 +3,7 @@ import { clsx } from "../../../utils"
 import { genBorderBottomColor } from "../utils/gen-border-bottom"
 import type { ILibLoader } from "../types"
 
-export const LoaderOne: FC<Omit<ILibLoader, "variant">> = ({
+const LoaderOne: FC<Omit<ILibLoader, "variant">> = ({
 	className,
 	element = "span",
 	ref,
@@ -25,3 +25,5 @@ export const LoaderOne: FC<Omit<ILibLoader, "variant">> = ({
 		/>
 	)
 }
+
+export default LoaderOne

@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from "react"
-import { InputImage } from "../InputImage"
+import { InputImage } from "../"
 import type { ILibInputImage } from "../types"
 
 export const Preview = (props: Omit<ILibInputImage, "value">) => {

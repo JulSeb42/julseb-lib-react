@@ -25,7 +25,7 @@ import type { ILibAccordionContent } from "./subtypes"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/accordion
  */
-export const AccordionContent: FC<ILibAccordionContent> = ({
+const AccordionContent: FC<ILibAccordionContent> = ({
 	element,
 	ref,
 	className,
@@ -53,3 +53,5 @@ export const AccordionContent: FC<ILibAccordionContent> = ({
 		</Element>
 	)
 }
+
+export default AccordionContent

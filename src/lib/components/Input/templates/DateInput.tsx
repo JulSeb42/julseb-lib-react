@@ -11,7 +11,7 @@ import {
 } from "../../InputComponents"
 import type { ILibDateInput } from "../subtypes"
 
-export const DateInput: FC<ILibDateInput> = ({
+const DateInput: FC<ILibDateInput> = ({
 	ref,
 	className,
 	type = "date",
@@ -61,3 +61,4 @@ export const DateInput: FC<ILibDateInput> = ({
 		</InputWrapper>
 	)
 }
+export default DateInput

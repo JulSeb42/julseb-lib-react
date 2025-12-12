@@ -25,7 +25,7 @@ import type { ILibSticky } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/sticky
  */
-export const Sticky: FC<ILibSticky> = ({
+const Sticky: FC<ILibSticky> = ({
 	className,
 	element = "div",
 	ref,
@@ -45,6 +45,8 @@ export const Sticky: FC<ILibSticky> = ({
 		</Element>
 	)
 }
+
+export default Sticky
 
 const genTop: Record<LibSpacers, string> = {
 	"0px": "top-0",

@@ -4,7 +4,7 @@ import { Input } from "../Input"
 import { clsx } from "../../utils"
 import type { ILibHeaderSearch } from "./subtypes"
 
-export const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
+const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 	if (!search) return null
 
 	const {
@@ -50,3 +50,5 @@ export const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 		</form>
 	)
 }
+
+export default HeaderSearch

@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from "react"
-import { Input } from "../Input"
+import { Input } from "../"
 import { BiEnvelope } from "react-icons/bi"
 
 export const PreviewFull = () => {

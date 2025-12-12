@@ -11,7 +11,7 @@ import {
 } from "../../InputComponents"
 import type { ILibPasswordInput } from "../subtypes"
 
-export const PasswordInput: FC<ILibPasswordInput> = ({
+const PasswordInput: FC<ILibPasswordInput> = ({
 	className,
 	validation,
 	inputBackground,
@@ -71,3 +71,4 @@ export const PasswordInput: FC<ILibPasswordInput> = ({
 		</InputWrapper>
 	)
 }
+export default PasswordInput

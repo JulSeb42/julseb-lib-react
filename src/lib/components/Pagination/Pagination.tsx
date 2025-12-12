@@ -1,9 +1,10 @@
-import { type FC } from "react"
+import { lazy, type FC } from "react"
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
 import { usePagination, useMaxWidth } from "../../hooks"
-import { PaginationButton } from "./PaginationButton"
 import { clsx } from "../../utils"
 import type { ILibPagination } from "./types"
+
+const PaginationButton = lazy(() => import("./PaginationButton"))
 
 /**
  * Pagination component for navigating through multiple pages of content with customizable styling and navigation controls.
@@ -38,7 +39,7 @@ import type { ILibPagination } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/pagination
  */
-export const Pagination: FC<ILibPagination> = ({
+const Pagination: FC<ILibPagination> = ({
 	className,
 	element = "div",
 	ref,
@@ -161,3 +162,5 @@ export const Pagination: FC<ILibPagination> = ({
 		</Element>
 	)
 }
+
+export default Pagination

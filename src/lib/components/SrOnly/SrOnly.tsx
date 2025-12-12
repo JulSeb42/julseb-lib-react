@@ -22,7 +22,7 @@ import type { ILibSrOnly } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/sr-only
  */
-export const SrOnly: FC<ILibSrOnly> = ({ element = "div", ref, children }) => {
+const SrOnly: FC<ILibSrOnly> = ({ element = "div", ref, children }) => {
 	const Element = element
 
 	return (
@@ -31,3 +31,5 @@ export const SrOnly: FC<ILibSrOnly> = ({ element = "div", ref, children }) => {
 		</Element>
 	)
 }
+
+export default SrOnly

@@ -47,7 +47,7 @@ import type { ILibButtonGroup } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/button-group
  */
-export const ButtonGroup: FC<ILibButtonGroup> = ({
+const ButtonGroup: FC<ILibButtonGroup> = ({
 	className,
 	element = Flexbox,
 	ref,
@@ -117,8 +117,8 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 										"inline-block",
 										genBgColorShort[color],
 										isMobile
-											? "w-full h-[1px]"
-											: " w-[1px] h-full",
+											? "w-full h-px"
+											: "w-px h-full",
 										"button-group-separator",
 									)}
 								/>
@@ -130,3 +130,5 @@ export const ButtonGroup: FC<ILibButtonGroup> = ({
 
 	return <Element {...elementProps}>{children}</Element>
 }
+
+export default ButtonGroup

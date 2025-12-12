@@ -1,1 +1,3 @@
-export * from "./Main"
+import { lazy } from "react"
+
+export const Main = lazy(() => import("./Main"))

@@ -12,8 +12,7 @@ export interface ILibTabsContainer extends LibComponentBase<HTMLDivElement> {}
 
 /*====================== Tabs buttons container ======================*/
 
-export interface ILibTabsButtonsContainer
-	extends LibComponentBase<HTMLDivElement> {
+export interface ILibTabsButtonsContainer extends LibComponentBase<HTMLDivElement> {
 	justify?: LibTabsJustify
 	variant?: LibTabsVariant
 }
@@ -21,7 +20,8 @@ export interface ILibTabsButtonsContainer
 /*====================== Tabs Button ======================*/
 
 export interface ILibTabsButton
-	extends LibComponentBase<HTMLButtonElement>,
+	extends
+		LibComponentBase<HTMLButtonElement>,
 		ButtonHTMLAttributes<HTMLButtonElement> {
 	isActive: boolean
 	onClick: MouseEventHandler<HTMLButtonElement>
@@ -31,7 +31,7 @@ export interface ILibTabsButton
 
 /*====================== Tab content ======================*/
 
-export interface ILibTabContent extends LibComponentBase<HTMLDivElement> {
+export interface ILibTabsContent extends LibComponentBase<HTMLDivElement> {
 	isActive: boolean
 }
 

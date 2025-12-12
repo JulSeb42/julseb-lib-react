@@ -42,7 +42,7 @@ import type { ILibFlexbox } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/flexbox
  */
-export const Flexbox: FC<ILibFlexbox> = ({
+const Flexbox: FC<ILibFlexbox> = ({
 	className,
 	element = "div",
 	ref,
@@ -84,6 +84,8 @@ export const Flexbox: FC<ILibFlexbox> = ({
 		</Element>
 	)
 }
+
+export default Flexbox
 
 const genFlexDirection = {
 	row: "flex-row",

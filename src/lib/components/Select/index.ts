@@ -1,1 +1,3 @@
-export * from "./Select"
+import { lazy } from "react"
+
+export const Select = lazy(() => import("./Select"))

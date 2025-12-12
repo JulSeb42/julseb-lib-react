@@ -36,7 +36,7 @@ import type { ILibTag } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tag
  */
-export const Tag: FC<ILibTag> = ({
+const Tag: FC<ILibTag> = ({
 	className,
 	element = "span",
 	ref,
@@ -75,3 +75,5 @@ export const Tag: FC<ILibTag> = ({
 		</Element>
 	)
 }
+
+export default Tag

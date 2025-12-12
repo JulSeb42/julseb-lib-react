@@ -1,20 +1,21 @@
-import { type FC } from "react"
+import { lazy, type FC } from "react"
 import { clsx } from "../../utils"
-import { H1 } from "./templates/H1"
-import { H2 } from "./templates/H2"
-import { H3 } from "./templates/H3"
-import { H4 } from "./templates/H4"
-import { H5 } from "./templates/H5"
-import { H6 } from "./templates/H6"
-import { P } from "./templates/P"
-import { Small } from "./templates/Small"
-import { Strong } from "./templates/Strong"
-import { Em } from "./templates/Em"
-import { Blockquote } from "./templates/Blockquote"
-import { Ul } from "./templates/Ul"
-import { Ol } from "./templates/Ol"
-import { Dl } from "./templates/Dl"
 import type { ILibText } from "./types"
+
+const H1 = lazy(() => import("./templates/H1"))
+const H2 = lazy(() => import("./templates/H2"))
+const H3 = lazy(() => import("./templates/H3"))
+const H4 = lazy(() => import("./templates/H4"))
+const H5 = lazy(() => import("./templates/H5"))
+const H6 = lazy(() => import("./templates/H6"))
+const P = lazy(() => import("./templates/P"))
+const Small = lazy(() => import("./templates/Small"))
+const Strong = lazy(() => import("./templates/Strong"))
+const Em = lazy(() => import("./templates/Em"))
+const Blockquote = lazy(() => import("./templates/Blockquote"))
+const Ul = lazy(() => import("./templates/Ul"))
+const Ol = lazy(() => import("./templates/Ol"))
+const Dl = lazy(() => import("./templates/Dl"))
 
 export const TEXT_BASE_CLASSES = clsx(
 	"font-family-body",
@@ -53,7 +54,7 @@ export const TEXT_BASE_CLASSES = clsx(
  *
  * @see https://doc-julseb-lib-react.vercel.app/styles/text
  */
-export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
+const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
 	switch (tag) {
 		case "h1":
 			return <H1 {...rest} />
@@ -86,3 +87,4 @@ export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
 			return <P {...rest} />
 	}
 }
+export default Text

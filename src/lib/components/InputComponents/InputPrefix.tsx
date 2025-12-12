@@ -2,7 +2,7 @@ import type { FC } from "react"
 import { clsx } from "../../utils"
 import { PREFIX_CLASSES } from "./classes"
 
-export const InputPrefix: FC<IInputPrefix> = ({ prefix }) => {
+const InputPrefix: FC<IInputPrefix> = ({ prefix }) => {
 	if (!prefix) return null
 
 	return (
@@ -10,6 +10,8 @@ export const InputPrefix: FC<IInputPrefix> = ({ prefix }) => {
 	)
 }
 
-interface IInputPrefix {
+export default InputPrefix
+
+export interface IInputPrefix {
 	prefix: string | undefined
 }

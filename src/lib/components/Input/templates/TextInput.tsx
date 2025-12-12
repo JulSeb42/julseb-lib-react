@@ -10,7 +10,7 @@ import {
 } from "../../InputComponents"
 import type { ILibTextInput } from "../subtypes"
 
-export const TextInput: FC<ILibTextInput> = ({
+const TextInput: FC<ILibTextInput> = ({
 	className,
 	validation,
 	inputBackground,
@@ -44,7 +44,7 @@ export const TextInput: FC<ILibTextInput> = ({
 						inputBackground,
 						validationStatus: validation?.status,
 					}),
-					"input-text"
+					"input-text",
 				)}
 				type={type}
 				disabled={disabled}
@@ -56,3 +56,5 @@ export const TextInput: FC<ILibTextInput> = ({
 		</InputWrapper>
 	)
 }
+
+export default TextInput

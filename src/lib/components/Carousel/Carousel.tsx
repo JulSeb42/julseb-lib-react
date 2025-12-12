@@ -35,7 +35,7 @@ import type { ILibCarousel } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/carousel
  */
-export const Carousel: FC<ILibCarousel> = ({
+const Carousel: FC<ILibCarousel> = ({
 	className,
 	element = "div",
 	ref,
@@ -68,7 +68,7 @@ export const Carousel: FC<ILibCarousel> = ({
 					<div
 						key={uuid()}
 						className={clsx(
-							"flex-shrink-0 px-2 h-full",
+							"px-2 h-full shrink-0",
 							genItemWidth[showItems],
 							"carousel-img-wrapper",
 						)}
@@ -99,19 +99,21 @@ export const Carousel: FC<ILibCarousel> = ({
 
 			<span
 				className={clsx(
-					"top-0 left-0 z-10 absolute bg-gradient-to-r from-white via-white to-transparent w-32 h-full -translate-x-[5vw] pointer-events-none",
+					"top-0 left-0 z-10 absolute bg-linear-to-r from-white via-white to-transparent w-32 h-full -translate-x-[5vw] pointer-events-none",
 					"carousel-gradient carousel-gradient-left",
 				)}
 			/>
 			<span
 				className={clsx(
-					"top-0 right-0 z-10 absolute bg-gradient-to-l from-white via-white to-transparent w-32 h-full translate-x-[5vw] pointer-events-none",
+					"top-0 right-0 z-10 absolute bg-linear-to-l from-white via-white to-transparent w-32 h-full translate-x-[5vw] pointer-events-none",
 					"carousel-gradient carousel-gradient-right",
 				)}
 			/>
 		</Element>
 	)
 }
+
+export default Carousel
 
 const genItemWidth: Record<2 | 3 | 4 | 5 | 6, string> = {
 	2: "w-[calc(100%/2)]",

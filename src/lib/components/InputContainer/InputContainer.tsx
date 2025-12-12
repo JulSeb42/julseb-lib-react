@@ -40,7 +40,7 @@ import type { ILibInputContainer } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input
  */
-export const InputContainer: FC<ILibInputContainer> = ({
+const InputContainer: FC<ILibInputContainer> = ({
 	className,
 	element = "div",
 	ref,
@@ -147,3 +147,5 @@ export const InputContainer: FC<ILibInputContainer> = ({
 		</Element>
 	)
 }
+
+export default InputContainer
