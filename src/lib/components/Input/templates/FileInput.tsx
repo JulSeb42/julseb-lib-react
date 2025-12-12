@@ -7,7 +7,7 @@ import {
 } from "../../InputComponents"
 import type { ILibFileInput } from "../subtypes"
 
-export const FileInput: FC<ILibFileInput> = ({
+const FileInput: FC<ILibFileInput> = ({
 	className,
 	type = "file",
 	validation,
@@ -31,7 +31,7 @@ export const FileInput: FC<ILibFileInput> = ({
 						validationStatus: validation?.status,
 					}),
 					"cursor-pointer px-0",
-					"[&::file-selector-button]:bg-gray-200 [&::file-selector-button]:px-2 hover:[&::file-selector-button]:bg-gray-300 [&::file-selector-button]:cursor-pointer [&::file-selector-button]:transition-all [&::file-selector-button]:duration-200 [&::file-selector-button]:ease-in-out [&::file-selector-button]:h-8 [&::file-selector-button]:mr-2 [&::file-selector-button]:text-black",
+					"file:bg-gray-200 file:px-2 hover:file:bg-gray-300 file:cursor-pointer file:transition-all file:duration-200 file:ease-in-out file:h-8 file:mr-2 file:text-black",
 					"input-file",
 				)}
 			/>
@@ -40,3 +40,4 @@ export const FileInput: FC<ILibFileInput> = ({
 		</InputWrapper>
 	)
 }
+export default FileInput

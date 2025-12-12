@@ -1,5 +1,5 @@
 import { useState, type FC, type ChangeEvent } from "react"
-import { InputSlider } from "../InputSlider"
+import { InputSlider } from "../"
 import type { ILibInputSlider } from "../types"
 
 export const Preview: FC<ILibInputSlider> = props => {

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Autocomplete } from "../Autocomplete"
+import { Autocomplete } from "../"
 import { frenchCities } from "../../../../data"
 import type { ILibAutocomplete } from "../types"
 

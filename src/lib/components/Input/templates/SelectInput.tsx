@@ -11,7 +11,7 @@ import {
 } from "../../InputComponents"
 import type { ILibSelectInput } from "../subtypes"
 
-export const SelectInput: FC<ILibSelectInput> = ({
+const SelectInput: FC<ILibSelectInput> = ({
 	ref,
 	children,
 	className,
@@ -82,3 +82,4 @@ export const SelectInput: FC<ILibSelectInput> = ({
 		</InputWrapper>
 	)
 }
+export default SelectInput

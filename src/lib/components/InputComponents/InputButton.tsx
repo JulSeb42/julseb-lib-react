@@ -3,7 +3,7 @@ import { clsx, genRingColor } from "../../utils"
 import { INPUT_BUTTON_CLASSES } from "./classes"
 import type { ClassNames, ReactChildren } from "../../types"
 
-export const InputButton: FC<IInputButton> = ({
+const InputButton: FC<IInputButton> = ({
 	onClick,
 	children,
 	className,
@@ -26,7 +26,9 @@ export const InputButton: FC<IInputButton> = ({
 	)
 }
 
-interface IInputButton {
+export default InputButton
+
+export interface IInputButton {
 	onClick?: MouseEventHandler<HTMLButtonElement>
 	children?: ReactChildren
 	className?: ClassNames

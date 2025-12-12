@@ -9,7 +9,7 @@ import {
 } from "../../../utils"
 import type { ILibText } from "../types"
 
-export const Dl: FC<ILibText> = ({
+const Dl: FC<ILibText> = ({
 	element = "dl",
 	className,
 	children,
@@ -40,3 +40,5 @@ export const Dl: FC<ILibText> = ({
 		</Element>
 	)
 }
+
+export default Dl

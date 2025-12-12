@@ -27,7 +27,7 @@ import type { ILibCodeContainer } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/code-container
  */
-export const CodeContainer: FC<ILibCodeContainer> = ({
+const CodeContainer: FC<ILibCodeContainer> = ({
 	children,
 	code,
 	showNumbers,
@@ -103,3 +103,5 @@ export const CodeContainer: FC<ILibCodeContainer> = ({
 		</div>
 	)
 }
+
+export default CodeContainer

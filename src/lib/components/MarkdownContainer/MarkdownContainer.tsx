@@ -30,7 +30,7 @@ import type { ILibMarkdownContainer } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/markdown-container
  */
-export const MarkdownContainer: FC<ILibMarkdownContainer> = ({
+const MarkdownContainer: FC<ILibMarkdownContainer> = ({
 	children,
 	components = libMarkdownComponents,
 	allowElement,
@@ -48,3 +48,4 @@ export const MarkdownContainer: FC<ILibMarkdownContainer> = ({
 		</Markdown>
 	)
 }
+export default MarkdownContainer

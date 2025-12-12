@@ -56,7 +56,7 @@ import type { ILibDrawer } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/drawer
  */
-export const Drawer: FC<ILibDrawer> = ({
+const Drawer: FC<ILibDrawer> = ({
 	className,
 	element = "div",
 	ref,
@@ -145,3 +145,4 @@ export const Drawer: FC<ILibDrawer> = ({
 		</Element>
 	)
 }
+export default Drawer

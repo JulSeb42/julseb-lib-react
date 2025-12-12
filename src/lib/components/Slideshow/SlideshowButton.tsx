@@ -4,7 +4,7 @@ import { useTouchScreen } from "../../hooks"
 import { clsx, genBgColorHover } from "../../utils"
 import type { ILibSlideshowButton } from "./subtypes"
 
-export const SlideshowButton: FC<ILibSlideshowButton> = ({
+const SlideshowButton: FC<ILibSlideshowButton> = ({
 	className,
 	controls,
 	position,
@@ -61,3 +61,4 @@ export const SlideshowButton: FC<ILibSlideshowButton> = ({
 		</button>
 	)
 }
+export default SlideshowButton

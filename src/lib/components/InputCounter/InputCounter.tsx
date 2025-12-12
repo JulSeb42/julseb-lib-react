@@ -56,7 +56,7 @@ import type { ILibInputCounter } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-counter
  */
-export const InputCounter: FC<ILibInputCounter> = ({
+const InputCounter: FC<ILibInputCounter> = ({
 	className,
 	ref,
 	value,
@@ -152,3 +152,5 @@ export const InputCounter: FC<ILibInputCounter> = ({
 		</InputContainer>
 	)
 }
+
+export default InputCounter

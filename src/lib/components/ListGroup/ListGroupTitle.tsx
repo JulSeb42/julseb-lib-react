@@ -32,7 +32,7 @@ import type { ILibListGroupTitle } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/list-group
  */
-export const ListGroupTitle: FC<ILibListGroupTitle> = ({
+const ListGroupTitle: FC<ILibListGroupTitle> = ({
 	className,
 	element = Text,
 	ref,
@@ -82,3 +82,5 @@ export const ListGroupTitle: FC<ILibListGroupTitle> = ({
 		</Element>
 	)
 }
+
+export default ListGroupTitle

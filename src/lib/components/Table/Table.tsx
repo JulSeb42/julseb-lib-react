@@ -8,7 +8,7 @@ import {
 	genTextAlign,
 	genVAlign,
 } from "../../utils"
-import { TEXT_BASE_CLASSES } from "../Text"
+import { TEXT_BASE_CLASSES } from "../Text/Text"
 import type { ILibTable } from "./types"
 
 /**
@@ -46,7 +46,7 @@ import type { ILibTable } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/table
  */
-export const Table: FC<ILibTable> = ({
+const Table: FC<ILibTable> = ({
 	className,
 	ref,
 	children,
@@ -64,7 +64,7 @@ export const Table: FC<ILibTable> = ({
 		<table
 			ref={ref}
 			className={clsx(
-				"table bg-background w-full h-[1px] border-collapse border-spacing-0 table-fixed",
+				"table bg-background w-full h-px border-collapse border-spacing-0 table-fixed",
 				TEXT_BASE_CLASSES,
 				"text-(length:--font-size-small)",
 				genLinkColor["primary"],
@@ -143,3 +143,5 @@ export const Table: FC<ILibTable> = ({
 		</table>
 	)
 }
+
+export default Table

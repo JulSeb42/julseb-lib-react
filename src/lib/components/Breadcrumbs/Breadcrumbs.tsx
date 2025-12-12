@@ -32,7 +32,7 @@ import type { ILibBreadcrumbs } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/breadcrumbs
  */
-export const Breadcrumbs: FC<ILibBreadcrumbs> = ({
+const Breadcrumbs: FC<ILibBreadcrumbs> = ({
 	className,
 	element = "div",
 	ref,
@@ -77,3 +77,4 @@ export const Breadcrumbs: FC<ILibBreadcrumbs> = ({
 		</Element>
 	)
 }
+export default Breadcrumbs

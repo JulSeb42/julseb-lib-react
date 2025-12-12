@@ -1,1 +1,3 @@
-export * from "./LazyImage"
+import { lazy } from "react"
+
+export const LazyImage = lazy(() => import("./LazyImage"))

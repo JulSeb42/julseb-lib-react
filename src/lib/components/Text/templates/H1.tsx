@@ -9,7 +9,7 @@ import {
 } from "../../../utils"
 import type { ILibText } from "../types"
 
-export const H1: FC<ILibText> = ({
+const H1: FC<ILibText> = ({
 	element = "h1",
 	className,
 	children,
@@ -24,9 +24,7 @@ export const H1: FC<ILibText> = ({
 	return (
 		<Element
 			className={clsx(
-				display
-					? "text-display-h1"
-					: "text-h1",
+				display ? "text-display-h1" : "text-h1",
 				TEXT_BASE_CLASSES,
 				"font-black",
 				(genTextAlign as any)[textAlign],
@@ -42,3 +40,5 @@ export const H1: FC<ILibText> = ({
 		</Element>
 	)
 }
+
+export default H1

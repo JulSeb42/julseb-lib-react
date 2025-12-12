@@ -20,7 +20,7 @@ import type { LibSkeletonAnimation } from "../../types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/skeleton
  */
-export const Skeleton: FC<ILibSkeleton> = ({
+const Skeleton: FC<ILibSkeleton> = ({
 	className,
 	element = "div",
 	ref,
@@ -46,6 +46,8 @@ export const Skeleton: FC<ILibSkeleton> = ({
 		/>
 	)
 }
+
+export default Skeleton
 
 const genAnimation: Record<LibSkeletonAnimation, string | Array<string>> = {
 	none: "animate-none",

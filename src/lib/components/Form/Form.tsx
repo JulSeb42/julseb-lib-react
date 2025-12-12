@@ -35,7 +35,7 @@ import type { ILibForm } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/form
  */
-export const Form: FC<ILibForm> = ({
+const Form: FC<ILibForm> = ({
 	className,
 	ref,
 	children,
@@ -81,3 +81,4 @@ export const Form: FC<ILibForm> = ({
 		</form>
 	)
 }
+export default Form

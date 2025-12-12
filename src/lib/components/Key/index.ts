@@ -1,1 +1,3 @@
-export * from "./Key"
+import { lazy } from "react"
+
+export const Key = lazy(() => import("./Key"))

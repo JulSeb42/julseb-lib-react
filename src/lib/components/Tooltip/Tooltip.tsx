@@ -47,7 +47,7 @@ import type {
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tooltip
  */
-export const Tooltip: FC<ILibTooltip> = ({
+const Tooltip: FC<ILibTooltip> = ({
 	className,
 	element = "div",
 	ref,
@@ -144,6 +144,8 @@ export const Tooltip: FC<ILibTooltip> = ({
 		</Element>
 	)
 }
+
+export default Tooltip
 
 const genPosition: Record<LibSpacers, Record<LibTooltipPosition, string>> = {
 	"0px": {

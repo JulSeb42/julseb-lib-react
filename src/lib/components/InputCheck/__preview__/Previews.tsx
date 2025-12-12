@@ -1,5 +1,5 @@
 import { uuid } from "@julseb-lib/utils"
-import { InputCheck } from "../InputCheck"
+import { InputCheck } from "../"
 import { Flexbox } from "../../Flexbox"
 import type { ReactChildren } from "../../../types"
 import type { ILibInputCheck } from "../types"

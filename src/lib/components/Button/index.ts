@@ -1,1 +1,3 @@
-export * from "./Button"
+import { lazy } from "react"
+
+export const Button = lazy(() => import("./Button"))

@@ -56,7 +56,7 @@ export default [
 			],
 			"no-restricted-exports": [
 				"warn",
-				{ restrictDefaultExports: { direct: true } },
+				{ restrictDefaultExports: { direct: false } },
 			],
 			"react/prop-types": "off",
 			"no-empty-pattern": "warn",

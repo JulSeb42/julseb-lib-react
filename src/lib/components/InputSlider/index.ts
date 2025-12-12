@@ -1,1 +1,3 @@
-export * from "./InputSlider"
+import { lazy } from "react"
+
+export const InputSlider = lazy(() => import("./InputSlider"))

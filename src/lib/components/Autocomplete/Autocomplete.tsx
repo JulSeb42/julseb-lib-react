@@ -65,7 +65,7 @@ import type { ILibAutocomplete } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/autocomplete
  */
-export const Autocomplete: FC<ILibAutocomplete> = ({
+const Autocomplete: FC<ILibAutocomplete> = ({
 	className,
 	ref,
 	label,
@@ -223,3 +223,4 @@ export const Autocomplete: FC<ILibAutocomplete> = ({
 		</InputContainer>
 	)
 }
+export default Autocomplete

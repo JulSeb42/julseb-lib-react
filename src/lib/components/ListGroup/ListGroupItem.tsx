@@ -32,7 +32,7 @@ import type { ILibListGroupItem } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/list-group
  */
-export const ListGroupItem: FC<ILibListGroupItem> = ({
+const ListGroupItem: FC<ILibListGroupItem> = ({
 	className,
 	element = "div",
 	ref,
@@ -51,8 +51,7 @@ export const ListGroupItem: FC<ILibListGroupItem> = ({
 			ref={ref}
 			className={clsx(
 				"flex justify-between gap-2 bg-background p-2 w-full",
-				!noSeparator &&
-					"[&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-gray-200",
+				!noSeparator && "not-last:border-b not-last:border-b-gray-200",
 				"disabled:bg-gray-200 disabled:text-gray-500",
 				"list-group-item",
 				className,
@@ -84,3 +83,5 @@ export const ListGroupItem: FC<ILibListGroupItem> = ({
 		</Element>
 	)
 }
+
+export default ListGroupItem

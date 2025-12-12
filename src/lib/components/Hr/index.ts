@@ -1,1 +1,3 @@
-export * from "./Hr"
+import { lazy } from "react"
+
+export const Hr = lazy(() => import("./Hr"))

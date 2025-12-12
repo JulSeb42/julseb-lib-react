@@ -1,7 +1,7 @@
 import { type FC } from "react"
 import { Text } from "../Text"
 import { clsx } from "../../utils"
-import type { ILibTabContent } from "./types"
+import type { ILibTabsContent } from "./types"
 
 /**
  * TabsContent component for displaying individual tab panel content with conditional rendering based on active state.
@@ -26,7 +26,7 @@ import type { ILibTabContent } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tabs
  */
-export const TabsContent: FC<ILibTabContent> = ({
+const TabsContent: FC<ILibTabsContent> = ({
 	children,
 	element = typeof children === "string" ? Text : "div",
 	ref,
@@ -50,3 +50,5 @@ export const TabsContent: FC<ILibTabContent> = ({
 		</Element>
 	)
 }
+
+export default TabsContent

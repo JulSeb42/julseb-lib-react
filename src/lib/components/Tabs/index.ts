@@ -1,5 +1,7 @@
-export * from "./Tabs"
-export * from "./TabsContainer"
-export * from "./TabsButtonsContainer"
-export * from "./TabsButton"
-export * from "./TabsContent"
+import { lazy } from "react"
+
+export const Tabs = lazy(() => import("./Tabs"))
+export const TabsContainer = lazy(() => import("./TabsContainer"))
+export const TabsButtonsContainer = lazy(() => import("./TabsButtonsContainer"))
+export const TabsButton = lazy(() => import("./TabsButton"))
+export const TabsContent = lazy(() => import("./TabsContent"))

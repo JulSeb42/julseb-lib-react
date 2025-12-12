@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef, type FC } from "react"
+import { useState, useEffect, useRef, lazy, type FC } from "react"
 import { useClickOutside, useMaxWidth, useKeyPress } from "../../hooks"
 import { Burger } from "../Burger"
-import { HeaderSearch } from "./HeaderSearch"
 import {
 	clsx,
 	genBgAllColors,
@@ -12,6 +11,8 @@ import {
 	disableScroll,
 } from "../../utils"
 import type { ILibHeader } from "./types"
+
+const HeaderSearch = lazy(() => import("./HeaderSearch"))
 
 /**
  * Header component for creating responsive navigation headers with customizable positioning, mobile menu variants, and search functionality.
@@ -60,7 +61,7 @@ import type { ILibHeader } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/header
  */
-export const Header: FC<ILibHeader> = ({
+const Header: FC<ILibHeader> = ({
 	className,
 	element = "header",
 	ref,
@@ -251,3 +252,5 @@ export const Header: FC<ILibHeader> = ({
 		</Element>
 	)
 }
+
+export default Header

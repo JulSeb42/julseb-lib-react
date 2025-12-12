@@ -1,2 +1,4 @@
-export * from "./DragList"
-export * from "./DragListItem"
+import { lazy } from "react"
+
+export const DragList = lazy(() => import("./DragList"))
+export const DragListItem = lazy(() => import("./DragListItem"))

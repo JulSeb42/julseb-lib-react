@@ -1,13 +1,14 @@
-import { useState, useRef, type FC } from "react"
+import { useState, useRef, lazy, type FC } from "react"
 import Markdown from "react-markdown"
 import { InputContainer } from "../InputContainer"
-import { MarkdownEditorTitles } from "./MarkdownEditorTitles"
-import { MarkdownButtons } from "./MarkdownButtons"
-import { MarkdownViewButtons } from "./MarkdownViewButtons"
 import { useMergeRefs } from "../../hooks"
 import { clsx, libMarkdownComponents } from "../../utils"
 import type { ILibMarkdownEditor } from "./types"
 import type { LibMdEditorViews } from "../../types"
+
+const MarkdownButtons = lazy(() => import("./MarkdownButtons"))
+const MarkdownEditorTitles = lazy(() => import("./MarkdownEditorTitles"))
+const MarkdownViewButtons = lazy(() => import("./MarkdownViewButtons"))
 
 /**
  * MarkdownEditor component for creating rich text content with live preview and customizable toolbar.
@@ -51,7 +52,7 @@ import type { LibMdEditorViews } from "../../types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/markdown-editor
  */
-export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
+const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 	className,
 	ref,
 	value,
@@ -190,3 +191,5 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 		</InputContainer>
 	)
 }
+
+export default MarkdownEditor

@@ -9,7 +9,7 @@ import {
 } from "../../../utils"
 import type { ILibText } from "../types"
 
-export const Blockquote: FC<ILibText> = ({
+const Blockquote: FC<ILibText> = ({
 	element = "blockquote",
 	className,
 	children,
@@ -39,3 +39,5 @@ export const Blockquote: FC<ILibText> = ({
 		</Element>
 	)
 }
+
+export default Blockquote

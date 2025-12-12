@@ -1,1 +1,3 @@
-export * from "./ButtonGroup"
+import { lazy } from "react"
+
+export const ButtonGroup = lazy(() => import("./ButtonGroup"))

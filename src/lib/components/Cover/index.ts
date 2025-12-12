@@ -1,1 +1,3 @@
-export * from "./Cover"
+import { lazy } from "react"
+
+export const Cover = lazy(() => import("./Cover"))

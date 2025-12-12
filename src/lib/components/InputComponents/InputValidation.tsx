@@ -3,7 +3,7 @@ import { clsx } from "../../utils"
 import { INPUT_VALIDATION_CONTAINER } from "./classes"
 import type { LibInputValidation } from "../../types"
 
-export const InputValidation: FC<IInputValidation> = ({ validation }) => {
+const InputValidation: FC<IInputValidation> = ({ validation }) => {
 	if (!validation || validation.status === undefined) return null
 
 	return (
@@ -27,6 +27,8 @@ export const InputValidation: FC<IInputValidation> = ({ validation }) => {
 	)
 }
 
-interface IInputValidation {
+export default InputValidation
+
+export interface IInputValidation {
 	validation: LibInputValidation | undefined
 }

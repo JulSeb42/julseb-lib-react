@@ -1,8 +1,9 @@
-import { type FC } from "react"
+import { lazy, type FC } from "react"
 import { Badge } from "../Badge"
 import { clsx } from "../../utils"
-import { AvatarFn } from "./AvatarFn"
 import type { ILibAvatar } from "./types"
+
+const AvatarFn = lazy(() => import("./AvatarFn"))
 
 /**
  * Avatar component for displaying a user image, initials, or icon, with optional badge and custom styles.
@@ -31,7 +32,7 @@ import type { ILibAvatar } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/avatar
  */
-export const Avatar: FC<ILibAvatar> = ({
+const Avatar: FC<ILibAvatar> = ({
 	className,
 	element = "span",
 	ref,
@@ -89,6 +90,6 @@ export const Avatar: FC<ILibAvatar> = ({
 			</Element>
 		)
 	}
-
-	return <AvatarFn {...avatarProps} />
 }
+
+export default Avatar

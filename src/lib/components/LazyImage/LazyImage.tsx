@@ -31,7 +31,7 @@ const Image = lazy(() => import("./Image"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/lazy-image
  */
-export const LazyImage: FC<ILibLazyImage> = ({
+const LazyImage: FC<ILibLazyImage> = ({
 	className,
 	ref,
 	skeletonClasses,
@@ -51,3 +51,5 @@ export const LazyImage: FC<ILibLazyImage> = ({
 		</Suspense>
 	)
 }
+
+export default LazyImage

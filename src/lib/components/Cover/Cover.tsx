@@ -36,7 +36,7 @@ import type { ILibCover } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/cover
  */
-export const Cover: FC<ILibCover> = ({
+const Cover: FC<ILibCover> = ({
 	className,
 	element = Flexbox,
 	ref,
@@ -89,3 +89,5 @@ export const Cover: FC<ILibCover> = ({
 		</Element>
 	)
 }
+
+export default Cover

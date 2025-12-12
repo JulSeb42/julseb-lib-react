@@ -1,1 +1,3 @@
-export * from "./Section"
+import { lazy } from "react"
+
+export const Section = lazy(() => import("./Section"))

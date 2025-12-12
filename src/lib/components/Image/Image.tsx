@@ -28,7 +28,7 @@ import type { ILibImage } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/image
  */
-export const Image: FC<ILibImage> = ({
+const Image: FC<ILibImage> = ({
 	className,
 	ref,
 	caption,
@@ -90,3 +90,5 @@ export const Image: FC<ILibImage> = ({
 		/>
 	)
 }
+
+export default Image

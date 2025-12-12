@@ -8,7 +8,7 @@ import {
 } from "../../utils"
 import type { ILibAvatar } from "./types"
 
-export const AvatarFn: FC<
+const AvatarFn: FC<
 	Omit<ILibAvatar, "badge" | "containerStyle" | "containerClassName">
 > = ({
 	className,
@@ -42,3 +42,5 @@ export const AvatarFn: FC<
 		</Element>
 	)
 }
+
+export default AvatarFn

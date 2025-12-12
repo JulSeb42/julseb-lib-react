@@ -3,10 +3,7 @@ import { BiEdit } from "react-icons/bi"
 import { clsx } from "../../utils"
 import type { ILibHoverContainer } from "./subtypes"
 
-export const HoverContainer: FC<ILibHoverContainer> = ({
-	icons,
-	isVisible,
-}) => {
+const HoverContainer: FC<ILibHoverContainer> = ({ icons, isVisible }) => {
 	return (
 		<div
 			className={clsx(
@@ -19,3 +16,5 @@ export const HoverContainer: FC<ILibHoverContainer> = ({
 		</div>
 	)
 }
+
+export default HoverContainer
