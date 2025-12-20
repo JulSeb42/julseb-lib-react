@@ -1,9 +1,8 @@
-import { useState, lazy, type FC } from "react"
+import { useState, type FC } from "react"
+import { AccordionTitle } from "./AccordionTitle"
+import { AccordionContent } from "./AccordionContent"
 import { clsx } from "../../utils"
 import type { ILibAccordionItem } from "./types"
-
-const AccordionContent = lazy(() => import("./AccordionContent"))
-const AccordionTitle = lazy(() => import("./AccordionTitle"))
 
 /**
  * AccordionItem component for creating individual collapsible sections with title, content, and customizable styling.
@@ -31,7 +30,7 @@ const AccordionTitle = lazy(() => import("./AccordionTitle"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/accordion
  */
-const AccordionItem: FC<ILibAccordionItem> = ({
+export const AccordionItem: FC<ILibAccordionItem> = ({
 	element = "div",
 	title,
 	children,
@@ -65,5 +64,3 @@ const AccordionItem: FC<ILibAccordionItem> = ({
 		</Element>
 	)
 }
-
-export default AccordionItem

@@ -1,9 +1,7 @@
-import { lazy } from "react"
 import { toast as toastFn, type ToastOptions } from "react-toastify"
+import { Toast } from "./Toast"
 import type { ILibToast } from "./types"
 import type { CSSProperties, LibLoaderVariant, ReactElement } from "../../types"
-
-const Toast = lazy(() => import("./Toast"))
 
 const COMMON_STYLES: CSSProperties = {
 	padding: 0,
@@ -219,5 +217,3 @@ export const toast = {
 		),
 	close: () => toastFn.dismiss(),
 }
-
-export default toast

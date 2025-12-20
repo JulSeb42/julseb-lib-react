@@ -1,10 +1,9 @@
-import { useRef, lazy, type FC } from "react"
+import { useRef, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { DropdownItem } from "./DropdownItem"
 import { useClickOutside, useMergeRefs } from "../../hooks"
 import { clsx, genBorderRadius, genBoxShadow } from "../../utils"
 import type { ILibDropdown } from "./types"
-
-const DropdownItem = lazy(() => import("./DropdownItem"))
 
 /**
  * Dropdown component for creating contextual menus and popover content with customizable positioning and animations.
@@ -40,7 +39,7 @@ const DropdownItem = lazy(() => import("./DropdownItem"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/dropdown
  */
-const Dropdown: FC<ILibDropdown> = ({
+export const Dropdown: FC<ILibDropdown> = ({
 	className,
 	element = "div",
 	ref,
@@ -88,4 +87,3 @@ const Dropdown: FC<ILibDropdown> = ({
 		</Element>
 	)
 }
-export default Dropdown

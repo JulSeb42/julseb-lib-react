@@ -1,9 +1,8 @@
-import { lazy, type FC } from "react"
+import { type FC } from "react"
 import { clsx } from "../../utils"
+import { ButtonIconFn } from "./ButtonFn"
 import { Tooltip } from "../Tooltip"
 import type { ILibButtonIcon } from "./types"
-
-const ButtonIconFn = lazy(() => import("./ButtonFn"))
 
 /**
  * ButtonIcon component for displaying an icon button with optional tooltip and loading states.
@@ -43,7 +42,7 @@ const ButtonIconFn = lazy(() => import("./ButtonFn"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/button-icon
  */
-const ButtonIcon: FC<ILibButtonIcon> = ({
+export const ButtonIcon: FC<ILibButtonIcon> = ({
 	className,
 	element = "button",
 	ref,
@@ -136,5 +135,3 @@ const ButtonIcon: FC<ILibButtonIcon> = ({
 
 	return <ButtonIconFn {...(buttonProps as any)} />
 }
-
-export default ButtonIcon

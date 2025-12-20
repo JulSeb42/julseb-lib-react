@@ -35,7 +35,7 @@ import type { LibColorsShort } from "../../types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/progress-circle
  */
-const ProgressCircle: FC<ILibProgressCircle> = ({
+export const ProgressCircle: FC<ILibProgressCircle> = ({
 	element = "div",
 	className,
 	ref,
@@ -131,8 +131,6 @@ const ProgressCircle: FC<ILibProgressCircle> = ({
 		</Element>
 	)
 }
-
-export default ProgressCircle
 
 const genStrokeColor: Record<
 	Exclude<LibColorsShort, "transparent" | "current" | "black" | "background">,

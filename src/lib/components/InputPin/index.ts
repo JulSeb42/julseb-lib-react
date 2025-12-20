@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const InputPin = lazy(() => import("./InputPin"))
+export * from "./InputPin"

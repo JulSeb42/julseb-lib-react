@@ -1,12 +1,11 @@
-import { useState, lazy, type FC } from "react"
+import { useState, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { TabsContainer } from "./TabsContainer"
+import { TabsButtonsContainer } from "./TabsButtonsContainer"
+import { TabsButton } from "./TabsButton"
+import { TabsContent } from "./TabsContent"
 import { clsx } from "../../utils"
 import type { ILibTabs } from "./types"
-
-const TabsContainer = lazy(() => import("./TabsContainer"))
-const TabsButtonsContainer = lazy(() => import("./TabsButtonsContainer"))
-const TabsButton = lazy(() => import("./TabsButton"))
-const TabsContent = lazy(() => import("./TabsContent"))
 
 /**
  * Tabs component for creating tabbed interfaces with automatic state management and customizable styling.
@@ -41,7 +40,7 @@ const TabsContent = lazy(() => import("./TabsContent"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tabs
  */
-const Tabs: FC<ILibTabs> = ({
+export const Tabs: FC<ILibTabs> = ({
 	className,
 	element = "div",
 	ref,
@@ -87,4 +86,3 @@ const Tabs: FC<ILibTabs> = ({
 		</TabsContainer>
 	)
 }
-export default Tabs

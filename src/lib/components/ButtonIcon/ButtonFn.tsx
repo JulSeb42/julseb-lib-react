@@ -12,7 +12,7 @@ import {
 import type { ILibButtonIcon } from "./types"
 import { Loader } from "../Loader"
 
-const ButtonIconFn: FC<
+export const ButtonIconFn: FC<
 	Omit<
 		ILibButtonIcon,
 		"tooltip" | "showTooltip" | "containerStyle" | "containerClasses"
@@ -74,5 +74,3 @@ const ButtonIconFn: FC<
 		</Element>
 	)
 }
-
-export default ButtonIconFn

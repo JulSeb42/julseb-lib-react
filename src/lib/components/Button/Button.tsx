@@ -39,7 +39,7 @@ import type { ILibButton } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/button
  */
-const Button: FC<ILibButton> = ({
+export const Button: FC<ILibButton> = ({
 	className,
 	element = "button",
 	ref,
@@ -107,5 +107,3 @@ const Button: FC<ILibButton> = ({
 		</Element>
 	)
 }
-
-export default Button

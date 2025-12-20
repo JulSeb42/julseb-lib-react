@@ -1,10 +1,9 @@
-import { useState, lazy, type FC } from "react"
+import { useState, type FC } from "react"
 import { InputContainer } from "../InputContainer"
+import { HoverContainer } from "./HoverContainer"
+import { EmptyContainer } from "./EmptyContainer"
 import { clsx, genBorderRadius } from "../../utils"
 import type { ILibInputImage } from "./types"
-
-const HoverContainer = lazy(() => import("./HoverContainer"))
-const EmptyContainer = lazy(() => import("./EmptyContainer"))
 
 /**
  * InputImage component for uploading and displaying image files with hover interactions and validation states.
@@ -40,7 +39,7 @@ const EmptyContainer = lazy(() => import("./EmptyContainer"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-image
  */
-const InputImage: FC<ILibInputImage> = ({
+export const InputImage: FC<ILibInputImage> = ({
 	className,
 	ref,
 	label,
@@ -106,5 +105,3 @@ const InputImage: FC<ILibInputImage> = ({
 		</InputContainer>
 	)
 }
-
-export default InputImage

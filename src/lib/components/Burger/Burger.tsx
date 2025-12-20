@@ -35,7 +35,7 @@ const SPAN_COMMON =
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/burger
  */
-const Burger: FC<ILibBurger> = ({
+export const Burger: FC<ILibBurger> = ({
 	className,
 	element = "button",
 	ref,
@@ -97,8 +97,6 @@ const Burger: FC<ILibBurger> = ({
 		</Element>
 	)
 }
-
-export default Burger
 
 const genHover: Record<LibColorsHover, string> = {
 	primary: "hover:[&>span]:bg-primary-300 active:[&>span]:bg-primary-600",

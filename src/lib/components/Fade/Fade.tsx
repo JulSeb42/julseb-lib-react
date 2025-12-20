@@ -24,7 +24,7 @@ import type { ILibFade } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/fade
  */
-const Fade: FC<ILibFade> = ({
+export const Fade: FC<ILibFade> = ({
 	className,
 	element = "div",
 	ref,
@@ -60,5 +60,3 @@ const Fade: FC<ILibFade> = ({
 		</Element>
 	)
 }
-
-export default Fade

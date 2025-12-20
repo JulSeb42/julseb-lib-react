@@ -26,7 +26,7 @@ import type { ILibMain } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/styles/main
  */
-const Main: FC<ILibMain> = ({
+export const Main: FC<ILibMain> = ({
 	className,
 	element = "main",
 	ref,
@@ -55,8 +55,6 @@ const Main: FC<ILibMain> = ({
 		</Element>
 	)
 }
-
-export default Main
 
 const maxWidth = {
 	default: "sm:max-w-(--main-default)",

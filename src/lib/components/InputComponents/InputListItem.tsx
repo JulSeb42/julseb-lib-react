@@ -6,7 +6,7 @@ import type {
 	ReactChildren,
 } from "../../types"
 
-const InputListItem: FC<IInputListItem> = ({
+export const InputListItem: FC<IInputListItem> = ({
 	onClick,
 	content,
 	cursor,
@@ -53,8 +53,6 @@ const InputListItem: FC<IInputListItem> = ({
 		</button>
 	)
 }
-
-export default InputListItem
 
 export interface IInputListItem {
 	onClick: MouseEventHandler<HTMLButtonElement>

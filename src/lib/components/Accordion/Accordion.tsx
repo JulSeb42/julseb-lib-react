@@ -1,9 +1,8 @@
-import { lazy, type FC } from "react"
+import { type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { AccordionItem } from "./AccordionItem"
 import { clsx } from "../../utils"
 import type { ILibAccordion } from "./types"
-
-const AccordionItem = lazy(() => import("./AccordionItem"))
 
 /**
  * Accordion component for creating collapsible content sections with customizable styling and expandable items.
@@ -33,7 +32,7 @@ const AccordionItem = lazy(() => import("./AccordionItem"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/accordion
  */
-const Accordion: FC<ILibAccordion> = ({
+export const Accordion: FC<ILibAccordion> = ({
 	className,
 	element = "div",
 	ref,
@@ -72,5 +71,3 @@ const Accordion: FC<ILibAccordion> = ({
 		</Element>
 	)
 }
-
-export default Accordion

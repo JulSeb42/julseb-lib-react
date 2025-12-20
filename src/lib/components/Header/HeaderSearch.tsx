@@ -1,10 +1,10 @@
-import { type FC } from "react"
+import { type ChangeEvent, type FC } from "react"
 import { stringifyPx } from "@julseb-lib/utils"
 import { Input } from "../Input"
 import { clsx } from "../../utils"
 import type { ILibHeaderSearch } from "./subtypes"
 
-const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
+export const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 	if (!search) return null
 
 	const {
@@ -36,7 +36,9 @@ const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 					type="search"
 					placeholder={placeholder}
 					value={value}
-					onChange={e => setValue(e.target.value)}
+					onChange={(e: ChangeEvent<HTMLInputElement>) =>
+						setValue(e.target.value)
+					}
 					icon={iconLeft}
 					iconClear={iconClear}
 					focusKeys={focusKeys}
@@ -50,5 +52,3 @@ const HeaderSearch: FC<ILibHeaderSearch> = ({ search, handleClose }) => {
 		</form>
 	)
 }
-
-export default HeaderSearch

@@ -20,7 +20,7 @@ import type { ILibHighlight } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/highlight
  */
-const Highlight: FC<ILibHighlight> = ({
+export const Highlight: FC<ILibHighlight> = ({
 	className,
 	element = Text,
 	ref,
@@ -43,5 +43,3 @@ const Highlight: FC<ILibHighlight> = ({
 		</Element>
 	)
 }
-
-export default Highlight

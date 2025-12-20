@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const MarkdownContainer = lazy(() => import("./MarkdownContainer"))
+export * from "./MarkdownContainer"

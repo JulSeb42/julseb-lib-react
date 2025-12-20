@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const Flexbox = lazy(() => import("./Flexbox"))
+export * from "./Flexbox"

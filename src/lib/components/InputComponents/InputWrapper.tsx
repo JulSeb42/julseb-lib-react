@@ -9,7 +9,7 @@ import type {
 	ReactChildren,
 } from "../../types"
 
-const InputWrapper: FC<IInputWrapper> = ({
+export const InputWrapper: FC<IInputWrapper> = ({
 	children,
 	validation,
 	inputBackground,
@@ -34,8 +34,6 @@ const InputWrapper: FC<IInputWrapper> = ({
 		</div>
 	)
 }
-
-export default InputWrapper
 
 export interface IInputWrapper {
 	children?: ReactChildren

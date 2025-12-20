@@ -32,7 +32,7 @@ import type { ILibListGroupItem } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/list-group
  */
-const ListGroupItem: FC<ILibListGroupItem> = ({
+export const ListGroupItem: FC<ILibListGroupItem> = ({
 	className,
 	element = "div",
 	ref,
@@ -83,5 +83,3 @@ const ListGroupItem: FC<ILibListGroupItem> = ({
 		</Element>
 	)
 }
-
-export default ListGroupItem

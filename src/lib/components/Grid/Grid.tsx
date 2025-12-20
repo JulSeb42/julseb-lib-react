@@ -42,7 +42,7 @@ import type { ILibGrid } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/grid
  */
-const Grid: FC<ILibGrid> = ({
+export const Grid: FC<ILibGrid> = ({
 	className,
 	element = "div",
 	ref,
@@ -81,8 +81,6 @@ const Grid: FC<ILibGrid> = ({
 		</Element>
 	)
 }
-
-export default Grid
 
 const genGridColumns = {
 	1: "grid-cols-1",

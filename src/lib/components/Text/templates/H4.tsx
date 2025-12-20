@@ -9,7 +9,7 @@ import {
 } from "../../../utils"
 import type { ILibText } from "../types"
 
-const H4: FC<ILibText> = ({
+export const H4: FC<ILibText> = ({
 	element = "h4",
 	className,
 	children,
@@ -41,4 +41,3 @@ const H4: FC<ILibText> = ({
 	)
 }
 
-export default H4

@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const SrOnly = lazy(() => import("./SrOnly"))
+export * from "./SrOnly"

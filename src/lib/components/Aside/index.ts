@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const Aside = lazy(() => import("./Aside"))
+export * from "./Aside"

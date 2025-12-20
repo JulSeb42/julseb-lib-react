@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const Avatar = lazy(() => import("./Avatar"))
+export * from "./Avatar"

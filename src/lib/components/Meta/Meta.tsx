@@ -45,7 +45,7 @@ import type { ILibMeta } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/meta
  */
-const Meta: FC<ILibMeta> = ({
+export const Meta: FC<ILibMeta> = ({
 	children,
 	title,
 	favicon,
@@ -135,5 +135,3 @@ const Meta: FC<ILibMeta> = ({
 		</>
 	)
 }
-
-export default Meta

@@ -10,7 +10,7 @@ import {
 } from "../../InputComponents"
 import type { ILibTextInput } from "../subtypes"
 
-const TextInput: FC<ILibTextInput> = ({
+export const TextInput: FC<ILibTextInput> = ({
 	className,
 	validation,
 	inputBackground,
@@ -57,4 +57,3 @@ const TextInput: FC<ILibTextInput> = ({
 	)
 }
 
-export default TextInput

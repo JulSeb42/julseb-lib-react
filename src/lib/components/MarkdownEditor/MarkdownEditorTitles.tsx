@@ -1,4 +1,4 @@
-import { useRef, type FC } from "react"
+import { useRef, type FC, type MouseEvent } from "react"
 import { clsx } from "../../utils"
 import { Button } from "../Button"
 import { useClickOutside } from "../../hooks"
@@ -9,7 +9,7 @@ import {
 import type { ILibMarkdownEditor } from "./types"
 import type { DispatchState } from "../../types"
 
-const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
+export const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 	options,
 	textButtonTitles,
 	addCode,
@@ -26,7 +26,7 @@ const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 		<div className={clsx("relative", "dropdown-container")} ref={el}>
 			<Button
 				className={clsx("", "button-titles")}
-				onClick={e => {
+				onClick={(e: MouseEvent<HTMLButtonElement>) => {
 					e.stopPropagation()
 					setIsOpen(!isOpen)
 				}}
@@ -74,8 +74,6 @@ const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 		</div>
 	)
 }
-
-export default MarkdownEditorTitles
 
 interface IMarkdownEditorTitles extends Pick<
 	ILibMarkdownEditor,

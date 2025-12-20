@@ -45,7 +45,7 @@ import type { ILibRating } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/rating
  */
-const Rating: FC<ILibRating> = ({
+export const Rating: FC<ILibRating> = ({
 	className,
 	ref,
 	rating,
@@ -122,4 +122,3 @@ const Rating: FC<ILibRating> = ({
 		</InputContainer>
 	)
 }
-export default Rating

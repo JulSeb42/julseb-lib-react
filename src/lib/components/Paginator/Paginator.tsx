@@ -47,7 +47,7 @@ import type { ILibPaginator } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/paginator
  */
-const Paginator: FC<ILibPaginator> = ({
+export const Paginator: FC<ILibPaginator> = ({
 	className,
 	element = "div",
 	ref,
@@ -134,5 +134,3 @@ const Paginator: FC<ILibPaginator> = ({
 		</Element>
 	)
 }
-
-export default Paginator

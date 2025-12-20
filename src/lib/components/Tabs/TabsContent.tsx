@@ -26,7 +26,7 @@ import type { ILibTabsContent } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tabs
  */
-const TabsContent: FC<ILibTabsContent> = ({
+export const TabsContent: FC<ILibTabsContent> = ({
 	children,
 	element = typeof children === "string" ? Text : "div",
 	ref,
@@ -50,5 +50,3 @@ const TabsContent: FC<ILibTabsContent> = ({
 		</Element>
 	)
 }
-
-export default TabsContent

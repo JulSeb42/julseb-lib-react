@@ -6,7 +6,11 @@ import { ButtonIcon } from "../ButtonIcon"
 import type { ILibMarkdownEditor } from "./types"
 import type { ReactElement } from "../../types"
 
-const MarkdownButtons: FC<IMarkdownButtons> = ({ options, icons, addCode }) => {
+export const MarkdownButtons: FC<IMarkdownButtons> = ({
+	options,
+	icons,
+	addCode,
+}) => {
 	return libMdButtons.map(button => {
 		if (options && options[button.name as keyof typeof options] === false) {
 			return null
@@ -31,8 +35,6 @@ const MarkdownButtons: FC<IMarkdownButtons> = ({ options, icons, addCode }) => {
 		)
 	})
 }
-
-export default MarkdownButtons
 
 interface IMarkdownButtons extends Pick<
 	ILibMarkdownEditor,

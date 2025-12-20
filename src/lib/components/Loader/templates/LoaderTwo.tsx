@@ -6,7 +6,7 @@ import type { ILibLoader } from "../types"
 const SPAN_COMMON =
 	"block absolute w-full h-full border-8 border-transparent rounded-full animate-[spin_1200ms_var(--animate-cubic-bezier)_infinite_var(--spinner-delay)]"
 
-const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
+export const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
 	className,
 	element = "span",
 	ref,
@@ -60,4 +60,3 @@ const LoaderTwo: FC<Omit<ILibLoader, "variant">> = ({
 	)
 }
 
-export default LoaderTwo

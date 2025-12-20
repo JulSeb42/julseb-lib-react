@@ -56,7 +56,7 @@ import type { ILibInputPhone } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-phone
  */
-const InputPhone: FC<ILibInputPhone> = ({
+export const InputPhone: FC<ILibInputPhone> = ({
 	className,
 	ref,
 	selectedCountry,
@@ -253,5 +253,3 @@ const InputPhone: FC<ILibInputPhone> = ({
 		</InputContainer>
 	)
 }
-
-export default InputPhone

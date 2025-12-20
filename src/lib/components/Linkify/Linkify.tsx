@@ -31,7 +31,7 @@ const URL_REGEX =
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/linkify
  */
-const Linkify: FC<ILibLinkify> = ({
+export const Linkify: FC<ILibLinkify> = ({
 	className,
 	element = Text,
 	ref,
@@ -65,5 +65,3 @@ const Linkify: FC<ILibLinkify> = ({
 		</Element>
 	)
 }
-
-export default Linkify

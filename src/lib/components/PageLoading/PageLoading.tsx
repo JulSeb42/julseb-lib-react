@@ -30,7 +30,7 @@ import type { ILibPageLoading } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/page-loading
  */
-const PageLoading: FC<ILibPageLoading> = ({
+export const PageLoading: FC<ILibPageLoading> = ({
 	className,
 	element = "div",
 	ref,
@@ -61,5 +61,3 @@ const PageLoading: FC<ILibPageLoading> = ({
 		</Element>
 	)
 }
-
-export default PageLoading

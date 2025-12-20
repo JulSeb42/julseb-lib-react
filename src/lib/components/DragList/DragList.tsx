@@ -1,16 +1,8 @@
-import {
-	useRef,
-	useState,
-	Fragment,
-	lazy,
-	type FC,
-	type DragEvent,
-} from "react"
+import { useRef, useState, Fragment, type FC, type DragEvent } from "react"
+import { DragListItem } from "./DragListItem"
 import { Hr } from "../Hr"
 import { clsx } from "../../utils"
 import type { ILibDragList } from "./types"
-
-const DragListItem = lazy(() => import("./DragListItem"))
 
 /**
  * DragList component for creating draggable and reorderable lists with customizable items and separators.
@@ -41,7 +33,7 @@ const DragListItem = lazy(() => import("./DragListItem"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/drag-list
  */
-const DragList: FC<ILibDragList> = ({
+export const DragList: FC<ILibDragList> = ({
 	className,
 	element = "div",
 	ref,
@@ -118,5 +110,3 @@ const DragList: FC<ILibDragList> = ({
 		</Element>
 	)
 }
-
-export default DragList

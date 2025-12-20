@@ -40,7 +40,7 @@ import type { ILibInputPin } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-pin
  */
-const InputPin: FC<ILibInputPin> = ({
+export const InputPin: FC<ILibInputPin> = ({
 	className,
 	ref,
 	label,
@@ -122,5 +122,3 @@ const InputPin: FC<ILibInputPin> = ({
 		</InputContainer>
 	)
 }
-
-export default InputPin

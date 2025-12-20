@@ -13,7 +13,7 @@ import {
 import { useTouchScreen, useMergeRefs, useKeyPress } from "../../../hooks"
 import type { ILibSearchInput } from "../subtypes"
 
-const SearchInput: FC<ILibSearchInput> = ({
+export const SearchInput: FC<ILibSearchInput> = ({
 	ref,
 	className,
 	inputBackground,
@@ -88,4 +88,3 @@ const SearchInput: FC<ILibSearchInput> = ({
 	)
 }
 
-export default SearchInput

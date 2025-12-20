@@ -36,7 +36,7 @@ import type { ILibToast } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/toast
  */
-const Toast: FC<ILibToast> = ({
+export const Toast: FC<ILibToast> = ({
 	className,
 	element = "div",
 	ref,
@@ -111,5 +111,3 @@ const Toast: FC<ILibToast> = ({
 		</Element>
 	)
 }
-
-export default Toast

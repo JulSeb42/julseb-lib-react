@@ -1,9 +1,8 @@
-import { lazy, type FC } from "react"
+import { type FC } from "react"
+import { LoaderOne } from "./templates/LoaderOne"
+import { LoaderTwo } from "./templates/LoaderTwo"
+import { LoaderThree } from "./templates/LoaderThree"
 import type { ILibLoader } from "./types"
-
-const LoaderOne = lazy(() => import("./templates/LoaderOne"))
-const LoaderTwo = lazy(() => import("./templates/LoaderTwo"))
-const LoaderThree = lazy(() => import("./templates/LoaderThree"))
 
 /**
  * Loader component for displaying a loading indicator with multiple style variants and color options.
@@ -26,7 +25,7 @@ const LoaderThree = lazy(() => import("./templates/LoaderThree"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/loader
  */
-const Loader: FC<ILibLoader> = ({ variant, ...rest }) => {
+export const Loader: FC<ILibLoader> = ({ variant, ...rest }) => {
 	switch (variant) {
 		case 2:
 			return <LoaderTwo {...rest} />
@@ -37,4 +36,3 @@ const Loader: FC<ILibLoader> = ({ variant, ...rest }) => {
 			return <LoaderOne {...rest} />
 	}
 }
-export default Loader

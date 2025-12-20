@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const Wrapper = lazy(() => import("./Wrapper"))
+export * from "./Wrapper"

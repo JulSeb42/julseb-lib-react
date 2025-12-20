@@ -46,7 +46,7 @@ import type { ILibTable } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/table
  */
-const Table: FC<ILibTable> = ({
+export const Table: FC<ILibTable> = ({
 	className,
 	ref,
 	children,
@@ -143,5 +143,3 @@ const Table: FC<ILibTable> = ({
 		</table>
 	)
 }
-
-export default Table

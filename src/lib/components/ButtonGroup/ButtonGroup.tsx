@@ -47,7 +47,7 @@ import type { ILibButtonGroup } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/button-group
  */
-const ButtonGroup: FC<ILibButtonGroup> = ({
+export const ButtonGroup: FC<ILibButtonGroup> = ({
 	className,
 	element = Flexbox,
 	ref,
@@ -130,5 +130,3 @@ const ButtonGroup: FC<ILibButtonGroup> = ({
 
 	return <Element {...elementProps}>{children}</Element>
 }
-
-export default ButtonGroup

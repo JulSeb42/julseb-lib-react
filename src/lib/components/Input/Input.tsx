@@ -1,17 +1,16 @@
-import { lazy, type FC } from "react"
+import { type FC } from "react"
 import { InputContainer } from "../InputContainer"
+import { ColorInput } from "./templates/ColorInput"
+import { DateInput } from "./templates/DateInput"
+import { FileInput } from "./templates/FileInput"
+import { PasswordInput } from "./templates/PasswordInput"
+import { SearchInput } from "./templates/SearchInput"
+import { SelectInput } from "./templates/SelectInput"
+import { TextareaInput } from "./templates/TextareaInput"
+import { TextInput } from "./templates/TextInput"
+import { TimeInput } from "./templates/TimeInput"
 import type { LibInputType } from "../../types"
 import type { ILibInput } from "./types"
-
-const ColorInput = lazy(() => import("./templates/ColorInput"))
-const DateInput = lazy(() => import("./templates/DateInput"))
-const FileInput = lazy(() => import("./templates/FileInput"))
-const PasswordInput = lazy(() => import("./templates/PasswordInput"))
-const SearchInput = lazy(() => import("./templates/SearchInput"))
-const SelectInput = lazy(() => import("./templates/SelectInput"))
-const TextareaInput = lazy(() => import("./templates/TextareaInput"))
-const TextInput = lazy(() => import("./templates/TextInput"))
-const TimeInput = lazy(() => import("./templates/TimeInput"))
 
 const renderComponent = (props: any, type: LibInputType) => {
 	switch (type) {
@@ -88,7 +87,7 @@ const InputFunction: FC<ILibInput> = ({ type, ...rest }) =>
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input
  */
-const Input: FC<ILibInput> = ({
+export const Input: FC<ILibInput> = ({
 	className,
 	ref,
 	id,
@@ -132,5 +131,3 @@ const Input: FC<ILibInput> = ({
 		</InputContainer>
 	)
 }
-
-export default Input

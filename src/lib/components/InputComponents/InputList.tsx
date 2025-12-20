@@ -10,7 +10,7 @@ import type {
 	ReactChildren,
 } from "../../types"
 
-const InputList: FC<IInputList> = ({
+export const InputList: FC<IInputList> = ({
 	ref,
 	className,
 	listDirection,
@@ -40,8 +40,6 @@ const InputList: FC<IInputList> = ({
 		</div>
 	)
 }
-
-export default InputList
 
 export interface IInputList {
 	ref?: Ref<HTMLDivElement>

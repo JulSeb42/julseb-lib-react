@@ -6,7 +6,7 @@ import { libMdViewButtons } from "./buttons/markdown-buttons"
 import type { DispatchState, LibMdEditorViews, ReactElement } from "../../types"
 import type { ILibMarkdownEditor } from "./types"
 
-const MarkdownViewButtons: FC<IMarkdownViewButtons> = ({
+export const MarkdownViewButtons: FC<IMarkdownViewButtons> = ({
 	options,
 	icons,
 	view,
@@ -40,8 +40,6 @@ const MarkdownViewButtons: FC<IMarkdownViewButtons> = ({
 		)
 	})
 }
-
-export default MarkdownViewButtons
 
 interface IMarkdownViewButtons extends Pick<
 	ILibMarkdownEditor,

@@ -36,7 +36,7 @@ import type { ILibDragListItem } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/drag-list
  */
-const DragListItem: FC<ILibDragListItem> = ({
+export const DragListItem: FC<ILibDragListItem> = ({
 	className,
 	element = "div",
 	ref,
@@ -112,4 +112,3 @@ const DragListItem: FC<ILibDragListItem> = ({
 		</Element>
 	)
 }
-export default DragListItem

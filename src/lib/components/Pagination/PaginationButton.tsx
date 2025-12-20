@@ -30,7 +30,7 @@ import type { ILibPaginationButton } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/pagination
  */
-const PaginationButton: FC<ILibPaginationButton> = ({
+export const PaginationButton: FC<ILibPaginationButton> = ({
 	className,
 	element = "button",
 	ref,
@@ -63,5 +63,3 @@ const PaginationButton: FC<ILibPaginationButton> = ({
 		</Element>
 	)
 }
-
-export default PaginationButton

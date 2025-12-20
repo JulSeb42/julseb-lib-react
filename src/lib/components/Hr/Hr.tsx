@@ -20,7 +20,7 @@ import type { ILibHr } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/hr
  */
-const Hr: FC<ILibHr> = ({
+export const Hr: FC<ILibHr> = ({
 	className,
 	element = "hr",
 	ref,
@@ -46,4 +46,3 @@ const Hr: FC<ILibHr> = ({
 		/>
 	)
 }
-export default Hr

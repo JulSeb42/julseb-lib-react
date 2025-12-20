@@ -24,7 +24,7 @@ import type { ILibAside } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/styles/aside
  */
-const Aside: FC<ILibAside> = ({
+export const Aside: FC<ILibAside> = ({
 	className,
 	element = "aside",
 	ref,
@@ -53,8 +53,6 @@ const Aside: FC<ILibAside> = ({
 		</Element>
 	)
 }
-
-export default Aside
 
 const asideSize = {
 	default: "sm:max-w-(--aside-default)",

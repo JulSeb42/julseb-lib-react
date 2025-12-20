@@ -1,5 +1,3 @@
-import { lazy } from "react"
-
-export const ListGroup = lazy(() => import("./ListGroup"))
-export const ListGroupTitle = lazy(() => import("./ListGroupTitle"))
-export const ListGroupItem = lazy(() => import("./ListGroupItem"))
+export * from "./ListGroup"
+export * from "./ListGroupTitle"
+export * from "./ListGroupItem"

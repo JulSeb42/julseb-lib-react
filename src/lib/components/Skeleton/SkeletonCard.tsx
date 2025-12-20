@@ -29,7 +29,7 @@ import type { ILibSkeletonCard } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/layouts/skeletoncard
  */
-const SkeletonCard: FC<ILibSkeletonCard> = ({
+export const SkeletonCard: FC<ILibSkeletonCard> = ({
 	element = "div",
 	className,
 	children,
@@ -59,4 +59,3 @@ const SkeletonCard: FC<ILibSkeletonCard> = ({
 	)
 }
 
-export default SkeletonCard

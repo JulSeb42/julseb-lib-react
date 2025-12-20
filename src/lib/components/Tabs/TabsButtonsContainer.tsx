@@ -27,7 +27,7 @@ import type { ILibTabsButtonsContainer } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/tabs
  */
-const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
+export const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
 	element = "div",
 	ref,
 	className,
@@ -56,5 +56,3 @@ const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
 		</Element>
 	)
 }
-
-export default TabsButtonsContainer

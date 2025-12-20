@@ -4,18 +4,16 @@ import {
 	useEffect,
 	useRef,
 	Suspense,
-	lazy,
 	type FC,
 	type TouchEvent,
 } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { SlideshowButton } from "./SlideshowButton"
+import { SlideshowPagination } from "./SlideshowPagination"
 import { Image } from "../Image"
 import { clsx, genObjectFit, genBorderRadius } from "../../utils"
 import { useKeyPress } from "../../hooks"
 import type { ILibSlideshow } from "./types"
-
-const SlideshowButton = lazy(() => import("./SlideshowButton"))
-const SlideshowPagination = lazy(() => import("./SlideshowPagination"))
 
 /**
  * Slideshow component for displaying images or content with navigation controls, pagination, and touch/swipe support.
@@ -52,7 +50,7 @@ const SlideshowPagination = lazy(() => import("./SlideshowPagination"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/slideshow
  */
-const Slideshow: FC<ILibSlideshow> = ({
+export const Slideshow: FC<ILibSlideshow> = ({
 	className,
 	element = "div",
 	ref,
@@ -334,5 +332,3 @@ const Slideshow: FC<ILibSlideshow> = ({
 		</Element>
 	)
 }
-
-export default Slideshow

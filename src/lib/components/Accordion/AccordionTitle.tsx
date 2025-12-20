@@ -29,7 +29,7 @@ import type { ILibAccordionTitle } from "./subtypes"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/accordion
  */
-const AccordionTitle: FC<ILibAccordionTitle> = ({
+export const AccordionTitle: FC<ILibAccordionTitle> = ({
 	ref,
 	className,
 	icon = "plus",
@@ -78,5 +78,3 @@ const AccordionTitle: FC<ILibAccordionTitle> = ({
 		</button>
 	)
 }
-
-export default AccordionTitle

@@ -35,7 +35,7 @@ import type { ILibCarousel } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/carousel
  */
-const Carousel: FC<ILibCarousel> = ({
+export const Carousel: FC<ILibCarousel> = ({
 	className,
 	element = "div",
 	ref,
@@ -112,8 +112,6 @@ const Carousel: FC<ILibCarousel> = ({
 		</Element>
 	)
 }
-
-export default Carousel
 
 const genItemWidth: Record<2 | 3 | 4 | 5 | 6, string> = {
 	2: "w-[calc(100%/2)]",

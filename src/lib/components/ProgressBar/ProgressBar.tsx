@@ -31,7 +31,7 @@ import type { LibColorsShort } from "../../types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/progress-bar
  */
-const ProgressBar: FC<ILibProgressBar> = ({
+export const ProgressBar: FC<ILibProgressBar> = ({
 	className,
 	ref,
 	value,
@@ -73,7 +73,6 @@ const ProgressBar: FC<ILibProgressBar> = ({
 	)
 }
 
-export default ProgressBar
 
 const genProgressColor: Record<
 	Exclude<LibColorsShort, "transparent" | "current" | "black" | "background">,

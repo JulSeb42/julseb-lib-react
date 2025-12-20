@@ -27,7 +27,7 @@ import type { ILibWrapper } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/styles/wrapper
  */
-const Wrapper: FC<ILibWrapper> = ({
+export const Wrapper: FC<ILibWrapper> = ({
 	className,
 	element = "section",
 	children,
@@ -56,8 +56,6 @@ const Wrapper: FC<ILibWrapper> = ({
 		</Element>
 	)
 }
-
-export default Wrapper
 
 const genMinHeight = {
 	px: "min-h-px",

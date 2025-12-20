@@ -3,7 +3,7 @@ import { INPUT_ICON_CONTAINER_CLASSES } from "./classes"
 import { clsx } from "../../utils"
 import type { ReactElement, LibInputVariant } from "../../types"
 
-const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
+export const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
 	if (!icon) return null
 
 	return (
@@ -20,8 +20,6 @@ const InputIcon: FC<IInputIcon> = ({ icon, inputVariant, disabled }) => {
 		</span>
 	)
 }
-
-export default InputIcon
 
 export interface IInputIcon {
 	icon: ReactElement | undefined

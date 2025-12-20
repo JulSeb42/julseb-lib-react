@@ -30,7 +30,7 @@ import type { ILibBadge } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/badge
  */
-const Badge: FC<ILibBadge> = ({
+export const Badge: FC<ILibBadge> = ({
 	className,
 	element = "span",
 	ref,
@@ -59,5 +59,3 @@ const Badge: FC<ILibBadge> = ({
 		</Element>
 	)
 }
-
-export default Badge

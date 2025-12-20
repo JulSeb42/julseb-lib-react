@@ -5,7 +5,7 @@ import { useTouchScreen } from "../../hooks"
 import type { ILibSlideshowPagination } from "./subtypes"
 import type { LibColorsHover } from "../../types"
 
-const SlideshowPagination: FC<ILibSlideshowPagination> = ({
+export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 	className,
 	images,
 	active,
@@ -84,8 +84,6 @@ const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 		</div>
 	)
 }
-
-export default SlideshowPagination
 
 const genBgColor: Record<LibColorsHover, string> = {
 	primary:

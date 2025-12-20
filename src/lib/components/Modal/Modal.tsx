@@ -38,7 +38,7 @@ import type { ILibModal } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/modal
  */
-const Modal: FC<ILibModal> = ({
+export const Modal: FC<ILibModal> = ({
 	className,
 	element = "div",
 	ref,
@@ -106,5 +106,3 @@ const Modal: FC<ILibModal> = ({
 		</Element>
 	)
 }
-
-export default Modal

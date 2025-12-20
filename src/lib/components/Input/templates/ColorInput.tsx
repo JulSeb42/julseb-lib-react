@@ -7,7 +7,7 @@ import {
 } from "../../InputComponents"
 import type { ILibColorInput } from "../subtypes"
 
-const ColorInput: FC<ILibColorInput> = ({
+export const ColorInput: FC<ILibColorInput> = ({
 	className,
 	type = "color",
 	validation,
@@ -42,4 +42,3 @@ const ColorInput: FC<ILibColorInput> = ({
 		</InputWrapper>
 	)
 }
-export default ColorInput

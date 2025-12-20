@@ -1,4 +1,2 @@
-import { lazy } from "react"
-
-export const InputPhone = lazy(() => import("./InputPhone"))
+export * from "./InputPhone"
 export { countries } from "./utils/countries"

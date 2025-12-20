@@ -41,7 +41,7 @@ import type { ILibInputSlider } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/input-slider
  */
-const InputSlider: FC<ILibInputSlider> = ({
+export const InputSlider: FC<ILibInputSlider> = ({
 	className,
 	ref,
 	label,
@@ -178,4 +178,3 @@ const InputSlider: FC<ILibInputSlider> = ({
 	)
 }
 
-export default InputSlider

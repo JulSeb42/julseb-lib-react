@@ -25,7 +25,7 @@ import type { ILibDropdownItem } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/dropdown
  */
-const DropdownItem: FC<ILibDropdownItem> = ({
+export const DropdownItem: FC<ILibDropdownItem> = ({
 	element = "button",
 	children,
 	className,
@@ -47,5 +47,3 @@ const DropdownItem: FC<ILibDropdownItem> = ({
 		</Element>
 	)
 }
-
-export default DropdownItem

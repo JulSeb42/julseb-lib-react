@@ -35,11 +35,9 @@ import {
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/toast
  */
-const ToastContainer: FC<ToastContainerProps> = ({
+export const ToastContainer: FC<ToastContainerProps> = ({
 	position = "bottom-right",
 	...rest
 }) => {
 	return <Container position={position} {...rest} />
 }
-
-export default ToastContainer

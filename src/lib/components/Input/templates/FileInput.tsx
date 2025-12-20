@@ -7,7 +7,7 @@ import {
 } from "../../InputComponents"
 import type { ILibFileInput } from "../subtypes"
 
-const FileInput: FC<ILibFileInput> = ({
+export const FileInput: FC<ILibFileInput> = ({
 	className,
 	type = "file",
 	validation,
@@ -40,4 +40,3 @@ const FileInput: FC<ILibFileInput> = ({
 		</InputWrapper>
 	)
 }
-export default FileInput

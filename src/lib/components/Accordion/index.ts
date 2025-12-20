@@ -1,4 +1,2 @@
-import { lazy } from "react"
-
-export const Accordion = lazy(() => import("./Accordion"))
-export const AccordionItem = lazy(() => import("./AccordionItem"))
+export * from "./Accordion"
+export * from "./AccordionItem"

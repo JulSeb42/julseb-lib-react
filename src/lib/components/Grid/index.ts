@@ -1,3 +1,1 @@
-import { lazy } from "react"
-
-export const Grid = lazy(() => import("./Grid"))
+export * from "./Grid"

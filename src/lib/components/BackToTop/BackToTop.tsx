@@ -29,7 +29,7 @@ import type { ILibBackToTop } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/back-to-top
  */
-const BackToTop: FC<ILibBackToTop> = ({
+export const BackToTop: FC<ILibBackToTop> = ({
 	className,
 	ref,
 	icon = <BiUpArrowAlt size={32} />,
@@ -94,4 +94,3 @@ const BackToTop: FC<ILibBackToTop> = ({
 		/>
 	)
 }
-export default BackToTop

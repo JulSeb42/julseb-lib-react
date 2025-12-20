@@ -53,7 +53,7 @@ import type { ILibSelect } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/select
  */
-const Select: FC<ILibSelect> = ({
+export const Select: FC<ILibSelect> = ({
 	className,
 	ref,
 	value,
@@ -193,5 +193,3 @@ const Select: FC<ILibSelect> = ({
 		</InputContainer>
 	)
 }
-
-export default Select

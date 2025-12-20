@@ -1,11 +1,10 @@
-import { useRef, lazy, type FC } from "react"
+import { useRef, type FC } from "react"
 import { uuid } from "@julseb-lib/utils"
+import { ListGroupTitle } from "./ListGroupTitle"
+import { ListGroupItem } from "./ListGroupItem"
 import { clsx } from "../../utils"
 import { useMergeRefs } from "../../hooks"
 import type { ILibListGroup } from "./types"
-
-const ListGroupTitle = lazy(() => import("./ListGroupTitle"))
-const ListGroupItem = lazy(() => import("./ListGroupItem"))
 
 /**
  * ListGroup component for displaying a structured list of items with optional title, numbering, and separators.
@@ -37,7 +36,7 @@ const ListGroupItem = lazy(() => import("./ListGroupItem"))
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/list-group
  */
-const ListGroup: FC<ILibListGroup> = ({
+export const ListGroup: FC<ILibListGroup> = ({
 	className,
 	element = "div",
 	ref,
@@ -95,5 +94,3 @@ const ListGroup: FC<ILibListGroup> = ({
 		</Element>
 	)
 }
-
-export default ListGroup

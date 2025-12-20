@@ -45,7 +45,7 @@ import type { ILibFooter } from "./types"
  *
  * @see https://doc-julseb-lib-react.vercel.app/components/footer
  */
-const Footer: FC<ILibFooter> = ({
+export const Footer: FC<ILibFooter> = ({
 	className,
 	element = "footer",
 	ref,
@@ -111,5 +111,3 @@ const Footer: FC<ILibFooter> = ({
 		</Element>
 	)
 }
-
-export default Footer

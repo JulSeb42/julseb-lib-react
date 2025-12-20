@@ -9,7 +9,7 @@ import {
 } from "../../../utils"
 import type { ILibText } from "../types"
 
-const Strong: FC<ILibText> = ({
+export const Strong: FC<ILibText> = ({
 	element = "strong",
 	className,
 	children,
@@ -39,4 +39,3 @@ const Strong: FC<ILibText> = ({
 	)
 }
 
-export default Strong
