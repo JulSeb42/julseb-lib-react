@@ -6,7 +6,8 @@ import type {
 } from "../../types"
 
 interface ILibFormBase
-	extends Omit<LibComponentBase<HTMLFormElement>, "element">,
+	extends
+		LibComponentBase<HTMLFormElement>,
 		FormHTMLAttributes<HTMLFormElement> {
 	isLoading?: boolean
 	loaderVariant?: LibLoaderVariant

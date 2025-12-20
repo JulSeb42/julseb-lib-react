@@ -36,6 +36,7 @@ import type { ILibForm } from "./types"
  * @see https://doc-julseb-lib-react.vercel.app/components/form
  */
 const Form: FC<ILibForm> = ({
+	element = "form",
 	className,
 	ref,
 	children,
@@ -46,8 +47,10 @@ const Form: FC<ILibForm> = ({
 	loaderVariant,
 	...rest
 }) => {
+	const Element = element
+
 	return (
-		<form
+		<Element
 			ref={ref}
 			className={clsx("flex flex-col gap-4", "form", className)}
 			{...rest}
@@ -78,7 +81,7 @@ const Form: FC<ILibForm> = ({
 					)}
 				</div>
 			)}
-		</form>
+		</Element>
 	)
 }
 export default Form
