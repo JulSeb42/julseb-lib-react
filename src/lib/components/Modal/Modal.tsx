@@ -1,4 +1,4 @@
-import { useRef, type FC } from "react"
+import { useRef, useEffect, type FC } from "react"
 import { BiX } from "react-icons/bi"
 import { useKeyPress, useClickOutside } from "../../hooks"
 import { clsx, enableScroll } from "../../utils"
@@ -67,13 +67,17 @@ export const Modal: FC<ILibModal> = ({
 		if (isOpen && !disableEsc) handleClose()
 	})
 
+	useEffect(() => {
+		if (!isOpen) enableScroll()
+	}, [isOpen])
+
 	return (
 		<Element
 			ref={ref}
 			className={clsx(
-				"top-0 left-0 z-999 fixed flex justify-center items-center bg-overlay-black-80 w-full h-svh",
+				"top-0 left-0 z-999 fixed justify-center items-center bg-overlay-black-80 w-full h-svh",
 				isOpen && "open",
-				"invisible opacity-0 [&.open]:visible [&.open]:opacity-100",
+				"hidden opacity-0 [&.open]:flex [&.open]:opacity-100",
 				"modal",
 				className,
 			)}

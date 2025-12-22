@@ -16,10 +16,16 @@
  * }
  */
 export function enableScroll(): void {
-    const body = document.body
+	if (typeof window !== "undefined") {
+		const scrollPosition = document.body.getAttribute(
+			"data-scroll-position",
+		)
 
-    body.style.height = ""
-    body.style.overflow = ""
+		document.body.style.overflow = ""
+		document.body.removeAttribute("data-scroll-position")
 
-    return
+		if (scrollPosition) {
+			window.scrollTo(0, parseInt(scrollPosition))
+		}
+	}
 }

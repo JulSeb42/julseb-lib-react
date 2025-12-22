@@ -16,10 +16,14 @@
  * }
  */
 export function disableScroll(): void {
-    const body = document.body
-
-    body.style.height = "100vh"
-    body.style.overflow = "hidden"
-
-    return
+	if (typeof window !== "undefined") {
+		document.body.setAttribute(
+			"data-scroll-position",
+			window.scrollY.toString(),
+		)
+		document.body.style.overflow = "hidden"
+		document.body.style.height = "100vh"
+		const scrollPosition = window.scrollY
+		document.body.style.top = `-${scrollPosition}px`
+	}
 }

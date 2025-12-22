@@ -8,7 +8,8 @@ import {
 	genTextAlign,
 	genVAlign,
 } from "../../utils"
-import { TEXT_BASE_CLASSES } from "../Text/Text"
+import { Text, TEXT_BASE_CLASSES } from "../Text/Text"
+import { Flexbox } from "../Flexbox"
 import type { ILibTable } from "./types"
 
 /**
@@ -61,85 +62,132 @@ export const Table: FC<ILibTable> = ({
 	...rest
 }) => {
 	return (
-		<table
-			ref={ref}
-			className={clsx(
-				"table bg-background w-full h-px border-collapse border-spacing-0 table-fixed",
-				TEXT_BASE_CLASSES,
-				"text-(length:--font-size-small)",
-				genLinkColor["primary"],
-				genButtonColor["primary"],
-				"[&_thead]:bg-primary-500 [&_thead]:text-white [&_thead]:font-bold",
-				"[&_td]:overflow-x-scroll [&_td]:px-2 [&_td]:py-1 [&_th]:overflow-x-scroll [&_th]:px-2 [&_th]:py-1",
-				"md:[&_td]:table-cell md:[&_th]:table-cell [&_td]:block [&_th]:block",
-				variant === "bordered" && [
-					"border border-gray-200",
-					"[&_thead_th:not(:last-child)]:border-r [&_thead_th:not(:last-child)]:border-background [&_td]:border [&_td]:border-gray-200",
-				],
-				variant === "stripped" && [
-					"[&_tbody_tr:nth-child(even)]:bg-gray-100",
-				],
-				variant === "border-bottom" && [
-					"[&_tbody_tr]:border-b [&_tbody_tr]:border-b-gray-200",
-				],
-				genVAlign[vAlign],
-				genTextAlign[textAlign],
-				"table",
-				className,
-			)}
-			{...rest}
-		>
-			{headers && (
-				<thead className={clsx(genVAlign[vAlign])}>
-					<tr className={clsx(genVAlign[vAlign])}>
-						{headers.map(header => (
-							<th
-								className={clsx(
-									genVAlign[vAlign],
-									"no-scrollbar",
-								)}
-								key={uuid()}
-							>
-								{linkify && typeof header === "string"
-									? linkifyText(header, blank)
-									: header}
-							</th>
-						))}
-					</tr>
-				</thead>
-			)}
+		<>
+			<table
+				ref={ref}
+				className={clsx(
+					"bg-background w-full h-px border-collapse border-spacing-0 table-fixed",
+					TEXT_BASE_CLASSES,
+					data ? "hidden! md:table!" : "table",
+					"text-(length:--font-size-small)",
+					genLinkColor["primary"],
+					genButtonColor["primary"],
+					"[&_thead]:bg-primary-500 [&_thead]:text-white [&_thead]:font-bold",
+					"[&_td]:overflow-x-scroll [&_td]:px-2 [&_td]:py-1 [&_th]:overflow-x-scroll [&_th]:px-2 [&_th]:py-1",
+					"md:[&_td]:table-cell md:[&_th]:table-cell [&_td]:block [&_th]:block",
+					variant === "bordered" && [
+						"border border-gray-200",
+						"[&_thead_th:not(:last-child)]:border-r [&_thead_th:not(:last-child)]:border-background [&_td]:border [&_td]:border-gray-200",
+					],
+					variant === "stripped" && [
+						"[&_tbody_tr:nth-child(even)]:bg-gray-100",
+					],
+					variant === "border-bottom" && [
+						"[&_tbody_tr]:border-b [&_tbody_tr]:border-b-gray-200",
+					],
+					genVAlign[vAlign],
+					genTextAlign[textAlign],
+					"table",
+					className,
+				)}
+				{...rest}
+			>
+				{headers && (
+					<thead className={clsx(genVAlign[vAlign])}>
+						<tr className={clsx(genVAlign[vAlign])}>
+							{headers.map(header => (
+								<th
+									className={clsx(
+										genVAlign[vAlign],
+										"no-scrollbar",
+									)}
+									key={uuid()}
+								>
+									{linkify && typeof header === "string"
+										? linkifyText(header, blank)
+										: header}
+								</th>
+							))}
+						</tr>
+					</thead>
+				)}
 
-			{data ? (
-				<tbody className={clsx(genVAlign[vAlign])}>
-					{data.map(row => (
-						<tr key={uuid()}>
-							{row.map(col => (
+				{data ? (
+					<tbody className={clsx(genVAlign[vAlign])}>
+						{data.map(row => (
+							<tr key={uuid()}>
+								{row.map(col => (
+									<td className="no-scrollbar" key={uuid()}>
+										{linkify && typeof col === "string"
+											? linkifyText(col, blank)
+											: col}
+									</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				) : (
+					<tbody>{children}</tbody>
+				)}
+
+				{footers && (
+					<tfoot>
+						<tr>
+							{footers.map(footer => (
 								<td className="no-scrollbar" key={uuid()}>
-									{linkify && typeof col === "string"
-										? linkifyText(col, blank)
-										: col}
+									{linkify && typeof footer === "string"
+										? linkifyText(footer, blank)
+										: footer}
 								</td>
 							))}
 						</tr>
-					))}
-				</tbody>
-			) : (
-				<tbody>{children}</tbody>
-			)}
+					</tfoot>
+				)}
+			</table>
 
-			{footers && (
-				<tfoot>
-					<tr>
-						{footers.map(footer => (
-							<td className="no-scrollbar" key={uuid()}>
-								{linkify && typeof footer === "string"
-									? linkifyText(footer, blank)
-									: footer}
-							</td>
-						))}
-					</tr>
-				</tfoot>
+			{data && (
+				<Flexbox className="md:hidden" flexDirection="col" gap="md">
+					{data.map((row, i) => (
+						<Flexbox
+							flexDirection="col"
+							gap="xs"
+							key={i}
+							className={clsx("border border-gray-200")}
+						>
+							<Text
+								tag="small"
+								className="bg-primary-500 w-full font-bold text-white"
+							>
+								{row[0]}
+							</Text>
+
+							{headers.slice(1).map((header, j) => (
+								<Flexbox
+									key={j}
+									className={clsx(
+										"flex gap-6 overflow-x-scroll",
+										(variant === "bordered" ||
+											variant === "border-bottom") && [
+											"border-b border-b-gray-200",
+										],
+										variant === "stripped" && [
+											j % 2 === 0 && "bg-gray-100",
+										],
+									)}
+									gap="sm"
+								>
+									<Text tag="small">
+										<Text tag="strong">{header}</Text>
+									</Text>
+									<Text tag="small">
+										{linkifyText(row[j + 1] as any)}
+									</Text>
+								</Flexbox>
+							))}
+						</Flexbox>
+					))}
+				</Flexbox>
 			)}
-		</table>
+		</>
 	)
 }
