@@ -89,4 +89,6 @@ export const Avatar: FC<ILibAvatar> = ({
 			</Element>
 		)
 	}
+
+	return <AvatarFn {...avatarProps} />
 }

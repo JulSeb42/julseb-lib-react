@@ -769,7 +769,7 @@ export interface LibTooltipPositionOptions {
 
 export type ReactChildren = ReactNode | Array<ReactNode>
 export type ReactElement = ReactEl
-export type FC = FunctionComponent
+export type FC<T = {}> = FunctionComponent<T>
 export type DispatchState<T> = Dispatch<SetStateAction<T>>
 export type Classes = string | Array<string>
 

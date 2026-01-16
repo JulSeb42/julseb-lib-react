@@ -180,7 +180,7 @@ export const Table: FC<ILibTable> = ({
 										<Text tag="strong">{header}</Text>
 									</Text>
 									<Text tag="small">
-										{linkifyText(row[j + 1] as any)}
+										{typeof row[j + 1] === "string" ? linkifyText(row[j + 1] as any) : (row[j + 1] as any)}
 									</Text>
 								</Flexbox>
 							))}
