@@ -48,7 +48,7 @@ export const TabsButton: FC<ILibTabsButton> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"outline-none",
+				"outline-none font-bold",
 				genRingColor["primary"],
 				isActive && "active",
 				variant === "basic" && [
@@ -60,7 +60,7 @@ export const TabsButton: FC<ILibTabsButton> = ({
 					"[&.active]:bg-primary-500 [&.active]:text-white",
 				],
 				justify === "start" && ["min-w-20"],
-				justify === "stretch" && ["grow"],
+				justify === "stretch" && ["grow w-full"],
 				"tabs-button",
 				className,
 			)}
