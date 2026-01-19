@@ -26,7 +26,9 @@ export const H3: FC<ILibText> = ({
 			className={clsx(
 				TEXT_BASE_CLASSES,
 				"font-black",
-				display ? "text-display-h3" : "text-h3",
+				display
+					? "text-(length:--text-display-h3)"
+					: "text-(length:--text-h3)",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],

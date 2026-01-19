@@ -114,9 +114,9 @@ export const Carousel: FC<ILibCarousel> = ({
 }
 
 const genItemWidth: Record<2 | 3 | 4 | 5 | 6, string> = {
-	2: "w-[calc(100%/2)]",
-	3: "w-[calc(100%/3)]",
-	4: "w-[calc(100%/4)]",
-	5: "w-[calc(100%/5)]",
-	6: "w-[calc(100%/6)]",
+	2: "w-1/2",
+	3: "w-1/3",
+	4: "w-1/4",
+	5: "w-1/5",
+	6: "w-1/6",
 }

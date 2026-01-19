@@ -83,7 +83,7 @@ export const BackToTop: FC<ILibBackToTop> = ({
 				showTooltip && {
 					position: "left",
 					className: [
-						"fixed bottom-5 right-5 [&_.tooltip]:translate-y-[10px] [&_.tooltip]:translate-x-[-50%] transition-all duration-200 ease-in-out",
+						"fixed bottom-5 right-5 [&_.tooltip]:translate-y-2.5 [&_.tooltip]:translate-x-[-50%] transition-all duration-200 ease-in-out",
 						isVisible ? "opacity-100" : "opacity-0",
 					],
 					...(showTooltip as any),

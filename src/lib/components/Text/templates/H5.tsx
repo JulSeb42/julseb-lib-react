@@ -26,7 +26,9 @@ export const H5: FC<ILibText> = ({
 			className={clsx(
 				TEXT_BASE_CLASSES,
 				"font-black",
-				display ? "text-display-h5" : "text-h5",
+				display
+					? "text-(length:--text-display-h5)"
+					: "text-(length:--text-h5)",
 				(genTextAlign as any)[textAlign],
 				(genTextAllColor as any)[color],
 				genLinkColor[linkColor],

@@ -44,6 +44,7 @@ export const HeaderDemo = () => {
 				// navMobileBackground="secondary"
 				backgroundColor="transparent"
 				headerOpenMobileBackground="primary"
+				// navDesktopPosition="left"
 			/>
 
 			<Cover

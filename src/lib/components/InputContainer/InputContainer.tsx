@@ -107,7 +107,7 @@ export const InputContainer: FC<ILibInputContainer> = ({
 					<div className="flex items-start gap-1 input-container-validation-container">
 						<span
 							className={clsx(
-								"inline-flex items-center h-[21px]",
+								"inline-flex items-center h-5.25",
 								validation.status === false
 									? "text-danger-500"
 									: "text-success-500",

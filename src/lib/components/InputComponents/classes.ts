@@ -99,7 +99,7 @@ export const INPUT_LIST_CLASSES = ({
 }) => [
 	"left-0 absolute flex flex-col items-start opacity-0 border border-primary-500 rounded-md w-full max-h-0 overflow-y-scroll transition-all duration-200 ease-in-out z-0",
 	isOpen && "open",
-	"[&.open]:opacity-100 [&.open]:max-h-[300px]",
+	"[&.open]:opacity-100 [&.open]:max-h-75",
 	(listDirection === "down" || !listDirection) && "top-0 [&.open]:pt-8",
 	listDirection === "up" && ["bottom-0 [&.open]:pt-2"],
 	inputVariant === "pill" && "rounded-l-2xl rounded-tr-2xl",

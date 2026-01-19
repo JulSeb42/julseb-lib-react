@@ -110,7 +110,7 @@ export const listGroupPreview: ComponentPreview<ILibListGroup> = {
 					shadowOnScroll: "lg",
 					className: "bg-black",
 				},
-				className: "max-h-[300px]",
+				className: "max-h-75",
 				noSeparator: true,
 			},
 		},

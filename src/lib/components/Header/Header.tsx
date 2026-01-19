@@ -84,7 +84,7 @@ export const Header: FC<ILibHeader> = ({
 	...rest
 }) => {
 	const Element = element
-	const isMobile = useMaxWidth(16 * 48)
+	const isMobile = useMaxWidth(768)
 	const el = useRef<HTMLDivElement>(null)
 
 	const [isOpen, setIsOpen] = useState(false)
@@ -145,38 +145,38 @@ export const Header: FC<ILibHeader> = ({
 			</>
 		),
 		className: clsx(
-			"z-999 flex gap-2 [&>a]:outline-none w-fit transition-all duration-200 ease-in-out",
+			"z-999 flex gap-2 [&_a]:outline-none w-fit transition-all duration-200 ease-in-out",
 			"fixed md:relative",
 			"flex-col md:flex-row px-[5%] md:px-0",
 			genRingColorChildren[linksColor],
 			`${genBgAllColors[navMobileBackground ?? "primary-500"]} md:bg-transparent`,
 			navDesktopPosition === "left" && "grow",
 			navMobileVariant === "drawer" && [
-				"top-[56px] md:top-[unset] h-[calc(100svh-56px)] md:h-[unset]",
+				"top-14 md:top-[unset] h-[calc(100svh-56px)] md:h-[unset]",
 				"w-[70%] md:w-fit",
 				navDesktopPosition === "left"
 					? isOpen
 						? "left-0 md:left-[unset]"
-						: "left-[-70%] md:left-[unset]"
+						: "-left-[70%] md:left-[unset]"
 					: isOpen
 						? "right-0 md:right-[unset]"
-						: "right-[-70%] md:right-[unset]",
+						: "-right-[70%] md:right-[unset]",
 			],
 			navMobileVariant === "full" && [
-				"top-[56px] md:top-[unset] w-[100%] md:w-fit h-[calc(100svh-56px)] md:h-[unset]",
+				"top-14 md:top-[unset] w-[100%] md:w-fit h-[calc(100svh-56px)] md:h-[unset]",
 				navDesktopPosition === "left"
 					? isOpen
 						? "left-0 md:left-[unset]"
-						: "left-[-100%] md:left-[unset]"
+						: "-left-full md:left-[unset]"
 					: isOpen
 						? "right-0 md:right-[unset]"
-						: "right-[-100%] md:right-[unset]",
+						: "-right-full md:right-[unset]",
 			],
 			navMobileVariant === "top" && [
 				"md:top-[unset] w-[100%] md:w-fit h-fit md:h-[unset] left-0 md:left-[unset] py-4 md:py-0",
-				isOpen ? "top-[56px] " : "top-[calc((160px+56px)*-1)]",
+				isOpen ? "top-14 " : "-top-54",
 			],
-			"[&>a]:font-normal [&>a.active]:font-black",
+			"[&_a]:font-normal [&_a.active]:font-black",
 			"nav",
 		),
 		ref: el,
@@ -213,7 +213,7 @@ export const Header: FC<ILibHeader> = ({
 			{typeof logo === "string" ? (
 				<span
 					className={clsx(
-						"z-999 outline-none [&>a]:outline-none",
+						"z-999 outline-none [&_a]:outline-none",
 						genRingColorChildren[linksColor],
 					)}
 				>

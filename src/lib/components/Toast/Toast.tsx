@@ -55,7 +55,7 @@ export const Toast: FC<ILibToast> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"relative p-3 border rounded-lg w-full max-w-[400px] overflow-hidden text-font",
+				"relative p-3 border rounded-lg w-full max-w-100 overflow-hidden text-font",
 				genToastColors[status],
 				"toast",
 				className,

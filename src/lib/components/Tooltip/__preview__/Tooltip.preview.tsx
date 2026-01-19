@@ -28,6 +28,7 @@ export const tooltipPreview: ComponentPreview<ILibTooltip> = {
 				trigger: "hover",
 				hideArrow: true,
 				position: "bottom",
+				// offset: "0px",
 				children: "Hello, trigger on hover without arrow",
 			},
 		},

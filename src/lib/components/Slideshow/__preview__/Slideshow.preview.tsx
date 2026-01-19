@@ -75,7 +75,7 @@ export const slideshowPreview: ComponentPreview<ILibSlideshow> = {
 		},
 		{
 			previewTitle: "With different height",
-			props: { images, className: "h-[300px]" },
+			props: { images, className: "h-75" },
 		},
 		{
 			previewTitle: "With different height",

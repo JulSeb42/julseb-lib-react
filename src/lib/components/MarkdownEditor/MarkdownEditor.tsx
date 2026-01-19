@@ -144,7 +144,7 @@ export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 
 				<div
 					className={clsx(
-						"grid min-h-[150px]",
+						"grid min-h-37.5",
 						view === "viewLive"
 							? "grid-cols-[1fr_2px_1fr]"
 							: "grid-cols-1",

@@ -38,14 +38,14 @@ export const MarkdownEditorTitles: FC<IMarkdownEditorTitles> = ({
 
 			<div
 				className={clsx(
-					"left-2 absolute flex flex-col rounded-md w-fit min-w-[150px] overflow-hidden font-bold transition-all duration-200 ease-in-out",
+					"left-2 absolute flex flex-col rounded-md w-fit min-w-37.5 overflow-hidden font-bold transition-all duration-200 ease-in-out",
 					inputBackground === "dark"
 						? "bg-black text-white"
 						: inputBackground === "light"
 							? "bg-white"
 							: "bg-background",
 					isOpen && "open",
-					"max-h-0 [&.open]:max-h-[179px] [&.open]:shadow-sm",
+					"max-h-0 [&.open]:max-h-44.75 [&.open]:shadow-sm",
 					"titles-dropdown",
 				)}
 			>

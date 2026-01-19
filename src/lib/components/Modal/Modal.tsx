@@ -101,7 +101,7 @@ export const Modal: FC<ILibModal> = ({
 			<div
 				ref={el}
 				className={clsx(
-					"z-0 relative flex justify-center items-center w-full max-w-[90%]",
+					"z-0 relative flex justify-center items-center w-fit max-w-[90%]",
 					"modal-content",
 				)}
 			>

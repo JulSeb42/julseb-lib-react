@@ -55,7 +55,8 @@ export const CodeContainer: FC<ILibCodeContainer> = ({
 	return (
 		<div
 			className={clsx(
-				"relative bg-[#282c34] p-6 no-scrollbar [&_*]:no-scrollbar",
+				"relative bg-gray-800 p-6 no-scrollbar *:no-scrollbar",
+				"[&>pre]:bg-gray-800!",
 				className,
 			)}
 		>

@@ -35,7 +35,7 @@ export const Skeleton: FC<ILibSkeleton> = ({
 		<Element
 			ref={ref}
 			className={clsx(
-				"w-[100px] h-[100px]",
+				"size-25",
 				genBgAllColors[backgroundColor],
 				genAnimation[animation],
 				genBorderRadius[borderRadius],
@@ -52,6 +52,6 @@ const genAnimation: Record<LibSkeletonAnimation, string | Array<string>> = {
 	pulse: "animate-pulse",
 	shine: [
 		"relative overflow-hidden",
-		"before:absolute before:-top-[200px] before:-bottom-[200px] before:bg-white before:opacity-70 before:blur-[20px] before:w-[100px] before:-skew-15 before:animate-[shine_2000ms_ease-in-out_infinite]",
+		"before:absolute before:-top-50 before:-bottom-50 before:bg-white before:opacity-70 before:blur-md before:w-25 before:-skew-15 before:animate-[shine_2000ms_ease-in-out_infinite]",
 	],
 }
