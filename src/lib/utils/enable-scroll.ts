@@ -22,6 +22,8 @@ export function enableScroll(): void {
 		)
 
 		document.body.style.overflow = ""
+		document.body.style.height = ""
+		document.body.style.top = ""
 		document.body.removeAttribute("data-scroll-position")
 
 		if (scrollPosition) {

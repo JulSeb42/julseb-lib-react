@@ -35,10 +35,10 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 	component: Modal,
 	category: "components",
 	import: "Modal",
-	additionalImports: [],
-	optionalImports: [],
+	additionalImports: null,
+	optionalImports: null,
 	propsImport: "ILibModal",
-	additionalTypeImports: [],
+	additionalTypeImports: null,
 	extends: ["HTMLDivElement"],
 	previews: [
 		{
@@ -75,7 +75,7 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "isOpen",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Whether the modal is currently visible.",
 			isRequired: true,
@@ -83,7 +83,7 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "setIsOpen",
 			type: "function",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Function to control the modal open/closed state.",
 			isRequired: true,
@@ -91,7 +91,7 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "disableEsc",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description:
 				"Whether to disable closing the modal with the Escape key.",
@@ -100,7 +100,7 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "hideCloseButton",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Whether to hide the close button in the modal.",
 			isRequired: false,
@@ -108,7 +108,7 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "closeIcon",
 			type: "ReactElement",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Custom close icon for the modal.",
 			isRequired: false,
@@ -116,9 +116,17 @@ export const modalPreview: ComponentPreview<ILibModal> = {
 		{
 			name: "labelClose",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "Close modal",
 			description: "Aria label for the close button.",
+			isRequired: false,
+		},
+		{
+			name: "enableScrollWhenOpen",
+			type: "boolean",
+			possibleValues: null,
+			defaultValue: "false",
+			description: "Enable or not page scrolling when the modal is open.",
 			isRequired: false,
 		},
 	],

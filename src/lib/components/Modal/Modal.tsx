@@ -1,7 +1,8 @@
 import { useRef, useEffect, type FC } from "react"
 import { BiX } from "react-icons/bi"
 import { useKeyPress, useClickOutside } from "../../hooks"
-import { clsx, enableScroll } from "../../utils"
+import { clsx, enableScroll, disableScroll } from "../../utils"
+import { useModalOpen } from "../../context"
 import type { ILibModal } from "./types"
 
 /**
@@ -33,6 +34,7 @@ import type { ILibModal } from "./types"
  * @prop {boolean} [props.hideCloseButton] - Whether to hide the close button in the modal.
  * @prop {React.ReactNode} [props.closeIcon=<BiX size={32} />] - Custom close icon for the modal.
  * @prop {string} [props.labelClose="Close modal"] - Aria label for the close button.
+ * @prop {boolean} [props.enableScrollWhenOpen] - Enable page scrolling when modal is open.
  *
  * @returns {JSX.Element} The rendered Modal component.
  *
@@ -49,11 +51,14 @@ export const Modal: FC<ILibModal> = ({
 	hideCloseButton,
 	closeIcon = <BiX size={32} />,
 	labelClose = "Close modal",
+	enableScrollWhenOpen,
 	...rest
 }) => {
 	const Element = element
 
 	const el = useRef<HTMLDivElement>(null)
+
+	const { setHasModalOpen } = useModalOpen()
 
 	const handleClose = () => {
 		if (isOpen) {
@@ -68,8 +73,16 @@ export const Modal: FC<ILibModal> = ({
 	})
 
 	useEffect(() => {
-		if (!isOpen) enableScroll()
-	}, [isOpen])
+		if (!enableScrollWhenOpen) {
+			if (isOpen) {
+				setHasModalOpen(true)
+				disableScroll()
+			} else {
+				setHasModalOpen(false)
+				enableScroll()
+			}
+		}
+	}, [isOpen, enableScrollWhenOpen])
 
 	return (
 		<Element
@@ -101,7 +114,7 @@ export const Modal: FC<ILibModal> = ({
 			<div
 				ref={el}
 				className={clsx(
-					"z-0 relative flex justify-center items-center w-fit max-w-[90%]",
+					"z-0 relative flex justify-center items-center w-fit! max-w-[90%]",
 					"modal-content",
 				)}
 			>

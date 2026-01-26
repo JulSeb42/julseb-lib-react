@@ -4,6 +4,7 @@ interface ILibModalBase extends LibComponentBase<HTMLDivElement> {
 	isOpen: boolean
 	setIsOpen: DispatchState<boolean>
 	disableEsc?: boolean
+	enableScrollWhenOpen?: boolean
 }
 
 interface ModalWithCloseButton extends ILibModalBase {
