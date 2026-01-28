@@ -6,6 +6,8 @@ import {
 	genTextAlign,
 	genButtonColor,
 	genTextAllColor,
+	genFontSize,
+	genFontWeight,
 } from "../../../utils"
 import type { ILibText } from "../types"
 
@@ -13,9 +15,11 @@ export const Blockquote: FC<ILibText> = ({
 	element = "blockquote",
 	className,
 	children,
-	color = "currentColor",
+	fontSize = "h6",
+	color = "current",
 	linkColor = "primary",
 	textAlign = "left",
+	fontWeight = "normal",
 	...rest
 }) => {
 	const Element = element
@@ -24,10 +28,11 @@ export const Blockquote: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-h6",
+				genFontSize[fontSize],
 				"italic ps-4",
 				genTextAlign[textAlign],
-				(genTextAllColor as any)[color],
+				genFontWeight[fontWeight],
+				genTextAllColor[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
 				"blockquote",
@@ -39,4 +44,3 @@ export const Blockquote: FC<ILibText> = ({
 		</Element>
 	)
 }
-

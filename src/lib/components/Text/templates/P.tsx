@@ -6,6 +6,8 @@ import {
 	genTextAlign,
 	genTextAllColor,
 	genButtonColor,
+	genFontSize,
+	genFontWeight,
 } from "../../../utils"
 import type { ILibText } from "../types"
 
@@ -13,9 +15,11 @@ export const P: FC<ILibText> = ({
 	element = "p",
 	className,
 	children,
-	color = "currentColor",
+	fontSize = "body",
+	color = "current",
 	linkColor = "primary",
 	textAlign = "left",
+	fontWeight = "normal",
 	...rest
 }) => {
 	const Element = element
@@ -24,11 +28,12 @@ export const P: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-body",
-				(genTextAlign as any)[textAlign],
-				(genTextAllColor as any)[color],
+				genFontSize[fontSize],
+				genTextAlign[textAlign],
+				genTextAllColor[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
+				genFontWeight[fontWeight],
 				"p",
 				className,
 			)}
@@ -38,4 +43,3 @@ export const P: FC<ILibText> = ({
 		</Element>
 	)
 }
-

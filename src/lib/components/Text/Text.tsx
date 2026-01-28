@@ -43,8 +43,10 @@ export const TEXT_BASE_CLASSES = clsx(
  * @prop {string} [props.color="currentColor"] - Any color from the library.
  * @prop {"red"|"orange"|"amber"|"yellow"|"lime"|"green"|"emerald"|"teal"|"cyan"|"sky"|"blue"|"indigo"|"violet"|"purple"|"fuchsia"|"pink"|"rose"|"slate"} [props.linkColor="blue"] - Any hover color.
  * @prop {"text-left"|"text-center"|"text-right"|"text-justify"|"text-start"|"text-end"} [props.textAlign="left"] - Text alignment.
- * @prop {boolean} [props.display=false] - Whether to use display block.
+ * @prop {boolean} [props.display=false] - Whether to use display text, available only for titles from h1 to h5.
  * @prop {string} [props.className] - Additional class names to apply.
+ * @prop {"thin"|"light"|"normal"|"bold"|"black"} [props.fontWeight] - Font weight of the text. Accepts: thin (100), light (300), normal (400), bold (700), black (900).
+ * @prop {"xs"|"sm"|"base"|"lg"|"xl"|"2xl"|"3xl"|"4xl"|"5xl"|"6xl"|"7xl"|"8xl"|"9xl"|"display-h1"|"display-h2"|"display-h3"|"display-h4"|"display-h5"|"h1"|"h2"|"h3"|"h4"|"h5"|"h6"|"body"|"small"} [props.fontSize] - Font size of the text. Accepts Tailwind and theme sizes: xs, sm, base, lg, xl, 2xl, 3xl, 4xl, 5xl, 6xl, 7xl, 8xl, 9xl, display-h1, display-h2, display-h3, display-h4, display-h5, h1, h2, h3, h4, h5, h6, body, small.
  * @prop {RefObject<any>} [props.ref] - Ref for the rendered element.
  * @prop {ReactNode} props.children - Text content.
  * @prop {object} [props.rest] - Additional props spread to the rendered element.

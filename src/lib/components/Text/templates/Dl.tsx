@@ -6,16 +6,21 @@ import {
 	genTextAlign,
 	genTextAllColor,
 	genButtonColor,
+	genFontSize,
 } from "../../../utils"
 import type { ILibText } from "../types"
+import type { LibFontWeights } from "../../../types"
 
 export const Dl: FC<ILibText> = ({
 	element = "dl",
 	className,
 	children,
-	color = "currentColor",
+	fontSize = "body",
+	color = "current",
 	linkColor = "primary",
 	textAlign = "left",
+	fontWeight = "normal",
+	dtFontWeight = "bold",
 	...rest
 }) => {
 	const Element = element
@@ -24,11 +29,12 @@ export const Dl: FC<ILibText> = ({
 		<Element
 			className={clsx(
 				TEXT_BASE_CLASSES,
-				"text-body",
-				"[&>dt]:font-bold",
-				"[&>dd]:font-normal [&>dd]:ps-4",
+				genFontSize[fontSize],
+				generateFontWeightDt[dtFontWeight],
+				generateFontWeightDd[fontWeight],
+				"[&_dd]:ps-4",
 				genTextAlign[textAlign],
-				(genTextAllColor as any)[color],
+				genTextAllColor[color],
 				genLinkColor[linkColor],
 				genButtonColor[linkColor],
 				"dl",
@@ -41,3 +47,18 @@ export const Dl: FC<ILibText> = ({
 	)
 }
 
+const generateFontWeightDt: Record<LibFontWeights, string> = {
+	thin: "[&_dt]:font-thin",
+	light: "[&_dt]:font-light",
+	normal: "[&_dt]:font-normal",
+	bold: "[&_dt]:font-bold",
+	black: "[&_dt]:font-black",
+}
+
+const generateFontWeightDd: Record<LibFontWeights, string> = {
+	thin: "[&_dd]:font-thin",
+	light: "[&_dd]:font-light",
+	normal: "[&_dd]:font-normal",
+	bold: "[&_dd]:font-bold",
+	black: "[&_dd]:font-black",
+}

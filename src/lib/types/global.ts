@@ -101,21 +101,12 @@ export type LibFontSizes = keyof typeof designTokens.libFontSizes
 
 /**
  * @description All font weight tokens available in the library.
- * @type {"thin" | "extralight" | "light" | "normal" | "medium" | "semibold" | "bold" | "extrabold" | "black"}
+ * @type {"thin" | "light" | "regular" | "bold" | "black"}
  * @example
  * fontWeight="regular"
  * fontWeight="bold"
  */
 export type LibFontWeights = keyof typeof designTokens.libFontWeights
-
-/**
- * @description All line height tokens available in the library.
- * @type {"xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl"}
- * @example
- * lineHeight="normal"
- * lineHeight="tight"
- */
-export type LibLineHeights = keyof typeof designTokens.libLineHeights
 
 /**
  * @description All box shadow tokens available in the library.

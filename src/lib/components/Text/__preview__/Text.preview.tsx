@@ -88,5 +88,36 @@ export const textPreview: ComponentPreview<ILibText> = {
 			description: "Only if the tag is h1 to h5.",
 			isRequired: false,
 		},
+		{
+			name: "fontSize",
+			type: "string",
+			possibleValues: Object.keys(designTokens.libFontSizes).map(
+				size => size,
+			),
+			defaultValue: null,
+			description: "Font size of the element",
+			isRequired: false,
+		},
+		{
+			name: "fontWeight",
+			type: "string",
+			possibleValues: Object.keys(designTokens.libFontWeights).map(
+				weight => weight,
+			),
+			defaultValue: null,
+			description: "Font weight of the element",
+			isRequired: false,
+		},
+		{
+			name: "dtFontWeight",
+			type: "string",
+			possibleValues: Object.keys(designTokens.libFontWeights).map(
+				weight => weight,
+			),
+			defaultValue: "bold",
+			description:
+				"Font weight of the title element in a description list. Can be used only when tag is set to dl",
+			isRequired: false,
+		},
 	],
 }
