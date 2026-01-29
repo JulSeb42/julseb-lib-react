@@ -175,6 +175,7 @@ export const Slideshow: FC<ILibSlideshow> = ({
 		touchEndY.current = 0
 	}
 
+	// eslint-disable-next-line
 	const handleMouseDown = (e: React.MouseEvent) => {
 		touchStartX.current = e.clientX
 		touchStartY.current = e.clientY

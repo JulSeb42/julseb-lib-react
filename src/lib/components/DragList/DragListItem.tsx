@@ -69,7 +69,6 @@ export const DragListItem: FC<ILibDragListItem> = ({
 			}
 		>
 			<button
-				role="button"
 				aria-label={iconLabel}
 				className={clsx(
 					"outline-none cursor-grab! active:cursor-grabbing",

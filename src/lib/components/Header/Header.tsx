@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type FC } from "react"
+import { useState, useEffect, useRef, type FC, type MouseEvent } from "react"
 import { useClickOutside, useMaxWidth, useKeyPress } from "../../hooks"
 import { HeaderSearch } from "./HeaderSearch"
 import { Burger } from "../Burger"
@@ -85,7 +85,7 @@ export const Header: FC<ILibHeader> = ({
 }) => {
 	const Element = element
 	const isMobile = useMaxWidth(768)
-	const el = useRef<HTMLDivElement>(null)
+	const el = useRef<HTMLDivElement>(null as any)
 
 	const [isOpen, setIsOpen] = useState(false)
 	const [isHidden, setIsHidden] = useState(false)
@@ -121,7 +121,8 @@ export const Header: FC<ILibHeader> = ({
 
 	const burgerProps = {
 		isOpen,
-		onClick: () => {
+		onClick: (e: MouseEvent) => {
+			e.stopPropagation()
 			if (isOpen) handleClose()
 			else handleOpen()
 		},
@@ -183,7 +184,8 @@ export const Header: FC<ILibHeader> = ({
 	}
 
 	useKeyPress("Escape", handleClose)
-	useClickOutside(el as any, () => {
+	useClickOutside(el, e => {
+		if ((e!.target as Element)?.closest(".header-burger")) return
 		if (isOpen) handleClose()
 	})
 
@@ -239,7 +241,7 @@ export const Header: FC<ILibHeader> = ({
 						isOpen ? "visible opacity-100" : "invisible opacity-0",
 						"drawer-overlay",
 					)}
-					onClick={handleClose}
+					aria-label="Close drawer"
 				/>
 			)}
 

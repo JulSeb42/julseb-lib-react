@@ -110,7 +110,7 @@ export const Drawer: FC<ILibDrawer> = ({
 					"[&.open]:opacity-100 [&.open]:visible",
 					"overlay",
 				)}
-				onClick={() => setIsOpen(false)}
+				aria-label="Close drawer"
 			/>
 
 			<div

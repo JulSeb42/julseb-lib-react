@@ -7,6 +7,7 @@ import type { ComponentPreview } from "../../../../data/components"
 const CLASSES = clsx("font-black")
 
 const items: Array<ReactChildren> = [
+	// eslint-disable-next-line
 	<a href="#" className={CLASSES} key={uuid()}>
 		Link
 	</a>,
@@ -38,7 +39,13 @@ export const footerPreview: ComponentPreview<ILibFooter> = {
 			props: {
 				items,
 				direction: "vertical",
-				logo: <img src="/images/logo-fajny-css.svg" width={100} />,
+				logo: (
+					<img
+						src="/images/logo-fajny-css.svg"
+						alt="Logo Fajny"
+						width={100}
+					/>
+				),
 			},
 		},
 		{

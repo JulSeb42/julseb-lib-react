@@ -87,7 +87,7 @@ export const InputImage: FC<ILibInputImage> = ({
 				) : (
 					<img
 						src={value}
-						alt="Image input"
+						alt="Input"
 						className="w-full h-full object-cover input-image-image"
 					/>
 				)}
@@ -98,7 +98,8 @@ export const InputImage: FC<ILibInputImage> = ({
 					type="file"
 					id={id}
 					disabled={disabled}
-					className="hidden input-image-input"
+					className="sr-only input-image-input"
+					accept="image/*"
 					{...rest}
 				/>
 			</label>

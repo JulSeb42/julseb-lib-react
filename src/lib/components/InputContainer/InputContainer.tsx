@@ -74,6 +74,7 @@ export const InputContainer: FC<ILibInputContainer> = ({
 			{...rest}
 		>
 			{label && (
+				// eslint-disable-next-line
 				<label
 					htmlFor={id}
 					className="font-bold text-primary-500 input-container-label"

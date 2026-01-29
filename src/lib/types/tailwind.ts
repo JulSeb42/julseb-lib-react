@@ -7948,7 +7948,7 @@ type ColorPlaceholderLiteral =
 	| "placeholder-popover-foreground"
 	| "placeholder-secondary-foreground"
 type ColorTextLiteral = `text-${ColorRef13}`
-type ColorValue =
+export type ColorValue =
 	| ColorPlaceholderaccentLiteral
 	| ColorPlaceholderchartLiteral
 	| ColorPlaceholderprimaryLiteral

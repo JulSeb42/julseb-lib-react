@@ -47,6 +47,7 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 								handleClick(i)
 							}}
 							key={i}
+							aria-label={`Set image ${i + 1} active`}
 						>
 							<img
 								src={image}
@@ -54,6 +55,7 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 									"w-full h-full object-cover",
 									"slideshow-thumbnail",
 								)}
+								alt={`Slideshow ${i + 1}`}
 							/>
 						</button>
 					))
@@ -61,7 +63,6 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 						<button
 							key={n}
 							className={clsx(
-								"",
 								type === "dots-outline"
 									? outlineColor[color ?? "primary"]
 									: genBgColor[color ?? "primary"],
@@ -79,6 +80,7 @@ export const SlideshowPagination: FC<ILibSlideshowPagination> = ({
 								setActive(n)
 								handleClick(n)
 							}}
+							aria-label={`Set image ${n + 1} active`}
 						/>
 					))}
 		</div>

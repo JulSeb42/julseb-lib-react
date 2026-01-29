@@ -34,6 +34,7 @@ export const Image: FC<ILibImage> = ({
 	caption,
 	borderRadius,
 	fit,
+	alt,
 	...rest
 }) => {
 	const Element = caption ? "figure" : "img"
@@ -55,6 +56,7 @@ export const Image: FC<ILibImage> = ({
 						typeof caption === "object" && caption.imgClasses,
 						"image",
 					)}
+					alt={alt}
 					{...rest}
 				/>
 

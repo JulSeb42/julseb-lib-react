@@ -20,7 +20,6 @@ export const InputListItem: FC<IInputListItem> = ({
 }) => {
 	return (
 		<button
-			role="button"
 			onClick={onClick}
 			className={clsx(
 				"flex items-center gap-2 p-2 w-full text-left",
