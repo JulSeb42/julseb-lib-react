@@ -109,12 +109,6 @@ export const InputSlider: FC<ILibInputSlider> = ({
 					"flex items-center gap-2 w-full input-slider-container",
 					className,
 				)}
-				onMouseEnter={() => {
-					if (showValue === "hover") setIsTooltipVisible(true)
-				}}
-				onMouseLeave={() => {
-					if (showValue === "hover") setIsTooltipVisible(false)
-				}}
 			>
 				{showMinMax && (
 					<Text tag="small" color="gray" className="min-max">
@@ -164,6 +158,13 @@ export const InputSlider: FC<ILibInputSlider> = ({
 										? `linear-gradient(to right, rgb(34 197 94) 0%, rgb(34 197 94) ${percentage}%, rgb(229 231 235) ${percentage}%, rgb(229 231 235) 100%)`
 										: `linear-gradient(to right, rgb(59 130 246) 0%, rgb(59 130 246) ${percentage}%, rgb(229 231 235) ${percentage}%, rgb(229 231 235) 100%)`,
 						}}
+						onMouseEnter={() => {
+							if (showValue === "hover") setIsTooltipVisible(true)
+						}}
+						onMouseLeave={() => {
+							if (showValue === "hover")
+								setIsTooltipVisible(false)
+						}}
 						{...inputProps}
 					/>
 				</div>
@@ -177,4 +178,3 @@ export const InputSlider: FC<ILibInputSlider> = ({
 		</InputContainer>
 	)
 }
-

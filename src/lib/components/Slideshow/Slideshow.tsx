@@ -3,14 +3,13 @@ import {
 	useState,
 	useEffect,
 	useRef,
-	Suspense,
 	type FC,
 	type TouchEvent,
 } from "react"
 import { uuid } from "@julseb-lib/utils"
 import { SlideshowButton } from "./SlideshowButton"
 import { SlideshowPagination } from "./SlideshowPagination"
-import { Image } from "../Image"
+import { LazyImage } from "../LazyImage"
 import { clsx, genObjectFit, genBorderRadius } from "../../utils"
 import { useKeyPress } from "../../hooks"
 import type { ILibSlideshow } from "./types"
@@ -247,6 +246,9 @@ export const Slideshow: FC<ILibSlideshow> = ({
 					userSelect: "none",
 					WebkitUserSelect: "none",
 				}}
+				aria-label="Slides wrapper"
+				role="slider"
+				tabIndex={0}
 			>
 				<div
 					ref={slidesRef}
@@ -262,26 +264,22 @@ export const Slideshow: FC<ILibSlideshow> = ({
 				>
 					{images
 						? images.map((img, i) => (
-								<Suspense
+								<LazyImage
 									key={uuid()}
-									fallback={<p>Loading...</p>}
-								>
-									<Image
-										key={uuid()}
-										src={img}
-										alt={`Slideshow image ${i + 1}`}
-										className={clsx(
-											"size-full shrink-0",
-											genObjectFit[imgFit],
-											"slideshow-image",
-										)}
-										width="100%"
-										height="100%"
-										fit="cover"
-										borderRadius={borderRadius}
-										draggable={false}
-									/>
-								</Suspense>
+									src={img}
+									alt={`Slideshow image ${i + 1}`}
+									className={clsx(
+										"size-full shrink-0",
+										genObjectFit[imgFit],
+										"slideshow-image",
+									)}
+									width="100%"
+									height="100%"
+									borderRadius={borderRadius}
+									draggable={false}
+									skeletonClasses="size-full"
+									skeletonAnimation="shine"
+								/>
 							))
 						: childrenArray.map(child => (
 								<div

@@ -66,43 +66,46 @@ export const InputImage: FC<ILibInputImage> = ({
 			validation={validation}
 			className={containerClassName}
 		>
-			<label
-				htmlFor={id}
-				ref={ref}
-				className={clsx(
-					"relative flex justify-center items-center size-16 overflow-hidden text-primary-500 cursor-pointer",
-					validation?.status === false
-						? "bg-danger-50 text-danger-500"
-						: "bg-gray-100",
-					disabled && "cursor-not-allowed text-gray-500",
-					genBorderRadius[borderRadius],
-					"input-image-container",
-					className,
-				)}
+			<button
 				onMouseEnter={() => !disabled && setIsHovered(true)}
 				onMouseLeave={() => !disabled && setIsHovered(false)}
 			>
-				{value === "" || !value ? (
-					<EmptyContainer icons={icons} />
-				) : (
-					<img
-						src={value}
-						alt="Input"
-						className="w-full h-full object-cover input-image-image"
+				<label
+					htmlFor={id}
+					ref={ref}
+					className={clsx(
+						"relative flex justify-center items-center size-16 overflow-hidden text-primary-500 cursor-pointer",
+						validation?.status === false
+							? "bg-danger-50 text-danger-500"
+							: "bg-gray-100",
+						disabled && "cursor-not-allowed text-gray-500",
+						genBorderRadius[borderRadius],
+						"input-image-container",
+						className,
+					)}
+				>
+					{value === "" || !value ? (
+						<EmptyContainer icons={icons} />
+					) : (
+						<img
+							src={value}
+							alt="Input"
+							className="w-full h-full object-cover input-image-image"
+						/>
+					)}
+
+					<HoverContainer isVisible={isHovered} icons={icons} />
+
+					<input
+						type="file"
+						id={id}
+						disabled={disabled}
+						className="sr-only input-image-input"
+						accept="image/*"
+						{...rest}
 					/>
-				)}
-
-				<HoverContainer isVisible={isHovered} icons={icons} />
-
-				<input
-					type="file"
-					id={id}
-					disabled={disabled}
-					className="sr-only input-image-input"
-					accept="image/*"
-					{...rest}
-				/>
-			</label>
+				</label>
+			</button>
 		</InputContainer>
 	)
 }

@@ -104,7 +104,6 @@ export const Modal: FC<ILibModal> = ({
 					)}
 					onClick={() => setIsOpen(false)}
 					aria-label={labelClose}
-					role="button"
 					type="button"
 				>
 					{closeIcon}

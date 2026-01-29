@@ -55,7 +55,16 @@ export const inputPinPreview: ComponentPreview<ILibInputPin> = {
 	additionalTypeImports: ["LibValueInputPin"],
 	extends: ["HTMLDivElement"],
 	previews: [
-		{ previewTitle: "Default", demo: <Preview label="Pin" autoFocus /> },
+		{
+			previewTitle: "Default",
+			demo: (
+				<Preview
+					label="Pin"
+					// eslint-disable-next-line
+					autoFocus
+				/>
+			),
+		},
 		{ previewTitle: "Hidden", demo: <Preview hideValues /> },
 		{ previewTitle: "Disabled", demo: <Preview disabled /> },
 		{

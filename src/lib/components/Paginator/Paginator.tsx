@@ -107,6 +107,7 @@ export const Paginator: FC<ILibPaginator> = ({
 							"paginator-input",
 						)}
 						size={currentPage.toString().length + 1}
+						aria-label="Change page"
 					/>{" "}
 					{texts?.of ?? "of"} {totalPages}
 				</span>

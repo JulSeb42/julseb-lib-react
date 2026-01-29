@@ -30,12 +30,14 @@ export const selectPreview: ComponentPreview<ILibSelect> = {
 	additionalTypeImports: [],
 	extends: ["HTMLButtonElement"],
 	previews: [
+		// eslint-disable-next-line
 		{ previewTitle: "Default", demo: <Preview tabIndex={1} /> },
 		{
 			previewTitle: "With validation",
 			demo: (
 				<Preview
 					validation={{ status: false, message: "Hello" }}
+					// eslint-disable-next-line
 					tabIndex={2}
 				/>
 			),
@@ -45,24 +47,29 @@ export const selectPreview: ComponentPreview<ILibSelect> = {
 			demo: (
 				<Preview
 					validation={{ status: true, message: "Hello" }}
+					// eslint-disable-next-line
 					tabIndex={3}
 				/>
 			),
 		},
 		{
 			previewTitle: "Light background",
+			// eslint-disable-next-line
 			demo: <Preview inputBackground="light" tabIndex={4} />,
 		},
 		{
 			previewTitle: "Dark background",
+			// eslint-disable-next-line
 			demo: <Preview inputBackground="dark" tabIndex={5} />,
 		},
 		{
 			previewTitle: "Pill",
+			// eslint-disable-next-line
 			demo: <Preview inputVariant="pill" tabIndex={6} />,
 		},
 		{
 			previewTitle: "With icon",
+			// eslint-disable-next-line
 			demo: <Preview icons={{ left: <BiLogoReact /> }} tabIndex={7} />,
 		},
 	],

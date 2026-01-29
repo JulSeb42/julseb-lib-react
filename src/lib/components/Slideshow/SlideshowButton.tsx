@@ -45,7 +45,6 @@ export const SlideshowButton: FC<ILibSlideshowButton> = ({
 					: (controls?.labelNext ?? "Next")
 			}
 			type="button"
-			role="button"
 		>
 			{position === "left"
 				? (controls?.icons?.prev ?? (

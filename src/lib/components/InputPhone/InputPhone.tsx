@@ -136,16 +136,8 @@ export const InputPhone: FC<ILibInputPhone> = ({
 							"input-phone-country-button",
 						)}
 						onClick={() => setIsOpen(!isOpen)}
-						role="button"
 						aria-label={countryButtonAriaLabel}
 					>
-						{/* <img
-							src={country?.flag}
-							alt=""
-							width={16}
-							height={16}
-							className="object-contain input-phone-flag"
-						/> */}
 						{country?.flag}
 
 						{icons?.caret ?? (
@@ -212,6 +204,7 @@ export const InputPhone: FC<ILibInputPhone> = ({
 							placeholder={searchPlaceholder}
 							value={search}
 							onChange={e => setSearch(e.target.value)}
+							aria-label="Search country"
 						/>
 					</div>
 

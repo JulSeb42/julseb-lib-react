@@ -102,6 +102,7 @@ export const InputPin: FC<ILibInputPin> = ({
 							type={hideValues ? "password" : "text"}
 							maxLength={1}
 							disabled={disabled}
+							// eslint-disable-next-line
 							autoFocus={autoFocus && i === 0}
 							className={clsx(
 								INPUT_COMMON_CLASSES({
@@ -115,6 +116,7 @@ export const InputPin: FC<ILibInputPin> = ({
 											"focus:border-success-500",
 								"input-pin",
 							)}
+							aria-label={`Input pin ${i + 1}`}
 						/>
 					)
 				})}
