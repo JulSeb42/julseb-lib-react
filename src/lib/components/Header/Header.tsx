@@ -184,8 +184,7 @@ export const Header: FC<ILibHeader> = ({
 	}
 
 	useKeyPress("Escape", handleClose)
-	useClickOutside(el, e => {
-		if ((e!.target as Element)?.closest(".header-burger")) return
+	useClickOutside(el, () => {
 		if (isOpen) handleClose()
 	})
 

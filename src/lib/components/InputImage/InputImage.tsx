@@ -69,6 +69,7 @@ export const InputImage: FC<ILibInputImage> = ({
 			<button
 				onMouseEnter={() => !disabled && setIsHovered(true)}
 				onMouseLeave={() => !disabled && setIsHovered(false)}
+				type="button"
 			>
 				<label
 					htmlFor={id}

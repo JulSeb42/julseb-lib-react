@@ -1,6 +1,6 @@
 import type { ReactChildren } from "../../types"
 
-export interface ILibMeta {
+interface ILibMetaBase {
 	title: string
 	favicon?: string
 	description?: string
@@ -33,6 +33,19 @@ export interface ILibMeta {
 	category?: string
 	twitterCard?: "app" | "player" | "summary" | "summary_large_image"
 	appleTouchIcon?: string
-	themeColor?: string
 	children?: ReactChildren
 }
+
+interface MetaWithMultiThemeColor extends ILibMetaBase {
+	themeColorLight?: string
+	themeColorDark?: string
+	themeColor?: never
+}
+
+interface MetaWithSingleThemeColor extends ILibMetaBase {
+	themeColorLight?: never
+	themeColorDark?: never
+	themeColor?: string
+}
+
+export type ILibMeta = MetaWithMultiThemeColor | MetaWithSingleThemeColor

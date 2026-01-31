@@ -67,6 +67,8 @@ export const Meta: FC<ILibMeta> = ({
 	twitterCard = "summary",
 	appleTouchIcon,
 	themeColor,
+	themeColorLight = themeColor,
+	themeColorDark = themeColor,
 	appName,
 }) => {
 	return (
@@ -100,6 +102,7 @@ export const Meta: FC<ILibMeta> = ({
 				<>
 					<meta name="author" content={author} />
 					<meta name="twitter:creator" content={author} />
+					<meta name="publisher" content={author} />
 				</>
 			)}
 			{url && (
@@ -131,6 +134,21 @@ export const Meta: FC<ILibMeta> = ({
 				<link rel="apple-touch-icon" href={appleTouchIcon} />
 			)}
 			{themeColor && <meta name="theme-color" content={themeColor} />}
+			{themeColorLight && (
+				<meta
+					name="theme-color"
+					media="(prefers-color-scheme: light)"
+					content={themeColorLight}
+				/>
+			)}
+			{themeColorDark && (
+				<meta
+					name="theme-color"
+					media="(prefers-color-scheme: dark)"
+					content={themeColorDark}
+				/>
+			)}
+
 			{children}
 		</>
 	)
