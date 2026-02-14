@@ -75,6 +75,7 @@ export const Form: FC<ILibForm> = ({
 							type={buttonSecondary.type ?? "button"}
 							variant="transparent"
 							className="form-button"
+							isLoading={isLoading}
 						>
 							{buttonSecondary.content}
 						</Button>

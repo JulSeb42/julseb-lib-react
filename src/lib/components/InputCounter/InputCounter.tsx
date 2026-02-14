@@ -80,6 +80,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 	containerClassName,
 	onClickPlus,
 	onClickMinus,
+	disabled,
 	...rest
 }) => {
 	return (
@@ -111,7 +112,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 						setValue(prev => prev - step)
 						if (onClickMinus) onClickMinus()
 					}}
-					disabled={value === min}
+					disabled={value === min || disabled}
 				/>
 
 				{noInput ? (
@@ -128,8 +129,9 @@ export const InputCounter: FC<ILibInputCounter> = ({
 						id={id}
 						value={value}
 						onChange={e => setValue(Number(e.target.value))}
-						className="px-2 border border-gray-200 focus:border-primary-500 rounded-md outline-none min-w-[calc(3ch+16px)] text-center input-counter-input"
+						className="disabled:bg-gray-100 px-2 border border-gray-200 focus:border-primary-500 rounded-md outline-none min-w-[calc(3ch+16px)] disabled:text-gray-500 text-center disabled:cursor-not-allowed input-counter-input"
 						size={value.toString().length + 1}
+						disabled={disabled}
 						{...rest}
 					/>
 				)}
@@ -146,7 +148,7 @@ export const InputCounter: FC<ILibInputCounter> = ({
 						setValue(prev => prev + step)
 						if (onClickPlus) onClickPlus()
 					}}
-					disabled={value === max}
+					disabled={value === max || disabled}
 				/>
 			</div>
 		</InputContainer>

@@ -19,6 +19,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 			demo: (
 				<Preview
 					showButtonsTooltip
+					disabled
 					// labelButtons={{ minus: "Minus", plus: "Plus" }}
 				/>
 			),
