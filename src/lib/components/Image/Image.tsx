@@ -26,7 +26,7 @@ import type { ILibImage } from "./types"
  *
  * @returns {JSX.Element} The rendered Image component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/image
+ * @see https://julseb-lib.vercel.app/components/layouts/image
  */
 export const Image: FC<ILibImage> = ({
 	className,

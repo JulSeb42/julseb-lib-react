@@ -47,7 +47,7 @@ import type { ILibSlideshow } from "./types"
  *
  * @returns {JSX.Element} The rendered Slideshow component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/slideshow
+ * @see https://julseb-lib.vercel.app/components/slideshow
  */
 export const Slideshow: FC<ILibSlideshow> = ({
 	className,

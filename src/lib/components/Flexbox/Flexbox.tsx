@@ -40,7 +40,7 @@ import type { ILibFlexbox } from "./types"
  *
  * @returns {JSX.Element} The rendered flexbox container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/flexbox
+ * @see https://julseb-lib.vercel.app/components/layouts/flexbox
  */
 export const Flexbox: FC<ILibFlexbox> = ({
 	className,

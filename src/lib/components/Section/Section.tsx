@@ -22,7 +22,7 @@ import type { ILibSection } from "./types"
  *
  * @returns {JSX.Element} The rendered section container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/section
+ * @see https://julseb-lib.vercel.app/components/layouts/section
  */
 export const Section: FC<ILibSection> = ({
 	className,

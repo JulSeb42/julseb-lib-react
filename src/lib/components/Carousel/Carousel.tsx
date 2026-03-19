@@ -33,7 +33,7 @@ import type { ILibCarousel } from "./types"
  *
  * @returns A carousel component with continuous scrolling animation and optional gradient overlays
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/carousel
+ * @see https://julseb-lib.vercel.app/components/carousel
  */
 export const Carousel: FC<ILibCarousel> = ({
 	className,

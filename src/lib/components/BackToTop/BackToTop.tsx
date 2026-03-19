@@ -27,7 +27,7 @@ import type { ILibBackToTop } from "./types"
  *
  * @returns {JSX.Element} The rendered BackToTop component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/back-to-top
+ * @see https://julseb-lib.vercel.app/components/back-to-top
  */
 export const BackToTop: FC<ILibBackToTop> = ({
 	className,

@@ -22,7 +22,7 @@ import type { ILibAside } from "./types"
  *
  * @returns {JSX.Element} The rendered aside container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/styles/aside
+ * @see https://julseb-lib.vercel.app/components/styles/aside
  */
 export const Aside: FC<ILibAside> = ({
 	className,

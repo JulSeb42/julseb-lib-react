@@ -37,7 +37,7 @@ import type { ILibInputCheck } from "./types"
  *
  * @returns {JSX.Element} The rendered InputCheck component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input-check
+ * @see https://julseb-lib.vercel.app/components/input-check
  */
 export const InputCheck: FC<ILibInputCheck> = ({
 	className,

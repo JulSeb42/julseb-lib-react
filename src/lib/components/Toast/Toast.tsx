@@ -34,7 +34,7 @@ import type { ILibToast } from "./types"
  *
  * @returns {JSX.Element} The rendered Toast component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/toast
+ * @see https://julseb-lib.vercel.app/components/toast
  */
 export const Toast: FC<ILibToast> = ({
 	className,

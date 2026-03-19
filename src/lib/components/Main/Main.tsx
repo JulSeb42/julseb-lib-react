@@ -24,7 +24,7 @@ import type { ILibMain } from "./types"
  *
  * @returns {JSX.Element} The rendered main container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/styles/main
+ * @see https://julseb-lib.vercel.app/components/styles/main
  */
 export const Main: FC<ILibMain> = ({
 	className,

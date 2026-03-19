@@ -51,7 +51,7 @@ import type { ILibSelect } from "./types"
  *
  * @returns {JSX.Element} The rendered Select component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/select
+ * @see https://julseb-lib.vercel.app/components/select
  */
 export const Select: FC<ILibSelect> = ({
 	className,

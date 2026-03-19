@@ -33,7 +33,7 @@ import type { LibColorsShort } from "../../types"
  *
  * @returns {JSX.Element} The rendered ProgressCircle component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/progress-circle
+ * @see https://julseb-lib.vercel.app/components/progress-circle
  */
 export const ProgressCircle: FC<ILibProgressCircle> = ({
 	element = "div",

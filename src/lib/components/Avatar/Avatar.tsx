@@ -29,7 +29,7 @@ import type { ILibAvatar } from "./types"
  *
  * @returns {JSX.Element} The rendered Avatar component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/avatar
+ * @see https://julseb-lib.vercel.app/components/avatar
  */
 export const Avatar: FC<ILibAvatar> = ({
 	className,

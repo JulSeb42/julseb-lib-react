@@ -29,7 +29,7 @@ const Image = lazy(() => import("./Image"))
  *
  * @returns {JSX.Element} The rendered LazyImage component with a skeleton fallback while loading.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/lazy-image
+ * @see https://julseb-lib.vercel.app/components/lazy-image
  */
 export const LazyImage: FC<ILibLazyImage> = ({
 	className,

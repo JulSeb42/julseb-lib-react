@@ -54,7 +54,7 @@ import type { ILibDrawer } from "./types"
  *
  * @returns {JSX.Element} The rendered Drawer component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/drawer
+ * @see https://julseb-lib.vercel.app/components/drawer
  */
 export const Drawer: FC<ILibDrawer> = ({
 	className,

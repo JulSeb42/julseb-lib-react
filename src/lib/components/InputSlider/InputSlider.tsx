@@ -39,7 +39,7 @@ import type { ILibInputSlider } from "./types"
  *
  * @returns {JSX.Element} The rendered InputSlider component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input-slider
+ * @see https://julseb-lib.vercel.app/components/input-slider
  */
 export const InputSlider: FC<ILibInputSlider> = ({
 	className,

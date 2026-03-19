@@ -38,7 +38,7 @@ import type { ILibInputContainer } from "./types"
  *
  * @returns {JSX.Element} The rendered InputContainer component or just children if no wrapper content is needed.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input
+ * @see https://julseb-lib.vercel.app/components/input
  */
 export const InputContainer: FC<ILibInputContainer> = ({
 	className,

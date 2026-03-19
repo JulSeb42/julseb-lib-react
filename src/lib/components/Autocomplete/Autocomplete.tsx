@@ -63,7 +63,7 @@ import type { ILibAutocomplete } from "./types"
  *
  * @returns {JSX.Element} The rendered Autocomplete component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/autocomplete
+ * @see https://julseb-lib.vercel.app/components/autocomplete
  */
 export const Autocomplete: FC<ILibAutocomplete> = ({
 	className,

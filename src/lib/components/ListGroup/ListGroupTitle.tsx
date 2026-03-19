@@ -30,7 +30,7 @@ import type { ILibListGroupTitle } from "./types"
  *
  * @returns {JSX.Element} The rendered ListGroupTitle component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/list-group
+ * @see https://julseb-lib.vercel.app/components/list-group
  */
 export const ListGroupTitle: FC<ILibListGroupTitle> = ({
 	className,

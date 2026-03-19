@@ -23,7 +23,7 @@ import type { ILibLoader } from "./types"
  *
  * @returns {JSX.Element} The rendered Loader component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/loader
+ * @see https://julseb-lib.vercel.app/components/loader
  */
 export const Loader: FC<ILibLoader> = ({ variant, ...rest }) => {
 	switch (variant) {

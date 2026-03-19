@@ -24,7 +24,7 @@ type CopyFn = (text: string) => Promise<boolean>
  * @returns {string} returns[1].text - Text to copy to clipboard
  * @returns {Promise<boolean>} returns[1].Promise - Promise that resolves to true if copy succeeded, false otherwise
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useCopyToClipboard
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useCopyToClipboard
  */
 export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
 	const [copiedText, setCopiedText] = useState<CopiedValue>(null)

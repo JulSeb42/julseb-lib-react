@@ -21,7 +21,7 @@ import { useState, useRef, useCallback, useEffect } from "react"
  *
  * @returns {{ visualLines: number; elementRef: React.RefObject<HTMLTextAreaElement | HTMLInputElement> }} Object containing the calculated visual line count and element ref to attach to the target element.
  *
- * @see https://doc-julseb-lib-react.vercel.app/hooks/use-text-line-count
+ * @see https://julseb-lib.vercel.app/components/hooks/use-text-line-count
  */
 export const useTextLineCount = (text: string, fontSize = 16) => {
 	const [visualLines, setVisualLines] = useState(1)

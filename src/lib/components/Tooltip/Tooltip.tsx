@@ -45,7 +45,7 @@ import type {
  *
  * @returns {JSX.Element} The rendered Tooltip component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tooltip
+ * @see https://julseb-lib.vercel.app/components/tooltip
  */
 export const Tooltip: FC<ILibTooltip> = ({
 	className,

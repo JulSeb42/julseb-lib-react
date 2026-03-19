@@ -29,7 +29,7 @@ import type { ILibTabsButton } from "./types"
  *
  * @returns {JSX.Element} The rendered TabsButton component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tabs
+ * @see https://julseb-lib.vercel.app/components/tabs
  */
 export const TabsButton: FC<ILibTabsButton> = ({
 	element = "button",

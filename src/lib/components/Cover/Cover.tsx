@@ -34,7 +34,7 @@ import type { ILibCover } from "./types"
  *
  * @returns {JSX.Element} The rendered Cover component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/cover
+ * @see https://julseb-lib.vercel.app/components/cover
  */
 export const Cover: FC<ILibCover> = ({
 	className,

@@ -43,7 +43,7 @@ const downloadFile = ({ blob, fileName }: IDownloadFile) => {
  * @returns {string} returns.exportToCsv.fileName - Name for the downloaded file (without extension)
  * @returns {Array<string>} returns.exportToCsv.headers - Array of column headers for the CSV file
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useExportData
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useExportData
  */
 export const useExportData = <T,>() => {
 	const exportToJson = (data: Array<T>, fileName: string) =>

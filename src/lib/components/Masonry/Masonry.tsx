@@ -28,7 +28,7 @@ import type { LibSpacers } from "../../types"
  *
  * @returns {JSX.Element} The rendered Masonry component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/masonry
+ * @see https://julseb-lib.vercel.app/components/masonry
  */
 export const Masonry: FC<ILibMasonry> = ({
 	className,

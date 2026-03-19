@@ -45,7 +45,7 @@ import type { ILibTable } from "./types"
  *
  * @returns {JSX.Element} The rendered Table component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/table
+ * @see https://julseb-lib.vercel.app/components/table
  */
 export const Table: FC<ILibTable> = ({
 	className,
@@ -168,7 +168,7 @@ export const Table: FC<ILibTable> = ({
 										"flex gap-6 overflow-x-scroll",
 										(variant === "bordered" ||
 											variant === "border-bottom") && [
-											"border-b border-b-gray-200",
+											"not-last:border-b not-last:border-b-gray-200",
 										],
 										variant === "stripped" && [
 											j % 2 === 0 && "bg-gray-100",
@@ -180,7 +180,9 @@ export const Table: FC<ILibTable> = ({
 										<Text tag="strong">{header}</Text>
 									</Text>
 									<Text tag="small">
-										{typeof row[j + 1] === "string" ? linkifyText(row[j + 1] as any) : (row[j + 1] as any)}
+										{typeof row[j + 1] === "string"
+											? linkifyText(row[j + 1] as any)
+											: (row[j + 1] as any)}
 									</Text>
 								</Flexbox>
 							))}

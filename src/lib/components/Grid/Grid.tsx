@@ -40,7 +40,7 @@ import type { ILibGrid } from "./types"
  *
  * @returns {JSX.Element} The rendered grid container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/grid
+ * @see https://julseb-lib.vercel.app/components/layouts/grid
  */
 export const Grid: FC<ILibGrid> = ({
 	className,

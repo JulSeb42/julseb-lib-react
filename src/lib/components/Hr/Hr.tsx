@@ -18,7 +18,7 @@ import type { ILibHr } from "./types"
  *
  * @returns {JSX.Element} The rendered Hr component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/hr
+ * @see https://julseb-lib.vercel.app/components/hr
  */
 export const Hr: FC<ILibHr> = ({
 	className,

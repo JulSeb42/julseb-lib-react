@@ -29,7 +29,7 @@ import { useState, type ChangeEvent } from "react"
  * @returns {function} returns.handleSubmit - Function to handle form submission
  * @returns {ChangeEvent<HTMLFormElement>} returns.handleSubmit.e - Form submit event
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useForm
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useForm
  */
 export const useForm = <T,>(
 	initialState = {} as T,

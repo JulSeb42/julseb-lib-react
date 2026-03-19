@@ -18,7 +18,7 @@ import type { LibSkeletonAnimation } from "../../types"
  *
  * @returns {JSX.Element} The rendered Skeleton component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/skeleton
+ * @see https://julseb-lib.vercel.app/components/layouts/skeleton
  */
 export const Skeleton: FC<ILibSkeleton> = ({
 	className,

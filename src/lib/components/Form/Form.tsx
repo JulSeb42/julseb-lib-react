@@ -33,7 +33,7 @@ import type { ILibForm } from "./types"
  *
  * @returns {JSX.Element} The rendered Form component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/form
+ * @see https://julseb-lib.vercel.app/components/form
  */
 export const Form: FC<ILibForm> = ({
 	element = "form",

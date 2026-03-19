@@ -20,7 +20,7 @@ import type { ILibSrOnly } from "./types"
  *
  * @returns {JSX.Element} The rendered SrOnly component with screen reader accessible content.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/sr-only
+ * @see https://julseb-lib.vercel.app/components/sr-only
  */
 export const SrOnly: FC<ILibSrOnly> = ({ element = "div", ref, children }) => {
 	const Element = element

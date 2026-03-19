@@ -27,7 +27,7 @@ import type { ILibAccordionTitle } from "./subtypes"
  *
  * @returns {JSX.Element} The rendered AccordionTitle component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/accordion
+ * @see https://julseb-lib.vercel.app/components/accordion
  */
 export const AccordionTitle: FC<ILibAccordionTitle> = ({
 	ref,

@@ -17,7 +17,7 @@ import { useState, useEffect } from "react"
  *
  * @returns {boolean} Whether the current viewport width is smaller than or equal to the specified width
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMaxWidth
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useMaxWidth
  */
 export const useMaxWidth = (width: number): boolean => {
 	const [isMax, setIsMax] = useState<boolean>(false)

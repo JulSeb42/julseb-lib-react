@@ -22,7 +22,7 @@ import {
  *
  * @returns {RefCallback<Instance> | null} Merged ref callback or null if all refs are null/undefined
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMergeRefs
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useMergeRefs
  */
 export const useMergeRefs = <Instance>(
 	refs: Array<Ref<Instance> | undefined>,

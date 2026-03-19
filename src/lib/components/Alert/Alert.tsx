@@ -27,7 +27,7 @@ import type { ILibAlert } from "./types"
  *
  * @returns {JSX.Element} The rendered Alert component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/alert
+ * @see https://julseb-lib.vercel.app/components/alert
  */
 export const Alert: FC<ILibAlert> = ({
 	children,

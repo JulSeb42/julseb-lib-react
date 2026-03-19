@@ -28,7 +28,7 @@ import type { ILibBadge } from "./types"
  *
  * @returns {JSX.Element} The rendered Badge component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/badge
+ * @see https://julseb-lib.vercel.app/components/badge
  */
 export const Badge: FC<ILibBadge> = ({
 	className,

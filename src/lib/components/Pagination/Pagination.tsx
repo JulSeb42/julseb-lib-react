@@ -36,7 +36,7 @@ import type { ILibPagination } from "./types"
  *
  * @returns {JSX.Element} The rendered Pagination component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/pagination
+ * @see https://julseb-lib.vercel.app/components/pagination
  */
 export const Pagination: FC<ILibPagination> = ({
 	className,

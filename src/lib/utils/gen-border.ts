@@ -1,3 +1,4 @@
+/** Maps border style values to their corresponding Tailwind CSS border-style classes. */
 export const genBorderStyle = {
 	solid: "border-solid",
 	dashed: "border-dashed",
@@ -6,6 +7,7 @@ export const genBorderStyle = {
 	none: "border-none",
 }
 
+/** Maps border width values (1–20) to their corresponding Tailwind CSS border-width classes. */
 export const genBorderWidth = {
 	1: "border",
 	2: "border-2",

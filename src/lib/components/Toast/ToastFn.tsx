@@ -38,7 +38,7 @@ const COMMON_STYLES: CSSProperties = {
  * @prop {function} loading - Display a loading toast notification with gray styling.
  * @prop {function} close - Close/dismiss all active toast notifications.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/toast
+ * @see https://julseb-lib.vercel.app/components/toast
  */
 export const toast = {
 	success: (

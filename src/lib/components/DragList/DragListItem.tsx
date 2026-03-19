@@ -34,7 +34,7 @@ import type { ILibDragListItem } from "./types"
  *
  * @returns {JSX.Element} The rendered DragListItem component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/drag-list
+ * @see https://julseb-lib.vercel.app/components/drag-list
  */
 export const DragListItem: FC<ILibDragListItem> = ({
 	className,

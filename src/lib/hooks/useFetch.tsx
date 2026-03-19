@@ -24,7 +24,7 @@ import { useEffect, useState } from "react"
  * @returns {any} returns.error - Error object if the fetch failed, undefined otherwise
  * @returns {boolean} returns.loading - Whether the fetch operation is currently in progress
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useFetch
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useFetch
  */
 export const useFetch = <T,>(fetchFunction: Promise<T>, dependencies?: any) => {
 	const [response, setResponse] = useState<T | null>(null)

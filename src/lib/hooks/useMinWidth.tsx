@@ -17,7 +17,7 @@ import { useState, useEffect } from "react"
  *
  * @returns {boolean} Whether the current viewport width is greater than or equal to the specified width
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useMinWidth
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useMinWidth
  */
 export const useMinWidth = (width: number): boolean => {
 	const [isMin, setIsMin] = useState<boolean>(false)

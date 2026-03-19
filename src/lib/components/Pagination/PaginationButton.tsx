@@ -28,7 +28,7 @@ import type { ILibPaginationButton } from "./types"
  *
  * @returns {JSX.Element} The rendered PaginationButton component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/pagination
+ * @see https://julseb-lib.vercel.app/components/pagination
  */
 export const PaginationButton: FC<ILibPaginationButton> = ({
 	className,

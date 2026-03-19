@@ -43,7 +43,7 @@ import type { ILibMeta } from "./types"
  *
  * @returns {JSX.Element} The rendered Meta component with HTML head elements.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/meta
+ * @see https://julseb-lib.vercel.app/components/meta
  */
 export const Meta: FC<ILibMeta> = ({
 	children,

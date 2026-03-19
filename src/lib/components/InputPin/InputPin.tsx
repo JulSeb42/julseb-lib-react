@@ -38,7 +38,7 @@ import type { ILibInputPin } from "./types"
  *
  * @returns {JSX.Element} The rendered InputPin component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input-pin
+ * @see https://julseb-lib.vercel.app/components/input-pin
  */
 export const InputPin: FC<ILibInputPin> = ({
 	className,

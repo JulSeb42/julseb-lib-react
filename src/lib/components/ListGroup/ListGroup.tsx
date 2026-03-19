@@ -34,7 +34,7 @@ import type { ILibListGroup } from "./types"
  *
  * @returns {JSX.Element} The rendered ListGroup component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/list-group
+ * @see https://julseb-lib.vercel.app/components/list-group
  */
 export const ListGroup: FC<ILibListGroup> = ({
 	className,

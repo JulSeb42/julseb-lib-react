@@ -54,7 +54,7 @@ import type { ILibInputPhone } from "./types"
  *
  * @returns {JSX.Element} The rendered InputPhone component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input-phone
+ * @see https://julseb-lib.vercel.app/components/input-phone
  */
 export const InputPhone: FC<ILibInputPhone> = ({
 	className,

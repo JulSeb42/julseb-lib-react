@@ -34,7 +34,7 @@ import type { TranslateLang } from "../types"
  * @returns {string} returns.language - Current active language code
  * @returns {Array<string>} returns.languages - Array of available language codes
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useTranslation
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useTranslation
  */
 export const useTranslation = (translations: TranslateLang) => {
 	const [language, setLanguage] = useState<string>("en")

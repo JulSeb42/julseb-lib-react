@@ -37,7 +37,7 @@ import type { ILibButton } from "./types"
  *
  * @returns {JSX.Element} The rendered Button component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/button
+ * @see https://julseb-lib.vercel.app/components/button
  */
 export const Button: FC<ILibButton> = ({
 	className,

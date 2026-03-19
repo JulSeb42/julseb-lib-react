@@ -20,7 +20,7 @@ import { useEffect, type RefObject } from "react"
  *
  * @returns {void} This hook doesn't return anything
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useClickOutside
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useClickOutside
  */
 
 export const useClickOutside = <T extends HTMLElement = HTMLElement>(

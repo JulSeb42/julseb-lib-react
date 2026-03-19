@@ -34,7 +34,7 @@ import type { ILibTag } from "./types"
  *
  * @returns {JSX.Element} The rendered Tag component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tag
+ * @see https://julseb-lib.vercel.app/components/tag
  */
 export const Tag: FC<ILibTag> = ({
 	className,

@@ -58,7 +58,7 @@ import type { ILibHeader } from "./types"
  *
  * @returns {JSX.Element} The rendered Header component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/header
+ * @see https://julseb-lib.vercel.app/components/header
  */
 export const Header: FC<ILibHeader> = ({
 	className,

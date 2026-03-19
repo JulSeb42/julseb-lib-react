@@ -38,7 +38,7 @@ import type { ILibTabs } from "./types"
  *
  * @returns {JSX.Element} The rendered Tabs component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tabs
+ * @see https://julseb-lib.vercel.app/components/tabs
  */
 export const Tabs: FC<ILibTabs> = ({
 	className,

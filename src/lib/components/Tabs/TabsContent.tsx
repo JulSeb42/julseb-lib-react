@@ -24,7 +24,7 @@ import type { ILibTabsContent } from "./types"
  *
  * @returns {JSX.Element} The rendered TabsContent component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tabs
+ * @see https://julseb-lib.vercel.app/components/tabs
  */
 export const TabsContent: FC<ILibTabsContent> = ({
 	children,

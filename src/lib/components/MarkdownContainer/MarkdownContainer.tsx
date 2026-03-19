@@ -28,7 +28,7 @@ import type { ILibMarkdownContainer } from "./types"
  *
  * @returns {JSX.Element} The rendered MarkdownContainer component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/markdown-container
+ * @see https://julseb-lib.vercel.app/components/markdown-container
  */
 export const MarkdownContainer: FC<ILibMarkdownContainer> = ({
 	children,

@@ -43,7 +43,7 @@ import type { ILibFooter } from "./types"
  *
  * @returns {JSX.Element} The rendered Footer component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/footer
+ * @see https://julseb-lib.vercel.app/components/footer
  */
 export const Footer: FC<ILibFooter> = ({
 	className,

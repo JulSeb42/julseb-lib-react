@@ -28,7 +28,7 @@ import {
  *
  * @returns {boolean | undefined} Whether the element is overflowing, or undefined if not yet determined
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useIsOverflow
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useIsOverflow
  */
 export const useIsOverflow = (
 	ref: RefObject<HTMLElement>,

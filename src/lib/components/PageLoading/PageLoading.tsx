@@ -28,7 +28,7 @@ import type { ILibPageLoading } from "./types"
  *
  * @returns {JSX.Element} The rendered PageLoading component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/page-loading
+ * @see https://julseb-lib.vercel.app/components/page-loading
  */
 export const PageLoading: FC<ILibPageLoading> = ({
 	className,

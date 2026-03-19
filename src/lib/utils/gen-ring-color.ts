@@ -1,5 +1,8 @@
 import type { LibColorsHover } from "../types"
 
+/**
+ * Maps each color variant to its corresponding Tailwind focus ring classes.
+ */
 export const genRingColor: Record<LibColorsHover, string> = {
 	primary: "focus:ring-1 focus:ring-primary-800",
 	secondary: "focus:ring-1 focus:ring-secondary-800",
@@ -10,6 +13,9 @@ export const genRingColor: Record<LibColorsHover, string> = {
 	white: "focus:ring-1 focus:ring-gray-500",
 }
 
+/**
+ * Maps each color variant to its corresponding Tailwind focus ring classes, applied to child elements via the `[&>*]` selector.
+ */
 export const genRingColorChildren: Record<LibColorsHover, string> = {
 	primary: "[&>*]:focus:ring-1 [&>*]:focus:ring-primary-800",
 	secondary: "[&>*]:focus:ring-1 [&>*]:focus:ring-secondary-800",

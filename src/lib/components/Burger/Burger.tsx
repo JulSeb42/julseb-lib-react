@@ -33,7 +33,7 @@ const SPAN_COMMON =
  *
  * @returns {JSX.Element} The rendered Burger component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/burger
+ * @see https://julseb-lib.vercel.app/components/burger
  */
 export const Burger: FC<ILibBurger> = ({
 	className,

@@ -29,7 +29,7 @@ const URL_REGEX =
  *
  * @returns {ReactElement} The rendered Linkify component with URLs converted to clickable links.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/linkify
+ * @see https://julseb-lib.vercel.app/components/linkify
  */
 export const Linkify: FC<ILibLinkify> = ({
 	className,

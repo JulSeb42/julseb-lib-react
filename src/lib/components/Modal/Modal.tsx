@@ -38,7 +38,7 @@ import type { ILibModal } from "./types"
  *
  * @returns {JSX.Element} The rendered Modal component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/modal
+ * @see https://julseb-lib.vercel.app/components/modal
  */
 export const Modal: FC<ILibModal> = ({
 	className,

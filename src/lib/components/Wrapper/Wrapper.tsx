@@ -25,7 +25,7 @@ import type { ILibWrapper } from "./types"
  *
  * @returns {JSX.Element} The rendered wrapper container.
  *
- * @see https://doc-julseb-lib-react.vercel.app/styles/wrapper
+ * @see https://julseb-lib.vercel.app/components/styles/wrapper
  */
 export const Wrapper: FC<ILibWrapper> = ({
 	className,

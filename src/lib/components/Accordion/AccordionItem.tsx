@@ -28,7 +28,7 @@ import type { ILibAccordionItem } from "./types"
  *
  * @returns {JSX.Element} The rendered AccordionItem component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/accordion
+ * @see https://julseb-lib.vercel.app/components/accordion
  */
 export const AccordionItem: FC<ILibAccordionItem> = ({
 	element = "div",

@@ -35,7 +35,7 @@ import type { ILibFooter } from "../Footer/types"
  *
  * @returns {JSX.Element} The rendered PageLayout component with complete page structure.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/page-layout
+ * @see https://julseb-lib.vercel.app/components/page-layout
  */
 export const PageLayout: FC<ILibPageLayout> = ({
 	children,

@@ -22,7 +22,7 @@ import type { ILibFade } from "./types"
  *
  * @returns {JSX.Element} The rendered Fade component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/fade
+ * @see https://julseb-lib.vercel.app/components/fade
  */
 export const Fade: FC<ILibFade> = ({
 	className,

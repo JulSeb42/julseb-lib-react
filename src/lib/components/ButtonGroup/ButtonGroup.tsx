@@ -45,7 +45,7 @@ import type { ILibButtonGroup } from "./types"
  *
  * @returns {JSX.Element} The rendered ButtonGroup component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/button-group
+ * @see https://julseb-lib.vercel.app/components/button-group
  */
 export const ButtonGroup: FC<ILibButtonGroup> = ({
 	className,

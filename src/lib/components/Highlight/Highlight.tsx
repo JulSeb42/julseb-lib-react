@@ -18,7 +18,7 @@ import type { ILibHighlight } from "./types"
  *
  * @returns {JSX.Element} The rendered Highlight component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/highlight
+ * @see https://julseb-lib.vercel.app/components/layouts/highlight
  */
 export const Highlight: FC<ILibHighlight> = ({
 	className,

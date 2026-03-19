@@ -18,7 +18,7 @@ import type { ILibKey } from "./types"
  *
  * @returns {JSX.Element} The rendered Key component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/layouts/key
+ * @see https://julseb-lib.vercel.app/components/layouts/key
  */
 export const Key: FC<ILibKey> = ({
 	className,
@@ -60,7 +60,6 @@ export const Key: FC<ILibKey> = ({
 		</Element>
 	)
 }
-
 
 type Gen = Record<"small" | "large", string>
 

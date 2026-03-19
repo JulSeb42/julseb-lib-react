@@ -37,7 +37,7 @@ import type { ILibFieldset } from "./types"
  *
  * @returns {JSX.Element} The rendered Fieldset component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/fieldset
+ * @see https://julseb-lib.vercel.app/components/fieldset
  */
 export const Fieldset: FC<ILibFieldset> = ({
 	className,

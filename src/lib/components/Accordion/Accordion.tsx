@@ -30,7 +30,7 @@ import type { ILibAccordion } from "./types"
  *
  * @returns {JSX.Element} The rendered Accordion component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/accordion
+ * @see https://julseb-lib.vercel.app/components/accordion
  */
 export const Accordion: FC<ILibAccordion> = ({
 	className,

@@ -43,7 +43,7 @@ import type { ILibRating } from "./types"
  *
  * @returns {JSX.Element} The rendered Rating component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/rating
+ * @see https://julseb-lib.vercel.app/components/rating
  */
 export const Rating: FC<ILibRating> = ({
 	className,

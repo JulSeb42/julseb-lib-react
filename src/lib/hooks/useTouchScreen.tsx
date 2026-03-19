@@ -17,7 +17,7 @@ import { useState, useLayoutEffect } from "react"
  *
  * @returns {boolean} Whether the current device supports touch screen interaction
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useTouchScreen
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useTouchScreen
  */
 export const useTouchScreen = (): boolean => {
 	const [isTouchScreen, setIsTouchScreen] = useState<boolean>(false)

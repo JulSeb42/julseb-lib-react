@@ -25,7 +25,7 @@ import type { ILibCodeContainer } from "./types"
  *
  * @returns {JSX.Element} The rendered code block with syntax highlighting and a copy button.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/code-container
+ * @see https://julseb-lib.vercel.app/components/code-container
  */
 export const CodeContainer: FC<ILibCodeContainer> = ({
 	children,

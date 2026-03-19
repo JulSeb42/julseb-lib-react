@@ -37,7 +37,7 @@ import type { ILibDropdown } from "./types"
  *
  * @returns {JSX.Element} The rendered Dropdown component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/dropdown
+ * @see https://julseb-lib.vercel.app/components/dropdown
  */
 export const Dropdown: FC<ILibDropdown> = ({
 	className,

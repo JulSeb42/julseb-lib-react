@@ -22,7 +22,7 @@ import { useState, useEffect } from "react"
  *
  * @returns {T} The debounced value that updates after the delay period
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#useDebounce
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#useDebounce
  */
 export const useDebounce = <T,>(value: T, delay: number = 1000) => {
 	const [debouncedValue, setDebouncedValue] = useState<T>(value)

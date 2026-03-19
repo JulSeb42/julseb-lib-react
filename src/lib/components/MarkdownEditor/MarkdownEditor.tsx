@@ -49,7 +49,7 @@ import type { LibMdEditorViews } from "../../types"
  *
  * @returns {JSX.Element} The rendered MarkdownEditor component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/markdown-editor
+ * @see https://julseb-lib.vercel.app/components/markdown-editor
  */
 export const MarkdownEditor: FC<ILibMarkdownEditor> = ({
 	className,

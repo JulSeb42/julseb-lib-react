@@ -39,7 +39,7 @@ interface ILibUsePaginationNavigation {
  * @returns {function} returns.handlePage - Function to navigate to a specific page number
  * @returns {number} returns.handlePage.n - Page number to navigate to
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#usePagination
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#usePagination
  */
 export const usePagination = ({
 	currentPage,

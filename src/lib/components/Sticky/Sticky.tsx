@@ -23,7 +23,7 @@ import type { ILibSticky } from "./types"
  *
  * @returns {JSX.Element} The rendered Sticky component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/sticky
+ * @see https://julseb-lib.vercel.app/components/sticky
  */
 export const Sticky: FC<ILibSticky> = ({
 	className,

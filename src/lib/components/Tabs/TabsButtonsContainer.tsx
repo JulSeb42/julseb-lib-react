@@ -25,7 +25,7 @@ import type { ILibTabsButtonsContainer } from "./types"
  *
  * @returns {JSX.Element} The rendered TabsButtonsContainer component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/tabs
+ * @see https://julseb-lib.vercel.app/components/tabs
  */
 export const TabsButtonsContainer: FC<ILibTabsButtonsContainer> = ({
 	element = "div",

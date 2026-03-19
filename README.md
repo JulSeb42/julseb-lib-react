@@ -38,22 +38,22 @@ pnpm install @julseb-lib/react
 Access comprehensive TypeScript definitions:
 
 ```typescript
-import type { 
-  ILibButton, 
-  ILibText, 
-  LibAllColors,
-  LibSpacers 
-} from '@julseb-lib/react/types'
+import type {
+	ILibButton,
+	ILibText,
+	LibAllColors,
+	LibSpacers,
+} from "@julseb-lib/react/types"
 ```
 
 Component-specific prop types:
 
 ```typescript
-import type { 
-  ILibButton,
-  ILibInput,
-  ILibModal 
-} from '@julseb-lib/react/component-props'
+import type {
+	ILibButton,
+	ILibInput,
+	ILibModal,
+} from "@julseb-lib/react/component-props"
 ```
 
 ## Styling & Customization
@@ -64,12 +64,12 @@ The library uses CSS custom properties for theming:
 
 ```css
 :root {
-  --color-primary-500: #3b82f6;
-  --color-secondary-500: #06b6d4;
-  --spacer-xs: 8px;
-  --spacer-sm: 16px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+	--color-primary-500: #3b82f6;
+	--color-secondary-500: #06b6d4;
+	--spacer-xs: 8px;
+	--spacer-sm: 16px;
+	--radius-sm: 4px;
+	--radius-md: 8px;
 }
 ```
 
@@ -107,13 +107,13 @@ function ContactForm() {
   return (
     <form>
       <Flexbox direction="column" gap="md">
-        <Input 
+        <Input
           label="Email"
           type="email"
           required
           validation="Please enter a valid email"
         />
-        <Input 
+        <Input
           label="Message"
           element="textarea"
           rows={4}
@@ -141,9 +141,9 @@ function App() {
       <Button onClick={() => setIsOpen(true)}>
         Open Modal
       </Button>
-      
-      <Modal 
-        isOpen={isOpen} 
+
+      <Modal
+        isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         title="Contact Form"
       >
@@ -190,7 +190,7 @@ MIT © [Julien Sebag](https://julien-sebag.com)
 
 ### Links
 
-[Documentation](https://doc-julseb-lib-react.vercel.app/)
+[Documentation](https://julseb-lib.vercel.app/components/)
 
 [GitHub Repository](https://github.com/JulSeb42/julseb-lib-react)
 

@@ -85,7 +85,7 @@ const InputFunction: FC<ILibInput> = ({ type, ...rest }) =>
  *
  * @returns {JSX.Element} The rendered Input component.
  *
- * @see https://doc-julseb-lib-react.vercel.app/components/input
+ * @see https://julseb-lib.vercel.app/components/input
  */
 export const Input: FC<ILibInput> = ({
 	className,

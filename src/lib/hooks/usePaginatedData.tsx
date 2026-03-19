@@ -28,7 +28,7 @@ interface IUsePaginatedData<T> {
  * @returns {Array<T>} returns.paginatedData - Current page's data items
  * @returns {number} returns.totalPages - Total number of pages based on data length and limit
  *
- * @see https://doc-julseb-lib-react.vercel.app/helpers/hooks#usePaginatedData
+ * @see https://julseb-lib.vercel.app/components/helpers/hooks#usePaginatedData
  */
 export const usePaginatedData = <T,>(
 	data: Array<T>,

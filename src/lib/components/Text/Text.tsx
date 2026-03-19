@@ -53,7 +53,7 @@ export const TEXT_BASE_CLASSES = clsx(
  *
  * @returns {JSX.Element} The rendered text element.
  *
- * @see https://doc-julseb-lib-react.vercel.app/styles/text
+ * @see https://julseb-lib.vercel.app/components/styles/text
  */
 export const Text: FC<ILibText> = ({ tag = "p", ...rest }) => {
 	switch (tag) {
