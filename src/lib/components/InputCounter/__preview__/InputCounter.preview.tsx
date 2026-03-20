@@ -8,10 +8,10 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 	component: InputCounter,
 	category: "components",
 	import: "InputCounter",
-	additionalImports: [],
-	optionalImports: [],
+	additionalImports: null,
+	optionalImports: null,
 	propsImport: "ILibInputCounter",
-	additionalTypeImports: [],
+	additionalTypeImports: null,
 	extends: ["HTMLInputElement"],
 	previews: [
 		{
@@ -19,7 +19,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 			demo: (
 				<Preview
 					showButtonsTooltip
-					disabled
+					// disabled
 					// labelButtons={{ minus: "Minus", plus: "Plus" }}
 				/>
 			),
@@ -30,7 +30,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "value",
 			type: "number",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Current counter value.",
 			isRequired: true,
@@ -64,7 +64,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "label",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Label text for the counter input.",
 			isRequired: false,
@@ -72,7 +72,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "labelComment",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Additional comment text for the label.",
 			isRequired: false,
@@ -80,7 +80,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "helper",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Helper text displayed above the counter.",
 			isRequired: false,
@@ -88,7 +88,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "helperBottom",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Helper text displayed below the counter.",
 			isRequired: false,
@@ -114,7 +114,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "noInput",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "false",
 			description:
 				"Whether to hide the input field and show only buttons.",
@@ -123,14 +123,8 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "buttonVariant",
 			type: "string",
-			possibleValues: [
-				"contained",
-				"outlined",
-				"text",
-				"transparent",
-				"plain",
-			],
-			defaultValue: "contained",
+			possibleValues: ["plain", "ghost", "transparent"],
+			defaultValue: "plain",
 			description: "Visual variant for the increment/decrement buttons.",
 			isRequired: false,
 		},
@@ -144,7 +138,6 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 				"danger",
 				"warning",
 				"gray",
-				"black",
 				"white",
 			],
 			defaultValue: "primary",
@@ -154,7 +147,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "icons",
 			type: "Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "plus: BiPlus, minus: BiMinus",
 			description: "Custom icons for the increment/decrement buttons.",
 			isRequired: false,
@@ -162,7 +155,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "labelButtons",
 			type: "Object",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Custom labels for the increment/decrement buttons.",
 			isRequired: false,
@@ -170,7 +163,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "showButtonsTooltip",
 			type: "boolean",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: "false",
 			description:
 				"Whether to show tooltips on the increment/decrement buttons.",
@@ -179,7 +172,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "containerClassName",
 			type: "string",
-			possibleValues: [],
+			possibleValues: null,
 			defaultValue: null,
 			description: "Additional CSS classes for the container.",
 			isRequired: false,

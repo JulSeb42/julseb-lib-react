@@ -1,3 +1,4 @@
+/** Maps display text heading tags (h1–h5) to their HTML element names. */
 const libTextDisplayTags = {
 	h1: "h1",
 	h2: "h2",
@@ -6,6 +7,7 @@ const libTextDisplayTags = {
 	h5: "h5",
 }
 
+/** Design tokens used across the component library for consistent styling. */
 export const designTokens = {
 	libColors: {
 		/**
@@ -345,6 +347,15 @@ export const designTokens = {
 		black: "black",
 	},
 
+	/**
+	 * Letter spacing (tracking) values.
+	 * Tighter — -0.05em
+	 * Tight — -0.025em
+	 * Normal — 0em
+	 * Wide — 0.025em
+	 * Wider — 0.05em
+	 * Widest — 0.1em
+	 */
 	libTracking: {
 		tighter: "tighter",
 		tight: "tight",
@@ -354,6 +365,15 @@ export const designTokens = {
 		widest: "widest",
 	},
 
+	/**
+	 * Line height (leading) values.
+	 * Tight — 1.25
+	 * Snug — 1.375
+	 * Normal — 1.5
+	 * Relaxed — 1.625
+	 * Loose — 2
+	 * None — 1
+	 */
 	libLeading: {
 		tight: "tight",
 		snug: "snug",
@@ -363,6 +383,18 @@ export const designTokens = {
 		none: "none",
 	},
 
+	/**
+	 * Border radius values.
+	 * xs — 0.125rem
+	 * sm — 0.25rem
+	 * md — 0.375rem
+	 * lg — 0.5rem
+	 * xl — 0.75rem
+	 * 2xl — 1rem
+	 * 3xl — 1.5rem
+	 * 4xl — 2rem
+	 * full — 9999px
+	 */
 	libRadius: {
 		xs: "xs",
 		sm: "sm",
@@ -375,6 +407,7 @@ export const designTokens = {
 		full: "full",
 	},
 
+	/** Box shadow size values. */
 	libShadows: {
 		"2xs": "2xs",
 		xs: "xs",
@@ -386,12 +419,14 @@ export const designTokens = {
 		none: "none",
 	},
 
+	/** Inset (inner) shadow size values. */
 	libInsetShadows: {
 		"2xs": "2xs",
 		xs: "xs",
 		sm: "sm",
 	},
 
+	/** Drop shadow filter size values. */
 	libDropShadows: {
 		xs: "xs",
 		sm: "sm",
@@ -401,6 +436,7 @@ export const designTokens = {
 		"2xl": "2xl",
 	},
 
+	/** Text shadow size values. */
 	libTextShadow: {
 		"2xs": "2xs",
 		xs: "xs",
@@ -409,12 +445,14 @@ export const designTokens = {
 		lg: "lg",
 	},
 
+	/** CSS transition timing function values. */
 	libTransitionTimingFunctions: {
 		"--ease-in": "--ease-in",
 		"--ease-out": "--ease-out",
 		"--ease-in-out": "--ease-in-out",
 	},
 
+	/** CSS animation presets. */
 	libAnimate: {
 		spin: "spin",
 		ping: "ping",
@@ -422,6 +460,7 @@ export const designTokens = {
 		bounce: "bounce",
 	},
 
+	/** Blur filter size values. */
 	libBlur: {
 		xs: "xs",
 		sm: "sm",
@@ -432,6 +471,7 @@ export const designTokens = {
 		"3xl": "3xl",
 	},
 
+	/** CSS perspective distance values for 3D transforms. */
 	libPerspective: {
 		dramatic: "dramatic",
 		near: "near",
@@ -440,10 +480,13 @@ export const designTokens = {
 		distant: "distant",
 	},
 
+	/** Video aspect ratio token (16:9). */
 	libAspectVideo: {},
 
+	/** Display heading tags (h1–h5) reference. */
 	libTextDisplayTags,
 
+	/** Text-level HTML element tags (h6, p, strong, em, small, blockquote, ul, ol, dl). */
 	libTextTags: {
 		h6: "h6",
 		p: "p",
@@ -456,6 +499,7 @@ export const designTokens = {
 		dl: "dl",
 	},
 
+	/** CSS transition property targets. */
 	libTransitions: {
 		none: "none",
 		all: "all",
@@ -466,32 +510,38 @@ export const designTokens = {
 		transform: "transform",
 	},
 
+	/** Color theme modes. */
 	libThemes: {
 		light: "light",
 		dark: "dark",
 	},
 
+	/** Input field border radius variants. */
 	libInputVariants: {
 		rounded: "rounded",
 		pill: "pill",
 	},
 
+	/** Input field background color modes. */
 	libInputBackgrounds: {
 		light: "light",
 		dark: "dark",
 	},
 
+	/** Main content area width presets. */
 	libMainSizes: {
 		default: "default",
 		large: "large",
 		form: "form",
 	},
 
+	/** Aside panel width presets. */
 	libAsideSizes: {
 		default: "default",
 		small: "small",
 	},
 
+	/** Z-index layer values (0–50, with negative counterparts). */
 	libZIndex: {
 		"0": "0",
 		"10": "10",
@@ -507,12 +557,14 @@ export const designTokens = {
 		"-50": "-50",
 	},
 
+	/** CSS position property values. */
 	libPosition: {
 		relative: "relative",
 		absolute: "absolute",
 		fixed: "fixed",
 	},
 
+	/** Minimum height sizing values. */
 	libMinHeights: {
 		px: "px",
 		full: "full",
@@ -530,8 +582,10 @@ export const designTokens = {
 		lh: "lh",
 	},
 
+	/** Keyboard Key component size variants. */
 	libKeySizes: { large: "large", small: "small" },
 
+	/** Maximum width sizing values. */
 	libMaxWidths: {
 		"3xs": "3xs",
 		"2xs": "2xs",
@@ -561,8 +615,10 @@ export const designTokens = {
 		fit: "fit",
 	},
 
+	/** Skeleton loading animation styles. */
 	libSkeletonAnimations: { pulse: "pulse", shine: "shine", none: "none" },
 
+	/** Tooltip positioning options. */
 	libTooltipPositions: {
 		top: "top",
 		bottom: "bottom",
@@ -570,22 +626,29 @@ export const designTokens = {
 		right: "right",
 	},
 
+	/** Tooltip trigger interaction modes. */
 	libTooltipTriggers: { hover: "hover", click: "click" },
 
+	/** Loader spinner visual variants. */
 	libLoaderVariants: { 1: 1, 2: 2, 3: 3 },
 
+	/** Button visual style variants. */
 	libButtonVariants: {
 		plain: "plain",
 		ghost: "ghost",
 		transparent: "transparent",
 	},
 
+	/** Button size presets. */
 	libButtonSize: { default: "default", small: "small" },
 
+	/** ButtonGroup toggle selection modes (single or multi). */
 	libButtonGroupToggle: { single: "single", multi: "multi" },
 
+	/** Tag visual style variants. */
 	libTagVariant: { plain: "plain", outline: "outline" },
 
+	/** HTML input type values supported by the Input component. */
 	libInputTypes: {
 		color: "color",
 		date: "date",
@@ -605,18 +668,23 @@ export const designTokens = {
 		textarea: "textarea",
 	},
 
+	/** Checkbox/radio input visual variants (tile, toggle, selector). */
 	libCheckInputVariants: {
 		tile: "tile",
 		toggle: "toggle",
 		selector: "selector",
 	},
 
+	/** Dropdown list expansion direction. */
 	libListInputDirections: { up: "up", down: "down" },
 
+	/** Accordion visual style variants. */
 	libAccordionVariant: { basic: "basic", rounded: "rounded" },
 
+	/** Accordion expand/collapse icon styles. */
 	libAccordionIcon: { plus: "plus", chevron: "chevron" },
 
+	/** Toast notification status types. */
 	libToastStatus: {
 		success: "success",
 		error: "error",
@@ -625,10 +693,13 @@ export const designTokens = {
 		loading: "loading",
 	},
 
+	/** Tabs button alignment options. */
 	libTabsJustify: { start: "start", stretch: "stretch" },
 
+	/** Tabs visual style variants. */
 	libTabsVariant: { basic: "basic", rounded: "rounded" },
 
+	/** Slideshow pagination indicator styles. */
 	libSlideshowPagination: {
 		dots: "dots",
 		"dots-outline": "dots-outline",
@@ -636,24 +707,30 @@ export const designTokens = {
 		thumbnails: "thumbnails",
 	},
 
+	/** Slideshow pagination placement (inside or outside the slide area). */
 	libSlideshowPaginationPosition: { inside: "inside", outside: "outside" },
 
+	/** Slideshow navigation button alignment. */
 	libSlideshowButtonsPositions: { left: "left", right: "right" },
 
+	/** Slideshow navigation button size presets. */
 	libSlideshowButtonsSizes: { small: "small", large: "large" },
 
+	/** Table visual style variants. */
 	libTableVariants: {
 		bordered: "bordered",
 		stripped: "stripped",
 		"border-bottom": "border-bottom",
 	},
 
+	/** Markdown editor view modes (code, live preview, preview only). */
 	libMdEditorViews: {
 		viewCode: "viewCode",
 		viewLive: "viewLive",
 		viewPreview: "viewPreview",
 	},
 
+	/** Markdown editor toolbar formatting buttons. */
 	libMdEditorButtons: {
 		bold: "bold",
 		italic: "italic",
@@ -670,18 +747,25 @@ export const designTokens = {
 		image: "image",
 	},
 
+	/** Markdown editor heading level options (h1–h6). */
 	libMdEditorTitles: { ...libTextDisplayTags, h6: "h6" },
 
+	/** Drawer panel slide-in positions. */
 	libDrawerPositions: { left: "left", right: "right" },
 
+	/** Mobile navigation burger button position. */
 	libNavBurgerPositions: { left: "left", right: "right" },
 
+	/** Mobile navigation display variants. */
 	libNavMobileVariants: { full: "full", top: "top", drawer: "drawer" },
 
+	/** Footer links layout direction. */
 	libFooterDirection: { horizontal: "horizontal", vertical: "vertical" },
 
+	/** Footer links separator character styles. */
 	libFooterLinksSeparator: { dot: "dot", dash: "dash" },
 
+	/** ISO 3166-1 alpha-2 country codes for the InputPhone component. */
 	libCountryCodes: {
 		af: "af",
 		ax: "ax",
