@@ -1,5 +1,12 @@
 import type { LibMaxWidth } from "../types"
 
+/**
+ * Maps max-width tokens to their corresponding Tailwind CSS max-width utility classes.
+ *
+ * @type {Record<LibMaxWidth, string>}
+ * @example
+ * genMaxWidth.lg // "max-w-lg"
+ */
 export const genMaxWidth: Record<LibMaxWidth, string> = {
 	"3xs": "max-w-3xs",
 	"2xs": "max-w-2xs",

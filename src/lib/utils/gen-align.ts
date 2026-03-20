@@ -1,6 +1,12 @@
 import type { CssAlignContent, CssAlignItems } from "../types"
 
-/** Maps CSS `align-content` values to their corresponding Tailwind CSS classes. */
+/**
+ * Maps CSS `align-content` values to their corresponding Tailwind CSS utility classes.
+ *
+ * @type {Record<CssAlignContent, string>}
+ * @example
+ * genAlignContent.center // "content-center"
+ */
 export const genAlignContent: Record<CssAlignContent, string> = {
 	normal: "content-normal",
 	center: "content-center",
@@ -13,7 +19,13 @@ export const genAlignContent: Record<CssAlignContent, string> = {
 	stretch: "content-stretch",
 }
 
-/** Maps CSS `align-items` values to their corresponding Tailwind CSS classes. */
+/**
+ * Maps CSS `align-items` values to their corresponding Tailwind CSS utility classes.
+ *
+ * @type {Record<CssAlignItems, string>}
+ * @example
+ * genAlignItems.center // "items-center"
+ */
 export const genAlignItems: Record<CssAlignItems, string> = {
 	start: "items-start",
 	end: "items-end",

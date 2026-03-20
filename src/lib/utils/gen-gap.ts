@@ -1,5 +1,12 @@
 import type { LibSpacers } from "../types"
 
+/**
+ * Maps spacing tokens to their corresponding Tailwind CSS gap utility classes.
+ *
+ * @type {Record<LibSpacers, string>}
+ * @example
+ * genGap.lg // "gap-6"
+ */
 export const genGap: Record<LibSpacers, string> = {
 	"2xl": "gap-12",
 	xl: "gap-8",
@@ -11,6 +18,13 @@ export const genGap: Record<LibSpacers, string> = {
 	"0px": "0px",
 }
 
+/**
+ * Maps spacing tokens to their corresponding Tailwind CSS row gap utility classes.
+ *
+ * @type {Record<LibSpacers, string>}
+ * @example
+ * genRowGap.md // "gap-y-4"
+ */
 export const genRowGap: Record<LibSpacers, string> = {
 	"2xl": "gap-y-12",
 	xl: "gap-y-8",
@@ -22,6 +36,13 @@ export const genRowGap: Record<LibSpacers, string> = {
 	"0px": "0px",
 }
 
+/**
+ * Maps spacing tokens to their corresponding Tailwind CSS column gap utility classes.
+ *
+ * @type {Record<LibSpacers, string>}
+ * @example
+ * genColGap.sm // "gap-x-3"
+ */
 export const genColGap: Record<LibSpacers, string> = {
 	"2xl": "gap-x-12",
 	xl: "gap-x-8",

@@ -5,6 +5,13 @@ import type {
 	LibColorsShort,
 } from "../types"
 
+/**
+ * Maps color tokens to their corresponding Tailwind CSS text color utility classes.
+ *
+ * @type {Record<LibColors, string>}
+ * @example
+ * genTextColor["primary-500"] // "text-primary-500"
+ */
 export const genTextColor: Record<LibColors, string> = {
 	black: "text-black",
 	white: "text-white",
@@ -80,6 +87,13 @@ export const genTextColor: Record<LibColors, string> = {
 	font: "text-font",
 }
 
+/**
+ * Maps shorthand color tokens to their corresponding Tailwind CSS text color utility classes (uses the 500 shade).
+ *
+ * @type {Record<LibColorsShort, string>}
+ * @example
+ * genTextColorShort.primary // "text-primary-500"
+ */
 export const genTextColorShort: Record<LibColorsShort, string> = {
 	primary: "text-primary-500",
 	secondary: "text-secondary-500",
@@ -94,6 +108,13 @@ export const genTextColorShort: Record<LibColorsShort, string> = {
 	background: "text-background",
 }
 
+/**
+ * Maps color tokens to Tailwind CSS text color utility classes with hover and active states.
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genTextColorHover.danger // "text-danger-500 hover:text-danger-300 active:text-danger-600"
+ */
 export const genTextColorHover: Record<LibColorsHover, string> = {
 	primary: "text-primary-500 hover:text-primary-300 active:text-primary-600",
 	secondary:
@@ -105,6 +126,14 @@ export const genTextColorHover: Record<LibColorsHover, string> = {
 	white: "text-white hover:text-gray-300! active:text-gray-100!",
 }
 
+/**
+ * Combined map of all color tokens (full and shorthand) to their Tailwind CSS text color utility classes.
+ *
+ * @type {Record<LibAllColors, string>}
+ * @example
+ * genTextAllColor.primary // "text-primary-500"
+ * genTextAllColor["primary-100"] // "text-primary-100"
+ */
 export const genTextAllColor: Record<LibAllColors, string> = {
 	...genTextColor,
 	...genTextColorShort,

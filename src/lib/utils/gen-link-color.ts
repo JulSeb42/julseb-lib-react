@@ -1,5 +1,12 @@
 import type { LibColorsHover } from "../types"
 
+/**
+ * Maps color tokens to Tailwind CSS classes for styling anchor tags (`<a>`) with color, hover, and active states.
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genLinkColor.primary // "[&_a]:font-black [&_a]:text-primary-500 [&_a]:hover:text-primary-300 [&_a]:active:text-primary-600"
+ */
 export const genLinkColor: Record<LibColorsHover, string> = {
 	primary:
 		"[&_a]:font-black [&_a]:text-primary-500 [&_a]:hover:text-primary-300 [&_a]:active:text-primary-600",
@@ -14,6 +21,13 @@ export const genLinkColor: Record<LibColorsHover, string> = {
 	white: "[&_a]:font-black [&_a]:text-white [&_a]:hover:text-gray-300 [&_a]:active:text-gray-100",
 }
 
+/**
+ * Maps color tokens to Tailwind CSS classes for styling button tags (`<button>`) with color, hover, and active states.
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genButtonColor.secondary // "[&_button]:font-black [&_button]:text-secondary-500 [&_button]:hover:text-secondary-300 [&_button]:active:text-secondary-600"
+ */
 export const genButtonColor: Record<LibColorsHover, string> = {
 	primary:
 		"[&_button]:font-black [&_button]:text-primary-500 [&_button]:hover:text-primary-300 [&_button]:active:text-primary-600",

@@ -3,6 +3,14 @@ import { Table } from "../components/Table"
 import type { LibMdEditorOptions } from "../types"
 import type { Components } from "react-markdown"
 
+/**
+ * Custom React components mapping for rendering Markdown elements using the library's Text and Table components.
+ *
+ * @type {Components}
+ * @example
+ * // Usage with react-markdown
+ * <ReactMarkdown components={libMarkdownComponents} />
+ */
 export const libMarkdownComponents: Components = {
 	h1: props => <Text tag="h1" {...(props as any)} />,
 	h2: props => <Text tag="h2" {...(props as any)} />,
@@ -21,6 +29,13 @@ export const libMarkdownComponents: Components = {
 	table: props => <Table {...(props as any)} />,
 }
 
+/**
+ * Default options for the Markdown editor, enabling or disabling formatting features.
+ *
+ * @type {LibMdEditorOptions}
+ * @example
+ * libMarkdownEditorOptions.bold // true
+ */
 export const libMarkdownEditorOptions: LibMdEditorOptions = {
 	bold: true,
 	italic: true,

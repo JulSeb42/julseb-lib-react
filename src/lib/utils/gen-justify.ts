@@ -1,5 +1,12 @@
 import type { CssJustifyContent, CssJustifyItems } from "../types"
 
+/**
+ * Maps CSS `justify-content` values to their corresponding Tailwind CSS utility classes.
+ *
+ * @type {Record<CssJustifyContent, string>}
+ * @example
+ * genJustifyContent.center // "justify-center"
+ */
 export const genJustifyContent: Record<CssJustifyContent, string> = {
 	start: "justify-start",
 	end: "justify-end",
@@ -14,6 +21,13 @@ export const genJustifyContent: Record<CssJustifyContent, string> = {
 	normal: "justify-normal",
 }
 
+/**
+ * Maps CSS `justify-items` values to their corresponding Tailwind CSS utility classes.
+ *
+ * @type {Record<CssJustifyItems, string>}
+ * @example
+ * genJustifyItems.end // "justify-items-end"
+ */
 export const genJustifyItems: Record<CssJustifyItems, string> = {
 	start: "justify-items-start",
 	end: "justify-items-end",

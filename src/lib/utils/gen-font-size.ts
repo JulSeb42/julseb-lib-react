@@ -1,5 +1,13 @@
 import type { LibFontSizes } from "../types"
 
+/**
+ * Maps font size tokens to their corresponding Tailwind CSS text-size utility classes or custom property-based classes.
+ *
+ * @type {Record<LibFontSizes, string>}
+ * @example
+ * genFontSize.xl // "text-xl"
+ * genFontSize["display-h1"] // "text-(length:--text-display-h1)"
+ */
 export const genFontSize: Record<LibFontSizes, string> = {
 	xs: "text-xs",
 	sm: "text-sm",

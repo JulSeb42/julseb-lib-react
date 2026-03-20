@@ -7,7 +7,13 @@ import type {
 	LibOverlays,
 } from "../types"
 
-/** Maps all library color tokens to their Tailwind CSS `bg-` classes. */
+/**
+ * Maps all library color tokens to their corresponding Tailwind CSS `bg-` classes.
+ *
+ * @type {Record<LibColors, string>}
+ * @example
+ * genBgColor["primary-500"] // "bg-primary-500"
+ */
 export const genBgColor: Record<LibColors, string> = {
 	black: "bg-black",
 	white: "bg-white",
@@ -88,7 +94,13 @@ export const genBgColor: Record<LibColors, string> = {
 	font: "bg-font",
 }
 
-/** Maps shorthand color names to their Tailwind CSS `bg-` classes (uses the 500 shade). */
+/**
+ * Maps shorthand color names to their Tailwind CSS `bg-` classes (uses the 500 shade).
+ *
+ * @type {Record<LibColorsShort, string>}
+ * @example
+ * genBgColorShort.primary // "bg-primary-500"
+ */
 export const genBgColorShort: Record<LibColorsShort, string> = {
 	primary: "bg-primary-500",
 	secondary: "bg-secondary-500",
@@ -103,7 +115,13 @@ export const genBgColorShort: Record<LibColorsShort, string> = {
 	background: "bg-background",
 }
 
-/** Maps shorthand color names to their lightest (50 shade) Tailwind CSS `bg-` classes. */
+/**
+ * Maps shorthand color names to their lightest (50 shade) Tailwind CSS `bg-` classes.
+ *
+ * @type {Record<Exclude<LibColorsShort, "black" | "transparent" | "background" | "current">, string>}
+ * @example
+ * genBgColor50.primary // "bg-primary-50"
+ */
 export const genBgColor50: Record<
 	Exclude<LibColorsShort, "black" | "transparent" | "background" | "current">,
 	string
@@ -117,7 +135,13 @@ export const genBgColor50: Record<
 	white: "bg-white",
 }
 
-/** Maps hover colors to Tailwind CSS `bg-` classes with hover and active states. */
+/**
+ * Maps hover color names to Tailwind CSS `bg-` classes with hover and active states.
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genBgColorHover.primary // "bg-primary-500 hover:bg-primary-300 active:bg-primary-600"
+ */
 export const genBgColorHover: Record<LibColorsHover, string> = {
 	primary: "bg-primary-500 hover:bg-primary-300 active:bg-primary-600",
 	secondary:
@@ -129,7 +153,13 @@ export const genBgColorHover: Record<LibColorsHover, string> = {
 	white: "bg-white hover:bg-gray-300! active:bg-gray-100!",
 }
 
-/** Maps ghost-style hover colors to Tailwind CSS `bg-` classes with hover and active states (lighter shades). */
+/**
+ * Maps ghost-style hover color names to Tailwind CSS `bg-` classes with hover and active states (lighter shades).
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genBgColorGhostHover.primary // "bg-primary-50 hover:bg-primary-300 active:bg-primary-100"
+ */
 export const genBgColorGhostHover: Record<LibColorsHover, string> = {
 	primary: "bg-primary-50 hover:bg-primary-300 active:bg-primary-100",
 	secondary: "bg-secondary-50 hover:bg-secondary-300 active:bg-secondary-100",
@@ -140,7 +170,13 @@ export const genBgColorGhostHover: Record<LibColorsHover, string> = {
 	white: "bg-white hover:bg-gray-300! active:bg-gray-100!",
 }
 
-/** Maps overlay tokens to their Tailwind CSS `bg-overlay-` classes. */
+/**
+ * Maps overlay tokens to their Tailwind CSS `bg-overlay-` classes.
+ *
+ * @type {Record<LibOverlays, string>}
+ * @example
+ * genBgOverlay["black-50"] // "bg-overlay-black-50"
+ */
 export const genBgOverlay: Record<LibOverlays, string> = {
 	"black-50": "bg-overlay-black-50",
 	"black-80": "bg-overlay-black-80",
@@ -150,13 +186,27 @@ export const genBgOverlay: Record<LibOverlays, string> = {
 	"gradient-white": "bg-overlay-gradient-white",
 }
 
-/** Combined map of all color tokens (full and shorthand) to their Tailwind CSS `bg-` classes. */
+/**
+ * Combined map of all color tokens (full and shorthand) to their Tailwind CSS `bg-` classes.
+ *
+ * @type {Record<LibAllColors, string>}
+ * @example
+ * genBgAllColors.primary // "bg-primary-500"
+ * genBgAllColors["primary-100"] // "bg-primary-100"
+ */
 export const genBgAllColors: Record<LibAllColors, string> = {
 	...genBgColor,
 	...genBgColorShort,
 }
 
-/** Combined map of all color and overlay tokens to their Tailwind CSS `bg-` classes. */
+/**
+ * Combined map of all color and overlay tokens to their Tailwind CSS `bg-` classes.
+ *
+ * @type {Record<LibAllColorsAndOverlays, string>}
+ * @example
+ * genBgAllColorsAndOverlays.primary // "bg-primary-500"
+ * genBgAllColorsAndOverlays["black-50"] // "bg-overlay-black-50"
+ */
 export const genBgAllColorsAndOverlays: Record<
 	LibAllColorsAndOverlays,
 	string

@@ -5,7 +5,13 @@ import type {
 	LibColorsShort,
 } from "../types"
 
-/** Maps all library color tokens to their Tailwind CSS `border-` classes. */
+/**
+ * Maps all library color tokens to their corresponding Tailwind CSS `border-` classes.
+ *
+ * @type {Record<LibColors, string>}
+ * @example
+ * genBorderColor["primary-500"] // "border-primary-500"
+ */
 export const genBorderColor: Record<LibColors, string> = {
 	black: "border-black",
 	white: "border-white",
@@ -81,7 +87,13 @@ export const genBorderColor: Record<LibColors, string> = {
 	font: "border-font",
 }
 
-/** Maps shorthand color names to their Tailwind CSS `border-` classes (uses the 500 shade). */
+/**
+ * Maps shorthand color names to their Tailwind CSS `border-` classes (uses the 500 shade).
+ *
+ * @type {Record<LibColorsShort, string>}
+ * @example
+ * genBorderColorShort.primary // "border-primary-500"
+ */
 export const genBorderColorShort: Record<LibColorsShort, string> = {
 	primary: "border-primary-500",
 	secondary: "border-secondary-500",
@@ -96,18 +108,35 @@ export const genBorderColorShort: Record<LibColorsShort, string> = {
 	background: "border-background",
 }
 
-/** Maps hover colors to Tailwind CSS `border-` classes with hover and active states. */
+/**
+ * Maps hover color names to Tailwind CSS `border-` classes with hover and active states.
+ *
+ * @type {Record<LibColorsHover, string>}
+ * @example
+ * genBorderColorHover.primary // "border-primary-500 hover:border-primary-300 active:border-primary-600"
+ */
 export const genBorderColorHover: Record<LibColorsHover, string> = {
-	primary: "border-primary-500 hover:border-primary-300 active:border-primary-600",
-	secondary: "border-secondary-500 hover:border-secondary-300 active:border-secondary-600",
-	success: "border-success-500 hover:border-success-300 active:border-success-600",
+	primary:
+		"border-primary-500 hover:border-primary-300 active:border-primary-600",
+	secondary:
+		"border-secondary-500 hover:border-secondary-300 active:border-secondary-600",
+	success:
+		"border-success-500 hover:border-success-300 active:border-success-600",
 	danger: "border-danger-500 hover:border-danger-300 active:border-danger-600",
-	warning: "border-warning-500 hover:border-warning-300 active:border-warning-600",
+	warning:
+		"border-warning-500 hover:border-warning-300 active:border-warning-600",
 	gray: "border-gray-500 hover:border-gray-300 active:border-gray-600",
 	white: "border-white hover:border-gray-300 active:border-gray-100",
 }
 
-/** Combined map of all color tokens (full and shorthand) to their Tailwind CSS `border-` classes. */
+/**
+ * Combined map of all color tokens (full and shorthand) to their Tailwind CSS `border-` classes.
+ *
+ * @type {Record<LibAllColors, string>}
+ * @example
+ * genBorderAllColors.primary // "border-primary-500"
+ * genBorderAllColors["primary-100"] // "border-primary-100"
+ */
 export const genBorderAllColors: Record<LibAllColors, string> = {
 	...genBorderColor,
 	...genBorderColorShort,

@@ -1,5 +1,12 @@
 import type { LibRadiuses } from "../types"
 
+/**
+ * Maps each LibRadiuses key to its corresponding Tailwind CSS border-radius class.
+ *
+ * @type {Record<LibRadiuses, string>}
+ * @example
+ * genBorderRadius.sm // "rounded-sm"
+ */
 export const genBorderRadius: Record<LibRadiuses, string> = {
 	xs: "rounded-xs",
 	sm: "rounded-sm",
