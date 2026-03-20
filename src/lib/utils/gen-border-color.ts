@@ -5,6 +5,7 @@ import type {
 	LibColorsShort,
 } from "../types"
 
+/** Maps all library color tokens to their Tailwind CSS `border-` classes. */
 export const genBorderColor: Record<LibColors, string> = {
 	black: "border-black",
 	white: "border-white",
@@ -80,6 +81,7 @@ export const genBorderColor: Record<LibColors, string> = {
 	font: "border-font",
 }
 
+/** Maps shorthand color names to their Tailwind CSS `border-` classes (uses the 500 shade). */
 export const genBorderColorShort: Record<LibColorsShort, string> = {
 	primary: "border-primary-500",
 	secondary: "border-secondary-500",
@@ -94,6 +96,7 @@ export const genBorderColorShort: Record<LibColorsShort, string> = {
 	background: "border-background",
 }
 
+/** Maps hover colors to Tailwind CSS `border-` classes with hover and active states. */
 export const genBorderColorHover: Record<LibColorsHover, string> = {
 	primary: "border-primary-500 hover:border-primary-300 active:border-primary-600",
 	secondary: "border-secondary-500 hover:border-secondary-300 active:border-secondary-600",
@@ -104,6 +107,7 @@ export const genBorderColorHover: Record<LibColorsHover, string> = {
 	white: "border-white hover:border-gray-300 active:border-gray-100",
 }
 
+/** Combined map of all color tokens (full and shorthand) to their Tailwind CSS `border-` classes. */
 export const genBorderAllColors: Record<LibAllColors, string> = {
 	...genBorderColor,
 	...genBorderColorShort,
