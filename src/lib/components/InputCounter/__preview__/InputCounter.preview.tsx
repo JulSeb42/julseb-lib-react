@@ -96,7 +96,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "inputVariant",
 			type: "string",
-			possibleValues: ["rounded", "pill", "square"],
+			possibleValues: ["rounded", "pill"],
 			defaultValue: "rounded",
 			description:
 				"Visual variant for the input field. Only available when noInput is false.",
@@ -123,14 +123,8 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "buttonVariant",
 			type: "string",
-			possibleValues: [
-				"contained",
-				"outlined",
-				"text",
-				"transparent",
-				"plain",
-			],
-			defaultValue: "contained",
+			possibleValues: ["plain", "ghost", "transparent"],
+			defaultValue: "plain",
 			description: "Visual variant for the increment/decrement buttons.",
 			isRequired: false,
 		},
@@ -144,7 +138,6 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 				"danger",
 				"warning",
 				"gray",
-				"black",
 				"white",
 			],
 			defaultValue: "primary",
