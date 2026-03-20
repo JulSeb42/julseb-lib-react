@@ -96,7 +96,7 @@ export const inputCounterPreview: ComponentPreview<ILibInputCounter> = {
 		{
 			name: "inputVariant",
 			type: "string",
-			possibleValues: ["rounded", "pill", "square"],
+			possibleValues: ["rounded", "pill"],
 			defaultValue: "rounded",
 			description:
 				"Visual variant for the input field. Only available when noInput is false.",
