@@ -13,7 +13,7 @@ const OverlaysPreview = () => {
 						className="size-25"
 						style={{ background: overlay.css }}
 					/>
-					<div className="flex flex-col items-stretch gap-0.5">
+					<div className="flex flex-col items-stretch gap-0.5 w-[calc(100%-100px-8px)]">
 						<h4>{overlay.name}</h4>
 						<p>
 							<strong>Variable: </strong>

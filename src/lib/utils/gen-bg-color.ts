@@ -184,6 +184,8 @@ export const genBgOverlay: Record<LibOverlays, string> = {
 	"white-80": "bg-overlay-white-80",
 	"gradient-black": "bg-overlay-gradient-black",
 	"gradient-white": "bg-overlay-gradient-white",
+	"gradient-theme-bg": "bg-overlay-gradient-theme-bg",
+	"gradient-theme-text": "bg-overlay-gradient-theme-text",
 }
 
 /**

@@ -1,4 +1,10 @@
-/** Maps display text heading tags (h1–h5) to their HTML element names. */
+/**
+ * Maps display text heading tags (h1–h5) to their HTML element names.
+ *
+ * @type {{ h1: string, h2: string, h3: string, h4: string, h5: string }}
+ * @example
+ * libTextDisplayTags.h1 // "h1"
+ */
 const libTextDisplayTags = {
 	h1: "h1",
 	h2: "h2",
@@ -7,7 +13,13 @@ const libTextDisplayTags = {
 	h5: "h5",
 }
 
-/** Design tokens used across the component library for consistent styling. */
+/**
+ * Design tokens used across the component library for consistent styling and theming.
+ * Includes color palettes, font sizes, spacers, breakpoints, radii, shadows, and more.
+ *
+ * @type {object}
+ * @see https://julseb-lib.vercel.app/docs/design-tokens
+ */
 export const designTokens = {
 	libColors: {
 		/**
@@ -226,6 +238,8 @@ export const designTokens = {
 		"white-80": "white-80",
 		"gradient-black": "gradient-black",
 		"gradient-white": "gradient-white",
+		"gradient-theme-bg": "gradient-theme-bg",
+		"gradient-theme-text": "gradient-theme-text",
 	},
 
 	libFontFamilies: {

@@ -21,7 +21,7 @@ import type { ILib{{ pascalCase name }} } from "./types"
 	*
 	* @see https://julseb-lib.vercel.app/components/<name of the component>
 */
-const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className, element = "{{ lowerCase tag }}", ref, {{#if children}} children,{{/if}} ...rest }) => {
+export const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className, element = "{{ lowerCase tag }}", ref, {{#if children}} children,{{/if}} ...rest }) => {
 	const Element = element
 
 	return (
@@ -30,5 +30,3 @@ const {{ pascalCase name }}: FC<ILib{{ pascalCase name }}> = ({ className, eleme
 		</Element>{{ else }} />{{/if}}
 	)
 }
-
-export default {{ pascalCase name }}

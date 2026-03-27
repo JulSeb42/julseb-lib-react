@@ -44,4 +44,18 @@ export const allOverlays: Array<Variable> = [
 		value: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%)",
 		twClass: "bg-overlay-gradient-white",
 	},
+	{
+		name: "Overlay Theme Background",
+		variable: "OVERLAYS.GRADIENT_THEME_BG",
+		css: OVERLAYS.GRADIENT_THEME_BG,
+		value: "light: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%); dark: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%)",
+		twClass: "bg-overlay-gradient-theme-bg",
+	},
+	{
+		name: "Overlay Theme Text",
+		variable: "OVERLAYS.GRADIENT_THEME_TEXT",
+		css: OVERLAYS.GRADIENT_THEME_TEXT,
+		value: "light: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%); dark: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%)",
+		twClass: "bg-overlay-gradient-theme-text",
+	},
 ]

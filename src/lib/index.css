@@ -4,8 +4,6 @@
 
 :root {
 	--font-lato: "Lato", sans-serif;
-	--font-sans: var(--font-lato);
-	--font-mono: monospace;
 
 	--color-primary-50: var(--color-blue-50);
 	--color-primary-100: var(--color-blue-100);
@@ -90,12 +88,22 @@
 	--color-overlay-gradient-black: linear-gradient(
 		180deg,
 		rgba(255, 255, 255, 0) 0%,
-		rgba(0, 0, 0, 0.56) 100%
+		rgba(0, 0, 0, 0.5) 100%
 	);
 	--color-overlay-gradient-white: linear-gradient(
 		180deg,
 		rgba(0, 0, 0, 0) 0%,
-		rgba(255, 255, 255, 0.35) 100%
+		rgba(255, 255, 255, 0.8) 100%
+	);
+	--color-overlay-gradient-theme-bg: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(255, 255, 255, 0.8) 100%
+	);
+	--color-overlay-gradient-theme-text: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(0, 0, 0, 0.5) 100%
 	);
 
 	--font-sans: var(--font-lato);
@@ -226,25 +234,23 @@
 	--color-background: var(--color-white);
 	--color-font: var(--color-black);
 
-	--font-weight-thin: 100;
-	--font-weight-light: 300;
+	--font-weight-thin: var(--font-weight-thin);
+	--font-weight-light: var(--font-weight-light);
 	--font-weight-normal: 400;
 	--font-weight-bold: 700;
 	--font-weight-black: 900;
 
-	--color-overlay-black-50: rgba(0, 0, 0, 0.5);
-	--color-overlay-black-80: rgba(0, 0, 0, 0.8);
-	--color-overlay-white-50: rgba(255, 255, 255, 0.5);
-	--color-overlay-white-80: rgba(255, 255, 255, 0.8);
-	--color-overlay-gradient-black: linear-gradient(
-		180deg,
-		rgba(255, 255, 255, 0) 0%,
-		rgba(0, 0, 0, 0.56) 100%
+	--color-overlay-black-50: var(--color-overlay-black-50);
+	--color-overlay-black-80: var(--color-overlay-black-80);
+	--color-overlay-white-50: var(--color-overlay-white-50);
+	--color-overlay-white-80: var(--color-overlay-white-80);
+	--color-overlay-gradient-black: var(--color-overlay-gradient-black);
+	--color-overlay-gradient-white: var(--color-overlay-gradient-white);
+	--color-overlay-gradient-theme-bg: var(
+		--color-overlay-gradient-theme-light
 	);
-	--color-overlay-gradient-white: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 0) 0%,
-		rgba(255, 255, 255, 0.35) 100%
+	--color-overlay-gradient-theme-text: var(
+		--color-overlay-gradient-theme-dark
 	);
 
 	--font-sans: var(--font-lato);
@@ -392,6 +398,17 @@ body {
 
 	--color-background: var(--color-black);
 	--color-font: var(--color-white);
+
+	--color-overlay-gradient-theme-bg: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
+	--color-overlay-gradient-theme-text: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(255, 255, 255, 0.8) 100%
+	);
 }
 
 .smooth {
@@ -565,6 +582,14 @@ iframe {
 
 .bg-overlay-gradient-white {
 	background: var(--color-overlay-gradient-white);
+}
+
+.bg-overlay-gradient-theme-bg {
+	background: var(--color-overlay-gradient-theme-bg);
+}
+
+.bg-overlay-gradient-theme-text {
+	background: var(--overlay-gradient-theme-text);
 }
 
 /*====================== Keyframes & animations ======================*/

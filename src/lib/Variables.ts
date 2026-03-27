@@ -78,6 +78,10 @@ export enum OVERLAYS {
 	/** rgba(69, 35, 35, 0.8) */ WHITE_80 = "var(--color-overlay-white-80)",
 	/** linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%) */ GRADIENT_BLACK = "var(--color-overlay-gradient-black)",
 	/** linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%) */ GRADIENT_WHITE = "var(--color-overlay-gradient-white)",
+	/** light: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%); dark: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%) */
+	GRADIENT_THEME_BG = "var(--color-overlay-gradient-theme-bg)",
+	/** light: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%); dark: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%) */
+	GRADIENT_THEME_TEXT = "var(--color-overlay-gradient-theme-text)",
 }
 
 export enum FONT_FAMILIES {
